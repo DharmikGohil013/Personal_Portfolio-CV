@@ -180,7 +180,8 @@ h6 {
   font-size: 16px;
 }
 
-.header .header-social-links a:hover {
+.header .header-social-links a:hover 
+{
   color: var(--accent-color);
 }
 
