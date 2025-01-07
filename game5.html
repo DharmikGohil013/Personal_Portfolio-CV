@@ -109,25 +109,76 @@
 
   <main class="main">
 
-    <!-- Hero Section -->
-    <section id="hero" class="hero section">
+    <!-- Portfolio Details Section -->
+    <section id="portfolio-details" class="portfolio-details section">
 
-      <img src="assets/img/unsplash-image-ye8mgSyfzGA.jpg" alt="" data-aos="fade-in">
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Learn Unity</h2>
+        <p>Animal Eating And Killing Game</p>
+      </div><!-- End Section Title -->
 
-      <div class="container text-center" data-aos="zoom-out" data-aos-delay="100">
-        <div class="row justify-content-center">
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="row gy-4">
+
           <div class="col-lg-8">
-            <h2>DHARMIK GOHIL</h2>
-            <p>Game Developer from India.</p>
-            <a href="about.html" class="btn-get-started">About Me</a>
+            <div class="portfolio-details-slider swiper init-swiper">
+
+              <script type="application/json" class="swiper-config">
+                {
+                  "loop": true,
+                  "speed": 600,
+                  "autoplay": {
+                    "delay": 5000
+                  },
+                  "slidesPerView": "auto",
+                  "pagination": {
+                    "el": ".swiper-pagination",
+                    "type": "bullets",
+                    "clickable": true
+                  }
+                }
+              </script>
+
+              <div class="swiper-wrapper align-items-center">
+
+                <div class="swiper-slide">
+                  <img src="assets/img/masonry-portfolio/p1 (1).png" alt="">
+                </div>
+
+                
+
+
+              </div>
+              <div class="swiper-pagination"></div>
+            </div>
           </div>
+
+          <div class="col-lg-4">
+            <div class="portfolio-info" data-aos="fade-up" data-aos-delay="200">
+              <h3>Project information</h3>
+              <ul>
+                <li><strong>Category</strong>: Unity 3D Devlopment</li>
+               
+                <li><strong>Project date</strong>:June, 2024</li>
+                <li><strong>Project URL</strong>: <a href="https://github.com/DharmikGohil013/Unity-Prototype-1-2">www.Prototype.fun</a></li>
+            
+              </ul>
+            </div>
+            <div class="portfolio-description" data-aos="fade-up" data-aos-delay="300">
+              <h2>Exciting and addictive Unity-based game</h2>
+              <p>
+                Animal Killing Game is a 3D Unity game where players hunt or eliminate various animals in a series of environments, aiming for high scores while facing different challenges
+              </p>
+            </div>
+          </div>
+
         </div>
+
       </div>
 
-    </section><!-- /Hero Section -->
-    <amp-auto-ads type="adsense"
-        data-ad-client="ca-pub-4658801537271443">
-</amp-auto-ads>
+    </section><!-- /Portfolio Details Section -->
 
   </main>
 
