@@ -37,7 +37,90 @@
   ======================================================== -->
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4658801537271443"
      crossorigin="anonymous"></script>
+     <style>
+      @media (max-width: 768px) {
+      .header .container-fluid {
+        flex-direction: column;
+        text-align: center;
+      }
+      
+    }
+      /* Parent container for notifications */
+.notifications-container {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  display: flex; /* Align items in a row */
+  gap: 20px; /* Add spacing between notifications */
+  z-index: 1000;
+}
 
+/* Individual notification styles */
+.notification {
+  background: linear-gradient(135deg, #ffcc80, #ffffff, #90caf9);
+  color: #333;
+  border: 2px solid #2196f3;
+  border-radius: 16px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+  padding: 20px;
+  width: 320px;
+  text-align: center;
+  animation: slideIn 1.5s ease-in-out;
+}
+
+.notification img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  margin-bottom: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.notification h3 {
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin: 10px 0;
+  color: #1976d2;
+  text-transform: uppercase;
+}
+
+.notification p {
+  font-size: 1.1rem;
+  margin: 10px 0;
+  color: #555;
+  line-height: 1.5;
+}
+
+.notification .close-btn {
+  margin-top: 15px;
+  padding: 10px 20px;
+  background: linear-gradient(135deg, #1976d2, #90caf9);
+  color: #fff;
+  font-size: 1rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.notification .close-btn:hover {
+  background: #1565c0;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+    </style>
 
 </head>
 
@@ -123,22 +206,19 @@
       </div>
 
     </section><!-- /Hero Section -->
-    <amp-auto-ads type="adsense"
-        data-ad-client="ca-pub-4658801537271443">
-</amp-auto-ads>
+    <div class="notifications-container">
+      <!-- First Notification -->
+      <div id="notification" class="notification">
+        <img src="assets/img/75th-indian-republic-day-26-january-celebration-social-media-post-web-bennar-status-wishes-free-vector.jpg" width="300px" alt="Republic Day Celebration">
+        <h3 style="color: #ff9933;">Thsi Week Celebrate</h3>
+        <h3>Happy 75th Republic Day of India!</h3>
+        <p>Let's celebrate the spirit of freedom and unity. Jai Hind! 🇮🇳</p>
+        <button class="close-btn" >Close</button>
+      </div>
+    
 
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4658801537271443"
-     crossorigin="anonymous"></script>
-<ins class="adsbygoogle"
-     style="display:block; text-align:center;"
-     data-ad-layout="in-article"
-     data-ad-format="fluid"
-     data-ad-client="ca-pub-4658801537271443"
-     data-ad-slot="1776835307"></ins>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-
+    
+    
   </main>
 
   <footer id="footer" class="footer light-background">
@@ -185,6 +265,29 @@
 
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+  setTimeout(() => {
+    document.getElementById("notification-coming-soon").style.display = "block";
+    document.getElementById("notification-republic-day").style.display = "block";
+  }, 1000); // 1-second delay
+});
+
+    function closeNotification() {
+  document.getElementById('notification').style.display = 'none';
+}
+const closeButtons = document.querySelectorAll('.close-btn');
+
+  // Add event listener to each close button
+  closeButtons.forEach(button => {
+    button.addEventListener('click', function() {
+      // Find the parent notification and hide it
+      const notification = this.closest('.notification');
+      notification.style.display = 'none';
+    });
+  });
+
+  </script>
 
 </body>
 
