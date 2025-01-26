@@ -40,6 +40,94 @@
   
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4658801537271443"
   crossorigin="anonymous"></script>
+  <style>
+    .notification {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: linear-gradient(135deg, #1e3c72, #2a5298, #00c6ff);
+  color: #fff;
+  border: 2px solid #00c6ff;
+  border-radius: 12px;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  width: 320px;
+  z-index: 1000;
+  text-align: center;
+  animation: fadeIn 1.5s ease-in-out;
+}
+
+
+.notification img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.notification h3 {
+  font-size: 1.6rem;
+  font-weight: bold;
+  margin: 10px 0;
+  color: #15ff00;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.notification p {
+  font-size: 1rem;
+  margin: 10px 0;
+  color: #ffffff;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.notification .preview-btn, .notification .close-btn {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.notification .preview-btn {
+  background: #0d00ff;
+  color: #fff;
+}
+
+.notification .preview-btn:hover {
+  background: #ff6600;
+  transform: scale(1.05);
+}
+
+.notification .close-btn {
+  background: #138808;
+  color: #fff;
+}
+
+.notification .close-btn:hover {
+  background: #0e6406;
+  transform: scale(1.05);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+  </style>
 
 </head>
 
@@ -183,11 +271,11 @@
          
 
           <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app3d filter-productpc filter-product">
-            <img src="assets/img/multi.webp" class="img-fluid" alt="">
+            <img src="assets/img/game1 (3).png" class="img-fluid" alt="">
             <div class="portfolio-info">
               <h4>MAVERICKS BATTLEGROUNDS</h4>
               <p>First MultiPlyer Game</p>
-              <a href="assets/img/masonry-portfolio/m1.jpeg" title="Branding 2" data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+              <a href="assets/img/game1 (3).png" title="Branding 2" data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
               <a href="game4.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
             </div>
           </div><!-- End Portfolio Item -->
@@ -199,6 +287,18 @@
     </div>
 
   </section><!-- /Portfolio Section -->
+
+  <div id="notification" class="notification">
+    <img src="assets/img/DGF Industry.jpg" width="300px" alt="Republic Day Celebration">
+    <h3 style="color: rgb(0, 91, 0);">Launching Soon</h3>
+    <h3>MAVERICKS BATTLEGROUNDS</h3>
+    <p>Show In Privew</p>
+    <div class="button-container">
+      <button class="preview-btn" onclick="previewGame()">Preview Game</button>
+      <button class="close-btn" onclick="closeNotification()">Close</button>
+    </div>
+  </div>
+
 
 </main>
 
@@ -246,6 +346,21 @@
 
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      setTimeout(function () {
+        const notification = document.getElementById("notification");
+        notification.classList.add("active");
+        setTimeout(() => {
+          notification.classList.remove("active");
+        }, 5000); // Hide after 5 seconds
+      }, 1000); // Show after 1 second
+    });
+    function closeNotification() {
+  document.getElementById('notification').style.display = 'none';
+}
+
+  </script>
 
 </body>
 
