@@ -42,9 +42,9 @@
   position: fixed;
   bottom: 20px;
   right: 20px;
-  background: linear-gradient(135deg, #ff9933, #ffffff, #138808);
-  color: #000;
-  border: 2px solid #138808;
+  background: linear-gradient(135deg, #ff4d6d, #ff99ac, #ffe6e6); /* Romantic Pink-Red Gradient */
+  color: #fff;
+  border: 2px solid #ff4d6d;
   border-radius: 12px;
   box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
   padding: 20px;
@@ -55,39 +55,41 @@
 }
 
 .notification img {
-  width: 100%; /* Auto adjust the width to fit the container */
-  height: auto; /* Maintain the aspect ratio */
+  width: 100%;
+  height: auto;
   border-radius: 8px;
   margin-bottom: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
-
 
 .notification h3 {
   font-size: 1.5rem;
   font-weight: bold;
   margin: 10px 0;
-  color: #138808;
+  color: #fff; /* White text for better contrast */
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
 }
 
 .notification p {
   font-size: 1rem;
   margin: 10px 0;
-  color: #555;
+  color: #ffe6e6; /* Soft pink text */
 }
 
 .notification .close-btn {
   margin-top: 10px;
   padding: 8px 16px;
-  background: #138808;
+  background: #ff4d6d;
   color: #fff;
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  transition: background 0.3s;
+  transition: background 0.3s, transform 0.2s;
 }
 
 .notification .close-btn:hover {
-  background: #0e6406;
+  background: #e60044;
+  transform: scale(1.05);
 }
 
 @keyframes fadeIn {
@@ -151,7 +153,7 @@
             </ul>
           </li>
           <li><a href="Achivemtn.html" >Certificate & Achievement</a></li>
-          <li><a href="contact.html">Contact</a></li>
+          <li><a href="https://contect-pages-hp3e.vercel.app/">Contact</a></li>
           
         </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
@@ -174,13 +176,18 @@
     <!-- Hero Section -->
     <section id="hero" class="hero section">
 
-      <img src="assets/img/unsplash-image-ye8mgSyfzGA.jpg" alt="" data-aos="fade-in">
+      <img src="assets/img/unsplash-image-ye8mgSyfzGA.jpg" alt="" data-aos="fade-in" style="filter: blur(10px);">
 
       <div class="container text-center" data-aos="zoom-out" data-aos-delay="100">
         <div class="row justify-content-center">
           <div class="col-lg-8">
-            <h2>DHARMIK GOHIL</h2>
-            <p>Game Developer & Application Devloper</p>
+            <h2 style="font-weight: bold; font-size: 4rem; text-transform: uppercase; letter-spacing: 2px; color: #ffd700; text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);">
+              Dharmik Gohil
+          </h2>
+          <p style="font-size: 1.2rem; font-style: italic; color: #555; font-weight: 500;">
+              Passionate Game Developer & Innovative App Creator   
+          </p>
+          
             <a href="about.html" class="btn-get-started">About Me</a>
           </div>
         </div>
@@ -189,56 +196,31 @@
     </section><!-- /Hero Section -->
     
     <div id="notification" class="notification">
-      <img src="assets/img/75th-indian-republic-day-26-january-celebration-social-media-post-web-bennar-status-wishes-free-vector.jpg" width="300px" alt="Republic Day Celebration">
-      <h3 style="color: orange;">Thsi Week Celebrate</h3>
-      <h3>Happy 75th Republic Day of India!</h3>
-      <p>Let's celebrate the spirit of freedom and unity. Jai Hind! 🇮🇳</p>
+      <img src="assets/img/happy-valentines-day-greeting-card-beautiful-red-hearts-hanging-blurred-background-bokeh-st-valentine-s-love-concept-138558521.webp" width="300px" alt="Valentine's Week Celebration">
+      <h3 style="color: red;">This Week Celebrate</h3>
+      <h3>Happy Valentine's Week! ❤️</h3>
+      <p>Spread love and happiness with your loved ones. Enjoy the special moments! 💖</p>
       <button class="close-btn" onclick="closeNotification()">Close</button>
-    </div>
+  </div>
+  
     
   </main>
 
   <footer id="footer" class="footer light-background">
+
     <div class="container">
-      <div class="row">
-        <!-- Career Section -->
-        <div class="col-md-4">
-          <h4>Career</h4>
-          <ul class="list-unstyled">
-            <li><a href="about.html">Career Opportunities</a></li>
-            <li><a href="Achivemtn.html">Internships</a></li>
-            <li><a href="Achivemtn.html">Join Our Team</a></li>
-          </ul>
-        </div>
-  
-        <!-- More Section -->
-        <div class="col-md-4">
-          <h4>More</h4>
-          <ul class="list-unstyled">
-            <li><a href="about.html">About Us</a></li>
-            <li><a href="about.html">Blog</a></li>
-            <li><a href="about.html">FAQ</a></li>
-            <li><a href="contact.html">Contact Us</a></li>
-          </ul>
-        </div>
-  
-        <!-- Social Links Section -->
-        <div class="col-md-4">
-          <h4>Follow Us</h4>
-          <div class="social-links d-flex justify-content-start">
-            <a href="https://github.com/DharmikGohil013" target="_blank"><i class="bi bi-github"></i></a>
-            <a href="https://www.linkedin.com/in/dharmikgohil086/" target="_blank"><i class="bi bi-linkedin"></i></a>
-            <a href="https://www.instagram.com/dharmik.086/?next=%2F" target="_blank"><i class="bi bi-instagram"></i></a>
-            <a href="https://x.com/Dharmik086" target="_blank"><i class="bi bi-twitter"></i></a>
-          </div>
-        </div>
-      </div>
-  
-      <!-- Copyright Section -->
-      <div class="copyright text-center mt-4">
+      <div class="copyright text-center ">
         <p>© <span>Copyright</span> <strong class="px-1 sitename">Dharmik</strong> <span>All Rights Reserved<br></span></p>
       </div>
+      <div class="social-links d-flex justify-content-center">
+        <a href="https://github.com/DharmikGohil013"><i class="bi bi-github"></i></a>
+        <a href="https://www.linkedin.com/in/dharmikgohil086/"><i class="bi bi-linkedin"></i></a>
+        <a href="https://www.instagram.com/dharmik.086/?next=%2F"><i class="bi bi-instagram"></i></a>
+        <a href="https://x.com/Dharmik086"><i class="bi bi-twitter"></i></a>
+      </div>
+      
     </div>
+
   </footer>
 
   <!-- Scroll Top -->
