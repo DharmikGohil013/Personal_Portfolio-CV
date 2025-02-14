@@ -39,73 +39,107 @@
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4658801537271443"
      crossorigin="anonymous"></script>
      <style>
-      .notification {
+.notification {
   position: fixed;
   bottom: 20px;
   right: 20px;
-  background: linear-gradient(135deg, #ff4d6d, #ff99ac, #ffe6e6); /* Romantic Pink-Red Gradient */
+  background: linear-gradient(135deg, #6a11cb, #2575fc); /* Vibrant Purple-Blue Gradient */
   color: #fff;
-  border: 2px solid #ff4d6d;
-  border-radius: 12px;
-  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
-  padding: 20px;
-  width: 320px;
+  border: 2px solid #6a11cb;
+  border-radius: 15px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+  padding: 25px;
+  width: 350px;
   z-index: 1000;
   text-align: center;
-  animation: fadeIn 1.5s ease-in-out;
+  animation: slideIn 1s ease-in-out, pulse 2s infinite 1s;
+  overflow: hidden;
+}
+
+.notification::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.2), transparent 70%);
+  animation: rotate 10s linear infinite;
+  z-index: -1;
 }
 
 .notification img {
   width: 100%;
   height: auto;
-  border-radius: 8px;
-  margin-bottom: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  margin-bottom: 15px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
 }
 
 .notification h3 {
-  font-size: 1.5rem;
+  font-size: 1.8rem;
   font-weight: bold;
-  margin: 10px 0;
-  color: #fff; /* White text for better contrast */
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+  margin: 15px 0;
+  color: #fff;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .notification p {
-  font-size: 1rem;
-  margin: 10px 0;
-  color: #ffe6e6; /* Soft pink text */
+  font-size: 1.1rem;
+  margin: 15px 0;
+  color: #e0e0e0;
+  line-height: 1.5;
 }
 
 .notification .close-btn {
-  margin-top: 10px;
-  padding: 8px 16px;
-  background: #ff4d6d;
+  margin-top: 15px;
+  padding: 10px 20px;
+  background: #2575fc;
   color: #fff;
   border: none;
-  border-radius: 5px;
+  border-radius: 8px;
   cursor: pointer;
+  font-weight: bold;
   transition: background 0.3s, transform 0.2s;
 }
 
 .notification .close-btn:hover {
-  background: #e60044;
+  background: #6a11cb;
   transform: scale(1.05);
 }
-/* Add this to your existing CSS */
 
-
-@keyframes fadeIn {
+/* Keyframes for animations */
+@keyframes slideIn {
   from {
     opacity: 0;
-    transform: translateY(20px);
+    transform: translateX(100%);
   }
   to {
     opacity: 1;
-    transform: translateY(0);
+    transform: translateX(0);
   }
 }
 
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
     </style>
 
 </head>
@@ -128,7 +162,7 @@
           <li><a href="about.html">About</a></li>
           <li><a href="resume.html">Resume</a></li>
           <li><a href="services.html">Abilities</a></li>
-          <li class="dropdown"><a href="#"><span>Projects</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+          <li class="dropdown"><a href="https://dharmikgohil.fun/portfolio.html"><span>Projects</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
             <ul>
               <li><a href="portfolio.html">Games</a></li>
               <li class="dropdown"><a href="logo.html"><span>Ui/ux</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
@@ -225,12 +259,15 @@
     </section><!-- /Hero Section -->
     
     <div id="notification" class="notification">
-      <img src="assets/img/happy-valentines-day-greeting-card-beautiful-red-hearts-hanging-blurred-background-bokeh-st-valentine-s-love-concept-138558521.webp" width="300px" alt="Valentine's Week Celebration">
-      <h3 style="color: red;">This Week Celebrate</h3>
-      <h3>Happy Valentine's Week! ❤️</h3>
-      <p>Spread love and happiness with your loved ones. Enjoy the special moments! 💖</p>
+      <!-- <img src="assets/img/mahashivratri.jpg" width="300px" alt="Mahashivratri Celebration"> -->
+      <h3 style="color: #ffdd57;">🕉️ Mahashivratri is Here! 🕉️</h3>
+      <h3>Join the Divine Celebration!</h3>
+      <p>
+        Celebrate the night of Lord Shiva with devotion and joy. Participate in special pujas, bhajans, and meditations. Let's welcome positivity and blessings into our lives! 🙏
+      </p>
+     
       <button class="close-btn" onclick="closeNotification()">Close</button>
-  </div>
+    </div>
   
     
   </main>
