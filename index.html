@@ -140,7 +140,11 @@
     transform: rotate(360deg);
   }
 }
-
+#visitor-count {
+  font-weight: bold;
+  color: #ffdd57; /* Golden yellow for emphasis */
+  font-size: 1.5rem;
+}
     </style>
 
 </head>
@@ -248,13 +252,15 @@
           <div class="col-lg-8">
             <h2 style="font-weight: bold; font-size: 4rem; text-transform: uppercase; letter-spacing: 2px; color: #ffffff; text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);">
               Dharmik Gohil
-          </h2>
-          <p style="font-size: 1.2rem; font-style: italic; color: #e4e4e4; font-weight: 500;">
-              <!-- Passionate Game Developer & Innovative App Creator    -->
-          </p>
-          
+            </h2>
+            <p style="font-size: 1.2rem; font-style: italic; color: #e4e4e4; font-weight: 500;">
+              <!-- Passionate Game Developer & Innovative App Creator -->
+            </p>
             <a href="about.html" class="btn-get-started">About Me</a>
             <a href="https://contect-pages-hp3e.vercel.app/" class="btn-get-started">Support</a>
+            <p style="font-size: 1.2rem; color: #e4e4e4; margin-top: 20px;">
+              <span id="visitor-count">0</span> visitors have viewed this site.
+            </p>
           </div>
         </div>
       </div>
@@ -338,6 +344,63 @@
 
 <script>
   
+</script>
+<!-- Add this before the closing </body> tag -->
+<script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js"></script>
+<script type="module">
+  // Import Firebase modules
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+  import { getFirestore, collection, doc, setDoc, getDoc, getDocs } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
+
+  // Your Firebase configuration
+  const firebaseConfig = {
+    apiKey: "AIzaSyDImJJDzZeOlTruxIT0Czdf3b6bN6IPLiI",
+    authDomain: "portfolio-fun-450917.firebaseapp.com",
+    projectId: "portfolio-fun-450917",
+    storageBucket: "portfolio-fun-450917.firebasestorage.app",
+    messagingSenderId: "705461529657",
+    appId: "1:705461529657:web:8d12ed67a4e5ff9422b1e8",
+    measurementId: "G-PWKH4PG742"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const db = getFirestore(app);
+</script>
+<script type="module">
+  // Function to generate a unique visitor ID
+  function getVisitorId() {
+    let visitorId = localStorage.getItem('visitorId');
+    if (!visitorId) {
+      visitorId = Math.random().toString(36).substring(2) + Date.now().toString(36);
+      localStorage.setItem('visitorId', visitorId);
+    }
+    return visitorId;
+  }
+
+  // Function to update visitor count
+  async function updateVisitorCount() {
+    const visitorId = getVisitorId();
+    const visitorRef = doc(db, 'visitors', visitorId);
+
+    // Check if the visitor is already counted
+    const docSnap = await getDoc(visitorRef);
+    if (!docSnap.exists()) {
+      // Add new visitor to Firestore
+      await setDoc(visitorRef, { timestamp: new Date() });
+    }
+
+    // Get total visitor count
+    const querySnapshot = await getDocs(collection(db, 'visitors'));
+    const visitorCount = querySnapshot.size;
+
+    // Display the visitor count
+    document.getElementById('visitor-count').textContent = visitorCount;
+  }
+
+  // Call the function to update visitor count
+  updateVisitorCount();
 </script>
 </body>
 
