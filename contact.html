@@ -191,12 +191,40 @@
       font-weight: bold;
       transition: all 0.3s ease;
       box-shadow: 0 0 15px rgba(0, 234, 255, 0.5);
+      position: relative;
     }
 
     .contact-form .btn-submit:hover {
       background: #15ff00;
       box-shadow: 0 0 25px rgba(21, 255, 0, 0.8);
       transform: scale(1.1);
+    }
+
+    .btn-submit .loader {
+      display: none;
+      width: 20px;
+      height: 20px;
+      border: 3px solid rgba(10, 15, 31, 0.3);
+      border-top: 3px solid #0a0f1f;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+      position: absolute;
+      right: 10px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    .btn-submit.loading .loader {
+      display: inline-block;
+    }
+
+    .btn-submit.loading span {
+      opacity: 0;
+    }
+
+    @keyframes spin {
+      0% { transform: translateY(-50%) rotate(0deg); }
+      100% { transform: translateY(-50%) rotate(360deg); }
     }
 
     /* Footer */
@@ -338,22 +366,24 @@
               <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3719.159614682177!2d72.84219461488592!3d21.22623198588668!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be04f3b4e8e0c47%3A0x5e5c5e5e5e5e5e5e!2sKatargam%2C%20Surat%2C%20Gujarat%2C%20India!5e0!3m2!1sen!2sin!4v1698765432100!5m2!1sen!2sin" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
             </div>
           </div>
-          <!-- Contact Form -->
           <div class="col-lg-6">
-            <div class="contact-form">
+            <div class="contact-form" style="position: relative; z-index: 10;">
               <h3>Send a Message</h3>
-              <form id="contactForm">
-                <div class="mb-3">
+              <form id="contactForm" style="position: relative; z-index: 11;">
+                <div class="mb-3" style="position: relative; z-index: 12;">
                   <input type="text" class="form-control" id="name" name="name" placeholder="Your Name" required>
                 </div>
-                <div class="mb-3">
+                <div class="mb-3" style="position: relative; z-index: 12;">
                   <input type="email" class="form-control" id="email" name="email" placeholder="Your Email" required>
                 </div>
-                <div class="mb-3">
+                <div class="mb-3" style="position: relative; z-index: 12;">
                   <textarea class="form-control" id="message" name="message" rows="5" placeholder="Your Message" required></textarea>
                 </div>
-                <div class="text-center">
-                  <button type="submit" class="btn-submit">Submit</button>
+                <div class="text-center" style="position: relative; z-index: 12;">
+                  <button type="submit" class="btn-submit">
+                    <span>Submit</span>
+                    <span class="loader"></span>
+                  </button>
                 </div>
               </form>
             </div>
@@ -413,8 +443,14 @@
 
       // Form Submission
       const form = document.getElementById('contactForm');
+      const submitBtn = form.querySelector('.btn-submit');
+
       form.addEventListener('submit', async function (e) {
         e.preventDefault();
+
+        // Show loader
+        submitBtn.classList.add('loading');
+        submitBtn.disabled = true;
 
         const name = document.getElementById('name').value;
         const email = document.getElementById('email').value;
@@ -445,6 +481,10 @@
         } catch (error) {
           console.error('Error:', error);
           alert('Error sending message. Please try again later.');
+        } finally {
+          // Hide loader regardless of success or failure
+          submitBtn.classList.remove('loading');
+          submitBtn.disabled = false;
         }
       });
     });
