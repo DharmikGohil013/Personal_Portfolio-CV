@@ -12,6 +12,8 @@
   <!-- Favicons -->
   <link href="assets/img/dlogo.png" rel="icon">
   <link href="assets/img/dlogo.png" rel="apple-touch-icon">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=JetBrains+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
+  
 
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com" rel="preconnect">
@@ -38,115 +40,252 @@
   ======================================================== -->
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4658801537271443"
      crossorigin="anonymous"></script>
-     <style>
-.notification {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background: linear-gradient(135deg, #6a11cb, #2575fc); /* Vibrant Purple-Blue Gradient */
-  color: #fff;
-  border: 2px solid #6a11cb;
-  border-radius: 15px;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
-  padding: 25px;
-  width: 350px;
-  z-index: 1000;
-  text-align: center;
-  animation: slideIn 1s ease-in-out, pulse 2s infinite 1s;
-  overflow: hidden;
-}
+        <style>
+  
+    /* Previous CSS (from your updated HTML) remains here */
+    /* ... (all other styles) ... */
 
-.notification::before {
-  content: '';
-  position: absolute;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
-  background: radial-gradient(circle, rgba(255, 255, 255, 0.2), transparent 70%);
-  animation: rotate 10s linear infinite;
-  z-index: -1;
-}
+    /* Updated Notification Styles */
+    .notification {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: linear-gradient(135deg, #1A2C12, #3A8B5D);
+      border: 3px solid #2E5A2F;
+      border-radius: 20px;
+      box-shadow: 0 0 20px rgba(58, 139, 93, 0.5), inset 0 0 10px rgba(255, 255, 255, 0.2);
+      padding: 20px;
+      width: 350px;
+      max-width: 90vw;
+      z-index: 1000;
+      text-align: center;
+      font-family: 'JetBrains Mono', monospace;
+      color: #FFFFFF;
+      overflow: hidden;
+      animation: slideIn 1s ease-in-out, glowPulse 3s infinite ease-in-out;
+      transition: transform 0.3s ease;
+    }
 
-.notification img {
-  width: 100%;
-  height: auto;
-  border-radius: 10px;
-  margin-bottom: 15px;
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
-}
+    .notification:hover {
+      transform: scale(1.02);
+      box-shadow: 0 0 30px rgba(58, 139, 93, 0.8), inset 0 0 15px rgba(255, 255, 255, 0.3);
+    }
 
-.notification h3 {
-  font-size: 1.8rem;
-  font-weight: bold;
-  margin: 15px 0;
-  color: #fff;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-}
+    .notification::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(255, 255, 255, 0.3), transparent 70%);
+      animation: rotate 15s linear infinite;
+      z-index: -1;
+      opacity: 0.6;
+    }
 
-.notification p {
-  font-size: 1.1rem;
-  margin: 15px 0;
-  color: #e0e0e0;
-  line-height: 1.5;
-}
+    .notification::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="8" height="8"><circle cx="4" cy="4" r="2" fill="rgba(255, 255, 255, 0.5)" /></svg>') repeat;
+      animation: particleFloat 10s linear infinite;
+      z-index: -1;
+      opacity: 0.4;
+    }
 
-.notification .close-btn {
-  margin-top: 15px;
-  padding: 10px 20px;
-  background: #2575fc;
-  color: #fff;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  font-weight: bold;
-  transition: background 0.3s, transform 0.2s;
-}
+    .notification img {
+      width: 100%;
+      max-height: 150px;
+      object-fit: cover;
+      border-radius: 12px;
+      margin-bottom: 15px;
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+      transition: transform 0.3s ease;
+    }
 
-.notification .close-btn:hover {
-  background: #6a11cb;
-  transform: scale(1.05);
-}
+    .notification img:hover {
+      transform: scale(1.05);
+    }
 
-/* Keyframes for animations */
-@keyframes slideIn {
-  from {
-    opacity: 0;
-    transform: translateX(100%);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
+    .notification h3 {
+      font-size: 1.8rem;
+      font-weight: bold;
+      margin: 10px 0;
+      background: linear-gradient(90deg, #FFFFFF, #3A8B5D, #FFFFFF);
+      background-size: 200%;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+      animation: gradientShift 5s ease-in-out infinite;
+    }
 
-@keyframes pulse {
-  0% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.05);
-  }
-  100% {
-    transform: scale(1);
-  }
-}
+    .notification h3:nth-child(2) {
+      font-size: 1.5rem;
+      color: #FFFFFF;
+      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+    }
 
-@keyframes rotate {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-#visitor-count {
-  font-weight: bold;
-  color: #ffdd57; /* Golden yellow for emphasis */
-  font-size: 1.5rem;
-}
+    .notification p {
+      font-size: 1.1rem;
+      margin: 10px 0;
+      color: #E0E0E0;
+      line-height: 1.5;
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+    }
 
-    </style>
+    .notification .close-btn {
+      margin-top: 15px;
+      padding: 10px 25px;
+      background: #2E5A2F;
+      color: #FFFFFF;
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+      font-weight: bold;
+      font-family: 'JetBrains Mono', monospace;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 0 10px rgba(58, 139, 93, 0.5);
+    }
+
+    .notification .close-btn::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+      transition: 0.5s;
+    }
+
+    .notification .close-btn:hover::before {
+      left: 100%;
+    }
+
+    .notification .close-btn:hover {
+      background: #3A8B5D;
+      transform: translateY(-2px);
+      box-shadow: 0 0 20px rgba(58, 139, 93, 0.8);
+    }
+
+    @media (max-width: 768px) {
+      .notification {
+        width: 300px;
+        padding: 15px;
+        bottom: 15px;
+        right: 15px;
+      }
+
+      .notification h3 {
+        font-size: 1.5rem;
+      }
+
+      .notification h3:nth-child(2) {
+        font-size: 1.3rem;
+      }
+
+      .notification p {
+        font-size: 1rem;
+      }
+
+      .notification .close-btn {
+        padding: 8px 20px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .notification {
+        width: 90%;
+        max-width: 280px;
+        padding: 10px;
+        bottom: 10px;
+        right: 10px;
+      }
+
+      .notification h3 {
+        font-size: 1.3rem;
+      }
+
+      .notification h3:nth-child(2) {
+        font-size: 1.1rem;
+      }
+
+      .notification p {
+        font-size: 0.9rem;
+      }
+
+      .notification .close-btn {
+        padding: 8px 15px;
+        font-size: 0.9rem;
+      }
+    }
+
+    @keyframes slideIn {
+      from {
+        opacity: 0;
+        transform: translateX(100%);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    @keyframes glowPulse {
+      0% {
+        box-shadow: 0 0 20px rgba(58, 139, 93, 0.5), inset 0 0 10px rgba(255, 255, 255, 0.2);
+      }
+      50% {
+        box-shadow: 0 0 30px rgba(58, 139, 93, 0.8), inset 0 0 15px rgba(255, 255, 255, 0.3);
+      }
+      100% {
+        box-shadow: 0 0 20px rgba(58, 139, 93, 0.5), inset 0 0 10px rgba(255, 255, 255, 0.2);
+      }
+    }
+
+    @keyframes rotate {
+      from {
+        transform: rotate(0deg);
+      }
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    @keyframes particleFloat {
+      0% {
+        background-position: 0 0;
+      }
+      100% {
+        background-position: 100px 100px;
+      }
+    }
+
+    @keyframes gradientShift {
+      0% {
+        background-position: 0% 50%;
+      }
+      50% {
+        background-position: 100% 50%;
+      }
+      100% {
+        background-position: 0% 50%;
+      }
+    }
+
+    #visitor-count {
+      font-weight: bold;
+      color: #3A8B5D;
+      font-size: 1.5rem;
+    }
+  
+        </style>
 
 </head>
 
@@ -280,13 +419,11 @@
     </section><!-- /Hero Section -->
     
     <div id="notification" class="notification">
-      <!-- <img src="assets/img/mahashivratri.jpg" width="300px" alt="Mahashivratri Celebration"> -->
-      <h3 style="color: #ffdd57;">🕉️ Mahashivratri is Here! 🕉️</h3>
-      <h3>Join the Divine Celebration!</h3>
+      <h3>Holi is Here!</h3>
+      <h3>Spread Colors and Joy!</h3>
       <p>
-        Celebrate the night of Lord Shiva with devotion and joy. Participate in special pujas, bhajans, and meditations. Let's welcome positivity and blessings into our lives! 🙏
+        Celebrate the festival of colors with love and happiness. Enjoy the vibrant hues, delicious sweets, and joyful moments with your loved ones! 🎉
       </p>
-     
       <button class="close-btn" onclick="closeNotification()">Close</button>
     </div>
   

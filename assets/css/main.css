@@ -63,7 +63,8 @@
 body {
   color: var(--default-color);
   background-color: var(--background-color);
-  font-family: var(--default-font);
+
+  font-family: 'JetBrains Mono', monospace;
 }
 
 a {
@@ -84,7 +85,7 @@ h4,
 h5,
 h6 {
   color: var(--heading-color);
-  font-family: var(--heading-font);
+  font-family: 'JetBrains Mono', monospace;
 }
 
 /* PHP Email Form Messages
@@ -238,7 +239,7 @@ h6 {
     color: var(--nav-color);
     font-size: 15px;
     padding: 0 2px;
-    font-family: var(--nav-font);
+    font-family: 'JetBrains Mono', monospace;
     font-weight: 400;
     display: flex;
     align-items: center;
@@ -374,7 +375,7 @@ h6 {
   .navmenu a:focus {
     color: var(--nav-dropdown-color);
     padding: 10px 20px;
-    font-family: var(--nav-font);
+    font-family: 'JetBrains Mono', monospace;
     font-size: 17px;
     font-weight: 500;
     display: flex;
@@ -831,7 +832,7 @@ section,
 .hero .btn-get-started {
   color: var(--contrast-color);
   background: var(--accent-color);
-  font-family: var(--heading-font);
+  font-family: 'JetBrains Mono', monospace;
   text-transform: uppercase;
   font-weight: 600;
   font-size: 12px;
@@ -904,7 +905,7 @@ section,
   text-transform: uppercase;
   display: block;
   font-weight: 600;
-  font-family: var(--heading-font);
+  font-family: 'JetBrains Mono', monospace;
 }
 
 .skills .progress .skill .val {
@@ -959,7 +960,7 @@ section,
   color: color-mix(in srgb, var(--default-color), transparent 40%);
   padding: 0;
   margin: 0;
-  font-family: var(--heading-font);
+  font-family: 'JetBrains Mono', monospace;
   font-weight: 500;
 }
 
@@ -1268,7 +1269,7 @@ section,
   margin-bottom: 5px;
   border-radius: 50px;
   transition: all 0.3s ease-in-out;
-  font-family: var(--heading-font);
+  font-family: 'JetBrains Mono', monospace;
 }
 
 .portfolio .portfolio-filters li:hover,
