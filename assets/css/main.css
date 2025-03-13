@@ -491,7 +491,8 @@ h6 {
 /*--------------------------------------------------------------
 # Global Footer
 --------------------------------------------------------------*/
-.footer {
+ /* Footer Styling */
+ .footer {
   background: #1a1e34;
   padding: 20px 0;
   border-top: 1px solid rgba(0, 234, 255, 0.2);
@@ -515,8 +516,14 @@ h6 {
 }
 
 .footer .copyright p {
-  margin-bottom: 0;
+  color: #d0d0d0;
 }
+
+.footer .sitename {
+  color: #00eaff;
+}
+
+
 
 .footer .social-links {
   margin-top: 20px;
@@ -531,7 +538,7 @@ h6 {
   border-radius: 50%;
   border: 1px solid color-mix(in srgb, var(--default-color), transparent 50%);
   font-size: 16px;
-  color: color-mix(in srgb, var(--default-color), transparent 50%);
+  /* color: color-mix(in srgb, var(--default-color), transparent 50%); */
   margin: 0 5px;
   transition: 0.3s;
 }
@@ -900,36 +907,6 @@ section,
 }
 
 /*--------------------------------------------------------------
-# About Section
---------------------------------------------------------------*/
-.about .content h2 {
-  font-weight: 700;
-  font-size: 24px;
-}
-
-.about .content ul {
-  list-style: none;
-  padding: 0;
-}
-
-.about .content ul li {
-  margin-bottom: 20px;
-  display: flex;
-  align-items: center;
-}
-
-.about .content ul strong {
-  margin-right: 10px;
-}
-
-.about .content ul i {
-  font-size: 16px;
-  margin-right: 5px;
-  color: var(--accent-color);
-  line-height: 0;
-}
-
-/*--------------------------------------------------------------
 # Skills Section
 --------------------------------------------------------------*/
 .skills .progress {
@@ -940,7 +917,7 @@ section,
 }
 
 .skills .progress .skill {
-  color: var(--heading-color);
+  /* color: var(--heading-color); */
   padding: 0;
   margin: 0 0 6px 0;
   text-transform: uppercase;
@@ -955,7 +932,7 @@ section,
 }
 
 .skills .progress-bar-wrap {
-  background: color-mix(in srgb, var(--default-color), transparent 90%);
+  /* background: color-mix(in srgb, var(--default-color), transparent 90%); */
   height: 10px;
 }
 
@@ -963,7 +940,7 @@ section,
   width: 1px;
   height: 10px;
   transition: 0.9s;
-  background-color: var(--accent-color);
+  /* background-color: var(--accent-color); */
 }
 
 /*--------------------------------------------------------------

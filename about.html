@@ -1,16 +1,14 @@
 <!DOCTYPE html>
 <html>
 
-
 <head>
-  
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4658801537271443"
      crossorigin="anonymous"></script>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>Dharmik Gohil fun</title>
-  <meta name="description" content="">
-  <meta name="keywords" content="">
+  <title>Dharmik Gohil - About</title>
+  <meta name="description" content="Learn more about Dharmik Gohil, a passionate game developer and designer.">
+  <meta name="keywords" content="Dharmik Gohil, about, game developer">
 
   <!-- Favicons -->
   <link href="assets/img/dlogo.png" rel="icon">
@@ -19,7 +17,7 @@
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com" rel="preconnect">
   <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
   <!-- Vendor CSS Files -->
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -31,57 +29,181 @@
   <!-- Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
 
-  <!-- =======================================================
-  * Template Name: Kelly
-  * Template URL: https://bootstrapmade.com/kelly-free-bootstrap-cv-resume-html-template/
-  * Updated: Aug 07 2024 with Bootstrap v5.3.3
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
-  
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4658801537271443"
-  crossorigin="anonymous"></script>
-  <script async custom-element="amp-auto-ads"
-        src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js">
-</script>
+  <!-- Custom Styles -->
+  <style>
+    /* Global Styles */
+    body {
+      background: #0a0f1f;
+      color: #fff;
+      font-family: 'Poppins', sans-serif;
+      overflow-x: hidden;
+    }
 
+    /* Header Animation */
+    .header {
+      background: #1a1e34;
+      border-bottom: 1px solid rgba(0, 234, 255, 0.2);
+    }
+
+    .header h1 {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 2.5rem;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      color: #00eaff;
+      text-shadow: 0 0 10px #00eaff, 0 0 20px #00eaff;
+      animation: neonGlow 1.5s ease-in-out infinite alternate;
+    }
+
+    @keyframes neonGlow {
+      from { text-shadow: 0 0 5px #00eaff, 0 0 10px #00eaff; }
+      to { text-shadow: 0 0 15px #00eaff, 0 0 25px #00eaff; }
+    }
+
+    /* Section Backgrounds */
+    .about, .skills, .stats, .testimonials {
+      padding: 60px 0;
+      position: relative;
+      background: linear-gradient(135deg, #1a1e34, #2b3557);
+      overflow: hidden;
+    }
+
+    .section-title h2 {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 2.8rem;
+      color: #fff;
+      text-align: center;
+      margin-bottom: 20px;
+      position: relative;
+      z-index: 1;
+      animation: slideIn 1s ease-out;
+    }
+
+    .section-title p {
+      text-align: center;
+      color: #a0a0a0;
+      font-size: 1.1rem;
+      margin-bottom: 40px;
+    }
+
+    @keyframes slideIn {
+      from { transform: translateY(-50px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+
+    /* Minimal Content Styling (Keeping Original Structure) */
+    .about .content h2 {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 1.8rem;
+      color: #00eaff;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+
+    .about .content p {
+      font-size: 0.9rem;
+      color: #d0d0d0;
+    }
+
+    .about .content .fst-italic {
+      color: #a0a0a0;
+    }
+
+    .about .content ul li {
+      font-size: 0.9rem;
+      color: #d0d0d0;
+    }
+
+    .skills .skill {
+      color: #fff;
+    }
+
+    .skills .val {
+      color: #00eaff;
+    }
+
+    .stats .stats-item p {
+      color: #d0d0d0;
+    }
+
+    .stats .stats-item span {
+      color: #00eaff;
+    }
+
+    .testimonials .testimonial-item h3 {
+      color: #fff;
+    }
+
+    .testimonials .testimonial-item h4 {
+      color: #a0a0a0;
+    }
+
+    .testimonials .testimonial-item p {
+      color: #d0d0d0;
+    }
+
+    .testimonials .stars i {
+      color: #00eaff;
+    }
+
+    /* Particle Background Effect */
+    .particles {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .particle {
+      position: absolute;
+      width: 5px;
+      height: 5px;
+      background: rgba(0, 234, 255, 0.5);
+      border-radius: 50%;
+      animation: float 6s infinite ease-in-out;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); opacity: 0.5; }
+      50% { transform: translateY(-20px); opacity: 1; }
+    }
+
+   
+  </style>
 </head>
 
 <body class="index-page">
   <div class="custom-cursor"></div>
- 
-
-<header id="header" class="header d-flex align-items-center light-background sticky-top">
-  <div class="container-fluid position-relative d-flex align-items-center justify-content-between">
-
-    <a href="index.html" class="logo d-flex align-items-center me-auto me-xl-0">
-      <!-- Uncomment the line below if you also wish to use an image logo -->
-      <img src="assets/img/dlogo.png" alt="">
-      <h1 class="sitename">DHARMIK</h1>
-    </a>
-
-    <nav id="navmenu" class="navmenu">
-      <ul>
-        <li><a href="index.html" >Home</a></li>
-       
-        <li><a href="about.html" class="active">About</a></li>
-        <li><a href="resume.html">Resume</a></li>
-        <li><a href="services.html">Abilities</a></li>
-        <li class="dropdown"><a href="#"><span>Projects</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-          <ul>
-            <li><a href="portfolio.html">Games</a></li>
-            <li class="dropdown"><a href="logo.html"><span>Ui/ux</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-              <ul>
-                <li><a href="logo.html">Logos</a></li>
-
-              </ul>
-            </li>
-            <li class="dropdown"><a href="#"><span>Websites</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-              <ul>
-                <li><a href="https://dharmikgohil013.github.io/GDGS-Games-/">GDGS Games</a></li>
-                <li><a href="https://dharmikgohil013.github.io/DHARMIK-GOHIL-FILMS/">Film industry</a></li>
-                <li><a href="#">MedCare</a></li>
-              </ul>
+  <header id="header" class="header d-flex align-items-center sticky-top">
+    <div class="container-fluid position-relative d-flex align-items-center justify-content-between">
+      <a href="index.html" class="logo d-flex align-items-center me-auto me-xl-0">
+        <img src="assets/img/dlogo.png" alt="">
+        <h1 class="sitename">DHARMIK</h1>
+      </a>
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html" class="active">About</a></li>
+          <li><a href="resume.html">Resume</a></li>
+          <li><a href="services.html">Abilities</a></li>
+          <li class="dropdown"><a href="#"><span>Projects</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+            <ul>
+              <li><a href="portfolio.html">Games</a></li>
+              <li class="dropdown"><a href="logo.html"><span>Ui/ux</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+                <ul>
+                  <li><a href="logo.html">Logos</a></li>
+                </ul>
+              </li>
+              <li class="dropdown"><a href="#"><span>Websites</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+                <ul>
+                  <li><a href="https://dharmikgohil013.github.io/GDGS-Games-/">GDGS Games</a></li>
+                  <li><a href="https://dharmikgohil013.github.io/DHARMIK-GOHIL-FILMS/">Film industry</a></li>
+                  <li><a href="#">MedCare</a></li>
+                </ul>
+              </li>
               <li class="dropdown"><a href="#"><span>Java Swing</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
                 <ul>
                   <li class="dropdown"><a href="#"><span>CampusAdminPro</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
@@ -89,51 +211,49 @@
                       <li><a href="#">Overview</a></li>
                       <li><a href="https://drive.google.com/file/d/15YNf77gERCt2LYfRYSdXiYU3yAkx7EvC/view?usp=drive_link">Report</a></li>
                     </ul>
+                  </li>
                   <li><a href="#">Chess</a></li>
                 </ul>
+              </li>
               <li class="dropdown"><a href="#"><span>Node Js</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-                  <ul>
-                    <li><a href="https://indian-turijam.vercel.app/">IndianTurijam</a></li>
-                    <li><a href="https://contect-pages-hp3e.vercel.app/">Contact Page</a></li>
-                  </ul>
-                  
-          </ul>
-        </li>
-        <li><a href="Achivemtn.html" >Certificate & Achievement</a></li>
-        <li><a href="https://contect-pages-hp3e.vercel.app/">Contact</a></li>
-        
-      </ul>
-      <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
-    </nav>
-    
-
-
-    <div class="header-social-links">
-      <a href="https://github.com/DharmikGohil013" class="twitter"><i class="bi bi-github"></i></a>
-      <a href="https://www.linkedin.com/in/dharmikgohil086/" class="linkedin"><i class="bi bi-linkedin"></i></a>
-      <a href="https://www.instagram.com/dharmik.086/?next=%2F" class="instagram"><i class="bi bi-instagram"></i></a>
-      <a href="https://x.com/Dharmik086" class="facebook"><i class="bi bi-twitter"></i></a>
+                <ul>
+                  <li><a href="https://indian-turijam.vercel.app/">IndianTurijam</a></li>
+                  <li><a href="https://contect-pages-hp3e.vercel.app/">Contact Page</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li><a href="Achivemtn.html">Certificate & Achievement</a></li>
+          <li><a href="https://contect-pages-hp3e.vercel.app/">Contact</a></li>
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+      <div class="header-social-links">
+        <a href="https://github.com/DharmikGohil013" class="twitter"><i class="bi bi-github"></i></a>
+        <a href="https://www.linkedin.com/in/dharmikgohil086/" class="linkedin"><i class="bi bi-linkedin"></i></a>
+        <a href="https://www.instagram.com/dharmik.086/?next=%2F" class="instagram"><i class="bi bi-instagram"></i></a>
+        <a href="https://x.com/Dharmik086" class="facebook"><i class="bi bi-twitter"></i></a>
+      </div>
     </div>
-
-  </div>
-</header>
+  </header>
 
   <main class="main">
-
     <!-- About Section -->
     <section id="about" class="about section">
-  
-      <!-- Section Title -->
+      <div class="particles">
+        <div class="particle" style="left: 10%; top: 20%; animation-delay: 0s;"></div>
+        <div class="particle" style="left: 30%; top: 50%; animation-delay: 1s;"></div>
+        <div class="particle" style="left: 70%; top: 30%; animation-delay: 2s;"></div>
+        <div class="particle" style="left: 90%; top: 60%; animation-delay: 3s;"></div>
+      </div>
       <div class="container section-title" data-aos="fade-up">
         <h2>About</h2>
         <p>Needed for something valuable, escaping while keeping it simple and clear</p>
-      </div><!-- End Section Title -->
-  
+      </div>
       <div class="container" data-aos="fade-up" data-aos-delay="100">
-  
         <div class="row gy-4 justify-content-center">
           <div class="col-lg-4">
-            <img src="assets/img/A (1).jpg" class="img-fluid" alt="">
+            <img src="assets/img/DharmikGohil (1).png" class="img-fluid" alt="">
           </div>
           <div class="col-lg-8 content">
             <h2>Game Developer & Interactive Experience Designer</h2>
@@ -146,155 +266,139 @@
                   <li><i class="bi bi-chevron-right"></i> <strong>Birthday:</strong> <span>12 Jun 2006</span></li>
                   <li><i class="bi bi-chevron-right"></i> <strong>Website:</strong> <span>www.dharmikgohil.fun</span></li>
                   <li><i class="bi bi-chevron-right"></i> <strong>Phone:</strong> <span>+91 9624105887</span></li>
-                  <li><i class="bi bi-chevron-right"></i> <strong>City:</strong> <span>Surat, Gujrat, India</span></li>
+                  <li><i class="bi bi-chevron-right"></i> <strong>City:</strong> <span>Surat, Gujarat, India</span></li>
                 </ul>
               </div>
               <div class="col-lg-6">
                 <ul>
                   <li><i class="bi bi-chevron-right"></i> <strong>Age:</strong> <span>18</span></li>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Degree:</strong> <span>Bachelor of Technology in Information Technology </span></li>
+                  <li><i class="bi bi-chevron-right"></i> <strong>Degree:</strong> <span>Bachelor of Technology in Information Technology</span></li>
                   <li><i class="bi bi-chevron-right"></i> <strong>Email:</strong> <span>dharmikgohil395003@gmail.com</span></li>
                   <li><i class="bi bi-chevron-right"></i> <strong>Freelance:</strong> <span>Available</span></li>
                 </ul>
               </div>
             </div>
             <p class="py-3">
-              Dedicated to delivering high-quality solutions, focusing on innovative design and development while addressing challenges with precision. Committed to ensuring efficiency and satisfaction through expert craftsmanship and attention to detail
+              Dedicated to delivering high-quality solutions, focusing on innovative design and development while addressing challenges with precision. Committed to ensuring efficiency and satisfaction through expert craftsmanship and attention to detail.
             </p>
           </div>
         </div>
-  
       </div>
-  
-    </section><!-- /About Section -->
-  
+    </section>
+
     <!-- Skills Section -->
     <section id="skills" class="skills section">
-  
-      <!-- Section Title -->
+      <div class="particles">
+        <div class="particle" style="left: 15%; top: 25%; animation-delay: 0s;"></div>
+        <div class="particle" style="left: 35%; top: 55%; animation-delay: 1s;"></div>
+        <div class="particle" style="left: 65%; top: 35%; animation-delay: 2s;"></div>
+        <div class="particle" style="left: 85%; top: 65%; animation-delay: 3s;"></div>
+      </div>
       <div class="container section-title" data-aos="fade-up">
         <h2>Skills</h2>
         <p>The necessity for him to pursue something, escape it, and indeed maintain a meaningful connection</p>
-      </div><!-- End Section Title -->
-  
+      </div>
       <div class="container" data-aos="fade-up" data-aos-delay="100">
-  
         <div class="row skills-content skills-animation">
-  
           <div class="col-lg-6">
-  
             <div class="progress">
               <span class="skill"><span>Unity</span> <i class="val">90%</i></span>
               <div class="progress-bar-wrap">
                 <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
               </div>
-            </div><!-- End Skills Item -->
-  
+            </div>
             <div class="progress">
               <span class="skill"><span>C#</span> <i class="val">80%</i></span>
               <div class="progress-bar-wrap">
                 <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
               </div>
-            </div><!-- End Skills Item -->
-  
+            </div>
             <div class="progress">
               <span class="skill"><span>JavaScript</span> <i class="val">10%</i></span>
               <div class="progress-bar-wrap">
                 <div class="progress-bar" role="progressbar" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"></div>
               </div>
-            </div><!-- End Skills Item -->
-  
+            </div>
           </div>
-  
           <div class="col-lg-6">
-  
             <div class="progress">
               <span class="skill"><span>Java</span> <i class="val">80%</i></span>
               <div class="progress-bar-wrap">
                 <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
               </div>
-            </div><!-- End Skills Item -->
-  
+            </div>
             <div class="progress">
               <span class="skill"><span>Full Stack</span> <i class="val">70%</i></span>
               <div class="progress-bar-wrap">
                 <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
               </div>
-            </div><!-- End Skills Item -->
-  
+            </div>
             <div class="progress">
               <span class="skill"><span>Ui/Ux</span> <i class="val">75%</i></span>
               <div class="progress-bar-wrap">
                 <div class="progress-bar" role="progressbar" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100"></div>
               </div>
-            </div><!-- End Skills Item -->
-  
+            </div>
           </div>
-  
         </div>
-  
       </div>
-  
-    </section><!-- /Skills Section -->
-  
+    </section>
+
     <!-- Stats Section -->
     <section id="stats" class="stats section">
-  
-      <!-- Section Title -->
+      <div class="particles">
+        <div class="particle" style="left: 20%; top: 30%; animation-delay: 0s;"></div>
+        <div class="particle" style="left: 40%; top: 60%; animation-delay: 1s;"></div>
+        <div class="particle" style="left: 60%; top: 40%; animation-delay: 2s;"></div>
+        <div class="particle" style="left: 80%; top: 70%; animation-delay: 3s;"></div>
+      </div>
       <div class="container section-title" data-aos="fade-up">
         <h2>Facts</h2>
         <p>His needs are met through something valuable, escaping while maintaining clarity and focus</p>
-      </div><!-- End Section Title -->
-  
+      </div>
       <div class="container" data-aos="fade-up" data-aos-delay="100">
-  
         <div class="row gy-4">
-  
           <div class="col-lg-3 col-md-6">
             <div class="stats-item text-center w-100 h-100">
-              <span data-purecounter-start="0" data-purecounter-end="3.0" data-purecounter-duration="1" class="purecounter"></span>
-              <p>Learning Experience Year</p>
+              <span data-purecounter-start="0" data-purecounter-end="3" data-purecounter-duration="1" class="purecounter"></span>
+              <p>Learning Experience Years</p>
             </div>
-          </div><!-- End Stats Item -->
-  
+          </div>
           <div class="col-lg-3 col-md-6">
             <div class="stats-item text-center w-100 h-100">
               <span data-purecounter-start="0" data-purecounter-end="40" data-purecounter-duration="1" class="purecounter"></span>
               <p>Projects</p>
             </div>
-          </div><!-- End Stats Item -->
-  
+          </div>
           <div class="col-lg-3 col-md-6">
             <div class="stats-item text-center w-100 h-100">
               <span data-purecounter-start="0" data-purecounter-end="1453" data-purecounter-duration="1" class="purecounter"></span>
               <p>Hours Of Support</p>
             </div>
-          </div><!-- End Stats Item -->
-  
+          </div>
           <div class="col-lg-3 col-md-6">
             <div class="stats-item text-center w-100 h-100">
-              <span data-purecounter-start="0" data-purecounter-end="" data-purecounter-duration="1" class="purecounter"></span>
+              <span data-purecounter-start="0" data-purecounter-end="0" data-purecounter-duration="1" class="purecounter"></span>
               <p>Experience</p>
             </div>
-          </div><!-- End Stats Item -->
-  
+          </div>
         </div>
-  
       </div>
-  
-    </section><!-- /Stats Section -->
-  
+    </section>
+
     <!-- Testimonials Section -->
     <section id="testimonials" class="testimonials section">
-  
-      <!-- Section Title -->
+      <div class="particles">
+        <div class="particle" style="left: 25%; top: 35%; animation-delay: 0s;"></div>
+        <div class="particle" style="left: 45%; top: 65%; animation-delay: 1s;"></div>
+        <div class="particle" style="left: 55%; top: 45%; animation-delay: 2s;"></div>
+        <div class="particle" style="left: 75%; top: 75%; animation-delay: 3s;"></div>
+      </div>
       <div class="container section-title" data-aos="fade-up">
         <h2>Testimonials</h2>
         <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
-      </div><!-- End Section Title -->
-  
+      </div>
       <div class="container" data-aos="fade-up" data-aos-delay="100">
-  
         <div class="swiper init-swiper">
           <script type="application/json" class="swiper-config">
             {
@@ -312,7 +416,6 @@
             }
           </script>
           <div class="swiper-wrapper">
-  
             <div class="swiper-slide">
               <div class="testimonial-item">
                 <img src="assets/img/testimonials/images (1).jpeg" class="testimonial-img" alt="">
@@ -328,7 +431,6 @@
                 </p>
               </div>
             </div>
-  
             <div class="swiper-slide">
               <div class="testimonial-item">
                 <img src="assets/img/testimonials/Miyazaki-Hayao-2008.webp" class="testimonial-img" alt="">
@@ -343,13 +445,12 @@
                   <i class="bi bi-quote quote-icon-right"></i>
                 </p>
               </div>
-            </div><!-- End testimonial item -->
-  
+            </div>
             <div class="swiper-slide">
               <div class="testimonial-item">
                 <img src="assets/img/testimonials/channels4_profile.jpg" class="testimonial-img" alt="">
                 <h3>Nintendo</h3>
-                <h4>Game Compney</h4>
+                <h4>Game Company</h4>
                 <div class="stars">
                   <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
                 </div>
@@ -359,13 +460,12 @@
                   <i class="bi bi-quote quote-icon-right"></i>
                 </p>
               </div>
-            </div><!-- End testimonial item -->
-  
+            </div>
             <div class="swiper-slide">
               <div class="testimonial-item">
                 <img src="assets/img/images.jpeg" class="testimonial-img" alt="">
                 <h3>Steve Jobs</h3>
-                <h4>Best Ceo</h4>
+                <h4>Best CEO</h4>
                 <div class="stars">
                   <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
                 </div>
@@ -375,8 +475,7 @@
                   <i class="bi bi-quote quote-icon-right"></i>
                 </p>
               </div>
-            </div><!-- End testimonial item -->
-  
+            </div>
             <div class="swiper-slide">
               <div class="testimonial-item">
                 <img src="assets/img/aaaa.jpg" class="testimonial-img" alt="">
@@ -391,22 +490,17 @@
                   <i class="bi bi-quote quote-icon-right"></i>
                 </p>
               </div>
-            </div><!-- End testimonial item -->
-  
+            </div>
           </div>
           <div class="swiper-pagination"></div>
         </div>
-  
       </div>
-  
-    </section><!-- /Testimonials Section -->
-  
+    </section>
   </main>
 
-  <footer id="footer" class="footer light-background">
-
+  <footer id="footer" class="footer">
     <div class="container">
-      <div class="copyright text-center ">
+      <div class="copyright text-center">
         <p>© <span>Copyright</span> <strong class="px-1 sitename">Dharmik</strong> <span>All Rights Reserved<br></span></p>
       </div>
       <div class="social-links d-flex justify-content-center">
@@ -415,23 +509,21 @@
         <a href="https://www.instagram.com/dharmik.086/?next=%2F"><i class="bi bi-instagram"></i></a>
         <a href="https://x.com/Dharmik086"><i class="bi bi-twitter"></i></a>
       </div>
-      
     </div>
-
   </footer>
 
   <!-- Scroll Top -->
-  <a href="services.html" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
   <!-- Preloader -->
   <div id="preloader">
     <div class="loader-container">
-        <div class="loader loader-outer"></div>
-        <div class="loader loader-middle"></div>
-        <div class="loader loader-inner"></div>
-        <div class="loading-text">LOADING...</div>
+      <div class="loader loader-outer"></div>
+      <div class="loader loader-middle"></div>
+      <div class="loader loader-inner"></div>
+      <div class="loading-text">LOADING...</div>
     </div>
-</div>
+  </div>
 
   <!-- Vendor JS Files -->
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -446,7 +538,13 @@
 
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
-
+  <!-- AOS Initialization -->
+  <script>
+    AOS.init({
+      duration: 1000,
+      once: true
+    });
+  </script>
 </body>
 
 </html>
