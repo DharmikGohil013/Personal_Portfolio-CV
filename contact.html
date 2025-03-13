@@ -1,15 +1,14 @@
 <!DOCTYPE html>
 <html>
 
-
 <head>
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4658801537271443"
      crossorigin="anonymous"></script>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>Dharmik Gohil fun</title>
-  <meta name="description" content="">
-  <meta name="keywords" content="">
+  <title>Dharmik Gohil - Contact</title>
+  <meta name="description" content="Get in touch with Dharmik Gohil for game development projects and inquiries.">
+  <meta name="keywords" content="Dharmik Gohil, contact, game developer">
 
   <!-- Favicons -->
   <link href="assets/img/dlogo.png" rel="icon">
@@ -18,7 +17,7 @@
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com" rel="preconnect">
   <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Press+Start+2P&display=swap" rel="stylesheet">
 
   <!-- Vendor CSS Files -->
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -30,205 +29,365 @@
   <!-- Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
 
-  <!-- =======================================================
-  * Template Name: Kelly
-  * Template URL: https://bootstrapmade.com/kelly-free-bootstrap-cv-resume-html-template/
-  * Updated: Aug 07 2024 with Bootstrap v5.3.3
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
-  
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4658801537271443"
-  crossorigin="anonymous"></script>
+  <!-- Custom Styles -->
+  <style>
+    /* Global Styles */
+    body {
+      background: #0a0f1f;
+      color: #fff;
+      font-family: 'JetBrains Mono', monospace;
+      overflow-x: hidden;
+      position: relative;
+    }
 
+    /* Header */
+    .header {
+      background: #1a1e34;
+      border-bottom: 1px solid rgba(0, 234, 255, 0.2);
+    }
+
+    .header h1 {
+      font-family: 'Press Start 2P', cursive;
+      font-size: 2rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: #00eaff;
+      text-shadow: 0 0 10px #00eaff;
+      animation: neonGlow 1.5s ease-in-out infinite alternate;
+    }
+
+    @keyframes neonGlow {
+      from { text-shadow: 0 0 5px #00eaff, 0 0 10px #00eaff; }
+      to { text-shadow: 0 0 15px #00eaff, 0 0 25px #00eaff; }
+    }
+
+    /* Contact Section */
+    .contact {
+      position: relative;
+      min-height: 100vh;
+      padding: 60px 0;
+      background: linear-gradient(135deg, #1a1e34, #2b3557);
+      overflow: hidden;
+    }
+
+    .contact::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"><rect width="20" height="20" fill="none" stroke="rgba(0,234,255,0.1)" stroke-width="1"/></svg>') repeat;
+      animation: gridMove 20s linear infinite;
+      z-index: 0;
+    }
+
+    @keyframes gridMove {
+      0% { background-position: 0 0; }
+      100% { background-position: 100px 100px; }
+    }
+
+    .particles {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .particle {
+      position: absolute;
+      width: 8px;
+      height: 8px;
+      background: rgba(0, 234, 255, 0.7);
+      border-radius: 50%;
+      animation: float 6s infinite ease-in-out;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); opacity: 0.5; }
+      50% { transform: translateY(-30px); opacity: 1; }
+    }
+
+    .section-title h2 {
+      font-family: 'Press Start 2P', cursive;
+      font-size: 2.5rem;
+      color: #fff;
+      text-shadow: 0 0 15px #00eaff;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .section-title p {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 1.2rem;
+      color: #d0d0d0;
+      text-align: center;
+    }
+
+    .contact-info h3 {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 1.5rem;
+      color: #00eaff;
+      text-shadow: 0 0 10px #00eaff;
+    }
+
+    .contact-info p {
+      font-size: 1rem;
+      color: #d0d0d0;
+    }
+
+    .contact-info i {
+      color: #15ff00;
+      margin-right: 10px;
+    }
+
+    .map-container iframe {
+      border: 2px solid #00eaff;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0, 234, 255, 0.5);
+    }
+
+    /* Form Styles */
+    .contact-form {
+      background: rgba(26, 30, 52, 0.9);
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 0 20px rgba(0, 234, 255, 0.3);
+    }
+
+    .contact-form h3 {
+      font-family: 'Press Start 2P', cursive;
+      font-size: 1.5rem;
+      color: #15ff00;
+      text-shadow: 0 0 10px #15ff00;
+      margin-bottom: 20px;
+    }
+
+    .contact-form .form-control {
+      background: #0a0f1f;
+      border: 1px solid #00eaff;
+      color: #fff;
+      font-family: 'JetBrains Mono', monospace;
+      padding: 10px;
+      border-radius: 5px;
+      transition: all 0.3s ease;
+    }
+
+    .contact-form .form-control:focus {
+      border-color: #15ff00;
+      box-shadow: 0 0 10px rgba(21, 255, 0, 0.5);
+    }
+
+    .contact-form .btn-submit {
+      font-family: 'JetBrains Mono', monospace;
+      background: #00eaff;
+      color: #0a0f1f;
+      padding: 12px 30px;
+      border-radius: 50px;
+      text-transform: uppercase;
+      font-weight: bold;
+      transition: all 0.3s ease;
+      box-shadow: 0 0 15px rgba(0, 234, 255, 0.5);
+    }
+
+    .contact-form .btn-submit:hover {
+      background: #15ff00;
+      box-shadow: 0 0 25px rgba(21, 255, 0, 0.8);
+      transform: scale(1.1);
+    }
+
+    /* Footer */
+    .footer {
+      background: #1a1e34;
+      padding: 20px 0;
+      border-top: 1px solid rgba(0, 234, 255, 0.2);
+    }
+
+    .footer .copyright p {
+      color: #d0d0d0;
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    .footer .sitename {
+      color: #00eaff;
+      text-shadow: 0 0 10px #00eaff;
+    }
+
+    .footer .social-links a {
+      color: #00eaff;
+      transition: all 0.3s ease;
+    }
+
+    .footer .social-links a:hover {
+      color: #15ff00;
+      text-shadow: 0 0 15px #15ff00;
+    }
+  </style>
 </head>
 
 <body class="index-page">
-
-  <header id="header" class="header d-flex align-items-center light-background sticky-top">
+  <div class="custom-cursor"></div>
+  <header id="header" class="header d-flex align-items-center sticky-top">
     <div class="container-fluid position-relative d-flex align-items-center justify-content-between">
-
       <a href="index.html" class="logo d-flex align-items-center me-auto me-xl-0">
-        <!-- Uncomment the line below if you also wish to use an image logo -->
         <img src="assets/img/dlogo.png" alt="">
         <h1 class="sitename">DHARMIK</h1>
       </a>
-
       <nav id="navmenu" class="navmenu">
         <ul>
-          <li><a href="index.html" class="active">Home</a></li>
-         
+          <li><a href="https://dharmikgohil.fun">Home</a></li>
           <li><a href="about.html">About</a></li>
           <li><a href="resume.html">Resume</a></li>
           <li><a href="services.html">Abilities</a></li>
-          <li class="dropdown"><a href="#"><span>Projects</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+          <li class="dropdown"><a href="https://dharmikgohil.fun/portfolio.html"><span>Projects</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
             <ul>
               <li><a href="portfolio.html">Games</a></li>
               <li class="dropdown"><a href="logo.html"><span>Ui/ux</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
                 <ul>
                   <li><a href="logo.html">Logos</a></li>
-
                 </ul>
               </li>
               <li class="dropdown"><a href="#"><span>Websites</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
                 <ul>
                   <li><a href="https://dharmikgohil013.github.io/GDGS-Games-/">GDGS Games</a></li>
                   <li><a href="https://dharmikgohil013.github.io/DHARMIK-GOHIL-FILMS/">Film industry</a></li>
+                  <li><a href="https://dharmikgohil013.github.io/DHARMIK-GOHIL-FILMS/">Flipkart Clone</a></li>
                   <li><a href="#">MedCare</a></li>
                 </ul>
-                <li class="dropdown"><a href="#"><span>Java Swing</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-                  <ul>
-                    <li class="dropdown"><a href="#"><span>CampusAdminPro</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-                      <ul>
-                        <li><a href="#">Overview</a></li>
-                        <li><a href="https://drive.google.com/file/d/15YNf77gERCt2LYfRYSdXiYU3yAkx7EvC/view?usp=drive_link">Report</a></li>
-                      </ul>
-                    <li><a href="#">Chess</a></li>
-                  </ul>
-                <li class="dropdown"><a href="#"><span>Node Js</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+              </li>
+              <li class="dropdown"><a href="#"><span>Java</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+                <ul>
+                  <li class="dropdown"><a href="#"><span>CampusAdminPro</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
                     <ul>
-                      <li><a href="https://indian-turijam.vercel.app/">IndianTurijam</a></li>
-                      <li><a href="https://contect-pages-hp3e.vercel.app/">Contact Page</a></li>
+                      <li><a href="#">Overview</a></li>
+                      <li><a href="https://drive.google.com/file/d/15YNf77gERCt2LYfRYSdXiYU3yAkx7EvC/view?usp=drive_link">Report</a></li>
                     </ul>
-                    
+                  </li>
+                  <li><a href="#">Chess</a></li>
+                </ul>
+              </li>
+              <li class="dropdown"><a href="#"><span>Node Js</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+                <ul>
+                  <li><a href="https://indian-turijam.vercel.app/">IndianTurijam</a></li>
+                  <li><a href="https://contect-pages-hp3e.vercel.app/">Contact Page</a></li>
+                </ul>
+              </li>
+              <li class="dropdown"><a href="#"><span>C & C++</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+                <ul>
+                  <li><a href="https://github.com/DharmikGohil013/Hostel_Menegment_System_iDGAWS-">Hostel Management</a></li>
+                  <li><a href="https://github.com/DharmikGohil013/Bank_Mangemnt_System">Bank Management</a></li>
+                </ul>
+              </li>
             </ul>
           </li>
-          <li><a href="Achivemtn.html" >Certificate & Achievement</a></li>
-          <li><a href="https://contect-pages-hp3e.vercel.app/">Contact</a></li>
-          
+          <li><a href="Achivemtn.html">Milestones</a></li>
+          <li><a href="contact.html" class="active">Contact</a></li>
+          <li class="dropdown"><a href="#"><span>Time to Fun</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+            <ul>
+              <li><a href="https://dharmik086.itch.io/floppy-bird-860" target="_blank">Floppy Bird</a></li>
+              <li><a href="https://dharmik086.itch.io/minimario" target="_blank">MiniMario</a></li>
+            </ul>
+          </li>
+          <li class="dropdown"><a href="#"><span style="color: #15ff00;">Services</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+            <ul>
+              <li><a href="https://fkm.vercel.app/" target="_blank">Wifi Service</a></li>
+            </ul>
+          </li>
         </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>
-      
-
-
       <div class="header-social-links">
-        <a href="https://github.com/DharmikGohil013" class="twitter"><i class="bi bi-github"></i></a>
-        <a href="https://www.linkedin.com/in/dharmikgohil086/" class="linkedin"><i class="bi bi-linkedin"></i></a>
-        <a href="https://www.instagram.com/dharmik.086/?next=%2F" class="instagram"><i class="bi bi-instagram"></i></a>
-        <a href="https://x.com/Dharmik086" class="facebook"><i class="bi bi-twitter"></i></a>
+        <a href="https://github.com/DharmikGohil013" target="_blank"><i class="bi bi-github"></i></a>
+        <a href="https://www.linkedin.com/in/dharmikgohil086/" target="_blank"><i class="bi bi-linkedin"></i></a>
+        <a href="https://www.instagram.com/dharmik.086/?next=%2F" target="_blank"><i class="bi bi-instagram"></i></a>
+        <a href="https://x.com/Dharmik086" target="_blank"><i class="bi bi-twitter"></i></a>
+        <a href="https://play.google.com/store/apps/details?id=com.dharmikgohilfun.crossout" target="_blank"><i class="bi bi-google-play"></i></a>
+        <a href="assets/img/GOHIL DHARMIKBHAI GHANSHYAMBHAI_Resume.pdf" class="download-resume" download><i class="bi bi-download"></i></a>
       </div>
-
     </div>
   </header>
 
   <main class="main">
-
     <!-- Contact Section -->
     <section id="contact" class="contact section">
-
-      <!-- Section Title -->
+      <div class="particles">
+        <div class="particle" style="left: 10%; top: 20%; animation-delay: 0s;"></div>
+        <div class="particle" style="left: 30%; top: 50%; animation-delay: 1s;"></div>
+        <div class="particle" style="left: 70%; top: 30%; animation-delay: 2s;"></div>
+        <div class="particle" style="left: 90%; top: 60%; animation-delay: 3s;"></div>
+        <div class="particle" style="left: 50%; top: 80%; animation-delay: 4s;"></div>
+      </div>
       <div class="container section-title" data-aos="fade-up">
-        <h2>Contact</h2>
-        <p>Consectetur velit, fuga eum quidem sint, aliquid ex eius consequatur necessitatibus. </p>
-      </div><!-- End Section Title -->
-
+        <h2>Contact Me</h2>
+        <p>Ready to collaborate on your next game project? Let's connect!</p>
+      </div>
       <div class="container" data-aos="fade-up" data-aos-delay="100">
-
         <div class="row gy-4">
-
-          <div class="col-lg-5">
-
-            <div class="info-wrap">
-              <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="200">
-                <i class="bi bi-geo-alt flex-shrink-0"></i>
-                <div>
-                  <h3>Address</h3>
-                  <p>62, Radhaswami Society, Katargam, Surat, Gujarat, India</p>
-                </div>
-              </div><!-- End Info Item -->
-
-              <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="300">
-                <i class="bi bi-telephone flex-shrink-0"></i>
-                <div>
-                  <h3>Call Us</h3>
-                  <p>+91 9624105887</p>
-                </div>
-              </div><!-- End Info Item -->
-
-              <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="400">
-                <i class="bi bi-envelope flex-shrink-0"></i>
-                <div>
-                  <h3>Email Us</h3>
-                  <p>dharmikgohil395003@gmail.com</p>
-                </div>
-              </div><!-- End Info Item -->
-
-              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3156.1234567890!2d72.858256!3d21.215824!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be0501234567890%3A0xabcdef123456789!2sRadhaswami%20Society%2C%20Katargam%2C%20Surat!5e0!3m2!1sen!2sin!4v1612345678901" frameborder="0" style="border:0; width: 100%; height: 270px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          <!-- Contact Info -->
+          <div class="col-lg-6">
+            <div class="contact-info">
+              <h3>Get in Touch</h3>
+              <p><i class="bi bi-geo-alt"></i> 62 Radhaswami Soci, Katargam, Surat, Gujarat, India</p>
+              <p><i class="bi bi-telephone"></i> +91 9624105887</p>
+              <p><i class="bi bi-envelope"></i> dharmikgohil395003@gmail.com</p>
+            </div>
+            <div class="map-container mt-4">
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3719.159614682177!2d72.84219461488592!3d21.22623198588668!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be04f3b4e8e0c47%3A0x5e5c5e5e5e5e5e5e!2sKatargam%2C%20Surat%2C%20Gujarat%2C%20India!5e0!3m2!1sen!2sin!4v1698765432100!5m2!1sen!2sin" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
             </div>
           </div>
-
-          <div class="col-lg-7">
-            <form action="forms/contact.php" method="post" class="php-email-form" data-aos="fade-up" data-aos-delay="200">
-              <div class="row gy-4">
-
-                <div class="col-md-6">
-                  <label for="name-field" class="pb-2">Your Name</label>
-                  <input type="text" name="name" id="name-field" class="form-control" required="">
+          <!-- Contact Form -->
+          <div class="col-lg-6">
+            <div class="contact-form">
+              <h3>Send a Message</h3>
+              <form id="contactForm">
+                <div class="mb-3">
+                  <input type="text" class="form-control" id="name" name="name" placeholder="Your Name" required>
                 </div>
-
-                <div class="col-md-6">
-                  <label for="email-field" class="pb-2">Your Email</label>
-                  <input type="email" class="form-control" name="email" id="email-field" required="">
+                <div class="mb-3">
+                  <input type="email" class="form-control" id="email" name="email" placeholder="Your Email" required>
                 </div>
-
-                <div class="col-md-12">
-                  <label for="subject-field" class="pb-2">Subject</label>
-                  <input type="text" class="form-control" name="subject" id="subject-field" required="">
+                <div class="mb-3">
+                  <textarea class="form-control" id="message" name="message" rows="5" placeholder="Your Message" required></textarea>
                 </div>
-
-                <div class="col-md-12">
-                  <label for="message-field" class="pb-2">Message</label>
-                  <textarea class="form-control" name="message" rows="10" id="message-field" required=""></textarea>
+                <div class="text-center">
+                  <button type="submit" class="btn-submit">Submit</button>
                 </div>
-
-                <div class="col-md-12 text-center">
-                  <div class="loading">Loading</div>
-                  <div class="error-message"></div>
-                  <div class="sent-message">Your message has been sent. Thank you!</div>
-
-                  <button type="submit">Send Message</button>
-                </div>
-
-              </div>
-            </form>
-          </div><!-- End Contact Form -->
-
+              </form>
+            </div>
+          </div>
         </div>
-
       </div>
-
-    </section><!-- /Contact Section -->
-
+    </section>
   </main>
 
-  <footer id="footer" class="footer light-background">
-
+  <footer id="footer" class="footer">
     <div class="container">
-      <div class="copyright text-center ">
-        <p>© <span>Copyright</span> <strong class="px-1 sitename">Dharmik</strong> <span>All Rights Reserved<br></span></p>
+      <div class="copyright text-center">
+        <p>© <span>Copyright</span> <strong class="px-1 sitename">Dharmik</strong> <span>All Rights Reserved</span></p>
       </div>
       <div class="social-links d-flex justify-content-center">
         <a href="https://github.com/DharmikGohil013"><i class="bi bi-github"></i></a>
         <a href="https://www.linkedin.com/in/dharmikgohil086/"><i class="bi bi-linkedin"></i></a>
         <a href="https://www.instagram.com/dharmik.086/?next=%2F"><i class="bi bi-instagram"></i></a>
         <a href="https://x.com/Dharmik086"><i class="bi bi-twitter"></i></a>
+        <a href="https://play.google.com/store/apps/details?id=com.dharmikgohilfun.crossout"><i class="bi bi-google-play"></i></a>
       </div>
-      
     </div>
-
   </footer>
 
   <!-- Scroll Top -->
-  <a href="services.html" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
   <!-- Preloader -->
   <div id="preloader">
     <div class="loader-container">
-      <div class="loader"></div>
-      <div class="loader"></div>
-      <div class="loader"></div>
-      
+      <div class="loader loader-outer"></div>
+      <div class="loader loader-middle"></div>
+      <div class="loader loader-inner"></div>
+      <div class="loading-text">LOADING...</div>
     </div>
   </div>
 
@@ -245,7 +404,51 @@
 
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      AOS.init({
+        duration: 1000,
+        once: true
+      });
 
+      // Form Submission
+      const form = document.getElementById('contactForm');
+      form.addEventListener('submit', async function (e) {
+        e.preventDefault();
+
+        const name = document.getElementById('name').value;
+        const email = document.getElementById('email').value;
+        const message = document.getElementById('message').value;
+
+        const data = {
+          name: name,
+          email: email,
+          message: message,
+          timestamp: new Date().toISOString()
+        };
+
+        try {
+          const response = await fetch('https://sheetdb.io/api/v1/w3gl81d8t5uld', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ data: [data] })
+          });
+
+          if (response.ok) {
+            alert('Message sent successfully! I’ll get back to you soon.');
+            form.reset();
+          } else {
+            alert('Oops! Something went wrong. Please try again.');
+          }
+        } catch (error) {
+          console.error('Error:', error);
+          alert('Error sending message. Please try again later.');
+        }
+      });
+    });
+  </script>
 </body>
 
 </html>
