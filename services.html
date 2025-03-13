@@ -1,15 +1,14 @@
 <!DOCTYPE html>
 <html>
 
-
 <head>
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4658801537271443"
      crossorigin="anonymous"></script>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>Dharmik Gohil fun</title>
-  <meta name="description" content="">
-  <meta name="keywords" content="">
+  <title>Dharmik Gohil - Abilities</title>
+  <meta name="description" content="Explore Dharmik Gohil's technical skills and abilities in an interactive and innovative showcase.">
+  <meta name="keywords" content="Dharmik Gohil, abilities, skills, programming">
 
   <!-- Favicons -->
   <link href="assets/img/dlogo.png" rel="icon">
@@ -18,7 +17,7 @@
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com" rel="preconnect">
   <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
   <!-- Vendor CSS Files -->
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -30,34 +29,223 @@
   <!-- Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
 
-  <!-- =======================================================
-  * Template Name: Kelly
-  * Template URL: https://bootstrapmade.com/kelly-free-bootstrap-cv-resume-html-template/
-  * Updated: Aug 07 2024 with Bootstrap v5.3.3
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
-  
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4658801537271443"
-  crossorigin="anonymous"></script>
+  <!-- Custom Styles -->
+  <style>
+    /* Global Styles */
+    body {
+      background: #0a0f1f;
+      color: #fff;
+      font-family: 'Poppins', sans-serif;
+      overflow-x: hidden;
+    }
 
+    /* Header Animation */
+    .header h1 {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 2.5rem;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      color: #00eaff;
+      text-shadow: 0 0 10px #00eaff, 0 0 20px #00eaff;
+      animation: neonGlow 1.5s ease-in-out infinite alternate;
+    }
+
+    @keyframes neonGlow {
+      from { text-shadow: 0 0 5px #00eaff, 0 0 10px #00eaff; }
+      to { text-shadow: 0 0 15px #00eaff, 0 0 25px #00eaff; }
+    }
+
+    /* Services Section */
+    .services {
+      padding: 60px 0;
+      position: relative;
+      background: linear-gradient(135deg, #1a1e34, #2b3557);
+      overflow: hidden;
+    }
+
+    .section-title h2 {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 2.8rem;
+      color: #fff;
+      text-align: center;
+      margin-bottom: 50px;
+      position: relative;
+      z-index: 1;
+      animation: slideIn 1s ease-out;
+    }
+
+    .section-title p {
+      text-align: center;
+      color: #a0a0a0;
+      font-size: 1.1rem;
+      margin-bottom: 40px;
+    }
+
+    @keyframes slideIn {
+      from { transform: translateY(-50px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+
+    .service-item {
+      position: relative;
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 20px;
+      padding: 30px;
+      height: 100%;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+      transition: transform 0.5s ease, box-shadow 0.5s ease;
+      overflow: hidden;
+    }
+
+    .service-item:hover {
+      transform: scale(1.05) translateY(-15px);
+      box-shadow: 0 15px 50px rgba(0, 234, 255, 0.4);
+    }
+
+    .service-item .icon img {
+      width: 60px;
+      height: 60px;
+      object-fit: contain;
+      clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+      border: 3px solid #fff;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+      margin-bottom: 20px;
+      transition: transform 0.3s ease;
+    }
+
+    .service-item:hover .icon img {
+      transform: rotate(10deg) scale(1.1);
+    }
+
+    .service-item h3 {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: #00eaff;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 15px;
+      text-shadow: 0 0 10px rgba(0, 234, 255, 0.5);
+    }
+
+    .service-item p {
+      font-size: 0.9rem;
+      line-height: 1.6;
+      color: #d0d0d0;
+      margin-bottom: 20px;
+    }
+
+    .progress {
+      height: 12px;
+      background-color: rgba(255, 255, 255, 0.1);
+      border-radius: 6px;
+      overflow: hidden;
+      margin-top: 15px;
+      position: relative;
+    }
+
+    .progress-bar {
+      height: 100%;
+      transition: width 0.5s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .progress-bar::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+      animation: progressGlow 2s infinite;
+    }
+
+    @keyframes progressGlow {
+      0% { transform: translateX(-100%); }
+      100% { transform: translateX(100%); }
+    }
+
+    .service-item p.progress-text {
+      margin-top: 5px;
+      font-size: 0.85rem;
+      color: #a0a0a0;
+    }
+
+    .service-item p.project-status {
+      margin-top: 10px;
+      font-weight: bold;
+      color: #ff4d4d;
+    }
+
+    .service-item p.project-status.completed {
+      color: #00eaff;
+    }
+
+    .stretched-link::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+    }
+
+    /* Particle Background Effect */
+    .particles {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .particle {
+      position: absolute;
+      width: 5px;
+      height: 5px;
+      background: rgba(0, 234, 255, 0.5);
+      border-radius: 50%;
+      animation: float 6s infinite ease-in-out;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); opacity: 0.5; }
+      50% { transform: translateY(-20px); opacity: 1; }
+    }
+
+    /* Footer Styling */
+    .footer {
+      background: #1a1e34;
+      padding: 20px 0;
+    }
+
+    .footer .social-links a {
+      color: #00eaff;
+      transition: color 0.3s ease;
+    }
+
+    .footer .social-links a:hover {
+      color: #007bff;
+    }
+  </style>
 </head>
 
 <body class="index-page">
   <div class="custom-cursor"></div>
   <header id="header" class="header d-flex align-items-center light-background sticky-top">
     <div class="container-fluid position-relative d-flex align-items-center justify-content-between">
-
       <a href="index.html" class="logo d-flex align-items-center me-auto me-xl-0">
-        <!-- Uncomment the line below if you also wish to use an image logo -->
         <img src="assets/img/dlogo.png" alt="">
         <h1 class="sitename">DHARMIK</h1>
       </a>
-
       <nav id="navmenu" class="navmenu">
         <ul>
-          <li><a href="index.html" >Home</a></li>
-         
+          <li><a href="index.html">Home</a></li>
           <li><a href="about.html">About</a></li>
           <li><a href="resume.html">Resume</a></li>
           <li><a href="services.html" class="active">Abilities</a></li>
@@ -67,7 +255,6 @@
               <li class="dropdown"><a href="logo.html"><span>Ui/ux</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
                 <ul>
                   <li><a href="logo.html">Logos</a></li>
-
                 </ul>
               </li>
               <li class="dropdown"><a href="#"><span>Websites</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
@@ -76,311 +263,287 @@
                   <li><a href="https://dharmikgohil013.github.io/DHARMIK-GOHIL-FILMS/">Film industry</a></li>
                   <li><a href="#">MedCare</a></li>
                 </ul>
-                <li class="dropdown"><a href="#"><span>Java Swing</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-                  <ul>
-                    <li class="dropdown"><a href="#"><span>CampusAdminPro</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-                      <ul>
-                        <li><a href="#">Overview</a></li>
-                        <li><a href="https://drive.google.com/file/d/15YNf77gERCt2LYfRYSdXiYU3yAkx7EvC/view?usp=drive_link">Report</a></li>
-                      </ul>
-                    <li><a href="#">Chess</a></li>
-                  </ul>
-                <li class="dropdown"><a href="#"><span>Node Js</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+              </li>
+              <li class="dropdown"><a href="#"><span>Java Swing</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+                <ul>
+                  <li class="dropdown"><a href="#"><span>CampusAdminPro</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
                     <ul>
-                      <li><a href="https://indian-turijam.vercel.app/">IndianTurijam</a></li>
-                      <li><a href="https://contect-pages-hp3e.vercel.app/">Contact Page</a></li>
+                      <li><a href="#">Overview</a></li>
+                      <li><a href="https://drive.google.com/file/d/15YNf77gERCt2LYfRYSdXiYU3yAkx7EvC/view?usp=drive_link">Report</a></li>
                     </ul>
-                    
+                  </li>
+                  <li><a href="#">Chess</a></li>
+                </ul>
+              </li>
+              <li class="dropdown"><a href="#"><span>Node Js</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+                <ul>
+                  <li><a href="https://indian-turijam.vercel.app/">IndianTurijam</a></li>
+                  <li><a href="https://contect-pages-hp3e.vercel.app/">Contact Page</a></li>
+                </ul>
+              </li>
             </ul>
           </li>
-          <li><a href="Achivemtn.html" >Certificate & Achievement</a></li>
+          <li><a href="Achivemtn.html">Certificate & Achievement</a></li>
           <li><a href="https://contect-pages-hp3e.vercel.app/">Contact</a></li>
-          
         </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>
-      
-
-
       <div class="header-social-links">
         <a href="https://github.com/DharmikGohil013" class="twitter"><i class="bi bi-github"></i></a>
         <a href="https://www.linkedin.com/in/dharmikgohil086/" class="linkedin"><i class="bi bi-linkedin"></i></a>
         <a href="https://www.instagram.com/dharmik.086/?next=%2F" class="instagram"><i class="bi bi-instagram"></i></a>
         <a href="https://x.com/Dharmik086" class="facebook"><i class="bi bi-twitter"></i></a>
       </div>
-
     </div>
   </header>
 
   <main class="main">
-
     <!-- Services Section -->
     <section id="services" class="services section">
+      <div class="particles">
+        <div class="particle" style="left: 10%; top: 20%; animation-delay: 0s;"></div>
+        <div class="particle" style="left: 30%; top: 50%; animation-delay: 1s;"></div>
+        <div class="particle" style="left: 70%; top: 30%; animation-delay: 2s;"></div>
+        <div class="particle" style="left: 90%; top: 60%; animation-delay: 3s;"></div>
+      </div>
 
-      <!-- Section Title -->
+      <!-- Languages Section -->
       <div class="container section-title" data-aos="fade-up">
         <h2>Abilities</h2>
-        <p>His needs result from something escape him indeed are consectetur will</p>
-      </div><!-- End Section Title -->
-
+        <p>Mastering tools and technologies to build innovative solutions.</p>
+      </div>
       <div class="container">
-
         <div class="row gy-4">
-
-          
-
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
-            <div class="service-item item-blue position-relative">
+          <div class="col-lg-4 col-md-6" data-aos="zoom-in" data-aos-delay="100">
+            <div class="service-item">
               <div class="icon">
-                <img src="assets/img/c-logo-icon-18.png" alt="C# Logo" style="width: 50px; height: 50px;">
-              </div>
-              <a href="https://github.com/DharmikGohil013/CSharp-Projects" class="stretched-link">
-                <h3>C#</h3>
-              </a>
-              <p>Proficient in developing applications with C#, focusing on object-oriented programming, backend development, and game development with Unity.</p>
-              <div class="progress" style="height: 10px; background-color: #e0e0e0; border-radius: 5px; margin-top: 10px;">
-                <div class="progress-bar" role="progressbar" style="width: 50%; background-color: #e100ff;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-              <p style="margin-top: 5px;">Learning Progress: 50%</p>
-              <!-- New Section for Completed Projects -->
-              <p style="margin-top: 10px; font-weight: bold;">Projects Completed: 5</p>
-            </div>
-          </div>
-          
-          
-
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
-            <div class="service-item item-cyan position-relative">
-              <div class="icon">
-                <img src="assets/img/C_Programming_Language.svg.png" alt="C Language Logo" style="width: 50px; height: 50px;">
+                <img src="assets/img/C_Programming_Language.svg.png" alt="C Language Logo">
               </div>
               <a href="https://github.com/DharmikGohil013/C-All-Functiona-Methods" class="stretched-link">
                 <h3>C Language</h3>
               </a>
-              <p>Proficient in developing efficient algorithms, understanding data structures, and writing optimized code for various applications.</p>
-              <div class="progress" style="height: 10px; background-color: #e0e0e0; border-radius: 5px; margin-top: 10px;">
-                <div class="progress-bar" role="progressbar" style="width: 80%; background-color: #006d18;" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+              <p>Proficient in algorithms, data structures, and optimized code.</p>
+              <div class="progress">
+                <div class="progress-bar" style="width: 80%; background-color: #006d18;" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
               </div>
-              <p style="margin-top: 5px;">Learning Progress: 80%</p>
-              <!-- New Section for Completed Projects -->
-              <p style="margin-top: 10px; font-weight: bold; color: red;">!!No Any Project</p>
+              <p class="progress-text">Learning Progress: 80%</p>
+              <p class="project-status">!!No Any Project</p>
             </div>
           </div>
-          
-          
-          <!-- End Service Item -->
-
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
-            <div class="service-item item-blue position-relative">
+          <div class="col-lg-4 col-md-6" data-aos="zoom-in" data-aos-delay="200">
+            <div class="service-item">
               <div class="icon">
-                <img src="assets/img/C++_logo.png" alt="C++ Language Logo" style="width: 50px; height: 50px;">
+                <img src="assets/img/C++_logo.png" alt="C++ Language Logo">
               </div>
               <a href="https://github.com/DharmikGohil013/CPP-Projects" class="stretched-link">
                 <h3>C++ Language</h3>
               </a>
-              <p>Skilled in object-oriented programming, building robust applications, and implementing advanced data structures and algorithms.</p>
-              <div class="progress" style="height: 10px; background-color: #e0e0e0; border-radius: 5px; margin-top: 10px;">
-                <div class="progress-bar" role="progressbar" style="width: 70%; background-color: #008b1e;" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
+              <p>Skilled in OOP and advanced data structures.</p>
+              <div class="progress">
+                <div class="progress-bar" style="width: 70%; background-color: #008b1e;" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
               </div>
-              <p style="margin-top: 5px;">Learning Progress: 70%</p>
-              <!-- New Section for Completed Projects -->
-              <p style="margin-top: 10px; font-weight: bold;">Projects Completed: 3</p>
+              <p class="progress-text">Learning Progress: 70%</p>
+              <p class="project-status completed">Projects Completed: 3</p>
             </div>
           </div>
-          <!-- End Service Item -->
-
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
-            <div class="service-item item-green position-relative">
+          <div class="col-lg-4 col-md-6" data-aos="zoom-in" data-aos-delay="300">
+            <div class="service-item">
               <div class="icon">
-                <img src="assets/img/226777.png" alt="Java Language Logo" style="width: 50px; height: 50px;">
+                <img src="assets/img/226777.png" alt="Java Language Logo">
               </div>
               <a href="https://github.com/DharmikGohil013/Java-Swing-Projects" class="stretched-link">
-                <h3>Java and Java Swing</h3>
+                <h3>Java & Swing</h3>
               </a>
-              <p>Proficient in developing cross-platform applications, implementing GUI designs with Java Swing, and optimizing backend logic.</p>
-              <div class="progress" style="height: 10px; background-color: #e0e0e0; border-radius: 5px; margin-top: 10px;">
-                <div class="progress-bar" role="progressbar" style="width: 70%; background-color: #008b1e;" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
+              <p>Expert in cross-platform apps and GUI design.</p>
+              <div class="progress">
+                <div class="progress-bar" style="width: 70%; background-color: #008b1e;" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
               </div>
-              <p style="margin-top: 5px;">Learning Progress: 70%</p>
-              <!-- New Section for Completed Projects -->
-              <p style="margin-top: 10px; font-weight: bold;">Projects Completed: 5</p>
+              <p class="progress-text">Learning Progress: 70%</p>
+              <p class="project-status completed">Projects Completed: 5</p>
             </div>
           </div>
-          <!-- End Service Item -->
-
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
-            <div class="service-item item-blue position-relative">
+          <div class="col-lg-4 col-md-6" data-aos="zoom-in" data-aos-delay="400">
+            <div class="service-item">
               <div class="icon">
-                <img src="assets/img/hc.jpg" alt="HTML and CSS Logo" style="width: 100px; height: 50px;">
+                <img src="assets/img/hc.jpg" alt="HTML and CSS Logo">
               </div>
               <a href="https://github.com/DharmikGohil013/HTML-CSS-Projects" class="stretched-link">
-                <h3>HTML and CSS</h3>
+                <h3>HTML & CSS</h3>
               </a>
-              <p>Skilled in building responsive and accessible web pages, implementing modern CSS techniques, and ensuring a seamless user experience.</p>
-              <div class="progress" style="height: 10px; background-color: #e0e0e0; border-radius: 5px; margin-top: 10px;">
-                <div class="progress-bar" role="progressbar" style="width: 80%; background-color: #007bff79;" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+              <p>Skilled in responsive and modern web design.</p>
+              <div class="progress">
+                <div class="progress-bar" style="width: 80%; background-color: #007bff;" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
               </div>
-              <p style="margin-top: 5px;">Learning Progress: 80%</p>
-              <!-- New Section for Completed Projects -->
-              <p style="margin-top: 10px; font-weight: bold;">Projects Completed: 3</p>
+              <p class="progress-text">Learning Progress: 80%</p>
+              <p class="project-status completed">Projects Completed: 3</p>
             </div>
           </div>
-          <!-- End Service Item -->
-
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
-            <div class="service-item item-yellow position-relative">
+          <div class="col-lg-4 col-md-6" data-aos="zoom-in" data-aos-delay="500">
+            <div class="service-item">
               <div class="icon">
-                <img src="assets/img/js.png" alt="JavaScript Logo" style="width: 50px; height: 50px;">
+                <img src="assets/img/js.png" alt="JavaScript Logo">
               </div>
               <a href="https://github.com/DharmikGohil013/JavaScript-Projects" class="stretched-link">
                 <h3>JavaScript</h3>
               </a>
-              <p>Proficient in writing interactive web pages, working with DOM manipulation, and developing client-side logic for dynamic web experiences.</p>
-              <div class="progress" style="height: 10px; background-color: #e0e0e0; border-radius: 5px; margin-top: 10px;">
-                <div class="progress-bar" role="progressbar" style="width: 25%; background-color: #f0db4f79;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+              <p>Proficient in interactive web development.</p>
+              <div class="progress">
+                <div class="progress-bar" style="width: 25%; background-color: #f0db4f;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
               </div>
-              <p style="margin-top: 5px;">Learning Progress: 25%</p>
-              <!-- New Section for Completed Projects -->
-              <p style="margin-top: 10px; font-weight: bold; color: red;">!!No Any Project</p>
+              <p class="progress-text">Learning Progress: 25%</p>
+              <p class="project-status">!!No Any Project</p>
             </div>
           </div>
-          <!-- End Service Item -->
-
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
-            <div class="service-item item-darkblue position-relative">
+          <div class="col-lg-4 col-md-6" data-aos="zoom-in" data-aos-delay="600">
+            <div class="service-item">
               <div class="icon">
-                <img src="assets/img/node.png" alt="Node.js Logo" style="width: 70px; height: 50px;">
-              </div>
-              <a href="https://github.com/DharmikGohil013/NodeJS-Projects" class="stretched-link">
-                <h3>Node.js</h3>
-              </a>
-              <p>Proficient in building scalable backend applications using Node.js, working with Express.js, and managing databases with MongoDB.</p>
-              <div class="progress" style="height: 10px; background-color: #e0e0e0; border-radius: 5px; margin-top: 10px;">
-                <div class="progress-bar" role="progressbar" style="width: 10%; background-color: #68a06379;" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-              <p style="margin-top: 5px;">Learning Progress: 10%</p>
-              <!-- New Section for Completed Projects -->
-              <p style="margin-top: 10px; font-weight: bold; color: red;">!!No Any Project</p>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
-            <div class="service-item item-yellow position-relative">
-              <div class="icon">
-                <img src="assets/img/Python-logo-notext.svg.png" alt="Python Logo" style="width: 50px; height: 50px;">
+                <img src="assets/img/Python-logo-notext.svg.png" alt="Python Logo">
               </div>
               <a href="https://github.com/DharmikGohil013/Python-Projects" class="stretched-link">
                 <h3>Python</h3>
               </a>
-              <p>Proficient in developing scripts and applications using Python, with a focus on data analysis, machine learning, and automation.</p>
-              <div class="progress" style="height: 10px; background-color: #e0e0e0; border-radius: 5px; margin-top: 10px;">
-                <div class="progress-bar" role="progressbar" style="width: 2%; background-color: #306998;" aria-valuenow="2" aria-valuemin="0" aria-valuemax="100"></div>
+              <p>Learning scripting and data analysis.</p>
+              <div class="progress">
+                <div class="progress-bar" style="width: 2%; background-color: #306998;" aria-valuenow="2" aria-valuemin="0" aria-valuemax="100"></div>
               </div>
-              <p style="margin-top: 5px;">Learning Progress: 2%</p>
-              <!-- New Section for Completed Projects -->
-              <p style="margin-top: 10px; font-weight: bold; color: red;">!!No Any Project</p>
+              <p class="progress-text">Learning Progress: 2%</p>
+              <p class="project-status">!!No Any Project</p>
             </div>
           </div>
-
-          
-
-          
-          
-          
-          <!-- End Service Item -->
-
         </div>
-
       </div>
 
-      <br>
-        <br>
+      <!-- Platform Section -->
       <div class="container section-title" data-aos="fade-up">
-        
-        <h2>Platfrom</h2>
-        
+        <h2>Platform</h2>
+        <p>Building immersive gaming experiences.</p>
       </div>
-
       <div class="container">
-
         <div class="row gy-4">
-
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
-            <div class="service-item item-purple position-relative">
+          <div class="col-lg-4 col-md-6" data-aos="zoom-in" data-aos-delay="100">
+            <div class="service-item">
               <div class="icon">
-                <img src="assets/img/Unity.webp" alt="Unity 2D Logo" style="width: 50px; height: 50px;">
+                <img src="assets/img/Unity.webp" alt="Unity 2D Logo">
               </div>
               <a href="https://github.com/DharmikGohil013/Unity-2D-Projects" class="stretched-link">
                 <h3>Unity 2D</h3>
               </a>
-              <p>Proficient in creating engaging 2D games using Unity Engine, with a focus on sprite-based graphics and physics interactions.</p>
-              <div class="progress" style="height: 10px; background-color: #e0e0e0; border-radius: 5px; margin-top: 10px;">
-                <div class="progress-bar" role="progressbar" style="width: 40%; background-color: #9c27b0;" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div>
+              <p>Skilled in 2D game development.</p>
+              <div class="progress">
+                <div class="progress-bar" style="width: 40%; background-color: #9c27b0;" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div>
               </div>
-              <p style="margin-top: 5px;">Learning Progress: 40%</p>
-              <!-- New Section for Completed Projects -->
-              <p style="margin-top: 10px; font-weight: bold;">Projects Completed: 3</p>
+              <p class="progress-text">Learning Progress: 40%</p>
+              <p class="project-status completed">Projects Completed: 3</p>
             </div>
           </div>
-
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
-            <div class="service-item item-darkorange position-relative">
+          <div class="col-lg-4 col-md-6" data-aos="zoom-in" data-aos-delay="200">
+            <div class="service-item">
               <div class="icon">
-                <img src="assets/img/Unity.webp" alt="Unity 3D Logo" style="width: 50px; height: 50px;">
+                <img src="assets/img/Unity.webp" alt="Unity 3D Logo">
               </div>
               <a href="https://github.com/DharmikGohil013/Unity-3D-Projects" class="stretched-link">
                 <h3>Unity 3D</h3>
               </a>
-              <p>Proficient in developing immersive 3D games using Unity Engine, with experience in 3D modeling, animations, and real-time physics simulations.</p>
-              <div class="progress" style="height: 10px; background-color: #e0e0e0; border-radius: 5px; margin-top: 10px;">
-                <div class="progress-bar" role="progressbar" style="width: 30%; background-color: #ff5722;" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100"></div>
+              <p>Experienced in 3D game creation.</p>
+              <div class="progress">
+                <div class="progress-bar" style="width: 30%; background-color: #ff5722;" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100"></div>
               </div>
-              <p style="margin-top: 5px;">Learning Progress: 30%</p>
-              <!-- New Section for Completed Projects -->
-              <p style="margin-top: 10px; font-weight: bold;">Projects Completed: 1</p>
+              <p class="progress-text">Learning Progress: 30%</p>
+              <p class="project-status completed">Projects Completed: 1</p>
             </div>
           </div>
-          
-          </div>
-          </div>
-          <br>
-          <br>
-      <div class="container section-title" data-aos="fade-up">
-        <h2>Database</h2>
-        
+        </div>
       </div>
 
+      <!-- Database Section -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Database</h2>
+        <p>Managing data with precision.</p>
+      </div>
       <div class="container">
-
         <div class="row gy-4">
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
-            <div class="service-item item-blue position-relative">
+          <div class="col-lg-4 col-md-6" data-aos="zoom-in" data-aos-delay="100">
+            <div class="service-item">
               <div class="icon">
-                <img src="assets/img/Mysql_logo.png" alt="MySQL Logo" style="width: 90px; height: 50px;">
+                <img src="assets/img/Mysql_logo.png" alt="MySQL Logo">
               </div>
               <a href="https://github.com/DharmikGohil013" class="stretched-link">
                 <h3>MySQL</h3>
               </a>
-              <p>Proficient in designing and managing relational databases, writing optimized queries, and ensuring data integrity using MySQL.</p>
-              <div class="progress" style="height: 10px; background-color: #e0e0e0; border-radius: 5px; margin-top: 10px;">
-                <div class="progress-bar" role="progressbar" style="width: 50%; background-color: #00618a;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+              <p>Proficient in relational databases.</p>
+              <div class="progress">
+                <div class="progress-bar" style="width: 50%; background-color: #00618a;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
               </div>
-              <p style="margin-top: 5px;">Learning Progress: 50%</p>
-              <!-- New Section for Completed Projects -->
-              <p style="margin-top: 10px; font-weight: bold;">Projects Completed: 2</p>
+              <p class="progress-text">Learning Progress: 50%</p>
+              <p class="project-status completed">Projects Completed: 2</p>
             </div>
           </div>
+          <div class="col-lg-4 col-md-6" data-aos="zoom-in" data-aos-delay="200">
+            <div class="service-item">
+              <div class="icon">
+                <img src="assets/img/mongodb.svg" alt="MongoDB Logo">
+              </div>
+              <a href="https://github.com/DharmikGohil013" class="stretched-link">
+                <h3>MongoDB</h3>
+              </a>
+              <p>Skilled in NoSQL databases.</p>
+              <div class="progress">
+                <div class="progress-bar" style="width: 50%; background-color: #47A248;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+              <p class="progress-text">Learning Progress: 50%</p>
+              <p class="project-status completed">Projects Completed: 2</p>
+            </div>
           </div>
+        </div>
+      </div>
+
+      <!-- Backend Section -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Backend</h2>
+        <p>Powering applications with robust logic.</p>
+      </div>
+      <div class="container">
+        <div class="row gy-4">
+          <div class="col-lg-4 col-md-6" data-aos="zoom-in" data-aos-delay="100">
+            <div class="service-item">
+              <div class="icon">
+                <img src="assets/img/node.png" alt="Node.js Logo">
+              </div>
+              <a href="https://github.com/DharmikGohil013/NodeJS-Projects" class="stretched-link">
+                <h3>Node.js</h3>
+              </a>
+              <p>Building scalable backend services.</p>
+              <div class="progress">
+                <div class="progress-bar" style="width: 35%; background-color: #68a063;" aria-valuenow="35" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+              <p class="progress-text">Learning Progress: 35%</p>
+              <p class="project-status completed">Projects Completed: 4</p>
+            </div>
           </div>
-
-    </section><!-- /Services Section -->
-
+          <div class="col-lg-4 col-md-6" data-aos="zoom-in" data-aos-delay="200">
+            <div class="service-item">
+              <div class="icon">
+                <img src="assets/img/c-logo-icon-18.png" alt="C# Logo">
+              </div>
+              <a href="https://github.com/DharmikGohil013/CSharp-Projects" class="stretched-link">
+                <h3>C# (Backend)</h3>
+              </a>
+              <p>Experienced in ASP.NET and APIs.</p>
+              <div class="progress">
+                <div class="progress-bar" style="width: 50%; background-color: #e100ff;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+              <p class="progress-text">Learning Progress: 50%</p>
+              <p class="project-status completed">Projects Completed: 5</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
 
   <footer id="footer" class="footer light-background">
-
     <div class="container">
-      <div class="copyright text-center ">
+      <div class="copyright text-center">
         <p>© <span>Copyright</span> <strong class="px-1 sitename">Dharmik</strong> <span>All Rights Reserved<br></span></p>
       </div>
       <div class="social-links d-flex justify-content-center">
@@ -389,23 +552,21 @@
         <a href="https://www.instagram.com/dharmik.086/?next=%2F"><i class="bi bi-instagram"></i></a>
         <a href="https://x.com/Dharmik086"><i class="bi bi-twitter"></i></a>
       </div>
-      
     </div>
-
   </footer>
 
   <!-- Scroll Top -->
-  <a href="services.html" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
   <!-- Preloader -->
   <div id="preloader">
     <div class="loader-container">
-        <div class="loader loader-outer"></div>
-        <div class="loader loader-middle"></div>
-        <div class="loader loader-inner"></div>
-        <div class="loading-text">LOADING...</div>
+      <div class="loader loader-outer"></div>
+      <div class="loader loader-middle"></div>
+      <div class="loader loader-inner"></div>
+      <div class="loading-text">LOADING...</div>
     </div>
-</div>
+  </div>
 
   <!-- Vendor JS Files -->
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -420,7 +581,13 @@
 
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
-
+  <!-- AOS Initialization -->
+  <script>
+    AOS.init({
+      duration: 1000,
+      once: true
+    });
+  </script>
 </body>
 
 </html>

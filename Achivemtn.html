@@ -1,13 +1,12 @@
 <!DOCTYPE html>
 <html>
 
-
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>Dharmik Gohil fun</title>
-  <meta name="description" content="">
-  <meta name="keywords" content="">
+  <title>Dharmik Gohil - Certificates & Achievements</title>
+  <meta name="description" content="Explore Dharmik Gohil's professional achievements and certificates in an interactive and creative showcase.">
+  <meta name="keywords" content="Dharmik Gohil, certificates, achievements, portfolio">
 
   <!-- Favicons -->
   <link href="assets/img/dlogo.png" rel="icon">
@@ -16,7 +15,7 @@
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com" rel="preconnect">
   <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
   <!-- Vendor CSS Files -->
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -28,177 +27,223 @@
   <!-- Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
 
-  <!-- =======================================================
-  * Template Name: Kelly
-  * Template URL: https://bootstrapmade.com/kelly-free-bootstrap-cv-resume-html-template/
-  * Updated: Aug 07 2024 with Bootstrap v5.3.3
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
+  <!-- Custom Styles -->
   <style>
-  /* Creative Certificate Blocks */
-/* Creative Certificate Blocks */
-.certificates {
-  padding: 10px 0;
-  background: linear-gradient(135deg, #e9e8e6, #e9e8e6);
-  background-size: 200% 200%;
-  animation: gradientAnimation 10s ease infinite;
-}
+    /* Global Styles */
+    body {
+      background: #0a0f1f;
+      color: #fff;
+      font-family: 'Poppins', sans-serif;
+      overflow-x: hidden;
+    }
 
-@keyframes gradientAnimation {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-}
+    /* Header Animation */
+    .header h1 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 2.5rem;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      color: #00eaff;
+      text-shadow: 0 0 10px #00eaff, 0 0 20px #00eaff;
+      animation: neonGlow 1.5s ease-in-out infinite alternate;
+    }
 
-.certificates h2 {
-  font-size: 2.5rem;
-  font-weight: 700;
-  color: #34b7a7;
-  margin-bottom: 40px;
-  text-align: center;
-  position: relative;
-}
+    @keyframes neonGlow {
+      from { text-shadow: 0 0 5px #00eaff, 0 0 10px #00eaff; }
+      to { text-shadow: 0 0 15px #00eaff, 0 0 25px #00eaff; }
+    }
 
-.certificates h2::after {
-  content: '';
-  width: 60px;
-  height: 4px;
-  background: #34b7a7;
-  position: absolute;
-  bottom: -10px;
-  left: 50%;
-  transform: translateX(-50%);
-}
+    /* Certificates Section */
+    .certificates {
+      padding: 60px 0;
+      position: relative;
+      background: linear-gradient(135deg, #1a1e34, #2b3557);
+      overflow: hidden;
+    }
 
-.certificates-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 30px;
-  padding: 20px;
-}
+    .certificates h2 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 2.8rem;
+      color: #fff;
+      text-align: center;
+      margin-bottom: 50px;
+      position: relative;
+      z-index: 1;
+      animation: slideIn 1s ease-out;
+    }
 
-.certificate {
-  perspective: 1000px;
-  height: 400px;
-  position: relative;
-  overflow: hidden;
-  border-radius: 15px;
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(5px);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-  transition: transform 0.5s ease, box-shadow 0.5s ease;
-}
+    @keyframes slideIn {
+      from { transform: translateY(-50px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
 
-.certificate:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
-}
+    .certificates-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 40px;
+      padding: 0 20px;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
 
-.certificate-inner {
-  width: 100%;
-  height: 100%;
-  position: relative;
-  transform-style: preserve-3d;
-  transition: transform 0.8s ease;
-}
+    /* Certificate Block Styles */
+    .certificate {
+      position: relative;
+      height: 450px;
+      perspective: 1500px;
+      border-radius: 20px;
+      overflow: hidden;
+      background: rgba(255, 255, 255, 0.05);
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+      transition: transform 0.5s ease, box-shadow 0.5s ease;
+    }
 
-.certificate:hover .certificate-inner {
-  transform: rotateY(180deg);
-}
+    .certificate:hover {
+      transform: scale(1.05) translateY(-15px);
+      box-shadow: 0 15px 50px rgba(0, 234, 255, 0.4);
+    }
 
-.certificate-front,
-.certificate-back {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  backface-visibility: hidden;
-  border-radius: 15px;
-  background: rgba(255, 255, 255, 0.9);
-  padding: 20px;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  transition: opacity 0.5s ease;
-}
+    .certificate-inner {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      transform-style: preserve-3d;
+      transition: transform 0.7s ease;
+    }
 
-.certificate-front {
-  background: linear-gradient(135deg, #34b7a7, #2a9d8f);
-  color: #fff;
-}
+    .certificate:hover .certificate-inner {
+      transform: rotateY(180deg);
+    }
 
-.certificate-front img {
-  width: 150px;
-  height: 150px;
-  object-fit: contain;
-  margin-bottom: 20px;
-  border-radius: 50%;
-  border: 5px solid rgba(255, 255, 255, 0.2);
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
-}
+    .certificate-front, .certificate-back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+      border-radius: 20px;
+      padding: 25px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
 
-.certificate-front h3 {
-  font-size: 1.5rem;
-  font-weight: 600;
-  margin-top: 15px;
-  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-}
+    .certificate-front {
+      background: linear-gradient(135deg, #00eaff, #007bff);
+      color: #fff;
+      border: 2px solid rgba(255, 255, 255, 0.2);
+    }
 
-.certificate-back {
-  transform: rotateY(180deg);
-  background: rgba(255, 255, 255, 0.95);
-  color: #222;
-}
+    .certificate-front img {
+      width: 120px;
+      height: 120px;
+      object-fit: cover;
+      clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+      border: 4px solid #fff;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+      margin-bottom: 20px;
+      transition: transform 0.3s ease;
+    }
 
-.certificate-back p {
-  font-size: 0.95rem;
-  color: #555;
-  line-height: 1.6;
-  margin-bottom: 20px;
-}
+    .certificate-front:hover img {
+      transform: rotate(10deg) scale(1.1);
+    }
 
-.view-certificate {
-  display: inline-block;
-  margin: 10px;
-  padding: 10px 20px;
-  background-color: #007bff;
-  color: white;
-  text-decoration: none;
-  border-radius: 5px;
-  transition: background-color 0.3s ease;
-}
+    .certificate-front h3 {
+      font-size: 1.6rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+    }
 
-.view-certificate:hover {
-  background-color: #0056b3;
-}
+    .certificate-back {
+      background: rgba(255, 255, 255, 0.95);
+      color: #1a1e34;
+      transform: rotateY(180deg);
+      padding: 20px;
+    }
+
+    .certificate-back p {
+      font-size: 0.9rem;
+      line-height: 1.6;
+      color: #333;
+      margin-bottom: 20px;
+    }
+
+    .view-certificate {
+      padding: 10px 25px;
+      background: #00eaff;
+      color: #1a1e34;
+      text-decoration: none;
+      border-radius: 50px;
+      font-weight: 600;
+      text-transform: uppercase;
+      transition: all 0.3s ease;
+      box-shadow: 0 0 10px rgba(0, 234, 255, 0.5);
+    }
+
+    .view-certificate:hover {
+      background: #007bff;
+      color: #fff;
+      box-shadow: 0 0 20px rgba(0, 123, 255, 0.8);
+      transform: translateY(-3px);
+    }
+
+    /* Particle Background Effect */
+    .particles {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .particle {
+      position: absolute;
+      width: 5px;
+      height: 5px;
+      background: rgba(0, 234, 255, 0.5);
+      border-radius: 50%;
+      animation: float 6s infinite ease-in-out;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); opacity: 0.5; }
+      50% { transform: translateY(-20px); opacity: 1; }
+    }
+
+    /* Footer Styling */
+    .footer {
+      background: #1a1e34;
+      padding: 20px 0;
+    }
+
+    .footer .social-links a {
+      color: #00eaff;
+      transition: color 0.3s ease;
+    }
+
+    .footer .social-links a:hover {
+      color: #007bff;
+    }
   </style>
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4658801537271443"
-  crossorigin="anonymous"></script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4658801537271443" crossorigin="anonymous"></script>
 </head>
 
 <body class="index-page">
-  <div class="custom-cursor"></div>
   <header id="header" class="header d-flex align-items-center light-background sticky-top">
     <div class="container-fluid position-relative d-flex align-items-center justify-content-between">
-
       <a href="index.html" class="logo d-flex align-items-center me-auto me-xl-0">
-        <!-- Uncomment the line below if you also wish to use an image logo -->
         <img src="assets/img/dlogo.png" alt="">
         <h1 class="sitename">DHARMIK</h1>
       </a>
-
       <nav id="navmenu" class="navmenu">
         <ul>
-          <li><a href="index.html" >Home</a></li>
-         
+          <li><a href="index.html">Home</a></li>
           <li><a href="about.html">About</a></li>
           <li><a href="resume.html">Resume</a></li>
           <li><a href="services.html">Abilities</a></li>
@@ -208,7 +253,6 @@
               <li class="dropdown"><a href="logo.html"><span>Ui/ux</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
                 <ul>
                   <li><a href="logo.html">Logos</a></li>
-
                 </ul>
               </li>
               <li class="dropdown"><a href="#"><span>Websites</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
@@ -217,323 +261,288 @@
                   <li><a href="https://dharmikgohil013.github.io/DHARMIK-GOHIL-FILMS/">Film industry</a></li>
                   <li><a href="#">MedCare</a></li>
                 </ul>
-                <li class="dropdown"><a href="#"><span>Java Swing</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-                  <ul>
-                    <li class="dropdown"><a href="#"><span>CampusAdminPro</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-                      <ul>
-                        <li><a href="#">Overview</a></li>
-                        <li><a href="https://drive.google.com/file/d/15YNf77gERCt2LYfRYSdXiYU3yAkx7EvC/view?usp=drive_link">Report</a></li>
-                      </ul>
-                    <li><a href="#">Chess</a></li>
-                  </ul>
-                <li class="dropdown"><a href="#"><span>Node Js</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+              </li>
+              <li class="dropdown"><a href="#"><span>Java Swing</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+                <ul>
+                  <li class="dropdown"><a href="#"><span>CampusAdminPro</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
                     <ul>
-                      <li><a href="https://indian-turijam.vercel.app/">IndianTurijam</a></li>
-                      <li><a href="https://contect-pages-hp3e.vercel.app/">Contact Page</a></li>
+                      <li><a href="#">Overview</a></li>
+                      <li><a href="https://drive.google.com/file/d/15YNf77gERCt2LYfRYSdXiYU3yAkx7EvC/view?usp=drive_link">Report</a></li>
                     </ul>
-
-                    
-                    
+                  </li>
+                  <li><a href="#">Chess</a></li>
+                </ul>
+              </li>
+              <li class="dropdown"><a href="#"><span>Node Js</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+                <ul>
+                  <li><a href="https://indian-turijam.vercel.app/">IndianTurijam</a></li>
+                  <li><a href="https://contect-pages-hp3e.vercel.app/">Contact Page</a></li>
+                </ul>
+              </li>
             </ul>
           </li>
           <li><a href="Achivemtn.html" class="active">Certificate & Achievement</a></li>
           <li><a href="https://contect-pages-hp3e.vercel.app/">Contact</a></li>
-          
         </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>
-      
-
-
       <div class="header-social-links">
         <a href="https://github.com/DharmikGohil013" class="twitter"><i class="bi bi-github"></i></a>
         <a href="https://www.linkedin.com/in/dharmikgohil086/" class="linkedin"><i class="bi bi-linkedin"></i></a>
         <a href="https://www.instagram.com/dharmik.086/?next=%2F" class="instagram"><i class="bi bi-instagram"></i></a>
         <a href="https://x.com/Dharmik086" class="facebook"><i class="bi bi-twitter"></i></a>
       </div>
-
     </div>
   </header>
 
   <main>
+    <!-- Achievements Section -->
     <section class="certificates">
       <h2 data-aos="fade-down" data-aos-delay="100">Achievements</h2>
+      <div class="particles">
+        <div class="particle" style="left: 10%; top: 20%; animation-delay: 0s;"></div>
+        <div class="particle" style="left: 30%; top: 50%; animation-delay: 1s;"></div>
+        <div class="particle" style="left: 70%; top: 30%; animation-delay: 2s;"></div>
+        <div class="particle" style="left: 90%; top: 60%; animation-delay: 3s;"></div>
+      </div>
       <div class="certificates-grid">
-        <!-- Certificate 1 -->
-        <div class="certificate" data-aos="flip-left" data-aos-delay="200">
+        <div class="certificate" data-aos="zoom-in" data-aos-delay="200">
           <div class="certificate-inner">
             <div class="certificate-front">
               <img src="assets/img/Cer/1.jpg" alt="NPTEL DSA with Java">
               <h3>NPTEL DSA with Java</h3>
             </div>
             <div class="certificate-back">
-              <p>NPTEL Data Structures and Algorithms with Java: This certification from NPTEL showcases proficiency in core data structures like arrays, linked lists, stacks, and trees, alongside advanced algorithms such as graph traversal and dynamic programming. Through hands-on implementation in Java, the course strengthened problem-solving skills, coding efficiency, and algorithmic optimization, marking a significant step in mastering computational thinking and software development.</p>
+              <p>NPTEL Data Structures and Algorithms with Java: Showcases proficiency in core data structures and advanced algorithms, implemented in Java.</p>
               <a href="https://drive.google.com/file/d/10fyM4RjQnd6qBhr-30kK-eW3GnWvYLf4/view?usp=drive_link" class="view-certificate">View Certificate</a>
             </div>
           </div>
         </div>
-  
-        <!-- Certificate 2 -->
-        <div class="certificate" data-aos="flip-right" data-aos-delay="300">
+        <div class="certificate" data-aos="zoom-in" data-aos-delay="300">
           <div class="certificate-inner">
             <div class="certificate-front">
               <img src="assets/img/Cer/2.jpg" alt="Code Raider Clash">
-              <h3>Code Raider Clash – 1st Rank Winner</h3>
+              <h3>Code Raider Clash – 1st Rank</h3>
             </div>
             <div class="certificate-back">
-              <p>Achieved the prestigious 1st rank in the "Code Raider Clash," a competitive coding competition organized by Creative Design & Multimedia Institute. This event tested participants' problem-solving skills, logical thinking, and coding expertise under time constraints. The victory reflects exceptional programming acumen, strategic thinking, and a dedication to excellence in software development.</p>
+              <p>Achieved 1st rank in the "Code Raider Clash" coding competition, demonstrating exceptional programming skills.</p>
               <a href="https://drive.google.com/file/d/1HAT6VD7gDQ5_xn15_eVMGcsMDQg6-Ebk/view?usp=drive_link" class="view-certificate">View Certificate</a>
             </div>
           </div>
         </div>
-        <div class="certificate" data-aos="flip-left" data-aos-delay="200">
+        <div class="certificate" data-aos="zoom-in" data-aos-delay="400">
           <div class="certificate-inner">
             <div class="certificate-front">
-              <img src="assets/img/Cer/11.jpg" alt="NPTEL DSA with Java">
+              <img src="assets/img/Cer/11.jpg" alt="HackerRank C# Basic">
               <h3>HackerRank C# Basic</h3>
             </div>
             <div class="certificate-back">
-              <p>Successfully earned the HackerRank C# Certification, demonstrating proficiency in C# programming, problem-solving, and efficient coding practices. This certification validates my skills in developing robust applications and solving complex challenges using C#.</p>
+              <p>Earned HackerRank C# Certification, validating skills in C# programming and problem-solving.</p>
               <a href="https://www.hackerrank.com/certificates/iframe/f0ec81cd0589" class="view-certificate">View Certificate</a>
             </div>
           </div>
         </div>
-  
-        <!-- Certificate 2 -->
-        <div class="certificate" data-aos="flip-right" data-aos-delay="300">
+        <div class="certificate" data-aos="zoom-in" data-aos-delay="500">
           <div class="certificate-inner">
             <div class="certificate-front">
-              <img src="assets/img/Cer/12.jpg" alt="Code Raider Clash">
-              <h3> Web 3.0 Project at Technook Pro</h3>
+              <img src="assets/img/Cer/12.jpg" alt="Web 3.0 Project">
+              <h3>Web 3.0 Project at Technook Pro</h3>
             </div>
             <div class="certificate-back">
-              <p>Awarded for successfully completing the Web Development internship with Teachnook from November 1, 2023, to December 31, 2023. Recognized for keen enthusiasm and dedication throughout the course.</p>
-              
-              <!-- Internship Certificate Button -->
+              <p>Completed a Web 3.0 internship with Teachnook, recognized for dedication and enthusiasm.</p>
               <a href="https://drive.google.com/file/d/1QpViYnj7yfiFMvlsdorI4lIuISOcx2FO/view?usp=drive_link" class="view-certificate">Internship Certificate</a>
-              
-              <!-- Internship Offer Letter Button -->
-              <a href="https://drive.google.com/file/d/1wecLs0kkqwPDM5_wiVb-QeJcV4AbO4SK/view?usp=drive_link" class="view-certificate">Internship Offer Letter</a>
-              
-              <!-- Third Button (e.g., Project Details) -->
-              <a href="https://drive.google.com/file/d/1AvUj_MDQzuPJHXfv2mlpJnq41TnHp3hj/view?usp=drive_link" class="view-certificate">Project Details</a>
+              <a href="https://drive.google.com/file/d/1wecLs0kkqwPDM5_wiVb-QeJcV4AbO4SK/view?usp=drive_link" class="view-certificate">Offer Letter</a>
             </div>
           </div>
         </div>
-        <div class="certificate" data-aos="flip-right" data-aos-delay="300">
+        <div class="certificate" data-aos="zoom-in" data-aos-delay="600">
           <div class="certificate-inner">
             <div class="certificate-front">
-              <img src="assets/img/Cer/13.jpg" alt="Code Raider Clash">
+              <img src="assets/img/Cer/13.jpg" alt="Google Cloud Hackathon">
               <h3>Google Cloud Impact Hackathon</h3>
             </div>
             <div class="certificate-back">
-              <p>Successfully developed a Web 3.0 project during my internship at Technook Pro Company. Gained hands-on experience in decentralized technologies, blockchain integration, and smart contracts, while contributing to innovative solutions in the evolving web ecosystem. Enhanced skills in cutting-edge tools and frameworks for modern web development</p>
+              <p>Developed a Web 3.0 project during an internship, gaining experience in blockchain and decentralized tech.</p>
               <a href="https://drive.google.com/file/d/1841zh602nc0RXIuiryb3wgKrdohY5gzV/view?usp=drive_link" class="view-certificate">View Certificate</a>
             </div>
           </div>
         </div>
-        
-       
-        <!-- Add more certificates here -->
       </div>
+    </section>
 
-       
-        
-      </section>
-
-      <section class="certificates">
-        <h2 data-aos="fade-down" data-aos-delay="100">Learning</h2>
-        <div class="certificates-grid">
-          <!-- Certificate 1 -->
-          <div class="certificate" data-aos="flip-left" data-aos-delay="200">
-            <div class="certificate-inner">
-              <div class="certificate-front">
-                <img src="assets/img/Cer/8.jpg" alt="NPTEL DSA with Java">
-                <h3>Java from Beginner to Master</h3>
-              </div>
-              <div class="certificate-back">
-                <p>That's great! 🎉 Learning Java from Beginner to Master on Udemy will give you a strong foundation in Java programming. If you need help with concepts, coding exercises, or project ideas, feel free to ask!</p>
-                <a href="https://drive.google.com/file/d/1rWywyan2-RrT5_aUG4aHIYd3-ruvRY8g/view?usp=drive_link" class="view-certificate">View Certificate</a>
-              </div>
+    <!-- Learning Section -->
+    <section class="certificates">
+      <h2 data-aos="fade-down" data-aos-delay="100">Learning</h2>
+      <div class="particles">
+        <div class="particle" style="left: 15%; top: 25%; animation-delay: 0s;"></div>
+        <div class="particle" style="left: 35%; top: 55%; animation-delay: 1s;"></div>
+        <div class="particle" style="left: 65%; top: 35%; animation-delay: 2s;"></div>
+      </div>
+      <div class="certificates-grid">
+        <div class="certificate" data-aos="zoom-in" data-aos-delay="200">
+          <div class="certificate-inner">
+            <div class="certificate-front">
+              <img src="assets/img/Cer/8.jpg" alt="Java Course">
+              <h3>Java from Beginner to Master</h3>
+            </div>
+            <div class="certificate-back">
+              <p>Completed a comprehensive Java course on Udemy, building a strong foundation in Java programming.</p>
+              <a href="https://drive.google.com/file/d/1rWywyan2-RrT5_aUG4aHIYd3-ruvRY8g/view?usp=drive_link" class="view-certificate">View Certificate</a>
             </div>
           </div>
-    
-          <!-- Certificate 2 -->
-          <div class="certificate" data-aos="flip-right" data-aos-delay="300">
-            <div class="certificate-inner">
-              <div class="certificate-front">
-                <img src="assets/img/Cer/crtificate logo.jpg" alt="Code Raider Clash">
-                <h3>C & C++ Programming</h3>
-              </div>
-              <div class="certificate-back">
-                <p>This certificate is awarded to Gohil Dharmik Ghanshyambhai for successfully completing the C & C++ Programming course at Creative Design & Multimedia Institute (Katargam). Achieved an A+ grade during the training period from April 18, 2023, to June 17, 2023.</p>
-                <a href="https://drive.google.com/file/d/1N7b0S4DX6pHi2xFKjocrusdcfwZ6FNxj/view?usp=drive_link" class="view-certificate">View Certificate</a>
-              </div>
-            </div>
-          </div>
-          
-    
-          <!-- Certificate 2 -->
-         
-          <!-- Add more certificates here -->
         </div>
-  
-         
-          
-        </section>
-
-      <section class="certificates">
-        <h2 data-aos="fade-down" data-aos-delay="100">Participate</h2>
-        <div class="certificates-grid">
-          <!-- Certificate 1 -->
-          <div class="certificate" data-aos="flip-left" data-aos-delay="200">
-            <div class="certificate-inner">
-              <div class="certificate-front">
-                <img src="assets/img/Cer/13.jpg" alt="NPTEL DSA with Java">
-                <h3>AWS Students Community Day</h3>
-              </div>
-              <div class="certificate-back">
-                <p>This certificate is awarded to Dharmik Gohil for participating in the AWS Students Community Day event held on September 27, 2024, at CHARUSAT. The event was organized by AWS Academic in collaboration with various faculty members, including Dr. Parth Shah, Dr. Sanket Suthar, and Dr. Trushit Upadhyay. The participation highlights Dharmik's involvement in cloud computing and community-building activities.</p>
-                <a href="https://drive.google.com/file/d/1E_MtTjt7yAivM7P8JWSsIEaCi5EVxTJd/view?usp=drive_link" class="view-certificate">View Certificate</a>
-              </div>
+        <div class="certificate" data-aos="zoom-in" data-aos-delay="300">
+          <div class="certificate-inner">
+            <div class="certificate-front">
+              <img src="assets/img/Cer/crtificate logo.jpg" alt="C & C++">
+              <h3>C & C++ Programming</h3>
+            </div>
+            <div class="certificate-back">
+              <p>Earned an A+ grade in a C & C++ course at Creative Design & Multimedia Institute.</p>
+              <a href="https://drive.google.com/file/d/1N7b0S4DX6pHi2xFKjocrusdcfwZ6FNxj/view?usp=drive_link" class="view-certificate">View Certificate</a>
             </div>
           </div>
-    
-          <!-- Certificate 2 -->
-          <div class="certificate" data-aos="flip-right" data-aos-delay="300">
-            <div class="certificate-inner">
-              <div class="certificate-front">
-                <img src="assets/img/Cer/6.jpg" alt="Code Raider Clash">
-                <h3> Bharat Blockchain Yatra</h3>
-              </div>
-              <div class="certificate-back">
-                <p>This certificate recognizes Dharmik for participating in the Bharat Blockchain Yatra, an initiative aimed at advancing India's position in the Blockchain and Web 3 landscape. The event, held on March 5, 2024, celebrated Dharmik's commitment to exploring and contributing to the transformative power of blockchain technology. The certificate, with unique number 036a9d3b-0379-4933-b1ff-de2dadb31442, acknowledges his role in empowering India's digital trust evolution.</p>
-                <a href="https://drive.google.com/file/d/1SJ7wHyweiakqu03csNXPHOgG5_65d_0s/view?usp=drive_link" class="view-certificate">View Certificate</a>
-              </div>
-            </div>
-          </div>
-          <div class="certificate" data-aos="flip-left" data-aos-delay="200">
-            <div class="certificate-inner">
-              <div class="certificate-front">
-                <img src="assets/img/Cer/images.jpg" alt="NPTEL DSA with Java">
-                <h3>Fashion Show Competition at CHARUSAT</h3>
-              </div>
-              <div class="certificate-back">
-                <p>This certificate is awarded to Mr./Ms. Dharmikbhai for their participation in the Fashion Show competition held from January 2024 to January 31, 2024, at Charotar University of Science and Technology (CHARUSAT). The event was organized by the Executive Central Council, with Dr. Yogeshkumar Jani serving as the Member Secretary. The certificate acknowledges Dharmikbhai's involvement in this creative and cultural event.</p>
-                <a href="https://drive.google.com/file/d/1IRuyOF6duBgI-eoogG8NFqtXFABg8gwL/view?usp=drive_link" class="view-certificate">View Certificate</a>
-              </div>
-            </div>
-          </div>
-    
-          <!-- Certificate 2 -->
-          
-          <!-- Add more certificates here -->
         </div>
-  
-         
-          
-        </section>
-        <section class="certificates">
-          <h2 data-aos="fade-down" data-aos-delay="100">Hackathon & Workshop</h2>
-          <div class="certificates-grid">
-           
-            <!-- Certificate 1 -->
-            <div class="certificate" data-aos="flip-left" data-aos-delay="200">
-              <div class="certificate-inner">
-                <div class="certificate-front">
-                  <img src="assets/img/Cer/9.jpg" alt="NPTEL DSA with Java">
-                  <h3>HackConclave'24</h3>
-                </div>
-                <div class="certificate-back">
-                  <p>Awarded for active and valuable participation in HackConclave'24, organized under the Research & Industrial Conclave - Integration’24 by the Students' Academic Board, IIT Guwahati & IIT Guwahati Research Park, powered by Hack2Skill.</p>
-                  <a href="https://drive.google.com/file/d/1hQlBOnd_6l6sxh_WfEebbOSisrFK-vbj/view?usp=drive_link" class="view-certificate">View Certificate</a>
-                </div>
-              </div>
-            </div>
+      </div>
+    </section>
 
-            <div class="certificate" data-aos="flip-left" data-aos-delay="200">
-              <div class="certificate-inner">
-                <div class="certificate-front">
-                  <img src="assets/img/Cer/3.jpg" alt="NPTEL DSA with Java">
-                  <h3> Game Development Workshop by IIT Bombay</h3>
-                </div>
-                <div class="certificate-back">
-                  <p>This certificate is awarded to Mr./Mrs. Gohil Dharmikbhai Ghanshyambhai for successfully completing the Game Development workshop organized by Techfest, IIT Bombay. The workshop was conducted under the guidance of faculty advisor V. Nagendra R. Velaga and overall coordinator Ajay Agrawal.</p>
-                  <a href="https://drive.google.com/file/d/1hQlBOnd_6l6sxh_WfEebbOSisrFK-vbj/view?usp=drive_link" class="view-certificate">View Certificate</a>
-                </div>
-              </div>
+    <!-- Participate Section -->
+    <section class="certificates">
+      <h2 data-aos="fade-down" data-aos-delay="100">Participate</h2>
+      <div class="particles">
+        <div class="particle" style="left: 20%; top: 30%; animation-delay: 0s;"></div>
+        <div class="particle" style="left: 40%; top: 60%; animation-delay: 1s;"></div>
+        <div class="particle" style="left: 80%; top: 40%; animation-delay: 2s;"></div>
+      </div>
+      <div class="certificates-grid">
+        <div class="certificate" data-aos="zoom-in" data-aos-delay="200">
+          <div class="certificate-inner">
+            <div class="certificate-front">
+              <img src="assets/img/Cer/13.jpg" alt="AWS Community Day">
+              <h3>AWS Students Community Day</h3>
             </div>
-      
-            <!-- Certificate 2 -->
-            <div class="certificate" data-aos="flip-right" data-aos-delay="300">
-              <div class="certificate-inner">
-                <div class="certificate-front">
-                  <img src="assets/img/Cer/7.jpg" alt="Code Raider Clash">
-                  <h3>Frolic 2024 Code-A-Thon</h3>
-                </div>
-                <div class="certificate-back">
-                  <p> This certificate acknowledges Mr./Ms. Dharmik Ghanshyambhai Gohil for their active participation in the Code-A-Thon event at Frolic 2024, a state-level tech fest organized by Darshan University on September 14, 2024. The event aimed to challenge participants' potential in the field of technology.</p>
-                  <a href="https://drive.google.com/file/d/1-8-FclZrcfDBBsgiGnSmgvbdIRDRSyYj/view?usp=drive_link" class="view-certificate">View Certificate</a>
-                  <a href="https://github.com/DharmikGohil013/SplitMate" style=" background-color: #2a9d8f;" class="view-certificate">Split Wise</a>
-                </div>
-              </div>
-            </div>
-            
-      
-           
-            <!-- Add more certificates here -->
-          </div>
-    
-           
-            
-          </section>
-      <section class="certificates">
-    <h2 data-aos="fade-down" data-aos-delay="100">Extra Activity</h2>
-        <div class="certificates-grid">
-          <!-- Certificate 1 -->
-          
-          <!-- Certificate 2 -->
-          <div class="certificate" data-aos="flip-right" data-aos-delay="300">
-            <div class="certificate-inner">
-              <div class="certificate-front">
-                <img src="assets/img/Cer/images.png" alt="Code Raider Clash">
-                <h3>Sardar Patel College of Engineering</h3>
-              </div>
-              <div class="certificate-back">
-                <p>This certificate is awarded to Gohil Dharmik for participating in an event held at Sardar Patel College of Engineering, Bakrol, on February 7-8, 2024. The event was managed by the Thrupati Foundation Trust, and the certificate is signed by Dr. Rutvij Joshi and Prof. Jay Patel, acknowledging Dharmik's involvement.</p>
-                <a href="https://drive.google.com/file/d/1hzybXykrM3v1E1owfTEkHFGqo9baY6YP/view?usp=drive_link" class="view-certificate">View Certificate</a>
-              </div>
+            <div class="certificate-back">
+              <p>Participated in AWS Students Community Day at CHARUSAT on September 27, 2024.</p>
+              <a href="https://drive.google.com/file/d/1E_MtTjt7yAivM7P8JWSsIEaCi5EVxTJd/view?usp=drive_link" class="view-certificate">View Certificate</a>
             </div>
           </div>
-          <div class="certificate" data-aos="flip-left" data-aos-delay="200">
-            <div class="certificate-inner">
-              <div class="certificate-front">
-                <img src="assets/img/Cer/111.jpg" alt="NPTEL DSA with Java">
-                <h3>Box Soccer at CHARUSAT</h3>
-              </div>
-              <div class="certificate-back">
-                <p>This certificate recognizes Dharmik Gohil for his participation in the Box Soccer event during Cognizance'24, the flagship techfest held on January 18-19, 2024. The event was organized by the Faculty of Technology and Engineering at Chandubhai S. Patel Institute of Technology (CSPIT) and Devang Patel Institute of Advance Technology and Research (DEPSTAR) under Charotar University of Science and Technology (CHARUSAT). The certificate is signed by Dr. Trushit Upadhyaya, acknowledging Dharmik's contribution.</p>
-                <a href="https://drive.google.com/file/d/1Iju-iIfXOetg38L4LPhM5TVhgSau1fhN/view?usp=drive_link" class="view-certificate">View Certificate</a>
-              </div>
-            </div>
-          </div>
-    
-          
-          <!-- Add more certificates here -->
         </div>
-  
-         
-          
-        </section>
-    </main>
+        <div class="certificate" data-aos="zoom-in" data-aos-delay="300">
+          <div class="certificate-inner">
+            <div class="certificate-front">
+              <img src="assets/img/Cer/6.jpg" alt="Bharat Blockchain Yatra">
+              <h3>Bharat Blockchain Yatra</h3>
+            </div>
+            <div class="certificate-back">
+              <p>Recognized for participation in Bharat Blockchain Yatra on March 5, 2024.</p>
+              <a href="https://drive.google.com/file/d/1SJ7wHyweiakqu03csNXPHOgG5_65d_0s/view?usp=drive_link" class="view-certificate">View Certificate</a>
+            </div>
+          </div>
+        </div>
+        <div class="certificate" data-aos="zoom-in" data-aos-delay="400">
+          <div class="certificate-inner">
+            <div class="certificate-front">
+              <img src="assets/img/Cer/images.jpg" alt="Fashion Show">
+              <h3>Fashion Show at CHARUSAT</h3>
+            </div>
+            <div class="certificate-back">
+              <p>Participated in the Fashion Show at CHARUSAT from January 2024 to January 31, 2024.</p>
+              <a href="https://drive.google.com/file/d/1IRuyOF6duBgI-eoogG8NFqtXFABg8gwL/view?usp=drive_link" class="view-certificate">View Certificate</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Hackathon & Workshop Section -->
+    <section class="certificates">
+      <h2 data-aos="fade-down" data-aos-delay="100">Hackathon & Workshop</h2>
+      <div class="particles">
+        <div class="particle" style="left: 25%; top: 35%; animation-delay: 0s;"></div>
+        <div class="particle" style="left: 45%; top: 65%; animation-delay: 1s;"></div>
+        <div class="particle" style="left: 85%; top: 45%; animation-delay: 2s;"></div>
+      </div>
+      <div class="certificates-grid">
+        <div class="certificate" data-aos="zoom-in" data-aos-delay="200">
+          <div class="certificate-inner">
+            <div class="certificate-front">
+              <img src="assets/img/Cer/9.jpg" alt="HackConclave'24">
+              <h3>HackConclave'24</h3>
+            </div>
+            <div class="certificate-back">
+              <p>Participated in HackConclave'24 at IIT Guwahati under Research & Industrial Conclave.</p>
+              <a href="https://drive.google.com/file/d/1hQlBOnd_6l6sxh_WfEebbOSisrFK-vbj/view?usp=drive_link" class="view-certificate">View Certificate</a>
+            </div>
+          </div>
+        </div>
+        <div class="certificate" data-aos="zoom-in" data-aos-delay="300">
+          <div class="certificate-inner">
+            <div class="certificate-front">
+              <img src="assets/img/Cer/3.jpg" alt="Game Dev Workshop">
+              <h3>Game Dev Workshop by IIT Bombay</h3>
+            </div>
+            <div class="certificate-back">
+              <p>Completed a Game Development workshop by Techfest, IIT Bombay.</p>
+              <a href="https://drive.google.com/file/d/1hQlBOnd_6l6sxh_WfEebbOSisrFK-vbj/view?usp=drive_link" class="view-certificate">View Certificate</a>
+            </div>
+          </div>
+        </div>
+        <div class="certificate" data-aos="zoom-in" data-aos-delay="400">
+          <div class="certificate-inner">
+            <div class="certificate-front">
+              <img src="assets/img/Cer/7.jpg" alt="Frolic 2024 Code-A-Thon">
+              <h3>Frolic 2024 Code-A-Thon</h3>
+            </div>
+            <div class="certificate-back">
+              <p>Participated in the Code-A-Thon at Frolic 2024, Darshan University.</p>
+              <a href="https://drive.google.com/file/d/1-8-FclZrcfDBBsgiGnSmgvbdIRDRSyYj/view?usp=drive_link" class="view-certificate">View Certificate</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Extra Activity Section -->
+    <section class="certificates">
+      <h2 data-aos="fade-down" data-aos-delay="100">Extra Activity</h2>
+      <div class="particles">
+        <div class="particle" style="left: 30%; top: 40%; animation-delay: 0s;"></div>
+        <div class="particle" style="left: 50%; top: 70%; animation-delay: 1s;"></div>
+        <div class="particle" style="left: 90%; top: 50%; animation-delay: 2s;"></div>
+      </div>
+      <div class="certificates-grid">
+        <div class="certificate" data-aos="zoom-in" data-aos-delay="200">
+          <div class="certificate-inner">
+            <div class="certificate-front">
+              <img src="assets/img/Cer/images.png" alt="Sardar Patel Event">
+              <h3>Sardar Patel College Event</h3>
+            </div>
+            <div class="certificate-back">
+              <p>Participated in an event at Sardar Patel College of Engineering on February 7-8, 2024.</p>
+              <a href="https://drive.google.com/file/d/1hzybXykrM3v1E1owfTEkHFGqo9baY6YP/view?usp=drive_link" class="view-certificate">View Certificate</a>
+            </div>
+          </div>
+        </div>
+        <div class="certificate" data-aos="zoom-in" data-aos-delay="300">
+          <div class="certificate-inner">
+            <div class="certificate-front">
+              <img src="assets/img/Cer/111.jpg" alt="Box Soccer">
+              <h3>Box Soccer at CHARUSAT</h3>
+            </div>
+            <div class="certificate-back">
+              <p>Participated in Box Soccer during Cognizance'24 at CHARUSAT on January 18-19, 2024.</p>
+              <a href="https://drive.google.com/file/d/1Iju-iIfXOetg38L4LPhM5TVhgSau1fhN/view?usp=drive_link" class="view-certificate">View Certificate</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
-  
 
   <footer id="footer" class="footer light-background">
-
     <div class="container">
-      <div class="copyright text-center ">
-        <p>© <span>Copyright</span> <strong class="px-1 sitename"><a href="https://www.linkedin.com/in/dharmikgohil086/">Dharmik gohil</a></strong> <span>All Rights Reserved<br></span></p>
+      <div class="copyright text-center">
+        <p>© <span>Copyright</span> <strong class="px-1 sitename"><a href="https://www.linkedin.com/in/dharmikgohil086/">Dharmik Gohil</a></strong> <span>All Rights Reserved<br></span></p>
       </div>
       <div class="social-links d-flex justify-content-center">
         <a href="https://github.com/DharmikGohil013"><i class="bi bi-github"></i></a>
@@ -541,23 +550,11 @@
         <a href="https://www.instagram.com/dharmik.086/?next=%2F"><i class="bi bi-instagram"></i></a>
         <a href="https://x.com/Dharmik086"><i class="bi bi-twitter"></i></a>
       </div>
-      
     </div>
-
   </footer>
 
   <!-- Scroll Top -->
   <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
-
-  <!-- Preloader -->
-  <div id="preloader">
-    <div class="loader-container">
-        <div class="loader loader-outer"></div>
-        <div class="loader loader-middle"></div>
-        <div class="loader loader-inner"></div>
-        <div class="loading-text">LOADING...</div>
-    </div>
-</div>
 
   <!-- Vendor JS Files -->
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>

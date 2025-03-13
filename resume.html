@@ -1,15 +1,14 @@
 <!DOCTYPE html>
 <html>
 
-
 <head>
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4658801537271443"
      crossorigin="anonymous"></script>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>Dharmik Gohil fun</title>
-  <meta name="description" content="">
-  <meta name="keywords" content="">
+  <title>Dharmik Gohil - Resume</title>
+  <meta name="description" content="Dharmik Gohil's professional resume showcasing education and technical experience.">
+  <meta name="keywords" content="Dharmik Gohil, resume, education, experience">
 
   <!-- Favicons -->
   <link href="assets/img/dlogo.png" rel="icon">
@@ -18,7 +17,7 @@
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com" rel="preconnect">
   <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
   <!-- Vendor CSS Files -->
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -30,34 +29,165 @@
   <!-- Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
 
-  <!-- =======================================================
-  * Template Name: Kelly
-  * Template URL: https://bootstrapmade.com/kelly-free-bootstrap-cv-resume-html-template/
-  * Updated: Aug 07 2024 with Bootstrap v5.3.3
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4658801537271443"
-     crossorigin="anonymous"></script>
+  <!-- Custom Styles -->
+  <style>
+    /* Global Styles */
+    body {
+      background: #0a0f1f;
+      color: #fff;
+      overflow-x: hidden;
+    }
 
+    /* Header Animation */
+    .header {
+      background: #1a1e34;
+      border-bottom: 1px solid rgba(0, 234, 255, 0.2);
+    }
 
+    .header h1 {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 2.5rem;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      color: #00eaff;
+      text-shadow: 0 0 10px #00eaff, 0 0 20px #00eaff;
+      animation: neonGlow 1.5s ease-in-out infinite alternate;
+    }
+
+    @keyframes neonGlow {
+      from { text-shadow: 0 0 5px #00eaff, 0 0 10px #00eaff; }
+      to { text-shadow: 0 0 15px #00eaff, 0 0 25px #00eaff; }
+    }
+
+    /* Resume Section Background */
+    .resume {
+      padding: 60px 0;
+      position: relative;
+      background: linear-gradient(135deg, #1a1e34, #2b3557);
+      overflow: hidden;
+    }
+
+    .section-title h2 {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 2.8rem;
+      color: #fff;
+      text-align: center;
+      margin-bottom: 20px;
+      position: relative;
+      z-index: 1;
+      animation: slideIn 1s ease-out;
+    }
+
+    .section-title p {
+      text-align: center;
+      color: #a0a0a0;
+      font-size: 1.1rem;
+      margin-bottom: 40px;
+    }
+
+    @keyframes slideIn {
+      from { transform: translateY(-50px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+
+    /* Minimal Resume Item Styling (Keeping Original Structure) */
+    .resume-title {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 1.8rem;
+      color: #00eaff;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 20px;
+    }
+
+    .resume-item h4 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.4rem;
+      color: #fff;
+    }
+
+    .resume-item h5 {
+      font-size: 0.9rem;
+      color: #00eaff;
+      margin-bottom: 10px;
+    }
+
+    .resume-item p {
+      font-size: 0.9rem;
+      color: #d0d0d0;
+    }
+
+    .resume-item p em {
+      color: #a0a0a0;
+    }
+
+    .resume-item ul li {
+      font-size: 0.9rem;
+      color: #d0d0d0;
+    }
+
+    /* Particle Background Effect */
+    .particles {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .particle {
+      position: absolute;
+      width: 5px;
+      height: 5px;
+      background: rgba(0, 234, 255, 0.5);
+      border-radius: 50%;
+      animation: float 6s infinite ease-in-out;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); opacity: 0.5; }
+      50% { transform: translateY(-20px); opacity: 1; }
+    }
+
+    /* Footer Styling */
+    .footer {
+      background: #1a1e34;
+      padding: 20px 0;
+      border-top: 1px solid rgba(0, 234, 255, 0.2);
+    }
+
+    .footer .copyright p {
+      color: #d0d0d0;
+    }
+
+    .footer .sitename {
+      color: #00eaff;
+    }
+
+    .footer .social-links a {
+      color: #00eaff;
+      transition: color 0.3s ease;
+    }
+
+    .footer .social-links a:hover {
+      color: #007bff;
+    }
+  </style>
 </head>
 
 <body class="index-page">
   <div class="custom-cursor"></div>
-  <header id="header" class="header d-flex align-items-center light-background sticky-top">
+  <header id="header" class="header d-flex align-items-center sticky-top">
     <div class="container-fluid position-relative d-flex align-items-center justify-content-between">
-
       <a href="index.html" class="logo d-flex align-items-center me-auto me-xl-0">
-        <!-- Uncomment the line below if you also wish to use an image logo -->
         <img src="assets/img/dlogo.png" alt="">
         <h1 class="sitename">DHARMIK</h1>
       </a>
-
       <nav id="navmenu" class="navmenu">
         <ul>
-          <li><a href="index.html" >Home</a></li>
-         
+          <li><a href="index.html">Home</a></li>
           <li><a href="about.html">About</a></li>
           <li><a href="resume.html" class="active">Resume</a></li>
           <li><a href="services.html">Abilities</a></li>
@@ -67,7 +197,6 @@
               <li class="dropdown"><a href="logo.html"><span>Ui/ux</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
                 <ul>
                   <li><a href="logo.html">Logos</a></li>
-
                 </ul>
               </li>
               <li class="dropdown"><a href="#"><span>Websites</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
@@ -76,49 +205,49 @@
                   <li><a href="https://dharmikgohil013.github.io/DHARMIK-GOHIL-FILMS/">Film industry</a></li>
                   <li><a href="#">MedCare</a></li>
                 </ul>
-                <li class="dropdown"><a href="#"><span>Java Swing</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-                  <ul>
-                    <li class="dropdown"><a href="#"><span>CampusAdminPro</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-                      <ul>
-                        <li><a href="#">Overview</a></li>
-                        <li><a href="https://drive.google.com/file/d/15YNf77gERCt2LYfRYSdXiYU3yAkx7EvC/view?usp=drive_link">Report</a></li>
-                      </ul>
-                    <li><a href="#">Chess</a></li>
-                  </ul>
-                <li class="dropdown"><a href="#"><span>Node Js</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+              </li>
+              <li class="dropdown"><a href="#"><span>Java Swing</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+                <ul>
+                  <li class="dropdown"><a href="#"><span>CampusAdminPro</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
                     <ul>
-                      <li><a href="https://indian-turijam.vercel.app/">IndianTurijam</a></li>
-                      <li><a href="https://contect-pages-hp3e.vercel.app/">Contact Page</a></li>
+                      <li><a href="#">Overview</a></li>
+                      <li><a href="https://drive.google.com/file/d/15YNf77gERCt2LYfRYSdXiYU3yAkx7EvC/view?usp=drive_link">Report</a></li>
                     </ul>
-                    
+                  </li>
+                  <li><a href="#">Chess</a></li>
+                </ul>
+              </li>
+              <li class="dropdown"><a href="#"><span>Node Js</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+                <ul>
+                  <li><a href="https://indian-turijam.vercel.app/">IndianTurijam</a></li>
+                  <li><a href="https://contect-pages-hp3e.vercel.app/">Contact Page</a></li>
+                </ul>
+              </li>
             </ul>
           </li>
-          <li><a href="Achivemtn.html" >Certificate & Achievement</a></li>
+          <li><a href="Achivemtn.html">Certificate & Achievement</a></li>
           <li><a href="https://contect-pages-hp3e.vercel.app/">Contact</a></li>
-          
         </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>
-      
-
-
       <div class="header-social-links">
         <a href="https://github.com/DharmikGohil013" class="twitter"><i class="bi bi-github"></i></a>
         <a href="https://www.linkedin.com/in/dharmikgohil086/" class="linkedin"><i class="bi bi-linkedin"></i></a>
         <a href="https://www.instagram.com/dharmik.086/?next=%2F" class="instagram"><i class="bi bi-instagram"></i></a>
         <a href="https://x.com/Dharmik086" class="facebook"><i class="bi bi-twitter"></i></a>
       </div>
-
     </div>
   </header>
 
- 
-  
-  
   <main class="main">
-
     <!-- Resume Section -->
     <section id="resume" class="resume section">
+      <div class="particles">
+        <div class="particle" style="left: 10%; top: 20%; animation-delay: 0s;"></div>
+        <div class="particle" style="left: 30%; top: 50%; animation-delay: 1s;"></div>
+        <div class="particle" style="left: 70%; top: 30%; animation-delay: 2s;"></div>
+        <div class="particle" style="left: 90%; top: 60%; animation-delay: 3s;"></div>
+      </div>
 
       <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
@@ -127,39 +256,30 @@
       </div><!-- End Section Title -->
 
       <div class="container">
-
         <div class="row">
-
           <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
             <h3 class="resume-title">Sumary</h3>
-
             <div class="resume-item pb-0">
               <h4>Dharmik Gohil</h4>
-<p><em>Passionate and results-driven Unity Game Developer with a proven track record of creating engaging and interactive 2D/3D games, from concept to polished final product.</em></p>
-<ul>
-  <li>62 Radhaswami Soci, Katargam, Surat</li>
-  <li>+91 9624105887</li>
-  <li><a href="mailto:dharmikgohil395003@gmail.com">dharmikgohil395003@gmail.com</a></li>
-</ul>
-
-            </div><!-- Edn Resume Item -->
+              <p><em>Passionate and results-driven Unity Game Developer with a proven track record of creating engaging and interactive 2D/3D games, from concept to polished final product.</em></p>
+              <ul>
+                <li>62 Radhaswami Soci, Katargam, Surat</li>
+                <li>+91 9624105887</li>
+                <li><a href="mailto:dharmikgohil395003@gmail.com">dharmikgohil395003@gmail.com</a></li>
+              </ul>
+            </div><!-- End Resume Item -->
 
             <h3 class="resume-title">Education</h3>
-<div class="resume-item">
-  <h4>Bachelor of Technology in Information Technology</h4>
-  <h5>2023 - 2027</h5>
-  <p><em><a href="https://www.charusat.ac.in/">Charusat University, Changa</a></em></p>
-  <p>Focused on developing strong technical skills in programming, software development, and game design, with a passion for creating innovative solutions in the field of technology.</p>
-</div>
-<!-- Edn Resume Item -->
-
-            <!-- Edn Resume Item -->
-
+            <div class="resume-item">
+              <h4>Bachelor of Technology in Information Technology</h4>
+              <h5>2023 - 2027</h5>
+              <p><em><a href="https://www.charusat.ac.in/">Charusat University, Changa</a></em></p>
+              <p>Focused on developing strong technical skills in programming, software development, and game design, with a passion for creating innovative solutions in the field of technology.</p>
+            </div><!-- End Resume Item -->
           </div>
 
           <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
             <h3 class="resume-title">Skills and Technical Experience</h3>
-
             <div class="resume-item">
               <h4>Unity and C# Development</h4>
               <h5>May 2024 - Present</h5>
@@ -168,7 +288,7 @@
                 <li>Mastered game development techniques, including 2D/3D game mechanics, scripting, and asset integration in Unity using C#.</li>
                 <li>Dedicated to learning and improving Unity game development skills.</li>
               </ul>
-            </div>
+            </div><!-- End Resume Item -->
             <div class="resume-item">
               <h4>C and C++ Programming</h4>
               <h5>May 2023 - July 2023</h5>
@@ -177,7 +297,6 @@
                 <li>Gained a strong foundation in programming concepts, algorithms, and problem-solving using C and C++.</li>
               </ul>
             </div><!-- End Resume Item -->
-          
             <div class="resume-item">
               <h4>Java and Java Swing</h4>
               <h5>August 2024</h5>
@@ -186,9 +305,6 @@
                 <li>Developed skills in object-oriented programming and GUI development using Java Swing.</li>
               </ul>
             </div><!-- End Resume Item -->
-          
-            <!-- End Resume Item -->
-          
             <div class="resume-item">
               <h4>MongoDB and MySQL</h4>
               <h5>Database Skills</h5>
@@ -197,17 +313,14 @@
               </ul>
             </div><!-- End Resume Item -->
           </div>
-          
-
+        </div>
+      </div>
     </section><!-- /Resume Section -->
-
   </main>
-  
 
-  <footer id="footer" class="footer light-background">
-
+  <footer id="footer" class="footer">
     <div class="container">
-      <div class="copyright text-center ">
+      <div class="copyright text-center">
         <p>© <span>Copyright</span> <strong class="px-1 sitename">Dharmik</strong> <span>All Rights Reserved<br></span></p>
       </div>
       <div class="social-links d-flex justify-content-center">
@@ -216,23 +329,21 @@
         <a href="https://www.instagram.com/dharmik.086/?next=%2F"><i class="bi bi-instagram"></i></a>
         <a href="https://x.com/Dharmik086"><i class="bi bi-twitter"></i></a>
       </div>
-      
     </div>
-
   </footer>
 
   <!-- Scroll Top -->
-  <a href="services.html" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
   <!-- Preloader -->
   <div id="preloader">
     <div class="loader-container">
-        <div class="loader loader-outer"></div>
-        <div class="loader loader-middle"></div>
-        <div class="loader loader-inner"></div>
-        <div class="loading-text">LOADING...</div>
+      <div class="loader loader-outer"></div>
+      <div class="loader loader-middle"></div>
+      <div class="loader loader-inner"></div>
+      <div class="loading-text">LOADING...</div>
     </div>
-</div>
+  </div>
 
   <!-- Vendor JS Files -->
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -247,7 +358,13 @@
 
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
-
+  <!-- AOS Initialization -->
+  <script>
+    AOS.init({
+      duration: 1000,
+      once: true
+    });
+  </script>
 </body>
 
 </html>
