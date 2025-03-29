@@ -1,15 +1,14 @@
 <!DOCTYPE html>
 <html>
 
-
 <head>
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4658801537271443"
-     crossorigin="anonymous"></script>
+    crossorigin="anonymous"></script>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>Dharmik Gohil fun</title>
-  <meta name="description" content="">
-  <meta name="keywords" content="">
+  <title>Dharmik Gohil - Portfolio</title>
+  <meta name="description" content="Dharmik Gohil - Explore my game development portfolio featuring innovative projects.">
+  <meta name="keywords" content="Dharmik Gohil, game developer, portfolio, Unity">
 
   <!-- Favicons -->
   <link href="assets/img/dlogo.png" rel="icon">
@@ -18,7 +17,7 @@
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com" rel="preconnect">
   <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Press+Start+2P&display=swap" rel="stylesheet">
 
   <!-- Vendor CSS Files -->
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -30,105 +29,303 @@
   <!-- Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
 
-  <!-- =======================================================
-  * Template Name: Kelly
-  * Template URL: https://bootstrapmade.com/kelly-free-bootstrap-cv-resume-html-template/
-  * Updated: Aug 07 2024 with Bootstrap v5.3.3
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
-  
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4658801537271443"
-  crossorigin="anonymous"></script>
+  <!-- Custom Styles -->
   <style>
+    /* Global Styles */
+    body {
+      background: #0a0f1f;
+      color: #fff;
+      font-family: 'JetBrains Mono', monospace;
+      overflow-x: hidden;
+      position: relative;
+      cursor: url('assets/img/cursor-default.png'), auto;
+    }
+
+    /* Header */
+    .header {
+      background: #1a1e34;
+      border-bottom: 1px solid rgba(0, 234, 255, 0.2);
+      padding: 15px 0;
+      transition: all 0.5s;
+      z-index: 997;
+    }
+
+    .header h1 {
+      font-family: 'Press Start 2P', cursive;
+      font-size: 2rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: #00eaff;
+      text-shadow: 0 0 10px #00eaff;
+      animation: neonGlow 1.5s ease-in-out infinite alternate;
+    }
+
+    @keyframes neonGlow {
+      from { text-shadow: 0 0 5px #00eaff, 0 0 10px #00eaff; }
+      to { text-shadow: 0 0 15px #00eaff, 0 0 25px #00eaff; }
+    }
+
+    .header .header-social-links a {
+      color: #00eaff;
+      transition: all 0.3s ease;
+    }
+
+    .header .header-social-links a:hover {
+      color: #15ff00;
+      text-shadow: 0 0 15px #15ff00;
+    }
+
+    /* Portfolio Section */
+    .portfolio {
+      position: relative;
+      min-height: 100vh;
+      padding: 80px 0;
+      background: linear-gradient(135deg, #1a1e34, #2b3557);
+      overflow: hidden;
+    }
+
+    .portfolio::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"><rect width="20" height="20" fill="none" stroke="rgba(0,234,255,0.1)" stroke-width="1"/></svg>') repeat;
+      animation: gridMove 20s linear infinite;
+      z-index: 0;
+    }
+
+    @keyframes gridMove {
+      0% { background-position: 0 0; }
+      100% { background-position: 100px 100px; }
+    }
+
+    .portfolio .particles {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .portfolio .particle {
+      position: absolute;
+      width: 8px;
+      height: 8px;
+      background: rgba(0, 234, 255, 0.7);
+      border-radius: 50%;
+      animation: float 6s infinite ease-in-out;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); opacity: 0.5; }
+      50% { transform: translateY(-30px); opacity: 1; }
+    }
+
+    .portfolio .container {
+      position: relative;
+      z-index: 2;
+    }
+
+    .section-title h2 {
+      font-family: 'Press Start 2P', cursive;
+      font-size: 2.5rem;
+      color: #fff;
+      text-shadow: 0 0 15px #00eaff;
+      animation: flicker 3s infinite alternate;
+    }
+
+    @keyframes flicker {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.8; }
+    }
+
+    .section-title p {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 1.2rem;
+      color: #15ff00;
+      text-shadow: 0 0 10px #15ff00;
+    }
+
+    .portfolio-filters li {
+      font-family: 'JetBrains Mono', monospace;
+      color: #00eaff;
+      text-shadow: 0 0 5px #00eaff;
+      transition: all 0.3s ease;
+    }
+
+    .portfolio-filters li:hover,
+    .portfolio-filters li.filter-active {
+      color: #15ff00;
+      text-shadow: 0 0 10px #15ff00;
+    }
+
+    .portfolio-item img {
+      border: 2px solid #00eaff;
+      box-shadow: 0 0 15px rgba(0, 234, 255, 0.5);
+      transition: transform 0.3s ease;
+    }
+
+    .portfolio-item:hover img {
+      transform: scale(1.05);
+    }
+
+    .portfolio-info {
+      background: rgba(26, 30, 52, 0.9);
+      border: 1px solid rgba(0, 234, 255, 0.2);
+    }
+
+    .portfolio-info h4 {
+      font-family: 'JetBrains Mono', monospace;
+      color: #00eaff;
+      text-shadow: 0 0 5px #00eaff;
+    }
+
+    .portfolio-info p {
+      color: #15ff00;
+      text-shadow: 0 0 5px #15ff00;
+    }
+
+    .portfolio-info a {
+      color: #00eaff;
+    }
+
+    .portfolio-info a:hover {
+      color: #15ff00;
+      text-shadow: 0 0 10px #15ff00;
+    }
+
+    /* Notification */
     .notification {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background: linear-gradient(135deg, #1e3c72, #2a5298, #00c6ff);
-  color: #fff;
-  border: 2px solid #00c6ff;
-  border-radius: 12px;
-  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
-  padding: 20px;
-  width: 320px;
-  z-index: 1000;
-  text-align: center;
-  animation: fadeIn 1.5s ease-in-out;
-}
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: linear-gradient(135deg, #1a2c34, #00eaff);
+      border-radius: 15px;
+      padding: 20px;
+      width: 350px;
+      max-width: 90vw;
+      z-index: 1000;
+      text-align: center;
+      font-family: 'JetBrains Mono', monospace;
+      color: #fff;
+      box-shadow: 0 0 20px rgba(0, 234, 255, 0.5);
+      animation: slideIn 1s ease-in-out;
+    }
 
+    .notification img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+      margin-bottom: 10px;
+      border: 2px solid #15ff00;
+    }
 
-.notification img {
-  width: 100%;
-  height: auto;
-  border-radius: 8px;
-  margin-bottom: 10px;
-}
+    .notification h3 {
+      font-family: 'Press Start 2P', cursive;
+      font-size: 1.5rem;
+      color: #15ff00;
+      text-shadow: 0 0 10px #15ff00;
+    }
 
-.notification h3 {
-  font-size: 1.6rem;
-  font-weight: bold;
-  margin: 10px 0;
-  color: #15ff00;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
-}
+    .notification p {
+      font-size: 1rem;
+      color: #d0d0d0;
+    }
 
-.notification p {
-  font-size: 1rem;
-  margin: 10px 0;
-  color: #ffffff;
-}
+    .notification .button-container {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 10px;
+    }
 
-.button-container {
-  display: flex;
-  justify-content: center;
-  gap: 10px;
-  margin-top: 10px;
-}
+    .notification .preview-btn,
+    .notification .close-btn {
+      font-family: 'JetBrains Mono', monospace;
+      background: #00eaff;
+      color: #0a0f1f;
+      padding: 10px 20px;
+      border-radius: 50px;
+      border: none;
+      font-weight: bold;
+      transition: all 0.3s ease;
+      box-shadow: 0 0 15px rgba(0, 234, 255, 0.5);
+    }
 
-.notification .preview-btn, .notification .close-btn {
-  padding: 8px 16px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background 0.3s, transform 0.2s;
-  font-size: 1rem;
-  font-weight: bold;
-}
+    .notification .preview-btn:hover,
+    .notification .close-btn:hover {
+      background: #15ff00;
+      color: #0a0f1f;
+      box-shadow: 0 0 25px rgba(21, 255, 0, 0.8);
+      transform: scale(1.1);
+    }
 
-.notification .preview-btn {
-  background: #0d00ff;
-  color: #fff;
-}
+    @keyframes slideIn {
+      from { opacity: 0; transform: translateX(100%); }
+      to { opacity: 1; transform: translateX(0); }
+    }
 
-.notification .preview-btn:hover {
-  background: #ff6600;
-  transform: scale(1.05);
-}
+    /* Footer */
+    .footer {
+      background: #1a1e34;
+      padding: 20px 0;
+      border-top: 1px solid rgba(0, 234, 255, 0.2);
+    }
 
-.notification .close-btn {
-  background: #138808;
-  color: #fff;
-}
+    .footer .copyright p {
+      color: #d0d0d0;
+      font-family: 'JetBrains Mono', monospace;
+    }
 
-.notification .close-btn:hover {
-  background: #0e6406;
-  transform: scale(1.05);
-}
+    .footer .sitename {
+      color: #00eaff;
+      text-shadow: 0 0 10px #00eaff;
+    }
 
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
+    .footer .social-links a {
+      color: #00eaff;
+      transition: all 0.3s ease;
+    }
 
+    .footer .social-links a:hover {
+      color: #15ff00;
+      text-shadow: 0 0 15px #15ff00;
+    }
+
+    @keyframes rotate-loader {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    @keyframes pulse-loader {
+      0%, 100% { transform: scale(1); opacity: 1; }
+      50% { transform: scale(1.2); opacity: 0.7; }
+    }
+
+    @keyframes fade-text {
+      0% { opacity: 1; }
+      100% { opacity: 0.5; }
+    }
+
+    /* Scroll Top */
+    .scroll-top {
+      background: #00eaff;
+      box-shadow: 0 0 15px rgba(0, 234, 255, 0.5);
+    }
+
+    .scroll-top:hover {
+      background: #15ff00;
+      box-shadow: 0 0 25px rgba(21, 255, 0, 0.8);
+    }
+
+    .scroll-top i {
+      color: #0a0f1f;
+    }
   </style>
-
 </head>
 
 <body class="index-page">
@@ -145,7 +342,7 @@
           <li><a href="about.html">About</a></li>
           <li><a href="resume.html">Resume</a></li>
           <li><a href="services.html">Abilities</a></li>
-          <li class="dropdown"><a href="https://dharmikgohil.fun/portfolio.html"><span>Projects</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+          <li class="dropdown"><a href="https://dharmikgohil.fun/portfolio.html" class="active"><span>Projects</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
             <ul>
               <li><a href="portfolio.html">Games</a></li>
               <li class="dropdown"><a href="logo.html"><span>Ui/ux</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
@@ -187,7 +384,7 @@
             </ul>
           </li>
           <li><a href="Achivemtn.html">Milestones</a></li>
-          <li><a href="contact.html" class="active">Contact</a></li>
+          <li><a href="contact.html">Contact</a></li>
           <li class="dropdown"><a href="#"><span>Time to Fun</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
             <ul>
               <li><a href="https://dharmik086.itch.io/floppy-bird-860" target="_blank">Floppy Bird</a></li>
@@ -213,119 +410,99 @@
     </div>
   </header>
 
-  
-<main class="main">
-
-  <!-- Portfolio Section -->
-  <section id="portfolio" class="portfolio section">
-
-    <!-- Section Title -->
-    <div class="container section-title" data-aos="fade-up">
-      <h2>Games</h2>
-      <p>His needs result from something escape him indeed are consectetur will</p>
-    </div><!-- End Section Title -->
-
-    <div class="container">
-
-      <div class="isotope-layout" data-default-filter="*" data-layout="masonry" data-sort="original-order">
-
-        <ul class="portfolio-filters isotope-filters" data-aos="fade-up" data-aos-delay="100">
-          <li data-filter="*" class="filter-active">Games</li>
-          <li data-filter=".filter-app">2D Game</li>
-          <li data-filter=".filter-app3d">3D Game</li>
-          <li data-filter=".filter-product">MultiPlayer</li>
-          <li data-filter=".filter-appmobile">Mobile Game</li>
-          <li data-filter=".filter-appsingleplayer">SinglePlayer</li>
-          <li data-filter=".filter-productpc">Pc Game</li>
-        </ul><!-- End Portfolio Filters -->
-
-        <div class="row gy-4 isotope-container" data-aos="fade-up" data-aos-delay="200">
-
-          <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app filter-appsingleplayer filter-productpc">
-            <img src="assets/img/floopy.webp" class="img-fluid" alt="">
-            <div class="portfolio-info">
-              <h4>Floppy ball</h4>
-              <p>First Simple Game</p>
-              <a href="assets/img/masonry-portfolio/a (1).png" title="Floppy Ball" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-              <a href="game1.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-            </div>
-          </div><!-- End Portfolio Item -->
-
-          <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app3d filter-appsingleplayer filter-productpc">
-            <img src="assets/img/masonry-portfolio/p1 (2).png" class="img-fluid" alt="">
-            <div class="portfolio-info">
-              <h4>Unity Prototype 1</h4>
-              <p>Learning Unity </p>
-              <a href="assets/img/masonry-portfolio/p1 (2).png" title="Car Control" data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-              <a href="game2.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-            </div>
-          </div><!-- End Portfolio Item -->
-
-          <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app3d  filter-appsingleplayer filter-productpc">
-            <img src="assets/img/masonry-portfolio/p1 (1).png" class="img-fluid" alt="">
-            <div class="portfolio-info">
-              <h4>Unity Prototype 2</h4>
-              <p>Learning Unity</p>
-              <a href="assets/img/masonry-portfolio/p1 (1).png" title="Animal Kill Game" data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-              <a href="game5.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-            </div>
-          </div><!-- End Portfolio Item -->
-
-          
-
-          
-
-          <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app filter-productpc filter-appmobile filter-appsingleplayer">
-            <img src="assets/img/masonry-portfolio/mm (1).png" class="img-fluid" alt="">
-            <div class="portfolio-info">
-              <h4>MiniMario</h4>
-              <p>Level Game For Mobile and Pc</p>
-              <a href="assets/img/masonry-portfolio/mm (1).png" title="Clone Of mario" data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-              <a href="game3.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-            </div>
-          </div><!-- End Portfolio Item -->
-
-         
-         
-
-          <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app3d filter-productpc filter-product">
-            <img src="assets/img/game1 (3).png" class="img-fluid" alt="">
-            <div class="portfolio-info">
-              <h4>MAVERICKS BATTLEGROUNDS</h4>
-              <p>First MultiPlyer Game</p>
-              <a href="assets/img/game1 (3).png" title="Branding 2" data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-              <a href="game4.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-            </div>
-          </div><!-- End Portfolio Item -->
-
-        </div><!-- End Portfolio Container -->
-
+  <main class="main">
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="portfolio section">
+      <div class="particles">
+        <div class="particle" style="left: 10%; top: 20%; animation-delay: 0s;"></div>
+        <div class="particle" style="left: 30%; top: 50%; animation-delay: 1s;"></div>
+        <div class="particle" style="left: 70%; top: 30%; animation-delay: 2s;"></div>
+        <div class="particle" style="left: 90%; top: 60%; animation-delay: 3s;"></div>
+        <div class="particle" style="left: 50%; top: 80%; animation-delay: 4s;"></div>
       </div>
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Games</h2>
+        <p>Explore my creations in game development</p>
+      </div>
+      <div class="container">
+        <div class="isotope-layout" data-default-filter="*" data-layout="masonry" data-sort="original-order">
+          <ul class="portfolio-filters isotope-filters" data-aos="fade-up" data-aos-delay="100">
+            <li data-filter="*" class="filter-active">Games</li>
+            <li data-filter=".filter-app">2D Game</li>
+            <li data-filter=".filter-app3d">3D Game</li>
+            <li data-filter=".filter-product">MultiPlayer</li>
+            <li data-filter=".filter-appmobile">Mobile Game</li>
+            <li data-filter=".filter-appsingleplayer">SinglePlayer</li>
+            <li data-filter=".filter-productpc">Pc Game</li>
+          </ul>
+          <div class="row gy-4 isotope-container" data-aos="fade-up" data-aos-delay="200">
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app filter-appsingleplayer filter-productpc">
+              <img src="assets/img/floopy.webp" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <h4>Floppy Ball</h4>
+                <p>First Simple Game</p>
+                <a href="assets/img/masonry-portfolio/a (1).png" title="Floppy Ball" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                <a href="game1.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app3d filter-appsingleplayer filter-productpc">
+              <img src="assets/img/masonry-portfolio/p1 (2).png" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <h4>Unity Prototype 1</h4>
+                <p>Learning Unity</p>
+                <a href="assets/img/masonry-portfolio/p1 (2).png" title="Car Control" data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                <a href="game2.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app3d filter-appsingleplayer filter-productpc">
+              <img src="assets/img/masonry-portfolio/p1 (1).png" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <h4>Unity Prototype 2</h4>
+                <p>Learning Unity</p>
+                <a href="assets/img/masonry-portfolio/p1 (1).png" title="Animal Kill Game" data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                <a href="game5.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app filter-productpc filter-appmobile filter-appsingleplayer">
+              <img src="assets/img/masonry-portfolio/mm (1).png" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <h4>MiniMario</h4>
+                <p>Level Game For Mobile and Pc</p>
+                <a href="assets/img/masonry-portfolio/mm (1).png" title="Clone Of Mario" data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                <a href="game3.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app3d filter-productpc filter-product">
+              <img src="assets/img/game1 (3).png" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <h4>Mavericks Battlegrounds</h4>
+                <p>First Multiplayer Game</p>
+                <a href="assets/img/game1 (3).png" title="Mavericks Battlegrounds" data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                <a href="game4.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
+    <!-- Notification -->
+    <div id="notification" class="notification">
+      <img src="assets/img/DGF Industry.jpg" alt="Mavericks Battlegrounds">
+      <h3>Launching Soon</h3>
+      <h3>Mavericks Battlegrounds</h3>
+      <p>Check out the preview now!</p>
+      <div class="button-container">
+        <button class="preview-btn" onclick="window.location.href='game4.html'">Preview Game</button>
+        <button class="close-btn" onclick="closeNotification()">Close</button>
+      </div>
     </div>
+  </main>
 
-  </section><!-- /Portfolio Section -->
-
-  <div id="notification" class="notification">
-    <img src="assets/img/DGF Industry.jpg" width="300px" alt="Republic Day Celebration">
-    <h3 style="color: rgb(0, 91, 0);">Launching Soon</h3>
-    <h3>MAVERICKS BATTLEGROUNDS</h3>
-    <p>Show In Privew</p>
-    <div class="button-container">
-      <button class="preview-btn" onclick="window.location.game4.html">Preview Game</button>
-      <button class="close-btn" onclick="closeNotification()">Close</button>
-    </div>
-  </div>
-
-
-</main>
-
-
-  <footer id="footer" class="footer light-background">
-
+  <footer id="footer" class="footer">
     <div class="container">
-      <div class="copyright text-center ">
-        <p>© <span>Copyright</span> <strong class="px-1 sitename">Dharmik</strong> <span>All Rights Reserved<br></span></p>
+      <div class="copyright text-center">
+        <p>© <span>Copyright</span> <strong class="px-1 sitename">Dharmik</strong> <span>All Rights Reserved</span></p>
       </div>
       <div class="social-links d-flex justify-content-center">
         <a href="https://github.com/DharmikGohil013"><i class="bi bi-github"></i></a>
@@ -333,23 +510,21 @@
         <a href="https://www.instagram.com/dharmik.086/?next=%2F"><i class="bi bi-instagram"></i></a>
         <a href="https://x.com/Dharmik086"><i class="bi bi-twitter"></i></a>
       </div>
-      
     </div>
-
   </footer>
 
   <!-- Scroll Top -->
-  <a href="services.html" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
   <!-- Preloader -->
   <div id="preloader">
     <div class="loader-container">
-        <div class="loader loader-outer"></div>
-        <div class="loader loader-middle"></div>
-        <div class="loader loader-inner"></div>
-        <div class="loading-text">LOADING...</div>
+      <div class="loader loader-outer"></div>
+      <div class="loader loader-middle"></div>
+      <div class="loader loader-inner"></div>
+      <div class="loading-text">LOADING...</div>
     </div>
-</div>
+  </div>
 
   <!-- Vendor JS Files -->
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -371,15 +546,19 @@
         notification.classList.add("active");
         setTimeout(() => {
           notification.classList.remove("active");
-        }, 5000); // Hide after 5 seconds
-      }, 1000); // Show after 1 second
+        }, 5000);
+      }, 1000);
+
+      AOS.init({
+        duration: 1000,
+        once: true
+      });
     });
+
     function closeNotification() {
-  document.getElementById('notification').style.display = 'none';
-}
-
+      document.getElementById('notification').style.display = 'none';
+    }
   </script>
-
 </body>
 
 </html>

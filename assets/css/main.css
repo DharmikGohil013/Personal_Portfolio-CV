@@ -494,16 +494,80 @@ h6 {
 # Preloader
 --------------------------------------------------------------*/
 /* Preloader Container */
-#preloader {
-  position: fixed;
-  inset: 0;
-  z-index: 9999;
-  background-color: #ffffff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: opacity 0.8s ease-out, visibility 0.8s ease-out;
-}
+
+    /* Preloader */
+    #preloader {
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      background-color: #0a0f1f;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: opacity 0.8s ease-out, visibility 0.8s ease-out;
+    }
+
+    #preloader.hidden {
+      opacity: 0;
+      visibility: hidden;
+    }
+
+    #preloader .loader-container {
+      position: relative;
+      width: 100px;
+      height: 100px;
+    }
+
+    .loader-outer {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      border: 4px solid transparent;
+      border-top: 4px solid #ff007f;
+      border-radius: 50%;
+      box-shadow: 0 0 15px #ff007f;
+      animation: rotate-loader 1.2s linear infinite;
+    }
+
+    .loader-middle {
+      position: absolute;
+      width: 80%;
+      height: 80%;
+      top: 10%;
+      left: 10%;
+      border: 4px solid transparent;
+      border-bottom: 4px solid #00eaff;
+      border-radius: 50%;
+      box-shadow: 0 0 15px #00eaff;
+      animation: rotate-loader 1.5s linear infinite reverse;
+    }
+
+    .loader-inner {
+      position: absolute;
+      width: 60%;
+      height: 60%;
+      top: 20%;
+      left: 20%;
+      border: 4px solid #ffdf00;
+      border-left-color: transparent;
+      border-radius: 50%;
+      box-shadow: 0 0 15px #ffdf00;
+      animation: pulse-loader 2s ease-in-out infinite;
+    }
+
+    .loading-text {
+      position: absolute;
+      bottom: -40px;
+      width: 100%;
+      text-align: center;
+      font-size: 1.2rem;
+      font-weight: bold;
+      color: #ffffff;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      animation: fade-text 1.5s infinite alternate ease-in-out;
+    }
+
 
 
 
