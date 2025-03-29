@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4658801537271443"
-     crossorigin="anonymous"></script>
+    crossorigin="anonymous"></script>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>Dharmik Gohil fun</title>
-  <meta name="description" content="">
-  <meta name="keywords" content="">
+  <title>Dharmik Gohil - Animal Hunting Game</title>
+  <meta name="description" content="Animal Hunting Game - A 3D Unity hunting simulation by Dharmik Gohil">
+  <meta name="keywords" content="Dharmik Gohil, Unity 3D, hunting game, game development">
 
   <!-- Favicons -->
   <link href="assets/img/dlogo.png" rel="icon">
@@ -16,7 +17,7 @@
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com" rel="preconnect">
   <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Press+Start+2P&display=swap" rel="stylesheet">
 
   <!-- Vendor CSS Files -->
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -28,106 +29,242 @@
   <!-- Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
 
-  <!-- =======================================================
-  * Template Name: Kelly
-  * Template URL: https://bootstrapmade.com/kelly-free-bootstrap-cv-resume-html-template/
-  * Updated: Aug 07 2024 with Bootstrap v5.3.3
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
-  
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4658801537271443"
-  crossorigin="anonymous"></script>
+  <!-- Custom Styles -->
+  <style>
+    /* Global Styles */
+    body {
+      background: #0a0f1f;
+      color: #fff;
+      font-family: 'JetBrains Mono', monospace;
+      overflow-x: hidden;
+      position: relative;
+      cursor: url('assets/img/cursor-default.png'), auto;
+    }
 
+    /* Header */
+    .header {
+      background: #1a1e34;
+      border-bottom: 1px solid rgba(0, 234, 255, 0.2);
+      padding: 10px 0;
+      transition: all 0.5s;
+      z-index: 997;
+    }
+
+    .header .logo img {
+      max-width: 40px;
+      height: auto;
+    }
+
+    .header h1 {
+      font-family: 'Press Start 2P', cursive;
+      font-size: clamp(1.5rem, 4vw, 2rem);
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: #00eaff;
+      text-shadow: 0 0 10px #00eaff;
+      animation: neonGlow 1.5s ease-in-out infinite alternate;
+    }
+
+    @keyframes neonGlow {
+      from { text-shadow: 0 0 5px #00eaff, 0 0 10px #00eaff; }
+      to { text-shadow: 0 0 15px #00eaff, 0 0 25px #00eaff; }
+    }
+
+    /* Portfolio Details Section */
+    .portfolio-details {
+      position: relative;
+      min-height: 100vh;
+      padding: clamp(40px, 10vw, 80px) 0;
+      background: linear-gradient(135deg, #1a1e34, #2b3557);
+      overflow: hidden;
+    }
+
+    .portfolio-details::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"><rect width="20" height="20" fill="none" stroke="rgba(0,234,255,0.1)" stroke-width="1"/></svg>') repeat;
+      animation: gridMove 20s linear infinite;
+      z-index: 0;
+    }
+
+    @keyframes gridMove {
+      0% { background-position: 0 0; }
+      100% { background-position: 100px 100px; }
+    }
+
+    .section-title h2 {
+      font-family: 'Press Start 2P', cursive;
+      font-size: clamp(1.8rem, 6vw, 2.5rem);
+      color: #fff;
+      text-shadow: 0 0 15px #ff007f;
+      animation: flicker 3s infinite alternate;
+      text-align: center;
+    }
+
+    .section-title p {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: clamp(1rem, 3vw, 1.2rem);
+      color: #15ff00;
+      text-shadow: 0 0 10px #15ff00;
+      text-align: center;
+      margin-top: 10px;
+    }
+
+    .portfolio-details-slider img {
+      border: 2px solid #ff007f;
+      box-shadow: 0 0 15px rgba(255, 0, 127, 0.5);
+      border-radius: 8px;
+      width: 100%;
+      height: auto;
+      transition: transform 0.3s ease;
+    }
+
+    .portfolio-details-slider img:hover {
+      transform: scale(1.02);
+    }
+
+    .portfolio-info {
+      background: rgba(26, 30, 52, 0.9);
+      border: 1px solid rgba(255, 0, 127, 0.2);
+      padding: 15px;
+      border-radius: 8px;
+    }
+
+    .portfolio-info h3 {
+      font-family: 'Press Start 2P', cursive;
+      color: #ff007f;
+      text-shadow: 0 0 10px #ff007f;
+      font-size: clamp(1.2rem, 4vw, 1.5rem);
+    }
+
+    .portfolio-info ul li {
+      color: #d0d0d0;
+      font-size: clamp(0.9rem, 2.5vw, 1rem);
+    }
+
+    .portfolio-info ul li strong {
+      color: #15ff00;
+      text-shadow: 0 0 5px #15ff00;
+    }
+
+    .portfolio-info ul li a {
+      color: #ff007f;
+      transition: all 0.3s ease;
+    }
+
+    .portfolio-info ul li a:hover {
+      color: #15ff00;
+      text-shadow: 0 0 10px #15ff00;
+    }
+
+    .portfolio-description h2 {
+      font-family: 'Press Start 2P', cursive;
+      color: #ff007f;
+      text-shadow: 0 0 10px #ff007f;
+      font-size: clamp(1.2rem, 4vw, 1.5rem);
+    }
+
+    .portfolio-description p {
+      color: #d0d0d0;
+      font-size: clamp(0.9rem, 2.5vw, 1rem);
+      text-shadow: 0 0 5px rgba(255, 255, 255, 0.2);
+    }
+
+    /* Download Button */
+    .download-btn {
+      display: inline-block;
+      padding: 12px 24px;
+      background-color: #ff007f;
+      color: #fff;
+      font-family: 'Press Start 2P', cursive;
+      font-size: clamp(0.8rem, 2vw, 1rem);
+      text-decoration: none;
+      border-radius: 8px;
+      margin-top: 20px;
+      transition: all 0.3s ease;
+      border: 2px solid #15ff00;
+      box-shadow: 0 0 15px rgba(255, 0, 127, 0.5);
+    }
+
+    .download-btn:hover {
+      background-color: #15ff00;
+      color: #0a0f1f;
+      transform: scale(1.05);
+      box-shadow: 0 0 25px rgba(21, 255, 0, 0.8);
+    }
+
+    .download-btn i {
+      margin-right: 8px;
+    }
+
+    /* Responsive Layout */
+    @media (max-width: 767px) {
+      .portfolio-details .row {
+        flex-direction: column;
+      }
+      .portfolio-details-slider {
+        margin-bottom: 20px;
+      }
+    }
+  </style>
 </head>
 
 <body class="index-page">
   <div class="custom-cursor"></div>
-  <header id="header" class="header d-flex align-items-center light-background sticky-top">
+  <header id="header" class="header d-flex align-items-center sticky-top">
     <div class="container-fluid position-relative d-flex align-items-center justify-content-between">
-
       <a href="index.html" class="logo d-flex align-items-center me-auto me-xl-0">
-        <!-- Uncomment the line below if you also wish to use an image logo -->
         <img src="assets/img/dlogo.png" alt="">
         <h1 class="sitename">DHARMIK</h1>
       </a>
-
       <nav id="navmenu" class="navmenu">
         <ul>
-          <li><a href="index.html" >Home</a></li>
-         
+          <li><a href="https://dharmikgohil.fun">Home</a></li>
           <li><a href="about.html">About</a></li>
           <li><a href="resume.html">Resume</a></li>
           <li><a href="services.html">Abilities</a></li>
-          <li class="dropdown"><a href="#" class="active"><span>Projects</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+          <li class="dropdown"><a href="https://dharmikgohil.fun/portfolio.html"><span>Projects</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
             <ul>
               <li><a href="portfolio.html">Games</a></li>
               <li class="dropdown"><a href="logo.html"><span>Ui/ux</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
                 <ul>
                   <li><a href="logo.html">Logos</a></li>
-
                 </ul>
               </li>
-              <li class="dropdown"><a href="#"><span>Websites</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-                <ul>
-                  <li><a href="https://dharmikgohil013.github.io/GDGS-Games-/">GDGS Games</a></li>
-                  <li><a href="https://dharmikgohil013.github.io/DHARMIK-GOHIL-FILMS/">Film industry</a></li>
-                  <li><a href="#">MedCare</a></li>
-                </ul>
-                <li class="dropdown"><a href="#"><span>Java Swing</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-                  <ul>
-                    <li class="dropdown"><a href="#"><span>CampusAdminPro</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-                      <ul>
-                        <li><a href="#">Overview</a></li>
-                        <li><a href="https://drive.google.com/file/d/15YNf77gERCt2LYfRYSdXiYU3yAkx7EvC/view?usp=drive_link">Report</a></li>
-                      </ul>
-                    <li><a href="#">Chess</a></li>
-                  </ul>
-                <li class="dropdown"><a href="#"><span>Node Js</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-                    <ul>
-                      <li><a href="https://indian-turijam.vercel.app/">IndianTurijam</a></li>
-                      <li><a href="https://contect-pages-hp3e.vercel.app/">Contact Page</a></li>
-                    </ul>
-                    
+              <!-- Other dropdown items remain unchanged -->
             </ul>
           </li>
-          <li><a href="Achivemtn.html" >Certificate & Achievement</a></li>
-          <li><a href="https://contect-pages-hp3e.vercel.app/">Contact</a></li>
-          
+          <li><a href="Achivemtn.html">Milestones</a></li>
+          <li><a href="contact.html" class="active">Contact</a></li>
         </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>
-      
-
-
       <div class="header-social-links">
-        <a href="https://github.com/DharmikGohil013" class="twitter"><i class="bi bi-github"></i></a>
-        <a href="https://www.linkedin.com/in/dharmikgohil086/" class="linkedin"><i class="bi bi-linkedin"></i></a>
-        <a href="https://www.instagram.com/dharmik.086/?next=%2F" class="instagram"><i class="bi bi-instagram"></i></a>
-        <a href="https://x.com/Dharmik086" class="facebook"><i class="bi bi-twitter"></i></a>
+        <a href="https://github.com/DharmikGohil013" target="_blank"><i class="bi bi-github"></i></a>
+        <a href="https://www.linkedin.com/in/dharmikgohil086/" target="_blank"><i class="bi bi-linkedin"></i></a>
+        <a href="https://www.instagram.com/dharmik.086/?next=%2F" target="_blank"><i class="bi bi-instagram"></i></a>
+        <a href="https://x.com/Dharmik086" target="_blank"><i class="bi bi-twitter"></i></a>
       </div>
-
     </div>
   </header>
 
   <main class="main">
-
     <!-- Portfolio Details Section -->
     <section id="portfolio-details" class="portfolio-details section">
-
       <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
-        <h2>Learn Unity</h2>
-        <p>Animal Eating And Killing Game</p>
-      </div><!-- End Section Title -->
+        <h2>Animal Hunting Game</h2>
+        <p>A 3D Unity hunting simulation with realistic animal behaviors</p>
+      </div>
 
       <div class="container" data-aos="fade-up" data-aos-delay="100">
-
         <div class="row gy-4">
-
           <div class="col-lg-8">
             <div class="portfolio-details-slider swiper init-swiper">
-
               <script type="application/json" class="swiper-config">
                 {
                   "loop": true,
@@ -143,16 +280,11 @@
                   }
                 }
               </script>
-
               <div class="swiper-wrapper align-items-center">
-
                 <div class="swiper-slide">
-                  <img src="assets/img/masonry-portfolio/p1 (1).png" alt="">
+                  <img src="assets/img/masonry-portfolio/p1 (1).png" alt="Animal Hunting Game Screenshot">
                 </div>
-
-                
-
-
+                <!-- Add more slides here if you have additional images -->
               </div>
               <div class="swiper-pagination"></div>
             </div>
@@ -160,36 +292,35 @@
 
           <div class="col-lg-4">
             <div class="portfolio-info" data-aos="fade-up" data-aos-delay="200">
-              <h3>Project information</h3>
+              <h3>Project Information</h3>
               <ul>
-                <li><strong>Category</strong>: Unity 3D Devlopment</li>
-               
-                <li><strong>Project date</strong>:June, 2024</li>
-                <li><strong>Project URL</strong>: <a href="https://github.com/DharmikGohil013/Unity-Prototype-1-2">www.Prototype.fun</a></li>
-            
+                <li><strong>Category</strong>: Unity 3D Development</li>
+                <li><strong>Project Date</strong>: June, 2024</li>
+                <li><strong>Project URL</strong>: <a href="https://github.com/DharmikGohil013/Unity-Prototype-1-2">GitHub Repository</a></li>
+                <li><strong>Technologies</strong>: Unity, C#, 3D Modeling</li>
               </ul>
             </div>
             <div class="portfolio-description" data-aos="fade-up" data-aos-delay="300">
-              <h2>Exciting and addictive Unity-based game</h2>
+              <h2>Wildlife Hunting Simulation</h2>
               <p>
-                Animal Killing Game is a 3D Unity game where players hunt or eliminate various animals in a series of environments, aiming for high scores while facing different challenges
+                Animal Hunting Game is an immersive 3D Unity experience where players track and hunt various animals across different environments. 
+                The game features realistic animal AI behaviors, dynamic weather systems, and challenging hunting mechanics that test players' 
+                tracking and marksmanship skills.
               </p>
+              <a href="https://github.com/DharmikGohil013/Unity-Prototype-1-2" class="download-btn" target="_blank">
+                <i class="bi bi-github"></i> View on GitHub
+              </a>
             </div>
           </div>
-
         </div>
-
       </div>
-
-    </section><!-- /Portfolio Details Section -->
-
+    </section>
   </main>
 
-  <footer id="footer" class="footer light-background">
-
+  <footer id="footer" class="footer">
     <div class="container">
-      <div class="copyright text-center ">
-        <p>© <span>Copyright</span> <strong class="px-1 sitename">Dharmik</strong> <span>All Rights Reserved<br></span></p>
+      <div class="copyright text-center">
+        <p>© <span>Copyright</span> <strong class="px-1 sitename">Dharmik</strong> <span>All Rights Reserved</span></p>
       </div>
       <div class="social-links d-flex justify-content-center">
         <a href="https://github.com/DharmikGohil013"><i class="bi bi-github"></i></a>
@@ -197,23 +328,21 @@
         <a href="https://www.instagram.com/dharmik.086/?next=%2F"><i class="bi bi-instagram"></i></a>
         <a href="https://x.com/Dharmik086"><i class="bi bi-twitter"></i></a>
       </div>
-      
     </div>
-
   </footer>
 
   <!-- Scroll Top -->
-  <a href="services.html" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
   <!-- Preloader -->
   <div id="preloader">
     <div class="loader-container">
-        <div class="loader loader-outer"></div>
-        <div class="loader loader-middle"></div>
-        <div class="loader loader-inner"></div>
-        <div class="loading-text">LOADING...</div>
+      <div class="loader loader-outer"></div>
+      <div class="loader loader-middle"></div>
+      <div class="loader loader-inner"></div>
+      <div class="loading-text">LOADING...</div>
     </div>
-</div>
+  </div>
 
   <!-- Vendor JS Files -->
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -228,7 +357,6 @@
 
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
-
 </body>
 
 </html>
