@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4658801537271443"
-     crossorigin="anonymous"></script>
+    crossorigin="anonymous"></script>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>Dharmik Gohil fun</title>
-  <meta name="description" content="">
-  <meta name="keywords" content="">
+  <title>Dharmik Gohil - Floppy Ball</title>
+  <meta name="description" content="Floppy Ball - A fast-paced Unity game by Dharmik Gohil">
+  <meta name="keywords" content="Dharmik Gohil, Floppy Ball, Unity, game development">
 
   <!-- Favicons -->
   <link href="assets/img/dlogo.png" rel="icon">
@@ -16,7 +17,7 @@
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com" rel="preconnect">
   <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Press+Start+2P&display=swap" rel="stylesheet">
 
   <!-- Vendor CSS Files -->
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -28,17 +29,385 @@
   <!-- Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
 
-  <!-- =======================================================
-  * Template Name: Kelly
-  * Template URL: https://bootstrapmade.com/kelly-free-bootstrap-cv-resume-html-template/
-  * Updated: Aug 07 2024 with Bootstrap v5.3.3
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4658801537271443"
-     crossorigin="anonymous"></script>
+  <!-- Custom Styles -->
+  <style>
+    /* Global Styles */
+    body {
+      background: #0a0f1f;
+      color: #fff;
+      font-family: 'JetBrains Mono', monospace;
+      overflow-x: hidden;
+      position: relative;
+      cursor: url('assets/img/cursor-default.png'), auto;
+    }
 
+    /* Header */
+    .header {
+      background: #1a1e34;
+      border-bottom: 1px solid rgba(0, 234, 255, 0.2);
+      padding: 10px 0;
+      transition: all 0.5s;
+      z-index: 997;
+    }
 
+    .header .logo img {
+      max-width: 40px;
+      height: auto;
+    }
+
+    .header h1 {
+      font-family: 'Press Start 2P', cursive;
+      font-size: clamp(1.5rem, 4vw, 2rem);
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: #00eaff;
+      text-shadow: 0 0 10px #00eaff;
+      animation: neonGlow 1.5s ease-in-out infinite alternate;
+    }
+
+    @keyframes neonGlow {
+      from { text-shadow: 0 0 5px #00eaff, 0 0 10px #00eaff; }
+      to { text-shadow: 0 0 15px #00eaff, 0 0 25px #00eaff; }
+    }
+
+    .header .header-social-links a {
+      color: #00eaff;
+      font-size: 1.2rem;
+      margin: 0 5px;
+      transition: all 0.3s ease;
+    }
+
+    .header .header-social-links a:hover {
+      color: #15ff00;
+      text-shadow: 0 0 15px #15ff00;
+    }
+
+    /* Responsive Navmenu */
+    .navmenu ul {
+      margin: 0;
+      padding: 0;
+    }
+
+    @media (max-width: 991px) {
+      .header .container-fluid {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .navmenu {
+        width: 100%;
+        margin-top: 10px;
+      }
+      .navmenu ul {
+        display: none;
+        width: 100%;
+      }
+      .navmenu ul.show {
+        display: block;
+      }
+      .mobile-nav-toggle {
+        display: block;
+        color: #00eaff;
+        font-size: 1.5rem;
+      }
+      .header-social-links {
+        margin-top: 10px;
+      }
+    }
+
+    /* Portfolio Details Section */
+    .portfolio-details {
+      position: relative;
+      min-height: 100vh;
+      padding: clamp(40px, 10vw, 80px) 0;
+      background: linear-gradient(135deg, #1a1e34, #2b3557);
+      overflow: hidden;
+    }
+
+    .portfolio-details::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"><rect width="20" height="20" fill="none" stroke="rgba(0,234,255,0.1)" stroke-width="1"/></svg>') repeat;
+      animation: gridMove 20s linear infinite;
+      z-index: 0;
+    }
+
+    @keyframes gridMove {
+      0% { background-position: 0 0; }
+      100% { background-position: 100px 100px; }
+    }
+
+    .portfolio-details .particles {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .portfolio-details .particle {
+      position: absolute;
+      width: 8px;
+      height: 8px;
+      background: rgba(0, 234, 255, 0.7);
+      border-radius: 50%;
+      animation: float 6s infinite ease-in-out;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); opacity: 0.5; }
+      50% { transform: translateY(-30px); opacity: 1; }
+    }
+
+    .portfolio-details .container {
+      position: relative;
+      z-index: 2;
+    }
+
+    .section-title h2 {
+      font-family: 'Press Start 2P', cursive;
+      font-size: clamp(1.8rem, 6vw, 2.5rem);
+      color: #fff;
+      text-shadow: 0 0 15px #00eaff;
+      animation: flicker 3s infinite alternate;
+      text-align: center;
+    }
+
+    @keyframes flicker {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.8; }
+    }
+
+    .section-title p {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: clamp(1rem, 3vw, 1.2rem);
+      color: #15ff00;
+      text-shadow: 0 0 10px #15ff00;
+      text-align: center;
+      margin-top: 10px;
+    }
+
+    .portfolio-details-slider img {
+      border: 2px solid #00eaff;
+      box-shadow: 0 0 15px rgba(0, 234, 255, 0.5);
+      border-radius: 8px;
+      width: 100%;
+      height: auto;
+    }
+
+    .swiper-pagination-bullet {
+      background: #00eaff;
+      opacity: 0.7;
+    }
+
+    .swiper-pagination-bullet-active {
+      background: #15ff00;
+      box-shadow: 0 0 10px #15ff00;
+      opacity: 1;
+    }
+
+    .portfolio-info {
+      background: rgba(26, 30, 52, 0.9);
+      border: 1px solid rgba(0, 234, 255, 0.2);
+      padding: 15px;
+      border-radius: 8px;
+    }
+
+    .portfolio-info h3 {
+      font-family: 'Press Start 2P', cursive;
+      color: #00eaff;
+      text-shadow: 0 0 10px #00eaff;
+      font-size: clamp(1.2rem, 4vw, 1.5rem);
+    }
+
+    .portfolio-info ul li {
+      color: #d0d0d0;
+      font-size: clamp(0.9rem, 2.5vw, 1rem);
+    }
+
+    .portfolio-info ul li strong {
+      color: #15ff00;
+      text-shadow: 0 0 5px #15ff00;
+    }
+
+    .portfolio-info ul li a {
+      color: #00eaff;
+      transition: all 0.3s ease;
+    }
+
+    .portfolio-info ul li a:hover {
+      color: #15ff00;
+      text-shadow: 0 0 10px #15ff00;
+    }
+
+    .portfolio-description h2 {
+      font-family: 'Press Start 2P', cursive;
+      color: #00eaff;
+      text-shadow: 0 0 10px #00eaff;
+      font-size: clamp(1.2rem, 4vw, 1.5rem);
+    }
+
+    .portfolio-description p {
+      color: #d0d0d0;
+      font-size: clamp(0.9rem, 2.5vw, 1rem);
+      text-shadow: 0 0 5px rgba(255, 255, 255, 0.2);
+    }
+
+    /* Responsive Layout */
+    @media (max-width: 767px) {
+      .portfolio-details .row {
+        flex-direction: column;
+      }
+      .portfolio-details-slider {
+        margin-bottom: 20px;
+      }
+      .portfolio-info,
+      .portfolio-description {
+        width: 100%;
+      }
+    }
+
+    /* Footer */
+    .footer {
+      background: #1a1e34;
+      padding: 20px 0;
+      border-top: 1px solid rgba(0, 234, 255, 0.2);
+    }
+
+    .footer .copyright p {
+      color: #d0d0d0;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: clamp(0.9rem, 2.5vw, 1rem);
+    }
+
+    .footer .sitename {
+      color: #00eaff;
+      text-shadow: 0 0 10px #00eaff;
+    }
+
+    .footer .social-links a {
+      color: #00eaff;
+      font-size: 1.2rem;
+      margin: 0 10px;
+      transition: all 0.3s ease;
+    }
+
+    .footer .social-links a:hover {
+      color: #15ff00;
+      text-shadow: 0 0 15px #15ff00;
+    }
+
+    /* Preloader */
+    #preloader {
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      background-color: #0a0f1f;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: opacity 0.8s ease-out, visibility 0.8s ease-out;
+    }
+
+    #preloader.hidden {
+      opacity: 0;
+      visibility: hidden;
+    }
+
+    #preloader .loader-container {
+      position: relative;
+      width: clamp(80px, 15vw, 100px);
+      height: clamp(80px, 15vw, 100px);
+    }
+
+    .loader-outer {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      border: 4px solid transparent;
+      border-top: 4px solid #ff007f;
+      border-radius: 50%;
+      box-shadow: 0 0 15px #ff007f;
+      animation: rotate-loader 1.2s linear infinite;
+    }
+
+    .loader-middle {
+      position: absolute;
+      width: 80%;
+      height: 80%;
+      top: 10%;
+      left: 10%;
+      border: 4px solid transparent;
+      border-bottom: 4px solid #00eaff;
+      border-radius: 50%;
+      box-shadow: 0 0 15px #00eaff;
+      animation: rotate-loader 1.5s linear infinite reverse;
+    }
+
+    .loader-inner {
+      position: absolute;
+      width: 60%;
+      height: 60%;
+      top: 20%;
+      left: 20%;
+      border: 4px solid #ffdf00;
+      border-left-color: transparent;
+      border-radius: 50%;
+      box-shadow: 0 0 15px #ffdf00;
+      animation: pulse-loader 2s ease-in-out infinite;
+    }
+
+    .loading-text {
+      position: absolute;
+      bottom: -40px;
+      width: 100%;
+      text-align: center;
+      font-size: clamp(1rem, 3vw, 1.2rem);
+      font-weight: bold;
+      color: #ffffff;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      animation: fade-text 1.5s infinite alternate ease-in-out;
+    }
+
+    @keyframes rotate-loader {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    @keyframes pulse-loader {
+      0%, 100% { transform: scale(1); opacity: 1; }
+      50% { transform: scale(1.2); opacity: 0.7; }
+    }
+
+    @keyframes fade-text {
+      0% { opacity: 1; }
+      100% { opacity: 0.5; }
+    }
+
+    /* Scroll Top */
+    .scroll-top {
+      background: #00eaff;
+      box-shadow: 0 0 15px rgba(0, 234, 255, 0.5);
+      width: 40px;
+      height: 40px;
+    }
+
+    .scroll-top:hover {
+      background: #15ff00;
+      box-shadow: 0 0 25px rgba(21, 255, 0, 0.8);
+    }
+
+    .scroll-top i {
+      color: #0a0f1f;
+      font-size: 1.5rem;
+    }
+  </style>
 </head>
 
 <body class="index-page">
@@ -124,10 +493,15 @@
   </header>
 
   <main class="main">
-
     <!-- Portfolio Details Section -->
     <section id="portfolio-details" class="portfolio-details section">
-
+      <div class="particles">
+        <div class="particle" style="left: 10%; top: 20%; animation-delay: 0s;"></div>
+        <div class="particle" style="left: 30%; top: 50%; animation-delay: 1s;"></div>
+        <div class="particle" style="left: 70%; top: 30%; animation-delay: 2s;"></div>
+        <div class="particle" style="left: 90%; top: 60%; animation-delay: 3s;"></div>
+        <div class="particle" style="left: 50%; top: 80%; animation-delay: 4s;"></div>
+      </div>
       <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
         <h2>Floppy Ball</h2>
@@ -135,12 +509,9 @@
       </div><!-- End Section Title -->
 
       <div class="container" data-aos="fade-up" data-aos-delay="100">
-
         <div class="row gy-4">
-
           <div class="col-lg-8">
             <div class="portfolio-details-slider swiper init-swiper">
-
               <script type="application/json" class="swiper-config">
                 {
                   "loop": true,
@@ -156,22 +527,16 @@
                   }
                 }
               </script>
-
               <div class="swiper-wrapper align-items-center">
-
                 <div class="swiper-slide">
                   <img src="assets/img/masonry-portfolio/a (1).png" alt="">
                 </div>
-
                 <div class="swiper-slide">
                   <img src="assets/img/masonry-portfolio/a (2).png" alt="">
                 </div>
-
                 <div class="swiper-slide">
                   <img src="assets/img/masonry-portfolio/a (3).png" alt="">
                 </div>
-
-
               </div>
               <div class="swiper-pagination"></div>
             </div>
@@ -179,36 +544,30 @@
 
           <div class="col-lg-4">
             <div class="portfolio-info" data-aos="fade-up" data-aos-delay="200">
-              <h3>Project information</h3>
+              <h3>Project Information</h3>
               <ul>
-                <li><strong>Category</strong>: Unity Devlopment</li>
-               
-                <li><strong>Project date</strong>:March, 2024</li>
+                <li><strong>Category</strong>: Unity Development</li>
+                <li><strong>Project Date</strong>: March, 2024</li>
                 <li><strong>Project URL</strong>: <a href="https://github.com/DharmikGohil013/Floppy-Bird-Game">www.floopyball.fun</a></li>
                 <li><strong>Live</strong>: <a href="https://dharmik086.itch.io/floppy-bird-860">Floppy-Bird-Game</a></li>
               </ul>
             </div>
             <div class="portfolio-description" data-aos="fade-up" data-aos-delay="300">
-              <h2>Exciting and addictive Unity-based game</h2>
+              <h2>Exciting and Addictive Unity-Based Game</h2>
               <p>
                 Floppy Ball is an exciting and addictive Unity-based game where players control a bouncing ball, navigating it through a series of obstacles. The ball automatically jumps, and the player must time the jumps precisely to avoid hitting walls and obstacles that appear on the screen. The goal is to score as many points as possible by successfully passing through gaps in the obstacles. With fast-paced gameplay, simple controls, and increasingly difficult levels, Floppy Ball keeps players engaged and challenged as they strive for higher scores.
               </p>
             </div>
           </div>
-
         </div>
-
       </div>
-
     </section><!-- /Portfolio Details Section -->
-
   </main>
 
-  <footer id="footer" class="footer light-background">
-
+  <footer id="footer" class="footer">
     <div class="container">
-      <div class="copyright text-center ">
-        <p>© <span>Copyright</span> <strong class="px-1 sitename">Dharmik</strong> <span>All Rights Reserved<br></span></p>
+      <div class="copyright text-center">
+        <p>© <span>Copyright</span> <strong class="px-1 sitename">Dharmik</strong> <span>All Rights Reserved</span></p>
       </div>
       <div class="social-links d-flex justify-content-center">
         <a href="https://github.com/DharmikGohil013"><i class="bi bi-github"></i></a>
@@ -216,23 +575,21 @@
         <a href="https://www.instagram.com/dharmik.086/?next=%2F"><i class="bi bi-instagram"></i></a>
         <a href="https://x.com/Dharmik086"><i class="bi bi-twitter"></i></a>
       </div>
-      
     </div>
-
   </footer>
 
   <!-- Scroll Top -->
-  <a href="services.html" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
   <!-- Preloader -->
   <div id="preloader">
     <div class="loader-container">
-        <div class="loader loader-outer"></div>
-        <div class="loader loader-middle"></div>
-        <div class="loader loader-inner"></div>
-        <div class="loading-text">LOADING...</div>
+      <div class="loader loader-outer"></div>
+      <div class="loader loader-middle"></div>
+      <div class="loader loader-inner"></div>
+      <div class="loading-text">LOADING...</div>
     </div>
-</div>
+  </div>
 
   <!-- Vendor JS Files -->
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -247,7 +604,21 @@
 
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      AOS.init({
+        duration: 1000,
+        once: true
+      });
 
+      // Mobile navigation toggle
+      const mobileNavToggle = document.querySelector('.mobile-nav-toggle');
+      const navmenu = document.querySelector('.navmenu ul');
+      mobileNavToggle.addEventListener('click', function () {
+        navmenu.classList.toggle('show');
+      });
+    });
+  </script>
 </body>
 
 </html>
