@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-
 <head>
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4658801537271443"
      crossorigin="anonymous"></script>
@@ -27,8 +26,396 @@
   <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
 
   <!-- Main CSS File -->
-  <link href="assets/css/main.css" rel="stylesheet">
+  <style>
+    /* Global Styles */
+    body {
+      background: #0a0f1f;
+      color: #fff;
+      font-family: 'JetBrains Mono', monospace;
+      overflow-x: hidden;
+      position: relative;
+      cursor: url('assets/img/cursor-default.png'), auto;
+    }
 
+    /* Header */
+    .header {
+      background: #1a1e34;
+      border-bottom: 1px solid rgba(0, 234, 255, 0.2);
+      padding: 15px 0;
+      transition: all 0.5s;
+      z-index: 997;
+    }
+
+    .header h1 {
+      font-family: 'Press Start 2P', cursive;
+      font-size: 2rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: #00eaff;
+      text-shadow: 0 0 10px #00eaff;
+      animation: neonGlow 1.5s ease-in-out infinite alternate;
+    }
+
+    @keyframes neonGlow {
+      from { text-shadow: 0 0 5px #00eaff, 0 0 10px #00eaff; }
+      to { text-shadow: 0 0 15px #00eaff, 0 0 25px #00eaff; }
+    }
+
+    .header .header-social-links a {
+      color: #00eaff;
+      transition: all 0.3s ease;
+    }
+
+    .header .header-social-links a:hover {
+      color: #15ff00;
+      text-shadow: 0 0 15px #15ff00;
+    }
+
+    /* Portfolio Section */
+    .portfolio {
+      position: relative;
+      min-height: 100vh;
+      padding: 80px 0;
+      background: linear-gradient(135deg, #1a1e34, #2b3557);
+      overflow: hidden;
+    }
+
+    .portfolio::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"><rect width="20" height="20" fill="none" stroke="rgba(0,234,255,0.1)" stroke-width="1"/></svg>') repeat;
+      animation: gridMove 20s linear infinite;
+      z-index: 0;
+    }
+
+    @keyframes gridMove {
+      0% { background-position: 0 0; }
+      100% { background-position: 100px 100px; }
+    }
+
+    .portfolio .particles {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .portfolio .particle {
+      position: absolute;
+      width: 8px;
+      height: 8px;
+      background: rgba(0, 234, 255, 0.7);
+      border-radius: 50%;
+      animation: float 6s infinite ease-in-out;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); opacity: 0.5; }
+      50% { transform: translateY(-30px); opacity: 1; }
+    }
+
+    .portfolio .container {
+      position: relative;
+      z-index: 2;
+    }
+
+    .section-title h2 {
+      font-family: 'Press Start 2P', cursive;
+      font-size: 2.5rem;
+      color: #fff;
+      text-shadow: 0 0 15px #00eaff;
+      animation: flicker 3s infinite alternate;
+    }
+
+    @keyframes flicker {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.8; }
+    }
+
+    .section-title p {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 1.2rem;
+      color: #15ff00;
+      text-shadow: 0 0 10px #15ff00;
+    }
+
+    /* Updated Portfolio Filters */
+    .portfolio-filters {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 15px;
+      margin-bottom: 40px;
+    }
+
+    .portfolio-filters .filter-btn {
+      font-family: 'JetBrains Mono', monospace;
+      background: rgba(26, 30, 52, 0.9);
+      color: #00eaff;
+      padding: 10px 20px;
+      border: 2px solid #00eaff;
+      border-radius: 25px;
+      text-transform: uppercase;
+      font-size: 0.9rem;
+      font-weight: bold;
+      text-shadow: 0 0 5px #00eaff;
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+
+    .portfolio-filters .filter-btn:hover,
+    .portfolio-filters .filter-btn.filter-active {
+      background: #15ff00;
+      color: #0a0f1f;
+      border-color: #15ff00;
+      box-shadow: 0 0 15px #15ff00;
+      text-shadow: none;
+    }
+
+    .portfolio-item img {
+      border: 2px solid #00eaff;
+      box-shadow: 0 0 15px rgba(0, 234, 255, 0.5);
+      transition: transform 0.3s ease;
+    }
+
+    .portfolio-item:hover img {
+      transform: scale(1.05);
+    }
+
+    .portfolio-info {
+      background: rgba(26, 30, 52, 0.9);
+      border: 1px solid rgba(0, 234, 255, 0.2);
+    }
+
+    .portfolio-info h4 {
+      font-family: 'JetBrains Mono', monospace;
+      color: #00eaff;
+      text-shadow: 0 0 5px #00eaff;
+    }
+
+    .portfolio-info p {
+      color: #15ff00;
+      text-shadow: 0 0 5px #15ff00;
+    }
+
+    .portfolio-info a {
+      color: #00eaff;
+    }
+
+    .portfolio-info a:hover {
+      color: #15ff00;
+      text-shadow: 0 0 10px #15ff00;
+    }
+
+    /* Notification */
+    .notification {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: linear-gradient(135deg, #1a2c34, #00eaff);
+      border-radius: 15px;
+      padding: 20px;
+      width: 350px;
+      max-width: 90vw;
+      z-index: 1000;
+      text-align: center;
+      font-family: 'JetBrains Mono', monospace;
+      color: #fff;
+      box-shadow: 0 0 20px rgba(0, 234, 255, 0.5);
+      animation: slideIn 1s ease-in-out;
+    }
+
+    .notification img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+      margin-bottom: 10px;
+      border: 2px solid #15ff00;
+    }
+
+    .notification h3 {
+      font-family: 'Press Start 2P', cursive;
+      font-size: 1.5rem;
+      color: #15ff00;
+      text-shadow: 0 0 10px #15ff00;
+    }
+
+    .notification p {
+      font-size: 1rem;
+      color: #d0d0d0;
+    }
+
+    .notification .button-container {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 10px;
+    }
+
+    .notification .preview-btn,
+    .notification .close-btn {
+      font-family: 'JetBrains Mono', monospace;
+      background: #00eaff;
+      color: #0a0f1f;
+      padding: 10px 20px;
+      border-radius: 50px;
+      border: none;
+      font-weight: bold;
+      transition: all 0.3s ease;
+      box-shadow: 0 0 15px rgba(0, 234, 255, 0.5);
+    }
+
+    .notification .preview-btn:hover,
+    .notification .close-btn:hover {
+      background: #15ff00;
+      color: #0a0f1f;
+      box-shadow: 0 0 25px rgba(21, 255, 0, 0.8);
+      transform: scale(1.1);
+    }
+
+    @keyframes slideIn {
+      from { opacity: 0; transform: translateX(100%); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+
+    /* Footer */
+    .footer {
+      background: #1a1e34;
+      padding: 20px 0;
+      border-top: 1px solid rgba(0, 234, 255, 0.2);
+    }
+
+    .footer .copyright p {
+      color: #d0d0d0;
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    .footer .sitename {
+      color: #00eaff;
+      text-shadow: 0 0 10px #00eaff;
+    }
+
+    .footer .social-links a {
+      color: #00eaff;
+      transition: all 0.3s ease;
+    }
+
+    .footer .social-links a:hover {
+      color: #15ff00;
+      text-shadow: 0 0 15px #15ff00;
+    }
+
+    /* Preloader */
+    #preloader {
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      background-color: #0a0f1f;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: opacity 0.8s ease-out, visibility 0.8s ease-out;
+    }
+
+    #preloader.hidden {
+      opacity: 0;
+      visibility: hidden;
+    }
+
+    #preloader .loader-container {
+      position: relative;
+      width: 100px;
+      height: 100px;
+    }
+
+    .loader-outer {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      border: 4px solid transparent;
+      border-top: 4px solid #ff007f;
+      border-radius: 50%;
+      box-shadow: 0 0 15px #ff007f;
+      animation: rotate-loader 1.2s linear infinite;
+    }
+
+    .loader-middle {
+      position: absolute;
+      width: 80%;
+      height: 80%;
+      top: 10%;
+      left: 10%;
+      border: 4px solid transparent;
+      border-bottom: 4px solid #00eaff;
+      border-radius: 50%;
+      box-shadow: 0 0 15px #00eaff;
+      animation: rotate-loader 1.5s linear infinite reverse;
+    }
+
+    .loader-inner {
+      position: absolute;
+      width: 60%;
+      height: 60%;
+      top: 20%;
+      left: 20%;
+      border: 4px solid #ffdf00;
+      border-left-color: transparent;
+      border-radius: 50%;
+      box-shadow: 0 0 15px #ffdf00;
+      animation: pulse-loader 2s ease-in-out infinite;
+    }
+
+    .loading-text {
+      position: absolute;
+      bottom: -40px;
+      width: 100%;
+      text-align: center;
+      font-size: 1.2rem;
+      font-weight: bold;
+      color: #ffffff;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      animation: fade-text 1.5s infinite alternate ease-in-out;
+    }
+
+    @keyframes rotate-loader {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    @keyframes pulse-loader {
+      0%, 100% { transform: scale(1); opacity: 1; }
+      50% { transform: scale(1.2); opacity: 0.7; }
+    }
+
+    @keyframes fade-text {
+      0% { opacity: 1; }
+      100% { opacity: 0.5; }
+    }
+
+    /* Scroll Top */
+    .scroll-top {
+      background: #00eaff;
+      box-shadow: 0 0 15px rgba(0, 234, 255, 0.5);
+    }
+
+    .scroll-top:hover {
+      background: #15ff00;
+      box-shadow: 0 0 25px rgba(21, 255, 0, 0.8);
+    }
+
+    .scroll-top i {
+      color: #0a0f1f;
+    }
+  </style>
+  <link href="assets/css/main.css" rel="stylesheet">
 </head>
 
 <body class="index-page">
@@ -37,12 +424,12 @@
     <div class="container-fluid position-relative d-flex align-items-center justify-content-between">
       <a href="index.html" class="logo d-flex align-items-center me-auto me-xl-0">
         <img src="assets/img/dlogo.png" alt="">
-          <h1 class="sitename">DHARMIK</h1>
+        <h1 class="sitename">DHARMIK</h1>
       </a>
       <nav id="navmenu" class="navmenu">
         <ul>
           <li><a href="https://dharmikgohil.fun" class="active">Home</a></li>
-          <li><a href="about.html">About</a></li>
+          <li><a href="#about">About</a></li>
           <li><a href="resume.html">Resume</a></li>
           <li><a href="services.html">Abilities</a></li>
           <li class="dropdown"><a href="https://dharmikgohil.fun/portfolio.html"><span>Projects</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
@@ -128,7 +515,7 @@
           <div class="col-lg-8">
             <h2>Dharmik Gohil</h2>
             <p>"Crafting Worlds, One Game at a Time"</p>
-            <a href="about.html" class="btn-get-started">About Me</a>
+            <a href="#about" class="btn-get-started">About Me</a>
             <a href="contact.html" class="btn-get-started">Support</a>
           </div>
         </div>
@@ -141,6 +528,469 @@
       <p>Explore my latest game projects and join the adventure. Ready to play? 🎮</p>
       <button class="close-btn" onclick="closeNotification()">Close</button>
     </div>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="portfolio section">
+      <div class="particles">
+        <div class="particle" style="left: 10%; top: 20%; animation-delay: 0s;"></div>
+        <div class="particle" style="left: 30%; top: 50%; animation-delay: 1s;"></div>
+        <div class="particle" style="left: 70%; top: 30%; animation-delay: 2s;"></div>
+        <div class="particle" style="left: 90%; top: 60%; animation-delay: 3s;"></div>
+        <div class="particle" style="left: 50%; top: 80%; animation-delay: 4s;"></div>
+      </div>
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Games</h2>
+        <p>Explore my creations in game development</p>
+      </div>
+      <div class="container">
+        <div class="isotope-layout" data-default-filter="*" data-layout="masonry" data-sort="original-order">
+          <!-- Updated Filters as Buttons -->
+          <div class="portfolio-filters isotope-filters" data-aos="fade-up" data-aos-delay="100">
+            <button class="filter-btn filter-active" data-filter="*">All Games</button>
+            <button class="filter-btn" data-filter=".filter-app">2D Game</button>
+            <button class="filter-btn" data-filter=".filter-app3d">3D Game</button>
+            <button class="filter-btn" data-filter=".filter-product">Multiplayer</button>
+            <button class="filter-btn" data-filter=".filter-appmobile">Mobile Game</button>
+            <button class="filter-btn" data-filter=".filter-appsingleplayer">Singleplayer</button>
+            <button class="filter-btn" data-filter=".filter-productpc">PC Game</button>
+          </div>
+          <div class="row gy-4 isotope-container" data-aos="fade-up" data-aos-delay="200">
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app filter-appsingleplayer filter-productpc">
+              <img src="assets/img/floopy.webp" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <h4>Floppy Ball</h4>
+                <p>First Simple Game</p>
+                <a href="assets/img/masonry-portfolio/a (1).png" title="Floppy Ball" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                <a href="game1.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app3d filter-appsingleplayer filter-productpc">
+              <img src="assets/img/masonry-portfolio/p1 (2).png" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <h4>Unity Prototype 1</h4>
+                <p>Learning Unity</p>
+                <a href="assets/img/masonry-portfolio/p1 (2).png" title="Car Control" data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                <a href="game2.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app3d filter-appsingleplayer filter-productpc">
+              <img src="assets/img/masonry-portfolio/p1 (1).png" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <h4>Unity Prototype 2</h4>
+                <p>Learning Unity</p>
+                <a href="assets/img/masonry-portfolio/p1 (1).png" title="Animal Kill Game" data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                <a href="game5.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app filter-productpc filter-appmobile filter-appsingleplayer">
+              <img src="assets/img/masonry-portfolio/mm (1).png" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <h4>MiniMario</h4>
+                <p>Level Game For Mobile and Pc</p>
+                <a href="assets/img/masonry-portfolio/mm (1).png" title="Clone Of Mario" data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                <a href="game3.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app3d filter-productpc filter-product">
+              <img src="assets/img/game1 (3).png" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <h4>Mavericks Battlegrounds</h4>
+                <p>First Multiplayer Game</p>
+                <a href="assets/img/game1 (3).png" title="Mavericks Battlegrounds" data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                <a href="game4.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+     <!-- About Section -->
+     <section id="about" class="about section">
+      <div class="particles">
+        <div class="particle" style="left: 10%; top: 20%; animation-delay: 0s;"></div>
+        <div class="particle" style="left: 30%; top: 50%; animation-delay: 1s;"></div>
+        <div class="particle" style="left: 70%; top: 30%; animation-delay: 2s;"></div>
+        <div class="particle" style="left: 90%; top: 60%; animation-delay: 3s;"></div>
+      </div>
+      <div class="container section-title" data-aos="fade-up">
+        <h2>About</h2>
+        <p>Needed for something valuable, escaping while keeping it simple and clear</p>
+      </div>
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <div class="row gy-4 justify-content-center">
+          <div class="col-lg-4">
+            <img src="assets/img/DharmikGohil (1).png" class="img-fluid" alt="">
+          </div>
+          <div class="col-lg-8 content">
+            <h2>Game Developer & Interactive Experience Designer</h2>
+            <p class="fst-italic py-3">
+              Passionate about creating innovative and immersive experiences, blending creativity and technology to deliver engaging solutions in the field of game development and design.
+            </p>
+            <div class="row">
+              <div class="col-lg-6">
+                <ul>
+                  <li><i class="bi bi-chevron-right"></i> <strong>Birthday:</strong> <span>12 Jun 2006</span></li>
+                  <li><i class="bi bi-chevron-right"></i> <strong>Website:</strong> <span>www.dharmikgohil.fun</span></li>
+                  <li><i class="bi bi-chevron-right"></i> <strong>Phone:</strong> <span>+91 9624105887</span></li>
+                  <li><i class="bi bi-chevron-right"></i> <strong>City:</strong> <span>Surat, Gujarat, India</span></li>
+                </ul>
+              </div>
+              <div class="col-lg-6">
+                <ul>
+                  <li><i class="bi bi-chevron-right"></i> <strong>Age:</strong> <span>18</span></li>
+                  <li><i class="bi bi-chevron-right"></i> <strong>Degree:</strong> <span>Bachelor of Technology in Information Technology</span></li>
+                  <li><i class="bi bi-chevron-right"></i> <strong>Email:</strong> <span>dharmikgohil395003@gmail.com</span></li>
+                  <li><i class="bi bi-chevron-right"></i> <strong>Freelance:</strong> <span>Available</span></li>
+                </ul>
+              </div>
+            </div>
+            <p class="py-3">
+              Dedicated to delivering high-quality solutions, focusing on innovative design and development while addressing challenges with precision. Committed to ensuring efficiency and satisfaction through expert craftsmanship and attention to detail.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Skills Section -->
+    <section id="skills" class="skills section">
+      <div class="particles">
+        <div class="particle" style="left: 15%; top: 25%; animation-delay: 0s;"></div>
+        <div class="particle" style="left: 35%; top: 55%; animation-delay: 1s;"></div>
+        <div class="particle" style="left: 65%; top: 35%; animation-delay: 2s;"></div>
+        <div class="particle" style="left: 85%; top: 65%; animation-delay: 3s;"></div>
+      </div>
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Skills</h2>
+        <p>The necessity for him to pursue something, escape it, and indeed maintain a meaningful connection</p>
+      </div>
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <div class="row skills-content skills-animation">
+          <div class="col-lg-6">
+            <div class="progress">
+              <span class="skill"><span>Unity</span> <i class="val">90%</i></span>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div>
+            <div class="progress">
+              <span class="skill"><span>C#</span> <i class="val">80%</i></span>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div>
+            <div class="progress">
+              <span class="skill"><span>JavaScript</span> <i class="val">10%</i></span>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" role="progressbar" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="progress">
+              <span class="skill"><span>Java</span> <i class="val">80%</i></span>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div>
+            <div class="progress">
+              <span class="skill"><span>Full Stack</span> <i class="val">70%</i></span>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div>
+            <div class="progress">
+              <span class="skill"><span>Ui/Ux</span> <i class="val">75%</i></span>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" role="progressbar" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Resume Section -->
+    <section id="resume" class="resume section">
+      <div class="particles">
+        <div class="particle" style="left: 10%; top: 20%; animation-delay: 0s;"></div>
+        <div class="particle" style="left: 30%; top: 50%; animation-delay: 1s;"></div>
+        <div class="particle" style="left: 70%; top: 30%; animation-delay: 2s;"></div>
+        <div class="particle" style="left: 90%; top: 60%; animation-delay: 3s;"></div>
+      </div>
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Resume</h2>
+        <p>His needs are to be followed by something, to escape him, indeed, to be pursued.</p>
+      </div><!-- End Section Title -->
+
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+            <h3 class="resume-title">Sumary</h3>
+            <div class="resume-item pb-0">
+              <h4>Dharmik Gohil</h4>
+              <p><em>Passionate and results-driven Unity Game Developer with a proven track record of creating engaging and interactive 2D/3D games, from concept to polished final product.</em></p>
+              <ul>
+                <li>62 Radhaswami Soci, Katargam, Surat</li>
+                <li>+91 9624105887</li>
+                <li><a href="mailto:dharmikgohil395003@gmail.com">dharmikgohil395003@gmail.com</a></li>
+              </ul>
+            </div><!-- End Resume Item -->
+
+            <h3 class="resume-title">Education</h3>
+            <div class="resume-item">
+              <h4>Bachelor of Technology in Information Technology</h4>
+              <h5>2023 - 2027</h5>
+              <p><em><a href="https://www.charusat.ac.in/">Charusat University, Changa</a></em></p>
+              <p>Focused on developing strong technical skills in programming, software development, and game design, with a passion for creating innovative solutions in the field of technology.</p>
+            </div><!-- End Resume Item -->
+          </div>
+
+          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
+            <h3 class="resume-title">Skills and Technical Experience</h3>
+            <div class="resume-item">
+              <h4>Unity and C# Development</h4>
+              <h5>May 2024 - Present</h5>
+              <p><em>Self-Taught and Continuous Learning</em></p>
+              <ul>
+                <li>Mastered game development techniques, including 2D/3D game mechanics, scripting, and asset integration in Unity using C#.</li>
+                <li>Dedicated to learning and improving Unity game development skills.</li>
+              </ul>
+            </div><!-- End Resume Item -->
+            <div class="resume-item">
+              <h4>C and C++ Programming</h4>
+              <h5>May 2023 - July 2023</h5>
+              <p><em><a href="https://www.cdmi.in/">Creative Design and Multimedia Institute</a></em></p>
+              <ul>
+                <li>Gained a strong foundation in programming concepts, algorithms, and problem-solving using C and C++.</li>
+              </ul>
+            </div><!-- End Resume Item -->
+            <div class="resume-item">
+              <h4>Java and Java Swing</h4>
+              <h5>August 2024</h5>
+              <p><em><a href="https://www.udemy.com/">Udemy Online Course</a></em></p>
+              <ul>
+                <li>Developed skills in object-oriented programming and GUI development using Java Swing.</li>
+              </ul>
+            </div><!-- End Resume Item -->
+            <div class="resume-item">
+              <h4>MongoDB and MySQL</h4>
+              <h5>Database Skills</h5>
+              <ul>
+                <li>Learned to design, manage, and query databases using MongoDB and MySQL for efficient data storage and retrieval.</li>
+              </ul>
+            </div><!-- End Resume Item -->
+          </div>
+        </div>
+      </div>
+    </section><!-- /Resume Section -->
+    <!-- Stats Section -->
+    <section id="stats" class="stats section">
+      <div class="particles">
+        <div class="particle" style="left: 20%; top: 30%; animation-delay: 0s;"></div>
+        <div class="particle" style="left: 40%; top: 60%; animation-delay: 1s;"></div>
+        <div class="particle" style="left: 60%; top: 40%; animation-delay: 2s;"></div>
+        <div class="particle" style="left: 80%; top: 70%; animation-delay: 3s;"></div>
+      </div>
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Facts</h2>
+        <p>His needs are met through something valuable, escaping while maintaining clarity and focus</p>
+      </div>
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <div class="row gy-4">
+          <div class="col-lg-3 col-md-6">
+            <div class="stats-item text-center w-100 h-100">
+              <span data-purecounter-start="0" data-purecounter-end="3" data-purecounter-duration="1" class="purecounter"></span>
+              <p>Learning Experience Years</p>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6">
+            <div class="stats-item text-center w-100 h-100">
+              <span data-purecounter-start="0" data-purecounter-end="40" data-purecounter-duration="1" class="purecounter"></span>
+              <p>Projects</p>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6">
+            <div class="stats-item text-center w-100 h-100">
+              <span data-purecounter-start="0" data-purecounter-end="1453" data-purecounter-duration="1" class="purecounter"></span>
+              <p>Hours Of Support</p>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6">
+            <div class="stats-item text-center w-100 h-100">
+              <span data-purecounter-start="0" data-purecounter-end="3" data-purecounter-duration="1" class="purecounter"></span>
+              <p>Experience</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials section">
+      <div class="particles">
+        <div class="particle" style="left: 25%; top: 35%; animation-delay: 0s;"></div>
+        <div class="particle" style="left: 45%; top: 65%; animation-delay: 1s;"></div>
+        <div class="particle" style="left: 55%; top: 45%; animation-delay: 2s;"></div>
+        <div class="particle" style="left: 75%; top: 75%; animation-delay: 3s;"></div>
+      </div>
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Testimonials</h2>
+        <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
+      </div>
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <div class="swiper init-swiper">
+          <script type="application/json" class="swiper-config">
+            {
+              "loop": true,
+              "speed": 600,
+              "autoplay": {
+                "delay": 5000
+              },
+              "slidesPerView": "auto",
+              "pagination": {
+                "el": ".swiper-pagination",
+                "type": "bullets",
+                "clickable": true
+              }
+            }
+          </script>
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <img src="assets/img/testimonials/images (1).jpeg" class="testimonial-img" alt="">
+                <h3>Magnus Carlsen</h3>
+                <h4>World Best Chess Player</h4>
+                <div class="stars">
+                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                </div>
+                <p>
+                  <i class="bi bi-quote quote-icon-left"></i>
+                  <span>Relentless pursuit of mastery teaches us that with dedication, focus, and the courage to face every challenge, greatness is within reach</span>
+                  <i class="bi bi-quote quote-icon-right"></i>
+                </p>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <img src="assets/img/testimonials/Miyazaki-Hayao-2008.webp" class="testimonial-img" alt="">
+                <h3>Hayao Miyazaki</h3>
+                <h4>Animation Designer</h4>
+                <div class="stars">
+                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                </div>
+                <p>
+                  <i class="bi bi-quote quote-icon-left"></i>
+                  <span>Design is not just about creating something beautiful; it's about solving problems with creativity, pushing boundaries, and leaving a lasting impact</span>
+                  <i class="bi bi-quote quote-icon-right"></i>
+                </p>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <img src="assets/img/testimonials/channels4_profile.jpg" class="testimonial-img" alt="">
+                <h3>Nintendo</h3>
+                <h4>Game Company</h4>
+                <div class="stars">
+                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                </div>
+                <p>
+                  <i class="bi bi-quote quote-icon-left"></i>
+                  <span>Game development is the art of transforming imagination into interactive experiences, where every challenge becomes an opportunity and every creation sparks a new world for players to explore.</span>
+                  <i class="bi bi-quote quote-icon-right"></i>
+                </p>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <img src="assets/img/images.jpeg" class="testimonial-img" alt="">
+                <h3>Steve Jobs</h3>
+                <h4>Best CEO</h4>
+                <div class="stars">
+                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                </div>
+                <p>
+                  <i class="bi bi-quote quote-icon-left"></i>
+                  <span>Believe in your vision, push beyond your limits, and turn challenges into stepping stones for success.</span>
+                  <i class="bi bi-quote quote-icon-right"></i>
+                </p>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <img src="assets/img/aaaa.jpg" class="testimonial-img" alt="">
+                <h3>Markus Persson</h3>
+                <h4>Minecraft Founder</h4>
+                <div class="stars">
+                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                </div>
+                <p>
+                  <i class="bi bi-quote quote-icon-left"></i>
+                  <span>The individual is renowned for their contributions to a highly successful and impactful project, which gained widespread recognition and established their reputation in the respective field.</span>
+                  <i class="bi bi-quote quote-icon-right"></i>
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact section">
+      <div class="particles">
+        <div class="particle" style="left: 10%; top: 20%; animation-delay: 0s;"></div>
+        <div class="particle" style="left: 30%; top: 50%; animation-delay: 1s;"></div>
+        <div class="particle" style="left: 70%; top: 30%; animation-delay: 2s;"></div>
+        <div class="particle" style="left: 90%; top: 60%; animation-delay: 3s;"></div>
+        <div class="particle" style="left: 50%; top: 80%; animation-delay: 4s;"></div>
+      </div>
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Contact Me</h2>
+        <p>Ready to collaborate on your next game project? Let's connect!</p>
+      </div>
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <div class="row gy-4">
+          <!-- Contact Info -->
+          <div class="col-lg-6">
+            <div class="contact-info">
+              <h3>Get in Touch</h3>
+              <p><i class="bi bi-geo-alt"></i> 62 Radhaswami Soci, Katargam, Surat, Gujarat, India</p>
+              <p><i class="bi bi-telephone"></i> +91 9624105887</p>
+              <p><i class="bi bi-envelope"></i> dharmikgohil395003@gmail.com</p>
+            </div>
+            <div class="map-container mt-4">
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3719.159614682177!2d72.84219461488592!3d21.22623198588668!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be04f3b4e8e0c47%3A0x5e5c5e5e5e5e5e5e!2sKatargam%2C%20Surat%2C%20Gujarat%2C%20India!5e0!3m2!1sen!2sin!4v1698765432100!5m2!1sen!2sin" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="contact-form" style="position: relative; z-index: 10;">
+              <h3>Send a Message</h3>
+              <form id="contactForm" style="position: relative; z-index: 11;">
+                <div class="mb-3" style="position: relative; z-index: 12;">
+                  <input type="text" class="form-control" id="name" name="name" placeholder="Your Name" required>
+                </div>
+                <div class="mb-3" style="position: relative; z-index: 12;">
+                  <input type="email" class="form-control" id="email" name="email" placeholder="Your Email" required>
+                </div>
+                <div class="mb-3" style="position: relative; z-index: 12;">
+                  <textarea class="form-control" id="message" name="message" rows="5" placeholder="Your Message" required></textarea>
+                </div>
+                <div class="text-center" style="position: relative; z-index: 12;">
+                  <button type="submit" class="btn-submit">
+                    <span>Submit</span>
+                    <span class="loader"></span>
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+
   </main>
 
   <footer id="footer" class="footer">
@@ -193,6 +1043,16 @@
           notification.classList.remove("active");
         }, 5000);
       }, 1000);
+
+      // Smooth scrolling for anchor links
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+          e.preventDefault();
+          document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+          });
+        });
+      });
     });
 
     function closeNotification() {
@@ -205,5 +1065,4 @@
     });
   </script>
 </body>
-
 </html>
