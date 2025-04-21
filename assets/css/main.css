@@ -195,7 +195,7 @@ h6 {
 
   .navmenu a,
   .navmenu a:focus {
-    color: var(--nav-color);
+    color: rgb(162, 162, 162);
     font-size: 15px;
     padding: 0 2px;
     font-family: 'JetBrains Mono', monospace;
