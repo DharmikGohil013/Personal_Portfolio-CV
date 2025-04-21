@@ -1064,5 +1064,42 @@
       once: true
     });
   </script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      setTimeout(function () {
+        const notification = document.getElementById("notification");
+        notification.classList.add("active");
+        setTimeout(() => {
+          notification.classList.remove("active");
+        }, 5000);
+      }, 1000);
+
+      AOS.init({
+        duration: 1000,
+        once: true
+      });
+
+      // Isotope Filter Button Logic
+      const filterButtons = document.querySelectorAll('.filter-btn');
+      const isotopeContainer = document.querySelector('.isotope-container');
+      const isotope = new Isotope(isotopeContainer, {
+        itemSelector: '.portfolio-item',
+        layoutMode: 'masonry'
+      });
+
+      filterButtons.forEach(button => {
+        button.addEventListener('click', function () {
+          filterButtons.forEach(btn => btn.classList.remove('filter-active'));
+          this.classList.add('filter-active');
+          const filterValue = this.getAttribute('data-filter');
+          isotope.arrange({ filter: filterValue });
+        });
+      });
+    });
+
+    function closeNotification() {
+      document.getElementById('notification').style.display = 'none';
+    }
+  </script>
 </body>
 </html>
