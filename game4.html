@@ -1,14 +1,12 @@
 <!DOCTYPE html>
 <html>
-
 <head>
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4658801537271443"
-    crossorigin="anonymous"></script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4658801537271443" crossorigin="anonymous"></script>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>Dharmik Gohil - Coming Soon</title>
-  <meta name="description" content="Portfolio project coming soon">
-  <meta name="keywords" content="Dharmik Gohil, portfolio, coming soon">
+  <title>Dharmik Gohil - Mavericks Battlegrounds</title>
+  <meta name="description" content="Mavericks Battlegrounds - A Unity-based multiplayer battle royale game by Dharmik Gohil">
+  <meta name="keywords" content="Dharmik Gohil, Mavericks Battlegrounds, Unity, multiplayer, battle royale, game development">
 
   <!-- Favicons -->
   <link href="assets/img/dlogo.png" rel="icon">
@@ -31,7 +29,6 @@
 
   <!-- Custom Styles -->
   <style>
-    /* Global Styles */
     body {
       background: #0a0f1f;
       color: #fff;
@@ -40,73 +37,96 @@
       position: relative;
       cursor: url('assets/img/cursor-default.png'), auto;
     }
-
-    /* Coming Soon Message */
-    .coming-soon {
-      min-height: 70vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      padding: 2rem;
-      position: relative;
-      z-index: 2;
+    .header {
+      background: #1a1e34;
+      border-bottom: 1px solid rgba(0, 234, 255, 0.2);
+      padding: 10px 0;
+      transition: all 0.5s;
+      z-index: 997;
     }
-
-    .coming-soon h1 {
+    .header .logo img {
+      max-width: 40px;
+      height: auto;
+    }
+    .header h1 {
       font-family: 'Press Start 2P', cursive;
-      color: #ff007f;
-      text-shadow: 0 0 15px #ff007f;
-      font-size: clamp(1.5rem, 6vw, 3rem);
-      margin-bottom: 2rem;
-      animation: neonPulse 1.5s infinite alternate;
-    }
-
-    .coming-soon p {
-      font-family: 'JetBrains Mono', monospace;
+      font-size: clamp(1.5rem, 4vw, 2rem);
+      text-transform: uppercase;
+      letter-spacing: 2px;
       color: #00eaff;
-      font-size: clamp(1rem, 3vw, 1.5rem);
-      max-width: 800px;
-      line-height: 1.6;
+      text-shadow: 0 0 10px #00eaff;
+      animation: neonGlow 1.5s ease-in-out infinite alternate;
     }
-
-    @keyframes neonPulse {
-      0% { text-shadow: 0 0 5px #ff007f, 0 0 10px #ff007f; }
-      100% { text-shadow: 0 0 15px #ff007f, 0 0 30px #ff007f, 0 0 45px #ff007f; }
+    @keyframes neonGlow {
+      from { text-shadow: 0 0 5px #00eaff, 0 0 10px #00eaff; }
+      to { text-shadow: 0 0 15px #00eaff, 0 0 25px #00eaff; }
     }
-
-    /* Particles Background */
+    .header .header-social-links a {
+      color: #00eaff;
+      font-size: 1.2rem;
+      margin: 0 5px;
+      transition: all 0.3s ease;
+    }
+    .header .header-social-links a:hover {
+      color: #15ff00;
+      text-shadow: 0 0 15px #15ff00;
+    }
+    .play-button {
+      display: inline-block;
+      padding: 12px 24px;
+      background-color: #00eaff;
+      color: #0a0f1f;
+      font-family: 'Press Start 2P', cursive;
+      font-size: clamp(0.8rem, 2vw, 1rem);
+      font-weight: bold;
+      text-transform: uppercase;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      border: 2px solid #15ff00;
+      box-shadow: 0 0 15px rgba(0, 234, 255, 0.5);
+      margin-top: 20px;
+    }
+    .play-button:hover {
+      background-color: #15ff00;
+      color: #0a0f1f;
+      transform: scale(1.05);
+      box-shadow: 0 0 25px rgba(21, 255, 0, 0.8);
+    }
+    .play-button i {
+      margin-right: 8px;
+      font-size: 1.2rem;
+    }
+    /* Particles and animation */
     .particles {
       position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      pointer-events: none;
-      z-index: 1;
+      top: 0; left: 0; width: 100%; height: 100%;
+      pointer-events: none; z-index: 1;
     }
-
     .particle {
       position: absolute;
-      width: 8px;
-      height: 8px;
+      width: 8px; height: 8px;
       background: rgba(0, 234, 255, 0.7);
       border-radius: 50%;
       animation: float 6s infinite ease-in-out;
     }
-
     @keyframes float {
       0%, 100% { transform: translateY(0); opacity: 0.5; }
       50% { transform: translateY(-30px); opacity: 1; }
     }
-
-    /* [Rest of your existing styles remain unchanged] */
+    .main { position: relative; z-index: 2; }
+    /* Responsive Swiper Fix */
+    .portfolio-details-slider img { width: 100%; border-radius: 10px; box-shadow: 0 2px 16px rgba(0,0,0,0.4);}
+    .portfolio-info ul {padding-left: 0; list-style: none;}
+    .portfolio-info ul li {margin-bottom: 12px;}
+    .portfolio-info a {color: #00eaff; text-decoration: underline;}
+    .portfolio-info a:hover {color: #15ff00;}
   </style>
 </head>
 
 <body class="index-page">
   <div class="custom-cursor"></div>
+  <!-- Header -->
   <header id="header" class="header d-flex align-items-center sticky-top">
     <div class="container-fluid position-relative d-flex align-items-center justify-content-between">
       <a href="index.html" class="logo d-flex align-items-center me-auto me-xl-0">
@@ -188,8 +208,8 @@
   </header>
 
   <main class="main">
-    <!-- Coming Soon Section -->
-    <section class="coming-soon section">
+    <!-- Portfolio Details Section -->
+    <section id="portfolio-details" class="portfolio-details section">
       <div class="particles">
         <div class="particle" style="left: 10%; top: 20%; animation-delay: 0s;"></div>
         <div class="particle" style="left: 30%; top: 50%; animation-delay: 1s;"></div>
@@ -197,8 +217,77 @@
         <div class="particle" style="left: 90%; top: 60%; animation-delay: 3s;"></div>
         <div class="particle" style="left: 50%; top: 80%; animation-delay: 4s;"></div>
       </div>
-      <h1 data-aos="fade-up">IN A LITTLE WHILE !!</h1>
-      <p data-aos="fade-up" data-aos-delay="200">This project is currently in development and will be available soon. Stay tuned for updates!</p>
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Mavericks Battlegrounds</h2>
+        <p>Multiplayer Battle Royale Experience</p>
+      </div>
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <div class="row gy-4">
+          <div class="col-lg-8">
+            <div class="portfolio-details-slider swiper init-swiper">
+              <script type="application/json" class="swiper-config">
+                {
+                  "loop": true,
+                  "speed": 600,
+                  "autoplay": {
+                    "delay": 5000
+                  },
+                  "slidesPerView": "auto",
+                  "pagination": {
+                    "el": ".swiper-pagination",
+                    "type": "bullets",
+                    "clickable": true
+                  }
+                }
+              </script>
+              <div class="swiper-wrapper align-items-center">
+                <!-- Replace with actual screenshots -->
+                <div class="swiper-slide">
+                  <img src="assets/img/game1 (1).png" alt="Screenshot 1">
+                </div>
+                <div class="swiper-slide">
+                  <img src="assets/img/game1 (6).png" alt="Screenshot 2">
+                </div>
+                <div class="swiper-slide">
+                  <img src="assets/img/game1 (5).png" alt="Screenshot 3">
+                </div>
+                <div class="swiper-slide">
+                  <img src="assets/img/game1 (2).png" alt="Screenshot 1">
+                </div>
+                <div class="swiper-slide">
+                  <img src="assets/img/game1 (3).png" alt="Screenshot 2">
+                </div>
+                <div class="swiper-slide">
+                  <img src="assets/img/game1 (4).png" alt="Screenshot 3">
+                </div>
+                <!-- Add more as needed -->
+              </div>
+              <div class="swiper-pagination"></div>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="portfolio-info" data-aos="fade-up" data-aos-delay="200">
+              <h3>Project Information</h3>
+              <ul>
+                <li><strong>Category</strong>: Unity Multiplayer</li>
+                <li><strong>Project Date</strong>: May, 2025</li>
+                <li><strong>Live Demo</strong>: <a href="https://dharmikgohil.itch.io/mavericks-battlegrounds" target="_blank">Play on itch.io</a></li>
+              </ul>
+            </div>
+            <div class="portfolio-description" data-aos="fade-up" data-aos-delay="300">
+              <h2>Multiplayer Battle Royale</h2>
+              <p>
+                Mavericks Battlegrounds is an action-packed multiplayer battle royale game developed in Unity. Drop into intense matches, strategize, and compete against players from around the world. Features real-time multiplayer, custom maps, and a range of weapons and abilities. Created by Dharmik Gohil as an advanced game development project.
+              </p>
+            </div>
+            <div class="text-center mt-4">
+              <a href="https://dharmikgohil.itch.io/mavericks-battlegrounds" target="_blank" class="play-button">
+                <i class="bi bi-cloud-download-fill"></i> Download / Play Game
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
   </main>
 
@@ -218,7 +307,6 @@
 
   <!-- Scroll Top -->
   <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
-
   <!-- Preloader -->
   <div id="preloader">
     <div class="loader-container">
@@ -228,7 +316,6 @@
       <div class="loading-text">LOADING...</div>
     </div>
   </div>
-
   <!-- Vendor JS Files -->
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="assets/vendor/php-email-form/validate.js"></script>
@@ -239,24 +326,20 @@
   <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
   <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
   <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
   <script>
     document.addEventListener("DOMContentLoaded", function () {
-      AOS.init({
-        duration: 1000,
-        once: true
-      });
-
+      AOS.init({ duration: 1000, once: true });
       // Mobile navigation toggle
       const mobileNavToggle = document.querySelector('.mobile-nav-toggle');
       const navmenu = document.querySelector('.navmenu ul');
-      mobileNavToggle.addEventListener('click', function () {
-        navmenu.classList.toggle('show');
-      });
+      if(mobileNavToggle && navmenu) {
+        mobileNavToggle.addEventListener('click', function () {
+          navmenu.classList.toggle('show');
+        });
+      }
     });
   </script>
 </body>
-
-</html> 
+</html>
