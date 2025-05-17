@@ -214,76 +214,114 @@
       text-shadow: 0 0 10px #15ff00;
     }
 
-    /* Notification */
-    .notification {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background: linear-gradient(135deg, #1a2c34, #00eaff);
-      border-radius: 15px;
-      padding: 20px;
-      width: 350px;
-      max-width: 90vw;
-      z-index: 1000;
-      text-align: center;
-      font-family: 'JetBrains Mono', monospace;
-      color: #fff;
-      box-shadow: 0 0 20px rgba(0, 234, 255, 0.5);
-      animation: slideIn 1s ease-in-out;
-    }
+    /* Birthday Notification */
+.notification.birthday {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  z-index: 9999;
+  width: 360px;
+  max-width: 90vw;
+  padding: 25px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(20px);
+  box-shadow: 0 0 30px rgba(255, 223, 0, 0.7), 0 0 20px rgba(255, 0, 255, 0.3);
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  animation: glowPulse 2s ease-in-out infinite alternate, slideIn 1s ease-in-out;
+  text-align: center;
+  overflow: hidden;
+}
 
-    .notification img {
-      width: 100%;
-      height: auto;
-      border-radius: 8px;
-      margin-bottom: 10px;
-      border: 2px solid #15ff00;
-    }
+/* Header and message */
+.notification.birthday h3 {
+  font-size: 1.8rem;
+  color: #fff700;
+  margin-bottom: 10px;
+  font-family: 'Press Start 2P', cursive;
+  text-shadow: 0 0 10px #fff700, 0 0 25px #ff007f;
+  animation: shimmer 3s infinite linear;
+}
 
-    .notification h3 {
-      font-family: 'Press Start 2P', cursive;
-      font-size: 1.5rem;
-      color: #15ff00;
-      text-shadow: 0 0 10px #15ff00;
-    }
+.notification.birthday p {
+  color: #f0f0f0;
+  font-size: 1rem;
+  font-weight: 500;
+  margin-bottom: 15px;
+  line-height: 1.5;
+}
 
-    .notification p {
-      font-size: 1rem;
-      color: #d0d0d0;
-    }
+/* Image banner */
+.notification.birthday img {
+  width: 100%;
+  border-radius: 12px;
+  margin-bottom: 15px;
+  border: 2px solid #15ff00;
+  box-shadow: 0 0 15px rgba(21, 255, 0, 0.7);
+}
 
-    .notification .button-container {
-      display: flex;
-      justify-content: center;
-      gap: 10px;
-      margin-top: 10px;
-    }
+/* Buttons */
+.notification .button-container {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
 
-    .notification .preview-btn,
-    .notification .close-btn {
-      font-family: 'JetBrains Mono', monospace;
-      background: #00eaff;
-      color: #0a0f1f;
-      padding: 10px 20px;
-      border-radius: 50px;
-      border: none;
-      font-weight: bold;
-      transition: all 0.3s ease;
-      box-shadow: 0 0 15px rgba(0, 234, 255, 0.5);
-    }
+.notification .preview-btn,
+.notification .close-btn {
+  background: linear-gradient(135deg, #00eaff, #15ff00);
+  color: #0a0f1f;
+  padding: 10px 20px;
+  font-weight: bold;
+  border: none;
+  border-radius: 50px;
+  font-family: 'JetBrains Mono', monospace;
+  box-shadow: 0 0 20px rgba(0, 234, 255, 0.6);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
 
-    .notification .preview-btn:hover,
-    .notification .close-btn:hover {
-      background: #15ff00;
-      color: #0a0f1f;
-      box-shadow: 0 0 25px rgba(21, 255, 0, 0.8);
-      transform: scale(1.1);
-    }
+.notification .preview-btn:hover,
+.notification .close-btn:hover {
+  transform: scale(1.08);
+  box-shadow: 0 0 25px rgba(21, 255, 0, 0.9);
+  background: linear-gradient(135deg, #15ff00, #00eaff);
+}
 
-    @keyframes slideIn {
-      from { opacity: 0; transform: translateX(100%); }
-      to { opacity: 1; transform: translateX(0); }
-    }
+/* Animation Keyframes */
+@keyframes glowPulse {
+  0% { box-shadow: 0 0 10px #ffdf00, 0 0 20px #ff007f; }
+  100% { box-shadow: 0 0 30px #ffdf00, 0 0 40px #ff007f; }
+}
+
+@keyframes shimmer {
+  0% { text-shadow: 0 0 10px #fff700, 0 0 25px #ff007f; }
+  50% { text-shadow: 0 0 20px #ff007f, 0 0 35px #00eaff; }
+  100% { text-shadow: 0 0 10px #fff700, 0 0 25px #ff007f; }
+}
+
+@keyframes slideIn {
+  from { opacity: 0; transform: translateX(100%); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .notification.birthday {
+    bottom: 15px;
+    right: 15px;
+    padding: 20px;
+    width: 90vw;
+  }
+  .notification.birthday h3 {
+    font-size: 1.4rem;
+  }
+  .notification.birthday p {
+    font-size: 0.95rem;
+  }
+}
+
 
     /* Footer */
     .footer {
@@ -522,12 +560,17 @@
       </div>
     </section>
 
-    <!-- Notification -->
-    <div id="notification" class="notification">
-      <h3>Level Up!</h3>
-      <p>Explore my latest game projects and join the adventure. Ready to play? 🎮</p>
-      <button class="close-btn" onclick="closeNotification()">Close</button>
-    </div>
+    <!-- Birthday Notification -->
+<div id="notification" class="notification birthday">
+  <img src="assets/DharmikGohil (1).webp" alt="Birthday Banner">
+  <h3>Happy Birthday to Me!</h3>
+  <p>It's <strong>12th June</strong> – my special day! Celebrate creativity, passion, and the journey of a Game Developer. Thank you for visiting!</p>
+  <div class="button-container">
+    <button class="preview-btn" onclick="window.location.href='#about'">Know More</button>
+    <button class="close-btn" onclick="closeNotification()">Close</button>
+  </div>
+</div>
+
 
     <section id="portfolio" class="portfolio section">
       <div class="particles">
@@ -1083,18 +1126,19 @@
   </script>
   <script>
     document.addEventListener("DOMContentLoaded", function () {
-      setTimeout(function () {
-        const notification = document.getElementById("notification");
-        notification.classList.add("active");
-        setTimeout(() => {
-          notification.classList.remove("active");
-        }, 5000);
-      }, 1000);
+      const today = new Date();
+  const isBirthday = today.getDate() === 12 && today.getMonth() === 5; // 5 = June (0-indexed)
+  if (isBirthday) {
+    setTimeout(() => {
+      const notification = document.getElementById("notification");
+      notification.classList.add("active");
+    }, 1000);
+  }
 
-      AOS.init({
-        duration: 1000,
-        once: true
-      });
+  AOS.init({
+    duration: 1000,
+    once: true
+  });
 
       // Isotope Filter Button Logic
       const filterButtons = document.querySelectorAll('.filter-btn');
