@@ -28,11 +28,38 @@
   <!-- Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
 
- 
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4658801537271443"
      crossorigin="anonymous"></script>
 
+  <style>
+    /* Posters and Videos style matching logo style */
 
+    #posters .section-title h2,
+    #videos .section-title h2 {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 700;
+      color: #15ff00; /* bright green like logo highlight */
+      margin-bottom: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+
+    #posters .poster-img {
+      border-radius: 8px;
+      transition: transform 0.3s ease;
+      cursor: pointer;
+      display: block;
+      max-width: 100%;
+      height: auto;
+    }
+
+    #posters .poster-img:hover {
+      transform: scale(1.05);
+      filter: brightness(1.1);
+    }
+
+    
+  </style>
 </head>
 
 <body class="index-page">
@@ -60,7 +87,7 @@
               </li>
               <li class="dropdown"><a href="logo.html"><span>Ui/ux</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
                 <ul>
-                  <li><a href="logo.html">Logos</a></li>
+                  <li><a href="logo.html">Designs</a></li>
                 </ul>
               </li>
               <li class="dropdown"><a href="#"><span>Websites</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
@@ -76,7 +103,6 @@
                 <ul>
                   <li class="dropdown"><a href="#"><span>CampusAdminPro</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
                     <ul>
-                      <li><a href="#">Overview</a></li>
                       <li><a href="https://drive.google.com/file/d/15YNf77gERCt2LYfRYSdXiYU3yAkx7EvC/view?usp=drive_link">Report</a></li>
                     </ul>
                   </li>
@@ -123,18 +149,16 @@
       </div>
     </div>
   </header>
+
   <main class="main">
     <!-- Portfolio Details Section -->
     <section id="portfolio-details" class="portfolio-details section">
-      <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
         <h2>Logos</h2>
-      </div><!-- End Section Title -->
-  
+      </div>
       <div class="container" data-aos="fade-up" data-aos-delay="100">
         <div class="row gy-4">
           <div class="col-lg-8 mx-auto">
-            <!-- Center the slider container -->
             <div class="portfolio-details-slider swiper init-swiper">
               <script type="application/json" class="swiper-config">
                 {
@@ -151,48 +175,70 @@
                   }
                 }
               </script>
-  
               <div class="swiper-wrapper align-items-center">
-                <div class="swiper-slide">
-                  <img src="assets/img/1.png" alt="">
-                </div>
-                <div class="swiper-slide">
-                  <img src="assets/img/2 (1).png" alt="">
-                </div>
-                <div class="swiper-slide">
-                  <img src="assets/img/2 (2).png" alt="">
-                </div>
-                <div class="swiper-slide">
-                    <img src="assets/img/2 (3).png" alt="">
-                  </div>
-                  <div class="swiper-slide">
-                    <img src="assets/img/2 (4).png" alt="">
-                  </div>
-                  <div class="swiper-slide">
-                    <img src="assets/img/2 (6).png" alt="">
-                  </div>
-                  <div class="swiper-slide">
-                    <img src="assets/img/2 (7).png" alt="">
-                  </div>
-                  <div class="swiper-slide">
-                    <img src="assets/img/2 (8).png" alt="">
-                  </div>
-                  <div class="swiper-slide">
-                    <img src="assets/img/2 (9).png" alt="">
-                  </div>
+                <div class="swiper-slide"><img src="assets/img/1.png" alt=""></div>
+                <div class="swiper-slide"><img src="assets/img/2 (1).png" alt=""></div>
+                <div class="swiper-slide"><img src="assets/img/2 (2).png" alt=""></div>
+                <div class="swiper-slide"><img src="assets/img/2 (3).png" alt=""></div>
+                <div class="swiper-slide"><img src="assets/img/2 (4).png" alt=""></div>
+                <div class="swiper-slide"><img src="assets/img/2 (6).png" alt=""></div>
+                <div class="swiper-slide"><img src="assets/img/2 (7).png" alt=""></div>
+                <div class="swiper-slide"><img src="assets/img/2 (8).png" alt=""></div>
+                <div class="swiper-slide"><img src="assets/img/2 (9).png" alt=""></div>
               </div>
               <div class="swiper-pagination"></div>
             </div>
           </div>
         </div>
       </div>
-    </section><!-- /Portfolio Details Section -->
+    </section>
+
+    <!-- Posters Section -->
+    <section id="portfolio-details" class="portfolio-details section">
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Posters</h2>
+      </div>
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <div class="row gy-4">
+          <div class="col-lg-8 mx-auto">
+            <div class="portfolio-details-slider swiper init-swiper">
+              <script type="application/json" class="swiper-config">
+                {
+                  "loop": true,
+                  "speed": 600,
+                  "autoplay": {
+                    "delay": 5000
+                  },
+                  "slidesPerView": 1,
+                  "pagination": {
+                    "el": ".swiper-pagination",
+                    "type": "bullets",
+                    "clickable": true
+                  }
+                }
+              </script>
+              <div class="swiper-wrapper align-items-center">
+                <div class="swiper-slide"><img src="assets/img/1.png" alt=""></div>
+                <div class="swiper-slide"><img src="assets/img/2 (1).png" alt=""></div>
+                <div class="swiper-slide"><img src="assets/img/2 (2).png" alt=""></div>
+                <div class="swiper-slide"><img src="assets/img/2 (3).png" alt=""></div>
+                <div class="swiper-slide"><img src="assets/img/2 (4).png" alt=""></div>
+                <div class="swiper-slide"><img src="assets/img/2 (6).png" alt=""></div>
+                <div class="swiper-slide"><img src="assets/img/2 (7).png" alt=""></div>
+                <div class="swiper-slide"><img src="assets/img/2 (8).png" alt=""></div>
+                <div class="swiper-slide"><img src="assets/img/2 (9).png" alt=""></div>
+              </div>
+              <div class="swiper-pagination"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    
   </main>
-  
-  
 
   <footer id="footer" class="footer light-background">
-
     <div class="container">
       <div class="copyright text-center ">
         <p>© <span>Copyright</span> <strong class="px-1 sitename">Dharmik</strong> <span>All Rights Reserved<br></span></p>
@@ -203,9 +249,7 @@
         <a href="https://www.instagram.com/dharmik.086/?next=%2F"><i class="bi bi-instagram"></i></a>
         <a href="https://x.com/Dharmik086"><i class="bi bi-twitter"></i></a>
       </div>
-      
     </div>
-
   </footer>
 
   <!-- Scroll Top -->
@@ -214,13 +258,12 @@
   <!-- Preloader -->
   <div id="preloader">
     <div class="loader-container">
-        <div class="loader loader-outer"></div>
-        <div class="loader loader-middle"></div>
-        <div class="loader loader-inner"></div>
-        <div class="loading-text">LOADING...</div>
+      <div class="loader loader-outer"></div>
+      <div class="loader loader-middle"></div>
+      <div class="loader loader-inner"></div>
+      <div class="loading-text">LOADING...</div>
     </div>
-</div>
-  
+  </div>
 
   <!-- Vendor JS Files -->
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -236,6 +279,50 @@
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
 
-</body>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const videos = [
+        'assets/videos/video1.mp4',
+        'assets/videos/video2.mp4',
+        'assets/videos/video3.mp4',
+        'assets/videos/video4.mp4',
+        'assets/videos/video5.mp4',
+        'assets/videos/video6.mp4',
+        'assets/videos/video7.mp4',
+        'assets/videos/video8.mp4',
+        'assets/videos/video9.mp4',
+        'assets/videos/video10.mp4'
+      ];
 
+      let currentIndex = 0;
+      const videoPlayer = document.getElementById('video-player');
+      const prevBtn = document.getElementById('prev-video');
+      const nextBtn = document.getElementById('next-video');
+
+      function loadVideo(index) {
+        videoPlayer.pause();
+        videoPlayer.src = videos[index];
+        videoPlayer.load();
+        videoPlayer.play();
+      }
+
+      prevBtn.addEventListener('click', () => {
+        currentIndex = (currentIndex - 1 + videos.length) % videos.length;
+        loadVideo(currentIndex);
+      });
+
+      nextBtn.addEventListener('click', () => {
+        currentIndex = (currentIndex + 1) % videos.length;
+        loadVideo(currentIndex);
+      });
+
+      videoPlayer.addEventListener('ended', () => {
+        currentIndex = (currentIndex + 1) % videos.length;
+        loadVideo(currentIndex);
+      });
+
+      loadVideo(currentIndex);
+    });
+  </script>
+</body>
 </html>
