@@ -418,10 +418,186 @@
     .scroll-top i {
       color: #0a0f1f;
     }
+    /* ============= EXPENSIVE SCRATCH CARD ============= */
+
+.scratch-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  background: linear-gradient(145deg, #0f1117, #1c1f27);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: fadeSlide 0.8s ease-out forwards;
+}
+
+@keyframes fadeSlide {
+  0% {
+    opacity: 0;
+    transform: scale(0.95) translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+/* Glowing border canvas */
+#scratchCanvas {
+  position: absolute;
+  width: 90vw;
+  height: 350px;
+  max-width: 520px;
+  border-radius: 30px;
+  box-shadow: 0 0 25px rgba(255, 255, 255, 0.08), 0 0 45px rgba(255, 255, 255, 0.06) inset;
+  cursor: crosshair;
+  border: 2px solid rgba(255, 215, 0, 0.4);
+  background: repeating-linear-gradient(
+    45deg,
+    #222,
+    #222 10px,
+    #2c2c2c 10px,
+    #2c2c2c 20px
+  );
+}
+/* Scratch Card Overlay */
+.scratch-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  background: linear-gradient(145deg, #0f1117, #1c1f27);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: fadeSlide 0.8s ease-out forwards;
+}
+
+@keyframes fadeSlide {
+  0% { opacity: 0; transform: scale(0.95) translateY(30px); }
+  100% { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+/* Scratch Canvas */
+#scratchCanvas {
+  position: absolute;
+  width: 90vw;
+  height: 350px;
+  max-width: 520px;
+  border-radius: 30px;
+  box-shadow: 0 0 25px rgba(255, 255, 255, 0.08), 0 0 45px rgba(255, 255, 255, 0.06) inset;
+  cursor: crosshair;
+  border: 2px solid rgba(255, 215, 0, 0.4);
+  background: repeating-linear-gradient(
+    45deg,
+    #222,
+    #222 10px,
+    #2c2c2c 10px,
+    #2c2c2c 20px
+  );
+}
+
+/* Content over Canvas */
+.scratch-content {
+  position: absolute;
+  width: 90vw;
+  max-width: 520px;
+  height: 350px;
+  border-radius: 30px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 215, 0, 0.2);
+  backdrop-filter: blur(20px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  pointer-events: none;
+  padding: 30px;
+  text-align: center;
+  z-index: 2;
+}
+
+.scratch-content h3 {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 1.5rem;
+  color: #ffd700;
+  text-shadow: 0 0 10px rgba(255, 215, 0, 0.9), 0 0 20px rgba(255, 215, 0, 0.7);
+  animation: flickerGold 2s infinite ease-in-out;
+  letter-spacing: 1px;
+}
+
+@keyframes flickerGold {
+  0%, 100% { text-shadow: 0 0 10px rgba(255, 215, 0, 1); }
+  50% { text-shadow: 0 0 2px rgba(255, 215, 0, 0.4); }
+}
+
+.scratch-reveal {
+  display: none;
+  margin-top: 20px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 1.1rem;
+  background: linear-gradient(90deg, #ff007f, #ffdf00);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 10px #ff007f99;
+  animation: glowText 1.5s ease-in-out infinite;
+}
+
+@keyframes glowText {
+  0%, 100% { text-shadow: 0 0 10px #ff007f88; }
+  50% { text-shadow: 0 0 20px #ffdf00cc; }
+}
+
+.scratch-close {
+  pointer-events: auto;
+  margin-top: 25px;
+  padding: 12px 30px;
+  border-radius: 50px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 1rem;
+  font-weight: bold;
+  background: linear-gradient(145deg, #ffdf00, #ff007f);
+  border: none;
+  color: #0a0f1f;
+  box-shadow: 0 0 25px rgba(255, 215, 0, 0.6);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  display: inline-block; /* now always visible */
+}
+
+.scratch-close:hover {
+  transform: scale(1.1);
+  background: linear-gradient(145deg, #ff007f, #ffdf00);
+  box-shadow: 0 0 35px rgba(255, 0, 127, 0.8);
+}
+
+@media screen and (max-width: 600px) {
+  .scratch-content h3 {
+    font-size: 1.2rem;
+  }
+  .scratch-reveal {
+    font-size: 1rem;
+  }
+  .scratch-close {
+    font-size: 0.9rem;
+    padding: 10px 20px;
+  }
+}
+
+
   </style>
 </head>
 
-<body class="index-page">
+<div id="scratchCard" class="scratch-overlay">
+  <canvas id="scratchCanvas"></canvas>
+  <div class="scratch-content">
+    <h3>🎁 Scratch & Win</h3>
+    <p class="scratch-reveal">please bro this is Gambling</p>
+    <button class="scratch-close scratch-visible" onclick="closeScratch()">❌ Close</button>
+  </div>
+</div>
+
+
+
   <div class="custom-cursor"></div>
   <header id="header" class="header d-flex align-items-center sticky-top">
     <div class="container-fluid position-relative d-flex align-items-center justify-content-between">
@@ -718,7 +894,61 @@
     function closeNotification() {
       document.getElementById('notification').style.display = 'none';
     }
-  </script>
+  </script><script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const canvas = document.getElementById("scratchCanvas");
+    const ctx = canvas.getContext("2d");
+    const revealMsg = document.querySelector(".scratch-reveal");
+    const closeBtn = document.querySelector(".scratch-close");
+
+    function resizeCanvas() {
+      canvas.width = canvas.offsetWidth;
+      canvas.height = canvas.offsetHeight;
+      ctx.fillStyle = "#888";
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+      ctx.globalCompositeOperation = "destination-out";
+    }
+
+    resizeCanvas();
+    window.addEventListener("resize", resizeCanvas);
+
+    let isDrawing = false;
+    let scratched = 0;
+
+    function getPos(e) {
+      const rect = canvas.getBoundingClientRect();
+      const x = (e.touches ? e.touches[0].clientX : e.clientX) - rect.left;
+      const y = (e.touches ? e.touches[0].clientY : e.clientY) - rect.top;
+      return { x, y };
+    }
+
+    function scratch(e) {
+      if (!isDrawing) return;
+      const { x, y } = getPos(e);
+      ctx.beginPath();
+      ctx.arc(x, y, 20, 0, 2 * Math.PI);
+      ctx.fill();
+      scratched += 1;
+      if (scratched > 60) {
+        revealMsg.style.display = "block";
+        closeBtn.style.display = "inline-block";
+      }
+    }
+
+    canvas.addEventListener("mousedown", () => isDrawing = true);
+    canvas.addEventListener("mouseup", () => isDrawing = false);
+    canvas.addEventListener("mousemove", scratch);
+
+    canvas.addEventListener("touchstart", () => isDrawing = true);
+    canvas.addEventListener("touchend", () => isDrawing = false);
+    canvas.addEventListener("touchmove", scratch);
+  });
+
+  function closeScratch() {
+    document.getElementById("scratchCard").style.display = "none";
+  }
+</script>
+
 </body>
 
 </html>
