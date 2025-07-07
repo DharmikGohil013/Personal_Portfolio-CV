@@ -421,6 +421,121 @@
     .scroll-top i {
       color: #0a0f1f;
     }
+
+    .actify-showcase {
+    background: linear-gradient(145deg, #0a0f1f, #1a1e34);
+    padding: 60px 30px;
+    border-radius: 20px;
+    box-shadow: 0 0 30px rgba(0, 234, 255, 0.2);
+    overflow: hidden;
+    animation: fadeInUp 1s ease-in-out;
+  }
+
+  .actify-showcase h4 {
+    font-size: 1.5rem;
+    color: #15ff00;
+    text-shadow: 0 0 10px #15ff00;
+    margin-bottom: 20px;
+    font-family: 'Press Start 2P', cursive;
+  }
+
+  .actify-showcase p {
+    color: #00eaff;
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+    font-family: 'JetBrains Mono';
+    text-shadow: 0 0 8px #00eaff;
+  }
+/* Actify Custom Section */
+.actify-section {
+  padding: 80px 0;
+  background: linear-gradient(135deg, #0f1624, #1e2b3f);
+  overflow: hidden;
+}
+
+.actify-section h2 {
+  font-family: 'Press Start 2P', cursive;
+  color: #15ff00;
+  text-shadow: 0 0 15px #15ff00;
+  font-size: 2.4rem;
+  animation: flickerActify 3s infinite alternate;
+}
+
+.actify-section p {
+  color: #00eaff;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 1.2rem;
+  text-shadow: 0 0 10px #00eaff;
+}
+
+@keyframes flickerActify {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
+
+/* Horizontal Carousel */
+.actify-carousel {
+  display: flex;
+  overflow-x: auto;
+  gap: 20px;
+  scroll-behavior: smooth;
+  padding: 40px 20px;
+  scrollbar-width: none;
+}
+
+.actify-carousel::-webkit-scrollbar {
+  display: none;
+}
+
+.actify-slide {
+  flex: 0 0 auto;
+  min-width: 300px;
+  max-width: 400px;
+  height: auto;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 0 15px rgba(21, 255, 0, 0.5);
+  transition: transform 0.3s ease;
+  animation: slideIn 1s ease-out forwards;
+  opacity: 0;
+}
+
+.actify-slide img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border: 2px solid #00eaff;
+}
+
+.actify-slide:nth-child(1) { animation-delay: 0.2s; }
+.actify-slide:nth-child(2) { animation-delay: 0.4s; }
+.actify-slide:nth-child(3) { animation-delay: 0.6s; }
+.actify-slide:nth-child(4) { animation-delay: 0.8s; }
+.actify-slide:nth-child(5) { animation-delay: 1s; }
+
+@keyframes slideIn {
+  to { transform: translateY(0); opacity: 1; }
+}
+
+/* Actify Button */
+.actify-button {
+  background: linear-gradient(135deg, #00eaff, #15ff00);
+  color: #0a0f1f;
+  font-family: 'JetBrains Mono', monospace;
+  padding: 12px 28px;
+  border-radius: 50px;
+  font-weight: bold;
+  text-decoration: none;
+  box-shadow: 0 0 15px rgba(0, 234, 255, 0.6);
+  transition: all 0.3s ease;
+}
+
+.actify-button:hover {
+  background: linear-gradient(135deg, #15ff00, #00eaff);
+  box-shadow: 0 0 25px rgba(21, 255, 0, 0.9);
+  transform: scale(1.05);
+}
+
   </style>
   <link href="assets/css/main.css" rel="stylesheet">
 </head>
@@ -496,12 +611,16 @@
               <li><a href="https://dharmikgohil.itch.io/mavericks-battlegrounds" target="_blank">MAVERICKS BATTLEGROUNDS</a></li> 
             </ul>
           </li>
-          <li class="dropdown"><a href="#"><span style="color: #15ff00;">Services</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-            <ul>
-              <li><a href="https://fkm.vercel.app/" target="_blank">Wifi Service</a></li>
-              <li><a href="assets/Fit Sync.apk" target="_blank">Fit Sync</a></li>
-            </ul>
-          </li>
+          <li class="dropdown">
+  <a href="#"><span style="color: #15ff00;">Services</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+  <ul>
+    <li><a href="https://actify.dharmikgohil.fun/" target="_blank">Actify</a></li> <!-- ✅ NEW ENTRY -->
+    <li><a href="https://fkm.vercel.app/" target="_blank">Wifi Service</a></li>
+    <li><a href="assets/Fit Sync.apk" target="_blank">Fit Sync</a></li>
+    
+  </ul>
+</li>
+
         </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>
@@ -538,17 +657,36 @@
       </div>
     </section>
 
-    <!-- Birthday Notification -->
-<!-- <div id="notification" class="notification birthday">
-  <img src="assets/DharmikGohil (1).webp" alt="Birthday Banner">
-  <h3>Happy Birthday to Me!</h3>
-  <p>It's <strong>12th June</strong> – my special day! Celebrate creativity, passion, and the journey of a Game Developer. Thank you for visiting!</p>
+<!-- ✅ Add Notification for App Launch -->
+<div id="notification" class="notification birthday">
+  <img src="w..png" alt="Actify Launch Banner">
+  <h3>🚀 Actify App Launched!</h3>
+  <p><strong>Actify</strong> is live – Your ultimate motivation + task planner with friends, goals, streaks, and productivity boost features.</p>
   <div class="button-container">
-    <button class="preview-btn" onclick="window.location.href='#about'">Know More</button>
+    <button class="preview-btn" onclick="window.location.href='https://actify.dharmikgohil.fun/'">View Features</button>
     <button class="close-btn" onclick="closeNotification()">Close</button>
   </div>
-</div> -->
+</div>
 
+
+<!-- ✅ Add New Page (actify.html) Link in Portfolio Section -->
+
+<div class="col-lg-12 portfolio-item isotope-item filter-appmobile filter-appsingleplayer">
+  <div class="actify-showcase">
+    <h4>🚀 Actify – Boost Productivity</h4>
+    <p>Motivational Task App with Friends, Streaks, Goals & More</p>
+    <div class="actify-carousel">
+      <div class="actify-slide"><img src="assets/man-wearing-vr-goggles-gaming.jpg" alt="Daily Task Planner"></div>
+      <div class="actify-slide"><img src="assets/man-wearing-vr-goggles-gaming.jpg" alt="Friend Motivation"></div>
+      <div class="actify-slide"><img src="assets/man-wearing-vr-goggles-gaming.jpg" alt="Consistency Tracker"></div>
+      <div class="actify-slide"><img src="assets/man-wearing-vr-goggles-gaming.jpg" alt="Motivational Themes"></div>
+      <div class="actify-slide"><img src="assets/man-wearing-vr-goggles-gaming.jpg" alt="Gamification Coming Soon"></div>
+    </div>
+    <div class="text-center mt-4">
+      <a href="https://actify.dharmikgohil.fun/" class="btn btn-outline-success" style="font-family:'JetBrains Mono'; padding: 12px 25px; font-weight: bold; border-radius: 30px; box-shadow: 0 0 10px #15ff00;">Explore Features</a>
+    </div>
+  </div>
+</div>
 
     <section id="portfolio" class="portfolio section">
       <div class="particles">
@@ -1217,5 +1355,17 @@
       document.getElementById('notification').style.display = 'none';
     }
   </script>
+  <script>
+  // Enable mouse wheel to scroll Actify carousel horizontally
+  document.addEventListener("DOMContentLoaded", function () {
+    const carousel = document.querySelector('.actify-carousel');
+    if (carousel) {
+      carousel.addEventListener('wheel', function (evt) {
+        evt.preventDefault();
+        carousel.scrollLeft += evt.deltaY;
+      }, { passive: false });
+    }
+  });
+</script>
 </body>
 </html>
