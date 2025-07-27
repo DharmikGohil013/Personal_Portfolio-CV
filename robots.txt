@@ -1,0 +1,21 @@
+User-agent: *
+Allow: /
+
+# Disallow certain file types and directories
+Disallow: /assets/vendor/
+Disallow: /forms/
+Disallow: *.py
+Disallow: *.md
+Disallow: /loader-test.html
+Disallow: /premium-loader-template.html
+
+# Allow important assets
+Allow: /assets/img/
+Allow: /assets/css/
+Allow: /assets/js/
+
+# Sitemap location
+Sitemap: https://dharmikgohil.fun/sitemap.xml
+
+# Crawl delay (optional, helps with server load)
+Crawl-delay: 1
