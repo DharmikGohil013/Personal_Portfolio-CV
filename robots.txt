@@ -1,5 +1,60 @@
+# Robots.txt for Dharmik Gohil Portfolio - Maximum SEO Crawlability
+# Optimized for aggressive search engine indexing and keyword targeting
+# Target keywords: dharmik, dharmikgohil, gohil dharmik, game developer, unity developer, XR developer
+# Target institutions: CHARUSAT University, DEPSTAR College
+
 User-agent: *
 Allow: /
+
+# Allow all major search engine bots with optimized crawling
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 1
+
+User-agent: Bingbot  
+Allow: /
+Crawl-delay: 1
+
+User-agent: Slurp
+Allow: /
+Crawl-delay: 1
+
+User-agent: DuckDuckBot
+Allow: /
+Crawl-delay: 1
+
+User-agent: Baiduspider
+Allow: /
+Crawl-delay: 1
+
+User-agent: YandexBot
+Allow: /
+Crawl-delay: 1
+
+User-agent: facebookexternalhit
+Allow: /
+
+User-agent: Twitterbot
+Allow: /
+
+User-agent: LinkedInBot
+Allow: /
+
+# Priority pages for aggressive SEO targeting
+Allow: /index.html
+Allow: /about.html
+Allow: /portfolio.html
+Allow: /resume.html
+Allow: /contact.html
+Allow: /services.html
+Allow: /Achivemtn.html
+Allow: /vr.html
+Allow: /logo.html
+Allow: /game1.html
+Allow: /game2.html
+Allow: /game3.html
+Allow: /game4.html
+Allow: /game5.html
 
 # Disallow certain file types and directories
 Disallow: /assets/vendor/
@@ -9,13 +64,13 @@ Disallow: *.md
 Disallow: /loader-test.html
 Disallow: /premium-loader-template.html
 
-# Allow important assets
+# Allow important assets for SEO
 Allow: /assets/img/
 Allow: /assets/css/
 Allow: /assets/js/
 
-# Sitemap location
+# Sitemap location for maximum discoverability
 Sitemap: https://dharmikgohil.fun/sitemap.xml
 
-# Crawl delay (optional, helps with server load)
+# SEO-optimized crawl delay for better indexing
 Crawl-delay: 1
