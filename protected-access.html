@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Protected Access - Dharmik Gohil</title>
+    
+    <!-- Favicons - Dharmik Gohil Logo -->
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/img/dlogo.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/img/dlogo.png">
+    <link rel="shortcut icon" href="assets/img/dlogo.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/img/dlogo.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="assets/img/dlogo.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="assets/img/dlogo.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="assets/img/dlogo.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="assets/img/dlogo.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="assets/img/dlogo.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="assets/img/dlogo.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="assets/img/dlogo.png">
+    <link rel="apple-touch-icon" sizes="57x57" href="assets/img/dlogo.png">
+    <meta name="msapplication-TileImage" content="assets/img/dlogo.png">
+    <meta name="msapplication-TileColor" content="#2d89ef">
+    <meta name="theme-color" content="#2d89ef">
+    <meta name="apple-mobile-web-app-title" content="Dharmik Gohil">
+    <meta name="application-name" content="Dharmik Gohil">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: linear-gradient(135deg, #0a0f1f 0%, #1a2332 100%);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Animated background particles */
+        .particles {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .particle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: rgba(45, 137, 239, 0.6);
+            border-radius: 50%;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .particle:nth-child(1) { left: 10%; animation-delay: 0s; }
+        .particle:nth-child(2) { left: 20%; animation-delay: 1s; }
+        .particle:nth-child(3) { left: 30%; animation-delay: 2s; }
+        .particle:nth-child(4) { left: 40%; animation-delay: 3s; }
+        .particle:nth-child(5) { left: 50%; animation-delay: 4s; }
+        .particle:nth-child(6) { left: 60%; animation-delay: 5s; }
+        .particle:nth-child(7) { left: 70%; animation-delay: 6s; }
+        .particle:nth-child(8) { left: 80%; animation-delay: 7s; }
+        .particle:nth-child(9) { left: 90%; animation-delay: 8s; }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(100vh) rotate(0deg); opacity: 0; }
+            10% { opacity: 1; }
+            90% { opacity: 1; }
+            100% { transform: translateY(-100px) rotate(360deg); opacity: 0; }
+        }
+
+        /* Main container */
+        .container {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 25px 45px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            max-width: 450px;
+            width: 90%;
+            z-index: 10;
+            position: relative;
+            animation: slideIn 0.8s ease-out;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .logo {
+            width: 80px;
+            height: 80px;
+            background: #2d89ef;
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            font-weight: bold;
+            color: white;
+            box-shadow: 0 10px 25px rgba(45, 137, 239, 0.3);
+        }
+
+        h1 {
+            font-size: 28px;
+            margin-bottom: 10px;
+            background: linear-gradient(45deg, #2d89ef, #00d4ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .subtitle {
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 30px;
+            font-size: 16px;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+            text-align: left;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .password-container {
+            position: relative;
+        }
+
+        input[type="password"] {
+            width: 100%;
+            padding: 15px 50px 15px 15px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            border-radius: 10px;
+            color: #fff;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            outline: none;
+        }
+
+        input[type="password"]:focus {
+            border-color: #2d89ef;
+            background: rgba(255, 255, 255, 0.15);
+            box-shadow: 0 0 15px rgba(45, 137, 239, 0.3);
+        }
+
+        input[type="password"]::placeholder {
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        .toggle-password {
+            position: absolute;
+            right: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: none;
+            border: none;
+            color: rgba(255, 255, 255, 0.7);
+            cursor: pointer;
+            font-size: 18px;
+            transition: color 0.3s ease;
+        }
+
+        .toggle-password:hover {
+            color: #2d89ef;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 15px;
+            background: linear-gradient(45deg, #2d89ef, #00d4ff);
+            border: none;
+            border-radius: 10px;
+            color: white;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 8px 20px rgba(45, 137, 239, 0.3);
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 30px rgba(45, 137, 239, 0.4);
+        }
+
+        .submit-btn:active {
+            transform: translateY(0);
+        }
+
+        .error-message {
+            color: #ff6b6b;
+            margin-top: 15px;
+            padding: 10px;
+            background: rgba(255, 107, 107, 0.1);
+            border: 1px solid rgba(255, 107, 107, 0.3);
+            border-radius: 8px;
+            display: none;
+        }
+
+        .success-message {
+            color: #51cf66;
+            margin-top: 15px;
+            padding: 10px;
+            background: rgba(81, 207, 102, 0.1);
+            border: 1px solid rgba(81, 207, 102, 0.3);
+            border-radius: 8px;
+            display: none;
+        }
+
+        .back-link {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            font-size: 14px;
+            padding: 10px 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 25px;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .back-link:hover {
+            color: #2d89ef;
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateX(-5px);
+        }
+
+        /* Responsive design */
+        @media (max-width: 480px) {
+            .container {
+                padding: 30px 20px;
+                margin: 20px;
+            }
+            
+            h1 {
+                font-size: 24px;
+            }
+            
+            .back-link {
+                position: relative;
+                top: auto;
+                left: auto;
+                margin-bottom: 20px;
+                display: inline-block;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Animated background particles -->
+    <div class="particles">
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+    </div>
+
+    <!-- Back to home link -->
+    <a href="index.html" class="back-link">← Back to Home</a>
+
+    <!-- Main container -->
+    <div class="container">
+        <div class="logo">DG</div>
+        <h1>Protected Access</h1>
+        <p class="subtitle">Enter password to access protected content</p>
+        
+        <form id="accessForm">
+            <div class="form-group">
+                <label for="password">Password</label>
+                <div class="password-container">
+                    <input 
+                        type="password" 
+                        id="password" 
+                        name="password" 
+                        placeholder="Enter your password"
+                        required
+                    >
+                    <button type="button" class="toggle-password" id="togglePassword">👁️</button>
+                </div>
+            </div>
+            
+            <button type="submit" class="submit-btn">Access Content</button>
+            
+            <div class="error-message" id="errorMessage">
+                Incorrect password. Please try again.
+            </div>
+            
+            <div class="success-message" id="successMessage">
+                Access granted! Opening content...
+            </div>
+        </form>
+    </div>
+
+    <script>
+        // Password configuration
+        const CORRECT_PASSWORD = "dharmik2024"; // Change this to your desired password
+        const EXCEL_FILE_PATH = "assets/Password_Dharmik.xlsx"; // Path to your Excel file
+
+        // DOM elements
+        const form = document.getElementById('accessForm');
+        const passwordInput = document.getElementById('password');
+        const toggleButton = document.getElementById('togglePassword');
+        const errorMessage = document.getElementById('errorMessage');
+        const successMessage = document.getElementById('successMessage');
+
+        // Toggle password visibility
+        toggleButton.addEventListener('click', function() {
+            const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+            passwordInput.setAttribute('type', type);
+            this.textContent = type === 'password' ? '👁️' : '🙈';
+        });
+
+        // Handle form submission
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const enteredPassword = passwordInput.value;
+            
+            // Hide previous messages
+            errorMessage.style.display = 'none';
+            successMessage.style.display = 'none';
+            
+            // Check password
+            if (enteredPassword === CORRECT_PASSWORD) {
+                // Success
+                successMessage.style.display = 'block';
+                passwordInput.value = '';
+                
+                // Open Excel file after short delay
+                setTimeout(() => {
+                    openExcelFile();
+                }, 1500);
+            } else {
+                // Error
+                errorMessage.style.display = 'block';
+                passwordInput.value = '';
+                passwordInput.focus();
+                
+                // Add shake animation
+                form.style.animation = 'shake 0.5s ease-in-out';
+                setTimeout(() => {
+                    form.style.animation = '';
+                }, 500);
+            }
+        });
+
+        // Function to open Excel file
+        function openExcelFile() {
+            // Method 1: Try to download the file
+            const link = document.createElement('a');
+            link.href = EXCEL_FILE_PATH;
+            link.download = 'Password_Dharmik.xlsx';
+            link.click();
+            
+            // Method 2: Alternative - open in new tab
+            // window.open(EXCEL_FILE_PATH, '_blank');
+            
+            // Method 3: If you want to redirect to a specific page instead
+            // window.location.href = 'your-protected-page.html';
+        }
+
+        // Add shake animation keyframes
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes shake {
+                0%, 100% { transform: translateX(0); }
+                10%, 30%, 50%, 70%, 90% { transform: translateX(-5px); }
+                20%, 40%, 60%, 80% { transform: translateX(5px); }
+            }
+        `;
+        document.head.appendChild(style);
+
+        // Focus on password input when page loads
+        window.addEventListener('load', () => {
+            passwordInput.focus();
+        });
+
+        // Handle Enter key in password input
+        passwordInput.addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                form.dispatchEvent(new Event('submit'));
+            }
+        });
+    </script>
+</body>
+</html>
