@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Getting Started with Unity XR - Dharmik Gohil Blog</title>
+  <meta name="description" content="Learn Unity XR development from scratch with Dharmik Gohil's comprehensive guide to creating VR and AR experiences in Unity.">
+  <meta name="keywords" content="Unity XR, VR Development, AR Development, Unity Tutorial, Dharmik Gohil, Virtual Reality">
+
+  <!-- Favicons -->
+  <link href="../assets/img/dlogo.png" rel="icon">
+  <link href="../assets/img/dlogo.png" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="../assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="../assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="../assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="../assets/css/main.css" rel="stylesheet">
+</head>
+
+<body class="blog-post-page">
+
+  <header id="header" class="header d-flex align-items-center light-background sticky-top">
+    <div class="container-fluid position-relative d-flex align-items-center justify-content-between">
+      <a href="../index.html" class="logo d-flex align-items-center me-auto me-xl-0">
+        <img src="../assets/img/dlogo.png" alt="dharmik gohil personal portfolio logo and brand identity">
+        <h1 class="sitename">DHARMIK</h1>
+      </a>
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../portfolio.html">Portfolio</a></li>
+          <li><a href="../about.html">About</a></li>
+          <li><a href="../contact.html">Contact</a></li>
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main">
+
+    <!-- Page Title -->
+    <div class="page-title" data-aos="fade">
+      <div class="container">
+        <nav class="breadcrumbs">
+          <ol>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="#">Blog</a></li>
+            <li class="current">Getting Started with Unity XR</li>
+          </ol>
+        </nav>
+        <h1>Getting Started with Unity XR</h1>
+      </div>
+    </div><!-- End Page Title -->
+
+    <div class="container">
+      <div class="row">
+
+        <div class="col-lg-8">
+
+          <!-- Blog Details Section -->
+          <section id="blog-details" class="blog-details section">
+            <div class="container">
+
+              <article class="article">
+
+                <div class="post-img">
+                  <img src="../assets/img/dharmik-gohil-vr-ar-technology-showcase-1.png" alt="Unity XR Development Guide by Dharmik Gohil" class="img-fluid">
+                </div>
+
+                <h2 class="title">Getting Started with Unity XR: A Complete Guide to VR and AR Development</h2>
+
+                <div class="meta-top">
+                  <ul>
+                    <li class="d-flex align-items-center"><i class="bi bi-person"></i> <a href="../about.html">Dharmik Gohil</a></li>
+                    <li class="d-flex align-items-center"><i class="bi bi-clock"></i> <time datetime="2025-08-05">Aug 5, 2025</time></li>
+                    <li class="d-flex align-items-center"><i class="bi bi-chat-dots"></i> <a href="#comments">8 Comments</a></li>
+                  </ul>
+                </div><!-- End meta top -->
+
+                <div class="content">
+                  <p>
+                    Unity XR is revolutionizing how we create immersive virtual and augmented reality experiences. As an XR developer with extensive experience in Unity, I'll guide you through everything you need to know to start building amazing VR and AR applications.
+                  </p>
+
+                  <blockquote>
+                    <p>
+                      "XR development is about creating experiences that transcend the boundaries between digital and physical worlds." - Dharmik Gohil
+                    </p>
+                  </blockquote>
+
+                  <h3>What is Unity XR?</h3>
+                  <p>
+                    Unity XR (Extended Reality) is Unity's comprehensive framework for developing:
+                  </p>
+                  <ul>
+                    <li><strong>Virtual Reality (VR):</strong> Fully immersive digital environments</li>
+                    <li><strong>Augmented Reality (AR):</strong> Digital content overlaid on the real world</li>
+                    <li><strong>Mixed Reality (MR):</strong> Interaction between virtual and physical objects</li>
+                  </ul>
+
+                  <h3>Setting Up Your Development Environment</h3>
+                  <h4>System Requirements</h4>
+                  <ul>
+                    <li><strong>Unity 2022.3 LTS or later</strong> (recommended for XR development)</li>
+                    <li><strong>Windows 10/11</strong> or macOS for development</li>
+                    <li><strong>Android SDK</strong> for mobile AR development</li>
+                    <li><strong>Xcode</strong> for iOS AR development</li>
+                  </ul>
+
+                  <h4>Installing Unity XR Packages</h4>
+                  <p>
+                    Through Unity Package Manager, install:
+                  </p>
+                  <ol>
+                    <li><strong>XR Plug-in Management</strong> - Core XR system</li>
+                    <li><strong>XR Interaction Toolkit</strong> - XR interaction components</li>
+                    <li><strong>AR Foundation</strong> - Cross-platform AR development</li>
+                    <li><strong>OpenXR Plugin</strong> - Industry standard XR runtime</li>
+                  </ol>
+
+                  <h3>VR Development Basics</h3>
+                  <h4>Essential VR Components</h4>
+                  <ul>
+                    <li><strong>XR Rig:</strong> Main camera and tracking system</li>
+                    <li><strong>Controllers:</strong> Hand tracking and input handling</li>
+                    <li><strong>Locomotion:</strong> Movement systems (teleportation, smooth locomotion)</li>
+                    <li><strong>Interaction:</strong> Object grabbing and manipulation</li>
+                  </ul>
+
+                  <h4>Creating Your First VR Scene</h4>
+                  <ol>
+                    <li>Create new 3D project</li>
+                    <li>Install XR packages via Package Manager</li>
+                    <li>Add XR Rig from XR Interaction Toolkit</li>
+                    <li>Configure input actions for controllers</li>
+                    <li>Test with VR headset or simulator</li>
+                  </ol>
+
+                  <h3>AR Development with AR Foundation</h3>
+                  <h4>AR Core Features</h4>
+                  <ul>
+                    <li><strong>Plane Detection:</strong> Detect horizontal and vertical surfaces</li>
+                    <li><strong>Image Tracking:</strong> Track reference images in the real world</li>
+                    <li><strong>Face Tracking:</strong> Detect and track human faces</li>
+                    <li><strong>Light Estimation:</strong> Match virtual lighting to real environment</li>
+                    <li><strong>Occlusion:</strong> Virtual objects behind real objects</li>
+                  </ul>
+
+                  <h4>Building an AR App</h4>
+                  <ol>
+                    <li>Create new project with AR Mobile template</li>
+                    <li>Set up AR Session and AR Session Origin</li>
+                    <li>Add AR Plane Manager for surface detection</li>
+                    <li>Implement object placement system</li>
+                    <li>Configure for target platform (iOS/Android)</li>
+                  </ol>
+
+                  <h3>Key XR Development Concepts</h3>
+                  <h4>Tracking and Positioning</h4>
+                  <ul>
+                    <li><strong>6DOF Tracking:</strong> Six degrees of freedom movement</li>
+                    <li><strong>World Space:</strong> Real-world coordinate system</li>
+                    <li><strong>Anchors:</strong> Persistent positioning in AR</li>
+                    <li><strong>Tracking States:</strong> Limited, tracking, not available</li>
+                  </ul>
+
+                  <h4>Interaction Design</h4>
+                  <ul>
+                    <li><strong>Gaze-based:</strong> Look to select and interact</li>
+                    <li><strong>Controller Input:</strong> Button presses and gestures</li>
+                    <li><strong>Hand Tracking:</strong> Natural hand movements</li>
+                    <li><strong>Voice Commands:</strong> Speech recognition integration</li>
+                  </ul>
+
+                  <h3>Performance Optimization for XR</h3>
+                  <h4>VR Performance Tips</h4>
+                  <ul>
+                    <li>Maintain consistent 90+ FPS framerate</li>
+                    <li>Use efficient rendering techniques</li>
+                    <li>Minimize draw calls and polygon count</li>
+                    <li>Implement proper LOD (Level of Detail) systems</li>
+                    <li>Use Unity's XR-specific profiling tools</li>
+                  </ul>
+
+                  <h4>AR Performance Considerations</h4>
+                  <ul>
+                    <li>Optimize for mobile hardware limitations</li>
+                    <li>Use lightweight shaders and materials</li>
+                    <li>Implement efficient tracking algorithms</li>
+                    <li>Balance visual quality with performance</li>
+                  </ul>
+
+                  <h3>Common XR Development Challenges</h3>
+                  <h4>Motion Sickness Prevention</h4>
+                  <ul>
+                    <li>Maintain high, consistent framerate</li>
+                    <li>Use comfort settings like snap turning</li>
+                    <li>Provide multiple locomotion options</li>
+                    <li>Minimize artificial acceleration</li>
+                  </ul>
+
+                  <h4>User Experience Design</h4>
+                  <ul>
+                    <li><strong>Spatial UI:</strong> Design interfaces in 3D space</li>
+                    <li><strong>Accessibility:</strong> Support different user abilities</li>
+                    <li><strong>Onboarding:</strong> Teach users XR interactions</li>
+                    <li><strong>Safety:</strong> Implement guardian/boundary systems</li>
+                  </ul>
+
+                  <h3>Target Platforms and Devices</h3>
+                  <h4>VR Platforms</h4>
+                  <ul>
+                    <li><strong>Meta Quest:</strong> Standalone VR headsets</li>
+                    <li><strong>SteamVR:</strong> PC-based VR systems</li>
+                    <li><strong>PlayStation VR:</strong> Console VR platform</li>
+                    <li><strong>HTC Vive:</strong> Professional VR solutions</li>
+                  </ul>
+
+                  <h4>AR Platforms</h4>
+                  <ul>
+                    <li><strong>ARCore (Android):</strong> Google's AR platform</li>
+                    <li><strong>ARKit (iOS):</strong> Apple's AR framework</li>
+                    <li><strong>Magic Leap:</strong> Mixed reality headsets</li>
+                    <li><strong>HoloLens:</strong> Microsoft's holographic computing</li>
+                  </ul>
+
+                  <h3>Best Practices for XR Development</h3>
+                  <h4>Development Workflow</h4>
+                  <ol>
+                    <li><strong>Prototype Early:</strong> Test core interactions quickly</li>
+                    <li><strong>Iterate Frequently:</strong> Regular testing with real users</li>
+                    <li><strong>Platform Testing:</strong> Test on target devices early</li>
+                    <li><strong>Performance Monitoring:</strong> Continuous optimization</li>
+                  </ol>
+
+                  <h4>Code Organization</h4>
+                  <ul>
+                    <li>Use Unity's XR component architecture</li>
+                    <li>Implement modular interaction systems</li>
+                    <li>Create reusable XR components</li>
+                    <li>Follow Unity's coding standards</li>
+                  </ul>
+
+                  <h3>Testing and Debugging XR Applications</h3>
+                  <h4>Testing Strategies</h4>
+                  <ul>
+                    <li><strong>Device Simulator:</strong> Test without physical devices</li>
+                    <li><strong>Unity Remote:</strong> Preview on mobile devices</li>
+                    <li><strong>XR Device Simulator:</strong> VR testing in editor</li>
+                    <li><strong>User Testing:</strong> Regular feedback sessions</li>
+                  </ul>
+
+                  <h4>Common Issues and Solutions</h4>
+                  <ul>
+                    <li><strong>Tracking Loss:</strong> Implement fallback systems</li>
+                    <li><strong>Performance Drops:</strong> Use Unity Profiler</li>
+                    <li><strong>Input Problems:</strong> Test all interaction methods</li>
+                    <li><strong>Platform Compatibility:</strong> Regular device testing</li>
+                  </ul>
+
+                  <h3>Future of XR Development</h3>
+                  <p>
+                    The XR industry is rapidly evolving with new technologies:
+                  </p>
+                  <ul>
+                    <li><strong>WebXR:</strong> Browser-based XR experiences</li>
+                    <li><strong>AI Integration:</strong> Intelligent virtual assistants</li>
+                    <li><strong>Cloud XR:</strong> Streaming XR content</li>
+                    <li><strong>Haptic Feedback:</strong> Advanced tactile experiences</li>
+                    <li><strong>Eye Tracking:</strong> Gaze-based interaction</li>
+                  </ul>
+
+                  <h3>Getting Started - Action Steps</h3>
+                  <ol>
+                    <li><strong>Install Unity 2022.3 LTS</strong> with XR development modules</li>
+                    <li><strong>Complete Unity Learn XR tutorials</strong> for hands-on experience</li>
+                    <li><strong>Build simple VR scene</strong> with basic interactions</li>
+                    <li><strong>Create AR app</strong> with plane detection and object placement</li>
+                    <li><strong>Test on actual devices</strong> to understand real-world performance</li>
+                    <li><strong>Join XR communities</strong> for support and networking</li>
+                  </ol>
+
+                  <h3>Conclusion</h3>
+                  <p>
+                    Unity XR opens up incredible possibilities for creating immersive experiences that were once science fiction. Whether you're interested in VR games, AR applications, or mixed reality solutions, Unity provides the tools and frameworks needed to bring your vision to life.
+                  </p>
+
+                  <p>
+                    Start with simple projects, focus on user experience, and gradually tackle more complex features. The XR industry is growing rapidly, and there's never been a better time to start developing for these exciting platforms.
+                  </p>
+
+                  <p>
+                    Remember that XR development is as much about understanding human interaction and presence as it is about technical implementation. Keep experimenting, testing with real users, and pushing the boundaries of what's possible in extended reality.
+                  </p>
+
+                </div><!-- End post content -->
+
+                <div class="meta-bottom">
+                  <i class="bi bi-folder"></i>
+                  <ul class="cats">
+                    <li><a href="#">Unity XR</a></li>
+                    <li><a href="#">VR Development</a></li>
+                    <li><a href="#">AR Development</a></li>
+                    <li><a href="#">Tutorial</a></li>
+                  </ul>
+
+                  <i class="bi bi-tags"></i>
+                  <ul class="tags">
+                    <li><a href="#">Unity</a></li>
+                    <li><a href="#">XR</a></li>
+                    <li><a href="#">VR</a></li>
+                    <li><a href="#">AR</a></li>
+                    <li><a href="#">Mixed Reality</a></li>
+                  </ul>
+                </div><!-- End meta bottom -->
+
+              </article>
+
+            </div>
+          </section><!-- /Blog Details Section -->
+
+        </div>
+
+        <div class="col-lg-4 sidebar">
+
+          <div class="widgets-container">
+
+            <!-- Blog Author Widget -->
+            <div class="blog-author-widget widget-item">
+
+              <div class="d-flex flex-column align-items-center">
+                <img src="../assets/img/dharmik-gohil-professional-headshot-photo.png" class="rounded-circle flex-shrink-0" alt="Dharmik Gohil Professional Photo">
+                <h4>Dharmik Gohil</h4>
+                <div class="social-links">
+                  <a href="https://github.com/DharmikGohil013" target="_blank"><i class="bi bi-github"></i></a>
+                  <a href="https://www.linkedin.com/in/dharmikgohil086/" target="_blank"><i class="bi bi-linkedin"></i></a>
+                </div>
+
+                <p>
+                  Professional XR Developer specializing in Unity VR and AR development. Passionate about creating immersive experiences and pushing the boundaries of extended reality.
+                </p>
+
+              </div>
+
+            </div><!--/Blog Author Widget -->
+
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+
+  </main>
+
+  <footer id="footer" class="footer accent-background">
+
+    <div class="container">
+      <div class="copyright text-center ">
+        <p>© <span>Copyright</span> <strong class="px-1 sitename">Dharmik Gohil</strong> <span>All Rights Reserved</span></p>
+      </div>
+      <div class="social-links d-flex justify-content-center">
+        <a href="https://github.com/DharmikGohil013" target="_blank"><i class="bi bi-github"></i></a>
+        <a href="https://www.linkedin.com/in/dharmikgohil086/" target="_blank"><i class="bi bi-linkedin"></i></a>
+      </div>
+      <div class="credits">
+        Designed by <a href="https://dharmikgohil.fun/">Dharmik Gohil</a>
+      </div>
+    </div>
+
+  </footer>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="../assets/vendor/php-email-form/validate.js"></script>
+  <script src="../assets/vendor/aos/aos.js"></script>
+  <script src="../assets/vendor/waypoints/noframework.waypoints.js"></script>
+  <script src="../assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="../assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="../assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+  <script src="../assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="../assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+  <!-- Main JS File -->
+  <script src="../assets/js/main.js"></script>
+
+</body>
+
+</html>

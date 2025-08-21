@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Mobile Game Optimization Techniques - Dharmik Gohil Blog</title>
+  <meta name="description" content="Learn essential mobile game optimization techniques from Dharmik Gohil, professional Unity developer and mobile game expert.">
+  <meta name="keywords" content="Mobile Game Optimization, Unity Mobile, Game Performance, Dharmik Gohil, Mobile Development, Unity Performance">
+
+  <!-- Favicons -->
+  <link href="../assets/img/dlogo.png" rel="icon">
+  <link href="../assets/img/dlogo.png" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="../assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="../assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="../assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="../assets/css/main.css" rel="stylesheet">
+</head>
+
+<body class="blog-post-page">
+
+  <header id="header" class="header d-flex align-items-center light-background sticky-top">
+    <div class="container-fluid position-relative d-flex align-items-center justify-content-between">
+      <a href="../index.html" class="logo d-flex align-items-center me-auto me-xl-0">
+        <img src="../assets/img/dlogo.png" alt="dharmik gohil personal portfolio logo and brand identity">
+        <h1 class="sitename">DHARMIK</h1>
+      </a>
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../portfolio.html">Portfolio</a></li>
+          <li><a href="../about.html">About</a></li>
+          <li><a href="../contact.html">Contact</a></li>
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main">
+
+    <!-- Page Title -->
+    <div class="page-title" data-aos="fade">
+      <div class="container">
+        <nav class="breadcrumbs">
+          <ol>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="#">Blog</a></li>
+            <li class="current">Mobile Game Optimization Techniques</li>
+          </ol>
+        </nav>
+        <h1>Mobile Game Optimization Techniques</h1>
+      </div>
+    </div><!-- End Page Title -->
+
+    <div class="container">
+      <div class="row">
+
+        <div class="col-lg-8">
+
+          <!-- Blog Details Section -->
+          <section id="blog-details" class="blog-details section">
+            <div class="container">
+
+              <article class="article">
+
+                <div class="post-img">
+                  <img src="../assets/img/floopy.webp" alt="Mobile Game Optimization by Dharmik Gohil" class="img-fluid">
+                </div>
+
+                <h2 class="title">Essential Mobile Game Optimization Techniques for Unity Developers</h2>
+
+                <div class="meta-top">
+                  <ul>
+                    <li class="d-flex align-items-center"><i class="bi bi-person"></i> <a href="../about.html">Dharmik Gohil</a></li>
+                    <li class="d-flex align-items-center"><i class="bi bi-clock"></i> <time datetime="2025-08-18">Aug 18, 2025</time></li>
+                    <li class="d-flex align-items-center"><i class="bi bi-chat-dots"></i> <a href="#comments">15 Comments</a></li>
+                  </ul>
+                </div><!-- End meta top -->
+
+                <div class="content">
+                  <p>
+                    Mobile game optimization is crucial for creating successful games that run smoothly on a wide range of devices. As a Unity developer who has worked on various mobile games, including Floppy Ball and other mobile projects, I've learned that optimization should be considered from the very beginning of development, not as an afterthought.
+                  </p>
+
+                  <p>
+                    In this comprehensive guide, I'll share the optimization techniques that have helped me create smooth, performant mobile games that players love. These strategies have been tested across various devices and platforms throughout my development journey.
+                  </p>
+
+                  <blockquote>
+                    <p>
+                      "Great mobile games aren't just fun to play—they're optimized to run smoothly on every device in your target audience's hands." - Dharmik Gohil
+                    </p>
+                  </blockquote>
+
+                  <h3>Understanding Mobile Hardware Limitations</h3>
+                  <p>
+                    Before diving into optimization techniques, it's essential to understand the constraints of mobile devices:
+                  </p>
+                  <ul>
+                    <li><strong>Limited Processing Power:</strong> Mobile CPUs and GPUs are less powerful than desktop counterparts</li>
+                    <li><strong>Memory Constraints:</strong> Limited RAM requires careful memory management</li>
+                    <li><strong>Battery Life:</strong> Optimization directly impacts battery consumption</li>
+                    <li><strong>Thermal Throttling:</strong> Devices slow down when they overheat</li>
+                    <li><strong>Touch Input:</strong> Different interaction paradigms require specific optimizations</li>
+                  </ul>
+
+                  <h3>Graphics and Rendering Optimization</h3>
+                  
+                  <h4>1. Texture Optimization</h4>
+                  <p>
+                    Proper texture management is crucial for mobile performance:
+                  </p>
+                  <ul>
+                    <li><strong>Use Appropriate Compression:</strong> ETC2 for Android, PVRTC for iOS</li>
+                    <li><strong>Reduce Texture Sizes:</strong> Use the smallest resolution that maintains quality</li>
+                    <li><strong>Texture Atlasing:</strong> Combine multiple textures into single atlas to reduce draw calls</li>
+                    <li><strong>Mipmaps:</strong> Enable mipmaps for distant objects to improve performance</li>
+                  </ul>
+
+                  <h4>2. Mesh and Polygon Optimization</h4>
+                  <p>
+                    Optimize your 3D models for mobile performance:
+                  </p>
+                  <ul>
+                    <li>Keep polygon counts low (aim for under 1000 triangles for main characters)</li>
+                    <li>Use LOD (Level of Detail) systems for distant objects</li>
+                    <li>Remove unnecessary vertices and faces</li>
+                    <li>Use occlusion culling to hide objects behind other objects</li>
+                  </ul>
+
+                  <h4>3. Lighting and Shaders</h4>
+                  <p>
+                    Lighting can heavily impact mobile performance:
+                  </p>
+                  <ul>
+                    <li>Use baked lighting instead of real-time lighting when possible</li>
+                    <li>Limit the number of dynamic lights (max 4-8 per scene)</li>
+                    <li>Use Unity's mobile-optimized shaders</li>
+                    <li>Avoid complex shader operations like multiple texture samples</li>
+                  </ul>
+
+                  <h3>Performance Optimization Strategies</h3>
+                  
+                  <h4>1. Object Pooling</h4>
+                  <p>
+                    One of the most effective optimization techniques for mobile games:
+                  </p>
+                  <pre><code>// Example object pooling implementation
+public class ObjectPool : MonoBehaviour 
+{
+    [SerializeField] private GameObject prefab;
+    [SerializeField] private int poolSize = 20;
+    private Queue&lt;GameObject&gt; pool;
+    
+    void Start() 
+    {
+        pool = new Queue&lt;GameObject&gt;();
+        for (int i = 0; i &lt; poolSize; i++) 
+        {
+            GameObject obj = Instantiate(prefab);
+            obj.SetActive(false);
+            pool.Enqueue(obj);
+        }
+    }
+    
+    public GameObject GetPooledObject() 
+    {
+        if (pool.Count &gt; 0) 
+        {
+            GameObject obj = pool.Dequeue();
+            obj.SetActive(true);
+            return obj;
+        }
+        return null;
+    }
+    
+    public void ReturnToPool(GameObject obj) 
+    {
+        obj.SetActive(false);
+        pool.Enqueue(obj);
+    }
+}</code></pre>
+
+                  <h4>2. Frame Rate Management</h4>
+                  <p>
+                    Consistent frame rate is more important than high frame rate on mobile:
+                  </p>
+                  <ul>
+                    <li>Target 30 FPS for most mobile games (60 FPS for competitive games)</li>
+                    <li>Use Application.targetFrameRate to cap frame rate</li>
+                    <li>Implement dynamic quality scaling based on performance</li>
+                    <li>Monitor frame time consistency, not just average FPS</li>
+                  </ul>
+
+                  <h4>3. Memory Management</h4>
+                  <p>
+                    Efficient memory usage prevents crashes and stuttering:
+                  </p>
+                  <ul>
+                    <li>Preload frequently used assets</li>
+                    <li>Unload unused assets using Resources.UnloadUnusedAssets()</li>
+                    <li>Use Addressables for better memory management</li>
+                    <li>Avoid memory allocations in Update() loops</li>
+                    <li>Use StringBuilder instead of string concatenation</li>
+                  </ul>
+
+                  <h3>Unity-Specific Mobile Optimizations</h3>
+                  
+                  <h4>1. Build Settings</h4>
+                  <p>
+                    Optimize your Unity build settings for mobile:
+                  </p>
+                  <ul>
+                    <li><strong>Scripting Backend:</strong> Use IL2CPP for better performance</li>
+                    <li><strong>API Compatibility Level:</strong> Use .NET Standard 2.1</li>
+                    <li><strong>Target Architecture:</strong> ARM64 for better performance on modern devices</li>
+                    <li><strong>Compression:</strong> Enable LZ4 compression for faster loading</li>
+                  </ul>
+
+                  <h4>2. Audio Optimization</h4>
+                  <p>
+                    Audio can consume significant resources on mobile:
+                  </p>
+                  <ul>
+                    <li>Use compressed audio formats (Vorbis for music, ADPCM for SFX)</li>
+                    <li>Lower audio quality for background music (44.1kHz to 22kHz)</li>
+                    <li>Use audio compression settings appropriate for content type</li>
+                    <li>Implement audio pooling for frequently played sounds</li>
+                  </ul>
+
+                  <h4>3. UI Optimization</h4>
+                  <p>
+                    User interface optimization is crucial for mobile games:
+                  </p>
+                  <ul>
+                    <li>Use Canvas.worldCamera instead of overlay mode when possible</li>
+                    <li>Separate static and dynamic UI elements into different canvases</li>
+                    <li>Disable raycast target on non-interactive UI elements</li>
+                    <li>Use UI atlases to reduce draw calls</li>
+                    <li>Implement UI object pooling for dynamic elements</li>
+                  </ul>
+
+                  <h3>Platform-Specific Considerations</h3>
+                  
+                  <h4>Android Optimization</h4>
+                  <ul>
+                    <li>Test on various Android devices with different specifications</li>
+                    <li>Use Vulkan API for supported devices (Android 7.0+)</li>
+                    <li>Implement adaptive performance for supported Samsung devices</li>
+                    <li>Consider Android App Bundle for smaller download sizes</li>
+                  </ul>
+
+                  <h4>iOS Optimization</h4>
+                  <ul>
+                    <li>Use Metal rendering API for better performance</li>
+                    <li>Optimize for different iOS device generations</li>
+                    <li>Implement proper memory warnings handling</li>
+                    <li>Use Xcode Instruments for detailed performance analysis</li>
+                  </ul>
+
+                  <h3>Testing and Profiling</h3>
+                  <p>
+                    Regular testing and profiling are essential for maintaining optimal performance:
+                  </p>
+                  <ul>
+                    <li><strong>Unity Profiler:</strong> Monitor CPU, GPU, and memory usage</li>
+                    <li><strong>Device Testing:</strong> Test on actual target devices, not just the editor</li>
+                    <li><strong>Performance Targets:</strong> Set specific performance goals and test regularly</li>
+                    <li><strong>Battery Testing:</strong> Monitor battery consumption during extended play sessions</li>
+                  </ul>
+
+                  <h3>Real-World Example: Optimizing Floppy Ball</h3>
+                  <p>
+                    In my mobile game Floppy Ball, I applied several of these optimization techniques:
+                  </p>
+                  <ul>
+                    <li>Used object pooling for obstacles and collectibles</li>
+                    <li>Implemented texture atlasing for UI elements</li>
+                    <li>Optimized audio compression settings</li>
+                    <li>Limited particle effects for older devices</li>
+                    <li>Used simple, mobile-optimized shaders</li>
+                  </ul>
+                  <p>
+                    These optimizations resulted in smooth gameplay across a wide range of Android and iOS devices, from budget phones to flagship models.
+                  </p>
+
+                  <h3>Common Optimization Mistakes to Avoid</h3>
+                  <ul>
+                    <li>Over-optimizing early in development</li>
+                    <li>Ignoring garbage collection and memory spikes</li>
+                    <li>Using desktop-quality assets without mobile optimization</li>
+                    <li>Not testing on low-end devices</li>
+                    <li>Forgetting to optimize for different screen resolutions</li>
+                  </ul>
+
+                  <h3>Conclusion</h3>
+                  <p>
+                    Mobile game optimization is an ongoing process that requires careful planning, regular testing, and continuous refinement. The techniques I've shared in this guide have helped me create mobile games that perform well across various devices and provide smooth, enjoyable experiences for players.
+                  </p>
+
+                  <p>
+                    Remember that optimization is not just about technical performance—it's about ensuring that your game is accessible to as many players as possible, regardless of their device specifications. Start optimizing early, test frequently, and always keep your target audience's devices in mind.
+                  </p>
+
+                  <p>
+                    With proper optimization techniques, you can create mobile games that not only look great but also run smoothly, consume less battery, and provide an excellent user experience on a wide range of devices.
+                  </p>
+
+                </div><!-- End post content -->
+
+                <div class="meta-bottom">
+                  <i class="bi bi-folder"></i>
+                  <ul class="cats">
+                    <li><a href="#">Mobile Development</a></li>
+                    <li><a href="#">Unity</a></li>
+                    <li><a href="#">Performance</a></li>
+                    <li><a href="#">Optimization</a></li>
+                  </ul>
+
+                  <i class="bi bi-tags"></i>
+                  <ul class="tags">
+                    <li><a href="#">Mobile Games</a></li>
+                    <li><a href="#">Unity Mobile</a></li>
+                    <li><a href="#">Performance Optimization</a></li>
+                    <li><a href="#">Game Development</a></li>
+                    <li><a href="#">Mobile Performance</a></li>
+                  </ul>
+                </div><!-- End meta bottom -->
+
+              </article>
+
+            </div>
+          </section><!-- /Blog Details Section -->
+
+        </div>
+
+        <div class="col-lg-4 sidebar">
+
+          <div class="widgets-container">
+
+            <!-- Blog Author Widget -->
+            <div class="blog-author-widget widget-item">
+
+              <div class="d-flex flex-column align-items-center">
+                <img src="../assets/img/dharmik-gohil-professional-headshot-photo.png" class="rounded-circle flex-shrink-0" alt="Dharmik Gohil Professional Photo">
+                <h4>Dharmik Gohil</h4>
+                <div class="social-links">
+                  <a href="https://github.com/DharmikGohil013" target="_blank"><i class="bi bi-github"></i></a>
+                  <a href="https://www.linkedin.com/in/dharmikgohil086/" target="_blank"><i class="bi bi-linkedin"></i></a>
+                </div>
+
+                <p>
+                  Professional Game Developer and Unity Expert from CHARUSAT University. Specializing in mobile game development and performance optimization.
+                </p>
+
+              </div>
+
+            </div><!--/Blog Author Widget -->
+
+            <!-- Recent Posts Widget -->
+            <div class="recent-posts-widget widget-item">
+
+              <h3 class="widget-title">Recent Posts</h3>
+
+              <div class="post-item">
+                <img src="../assets/img/Unity.webp" alt="Unity Game Development Tips" class="flex-shrink-0">
+                <div>
+                  <h4><a href="unity-game-development-tips.html">Unity Game Development Tips</a></h4>
+                  <time datetime="2025-08-21">Aug 21, 2025</time>
+                </div>
+              </div><!-- End recent post item-->
+
+              <div class="post-item">
+                <img src="../assets/dharmik-gohil-vr-gaming-expertise-showcase.jpg" alt="VR AR Future Gaming" class="flex-shrink-0">
+                <div>
+                  <h4><a href="vr-ar-future-gaming.html">VR/AR: The Future of Gaming</a></h4>
+                  <time datetime="2025-08-20">Aug 20, 2025</time>
+                </div>
+              </div><!-- End recent post item-->
+
+              <div class="post-item">
+                <img src="../assets/img/Subject-Game-Development.webp" alt="CHARUSAT University Experience" class="flex-shrink-0">
+                <div>
+                  <h4><a href="charusat-university-experience.html">My Journey at CHARUSAT University</a></h4>
+                  <time datetime="2025-08-15">Aug 15, 2025</time>
+                </div>
+              </div><!-- End recent post item-->
+
+            </div><!--/Recent Posts Widget -->
+
+            <!-- Tags Widget -->
+            <div class="tags-widget widget-item">
+
+              <h3 class="widget-title">Tags</h3>
+              <ul>
+                <li><a href="#">Mobile Games</a></li>
+                <li><a href="#">Unity Mobile</a></li>
+                <li><a href="#">Performance</a></li>
+                <li><a href="#">Optimization</a></li>
+                <li><a href="#">Game Development</a></li>
+                <li><a href="#">CHARUSAT</a></li>
+                <li><a href="#">Unity</a></li>
+                <li><a href="#">Mobile Development</a></li>
+                <li><a href="#">Programming</a></li>
+              </ul>
+
+            </div><!--/Tags Widget -->
+
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+
+  </main>
+
+  <footer id="footer" class="footer accent-background">
+
+    <div class="container">
+      <div class="copyright text-center ">
+        <p>© <span>Copyright</span> <strong class="px-1 sitename">Dharmik Gohil</strong> <span>All Rights Reserved</span></p>
+      </div>
+      <div class="social-links d-flex justify-content-center">
+        <a href="https://github.com/DharmikGohil013" target="_blank"><i class="bi bi-github"></i></a>
+        <a href="https://www.linkedin.com/in/dharmikgohil086/" target="_blank"><i class="bi bi-linkedin"></i></a>
+      </div>
+      <div class="credits">
+        Designed by <a href="https://dharmikgohil.fun/">Dharmik Gohil</a>
+      </div>
+    </div>
+
+  </footer>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="../assets/vendor/php-email-form/validate.js"></script>
+  <script src="../assets/vendor/aos/aos.js"></script>
+  <script src="../assets/vendor/waypoints/noframework.waypoints.js"></script>
+  <script src="../assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="../assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="../assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+  <script src="../assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="../assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+  <!-- Main JS File -->
+  <script src="../assets/js/main.js"></script>
+
+</body>
+
+</html>

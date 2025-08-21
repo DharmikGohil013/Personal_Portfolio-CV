@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Unity Game Development Tips - Dharmik Gohil Blog</title>
+  <meta name="description" content="Essential Unity game development tips and tricks by Dharmik Gohil, professional game developer and Unity XR expert from CHARUSAT University.">
+  <meta name="keywords" content="Unity, Game Development, Tips, Dharmik Gohil, Unity Tips, Game Programming, Unity Tutorial">
+
+  <!-- Favicons -->
+  <link href="../assets/img/dlogo.png" rel="icon">
+  <link href="../assets/img/dlogo.png" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="../assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="../assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="../assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="../assets/css/main.css" rel="stylesheet">
+</head>
+
+<body class="blog-post-page">
+
+  <header id="header" class="header d-flex align-items-center light-background sticky-top">
+    <div class="container-fluid position-relative d-flex align-items-center justify-content-between">
+      <a href="../index.html" class="logo d-flex align-items-center me-auto me-xl-0">
+        <img src="../assets/img/dlogo.png" alt="dharmik gohil personal portfolio logo and brand identity">
+        <h1 class="sitename">DHARMIK</h1>
+      </a>
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../portfolio.html">Portfolio</a></li>
+          <li><a href="../about.html">About</a></li>
+          <li><a href="../contact.html">Contact</a></li>
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main">
+
+    <!-- Page Title -->
+    <div class="page-title" data-aos="fade">
+      <div class="container">
+        <nav class="breadcrumbs">
+          <ol>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="#">Blog</a></li>
+            <li class="current">Unity Game Development Tips</li>
+          </ol>
+        </nav>
+        <h1>Unity Game Development Tips</h1>
+      </div>
+    </div><!-- End Page Title -->
+
+    <div class="container">
+      <div class="row">
+
+        <div class="col-lg-8">
+
+          <!-- Blog Details Section -->
+          <section id="blog-details" class="blog-details section">
+            <div class="container">
+
+              <article class="article">
+
+                <div class="post-img">
+                  <img src="../assets/img/Unity.webp" alt="Unity Game Development Tips by Dharmik Gohil" class="img-fluid">
+                </div>
+
+                <h2 class="title">Essential Unity Game Development Tips for Aspiring Developers</h2>
+
+                <div class="meta-top">
+                  <ul>
+                    <li class="d-flex align-items-center"><i class="bi bi-person"></i> <a href="../about.html">Dharmik Gohil</a></li>
+                    <li class="d-flex align-items-center"><i class="bi bi-clock"></i> <time datetime="2025-08-21">Aug 21, 2025</time></li>
+                    <li class="d-flex align-items-center"><i class="bi bi-chat-dots"></i> <a href="#comments">12 Comments</a></li>
+                  </ul>
+                </div><!-- End meta top -->
+
+                <div class="content">
+                  <p>
+                    As a professional game developer and Unity XR expert, I've learned countless lessons throughout my journey at CHARUSAT University and beyond. Today, I want to share some essential Unity game development tips that can help you become a better developer and create more engaging games.
+                  </p>
+
+                  <p>
+                    Unity is one of the most powerful and versatile game engines available today. Whether you're developing mobile games, PC games, or diving into VR/AR experiences, these tips will help you optimize your workflow and create better games.
+                  </p>
+
+                  <blockquote>
+                    <p>
+                      "Great games are not made by accident. They're crafted through careful planning, continuous learning, and attention to detail." - Dharmik Gohil
+                    </p>
+                  </blockquote>
+
+                  <h3>1. Master the Fundamentals</h3>
+                  <p>
+                    Before diving into complex features, ensure you have a solid understanding of Unity's core concepts:
+                  </p>
+                  <ul>
+                    <li><strong>GameObjects and Components:</strong> Understand the component-based architecture</li>
+                    <li><strong>Transforms:</strong> Master position, rotation, and scale manipulation</li>
+                    <li><strong>Physics:</strong> Learn Rigidbody, Colliders, and physics materials</li>
+                    <li><strong>Input System:</strong> Handle player input effectively across platforms</li>
+                  </ul>
+
+                  <h3>2. Optimize for Performance</h3>
+                  <p>
+                    Performance optimization is crucial, especially for mobile games. Here are key strategies:
+                  </p>
+                  <ul>
+                    <li>Use object pooling for frequently spawned objects</li>
+                    <li>Optimize your textures and use appropriate compression</li>
+                    <li>Minimize draw calls by batching similar objects</li>
+                    <li>Profile regularly using Unity Profiler</li>
+                  </ul>
+
+                  <h3>3. Plan Your Project Structure</h3>
+                  <p>
+                    A well-organized project saves time and prevents headaches:
+                  </p>
+                  <ul>
+                    <li>Create clear folder hierarchies for scripts, assets, and scenes</li>
+                    <li>Use meaningful naming conventions</li>
+                    <li>Implement version control from day one</li>
+                    <li>Document your code and systems</li>
+                  </ul>
+
+                  <h3>4. Learn C# Programming Best Practices</h3>
+                  <p>
+                    Strong programming skills are essential for Unity development:
+                  </p>
+                  <ul>
+                    <li>Follow SOLID principles in your code design</li>
+                    <li>Use events and delegates for loose coupling</li>
+                    <li>Implement proper error handling</li>
+                    <li>Write clean, readable code with proper commenting</li>
+                  </ul>
+
+                  <h3>5. Test Early and Often</h3>
+                  <p>
+                    Testing is crucial for creating polished games:
+                  </p>
+                  <ul>
+                    <li>Test on target devices regularly</li>
+                    <li>Implement automated testing where possible</li>
+                    <li>Get feedback from other developers and players</li>
+                    <li>Fix bugs as soon as they're discovered</li>
+                  </ul>
+
+                  <h3>Conclusion</h3>
+                  <p>
+                    Unity game development is a journey of continuous learning. These tips have helped me throughout my career, from my early days at CHARUSAT University to developing professional games today. Remember, the key to success is practice, persistence, and staying curious about new technologies and techniques.
+                  </p>
+
+                  <p>
+                    Keep experimenting, keep learning, and most importantly, keep creating amazing games!
+                  </p>
+
+                </div><!-- End post content -->
+
+                <div class="meta-bottom">
+                  <i class="bi bi-folder"></i>
+                  <ul class="cats">
+                    <li><a href="#">Unity</a></li>
+                    <li><a href="#">Game Development</a></li>
+                    <li><a href="#">Programming</a></li>
+                  </ul>
+
+                  <i class="bi bi-tags"></i>
+                  <ul class="tags">
+                    <li><a href="#">Unity Tips</a></li>
+                    <li><a href="#">Game Programming</a></li>
+                    <li><a href="#">C# Development</a></li>
+                    <li><a href="#">Performance Optimization</a></li>
+                  </ul>
+                </div><!-- End meta bottom -->
+
+              </article>
+
+            </div>
+          </section><!-- /Blog Details Section -->
+
+        </div>
+
+        <div class="col-lg-4 sidebar">
+
+          <div class="widgets-container">
+
+            <!-- Blog Author Widget -->
+            <div class="blog-author-widget widget-item">
+
+              <div class="d-flex flex-column align-items-center">
+                <img src="../assets/img/dharmik-gohil-professional-headshot-photo.png" class="rounded-circle flex-shrink-0" alt="Dharmik Gohil Professional Photo">
+                <h4>Dharmik Gohil</h4>
+                <div class="social-links">
+                  <a href="https://github.com/DharmikGohil013" target="_blank"><i class="bi bi-github"></i></a>
+                  <a href="https://www.linkedin.com/in/dharmikgohil086/" target="_blank"><i class="bi bi-linkedin"></i></a>
+                </div>
+
+                <p>
+                  Professional Game Developer and Unity XR Expert from CHARUSAT University. Passionate about creating immersive gaming experiences and sharing knowledge with the developer community.
+                </p>
+
+              </div>
+
+            </div><!--/Blog Author Widget -->
+
+            <!-- Recent Posts Widget -->
+            <div class="recent-posts-widget widget-item">
+
+              <h3 class="widget-title">Recent Posts</h3>
+
+              <div class="post-item">
+                <img src="../assets/img/multi.webp" alt="VR AR Future Gaming" class="flex-shrink-0">
+                <div>
+                  <h4><a href="vr-ar-future-gaming.html">VR/AR: The Future of Gaming</a></h4>
+                  <time datetime="2025-08-20">Aug 20, 2025</time>
+                </div>
+              </div><!-- End recent post item-->
+
+              <div class="post-item">
+                <img src="../assets/img/floopy.webp" alt="Mobile Game Optimization" class="flex-shrink-0">
+                <div>
+                  <h4><a href="mobile-game-optimization.html">Mobile Game Optimization Techniques</a></h4>
+                  <time datetime="2025-08-18">Aug 18, 2025</time>
+                </div>
+              </div><!-- End recent post item-->
+
+              <div class="post-item">
+                <img src="../assets/img/Subject-Game-Development.webp" alt="CHARUSAT University Experience" class="flex-shrink-0">
+                <div>
+                  <h4><a href="charusat-university-experience.html">My Journey at CHARUSAT University</a></h4>
+                  <time datetime="2025-08-15">Aug 15, 2025</time>
+                </div>
+              </div><!-- End recent post item-->
+
+            </div><!--/Recent Posts Widget -->
+
+            <!-- Tags Widget -->
+            <div class="tags-widget widget-item">
+
+              <h3 class="widget-title">Tags</h3>
+              <ul>
+                <li><a href="#">Unity</a></li>
+                <li><a href="#">Game Development</a></li>
+                <li><a href="#">VR/AR</a></li>
+                <li><a href="#">Mobile Games</a></li>
+                <li><a href="#">C# Programming</a></li>
+                <li><a href="#">CHARUSAT</a></li>
+                <li><a href="#">Unity XR</a></li>
+                <li><a href="#">Multiplayer</a></li>
+                <li><a href="#">Optimization</a></li>
+              </ul>
+
+            </div><!--/Tags Widget -->
+
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+
+  </main>
+
+  <footer id="footer" class="footer accent-background">
+
+    <div class="container">
+      <div class="copyright text-center ">
+        <p>© <span>Copyright</span> <strong class="px-1 sitename">Dharmik Gohil</strong> <span>All Rights Reserved</span></p>
+      </div>
+      <div class="social-links d-flex justify-content-center">
+        <a href="https://github.com/DharmikGohil013" target="_blank"><i class="bi bi-github"></i></a>
+        <a href="https://www.linkedin.com/in/dharmikgohil086/" target="_blank"><i class="bi bi-linkedin"></i></a>
+      </div>
+      <div class="credits">
+        Designed by <a href="https://dharmikgohil.fun/">Dharmik Gohil</a>
+      </div>
+    </div>
+
+  </footer>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="../assets/vendor/php-email-form/validate.js"></script>
+  <script src="../assets/vendor/aos/aos.js"></script>
+  <script src="../assets/vendor/waypoints/noframework.waypoints.js"></script>
+  <script src="../assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="../assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="../assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+  <script src="../assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="../assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+  <!-- Main JS File -->
+  <script src="../assets/js/main.js"></script>
+
+</body>
+
+</html>
