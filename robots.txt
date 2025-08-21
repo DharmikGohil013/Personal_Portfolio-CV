@@ -71,6 +71,7 @@ Allow: /assets/js/
 
 # Sitemap location for maximum discoverability
 Sitemap: https://dharmikgohil.fun/sitemap.xml
+Sitemap: https://dharmikgohil.fun/image-sitemap.xml
 
 # SEO-optimized crawl delay for better indexing
 Crawl-delay: 1

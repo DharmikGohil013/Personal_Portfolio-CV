@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  
+  <!-- Dharmik Gohil Professional Headshot - Primary Image for SEO -->
+  <url>
+    <loc>https://dharmikgohil.fun/</loc>
+    <image:image>
+      <image:loc>https://dharmikgohil.fun/assets/img/dharmik-gohil-professional-headshot-photo.png</image:loc>
+      <image:caption>Dharmik Gohil Professional Headshot Photo - Expert Game Developer and Unity XR Specialist</image:caption>
+      <image:title>Dharmik Gohil - Professional Game Developer Portfolio Photo</image:title>
+      <image:geo_location>Surat, Gujarat, India</image:geo_location>
+      <image:license>https://dharmikgohil.fun/contact.html</image:license>
+    </image:image>
+  </url>
+  
+  <!-- About Page with Professional Photo -->
+  <url>
+    <loc>https://dharmikgohil.fun/about.html</loc>
+    <image:image>
+      <image:loc>https://dharmikgohil.fun/assets/img/dharmik-gohil-professional-headshot-photo.png</image:loc>
+      <image:caption>Dharmik Gohil About Page - CHARUSAT University Graduate and Professional Game Developer</image:caption>
+      <image:title>About Dharmik Gohil - Unity XR Developer Professional Photo</image:title>
+      <image:geo_location>Surat, Gujarat, India</image:geo_location>
+      <image:license>https://dharmikgohil.fun/contact.html</image:license>
+    </image:image>
+  </url>
+  
+  <!-- Portfolio Page -->
+  <url>
+    <loc>https://dharmikgohil.fun/portfolio.html</loc>
+    <image:image>
+      <image:loc>https://dharmikgohil.fun/assets/img/dharmik-gohil-professional-headshot-photo.png</image:loc>
+      <image:caption>Dharmik Gohil Portfolio - Professional Game Developer Unity XR Expert Showcase</image:caption>
+      <image:title>Dharmik Gohil Portfolio Professional Headshot</image:title>
+      <image:geo_location>Surat, Gujarat, India</image:geo_location>
+      <image:license>https://dharmikgohil.fun/contact.html</image:license>
+    </image:image>
+  </url>
+  
+</urlset>
