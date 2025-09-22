@@ -276,6 +276,28 @@
       border-top: 1px solid rgba(0, 234, 255, 0.2);
     }
 
+    /* Indian Developer Community Section */
+    .idc.section {
+      background: linear-gradient(135deg, #0f1624, #1e2b3f);
+      padding: 80px 0;
+      overflow: hidden;
+    }
+
+    .community-logo {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .community-logo:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 30px rgba(21, 255, 0, 0.8) !important;
+    }
+
+    @keyframes pulse {
+      0% { box-shadow: 0 0 20px rgba(21, 255, 0, 0.5); }
+      50% { box-shadow: 0 0 30px rgba(21, 255, 0, 0.8); }
+      100% { box-shadow: 0 0 20px rgba(21, 255, 0, 0.5); }
+    }
+
     .footer .copyright p {
       color: #d0d0d0;
       font-family: 'JetBrains Mono', monospace;
@@ -1003,6 +1025,78 @@
         </div>
       </div>
     </section>
+
+    <!-- Indian Developer Community Section -->
+    <section id="idc" class="idc section">
+      <div class="particles">
+        <div class="particle" style="left: 15%; top: 25%; animation-delay: 0s;"></div>
+        <div class="particle" style="left: 35%; top: 55%; animation-delay: 1s;"></div>
+        <div class="particle" style="left: 65%; top: 35%; animation-delay: 2s;"></div>
+        <div class="particle" style="left: 85%; top: 65%; animation-delay: 3s;"></div>
+      </div>
+      
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Community Leadership</h2>
+        <p>Building and nurturing the Indian developer ecosystem</p>
+      </div>
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <div class="row gy-4 justify-content-center align-items-center">
+          <div class="col-lg-6 text-center">
+            <img src="assets/img/indian-developer-community-logo.png" 
+                 class="img-fluid community-logo" 
+                 alt="Indian Developer Community Logo - Co-founded by Dharmik Gohil"
+                 title="Indian Developer Community - EST. 2025"
+                 loading="lazy"
+                 width="400"
+                 height="400"
+                 style="border: 2px solid #15ff00; border-radius: 20px; box-shadow: 0 0 20px rgba(21, 255, 0, 0.5); animation: pulse 2s infinite;">
+          </div>
+          <div class="col-lg-6 content">
+            <h2 style="color: #15ff00; text-shadow: 0 0 15px #15ff00; font-family: 'Press Start 2P', cursive; margin-bottom: 15px;">Co-Founder</h2>
+            <h3 style="color: #00eaff; text-shadow: 0 0 10px #00eaff; font-family: 'JetBrains Mono', monospace; margin-bottom: 10px;">Indian Developer Community</h3>
+            <h4 style="color: #ffdf00; font-family: 'JetBrains Mono', monospace; margin-bottom: 20px;">EST. 2025</h4>
+            
+            <p class="fst-italic py-3" style="color: #fff; font-family: 'JetBrains Mono', monospace;">
+              Pioneering a collaborative platform for Indian developers to connect, learn, and grow together in the ever-evolving tech landscape.
+            </p>
+            
+            <div class="community-features">
+              <h4 style="color: #15ff00; text-shadow: 0 0 10px #15ff00; margin-bottom: 15px;">Community Vision</h4>
+              <ul style="color: #00eaff; font-family: 'JetBrains Mono', monospace;">
+                <li style="margin-bottom: 8px;"><i class="bi bi-chevron-right" style="color: #15ff00;"></i> <strong>Knowledge Sharing:</strong> Foster collaborative learning and skill development</li>
+                <li style="margin-bottom: 8px;"><i class="bi bi-chevron-right" style="color: #15ff00;"></i> <strong>Networking:</strong> Connect developers across India for professional growth</li>
+                <li style="margin-bottom: 8px;"><i class="bi bi-chevron-right" style="color: #15ff00;"></i> <strong>Innovation:</strong> Promote cutting-edge technology adoption and best practices</li>
+                <li style="margin-bottom: 8px;"><i class="bi bi-chevron-right" style="color: #15ff00;"></i> <strong>Mentorship:</strong> Bridge the gap between experienced and emerging developers</li>
+              </ul>
+            </div>
+            
+            <div class="community-impact py-3">
+              <h4 style="color: #15ff00; text-shadow: 0 0 10px #15ff00; margin-bottom: 15px;">Community Impact</h4>
+              <div class="row">
+                <div class="col-6">
+                  <ul style="color: #00eaff; font-family: 'JetBrains Mono', monospace;">
+                    <li style="margin-bottom: 8px;"><i class="bi bi-chevron-right" style="color: #15ff00;"></i> <strong>Tech Workshops:</strong> Regular skill-building sessions</li>
+                    <li style="margin-bottom: 8px;"><i class="bi bi-chevron-right" style="color: #15ff00;"></i> <strong>Open Source:</strong> Collaborative project development</li>
+                  </ul>
+                </div>
+                <div class="col-6">
+                  <ul style="color: #00eaff; font-family: 'JetBrains Mono', monospace;">
+                    <li style="margin-bottom: 8px;"><i class="bi bi-chevron-right" style="color: #15ff00;"></i> <strong>Career Growth:</strong> Job opportunities and guidance</li>
+                    <li style="margin-bottom: 8px;"><i class="bi bi-chevron-right" style="color: #15ff00;"></i> <strong>Industry Connect:</strong> Direct access to tech leaders</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            
+            <p style="color: #fff; font-family: 'JetBrains Mono', monospace;">
+              As co-founder, I'm committed to building a thriving ecosystem where Indian developers can excel, innovate, and contribute to the global tech community while celebrating our unique perspective and expertise.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section><!-- /Indian Developer Community Section -->
+
     <!-- Skills Section -->
     <section id="skills" class="skills section">
       <div class="particles">
