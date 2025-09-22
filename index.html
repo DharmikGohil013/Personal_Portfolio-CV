@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4658801537271443"
@@ -103,12 +103,27 @@
   <style>
     /* Global Styles */
     body {
-      background: #0a0f1f;
+      background: #0a0f1f url('assets/img/starry-night-background.jpg') center center fixed;
+      background-size: cover;
+      background-repeat: no-repeat;
       color: #fff;
       font-family: 'JetBrains Mono', monospace;
       overflow-x: hidden;
       position: relative;
       cursor: url('assets/img/cursor-default.png'), auto;
+    }
+
+    /* Add overlay for better text readability */
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(10, 15, 31, 0.7);
+      z-index: -1;
+      pointer-events: none;
     }
 
     /* Portfolio Section */
@@ -253,114 +268,6 @@
       color: #15ff00;
       text-shadow: 0 0 10px #15ff00;
     }
-
-    /* Birthday Notification */
-.notification.birthday {
-  position: fixed;
-  bottom: 25px;
-  right: 25px;
-  z-index: 9999;
-  width: 360px;
-  max-width: 90vw;
-  padding: 25px;
-  border-radius: 20px;
-  background: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(20px);
-  box-shadow: 0 0 30px rgba(255, 223, 0, 0.7), 0 0 20px rgba(255, 0, 255, 0.3);
-  border: 2px solid rgba(255, 255, 255, 0.1);
-  animation: glowPulse 2s ease-in-out infinite alternate, slideIn 1s ease-in-out;
-  text-align: center;
-  overflow: hidden;
-}
-
-/* Header and message */
-.notification.birthday h3 {
-  font-size: 1.8rem;
-  color: #fff700;
-  margin-bottom: 10px;
-  font-family: 'Press Start 2P', cursive;
-  text-shadow: 0 0 10px #fff700, 0 0 25px #ff007f;
-  animation: shimmer 3s infinite linear;
-}
-
-.notification.birthday p {
-  color: #f0f0f0;
-  font-size: 1rem;
-  font-weight: 500;
-  margin-bottom: 15px;
-  line-height: 1.5;
-}
-
-/* Image banner */
-.notification.birthday img {
-  width: 100%;
-  border-radius: 12px;
-  margin-bottom: 15px;
-  border: 2px solid #15ff00;
-  box-shadow: 0 0 15px rgba(21, 255, 0, 0.7);
-}
-
-/* Buttons */
-.notification .button-container {
-  display: flex;
-  justify-content: center;
-  gap: 12px;
-  flex-wrap: wrap;
-}
-
-.notification .preview-btn,
-.notification .close-btn {
-  background: linear-gradient(135deg, #00eaff, #15ff00);
-  color: #0a0f1f;
-  padding: 10px 20px;
-  font-weight: bold;
-  border: none;
-  border-radius: 50px;
-  font-family: 'JetBrains Mono', monospace;
-  box-shadow: 0 0 20px rgba(0, 234, 255, 0.6);
-  transition: all 0.3s ease;
-  cursor: pointer;
-}
-
-.notification .preview-btn:hover,
-.notification .close-btn:hover {
-  transform: scale(1.08);
-  box-shadow: 0 0 25px rgba(21, 255, 0, 0.9);
-  background: linear-gradient(135deg, #15ff00, #00eaff);
-}
-
-/* Animation Keyframes */
-@keyframes glowPulse {
-  0% { box-shadow: 0 0 10px #ffdf00, 0 0 20px #ff007f; }
-  100% { box-shadow: 0 0 30px #ffdf00, 0 0 40px #ff007f; }
-}
-
-@keyframes shimmer {
-  0% { text-shadow: 0 0 10px #fff700, 0 0 25px #ff007f; }
-  50% { text-shadow: 0 0 20px #ff007f, 0 0 35px #00eaff; }
-  100% { text-shadow: 0 0 10px #fff700, 0 0 25px #ff007f; }
-}
-
-@keyframes slideIn {
-  from { opacity: 0; transform: translateX(100%); }
-  to { opacity: 1; transform: translateX(0); }
-}
-
-/* Responsive */
-@media (max-width: 480px) {
-  .notification.birthday {
-    bottom: 15px;
-    right: 15px;
-    padding: 20px;
-    width: 90vw;
-  }
-  .notification.birthday h3 {
-    font-size: 1.4rem;
-  }
-  .notification.birthday p {
-    font-size: 0.95rem;
-  }
-}
 
     /* Footer */
     .footer {
@@ -883,7 +790,7 @@
         <a href="https://www.instagram.com/dharmik.086/?next=%2F" target="_blank"><i class="bi bi-instagram"></i></a>
         <a href="https://x.com/Dharmik086" target="_blank"><i class="bi bi-twitter"></i></a>
         <a href="https://play.google.com/store/apps/details?id=com.dharmikgohilfun.crossout" target="_blank"><i class="bi bi-google-play"></i></a>
-        <a href="assets/img/GOHIL DHARMIKBHAI GHANSHYAMBHAI Resume.pdf" class="download-resume" download><i class="bi bi-download"></i></a>
+        <a href="assets/img/Dharmik Gohil Resume.pdf" class="download-resume" download><i class="bi bi-download"></i></a>
       </div>
     </div>
   </header>
@@ -909,24 +816,6 @@
         </div>
       </div>
     </section>
-
-<!-- ✅ Add Notification for App Launch -->
-<div id="notification" class="notification birthday">
-  <img src="dharmik-gohil-web-development-asset.png" 
-       alt="Dharmik Gohil Web Development Asset - Professional Portfolio Showcase" 
-       title="Web Development Skills by Dharmik Gohil"
-       loading="lazy"
-       width="400"
-       height="300">
-  <h3>🚀 Actify App Launched!</h3>
-  <p><strong>Actify</strong> is live – Your ultimate motivation + task planner with friends, goals, streaks, and productivity boost features.</p>
-  <div class="button-container">
-    <button class="preview-btn" onclick="window.location.href='https://actify.dharmikgohil.fun/'">View Features</button>
-    <button class="close-btn" onclick="closeNotification()">Close</button>
-  </div>
-</div>
-
-<!-- ✅ Add New Page (actify.html) Link in Portfolio Section -->
 
 <div class="col-lg-12 portfolio-item isotope-item filter-appmobile filter-appsingleplayer">
   <div class="actify-showcase">
@@ -1550,14 +1439,6 @@
   <script src="assets/js/main.js"></script>
   <script>
     document.addEventListener("DOMContentLoaded", function () {
-      setTimeout(function () {
-        const notification = document.getElementById("notification");
-        notification.classList.add("active");
-        setTimeout(() => {
-          notification.classList.remove("active");
-        }, 5000);
-      }, 1000);
-
       // Smooth scrolling for anchor links
       document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
@@ -1567,15 +1448,11 @@
           });
         });
       });
-    });
 
-    function closeNotification() {
-      document.getElementById('notification').style.display = 'none';
-    }
-
-    AOS.init({
-      duration: 1000,
-      once: true
+      AOS.init({
+        duration: 1000,
+        once: true
+      });
     });
   </script>
   <script>
