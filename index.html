@@ -56,6 +56,12 @@
   <meta property="twitter:image:alt" content="Dharmik Gohil Professional Headshot Photo - Game Developer Unity XR Expert">
   <meta property="twitter:creator" content="@dharmikgohil">
 
+  <!-- LinkedIn Meta Tags -->
+  <meta property="profile:username" content="dharmikgohil086">
+  <meta name="linkedin:owner" content="dharmikgohil086">
+  <link rel="me" href="https://in.linkedin.com/in/dharmikgohil086">
+  <link rel="author" href="https://in.linkedin.com/in/dharmikgohil086">
+
   <!-- Image SEO Optimization for Google Images -->
   <meta name="image" content="https://dharmikgohil.fun/assets/img/dharmik-gohil-professional-headshot-photo.png">
   <meta name="image:alt" content="Dharmik Gohil Professional Headshot Photo - Expert Game Developer Unity XR Specialist Portfolio">
@@ -578,6 +584,37 @@
   transform: scale(1.05);
 }
 
+/* LinkedIn Badge Styling */
+.linkedin-badge-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  padding: 15px;
+  background: rgba(10, 15, 31, 0.6);
+  border: 2px solid rgba(0, 234, 255, 0.3);
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(0, 234, 255, 0.2);
+  transition: all 0.3s ease;
+}
+
+.linkedin-badge-container:hover {
+  border-color: rgba(0, 234, 255, 0.6);
+  box-shadow: 0 0 30px rgba(0, 234, 255, 0.4);
+  transform: translateY(-2px);
+}
+
+.badge-base {
+  max-width: 100%;
+}
+
+@media (max-width: 768px) {
+  .linkedin-badge-container {
+    margin-top: 15px;
+    padding: 10px;
+  }
+}
+
   </style>
   <link href="assets/css/main.css" rel="stylesheet">
 
@@ -625,7 +662,10 @@
     "url": "https://dharmikgohil.github.io/",
     "image": "https://dharmikgohil.fun/assets/img/dharmik-gohil-professional-headshot-photo.png",
     "sameAs": [
-      "https://github.com/dharmikgohil"
+      "https://github.com/dharmikgohil",
+      "https://github.com/dharmikgohil013",
+      "https://in.linkedin.com/in/dharmikgohil086",
+      "https://linkedin.com/in/dharmikgohil086"
     ],
     "jobTitle": "Game Developer",
     "worksFor": {
@@ -656,7 +696,8 @@
     "image": "https://dharmikgohil.fun/assets/img/dharmik-gohil-professional-headshot-photo.png",
     "sameAs": [
       "https://github.com/dharmikgohil013",
-      "https://linkedin.com/in/dharmikgohil"
+      "https://linkedin.com/in/dharmikgohil086",
+      "https://in.linkedin.com/in/dharmikgohil086"
     ],
     "jobTitle": "Professional Game Developer",
     "description": "Expert Game Developer and Unity XR Developer from CHARUSAT University specializing in mobile games, VR/AR experiences, and backend development",
@@ -711,6 +752,9 @@
     "keywords": "Dharmik Gohil, Game Developer, Unity Developer, XR Developer, Professional Photo, Headshot, Portfolio, CHARUSAT University"
   }
   </script>
+
+  <!-- LinkedIn Badge Script -->
+  <script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
 </head>
 
 <body class="index-page">
@@ -1021,6 +1065,24 @@
             <p class="py-3">
               Dedicated to delivering high-quality solutions, focusing on innovative design and development while addressing challenges with precision. Committed to ensuring efficiency and satisfaction through expert craftsmanship and attention to detail.
             </p>
+
+            <!-- LinkedIn Profile Badge -->
+            <div class="linkedin-badge-container" style="margin-top: 20px;" itemscope itemtype="https://schema.org/Person">
+              <meta itemprop="name" content="Dharmik Gohil">
+              <meta itemprop="jobTitle" content="Game Developer & Unity XR Specialist">
+              <meta itemprop="url" content="https://in.linkedin.com/in/dharmikgohil086">
+              <meta itemprop="sameAs" content="https://in.linkedin.com/in/dharmikgohil086">
+              <div class="badge-base LI-profile-badge" data-locale="en_US" data-size="medium" data-theme="dark" data-type="VERTICAL" data-vanity="dharmikgohil086" data-version="v1">
+                <a class="badge-base__link LI-simple-link" 
+                   href="https://in.linkedin.com/in/dharmikgohil086?trk=profile-badge"
+                   rel="noopener noreferrer nofollow"
+                   target="_blank"
+                   title="Connect with Dharmik Gohil on LinkedIn - Professional Game Developer & Unity XR Specialist"
+                   aria-label="View Dharmik Gohil's LinkedIn profile - Game Developer and Unity XR Expert">
+                  Dharmik Gohil - Professional LinkedIn Profile
+                </a>
+              </div>
+            </div>
           </div>
         </div>
       </div>
