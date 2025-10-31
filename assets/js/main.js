@@ -26,13 +26,53 @@
    * Mobile nav toggle
    */
   const mobileNavToggleBtn = document.querySelector('.mobile-nav-toggle');
+  const mobileNavOverlay = document.querySelector('.mobile-nav-overlay');
+  const navMenu = document.querySelector('.navmenu');
 
   function mobileNavToogle() {
     document.querySelector('body').classList.toggle('mobile-nav-active');
-    mobileNavToggleBtn.classList.toggle('bi-list');
-    mobileNavToggleBtn.classList.toggle('bi-x');
+    if (mobileNavToggleBtn) {
+      mobileNavToggleBtn.classList.toggle('active');
+    }
+    if (mobileNavOverlay) {
+      mobileNavOverlay.classList.toggle('active');
+    }
   }
-  mobileNavToggleBtn.addEventListener('click', mobileNavToogle);
+  
+  if (mobileNavToggleBtn) {
+    mobileNavToggleBtn.addEventListener('click', mobileNavToogle);
+  }
+
+  // Close menu when clicking overlay or outside menu area
+  document.addEventListener('click', function(event) {
+    const isMenuActive = document.querySelector('body').classList.contains('mobile-nav-active');
+    const isClickInsideMenu = navMenu && navMenu.contains(event.target);
+    const isClickOnToggle = mobileNavToggleBtn && mobileNavToggleBtn.contains(event.target);
+    
+    if (isMenuActive && !isClickInsideMenu && !isClickOnToggle) {
+      mobileNavToogle();
+    }
+  });
+
+  // Close menu when clicking overlay
+  if (mobileNavOverlay) {
+    mobileNavOverlay.addEventListener('click', function() {
+      if (document.querySelector('body').classList.contains('mobile-nav-active')) {
+        mobileNavToogle();
+      }
+    });
+  }
+
+  // Close menu when clicking a link (except dropdowns)
+  if (navMenu) {
+    navMenu.querySelectorAll('a:not(.toggle-dropdown)').forEach(link => {
+      link.addEventListener('click', function() {
+        if (document.querySelector('body').classList.contains('mobile-nav-active')) {
+          mobileNavToogle();
+        }
+      });
+    });
+  }
 
   /**
    * Hide mobile nav on same-page/hash links
@@ -49,12 +89,35 @@
   /**
    * Toggle mobile nav dropdowns
    */
-  document.querySelectorAll('.navmenu .toggle-dropdown').forEach(navmenu => {
-    navmenu.addEventListener('click', function(e) {
+  const toggleDropdowns = document.querySelectorAll('.navmenu .toggle-dropdown');
+  console.log('Found', toggleDropdowns.length, 'dropdown toggles');
+  
+  toggleDropdowns.forEach(toggleBtn => {
+    toggleBtn.addEventListener('click', function(e) {
       e.preventDefault();
-      this.parentNode.classList.toggle('active');
-      this.parentNode.nextElementSibling.classList.toggle('dropdown-active');
-      e.stopImmediatePropagation();
+      e.stopPropagation();
+      
+      console.log('Dropdown clicked');
+      
+      // Get the parent dropdown li element
+      const dropdownLi = this.closest('.dropdown');
+      
+      if (dropdownLi) {
+        console.log('Toggling dropdown:', dropdownLi);
+        
+        // Close other dropdowns at the same level
+        const parentUl = dropdownLi.parentElement;
+        const siblings = parentUl.querySelectorAll(':scope > .dropdown.active');
+        siblings.forEach(sibling => {
+          if (sibling !== dropdownLi) {
+            sibling.classList.remove('active');
+          }
+        });
+        
+        // Toggle current dropdown
+        dropdownLi.classList.toggle('active');
+        console.log('Dropdown is now:', dropdownLi.classList.contains('active') ? 'OPEN' : 'CLOSED');
+      }
     });
   });
 
