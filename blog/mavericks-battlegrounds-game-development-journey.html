@@ -1,0 +1,844 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-B2T6PJQMCJ"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-B2T6PJQMCJ');
+  </script>
+
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Mavericks Battlegrounds: Complete Game Development Journey | Unity Multiplayer Game by Dharmik Gohil</title>
+  <meta name="description" content="Explore the complete development journey of Mavericks Battlegrounds, an epic multiplayer battle arena game developed in Unity 6 by Dharmik Gohil and team at CHARUSAT University DEPSTAR College using Agile methodology.">
+  <meta name="keywords" content="Mavericks Battlegrounds, Unity multiplayer game, battle arena game, Unity 6 game development, Photon multiplayer, Dharmik Gohil game, CHARUSAT University game project, DEPSTAR College, Agile game development, Unity XR, multiplayer shooter, Indian game developer, Vadodara Makerfest, IDGC 2024">
+
+  <!-- Favicons -->
+  <link href="../assets/img/dlogo.png" rel="icon">
+  <link href="../assets/img/dlogo.png" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="../assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="../assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link href="../assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="../assets/css/main.css" rel="stylesheet">
+
+  <!-- Particles.js -->
+  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+
+  <!-- Custom CSS for Blog Page -->
+  <style>
+    /* Particle Background */
+    #particles-js {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      z-index: -1;
+      background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #16213e 100%);
+    }
+
+    body {
+      position: relative;
+      background: transparent !important;
+    }
+
+    /* Fix Recent Posts Widget Title Color */
+    .recent-posts-widget .widget-title {
+      color: #000000 !important;
+      font-weight: 600;
+      margin-bottom: 20px;
+      text-shadow: none;
+    }
+
+    /* Recent Posts Widget Styling */
+    .recent-posts-widget .post-item h4 a {
+      color: #00d4ff !important;
+      transition: all 0.3s ease;
+    }
+
+    .recent-posts-widget .post-item h4 a:hover {
+      color: #00ffff !important;
+      text-shadow: 0 0 10px rgba(0, 212, 255, 0.5);
+    }
+
+    .recent-posts-widget .post-item time {
+      color: #666666 !important;
+      font-size: 13px;
+    }
+
+    /* Widget Styling */
+    .widget-item {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      border-radius: 10px;
+      padding: 25px;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Blog Author Widget */
+    .blog-author-widget h4 {
+      color: #00d4ff !important;
+      font-weight: 600;
+      margin-top: 15px;
+    }
+
+    /* Blog Author Description Text */
+    .blog-author-widget p {
+      color: #000000 !important;
+      line-height: 1.6;
+    }
+
+    /* Profile Image Sizing */
+    .blog-author-widget img.rounded-circle {
+      width: 220px !important;
+      height: 220px !important;
+      object-fit: cover;
+      border: 4px solid #00d4ff;
+      box-shadow: 0 5px 15px rgba(0, 212, 255, 0.3);
+      margin-bottom: 15px;
+    }
+
+    /* Content Area */
+    .container {
+      position: relative;
+      z-index: 1;
+    }
+
+    /* Main Content Background */
+    main {
+      position: relative;
+      z-index: 1;
+    }
+
+    .blog-details {
+      background: rgba(255, 255, 255, 0.98);
+      backdrop-filter: blur(10px);
+      border-radius: 15px;
+      padding: 30px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    }
+  </style>
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://dharmikgohil.fun/blog/mavericks-battlegrounds-game-development-journey.html">
+  <meta property="og:title" content="Mavericks Battlegrounds: Complete Game Development Journey | Unity Multiplayer Game">
+  <meta property="og:description" content="Explore the complete development journey of Mavericks Battlegrounds, an epic multiplayer battle arena game developed in Unity 6 by Dharmik Gohil and team at CHARUSAT University.">
+  <meta property="og:image" content="https://dharmikgohil.fun/assets/img/mavericks-battlegrounds-logo.png">
+
+  <!-- Twitter Card -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://dharmikgohil.fun/blog/mavericks-battlegrounds-game-development-journey.html">
+  <meta property="twitter:title" content="Mavericks Battlegrounds: Complete Game Development Journey">
+  <meta property="twitter:description" content="Epic multiplayer battle arena game developed in Unity 6 using Photon networking and Agile methodology.">
+  <meta property="twitter:image" content="https://dharmikgohil.fun/assets/img/mavericks-battlegrounds-logo.png">
+
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "Mavericks Battlegrounds: Complete Game Development Journey",
+    "description": "Explore the complete development journey of Mavericks Battlegrounds, an epic multiplayer battle arena game developed in Unity 6 by Dharmik Gohil and team at CHARUSAT University DEPSTAR College.",
+    "image": "https://dharmikgohil.fun/assets/img/mavericks-battlegrounds-logo.png",
+    "author": {
+      "@type": "Person",
+      "name": "Dharmik Gohil",
+      "url": "https://dharmikgohil.fun",
+      "jobTitle": "Game Developer & Unity XR Specialist",
+      "alumniOf": "CHARUSAT University"
+    },
+    "publisher": {
+      "@type": "Person",
+      "name": "Dharmik Gohil",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://dharmikgohil.fun/assets/img/dlogo.png"
+      }
+    },
+    "datePublished": "2025-06-12",
+    "dateModified": "2025-10-31",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://dharmikgohil.fun/blog/mavericks-battlegrounds-game-development-journey.html"
+    },
+    "keywords": ["Mavericks Battlegrounds", "Unity multiplayer game", "game development", "Unity 6", "Photon networking", "CHARUSAT University", "Agile methodology"],
+    "articleSection": "Game Development",
+    "wordCount": "2500"
+  }
+  </script>
+
+  <!-- VideoObject Schema for YouTube Video -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "VideoObject",
+    "name": "Mavericks Battlegrounds - Gameplay Trailer",
+    "description": "Official gameplay trailer of Mavericks Battlegrounds - Epic multiplayer battle arena game",
+    "thumbnailUrl": "https://dharmikgohil.fun/assets/img/mavericks-battlegrounds-logo.png",
+    "uploadDate": "2025-06-12",
+    "contentUrl": "https://youtu.be/RefphkY5gCw",
+    "embedUrl": "https://www.youtube.com/embed/RefphkY5gCw"
+  }
+  </script>
+
+  <!-- Game Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "VideoGame",
+    "name": "Mavericks Battlegrounds",
+    "description": "Epic multiplayer battle arena game - Only the strong endure",
+    "genre": ["Action", "Multiplayer", "Battle Arena", "Shooter"],
+    "gamePlatform": ["PC", "Web Browser", "itch.io"],
+    "author": {
+      "@type": "Person",
+      "name": "Dharmik Gohil"
+    },
+    "datePublished": "2025-06-12",
+    "url": "https://dharmikgohil.itch.io/mavericks-battlegrounds",
+    "trailer": {
+      "@type": "VideoObject",
+      "name": "Mavericks Battlegrounds Trailer",
+      "url": "https://youtu.be/RefphkY5gCw"
+    }
+  }
+  </script>
+</head>
+
+<body class="blog-post-page">
+
+  <!-- Particles.js Background -->
+  <div id="particles-js"></div>
+
+  <header id="header" class="header d-flex align-items-center sticky-top">
+    <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
+      <a href="../index.html" class="logo d-flex align-items-center">
+        <img src="../assets/img/dlogo.png" alt="Dharmik Gohil Logo">
+        <h1 class="sitename">DHARMIK</h1>
+      </a>
+
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../about.html">About</a></li>
+          <li><a href="../services.html">Abilities</a></li>
+          <li><a href="../portfolio.html">Projects</a></li>
+          <li><a href="../Achivemtn.html">Milestones</a></li>
+          <li><a href="../blog/unity-game-development-tips.html" class="active">Blog</a></li>
+          <li><a href="../contact.html">Contact</a></li>
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main">
+
+    <!-- Page Title -->
+    <div class="page-title" data-aos="fade">
+      <div class="container">
+        <nav class="breadcrumbs">
+          <ol>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="#">Blog</a></li>
+            <li class="current">Mavericks Battlegrounds Development Journey</li>
+          </ol>
+        </nav>
+        <h1>Mavericks Battlegrounds: The Complete Development Journey</h1>
+      </div>
+    </div><!-- End Page Title -->
+
+    <div class="container">
+      <div class="row">
+
+        <div class="col-lg-8">
+
+          <!-- Blog Details Section -->
+          <section id="blog-details" class="blog-details section">
+            <div class="container">
+
+              <article class="article">
+
+                <div class="post-img">
+                  <img src="../assets/img/mavericks-battlegrounds-logo.png" alt="Mavericks Battlegrounds Official Logo" class="img-fluid" loading="eager">
+                </div>
+
+                <h2 class="title">Mavericks Battlegrounds: An Epic Multiplayer Battle Arena Journey</h2>
+
+                <div class="meta-top">
+                  <ul>
+                    <li class="d-flex align-items-center"><i class="bi bi-person"></i> <a href="../about.html">Dharmik Gohil</a></li>
+                    <li class="d-flex align-items-center"><i class="bi bi-clock"></i> <time datetime="2025-06-12">Jun 12, 2025</time></li>
+                    <li class="d-flex align-items-center"><i class="bi bi-chat-dots"></i> <a href="#comments">Game Development</a></li>
+                  </ul>
+                </div><!-- End meta top -->
+
+                <div class="content">
+                  <h3>Introduction: Only The Strong Endure</h3>
+                  <p>
+                    Welcome to the complete development story of <strong>Mavericks Battlegrounds</strong>, an epic multiplayer battle arena game that represents months of dedication, innovation, and teamwork. This project showcases the power of Unity 6, Photon networking, and Agile development methodology in creating immersive gaming experiences.
+                  </p>
+
+                  <p>
+                    <strong>Mavericks Battlegrounds</strong> is not just a game—it's a testament to what a passionate team of developers can achieve when they combine cutting-edge technology with creative vision. From its inception in November 2024 to the first version launch on June 12, 2025, this journey has been filled with challenges, learning experiences, and groundbreaking achievements.
+                  </p>
+
+                  <img src="../assets/img/mavericks-cinematic-logo.png" class="img-fluid" alt="Mavericks Battlegrounds Cinematic Logo" loading="lazy" style="margin: 20px 0; border-radius: 10px;">
+
+                  <h3>Project Overview</h3>
+                  <blockquote>
+                    <p>
+                      <strong>Game Title:</strong> Mavericks Battlegrounds<br>
+                      <strong>Version:</strong> The War Zone (Code 1.0)<br>
+                      <strong>Development Start:</strong> November 2024<br>
+                      <strong>First Release:</strong> June 12, 2025<br>
+                      <strong>Engine:</strong> Unity 6<br>
+                      <strong>Networking:</strong> Photon PUN<br>
+                      <strong>Methodology:</strong> Agile Development Process
+                    </p>
+                  </blockquote>
+
+                  <h3>The Development Team</h3>
+                  <p>
+                    Behind every great game is an incredible team. Mavericks Battlegrounds was brought to life by a talented group of developers from <strong>CHARUSAT University</strong> (Charotar University of Science and Technology), specifically from <strong>DEPSTAR College</strong> (Devang Patel Institute of Advance Technology and Research):
+                  </p>
+
+                  <ul>
+                    <li><strong>Dharmik Ghanshyambhai Gohil</strong> - Team Leader & Unity XR Developer - Led the entire development process, implemented core gameplay mechanics, managed project timeline, and integrated XR elements</li>
+                    <li><strong>Ansh Kansara</strong> - Technical Developer - Handled networking implementation with Photon, optimization, bug fixes, and technical architecture</li>
+                    <li><strong>Soham Patel</strong> - 3D Developer - Created stunning 3D assets, character models, environments, and animations using Blender</li>
+                  </ul>
+
+                  <img src="../assets/img/mavericks-idgc-event-2024.png" class="img-fluid" alt="IDGC Event 2024 - Mavericks Battlegrounds Showcase" loading="lazy" style="margin: 20px 0; border-radius: 10px;">
+
+                  <h3>Game Concept & Vision</h3>
+                  <p>
+                    Mavericks Battlegrounds is an intense multiplayer battle arena game where players compete in fast-paced combat scenarios. The game emphasizes strategic gameplay, team coordination, and skill-based combat mechanics. Our vision was to create an accessible yet competitive gaming experience that appeals to both casual and hardcore gamers.
+                  </p>
+
+                  <h4>Core Features:</h4>
+                  <ul>
+                    <li><strong>Real-time Multiplayer:</strong> Powered by Photon PUN for seamless online gameplay</li>
+                    <li><strong>Battle Arena Combat:</strong> Intense player vs player combat mechanics</li>
+                    <li><strong>Custom Maps:</strong> Intricately designed environments created in Blender</li>
+                    <li><strong>Smooth Controls:</strong> Optimized for responsive gameplay</li>
+                    <li><strong>Stunning Visuals:</strong> Advanced Unity 6 rendering with custom shaders</li>
+                    <li><strong>Immersive Audio:</strong> Professional sound design and effects</li>
+                  </ul>
+
+                  <h3>Technology Stack</h3>
+                  <p>
+                    The development of Mavericks Battlegrounds leveraged cutting-edge technology and industry-standard tools:
+                  </p>
+
+                  <h4>Game Engine & Framework:</h4>
+                  <ul>
+                    <li><strong>Unity 6 (Latest Version)</strong> - The core game engine providing advanced rendering, physics, and development tools</li>
+                    <li><strong>Photon PUN</strong> - Industry-leading multiplayer networking solution for real-time synchronization</li>
+                    <li><strong>Unity XR Toolkit</strong> - For extended reality features and future VR/AR integration</li>
+                  </ul>
+
+                  <h4>3D Modeling & Animation:</h4>
+                  <ul>
+                    <li><strong>Blender</strong> - Used for creating 3D models, characters, environments, and animations</li>
+                    <li><strong>Adobe Photoshop</strong> - Texture creation and image editing</li>
+                    <li><strong>Substance Painter</strong> - Advanced material and texture design</li>
+                  </ul>
+
+                  <h4>Development Tools:</h4>
+                  <ul>
+                    <li><strong>Visual Studio</strong> - Primary IDE for C# scripting</li>
+                    <li><strong>Git & GitHub</strong> - Version control and collaboration</li>
+                    <li><strong>Unity Collaborate</strong> - Team synchronization</li>
+                  </ul>
+
+                  <h3>Agile Development Process</h3>
+                  <p>
+                    We adopted the <strong>Agile methodology</strong> to ensure efficient development and rapid iteration. Our sprint-based approach allowed us to:
+                  </p>
+
+                  <ul>
+                    <li><strong>Iterative Development:</strong> Regular 2-week sprints with specific goals</li>
+                    <li><strong>Daily Standups:</strong> Team synchronization and blocker resolution</li>
+                    <li><strong>Sprint Planning:</strong> Clear objectives and task distribution</li>
+                    <li><strong>Sprint Reviews:</strong> Demo sessions and stakeholder feedback</li>
+                    <li><strong>Retrospectives:</strong> Continuous process improvement</li>
+                    <li><strong>Backlog Management:</strong> Prioritized feature development</li>
+                  </ul>
+
+                  <h3>Development Timeline</h3>
+                  <p>
+                    The journey from concept to launch spanned 7 months of intensive development:
+                  </p>
+
+                  <h4>Phase 1: Conceptualization (November 2024)</h4>
+                  <ul>
+                    <li>Game concept ideation and design documentation</li>
+                    <li>Technology stack selection</li>
+                    <li>Team formation and role assignment</li>
+                    <li>Initial prototyping</li>
+                  </ul>
+
+                  <h4>Phase 2: Core Development (December 2024 - March 2025)</h4>
+                  <ul>
+                    <li>Basic movement and combat mechanics implementation</li>
+                    <li>Multiplayer networking integration with Photon</li>
+                    <li>3D asset creation and environment design</li>
+                    <li>Character modeling and rigging</li>
+                  </ul>
+
+                  <h4>Phase 3: Feature Enhancement (April 2025 - May 2025)</h4>
+                  <ul>
+                    <li>Advanced gameplay mechanics</li>
+                    <li>UI/UX design and implementation</li>
+                    <li>Sound design and music integration</li>
+                    <li>Map optimization and level design</li>
+                  </ul>
+
+                  <h4>Phase 4: Testing & Polish (May 2025 - June 2025)</h4>
+                  <ul>
+                    <li>Extensive playtesting sessions</li>
+                    <li>Bug fixes and optimization</li>
+                    <li>Performance improvements</li>
+                    <li>Final polish and release preparation</li>
+                  </ul>
+
+                  <h3>Gameplay Screenshots</h3>
+                  <p>Experience the intense action and stunning visuals of Mavericks Battlegrounds:</p>
+
+                  <div class="row gy-4">
+                    <div class="col-md-6">
+                      <img src="../assets/img/mavericks-gameplay-1.png" class="img-fluid" alt="Mavericks Battlegrounds Gameplay Screenshot 1" loading="lazy" style="border-radius: 10px;">
+                      <p class="text-center mt-2"><em>Main Menu Interface</em></p>
+                    </div>
+                    <div class="col-md-6">
+                      <img src="../assets/img/mavericks-gameplay-2.png" class="img-fluid" alt="Mavericks Battlegrounds Gameplay Screenshot 2" loading="lazy" style="border-radius: 10px;">
+                      <p class="text-center mt-2"><em>Character Selection Screen</em></p>
+                    </div>
+                    <div class="col-md-6">
+                      <img src="../assets/img/mavericks-gameplay-3.png" class="img-fluid" alt="Mavericks Battlegrounds Gameplay Screenshot 3" loading="lazy" style="border-radius: 10px;">
+                      <p class="text-center mt-2"><em>In-Game Battle Arena</em></p>
+                    </div>
+                    <div class="col-md-6">
+                      <img src="../assets/img/mavericks-gameplay-4.png" class="img-fluid" alt="Mavericks Battlegrounds Gameplay Screenshot 4" loading="lazy" style="border-radius: 10px;">
+                      <p class="text-center mt-2"><em>Intense Combat Action</em></p>
+                    </div>
+                    <div class="col-md-6">
+                      <img src="../assets/img/mavericks-gameplay-5.png" class="img-fluid" alt="Mavericks Battlegrounds Gameplay Screenshot 5" loading="lazy" style="border-radius: 10px;">
+                      <p class="text-center mt-2"><em>Environmental Details</em></p>
+                    </div>
+                    <div class="col-md-6">
+                      <img src="../assets/img/mavericks-gameplay-6.png" class="img-fluid" alt="Mavericks Battlegrounds Gameplay Screenshot 6" loading="lazy" style="border-radius: 10px;">
+                      <p class="text-center mt-2"><em>Multiplayer Lobby</em></p>
+                    </div>
+                    <div class="col-md-6">
+                      <img src="../assets/img/mavericks-gameplay-7.png" class="img-fluid" alt="Mavericks Battlegrounds Gameplay Screenshot 7" loading="lazy" style="border-radius: 10px;">
+                      <p class="text-center mt-2"><em>Advanced Weaponry</em></p>
+                    </div>
+                    <div class="col-md-6">
+                      <img src="../assets/img/mavericks-gameplay-8.png" class="img-fluid" alt="Mavericks Battlegrounds Gameplay Screenshot 8" loading="lazy" style="border-radius: 10px;">
+                      <p class="text-center mt-2"><em>Strategic Positioning</em></p>
+                    </div>
+                    <div class="col-md-6">
+                      <img src="../assets/img/mavericks-gameplay-9.png" class="img-fluid" alt="Mavericks Battlegrounds Gameplay Screenshot 9" loading="lazy" style="border-radius: 10px;">
+                      <p class="text-center mt-2"><em>Team Coordination</em></p>
+                    </div>
+                    <div class="col-md-6">
+                      <img src="../assets/img/mavericks-gameplay-10.png" class="img-fluid" alt="Mavericks Battlegrounds Gameplay Screenshot 10" loading="lazy" style="border-radius: 10px;">
+                      <p class="text-center mt-2"><em>Victory Screen</em></p>
+                    </div>
+                  </div>
+
+                  <h3>Events & Showcases</h3>
+                  <p>
+                    Mavericks Battlegrounds has been showcased at several prestigious events, receiving overwhelming positive feedback from the gaming community:
+                  </p>
+
+                  <h4>IDGC Event 2024 (Indian Developer Game Conference)</h4>
+                  <p>
+                    We had the incredible opportunity to showcase Mavericks Battlegrounds at the IDGC 2024, one of India's premier game development conferences. The event allowed us to connect with industry professionals, receive valuable feedback, and demonstrate our game to a wider audience.
+                  </p>
+
+                  <h4>Vadodara Makerfest</h4>
+                  <p>
+                    At the Vadodara Makerfest, we presented our project to makers, innovators, and technology enthusiasts. The event provided an excellent platform to showcase the technical aspects of our game and demonstrate the capabilities of Unity 6 and Photon networking.
+                  </p>
+
+                  <h3>Official Gameplay Trailer</h3>
+                  <p>Watch the official gameplay trailer to see Mavericks Battlegrounds in action:</p>
+                  <div class="ratio ratio-16x9" style="margin: 20px 0;">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/RefphkY5gCw?si=zF6sWlm0mgrdrlz4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>                  </div>
+
+                  <h3>Platform Availability</h3>
+                  <p>
+                    Mavericks Battlegrounds is available on multiple platforms, making it accessible to a wide range of players:
+                  </p>
+
+                  <div class="row gy-4 mt-3">
+                    <div class="col-md-6">
+                      <img src="../assets/img/mavericks-platform-showcase-1.png" class="img-fluid" alt="Mavericks Battlegrounds Platform Showcase" loading="lazy" style="border-radius: 10px;">
+                    </div>
+                    <div class="col-md-6">
+                      <img src="../assets/img/mavericks-platform-showcase-2.jpg" class="img-fluid" alt="Mavericks Battlegrounds Available Platforms" loading="lazy" style="border-radius: 10px;">
+                    </div>
+                  </div>
+
+                  <div class="text-center mt-4">
+                    <a href="https://dharmikgohil.itch.io/mavericks-battlegrounds" target="_blank" class="btn btn-primary btn-lg" style="background: linear-gradient(135deg, #00eaff, #15ff00); border: none; color: #0a0f1f; font-weight: bold; padding: 15px 40px; border-radius: 50px; box-shadow: 0 0 20px rgba(0, 234, 255, 0.6);">
+                      Play Now on itch.io
+                    </a>
+                  </div>
+
+                  <h3>Future Roadmap</h3>
+                  <p>
+                    Version 1.0 "The War Zone" is just the beginning. We have ambitious plans for future updates:
+                  </p>
+
+                  <img src="../assets/img/mavericks-coming-soon-banner.jpg" class="img-fluid" alt="Mavericks Battlegrounds Coming Soon - AI Version" loading="lazy" style="margin: 20px 0; border-radius: 10px;">
+
+                  <h4>Upcoming Features:</h4>
+                  <ul>
+                    <li><strong>AI Integration:</strong> Advanced AI opponents for single-player mode</li>
+                    <li><strong>New Maps:</strong> Additional battle arenas with unique environments</li>
+                    <li><strong>Character Customization:</strong> Extensive cosmetic options</li>
+                    <li><strong>Ranked Mode:</strong> Competitive matchmaking system</li>
+                    <li><strong>Seasonal Events:</strong> Limited-time game modes and rewards</li>
+                    <li><strong>Mobile Version:</strong> Optimized for Android and iOS</li>
+                    <li><strong>VR Support:</strong> Immersive virtual reality experience</li>
+                  </ul>
+
+                  <h3>Academic Support</h3>
+                  <p>
+                    This project was developed with the invaluable support of <strong>CHARUSAT University</strong> (Charotar University of Science and Technology) and specifically the <strong>DEPSTAR College</strong> (Devang Patel Institute of Advance Technology and Research).
+                  </p>
+
+                  <div class="text-center my-4">
+                    <img src="../assets/img/charusat-logo.jpg" alt="CHARUSAT University Logo" class="img-fluid" style="max-width: 300px; margin-bottom: 10px;" loading="lazy">
+                    <p><strong>CHARUSAT University - DEPSTAR College</strong><br>
+                    Supporting Innovation in Technology and Game Development</p>
+                  </p>
+
+                  <h3>Technical Challenges & Solutions</h3>
+                  <p>
+                    Throughout the development process, we encountered and overcame several significant challenges:
+                  </p>
+
+                  <h4>1. Multiplayer Synchronization</h4>
+                  <p>
+                    <strong>Challenge:</strong> Ensuring smooth synchronization of player movements and actions across different network conditions.<br>
+                    <strong>Solution:</strong> Implemented Photon's lag compensation techniques and optimized network traffic by sending only essential data.
+                  </p>
+
+                  <h4>2. Performance Optimization</h4>
+                  <p>
+                    <strong>Challenge:</strong> Maintaining 60+ FPS on mid-range hardware with detailed 3D environments.<br>
+                    <strong>Solution:</strong> Utilized Unity's optimization tools, implemented LOD systems, and optimized shader complexity.
+                  </p>
+
+                  <h4>3. Cross-Platform Compatibility</h4>
+                  <p>
+                    <strong>Challenge:</strong> Ensuring consistent gameplay experience across different platforms.<br>
+                    <strong>Solution:</strong> Extensive testing and platform-specific optimizations using Unity's build pipeline.
+                  </p>
+
+                  <h3>Lessons Learned</h3>
+                  <p>
+                    The development of Mavericks Battlegrounds has been an incredible learning experience:
+                  </p>
+
+                  <ul>
+                    <li>The importance of clear communication in team development</li>
+                    <li>Benefits of Agile methodology for game development</li>
+                    <li>Value of early and frequent playtesting</li>
+                    <li>Significance of performance optimization from the start</li>
+                    <li>Power of community feedback in shaping the game</li>
+                  </ul>
+
+                  <h3>Acknowledgments</h3>
+                  <p>
+                    We would like to express our gratitude to:
+                  </p>
+
+                  <ul>
+                    <li><strong>CHARUSAT University and DEPSTAR College</strong> for providing resources and support</li>
+                    <li><strong>Our mentors and professors</strong> for guidance throughout the project</li>
+                    <li><strong>The gaming community</strong> for feedback and encouragement</li>
+                    <li><strong>Event organizers</strong> at IDGC 2024 and Vadodara Makerfest</li>
+                    <li><strong>Unity Technologies and Photon Engine</strong> for excellent development tools</li>
+                  </ul>
+
+                  <h3>Get Involved</h3>
+                  <p>
+                    We're always looking to connect with fellow game developers, players, and enthusiasts:
+                  </p>
+
+                  <ul>
+                    <li><strong>Play the Game:</strong> <a href="https://dharmikgohil.itch.io/mavericks-battlegrounds" target="_blank">itch.io/mavericks-battlegrounds</a></li>
+                    <li><strong>Watch Gameplay:</strong> <a href="https://youtu.be/RefphkY5gCw" target="_blank">YouTube Trailer</a></li>
+                    <li><strong>Connect on LinkedIn:</strong> <a href="https://in.linkedin.com/in/dharmikgohil086" target="_blank">Dharmik Gohil</a></li>
+                    <li><strong>Visit Portfolio:</strong> <a href="https://dharmikgohil.fun" target="_blank">dharmikgohil.fun</a></li>
+                  </ul>
+
+                  <h3>Conclusion</h3>
+                  <p>
+                    Mavericks Battlegrounds represents the culmination of passion, dedication, and technical expertise. From its humble beginnings in November 2024 to its successful launch in June 2025, this project has been a transformative experience for our entire team.
+                  </p>
+
+                  <p>
+                    As we continue to develop and enhance the game, we remain committed to delivering an exceptional gaming experience to our players. The journey doesn't end here—it's just the beginning of an exciting adventure in the world of multiplayer gaming.
+                  </p>
+
+                  <p>
+                    <strong>Remember: Only The Strong Endure.</strong>
+                  </p>
+
+                  <div class="text-center mt-5 mb-4">
+                    <img src="../assets/img/mavericks-gameplay-11.png" class="img-fluid" alt="Mavericks Battlegrounds - Enter the Arena" loading="lazy" style="border-radius: 10px;">
+                    <h4 class="mt-3" style="color: #00eaff;">Enter The Arena. Prove Your Worth.</h4>
+                  </div>
+
+                </div><!-- End post content -->
+
+                <div class="meta-bottom">
+                  <i class="bi bi-folder"></i>
+                  <ul class="cats">
+                    <li><a href="#">Game Development</a></li>
+                    <li><a href="#">Unity</a></li>
+                    <li><a href="#">Multiplayer</a></li>
+                  </ul>
+
+                  <i class="bi bi-tags"></i>
+                  <ul class="tags">
+                    <li><a href="#">Mavericks Battlegrounds</a></li>
+                    <li><a href="#">Unity 6</a></li>
+                    <li><a href="#">Photon</a></li>
+                    <li><a href="#">Battle Arena</a></li>
+                    <li><a href="#">CHARUSAT</a></li>
+                  </ul>
+                </div><!-- End meta bottom -->
+
+              </article>
+
+            </div>
+          </section><!-- /Blog Details Section -->
+
+        </div>
+
+        <div class="col-lg-4 sidebar">
+
+          <div class="widgets-container">
+
+            <!-- Blog Author Widget -->
+            <div class="blog-author-widget widget-item">
+
+              <div class="d-flex flex-column align-items-center">
+                <img src="../assets/img/dharmik-gohil-profile.jpg" class="rounded-circle flex-shrink-0" alt="Dharmik Gohil - Game Developer" loading="lazy">
+                <div>
+                  <h4>Dharmik Gohil</h4>
+                  <div class="social-links">
+                    <a href="https://github.com/dharmikgohil013" target="_blank"><i class="bi bi-github"></i></a>
+                    <a href="https://in.linkedin.com/in/dharmikgohil086" target="_blank"><i class="bi bi-linkedin"></i></a>
+                    <a href="https://www.youtube.com/@DharmikGohil086" target="_blank"><i class="bi bi-youtube"></i></a>
+                  </div>
+
+                  <p>
+                    Professional Game Developer & Unity XR Specialist. Team Leader of Mavericks Battlegrounds. Passionate about creating immersive multiplayer experiences and pushing the boundaries of game development technology.
+                  </p>
+
+                </div>
+              </div>
+
+            </div><!--/Blog Author Widget -->
+
+            <!-- Recent Posts Widget -->
+            <div class="recent-posts-widget widget-item">
+
+              <h3 class="widget-title">Recent Posts</h3>
+
+              <div class="post-item">
+                <img src="../assets/img/blog-recent-1.jpg" alt="" class="flex-shrink-0" loading="lazy">
+                <div>
+                  <h4><a href="unity-game-development-tips.html">Unity Game Development Tips</a></h4>
+                  <time datetime="2025-01-15">Jan 15, 2025</time>
+                </div>
+              </div><!-- End recent post item-->
+
+              <div class="post-item">
+                <img src="../assets/img/blog-recent-2.jpg" alt="" class="flex-shrink-0" loading="lazy">
+                <div>
+                  <h4><a href="vr-ar-future-gaming.html">VR/AR: The Future of Gaming</a></h4>
+                  <time datetime="2025-02-10">Feb 10, 2025</time>
+                </div>
+              </div><!-- End recent post item-->
+
+              <div class="post-item">
+                <img src="../assets/img/blog-recent-3.jpg" alt="" class="flex-shrink-0" loading="lazy">
+                <div>
+                  <h4><a href="mobile-game-optimization.html">Mobile Game Optimization</a></h4>
+                  <time datetime="2025-03-05">Mar 5, 2025</time>
+                </div>
+              </div><!-- End recent post item-->
+
+            </div><!--/Recent Posts Widget -->
+
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+
+  </main>
+
+  <footer id="footer" class="footer">
+    <div class="container footer-top">
+      <div class="row gy-4">
+        <div class="col-lg-5 col-md-12 footer-about">
+          <a href="../index.html" class="logo d-flex align-items-center">
+            <span class="sitename">DHARMIK GOHIL</span>
+          </a>
+          <p>Professional Game Developer & Unity XR Specialist creating immersive gaming experiences.</p>
+          <div class="social-links d-flex mt-4">
+            <a href="https://github.com/dharmikgohil013" target="_blank"><i class="bi bi-github"></i></a>
+            <a href="https://in.linkedin.com/in/dharmikgohil086" target="_blank"><i class="bi bi-linkedin"></i></a>
+            <a href="https://www.youtube.com/@DharmikGohil086" target="_blank"><i class="bi bi-youtube"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container copyright text-center mt-4">
+      <p>© <span>Copyright</span> <strong class="px-1 sitename">Dharmik Gohil</strong> <span>All Rights Reserved</span></p>
+    </div>
+  </footer>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="../assets/vendor/php-email-form/validate.js"></script>
+  <script src="../assets/vendor/aos/aos.js"></script>
+  <script src="../assets/vendor/typed.js/typed.umd.js"></script>
+  <script src="../assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="../assets/vendor/waypoints/noframework.waypoints.js"></script>
+  <script src="../assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="../assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="../assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+  <script src="../assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+
+  <!-- Main JS File -->
+  <script src="../assets/js/main.js"></script>
+
+  <!-- Particles.js Configuration -->
+  <script>
+    particlesJS('particles-js', {
+      particles: {
+        number: {
+          value: 80,
+          density: {
+            enable: true,
+            value_area: 800
+          }
+        },
+        color: {
+          value: ['#00d4ff', '#00ffff', '#0099ff', '#66ccff']
+        },
+        shape: {
+          type: 'circle',
+          stroke: {
+            width: 0,
+            color: '#000000'
+          }
+        },
+        opacity: {
+          value: 0.5,
+          random: true,
+          anim: {
+            enable: true,
+            speed: 1,
+            opacity_min: 0.1,
+            sync: false
+          }
+        },
+        size: {
+          value: 3,
+          random: true,
+          anim: {
+            enable: true,
+            speed: 2,
+            size_min: 0.1,
+            sync: false
+          }
+        },
+        line_linked: {
+          enable: true,
+          distance: 150,
+          color: '#00d4ff',
+          opacity: 0.4,
+          width: 1
+        },
+        move: {
+          enable: true,
+          speed: 2,
+          direction: 'none',
+          random: true,
+          straight: false,
+          out_mode: 'out',
+          bounce: false,
+          attract: {
+            enable: true,
+            rotateX: 600,
+            rotateY: 1200
+          }
+        }
+      },
+      interactivity: {
+        detect_on: 'canvas',
+        events: {
+          onhover: {
+            enable: true,
+            mode: 'grab'
+          },
+          onclick: {
+            enable: true,
+            mode: 'push'
+          },
+          resize: true
+        },
+        modes: {
+          grab: {
+            distance: 140,
+            line_linked: {
+              opacity: 1
+            }
+          },
+          push: {
+            particles_nb: 4
+          }
+        }
+      },
+      retina_detect: true
+    });
+  </script>
+
+</body>
+
+</html>
