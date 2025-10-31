@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-B2T6PJQMCJ"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-B2T6PJQMCJ');
+  </script>
+
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Blog - Game Development & Tech Articles | Dharmik Gohil</title>
+  <meta name="description" content="Explore game development tutorials, Unity tips, VR/AR insights, and tech articles by Dharmik Gohil - Professional Game Developer and Unity XR Specialist.">
+  <meta name="keywords" content="game development blog, Unity tutorials, VR AR development, game programming, Unity tips, multiplayer game development, Dharmik Gohil blog">
+
+  <!-- Favicons -->
+  <link href="assets/img/dlogo.png" rel="icon">
+  <link href="assets/img/dlogo.png" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+
+  <!-- Custom Blog Page Styles -->
+  <style>
+    .blog-grid {
+      margin-top: 40px;
+    }
+
+    .blog-card {
+      background: #fff;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease;
+      margin-bottom: 30px;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .blog-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 40px rgba(0, 212, 255, 0.3);
+    }
+
+    .blog-thumbnail {
+      position: relative;
+      width: 100%;
+      padding-top: 56.25%; /* 16:9 Aspect Ratio */
+      overflow: hidden;
+      background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    }
+
+    .blog-thumbnail img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+
+    .blog-card:hover .blog-thumbnail img {
+      transform: scale(1.1);
+    }
+
+    .play-overlay {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 70px;
+      height: 70px;
+      background: rgba(0, 212, 255, 0.9);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease;
+    }
+
+    .blog-card:hover .play-overlay {
+      background: rgba(0, 255, 255, 0.95);
+      transform: translate(-50%, -50%) scale(1.1);
+    }
+
+    .play-overlay i {
+      color: #fff;
+      font-size: 28px;
+      margin-left: 5px;
+    }
+
+    .duration-badge {
+      position: absolute;
+      bottom: 10px;
+      right: 10px;
+      background: rgba(0, 0, 0, 0.8);
+      color: #fff;
+      padding: 3px 8px;
+      border-radius: 3px;
+      font-size: 12px;
+      font-weight: 600;
+    }
+
+    .blog-content {
+      padding: 25px;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .blog-meta {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      margin-bottom: 12px;
+      color: #666;
+      font-size: 14px;
+    }
+
+    .blog-meta i {
+      color: #00d4ff;
+    }
+
+    .blog-title {
+      font-size: 20px;
+      font-weight: 700;
+      color: #1a1a2e;
+      margin-bottom: 12px;
+      line-height: 1.4;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    .blog-title a {
+      color: #1a1a2e;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .blog-title a:hover {
+      color: #00d4ff;
+    }
+
+    .blog-excerpt {
+      color: #666;
+      font-size: 14px;
+      line-height: 1.6;
+      margin-bottom: 15px;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      flex-grow: 1;
+    }
+
+    .blog-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 15px;
+    }
+
+    .blog-tag {
+      background: #f0f0f0;
+      color: #666;
+      padding: 4px 12px;
+      border-radius: 15px;
+      font-size: 12px;
+      font-weight: 500;
+    }
+
+    .read-more {
+      display: inline-flex;
+      align-items: center;
+      color: #00d4ff;
+      font-weight: 600;
+      text-decoration: none;
+      gap: 5px;
+      transition: gap 0.3s ease;
+    }
+
+    .read-more:hover {
+      gap: 10px;
+      color: #00ffff;
+    }
+
+    .page-header {
+      background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0a0f1f 100%);
+      padding: 80px 0 60px;
+      margin-bottom: 60px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .page-header::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><rect fill="%2300d4ff" opacity="0.05" width="50" height="50"/></svg>');
+      animation: moveBackground 20s linear infinite;
+    }
+
+    @keyframes moveBackground {
+      0% { transform: translate(0, 0); }
+      100% { transform: translate(50px, 50px); }
+    }
+
+    .page-header h1 {
+      color: #fff;
+      font-size: 48px;
+      font-weight: 700;
+      margin-bottom: 15px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .page-header p {
+      color: rgba(255, 255, 255, 0.8);
+      font-size: 18px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .section-title {
+      font-size: 32px;
+      font-weight: 700;
+      color: #1a1a2e;
+      margin-bottom: 40px;
+      position: relative;
+      padding-bottom: 15px;
+    }
+
+    .section-title::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 60px;
+      height: 4px;
+      background: linear-gradient(90deg, #00d4ff, #00ffff);
+      border-radius: 2px;
+    }
+  </style>
+</head>
+
+<body class="blog-page">
+
+  <header id="header" class="header d-flex align-items-center sticky-top">
+    <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
+
+      <a href="index.html" class="logo d-flex align-items-center">
+        <img src="assets/img/dlogo.png" alt="Dharmik Gohil Logo">
+        <h1 class="sitename">DHARMIK</h1>
+      </a>
+
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="resume.html">Resume</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="portfolio.html">Portfolio</a></li>
+          <li><a href="blog.html" class="active">Blog</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+
+    </div>
+  </header>
+
+  <main class="main">
+
+    <!-- Page Header -->
+    <div class="page-header">
+      <div class="container text-center" data-aos="fade-up">
+        <h1>Blog & Articles</h1>
+        <p>Game Development Insights, Unity Tutorials, and Tech Explorations</p>
+      </div>
+    </div>
+
+    <!-- Blog Grid Section -->
+    <section class="blog-grid section">
+      <div class="container">
+
+        <div class="section-title" data-aos="fade-up">
+          Latest Posts
+        </div>
+
+        <div class="row">
+
+          <!-- Blog Post 1 - Mavericks Battlegrounds -->
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="blog-card">
+              <div class="blog-thumbnail">
+                <img src="assets/img/mavericks-coming-soon-banner.jpg" alt="Mavericks Battlegrounds Game Development Journey">
+                <div class="play-overlay">
+                  <i class="bi bi-play-fill"></i>
+                </div>
+                <div class="duration-badge">10 min read</div>
+              </div>
+              <div class="blog-content">
+                <div class="blog-meta">
+                  <span><i class="bi bi-calendar"></i> June 12, 2025</span>
+                  <span><i class="bi bi-person"></i> Dharmik Gohil</span>
+                </div>
+                <h3 class="blog-title">
+                  <a href="blog/mavericks-battlegrounds-game-development-journey.html">Mavericks Battlegrounds: Complete Game Development Journey</a>
+                </h3>
+                <div class="blog-tags">
+                  <span class="blog-tag">Unity 6</span>
+                  <span class="blog-tag">Multiplayer</span>
+                  <span class="blog-tag">Game Dev</span>
+                  <span class="blog-tag">Photon</span>
+                </div>
+                <p class="blog-excerpt">
+                  Explore the complete development journey of Mavericks Battlegrounds, an epic multiplayer battle arena game developed in Unity 6 using Photon networking and Agile methodology at CHARUSAT University.
+                </p>
+                <a href="blog/mavericks-battlegrounds-game-development-journey.html" class="read-more">
+                  Read Full Story <i class="bi bi-arrow-right"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Placeholder for future blog posts -->
+          <!-- You can duplicate the above structure for more blog posts -->
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer id="footer" class="footer">
+    <div class="container footer-top">
+      <div class="row gy-4">
+        <div class="col-lg-5 col-md-12 footer-about">
+          <a href="index.html" class="logo d-flex align-items-center">
+            <span class="sitename">DHARMIK GOHIL</span>
+          </a>
+          <p>Professional Game Developer & Unity XR Specialist. Creating immersive experiences and pushing the boundaries of interactive entertainment.</p>
+          <div class="social-links d-flex mt-4">
+            <a href="https://github.com/dharmikgohil013" target="_blank"><i class="bi bi-github"></i></a>
+            <a href="https://in.linkedin.com/in/dharmikgohil086" target="_blank"><i class="bi bi-linkedin"></i></a>
+            <a href="https://www.youtube.com/@DharmikGohil086" target="_blank"><i class="bi bi-youtube"></i></a>
+          </div>
+        </div>
+
+        <div class="col-lg-2 col-6 footer-links">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-2 col-6 footer-links">
+          <h4>Services</h4>
+          <ul>
+            <li><a href="services.html">Game Development</a></li>
+            <li><a href="services.html">Unity XR</a></li>
+            <li><a href="services.html">VR/AR Development</a></li>
+            <li><a href="services.html">Multiplayer Games</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-3 col-md-12 footer-contact text-center text-md-start">
+          <h4>Contact</h4>
+          <p>Gujarat, India</p>
+          <p class="mt-3"><strong>Email:</strong> <span>dharmikgohil086@gmail.com</span></p>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="container copyright text-center mt-4">
+      <p>© <span>Copyright</span> <strong class="px-1 sitename">Dharmik Gohil</strong> <span>All Rights Reserved</span></p>
+    </div>
+  </footer>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/typed.js/typed.umd.js"></script>
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+
+  <!-- Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>
