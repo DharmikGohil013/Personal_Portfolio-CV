@@ -264,6 +264,194 @@
       background: linear-gradient(90deg, #00d4ff, #00ffff);
       border-radius: 2px;
     }
+
+    /* Latest Posts Section - Animated Background */
+    .latest-posts-section {
+      position: relative;
+      overflow: hidden;
+      background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+      padding: 80px 0;
+    }
+
+    #latest-posts-canvas {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+      opacity: 0.6;
+    }
+
+    .latest-posts-section .container {
+      position: relative;
+      z-index: 10;
+    }
+
+    /* Floating Geometric Shapes */
+    .floating-shapes {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 2;
+      pointer-events: none;
+      overflow: hidden;
+    }
+
+    .shape {
+      position: absolute;
+      opacity: 0.15;
+      animation: floatShape 20s infinite ease-in-out;
+    }
+
+    .shape-circle {
+      width: 150px;
+      height: 150px;
+      background: linear-gradient(135deg, #00d4ff, #00ffff);
+      border-radius: 50%;
+      top: 10%;
+      left: 5%;
+      animation-delay: 0s;
+      box-shadow: 0 0 40px rgba(0, 212, 255, 0.5);
+    }
+
+    .shape-circle-2 {
+      width: 100px;
+      height: 100px;
+      background: linear-gradient(135deg, #ff6b6b, #ff8e53);
+      border-radius: 50%;
+      top: 70%;
+      right: 10%;
+      animation-delay: 3s;
+      box-shadow: 0 0 40px rgba(255, 107, 107, 0.5);
+    }
+
+    .shape-triangle {
+      width: 0;
+      height: 0;
+      border-left: 75px solid transparent;
+      border-right: 75px solid transparent;
+      border-bottom: 130px solid #4ecdc4;
+      top: 50%;
+      right: 15%;
+      animation-delay: 2s;
+      filter: drop-shadow(0 0 30px rgba(78, 205, 196, 0.5));
+    }
+
+    .shape-square {
+      width: 120px;
+      height: 120px;
+      background: linear-gradient(135deg, #a8edea, #fed6e3);
+      transform: rotate(45deg);
+      bottom: 20%;
+      left: 15%;
+      animation-delay: 1s;
+      box-shadow: 0 0 40px rgba(168, 237, 234, 0.5);
+    }
+
+    .shape-square-2 {
+      width: 80px;
+      height: 80px;
+      background: linear-gradient(135deg, #ffeaa7, #fab1a0);
+      transform: rotate(25deg);
+      top: 30%;
+      left: 50%;
+      animation-delay: 4s;
+      box-shadow: 0 0 40px rgba(255, 234, 167, 0.5);
+    }
+
+    .shape-hexagon {
+      width: 100px;
+      height: 57.74px;
+      background: linear-gradient(135deg, #74b9ff, #a29bfe);
+      position: absolute;
+      top: 15%;
+      right: 30%;
+      animation-delay: 2.5s;
+      box-shadow: 0 0 40px rgba(116, 185, 255, 0.5);
+    }
+
+    .shape-hexagon:before,
+    .shape-hexagon:after {
+      content: "";
+      position: absolute;
+      width: 0;
+      border-left: 50px solid transparent;
+      border-right: 50px solid transparent;
+    }
+
+    .shape-hexagon:before {
+      bottom: 100%;
+      border-bottom: 28.87px solid #74b9ff;
+    }
+
+    .shape-hexagon:after {
+      top: 100%;
+      width: 0;
+      border-top: 28.87px solid #a29bfe;
+    }
+
+    @keyframes floatShape {
+      0%, 100% {
+        transform: translateY(0) rotate(0deg) scale(1);
+      }
+      25% {
+        transform: translateY(-30px) rotate(90deg) scale(1.1);
+      }
+      50% {
+        transform: translateY(-60px) rotate(180deg) scale(0.9);
+      }
+      75% {
+        transform: translateY(-30px) rotate(270deg) scale(1.05);
+      }
+    }
+
+    /* Pulse animation for shapes */
+    .shape-circle,
+    .shape-circle-2 {
+      animation: floatShape 20s infinite ease-in-out, pulse 4s infinite ease-in-out;
+    }
+
+    @keyframes pulse {
+      0%, 100% {
+        opacity: 0.15;
+        transform: scale(1);
+      }
+      50% {
+        opacity: 0.25;
+        transform: scale(1.15);
+      }
+    }
+
+    /* Gradient Wave Animation */
+    .latest-posts-section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -50%;
+      width: 200%;
+      height: 100%;
+      background: 
+        linear-gradient(45deg, transparent 30%, rgba(0, 212, 255, 0.1) 50%, transparent 70%),
+        linear-gradient(-45deg, transparent 30%, rgba(255, 107, 107, 0.1) 50%, transparent 70%);
+      background-size: 200% 200%;
+      animation: gradientWave 15s ease infinite;
+      z-index: 1;
+    }
+
+    @keyframes gradientWave {
+      0% {
+        background-position: 0% 50%;
+      }
+      50% {
+        background-position: 100% 50%;
+      }
+      100% {
+        background-position: 0% 50%;
+      }
+    }
   </style>
 </head>
 
@@ -308,7 +496,20 @@
     </div>
 
     <!-- Blog Grid Section -->
-    <section class="blog-grid section">
+    <section class="blog-grid section latest-posts-section">
+      <!-- Animated Background Canvas -->
+      <canvas id="latest-posts-canvas"></canvas>
+      
+      <!-- Floating Geometric Shapes -->
+      <div class="floating-shapes">
+        <div class="shape shape-circle"></div>
+        <div class="shape shape-triangle"></div>
+        <div class="shape shape-square"></div>
+        <div class="shape shape-hexagon"></div>
+        <div class="shape shape-circle-2"></div>
+        <div class="shape shape-square-2"></div>
+      </div>
+      
       <div class="container">
 
         <div class="section-title" data-aos="fade-up">
@@ -428,6 +629,179 @@
 
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
+
+  <!-- Latest Posts Animated Canvas Script -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const canvas = document.getElementById('latest-posts-canvas');
+      if (!canvas) return;
+      
+      const ctx = canvas.getContext('2d');
+      const section = document.querySelector('.latest-posts-section');
+      
+      // Set canvas size
+      function resizeCanvas() {
+        canvas.width = section.offsetWidth;
+        canvas.height = section.offsetHeight;
+      }
+      resizeCanvas();
+      window.addEventListener('resize', resizeCanvas);
+      
+      // Wave parameters
+      let time = 0;
+      const waves = [
+        { amplitude: 30, frequency: 0.02, speed: 0.02, color: 'rgba(0, 212, 255, 0.3)', offset: 0 },
+        { amplitude: 40, frequency: 0.015, speed: 0.015, color: 'rgba(78, 205, 196, 0.25)', offset: Math.PI / 2 },
+        { amplitude: 35, frequency: 0.018, speed: 0.018, color: 'rgba(168, 237, 234, 0.2)', offset: Math.PI },
+        { amplitude: 45, frequency: 0.012, speed: 0.012, color: 'rgba(116, 185, 255, 0.15)', offset: Math.PI * 1.5 }
+      ];
+      
+      // Particle system
+      class Particle {
+        constructor() {
+          this.x = Math.random() * canvas.width;
+          this.y = Math.random() * canvas.height;
+          this.size = Math.random() * 3 + 1;
+          this.speedX = Math.random() * 0.5 - 0.25;
+          this.speedY = Math.random() * 0.5 - 0.25;
+          this.color = `rgba(${Math.random() * 100 + 100}, ${Math.random() * 100 + 150}, 255, ${Math.random() * 0.5 + 0.1})`;
+        }
+        
+        update() {
+          this.x += this.speedX;
+          this.y += this.speedY;
+          
+          if (this.x < 0 || this.x > canvas.width) this.speedX *= -1;
+          if (this.y < 0 || this.y > canvas.height) this.speedY *= -1;
+        }
+        
+        draw() {
+          ctx.fillStyle = this.color;
+          ctx.beginPath();
+          ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+          ctx.fill();
+          
+          // Glow effect
+          ctx.shadowBlur = 10;
+          ctx.shadowColor = this.color;
+          ctx.fill();
+          ctx.shadowBlur = 0;
+        }
+      }
+      
+      // Create particles
+      const particles = [];
+      for (let i = 0; i < 50; i++) {
+        particles.push(new Particle());
+      }
+      
+      // Draw flowing waves
+      function drawWaves() {
+        waves.forEach((wave, index) => {
+          ctx.beginPath();
+          ctx.moveTo(0, canvas.height / 2);
+          
+          for (let x = 0; x <= canvas.width; x += 5) {
+            const y = canvas.height / 2 + 
+                      Math.sin(x * wave.frequency + time * wave.speed + wave.offset) * wave.amplitude +
+                      Math.sin(x * wave.frequency * 1.5 + time * wave.speed * 0.7) * (wave.amplitude * 0.5);
+            ctx.lineTo(x, y);
+          }
+          
+          ctx.lineTo(canvas.width, canvas.height);
+          ctx.lineTo(0, canvas.height);
+          ctx.closePath();
+          
+          const gradient = ctx.createLinearGradient(0, 0, 0, canvas.height);
+          gradient.addColorStop(0, wave.color.replace('0.3', '0.1').replace('0.25', '0.08').replace('0.2', '0.05').replace('0.15', '0.03'));
+          gradient.addColorStop(1, wave.color);
+          
+          ctx.fillStyle = gradient;
+          ctx.fill();
+        });
+      }
+      
+      // Draw circular ripples
+      let ripples = [];
+      
+      function createRipple() {
+        if (Math.random() > 0.98) {
+          ripples.push({
+            x: Math.random() * canvas.width,
+            y: Math.random() * canvas.height,
+            radius: 0,
+            maxRadius: Math.random() * 100 + 50,
+            alpha: 0.5,
+            speed: Math.random() * 2 + 1
+          });
+        }
+      }
+      
+      function drawRipples() {
+        ripples = ripples.filter(ripple => ripple.alpha > 0);
+        
+        ripples.forEach(ripple => {
+          ripple.radius += ripple.speed;
+          ripple.alpha -= 0.005;
+          
+          ctx.strokeStyle = `rgba(0, 212, 255, ${ripple.alpha * 0.5})`;
+          ctx.lineWidth = 2;
+          ctx.beginPath();
+          ctx.arc(ripple.x, ripple.y, ripple.radius, 0, Math.PI * 2);
+          ctx.stroke();
+          
+          // Inner ripple
+          if (ripple.radius > 20) {
+            ctx.strokeStyle = `rgba(116, 185, 255, ${ripple.alpha * 0.3})`;
+            ctx.beginPath();
+            ctx.arc(ripple.x, ripple.y, ripple.radius - 20, 0, Math.PI * 2);
+            ctx.stroke();
+          }
+        });
+      }
+      
+      // Animation loop
+      function animate() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        
+        // Draw waves
+        drawWaves();
+        
+        // Update and draw particles
+        particles.forEach(particle => {
+          particle.update();
+          particle.draw();
+        });
+        
+        // Create and draw ripples
+        createRipple();
+        drawRipples();
+        
+        // Connect nearby particles
+        for (let i = 0; i < particles.length; i++) {
+          for (let j = i + 1; j < particles.length; j++) {
+            const dx = particles[i].x - particles[j].x;
+            const dy = particles[i].y - particles[j].y;
+            const distance = Math.sqrt(dx * dx + dy * dy);
+            
+            if (distance < 150) {
+              ctx.strokeStyle = `rgba(0, 212, 255, ${(1 - distance / 150) * 0.2})`;
+              ctx.lineWidth = 1;
+              ctx.beginPath();
+              ctx.moveTo(particles[i].x, particles[i].y);
+              ctx.lineTo(particles[j].x, particles[j].y);
+              ctx.stroke();
+            }
+          }
+        }
+        
+        time += 1;
+        requestAnimationFrame(animate);
+      }
+      
+      animate();
+    });
+  </script>
 
 </body>
 
