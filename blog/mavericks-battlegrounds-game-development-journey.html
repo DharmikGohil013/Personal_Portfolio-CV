@@ -12,6 +12,187 @@
     gtag('config', 'G-B2T6PJQMCJ');
   </script>
 
+  <!-- Microsoft Clarity -->
+  <script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "mavericks-analytics");
+  </script>
+
+  <!-- Facebook Pixel Code -->
+  <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', 'YOUR_PIXEL_ID');
+    fbq('track', 'PageView');
+    fbq('track', 'ViewContent', {
+      content_name: 'Mavericks Battlegrounds Blog',
+      content_category: 'Game Development',
+      content_type: 'article'
+    });
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=YOUR_PIXEL_ID&ev=PageView&noscript=1"
+  /></noscript>
+
+  <!-- Hotjar Tracking Code -->
+  <script>
+    (function(h,o,t,j,a,r){
+        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+        h._hjSettings={hjid:YOUR_HOTJAR_ID,hjsv:6};
+        a=o.getElementsByTagName('head')[0];
+        r=o.createElement('script');r.async=1;
+        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+        a.appendChild(r);
+    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+  </script>
+
+  <!-- LinkedIn Insight Tag -->
+  <script type="text/javascript">
+    _linkedin_partner_id = "YOUR_PARTNER_ID";
+    window._linkedin_data_partner_ids = window._linkedin_data_partner_ids || [];
+    window._linkedin_data_partner_ids.push(_linkedin_partner_id);
+  </script>
+  <script type="text/javascript">
+    (function(l) {
+      if (!l){window.lintrk = function(a,b){window.lintrk.q.push([a,b])};
+      window.lintrk.q=[]}
+      var s = document.getElementsByTagName("script")[0];
+      var b = document.createElement("script");
+      b.type = "text/javascript";b.async = true;
+      b.src = "https://snap.licdn.com/li.lms-analytics/insight.min.js";
+      s.parentNode.insertBefore(b, s);
+    })(window.lintrk);
+  </script>
+  <noscript>
+    <img height="1" width="1" style="display:none;" alt="" src="https://px.ads.linkedin.com/collect/?pid=YOUR_PARTNER_ID&fmt=gif" />
+  </noscript>
+
+  <!-- Custom Event Tracking for Mavericks Blog -->
+  <script>
+    // Track page engagement
+    window.addEventListener('load', function() {
+      // Track time on page
+      var startTime = new Date().getTime();
+      
+      window.addEventListener('beforeunload', function() {
+        var timeSpent = Math.round((new Date().getTime() - startTime) / 1000);
+        if (typeof gtag !== 'undefined') {
+          gtag('event', 'time_on_page', {
+            'event_category': 'engagement',
+            'event_label': 'Mavericks Blog',
+            'value': timeSpent
+          });
+        }
+      });
+
+      // Track scroll depth
+      var maxScroll = 0;
+      window.addEventListener('scroll', function() {
+        var scrollPercent = Math.round((window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100);
+        if (scrollPercent > maxScroll) {
+          maxScroll = scrollPercent;
+          if (maxScroll >= 25 && maxScroll < 50) {
+            if (typeof gtag !== 'undefined') {
+              gtag('event', 'scroll_depth', {
+                'event_category': 'engagement',
+                'event_label': '25%',
+                'value': 25
+              });
+            }
+          } else if (maxScroll >= 50 && maxScroll < 75) {
+            if (typeof gtag !== 'undefined') {
+              gtag('event', 'scroll_depth', {
+                'event_category': 'engagement',
+                'event_label': '50%',
+                'value': 50
+              });
+            }
+          } else if (maxScroll >= 75 && maxScroll < 100) {
+            if (typeof gtag !== 'undefined') {
+              gtag('event', 'scroll_depth', {
+                'event_category': 'engagement',
+                'event_label': '75%',
+                'value': 75
+              });
+            }
+          } else if (maxScroll >= 100) {
+            if (typeof gtag !== 'undefined') {
+              gtag('event', 'scroll_depth', {
+                'event_category': 'engagement',
+                'event_label': '100%',
+                'value': 100
+              });
+            }
+          }
+        }
+      });
+    });
+
+    // Track video plays
+    function trackVideoPlay() {
+      if (typeof gtag !== 'undefined') {
+        gtag('event', 'video_play', {
+          'event_category': 'video',
+          'event_label': 'Mavericks Trailer',
+          'value': 1
+        });
+      }
+      if (typeof fbq !== 'undefined') {
+        fbq('track', 'ViewVideo', {
+          content_name: 'Mavericks Battlegrounds Trailer'
+        });
+      }
+    }
+
+    // Track game download clicks
+    function trackGameDownload() {
+      if (typeof gtag !== 'undefined') {
+        gtag('event', 'click', {
+          'event_category': 'game_download',
+          'event_label': 'Play Now Button',
+          'value': 1
+        });
+      }
+      if (typeof fbq !== 'undefined') {
+        fbq('track', 'InitiateCheckout', {
+          content_name: 'Mavericks Battlegrounds',
+          content_category: 'Game'
+        });
+      }
+    }
+
+    // Track social media clicks
+    function trackSocialClick(platform) {
+      if (typeof gtag !== 'undefined') {
+        gtag('event', 'social_click', {
+          'event_category': 'social_media',
+          'event_label': platform,
+          'value': 1
+        });
+      }
+    }
+
+    // Track image views
+    function trackImageView(imageName) {
+      if (typeof gtag !== 'undefined') {
+        gtag('event', 'image_view', {
+          'event_category': 'content',
+          'event_label': imageName,
+          'value': 1
+        });
+      }
+    }
+  </script>
+
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <title>Mavericks Battlegrounds: Best Multiplayer Game 2025 | Unity Game Developer Dharmik Gohil</title>
@@ -737,7 +918,7 @@
                   <h3>Official Gameplay Trailer - Best Game of 2025</h3>
                   <p>Watch the official gameplay trailer to see <strong>Mavericks Battlegrounds</strong>, the <strong>best multiplayer game of 2025</strong> by <strong>game developer Dharmik Gohil</strong>, in action:</p>
                   <div class="ratio ratio-16x9" style="margin: 20px 0;">
-<iframe width="560" height="315" src="https://www.youtube.com/embed/RefphkY5gCw?si=zF6sWlm0mgrdrlz4" title="Mavericks Battlegrounds Official Trailer - Best Multiplayer Game 2025 by Game Developer Dharmik Gohil" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>                  </div>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/RefphkY5gCw?si=zF6sWlm0mgrdrlz4&enablejsapi=1" title="Mavericks Battlegrounds Official Trailer - Best Multiplayer Game 2025 by Game Developer Dharmik Gohil" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen id="mavericks-trailer" onload="trackVideoPlay()"></iframe>                  </div>
 
                   <h3>Platform Availability - Play the Best Game Now</h3>
                   <p>
@@ -754,7 +935,7 @@
                   </div>
 
                   <div class="text-center mt-4">
-                    <a href="https://dharmikgohil.itch.io/mavericks-battlegrounds" target="_blank" class="btn btn-primary btn-lg" style="background: linear-gradient(135deg, #00eaff, #15ff00); border: none; color: #0a0f1f; font-weight: bold; padding: 15px 40px; border-radius: 50px; box-shadow: 0 0 20px rgba(0, 234, 255, 0.6);" rel="noopener" aria-label="Play Mavericks Battlegrounds - Best Multiplayer Game">
+                    <a href="https://dharmikgohil.itch.io/mavericks-battlegrounds" target="_blank" class="btn btn-primary btn-lg" style="background: linear-gradient(135deg, #00eaff, #15ff00); border: none; color: #0a0f1f; font-weight: bold; padding: 15px 40px; border-radius: 50px; box-shadow: 0 0 20px rgba(0, 234, 255, 0.6);" rel="noopener" aria-label="Play Mavericks Battlegrounds - Best Multiplayer Game" onclick="trackGameDownload()">
                       Play Best Game Now on itch.io
                     </a>
                   </div>
@@ -909,9 +1090,9 @@
                 <div>
                   <h4>Dharmik Gohil - Best Game Developer</h4>
                   <div class="social-links">
-                    <a href="https://github.com/dharmikgohil013" target="_blank" rel="noopener" aria-label="Dharmik Gohil GitHub - Best Game Developer"><i class="bi bi-github"></i></a>
-                    <a href="https://in.linkedin.com/in/dharmikgohil086" target="_blank" rel="noopener" aria-label="Dharmik Gohil LinkedIn - Professional Game Developer"><i class="bi bi-linkedin"></i></a>
-                    <a href="https://www.youtube.com/@DharmikGohil086" target="_blank" rel="noopener" aria-label="Dharmik Gohil YouTube - Game Developer Portfolio"><i class="bi bi-youtube"></i></a>
+                    <a href="https://github.com/dharmikgohil013" target="_blank" rel="noopener" aria-label="Dharmik Gohil GitHub - Best Game Developer" onclick="trackSocialClick('GitHub')"><i class="bi bi-github"></i></a>
+                    <a href="https://in.linkedin.com/in/dharmikgohil086" target="_blank" rel="noopener" aria-label="Dharmik Gohil LinkedIn - Professional Game Developer" onclick="trackSocialClick('LinkedIn')"><i class="bi bi-linkedin"></i></a>
+                    <a href="https://www.youtube.com/@DharmikGohil086" target="_blank" rel="noopener" aria-label="Dharmik Gohil YouTube - Game Developer Portfolio" onclick="trackSocialClick('YouTube')"><i class="bi bi-youtube"></i></a>
                   </div>
 
                   <p>
@@ -972,9 +1153,9 @@
           </a>
           <p><strong>Professional Game Developer & Unity XR Specialist</strong> creating the <strong>best multiplayer games</strong> and immersive gaming experiences. Creator of <strong>Mavericks Battlegrounds</strong>.</p>
           <div class="social-links d-flex mt-4">
-            <a href="https://github.com/dharmikgohil013" target="_blank" rel="noopener" aria-label="Dharmik Gohil GitHub"><i class="bi bi-github"></i></a>
-            <a href="https://in.linkedin.com/in/dharmikgohil086" target="_blank" rel="noopener" aria-label="Dharmik Gohil LinkedIn"><i class="bi bi-linkedin"></i></a>
-            <a href="https://www.youtube.com/@DharmikGohil086" target="_blank" rel="noopener" aria-label="Dharmik Gohil YouTube"><i class="bi bi-youtube"></i></a>
+            <a href="https://github.com/dharmikgohil013" target="_blank" rel="noopener" aria-label="Dharmik Gohil GitHub" onclick="trackSocialClick('GitHub-Footer')"><i class="bi bi-github"></i></a>
+            <a href="https://in.linkedin.com/in/dharmikgohil086" target="_blank" rel="noopener" aria-label="Dharmik Gohil LinkedIn" onclick="trackSocialClick('LinkedIn-Footer')"><i class="bi bi-linkedin"></i></a>
+            <a href="https://www.youtube.com/@DharmikGohil086" target="_blank" rel="noopener" aria-label="Dharmik Gohil YouTube" onclick="trackSocialClick('YouTube-Footer')"><i class="bi bi-youtube"></i></a>
           </div>
         </div>
       </div>
@@ -1092,6 +1273,164 @@
         }
       },
       retina_detect: true
+    });
+  </script>
+
+  <!-- Advanced Analytics Tracking -->
+  <script>
+    // YouTube Player API for advanced video tracking
+    var tag = document.createElement('script');
+    tag.src = "https://www.youtube.com/iframe_api";
+    var firstScriptTag = document.getElementsByTagName('script')[0];
+    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+    var player;
+    function onYouTubeIframeAPIReady() {
+      player = new YT.Player('mavericks-trailer', {
+        events: {
+          'onStateChange': onPlayerStateChange
+        }
+      });
+    }
+
+    function onPlayerStateChange(event) {
+      if (event.data == YT.PlayerState.PLAYING) {
+        if (typeof gtag !== 'undefined') {
+          gtag('event', 'video_start', {
+            'event_category': 'video_engagement',
+            'event_label': 'Mavericks Trailer Started',
+            'value': 1
+          });
+        }
+      }
+      if (event.data == YT.PlayerState.ENDED) {
+        if (typeof gtag !== 'undefined') {
+          gtag('event', 'video_complete', {
+            'event_category': 'video_engagement',
+            'event_label': 'Mavericks Trailer Completed',
+            'value': 1
+          });
+        }
+      }
+    }
+
+    // Image Intersection Observer for tracking image views
+    document.addEventListener('DOMContentLoaded', function() {
+      const imageObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const imgAlt = entry.target.alt;
+            if (imgAlt && typeof gtag !== 'undefined') {
+              gtag('event', 'image_view', {
+                'event_category': 'content_engagement',
+                'event_label': imgAlt.substring(0, 50),
+                'value': 1
+              });
+            }
+            imageObserver.unobserve(entry.target);
+          }
+        });
+      }, {
+        threshold: 0.5
+      });
+
+      // Observe all images
+      document.querySelectorAll('img').forEach(img => {
+        imageObserver.observe(img);
+      });
+
+      // Track external link clicks
+      document.querySelectorAll('a[href^="http"]').forEach(link => {
+        link.addEventListener('click', function(e) {
+          const url = this.href;
+          if (typeof gtag !== 'undefined') {
+            gtag('event', 'outbound_click', {
+              'event_category': 'outbound_links',
+              'event_label': url,
+              'value': 1
+            });
+          }
+        });
+      });
+
+      // Track section visibility
+      const sectionObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const sectionHeading = entry.target.querySelector('h3');
+            if (sectionHeading && typeof gtag !== 'undefined') {
+              gtag('event', 'section_view', {
+                'event_category': 'content_sections',
+                'event_label': sectionHeading.textContent.substring(0, 50),
+                'value': 1
+              });
+            }
+            sectionObserver.unobserve(entry.target);
+          }
+        });
+      }, {
+        threshold: 0.3
+      });
+
+      // Observe content sections
+      document.querySelectorAll('.content > *').forEach(section => {
+        if (section.querySelector('h3')) {
+          sectionObserver.observe(section);
+        }
+      });
+
+      // Track CTA button visibility and clicks
+      const ctaButton = document.querySelector('a[href*="itch.io"]');
+      if (ctaButton) {
+        const ctaObserver = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting && typeof gtag !== 'undefined') {
+              gtag('event', 'cta_view', {
+                'event_category': 'cta_engagement',
+                'event_label': 'Play Now Button Visible',
+                'value': 1
+              });
+              ctaObserver.unobserve(entry.target);
+            }
+          });
+        }, {
+          threshold: 1.0
+        });
+        ctaObserver.observe(ctaButton);
+      }
+
+      // Track blog post read completion
+      let readCompletionTracked = false;
+      window.addEventListener('scroll', function() {
+        if (!readCompletionTracked) {
+          const scrollPercent = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
+          if (scrollPercent > 90) {
+            readCompletionTracked = true;
+            if (typeof gtag !== 'undefined') {
+              gtag('event', 'article_read', {
+                'event_category': 'engagement',
+                'event_label': 'Mavericks Blog Read Complete',
+                'value': 1
+              });
+            }
+          }
+        }
+      });
+
+      // Track user engagement time zones
+      const currentHour = new Date().getHours();
+      let timeZone = 'Night';
+      if (currentHour >= 6 && currentHour < 12) timeZone = 'Morning';
+      else if (currentHour >= 12 && currentHour < 18) timeZone = 'Afternoon';
+      else if (currentHour >= 18 && currentHour < 22) timeZone = 'Evening';
+      
+      if (typeof gtag !== 'undefined') {
+        gtag('event', 'page_view_time', {
+          'event_category': 'visitor_timing',
+          'event_label': timeZone,
+          'value': currentHour
+        });
+      }
     });
   </script>
 
