@@ -115,6 +115,9 @@
   <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
   <link href="index.css" rel="stylesheet">
 
+  <!-- Particles.js -->
+  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+
   <!-- Main CSS File -->
   <style>
     /* Global Styles */
@@ -140,6 +143,377 @@
       background: rgba(10, 15, 31, 0.7);
       z-index: -1;
       pointer-events: none;
+    }
+
+    /* Hero Section - Universe Particle Background */
+    #hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      background: radial-gradient(ellipse at bottom, #1B2735 0%, #090A0F 100%);
+    }
+
+    /* Particles.js container for hero */
+    #particles-js {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      z-index: 1;
+    }
+
+    /* Animated stars background */
+    #hero::before {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      background: 
+        radial-gradient(2px 2px at 20px 30px, #eee, transparent),
+        radial-gradient(2px 2px at 60px 70px, #fff, transparent),
+        radial-gradient(1px 1px at 50px 50px, #ddd, transparent),
+        radial-gradient(1px 1px at 130px 80px, #fff, transparent),
+        radial-gradient(2px 2px at 90px 10px, #eee, transparent);
+      background-size: 200px 200px;
+      animation: twinkle 3s infinite, moveStars 60s linear infinite;
+      opacity: 0.5;
+      z-index: 0;
+    }
+
+    @keyframes twinkle {
+      0%, 100% { opacity: 0.5; }
+      50% { opacity: 1; }
+    }
+
+    @keyframes moveStars {
+      0% { transform: translate(0, 0); }
+      100% { transform: translate(-50px, -50px); }
+    }
+
+    /* Random blinking stars */
+    .random-star {
+      position: absolute;
+      width: 3px;
+      height: 3px;
+      background: white;
+      border-radius: 50%;
+      box-shadow: 
+        0 0 5px 2px rgba(255, 255, 255, 0.8),
+        0 0 10px 4px rgba(255, 255, 255, 0.4);
+      animation: randomBlink 5s ease-in-out infinite;
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    @keyframes randomBlink {
+      0% {
+        opacity: 0;
+        transform: scale(0);
+      }
+      10% {
+        opacity: 1;
+        transform: scale(1.5);
+      }
+      50% {
+        opacity: 0.8;
+        transform: scale(1);
+      }
+      90% {
+        opacity: 1;
+        transform: scale(1.2);
+      }
+      100% {
+        opacity: 0;
+        transform: scale(0);
+      }
+    }
+
+    /* Different random star animations with different delays */
+    .random-star:nth-child(1) { animation-delay: 0s; }
+    .random-star:nth-child(2) { animation-delay: 0.5s; }
+    .random-star:nth-child(3) { animation-delay: 1s; }
+    .random-star:nth-child(4) { animation-delay: 1.5s; }
+    .random-star:nth-child(5) { animation-delay: 2s; }
+    .random-star:nth-child(6) { animation-delay: 2.5s; }
+    .random-star:nth-child(7) { animation-delay: 3s; }
+    .random-star:nth-child(8) { animation-delay: 3.5s; }
+    .random-star:nth-child(9) { animation-delay: 4s; }
+    .random-star:nth-child(10) { animation-delay: 4.5s; }
+
+    /* Color variations for random stars */
+    .random-star.cyan {
+      background: #00eaff;
+      box-shadow: 
+        0 0 5px 2px rgba(0, 234, 255, 0.8),
+        0 0 10px 4px rgba(0, 234, 255, 0.4);
+    }
+
+    .random-star.green {
+      background: #15ff00;
+      box-shadow: 
+        0 0 5px 2px rgba(21, 255, 0, 0.8),
+        0 0 10px 4px rgba(21, 255, 0, 0.4);
+    }
+
+    .random-star.pink {
+      background: #ff007f;
+      box-shadow: 
+        0 0 5px 2px rgba(255, 0, 127, 0.8),
+        0 0 10px 4px rgba(255, 0, 127, 0.4);
+    }
+
+    .random-star.yellow {
+      background: #ffdf00;
+      box-shadow: 
+        0 0 5px 2px rgba(255, 223, 0, 0.8),
+        0 0 10px 4px rgba(255, 223, 0, 0.4);
+    }
+
+    /* Shooting stars */
+    .shooting-star {
+      position: absolute;
+      width: 2px;
+      height: 2px;
+      background: white;
+      border-radius: 50%;
+      box-shadow: 0 0 10px 2px rgba(255, 255, 255, 0.5);
+      animation: shoot 3s linear infinite;
+      opacity: 0;
+    }
+
+    .shooting-star:nth-child(1) {
+      top: 10%;
+      left: 20%;
+      animation-delay: 0s;
+    }
+
+    .shooting-star:nth-child(2) {
+      top: 30%;
+      left: 80%;
+      animation-delay: 1.5s;
+    }
+
+    .shooting-star:nth-child(3) {
+      top: 60%;
+      left: 40%;
+      animation-delay: 3s;
+    }
+
+    .shooting-star:nth-child(4) {
+      top: 80%;
+      left: 70%;
+      animation-delay: 4.5s;
+    }
+
+    @keyframes shoot {
+      0% {
+        transform: translateX(0) translateY(0);
+        opacity: 1;
+      }
+      100% {
+        transform: translateX(300px) translateY(300px);
+        opacity: 0;
+      }
+    }
+
+    /* Nebula effect */
+    #hero::after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      background: 
+        radial-gradient(circle at 20% 50%, rgba(138, 43, 226, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(0, 212, 255, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 40% 20%, rgba(255, 20, 147, 0.1) 0%, transparent 50%);
+      animation: nebula 20s ease-in-out infinite alternate;
+      z-index: 0;
+    }
+
+    @keyframes nebula {
+      0% { opacity: 0.3; transform: scale(1); }
+      100% { opacity: 0.6; transform: scale(1.1); }
+    }
+
+    /* Hero content */
+    #hero .container {
+      position: relative;
+      z-index: 10;
+    }
+
+    #hero h2 {
+      font-family: 'Press Start 2P', cursive;
+      font-size: 3.5rem;
+      color: #fff;
+      text-shadow: 
+        0 0 10px rgba(0, 234, 255, 0.8),
+        0 0 20px rgba(0, 234, 255, 0.6),
+        0 0 30px rgba(0, 234, 255, 0.4),
+        0 0 40px rgba(0, 234, 255, 0.2);
+      animation: glow 2s ease-in-out infinite alternate;
+      margin-bottom: 20px;
+    }
+
+    @keyframes glow {
+      from {
+        text-shadow: 
+          0 0 10px rgba(0, 234, 255, 0.8),
+          0 0 20px rgba(0, 234, 255, 0.6),
+          0 0 30px rgba(0, 234, 255, 0.4);
+      }
+      to {
+        text-shadow: 
+          0 0 20px rgba(0, 234, 255, 1),
+          0 0 30px rgba(0, 234, 255, 0.8),
+          0 0 40px rgba(0, 234, 255, 0.6),
+          0 0 50px rgba(0, 234, 255, 0.4);
+      }
+    }
+
+    #hero p {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 1.5rem;
+      color: #15ff00;
+      text-shadow: 
+        0 0 10px rgba(21, 255, 0, 0.8),
+        0 0 20px rgba(21, 255, 0, 0.5);
+      margin-bottom: 30px;
+      animation: pulse-text 3s ease-in-out infinite;
+    }
+
+    @keyframes pulse-text {
+      0%, 100% { opacity: 0.8; }
+      50% { opacity: 1; }
+    }
+
+    #hero .btn-get-started {
+      font-family: 'JetBrains Mono', monospace;
+      font-weight: bold;
+      font-size: 1rem;
+      padding: 12px 35px;
+      margin: 10px;
+      border-radius: 50px;
+      transition: all 0.3s ease;
+      border: 2px solid #00eaff;
+      background: rgba(0, 234, 255, 0.1);
+      color: #00eaff;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      box-shadow: 
+        0 0 20px rgba(0, 234, 255, 0.3),
+        inset 0 0 20px rgba(0, 234, 255, 0.1);
+      position: relative;
+      overflow: hidden;
+    }
+
+    #hero .btn-get-started::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+      transition: left 0.5s;
+    }
+
+    #hero .btn-get-started:hover::before {
+      left: 100%;
+    }
+
+    #hero .btn-get-started:hover {
+      background: #00eaff;
+      color: #0a0f1f;
+      border-color: #00eaff;
+      box-shadow: 
+        0 0 30px rgba(0, 234, 255, 0.8),
+        0 0 50px rgba(0, 234, 255, 0.5),
+        inset 0 0 20px rgba(0, 234, 255, 0.3);
+      transform: translateY(-3px);
+    }
+
+    #hero .btn-get-started:nth-child(2) {
+      border-color: #15ff00;
+      background: rgba(21, 255, 0, 0.1);
+      color: #15ff00;
+      box-shadow: 
+        0 0 20px rgba(21, 255, 0, 0.3),
+        inset 0 0 20px rgba(21, 255, 0, 0.1);
+    }
+
+    #hero .btn-get-started:nth-child(2):hover {
+      background: #15ff00;
+      color: #0a0f1f;
+      border-color: #15ff00;
+      box-shadow: 
+        0 0 30px rgba(21, 255, 0, 0.8),
+        0 0 50px rgba(21, 255, 0, 0.5),
+        inset 0 0 20px rgba(21, 255, 0, 0.3);
+    }
+
+    /* Floating planets */
+    .planet {
+      position: absolute;
+      border-radius: 50%;
+      opacity: 0.3;
+      animation: float-planet 20s ease-in-out infinite;
+    }
+
+    .planet-1 {
+      width: 100px;
+      height: 100px;
+      background: radial-gradient(circle at 30% 30%, rgba(255, 100, 100, 0.5), rgba(200, 50, 50, 0.3));
+      top: 15%;
+      right: 10%;
+      animation-delay: 0s;
+    }
+
+    .planet-2 {
+      width: 60px;
+      height: 60px;
+      background: radial-gradient(circle at 30% 30%, rgba(100, 100, 255, 0.5), rgba(50, 50, 200, 0.3));
+      bottom: 20%;
+      left: 15%;
+      animation-delay: 5s;
+    }
+
+    .planet-3 {
+      width: 80px;
+      height: 80px;
+      background: radial-gradient(circle at 30% 30%, rgba(255, 200, 100, 0.5), rgba(200, 150, 50, 0.3));
+      top: 50%;
+      right: 20%;
+      animation-delay: 10s;
+    }
+
+    @keyframes float-planet {
+      0%, 100% {
+        transform: translateY(0) rotate(0deg);
+      }
+      50% {
+        transform: translateY(-30px) rotate(180deg);
+      }
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      #hero h2 {
+        font-size: 2rem;
+      }
+      #hero p {
+        font-size: 1.1rem;
+      }
+      .planet {
+        display: none;
+      }
     }
 
     /* Portfolio Section */
@@ -871,13 +1245,23 @@
   <main class="main">
     <!-- Hero Section -->
     <section id="hero" class="hero section">
-      <div class="particles">
-        <div class="particle" style="left: 10%; top: 20%; animation-delay: 0s;"></div>
-        <div class="particle" style="left: 30%; top: 50%; animation-delay: 1s;"></div>
-        <div class="particle" style="left: 70%; top: 30%; animation-delay: 2s;"></div>
-        <div class="particle" style="left: 90%; top: 60%; animation-delay: 3s;"></div>
-        <div class="particle" style="left: 50%; top: 80%; animation-delay: 4s;"></div>
-      </div>
+      <!-- Particles.js Universe Background -->
+      <div id="particles-js"></div>
+      
+      <!-- Random Blinking Stars (appear/disappear every 5 seconds) -->
+      <div class="random-stars-container"></div>
+      
+      <!-- Shooting Stars -->
+      <div class="shooting-star"></div>
+      <div class="shooting-star"></div>
+      <div class="shooting-star"></div>
+      <div class="shooting-star"></div>
+      
+      <!-- Floating Planets -->
+      <div class="planet planet-1"></div>
+      <div class="planet planet-2"></div>
+      <div class="planet planet-3"></div>
+      
       <div class="container text-center" data-aos="zoom-out" data-aos-delay="100">
         <div class="row justify-content-center">
           <div class="col-lg-8">
@@ -1600,6 +1984,173 @@
 
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
+
+  <!-- Particles.js Universe Configuration -->
+  <script>
+    // Initialize Particles.js for Universe Background
+    particlesJS('particles-js', {
+      particles: {
+        number: {
+          value: 150,
+          density: {
+            enable: true,
+            value_area: 800
+          }
+        },
+        color: {
+          value: ['#ffffff', '#00eaff', '#15ff00', '#ff007f', '#ffdf00']
+        },
+        shape: {
+          type: ['circle', 'triangle', 'edge'],
+          stroke: {
+            width: 0,
+            color: '#000000'
+          }
+        },
+        opacity: {
+          value: 0.8,
+          random: true,
+          anim: {
+            enable: true,
+            speed: 1,
+            opacity_min: 0.1,
+            sync: false
+          }
+        },
+        size: {
+          value: 3,
+          random: true,
+          anim: {
+            enable: true,
+            speed: 2,
+            size_min: 0.3,
+            sync: false
+          }
+        },
+        line_linked: {
+          enable: true,
+          distance: 150,
+          color: '#00eaff',
+          opacity: 0.3,
+          width: 1
+        },
+        move: {
+          enable: true,
+          speed: 1.5,
+          direction: 'none',
+          random: true,
+          straight: false,
+          out_mode: 'out',
+          bounce: false,
+          attract: {
+            enable: true,
+            rotateX: 600,
+            rotateY: 1200
+          }
+        }
+      },
+      interactivity: {
+        detect_on: 'canvas',
+        events: {
+          onhover: {
+            enable: true,
+            mode: 'grab'
+          },
+          onclick: {
+            enable: true,
+            mode: 'push'
+          },
+          resize: true
+        },
+        modes: {
+          grab: {
+            distance: 200,
+            line_linked: {
+              opacity: 0.8
+            }
+          },
+          bubble: {
+            distance: 400,
+            size: 6,
+            duration: 2,
+            opacity: 0.8,
+            speed: 3
+          },
+          repulse: {
+            distance: 200,
+            duration: 0.4
+          },
+          push: {
+            particles_nb: 4
+          },
+          remove: {
+            particles_nb: 2
+          }
+        }
+      },
+      retina_detect: true
+    });
+
+    // Random Blinking Stars System
+    document.addEventListener('DOMContentLoaded', function() {
+      const heroSection = document.getElementById('hero');
+      const randomStarsContainer = document.querySelector('.random-stars-container');
+      
+      if (!randomStarsContainer) {
+        console.log('Random stars container not found');
+        return;
+      }
+
+      const colors = ['white', 'cyan', 'green', 'pink', 'yellow'];
+      
+      // Function to create a random star
+      function createRandomStar() {
+        const star = document.createElement('div');
+        star.className = 'random-star';
+        
+        // Random color
+        const colorClass = colors[Math.floor(Math.random() * colors.length)];
+        if (colorClass !== 'white') {
+          star.classList.add(colorClass);
+        }
+        
+        // Random position within hero section
+        const randomX = Math.random() * 100;
+        const randomY = Math.random() * 100;
+        star.style.left = randomX + '%';
+        star.style.top = randomY + '%';
+        
+        // Random size variation
+        const size = 2 + Math.random() * 3; // 2-5px
+        star.style.width = size + 'px';
+        star.style.height = size + 'px';
+        
+        randomStarsContainer.appendChild(star);
+        
+        // Remove star after animation completes (5 seconds)
+        setTimeout(() => {
+          star.remove();
+        }, 5000);
+      }
+      
+      // Create initial batch of random stars
+      function createStarBatch() {
+        const numStars = 8 + Math.floor(Math.random() * 5); // 8-12 stars per batch
+        for (let i = 0; i < numStars; i++) {
+          setTimeout(() => {
+            createRandomStar();
+          }, i * 100); // Stagger creation slightly
+        }
+      }
+      
+      // Create first batch immediately
+      createStarBatch();
+      
+      // Create new batch every 5 seconds
+      setInterval(createStarBatch, 5000);
+    });
+  </script>
+
   <script>
     document.addEventListener("DOMContentLoaded", function () {
       // Smooth scrolling for anchor links
