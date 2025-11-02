@@ -1202,6 +1202,290 @@
 
 <body class="index-page">
   <div class="custom-cursor"></div>
+
+  <!-- Mavericks Game Video Popup -->
+  <div id="gameVideoModal" class="video-modal">
+    <div class="video-modal-overlay"></div>
+    <div class="video-modal-content">
+      <div class="video-container">
+        <button class="close-modal" id="closeVideoModal" aria-label="Close video">
+          <i class="bi bi-x-lg"></i>
+        </button>
+        <div class="video-header">
+          <h3><i class="bi bi-controller"></i> Check Out My Latest Game!</h3>
+          <p>Mavericks Battlegrounds - Epic Multiplayer Battle Arena</p>
+        </div>
+        <div class="video-wrapper">
+          <iframe 
+            id="mavericks-video"
+            width="560" 
+            height="315" 
+            src="https://www.youtube.com/embed/RefphkY5gCw?si=cOwxTsaQ4B-h7oQY" 
+            title="Mavericks Battlegrounds - Game Trailer" 
+            frameborder="0" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+            referrerpolicy="strict-origin-when-cross-origin" 
+            allowfullscreen>
+          </iframe>
+        </div>
+        <div class="video-footer">
+          <button class="skip-btn" id="skipVideoBtn">
+            <i class="bi bi-skip-forward"></i> Skip & Continue to Portfolio
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <style>
+    /* Video Modal Styles */
+    .video-modal {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 99999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.5s ease, visibility 0.5s ease;
+    }
+
+    .video-modal.show {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .video-modal-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, rgba(0, 0, 0, 0.95) 0%, rgba(26, 26, 46, 0.95) 100%);
+      backdrop-filter: blur(10px);
+    }
+
+    .video-modal-content {
+      position: relative;
+      z-index: 2;
+      max-width: 900px;
+      width: 90%;
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
+      border-radius: 20px;
+      padding: 30px;
+      box-shadow: 0 20px 60px rgba(0, 212, 255, 0.3);
+      border: 2px solid rgba(0, 212, 255, 0.3);
+      animation: slideInDown 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    }
+
+    @keyframes slideInDown {
+      from {
+        transform: translateY(-100px) scale(0.8);
+        opacity: 0;
+      }
+      to {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+      }
+    }
+
+    .close-modal {
+      position: absolute;
+      top: -15px;
+      right: -15px;
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #ff6b6b, #ff4757);
+      border: 3px solid #fff;
+      color: #fff;
+      font-size: 20px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease;
+      box-shadow: 0 5px 15px rgba(255, 107, 107, 0.4);
+      z-index: 3;
+    }
+
+    .close-modal:hover {
+      transform: rotate(90deg) scale(1.1);
+      background: linear-gradient(135deg, #ff4757, #ee5a6f);
+      box-shadow: 0 8px 25px rgba(255, 107, 107, 0.6);
+    }
+
+    .video-header {
+      text-align: center;
+      margin-bottom: 25px;
+    }
+
+    .video-header h3 {
+      color: #00d4ff;
+      font-size: 28px;
+      font-weight: 700;
+      margin-bottom: 10px;
+      text-shadow: 0 0 20px rgba(0, 212, 255, 0.5);
+      animation: glow 2s ease-in-out infinite;
+    }
+
+    @keyframes glow {
+      0%, 100% { text-shadow: 0 0 20px rgba(0, 212, 255, 0.5); }
+      50% { text-shadow: 0 0 30px rgba(0, 212, 255, 0.8), 0 0 40px rgba(0, 212, 255, 0.6); }
+    }
+
+    .video-header p {
+      color: #fff;
+      font-size: 16px;
+      opacity: 0.9;
+    }
+
+    .video-wrapper {
+      position: relative;
+      padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+      height: 0;
+      overflow: hidden;
+      border-radius: 12px;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+    }
+
+    .video-wrapper iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border-radius: 12px;
+    }
+
+    .video-footer {
+      margin-top: 25px;
+      text-align: center;
+    }
+
+    .skip-btn {
+      background: linear-gradient(135deg, #00d4ff, #00ffff);
+      color: #000;
+      border: none;
+      padding: 12px 30px;
+      font-size: 16px;
+      font-weight: 600;
+      border-radius: 50px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 5px 20px rgba(0, 212, 255, 0.4);
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .skip-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 30px rgba(0, 212, 255, 0.6);
+      background: linear-gradient(135deg, #00ffff, #00d4ff);
+    }
+
+    .skip-btn i {
+      font-size: 18px;
+    }
+
+    /* Mobile Responsive */
+    @media (max-width: 768px) {
+      .video-modal-content {
+        width: 95%;
+        padding: 20px;
+      }
+
+      .video-header h3 {
+        font-size: 22px;
+      }
+
+      .video-header p {
+        font-size: 14px;
+      }
+
+      .close-modal {
+        width: 40px;
+        height: 40px;
+        font-size: 18px;
+        top: -10px;
+        right: -10px;
+      }
+
+      .skip-btn {
+        padding: 10px 20px;
+        font-size: 14px;
+      }
+    }
+
+    /* Fade Out Animation */
+    .video-modal.fade-out {
+      animation: fadeOut 0.5s ease forwards;
+    }
+
+    @keyframes fadeOut {
+      from {
+        opacity: 1;
+      }
+      to {
+        opacity: 0;
+      }
+    }
+  </style>
+
+  <script>
+    // Video Modal Control
+    document.addEventListener('DOMContentLoaded', function() {
+      const modal = document.getElementById('gameVideoModal');
+      const closeBtn = document.getElementById('closeVideoModal');
+      const skipBtn = document.getElementById('skipVideoBtn');
+      const videoIframe = document.getElementById('mavericks-video');
+      
+      // Check if user has already seen the video
+      const hasSeenVideo = sessionStorage.getItem('mavericks-video-seen');
+      
+      // Show modal after 2 seconds if not seen
+      if (!hasSeenVideo) {
+        setTimeout(() => {
+          modal.classList.add('show');
+        }, 2000);
+      }
+      
+      // Close modal function
+      function closeModal() {
+        modal.classList.add('fade-out');
+        sessionStorage.setItem('mavericks-video-seen', 'true');
+        
+        // Stop video playback
+        videoIframe.src = videoIframe.src;
+        
+        setTimeout(() => {
+          modal.style.display = 'none';
+        }, 500);
+      }
+      
+      // Close button click
+      closeBtn.addEventListener('click', closeModal);
+      
+      // Skip button click
+      skipBtn.addEventListener('click', closeModal);
+      
+      // Close on overlay click
+      modal.querySelector('.video-modal-overlay').addEventListener('click', closeModal);
+      
+      // Close on ESC key
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && modal.classList.contains('show')) {
+          closeModal();
+        }
+      });
+    });
+  </script>
+
     <header id="header" class="header d-flex align-items-center sticky-top">
     <div class="container-fluid position-relative d-flex align-items-center justify-content-between">
       <a href="index.html" class="logo d-flex align-items-center me-auto me-xl-0">
