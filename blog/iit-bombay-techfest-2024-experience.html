@@ -196,8 +196,18 @@
       transition: transform 0.3s ease;
     }
 
+    .gallery-caption p {
+      color: #00d4ff !important;
+      margin: 0;
+      font-weight: 500;
+    }
+
     .gallery-item:hover .gallery-caption {
       transform: translateY(0);
+    }
+
+    .gallery-item {
+      cursor: pointer;
     }
 
     /* Event Highlight Boxes */
@@ -731,24 +741,24 @@
                   <div class="image-gallery-section" data-aos="fade-up">
                     <h4>Game Development Workshop Gallery</h4>
                     <div class="gallery-grid">
-                      <div class="gallery-item">
+                      <a href="../assets/img/blog/techfest/workshop-1.jpg" class="gallery-item glightbox" data-gallery="workshop">
                         <img src="../assets/img/blog/techfest/workshop-1.jpg" alt="Game Development Workshop Session">
                         <div class="gallery-caption">
                           <p>Workshop Session - Learning Unity Game Development</p>
                         </div>
-                      </div>
-                      <div class="gallery-item">
+                      </a>
+                      <a href="../assets/img/blog/techfest/workshop-2.jpg" class="gallery-item glightbox" data-gallery="workshop">
                         <img src="../assets/img/blog/techfest/workshop-2.jpg" alt="Hands-on Game Development">
                         <div class="gallery-caption">
                           <p>Hands-on Game Development Practice</p>
                         </div>
-                      </div>
-                      <div class="gallery-item">
+                      </a>
+                      <a href="../assets/img/blog/techfest/workshop-3.jpg" class="gallery-item glightbox" data-gallery="workshop">
                         <img src="../assets/img/blog/techfest/workshop-3.jpg" alt="Workshop Participants Learning">
                         <div class="gallery-caption">
                           <p>Collaborative Learning Environment</p>
                         </div>
-                      </div>
+                      </a>
                     </div>
                   </div>
 
@@ -773,42 +783,42 @@
                   <div class="image-gallery-section" data-aos="fade-up">
                     <h4>Robotics Exhibition Gallery (RoboFest)</h4>
                     <div class="gallery-grid">
-                      <div class="gallery-item">
+                      <a href="../assets/img/blog/techfest/defense-1.jpg" class="gallery-item glightbox" data-gallery="robotics">
                         <img src="../assets/img/blog/techfest/defense-1.jpg" alt="RoboFest Robotics Competition">
                         <div class="gallery-caption">
                           <p>RoboFest - Advanced Robotics Competition</p>
                         </div>
-                      </div>
-                      <div class="gallery-item">
+                      </a>
+                      <a href="../assets/img/blog/techfest/defense-2.jpg" class="gallery-item glightbox" data-gallery="robotics">
                         <img src="../assets/img/blog/techfest/defense-2.jpg" alt="Robot Arena">
                         <div class="gallery-caption">
                           <p>Competitive Robotics Arena</p>
                         </div>
-                      </div>
-                      <div class="gallery-item">
+                      </a>
+                      <a href="../assets/img/blog/techfest/defense-3.jpg" class="gallery-item glightbox" data-gallery="robotics">
                         <img src="../assets/img/blog/techfest/defense-3.jpg" alt="RoboFest Exhibition">
                         <div class="gallery-caption">
                           <p>Robotics Innovation Showcase</p>
                         </div>
-                      </div>
-                      <div class="gallery-item">
+                      </a>
+                      <a href="../assets/img/blog/techfest/defense-4.jpg" class="gallery-item glightbox" data-gallery="robotics">
                         <img src="../assets/img/blog/techfest/defense-4.jpg" alt="Advanced Robot Display">
                         <div class="gallery-caption">
                           <p>State-of-the-Art Robotics Technology</p>
                         </div>
-                      </div>
-                      <div class="gallery-item">
+                      </a>
+                      <a href="../assets/img/blog/techfest/defense-5.jpg" class="gallery-item glightbox" data-gallery="robotics">
                         <img src="../assets/img/blog/techfest/defense-5.jpg" alt="Humanoid Robot">
                         <div class="gallery-caption">
                           <p>Humanoid Robot Demonstration</p>
                         </div>
-                      </div>
-                      <div class="gallery-item">
+                      </a>
+                      <a href="../assets/img/blog/techfest/defense-6.jpg" class="gallery-item glightbox" data-gallery="robotics">
                         <img src="../assets/img/blog/techfest/defense-6.jpg" alt="Autonomous Robot">
                         <div class="gallery-caption">
                           <p>Autonomous Navigation System</p>
                         </div>
-                      </div>
+                      </a>
                     </div>
                   </div>
 
@@ -1235,6 +1245,48 @@
     AOS.init({
       duration: 1000,
       once: true
+    });
+
+    // Initialize GLightbox for all gallery images
+    const lightbox = GLightbox({
+      touchNavigation: true,
+      loop: true,
+      autoplayVideos: true
+    });
+
+    // Convert all gallery-item divs to clickable lightbox links
+    document.addEventListener('DOMContentLoaded', function() {
+      const galleryItems = document.querySelectorAll('.gallery-item:not(a)');
+      
+      galleryItems.forEach((item) => {
+        const img = item.querySelector('img');
+        if (img) {
+          const imgSrc = img.getAttribute('src');
+          const imgAlt = img.getAttribute('alt');
+          const caption = item.querySelector('.gallery-caption p');
+          const captionText = caption ? caption.textContent : imgAlt;
+          
+          // Create link wrapper
+          const link = document.createElement('a');
+          link.href = imgSrc;
+          link.className = 'gallery-item glightbox';
+          link.setAttribute('data-gallery', 'techfest');
+          link.setAttribute('data-glightbox', `title: ${captionText}`);
+          
+          // Move content into link
+          link.innerHTML = item.innerHTML;
+          
+          // Replace item with link
+          item.parentNode.replaceChild(link, item);
+        }
+      });
+      
+      // Reinitialize GLightbox after converting items
+      GLightbox({
+        touchNavigation: true,
+        loop: true,
+        autoplayVideos: true
+      });
     });
   </script>
 
