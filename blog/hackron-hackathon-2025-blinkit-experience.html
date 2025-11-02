@@ -380,6 +380,25 @@
       transform: scale(1.1);
     }
 
+    /* PDF Document Cards */
+    .pdf-card {
+      transition: all 0.3s ease;
+    }
+
+    .pdf-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    }
+
+    .pdf-card .btn {
+      transition: all 0.3s ease;
+    }
+
+    .pdf-card .btn:hover {
+      transform: scale(1.05);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    }
+
     @media (max-width: 768px) {
       .article {
         padding: 20px;
@@ -962,6 +981,71 @@
                         <img src="../assets/img/blog/hackron/hackathon-8.jpg" alt="Team Victory">
                         <div class="gallery-caption">
                           <p>Mission Accomplished!</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <h3>Hackathon Video Experience</h3>
+                  <p>
+                    Watch our complete hackathon journey captured in this exclusive video! From the opening ceremony to the final presentation, experience the thrill of 24 hours of innovation.
+                  </p>
+
+                  <div class="event-highlight" style="text-align: center; padding: 30px;">
+                    <div style="position: relative; width: 100%; max-width: 900px; margin: 0 auto; border-radius: 15px; overflow: hidden; box-shadow: 0 10px 40px rgba(248, 202, 0, 0.4);">
+                      <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+                        <iframe 
+                          style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none;" 
+                          src="https://www.youtube.com/embed/coGUusRo8TI?si=4ecROMtcnIBxcv39" 
+                          title="Hackron Hackathon 2025 - Team Bug Busters Journey" 
+                          frameborder="0" 
+                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                          referrerpolicy="strict-origin-when-cross-origin" 
+                          allowfullscreen>
+                        </iframe>
+                      </div>
+                    </div>
+                    <p style="margin-top: 20px; color: #f8ca00; font-weight: 600; font-size: 1.1rem;">
+                      <i class="bi bi-youtube"></i> Watch our 24-hour hackathon journey!
+                    </p>
+                  </div>
+
+                  <h3>Project Documentation & Resources</h3>
+                  <p>
+                    Access our complete hackathon documentation including the problem statement, our solution presentation, and official team details.
+                  </p>
+
+                  <div class="event-highlight">
+                    <h5><i class="bi bi-file-earmark-pdf"></i> Official Documents</h5>
+                    <div class="row" style="margin-top: 20px;">
+                      <div class="col-md-4 mb-3">
+                        <div class="pdf-card" style="background: linear-gradient(135deg, rgba(255, 107, 107, 0.1), rgba(255, 142, 83, 0.1)); padding: 20px; border-radius: 10px; text-align: center; border: 2px solid rgba(255, 107, 107, 0.3); height: 100%;">
+                          <i class="bi bi-file-earmark-text" style="font-size: 3rem; color: #ff6b6b; margin-bottom: 15px;"></i>
+                          <h6 style="color: #ff6b6b; font-weight: 700; margin-bottom: 10px;">Problem Statements</h6>
+                          <p style="font-size: 0.9rem; color: #666; margin-bottom: 15px;">Official hackathon challenges and problem definitions from Blinkit</p>
+                          <a href="../assets/img/blog/hackron/problem-statements.pdf" target="_blank" class="btn btn-sm" style="background: linear-gradient(135deg, #ff6b6b, #ff8e53); color: #fff; border: none; padding: 8px 20px; border-radius: 25px; text-decoration: none; display: inline-block;">
+                            <i class="bi bi-download"></i> Download PDF
+                          </a>
+                        </div>
+                      </div>
+                      <div class="col-md-4 mb-3">
+                        <div class="pdf-card" style="background: linear-gradient(135deg, rgba(24, 210, 110, 0.1), rgba(78, 205, 196, 0.1)); padding: 20px; border-radius: 10px; text-align: center; border: 2px solid rgba(24, 210, 110, 0.3); height: 100%;">
+                          <i class="bi bi-file-earmark-slides" style="font-size: 3rem; color: #18d26e; margin-bottom: 15px;"></i>
+                          <h6 style="color: #18d26e; font-weight: 700; margin-bottom: 10px;">SafaiNova Solution</h6>
+                          <p style="font-size: 0.9rem; color: #666; margin-bottom: 15px;">Complete project presentation and technical solution details</p>
+                          <a href="../assets/img/blog/hackron/safainova-solution.pdf" target="_blank" class="btn btn-sm" style="background: linear-gradient(135deg, #18d26e, #4ecdc4); color: #fff; border: none; padding: 8px 20px; border-radius: 25px; text-decoration: none; display: inline-block;">
+                            <i class="bi bi-download"></i> Download PDF
+                          </a>
+                        </div>
+                      </div>
+                      <div class="col-md-4 mb-3">
+                        <div class="pdf-card" style="background: linear-gradient(135deg, rgba(248, 202, 0, 0.1), rgba(255, 193, 7, 0.1)); padding: 20px; border-radius: 10px; text-align: center; border: 2px solid rgba(248, 202, 0, 0.3); height: 100%;">
+                          <i class="bi bi-people-fill" style="font-size: 3rem; color: #f8ca00; margin-bottom: 15px;"></i>
+                          <h6 style="color: #f8ca00; font-weight: 700; margin-bottom: 10px;">Team List</h6>
+                          <p style="font-size: 0.9rem; color: #666; margin-bottom: 15px;">Official list of all team members and participant details</p>
+                          <a href="../assets/img/blog/hackron/team-list.pdf" target="_blank" class="btn btn-sm" style="background: linear-gradient(135deg, #f8ca00, #ffc107); color: #000; border: none; padding: 8px 20px; border-radius: 25px; text-decoration: none; display: inline-block; font-weight: 600;">
+                            <i class="bi bi-download"></i> Download PDF
+                          </a>
                         </div>
                       </div>
                     </div>
