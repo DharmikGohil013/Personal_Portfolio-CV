@@ -514,62 +514,13 @@
       }
     }
 
-    /* About Section - Mouse Movement Photo Animation */
+    /* About Section - Photo Styling */
     .about .img-fluid {
-      transition: transform 0.3s ease-out;
-      transform-style: preserve-3d;
-      will-change: transform;
       border-radius: 20px;
       box-shadow: 
         0 10px 40px rgba(0, 234, 255, 0.3),
         0 0 20px rgba(0, 234, 255, 0.2);
       border: 3px solid rgba(0, 234, 255, 0.5);
-      position: relative;
-    }
-
-    .about .img-fluid::before {
-      content: '';
-      position: absolute;
-      top: -3px;
-      left: -3px;
-      right: -3px;
-      bottom: -3px;
-      background: linear-gradient(45deg, #00eaff, #15ff00, #ff007f, #ffdf00);
-      border-radius: 20px;
-      z-index: -1;
-      opacity: 0;
-      transition: opacity 0.3s ease;
-      animation: borderRotate 3s linear infinite;
-    }
-
-    .about .img-fluid:hover::before {
-      opacity: 0.6;
-    }
-
-    @keyframes borderRotate {
-      0% { filter: hue-rotate(0deg); }
-      100% { filter: hue-rotate(360deg); }
-    }
-
-    /* Glowing effect on hover */
-    .about .img-fluid:hover {
-      box-shadow: 
-        0 15px 60px rgba(0, 234, 255, 0.5),
-        0 0 40px rgba(0, 234, 255, 0.4),
-        0 0 80px rgba(0, 234, 255, 0.2);
-      border-color: #00eaff;
-    }
-
-    /* About section container for mouse tracking */
-    .about .col-lg-4 {
-      perspective: 1000px;
-      position: relative;
-    }
-
-    /* Photo wrapper for 3D effect */
-    .about-photo-wrapper {
-      transform-style: preserve-3d;
-      transition: transform 0.1s ease-out;
     }
 
     /* Portfolio Section */
@@ -2242,128 +2193,6 @@
       
       // Create new batch every 5 seconds
       setInterval(createStarBatch, 5000);
-    });
-
-    // About Section Photo - Mouse Movement Parallax Animation
-    document.addEventListener('DOMContentLoaded', function() {
-      const aboutPhoto = document.getElementById('aboutPhoto');
-      const aboutSection = document.getElementById('about');
-      
-      if (!aboutPhoto || !aboutSection) return;
-      
-      let isHovering = false;
-      
-      // Mouse move event on the entire about section
-      aboutSection.addEventListener('mousemove', function(e) {
-        const sectionRect = aboutSection.getBoundingClientRect();
-        const photoRect = aboutPhoto.getBoundingClientRect();
-        
-        // Calculate mouse position relative to photo center
-        const photoCenterX = photoRect.left + photoRect.width / 2;
-        const photoCenterY = photoRect.top + photoRect.height / 2;
-        
-        const mouseX = e.clientX;
-        const mouseY = e.clientY;
-        
-        // Calculate offset from center
-        const offsetX = (mouseX - photoCenterX) / photoRect.width;
-        const offsetY = (mouseY - photoCenterY) / photoRect.height;
-        
-        // Apply 3D transformation based on mouse position
-        const rotateY = offsetX * 15; // Tilt left/right (max 15deg)
-        const rotateX = -offsetY * 15; // Tilt up/down (max 15deg)
-        
-        // Also add slight translation for parallax effect
-        const translateX = offsetX * 20; // Move left/right (max 20px)
-        const translateY = offsetY * 20; // Move up/down (max 20px)
-        
-        // Apply the transformation
-        aboutPhoto.style.transform = `
-          perspective(1000px)
-          rotateX(${rotateX}deg)
-          rotateY(${rotateY}deg)
-          translateX(${translateX}px)
-          translateY(${translateY}px)
-          scale(1.05)
-        `;
-        
-        // Add glow effect intensity based on mouse proximity
-        const distance = Math.sqrt(
-          Math.pow(mouseX - photoCenterX, 2) + 
-          Math.pow(mouseY - photoCenterY, 2)
-        );
-        const maxDistance = Math.sqrt(
-          Math.pow(photoRect.width, 2) + 
-          Math.pow(photoRect.height, 2)
-        ) / 2;
-        const proximity = Math.max(0, 1 - distance / maxDistance);
-        
-        const glowIntensity = 0.3 + (proximity * 0.4);
-        aboutPhoto.style.boxShadow = `
-          0 ${10 + proximity * 20}px ${40 + proximity * 60}px rgba(0, 234, 255, ${glowIntensity}),
-          0 0 ${20 + proximity * 40}px rgba(0, 234, 255, ${glowIntensity * 0.8}),
-          0 0 ${40 + proximity * 80}px rgba(21, 255, 0, ${glowIntensity * 0.3})
-        `;
-      });
-      
-      // Mouse enter - activate effect
-      aboutPhoto.addEventListener('mouseenter', function() {
-        isHovering = true;
-        this.style.transition = 'transform 0.1s ease-out, box-shadow 0.3s ease';
-      });
-      
-      // Mouse leave - reset to original position
-      aboutPhoto.addEventListener('mouseleave', function() {
-        isHovering = false;
-        this.style.transition = 'transform 0.6s ease, box-shadow 0.6s ease';
-        this.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) translateX(0) translateY(0) scale(1)';
-        this.style.boxShadow = `
-          0 10px 40px rgba(0, 234, 255, 0.3),
-          0 0 20px rgba(0, 234, 255, 0.2)
-        `;
-      });
-      
-      // Section leave - reset photo
-      aboutSection.addEventListener('mouseleave', function() {
-        aboutPhoto.style.transition = 'transform 0.6s ease, box-shadow 0.6s ease';
-        aboutPhoto.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) translateX(0) translateY(0) scale(1)';
-        aboutPhoto.style.boxShadow = `
-          0 10px 40px rgba(0, 234, 255, 0.3),
-          0 0 20px rgba(0, 234, 255, 0.2)
-        `;
-      });
-
-      // Add floating animation when not interacting
-      let floatAnimation;
-      function startFloating() {
-        if (isHovering) return;
-        
-        let angle = 0;
-        floatAnimation = setInterval(() => {
-          if (isHovering) return;
-          
-          angle += 0.02;
-          const floatY = Math.sin(angle) * 10;
-          const floatX = Math.cos(angle * 0.5) * 5;
-          
-          aboutPhoto.style.transform = `
-            perspective(1000px)
-            translateY(${floatY}px)
-            translateX(${floatX}px)
-            rotateZ(${Math.sin(angle) * 2}deg)
-          `;
-        }, 50);
-      }
-      
-      // Start floating animation
-      setTimeout(startFloating, 1000);
-      
-      // Restart floating when mouse leaves
-      aboutPhoto.addEventListener('mouseleave', function() {
-        setTimeout(() => {
-          if (!isHovering) startFloating();
-        }, 600);
-      });
     });
   </script>
 
