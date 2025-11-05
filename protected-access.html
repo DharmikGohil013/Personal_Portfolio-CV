@@ -137,6 +137,66 @@
             font-size: 16px;
         }
 
+        .important-files {
+            background: rgba(45, 137, 239, 0.1);
+            border: 1px solid rgba(45, 137, 239, 0.3);
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 30px;
+            text-align: left;
+        }
+
+        .important-files h3 {
+            color: #00d4ff;
+            font-size: 18px;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .file-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .file-item {
+            padding: 10px;
+            margin: 8px 0;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+        }
+
+        .file-item:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateX(5px);
+        }
+
+        .file-icon {
+            font-size: 20px;
+            margin-right: 12px;
+        }
+
+        .file-name {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .file-description {
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 12px;
+            margin-top: 3px;
+        }
+
+        .locked-icon {
+            margin-left: auto;
+            color: #2d89ef;
+            font-size: 16px;
+        }
+
         .form-group {
             margin-bottom: 25px;
             text-align: left;
@@ -300,6 +360,21 @@
         <div class="logo">DG</div>
         <h1>Protected Access</h1>
         <p class="subtitle">Enter password to access protected content</p>
+        
+        <!-- Important Files Section -->
+        <div class="important-files">
+            <h3>📁 Important Files Available</h3>
+            <ul class="file-list">
+                <li class="file-item">
+                    <span class="file-icon">📄</span>
+                    <div>
+                        <div class="file-name">Confidential Documents</div>
+                        <div class="file-description">Private project files & reports</div>
+                    </div>
+                    <span class="locked-icon">🔒</span>
+                </li>
+            </ul>
+        </div>
         
         <form id="accessForm">
             <div class="form-group">
