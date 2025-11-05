@@ -287,6 +287,29 @@
             display: none;
         }
 
+        .lockout-message {
+            color: #ff6b6b;
+            margin-top: 15px;
+            padding: 15px;
+            background: rgba(255, 107, 107, 0.15);
+            border: 2px solid rgba(255, 107, 107, 0.5);
+            border-radius: 8px;
+            display: none;
+            font-weight: 600;
+        }
+
+        .lockout-timer {
+            font-size: 24px;
+            color: #ff6b6b;
+            margin: 10px 0;
+            font-weight: bold;
+        }
+
+        .warning-icon {
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+
         .success-message {
             color: #51cf66;
             margin-top: 15px;
@@ -394,7 +417,17 @@
             <button type="submit" class="submit-btn">Access Content</button>
             
             <div class="error-message" id="errorMessage">
-                Incorrect password. Please try again.
+                ❌ Incorrect password! Access denied.<br>
+                <small>Your device will be locked for 15 minutes after this attempt.</small>
+            </div>
+            
+            <div class="lockout-message" id="lockoutMessage">
+                <div class="warning-icon">🚫</div>
+                <strong>ACCESS BLOCKED</strong><br>
+                Too many failed attempts!<br>
+                <div class="lockout-timer" id="lockoutTimer">15:00</div>
+                Please wait before trying again.<br>
+                <small>This device has been temporarily locked for security reasons.</small>
             </div>
             
             <div class="success-message" id="successMessage">
@@ -407,13 +440,67 @@
         // Password configuration
         const CORRECT_PASSWORD = "8382"; // Change this to your desired password
         const EXCEL_FILE_PATH = "assets/Password_Dharmik.xlsx"; // Path to your Excel file
+        const LOCKOUT_DURATION = 15 * 60 * 1000; // 15 minutes in milliseconds
 
         // DOM elements
         const form = document.getElementById('accessForm');
         const passwordInput = document.getElementById('password');
         const toggleButton = document.getElementById('togglePassword');
         const errorMessage = document.getElementById('errorMessage');
+        const lockoutMessage = document.getElementById('lockoutMessage');
+        const lockoutTimer = document.getElementById('lockoutTimer');
         const successMessage = document.getElementById('successMessage');
+
+        // Check if device is locked on page load
+        function checkLockoutStatus() {
+            const lockoutEnd = localStorage.getItem('lockoutEnd');
+            
+            if (lockoutEnd) {
+                const now = new Date().getTime();
+                const endTime = parseInt(lockoutEnd);
+                
+                if (now < endTime) {
+                    // Still locked
+                    showLockout(endTime);
+                    return true;
+                } else {
+                    // Lockout expired
+                    localStorage.removeItem('lockoutEnd');
+                    localStorage.removeItem('failedAttempts');
+                }
+            }
+            return false;
+        }
+
+        // Show lockout message with countdown
+        function showLockout(endTime) {
+            form.style.display = 'none';
+            lockoutMessage.style.display = 'block';
+            
+            // Update countdown every second
+            const countdownInterval = setInterval(() => {
+                const now = new Date().getTime();
+                const remaining = endTime - now;
+                
+                if (remaining <= 0) {
+                    clearInterval(countdownInterval);
+                    localStorage.removeItem('lockoutEnd');
+                    localStorage.removeItem('failedAttempts');
+                    location.reload();
+                } else {
+                    const minutes = Math.floor(remaining / 60000);
+                    const seconds = Math.floor((remaining % 60000) / 1000);
+                    lockoutTimer.textContent = `${minutes}:${seconds.toString().padStart(2, '0')}`;
+                }
+            }, 1000);
+        }
+
+        // Lock the device
+        function lockDevice() {
+            const lockoutEnd = new Date().getTime() + LOCKOUT_DURATION;
+            localStorage.setItem('lockoutEnd', lockoutEnd.toString());
+            showLockout(lockoutEnd);
+        }
 
         // Toggle password visibility
         toggleButton.addEventListener('click', function() {
@@ -434,7 +521,10 @@
             
             // Check password
             if (enteredPassword === CORRECT_PASSWORD) {
-                // Success
+                // Success - clear any failed attempts
+                localStorage.removeItem('failedAttempts');
+                localStorage.removeItem('lockoutEnd');
+                
                 successMessage.style.display = 'block';
                 passwordInput.value = '';
                 
@@ -443,16 +533,20 @@
                     openExcelFile();
                 }, 1500);
             } else {
-                // Error
+                // Wrong password - lock device immediately
                 errorMessage.style.display = 'block';
                 passwordInput.value = '';
-                passwordInput.focus();
                 
                 // Add shake animation
                 form.style.animation = 'shake 0.5s ease-in-out';
                 setTimeout(() => {
                     form.style.animation = '';
                 }, 500);
+                
+                // Lock device after 2 seconds to show error message
+                setTimeout(() => {
+                    lockDevice();
+                }, 2000);
             }
         });
 
@@ -482,9 +576,11 @@
         `;
         document.head.appendChild(style);
 
-        // Focus on password input when page loads
+        // Check lockout status on page load
         window.addEventListener('load', () => {
-            passwordInput.focus();
+            if (!checkLockoutStatus()) {
+                passwordInput.focus();
+            }
         });
 
         // Handle Enter key in password input
