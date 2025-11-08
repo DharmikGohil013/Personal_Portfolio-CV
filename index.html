@@ -348,7 +348,7 @@
     }
 
     #hero h2 {
-      font-family: 'Press Start 2P', cursive;
+      font-family: 'JetBrains Mono', monospace;
       font-size: 3.5rem;
       color: #fff;
       text-shadow: 
@@ -579,7 +579,7 @@
     }
 
     .section-title h2 {
-      font-family: 'Press Start 2P', cursive;
+      font-family: 'JetBrains Mono', monospace;
       font-size: 2.5rem;
       color: #fff;
       text-shadow: 0 0 15px #00eaff;
@@ -833,7 +833,7 @@
     color: #15ff00;
     text-shadow: 0 0 10px #15ff00;
     margin-bottom: 20px;
-    font-family: 'Press Start 2P', cursive;
+    font-family: 'JetBrains Mono', monospace;
   }
 
   .actify-showcase p {
@@ -851,7 +851,7 @@
 }
 
 .actify-section h2 {
-  font-family: 'Press Start 2P', cursive;
+  font-family: 'JetBrains Mono', monospace;
   color: #15ff00;
   text-shadow: 0 0 15px #15ff00;
   font-size: 2.4rem;
@@ -948,7 +948,7 @@
 }
 
 .actify-slide::after {
-  content: '🔍';
+  content: '';
   position: absolute;
   top: 50%;
   left: 50%;
@@ -1055,6 +1055,65 @@
     margin-top: 15px;
     padding: 10px;
   }
+}
+
+/* Play Button Styles */
+.portfolio-info .play-btn {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 8px 20px;
+  background: linear-gradient(135deg, #15ff00, #00eaff);
+  color: #0a0f1f;
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: bold;
+  font-size: 0.9rem;
+  text-decoration: none;
+  border-radius: 25px;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 15px rgba(21, 255, 0, 0.5);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  position: relative;
+  overflow: hidden;
+}
+
+.portfolio-info .play-btn:before {
+  content: '▶';
+  margin-right: 5px;
+  font-size: 0.8rem;
+}
+
+.portfolio-info .play-btn:hover {
+  background: linear-gradient(135deg, #00eaff, #15ff00);
+  box-shadow: 0 0 25px rgba(21, 255, 0, 0.8);
+  transform: translateY(-2px);
+  color: #0a0f1f;
+}
+
+.portfolio-info a.play-btn i {
+  margin-right: 5px;
+}
+
+/* VR Badge */
+.portfolio-item {
+  position: relative;
+}
+
+.vr-badge {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  background: rgba(255, 0, 127, 0.9);
+  color: #fff;
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.75rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  z-index: 10;
+  box-shadow: 0 0 15px rgba(255, 0, 127, 0.6);
+  letter-spacing: 1px;
 }
 
   </style>
@@ -1278,7 +1337,7 @@
     <li><a href="https://fkm.vercel.app/" target="_blank">Wifi Service</a></li>
     <li><a href="assets/Fit Sync.apk" target="_blank">Fit Sync</a></li>
     <li><a href="https://learnlink.dharmikgohil.fun" target="_blank">Learn Link</a></li>
-    <li><a href="protected-access.html">🔐 Protected Access</a></li> <!-- ✅ NEW PASSWORD PROTECTED SERVICE -->
+    <li><a href="protected-access.html">Protected Access</a></li> <!-- ✅ NEW PASSWORD PROTECTED SERVICE -->
     
   </ul>
 </li>
@@ -1362,42 +1421,7 @@
 </div>
 
           <div class="row gy-4 isotope-container" data-aos="fade-up" data-aos-delay="200">
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app filter-appsingleplayer filter-productpc">
-              <img src="assets/img/floopy.webp" class="img-fluid" alt="Dharmik Gohil Floppy Ball Mobile Game - Unity Game Development Project">
-              <div class="portfolio-info">
-                <h4>Floppy Ball</h4>
-                <p>First Simple Game</p>
-                <a href="assets/img/dharmik-gohil-floppy-ball-mobile-game.png" title="Floppy Ball" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <a href="game1.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-              </div>
-            </div>
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app3d filter-appsingleplayer filter-productpc">
-              <img src="assets/img/masonry-portfolio/dharmik-gohil-unity-game-development-project.png" class="img-fluid" alt="Dharmik Gohil Unity Prototype Game Development - Professional Portfolio Project">
-              <div class="portfolio-info">
-                <h4>Unity Prototype 1</h4>
-                <p>Learning Unity</p>
-                <a href="assets/img/masonry-portfolio/dharmik-gohil-unity-game-development-project.png" title="Car Control" data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <a href="game2.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-              </div>
-            </div>
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app3d filter-appsingleplayer filter-productpc">
-              <img src="assets/img/masonry-portfolio/p1 (7).png" class="img-fluid" alt="Dharmik Gohil Animal Kill Game - Unity Game Development Portfolio Project">
-              <div class="portfolio-info">
-                <h4>Unity Prototype 2</h4>
-                <p>Learning Unity</p>
-                <a href="assets/img/masonry-portfolio/p1 (7).png" title="Animal Kill Game" data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <a href="game5.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-              </div>
-            </div>
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app filter-productpc filter-appmobile filter-appsingleplayer">
-              <img src="assets/img/masonry-portfolio/dharmik-gohil-mario-clone-game-project.png" class="img-fluid" alt="Dharmik Gohil Mini Mario Clone Game - Unity Mobile and PC Game Development">
-              <div class="portfolio-info">
-                <h4>MiniMario</h4>
-                <p>Level Game For Mobile and Pc</p>
-                <a href="assets/img/masonry-portfolio/dharmik-gohil-mario-clone-game-project.png" title="Clone Of Mario" data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <a href="game3.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-              </div>
-            </div>
+            <!-- Mavericks Battlegrounds - FIRST -->
             <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app3d filter-productpc filter-product">
               <img src="assets/img/portfolio/mavericks-battleground-thumbnail.jpg" class="img-fluid" alt="Dharmik Gohil Mavericks Battlegrounds Multiplayer Game - Unity Networking Project">
               <div class="portfolio-info">
@@ -1405,8 +1429,60 @@
                 <p>The War Zone</p>
                 <a href="assets/img/portfolio/mavericks-battleground-thumbnail.jpg" title="Mavericks Battlegrounds" data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
                 <a href="game4.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                <a href="https://dharmikgohil.itch.io/mavericks-battlegrounds" target="_blank" class="play-btn"><i class="bi bi-play-fill"></i>Play Now</a>
               </div>
             </div>
+
+            <!-- VR Game 1 -->
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-arvr filter-app3d filter-productpc">
+              <span class="vr-badge">Only for VR</span>
+              <img src="assets/dharmik-gohil-vr-gaming-expertise-showcase.jpg" class="img-fluid" alt="Dharmik Gohil VR Gaming Technology Expertise - Unity XR Development Specialist">
+              <div class="portfolio-info">
+                <h4>Space Explorer VR</h4>
+                <p>Immersive space adventure in virtual reality</p>
+                <a href="assets/dharmik-gohil-vr-gaming-expertise-showcase.jpg" title="Space Explorer VR" data-gallery="portfolio-gallery-vr" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                <a href="vrgame1.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                <a href="vrgame1.html" target="_blank" class="play-btn"><i class="bi bi-download"></i>Download VR App</a>
+              </div>
+            </div>
+
+            <!-- AR Game -->
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-arvr filter-app3d filter-appsingleplayer">
+              <img src="assets/img/ar-explorer-thumbnail.jpg" class="img-fluid" alt="Dharmik Gohil AR Explorer - Augmented Reality Development">
+              <div class="portfolio-info">
+                <h4>AR Explorer</h4>
+                <p>Explore the world with augmented reality</p>
+                <a href="assets/img/ar-explorer-thumbnail.jpg" title="AR Explorer" data-gallery="portfolio-gallery-vr" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                <a href="vrgame2.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                <a href="vrgame2.html" target="_blank" class="play-btn"><i class="bi bi-download"></i>Download AR App</a>
+              </div>
+            </div>
+
+            <!-- Floppy Ball -->
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app filter-appsingleplayer filter-productpc">
+              <img src="assets/img/flappy-bird-thumbnail.jpg" class="img-fluid" alt="Dharmik Gohil Floppy Ball Mobile Game - Unity Game Development Project">
+              <div class="portfolio-info">
+                <h4>Floppy Ball</h4>
+                <p>First Simple Game</p>
+                <a href="assets/img/flappy-bird-thumbnail.jpg" title="Floppy Ball" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                <a href="game1.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                <a href="https://dharmik086.itch.io/floppy-bird-860" target="_blank" class="play-btn"><i class="bi bi-play-fill"></i>Play Now</a>
+              </div>
+            </div>
+
+            <!-- MiniMario -->
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app filter-productpc filter-appmobile filter-appsingleplayer">
+              <img src="assets/img/masonry-portfolio/dharmik-gohil-mario-clone-game-project.png" class="img-fluid" alt="Dharmik Gohil Mini Mario Clone Game - Unity Mobile and PC Game Development">
+              <div class="portfolio-info">
+                <h4>MiniMario</h4>
+                <p>Level Game For Mobile and Pc</p>
+                <a href="assets/img/masonry-portfolio/dharmik-gohil-mario-clone-game-project.png" title="Clone Of Mario" data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                <a href="game3.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                <a href="https://dharmik086.itch.io/minimario" target="_blank" class="play-btn"><i class="bi bi-play-fill"></i>Play Now</a>
+              </div>
+            </div>
+
+            <!-- Hotel H -->
             <div class="col-lg-4 col-md-6 portfolio-item isotope-item   filter-appmobile filter-appsingleplayer filter-app3d">
               <img src="assets/img/portfolio/dharmik-gohil-industry-game-project.jpg" class="img-fluid" alt="Dharmik Gohil Hotel Management Game - Unity Mobile Game Development">
               <div class="portfolio-info">
@@ -1414,8 +1490,11 @@
                 <p>Manage Hotel</p>
                 <a href="assets/img/portfolio/dharmik-gohil-industry-game-project.jpg" title="Hotel Management Game" data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
                 <a href="game4.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                <a href="game4.html" target="_blank" class="play-btn"><i class="bi bi-play-fill"></i>Play Now</a>
               </div>
             </div>
+
+            <!-- Trash In Pro -->
             <div class="col-lg-4 col-md-6 portfolio-item isotope-item   filter-appmobile filter-appsingleplayer filter-app3d">
               <img src="assets/img/portfolio/dharmik-gohil-creative-design-portfolio-showcase.jpg" class="img-fluid" alt="Dharmik Gohil Trash City Clean Game - Unity Environmental Game Development">
               <div class="portfolio-info">
@@ -1423,29 +1502,33 @@
                 <p>Clean City / Trash City</p>
                 <a href="assets/img/portfolio/dharmik-gohil-creative-design-portfolio-showcase.jpg" title="Trash City Clean Game" data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
                 <a href="game4.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                <a href="game4.html" target="_blank" class="play-btn"><i class="bi bi-play-fill"></i>Play Now</a>
               </div>
             </div>
-            <!-- VR Game 1 -->
-<div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-arvr filter-app3d filter-productpc">
-  <img src="assets/dharmik-gohil-vr-gaming-expertise-showcase.jpg" class="img-fluid" alt="Dharmik Gohil VR Gaming Technology Expertise - Unity XR Development Specialist">
-  <div class="portfolio-info">
-    <h4>Space Explorer VR</h4>
-    <p>Immersive space adventure in virtual reality</p>
-    <a href="assets/dharmik-gohil-vr-gaming-expertise-showcase.jpg" title="Space Explorer VR" data-gallery="portfolio-gallery-vr" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-    <a href="vrgame1.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-  </div>
-</div>
 
-<!-- VR Game 2 -->
-<div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-arvr filter-app3d filter-appsingleplayer">
-  <img src="assets/dharmik-gohil-ar-vr-development-skills.svg" class="img-fluid" alt="Dharmik Gohil AR VR Development Skills - Professional XR Developer Portfolio">
-  <div class="portfolio-info">
-    <h4>Escape Room VR</h4>
-    <p>VR puzzle game - escape if you can!</p>
-    <a href="assets/21858352_6537974.svg" title="Escape Room VR" data-gallery="portfolio-gallery-vr" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-    <a href="vrgame2.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-  </div>
-</div>
+            <!-- Unity Prototype 1 - MOVED TO END -->
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app3d filter-appsingleplayer filter-productpc">
+              <img src="assets/img/masonry-portfolio/dharmik-gohil-unity-game-development-project.png" class="img-fluid" alt="Dharmik Gohil Unity Prototype Game Development - Professional Portfolio Project">
+              <div class="portfolio-info">
+                <h4>Unity Prototype 1</h4>
+                <p>Learning Unity</p>
+                <a href="assets/img/masonry-portfolio/dharmik-gohil-unity-game-development-project.png" title="Car Control" data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                <a href="game2.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                <a href="game2.html" target="_blank" class="play-btn"><i class="bi bi-play-fill"></i>Play Now</a>
+              </div>
+            </div>
+
+            <!-- Unity Prototype 2 - MOVED TO END -->
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app3d filter-appsingleplayer filter-productpc">
+              <img src="assets/img/masonry-portfolio/p1 (7).png" class="img-fluid" alt="Dharmik Gohil Animal Kill Game - Unity Game Development Portfolio Project">
+              <div class="portfolio-info">
+                <h4>Unity Prototype 2</h4>
+                <p>Learning Unity</p>
+                <a href="assets/img/masonry-portfolio/p1 (7).png" title="Animal Kill Game" data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                <a href="game5.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                <a href="game5.html" target="_blank" class="play-btn"><i class="bi bi-play-fill"></i>Play Now</a>
+              </div>
+            </div>
 
           </div>
         </div>
@@ -1553,7 +1636,7 @@
                  style="border: 2px solid #15ff00; border-radius: 20px; box-shadow: 0 0 20px rgba(21, 255, 0, 0.5); animation: pulse 2s infinite;">
           </div>
           <div class="col-lg-6 content">
-            <h2 style="color: #15ff00; text-shadow: 0 0 15px #15ff00; font-family: 'Press Start 2P', cursive; margin-bottom: 15px;">Co-Founder</h2>
+            <h2 style="color: #15ff00; text-shadow: 0 0 15px #15ff00; font-family: 'JetBrains Mono', monospace; margin-bottom: 15px;">Co-Founder</h2>
             <h3 style="color: #00eaff; text-shadow: 0 0 10px #00eaff; font-family: 'JetBrains Mono', monospace; margin-bottom: 10px;">Indian Developer Community</h3>
             <h4 style="color: #ffdf00; font-family: 'JetBrains Mono', monospace; margin-bottom: 20px;">EST. 2025</h4>
             
@@ -1992,15 +2075,73 @@
 
   <footer id="footer" class="footer">
     <div class="container">
-      <div class="copyright text-center">
-        <p>© <span>Copyright</span> <strong class="px-1 sitename">Dharmik</strong> <span>All Rights Reserved</span></p>
+      <div class="row gy-4">
+        <!-- Games Section -->
+        <div class="col-lg-3 col-md-6">
+          <h4 style="color: #00eaff; text-shadow: 0 0 10px #00eaff; font-family: 'JetBrains Mono', monospace; font-size: 1rem; margin-bottom: 20px;">Games</h4>
+          <ul style="list-style: none; padding: 0;">
+            <li style="margin-bottom: 8px;"><a href="game4.html" style="color: #15ff00; text-decoration: none; font-family: 'JetBrains Mono', monospace; font-size: 0.85rem;">Mavericks Battlegrounds</a></li>
+            <li style="margin-bottom: 8px;"><a href="vrgame1.html" style="color: #15ff00; text-decoration: none; font-family: 'JetBrains Mono', monospace; font-size: 0.85rem;">Space Explorer VR</a></li>
+            <li style="margin-bottom: 8px;"><a href="vrgame2.html" style="color: #15ff00; text-decoration: none; font-family: 'JetBrains Mono', monospace; font-size: 0.85rem;">AR Explorer</a></li>
+            <li style="margin-bottom: 8px;"><a href="game1.html" style="color: #15ff00; text-decoration: none; font-family: 'JetBrains Mono', monospace; font-size: 0.85rem;">Floppy Ball</a></li>
+            <li style="margin-bottom: 8px;"><a href="game3.html" style="color: #15ff00; text-decoration: none; font-family: 'JetBrains Mono', monospace; font-size: 0.85rem;">MiniMario</a></li>
+            <li style="margin-bottom: 8px;"><a href="game4.html" style="color: #15ff00; text-decoration: none; font-family: 'JetBrains Mono', monospace; font-size: 0.85rem;">Hotel H</a></li>
+            <li style="margin-bottom: 8px;"><a href="game4.html" style="color: #15ff00; text-decoration: none; font-family: 'JetBrains Mono', monospace; font-size: 0.85rem;">Trash In Pro</a></li>
+            <li style="margin-bottom: 8px;"><a href="portfolio.html" style="color: #00eaff; text-decoration: none; font-family: 'JetBrains Mono', monospace; font-size: 0.85rem; font-weight: bold;">View All Games →</a></li>
+          </ul>
+        </div>
+
+        <!-- Services Section -->
+        <div class="col-lg-3 col-md-6">
+          <h4 style="color: #00eaff; text-shadow: 0 0 10px #00eaff; font-family: 'JetBrains Mono', monospace; font-size: 1rem; margin-bottom: 20px;">Services</h4>
+          <ul style="list-style: none; padding: 0;">
+            <li style="margin-bottom: 8px;"><a href="https://actify.dharmikgohil.fun/" target="_blank" style="color: #15ff00; text-decoration: none; font-family: 'JetBrains Mono', monospace; font-size: 0.85rem;">Actify</a></li>
+            <li style="margin-bottom: 8px;"><a href="https://fkm.vercel.app/" target="_blank" style="color: #15ff00; text-decoration: none; font-family: 'JetBrains Mono', monospace; font-size: 0.85rem;">Wifi Service</a></li>
+            <li style="margin-bottom: 8px;"><a href="assets/Fit Sync.apk" target="_blank" style="color: #15ff00; text-decoration: none; font-family: 'JetBrains Mono', monospace; font-size: 0.85rem;">Fit Sync App</a></li>
+            <li style="margin-bottom: 8px;"><a href="https://learnlink.dharmikgohil.fun" target="_blank" style="color: #15ff00; text-decoration: none; font-family: 'JetBrains Mono', monospace; font-size: 0.85rem;">Learn Link</a></li>
+            <li style="margin-bottom: 8px;"><a href="protected-access.html" style="color: #15ff00; text-decoration: none; font-family: 'JetBrains Mono', monospace; font-size: 0.85rem;">Protected Access</a></li>
+            <li style="margin-bottom: 8px;"><a href="services.html" style="color: #00eaff; text-decoration: none; font-family: 'JetBrains Mono', monospace; font-size: 0.85rem; font-weight: bold;">View All Services →</a></li>
+          </ul>
+        </div>
+
+        <!-- Latest Blogs Section -->
+        <div class="col-lg-3 col-md-6">
+          <h4 style="color: #00eaff; text-shadow: 0 0 10px #00eaff; font-family: 'JetBrains Mono', monospace; font-size: 1rem; margin-bottom: 20px;">Latest Blogs</h4>
+          <ul style="list-style: none; padding: 0;">
+            <li style="margin-bottom: 8px;"><a href="blog/hackron-hackathon-2025-blinkit-experience.html" style="color: #15ff00; text-decoration: none; font-family: 'JetBrains Mono', monospace; font-size: 0.85rem;">Hackron Hackathon 2025</a></li>
+            <li style="margin-bottom: 8px;"><a href="blog/iit-bombay-techfest-2024-experience.html" style="color: #15ff00; text-decoration: none; font-family: 'JetBrains Mono', monospace; font-size: 0.85rem;">IIT Bombay Techfest 2024</a></li>
+            <li style="margin-bottom: 8px;"><a href="blog/mavericks-battlegrounds-game-development-journey.html" style="color: #15ff00; text-decoration: none; font-family: 'JetBrains Mono', monospace; font-size: 0.85rem;">Mavericks Development</a></li>
+            <li style="margin-bottom: 8px;"><a href="blog/charusat-university-experience.html" style="color: #15ff00; text-decoration: none; font-family: 'JetBrains Mono', monospace; font-size: 0.85rem;">CHARUSAT Experience</a></li>
+            <li style="margin-bottom: 8px;"><a href="blog/vr-ar-future-gaming.html" style="color: #15ff00; text-decoration: none; font-family: 'JetBrains Mono', monospace; font-size: 0.85rem;">VR/AR Future Gaming</a></li>
+            <li style="margin-bottom: 8px;"><a href="blog.html" style="color: #00eaff; text-decoration: none; font-family: 'JetBrains Mono', monospace; font-size: 0.85rem; font-weight: bold;">Read All Blogs →</a></li>
+          </ul>
+        </div>
+
+        <!-- Quick Links Section -->
+        <div class="col-lg-3 col-md-6">
+          <h4 style="color: #00eaff; text-shadow: 0 0 10px #00eaff; font-family: 'JetBrains Mono', monospace; font-size: 1rem; margin-bottom: 20px;">Quick Links</h4>
+          <ul style="list-style: none; padding: 0;">
+            <li style="margin-bottom: 8px;"><a href="index.html" style="color: #15ff00; text-decoration: none; font-family: 'JetBrains Mono', monospace; font-size: 0.85rem;">Home</a></li>
+            <li style="margin-bottom: 8px;"><a href="about.html" style="color: #15ff00; text-decoration: none; font-family: 'JetBrains Mono', monospace; font-size: 0.85rem;">About</a></li>
+            <li style="margin-bottom: 8px;"><a href="portfolio.html" style="color: #15ff00; text-decoration: none; font-family: 'JetBrains Mono', monospace; font-size: 0.85rem;">Portfolio</a></li>
+            <li style="margin-bottom: 8px;"><a href="resume.html" style="color: #15ff00; text-decoration: none; font-family: 'JetBrains Mono', monospace; font-size: 0.85rem;">Resume</a></li>
+            <li style="margin-bottom: 8px;"><a href="contact.html" style="color: #15ff00; text-decoration: none; font-family: 'JetBrains Mono', monospace; font-size: 0.85rem;">Contact</a></li>
+            <li style="margin-bottom: 8px;"><a href="Achivemtn.html" style="color: #15ff00; text-decoration: none; font-family: 'JetBrains Mono', monospace; font-size: 0.85rem;">Achievements</a></li>
+          </ul>
+        </div>
       </div>
-      <div class="social-links d-flex justify-content-center">
-        <a href="https://github.com/DharmikGohil013"><i class="bi bi-github"></i></a>
-        <a href="https://www.linkedin.com/in/dharmikgohil086/"><i class="bi bi-linkedin"></i></a>
-        <a href="https://www.instagram.com/dharmik.086/?next=%2F"><i class="bi bi-instagram"></i></a>
-        <a href="https://x.com/Dharmik086"><i class="bi bi-twitter"></i></a>
-        <a href="https://play.google.com/store/apps/details?id=com.dharmikgohilfun.crossout"><i class="bi bi-google-play"></i></a>
+
+      <hr style="border-color: rgba(0, 234, 255, 0.3); margin: 30px 0;">
+
+      <div class="copyright text-center">
+        <p>© <span>Copyright</span> <strong class="px-1 sitename"><a href="https://dharmikgohil.fun/" style="color: #00eaff; text-decoration: none;">Dharmik Gohil</a></strong> <span>All Rights Reserved</span></p>
+      </div>
+      <div class="social-links d-flex justify-content-center" style="margin-top: 20px;">
+        <a href="https://github.com/DharmikGohil013" style="margin: 0 10px;"><i class="bi bi-github"></i></a>
+        <a href="https://www.linkedin.com/in/dharmikgohil086/" style="margin: 0 10px;"><i class="bi bi-linkedin"></i></a>
+        <a href="https://www.instagram.com/dharmik.086/?next=%2F" style="margin: 0 10px;"><i class="bi bi-instagram"></i></a>
+        <a href="https://x.com/Dharmik086" style="margin: 0 10px;"><i class="bi bi-twitter"></i></a>
+        <a href="https://play.google.com/store/apps/details?id=com.dharmikgohilfun.crossout" style="margin: 0 10px;"><i class="bi bi-google-play"></i></a>
       </div>
     </div>
   </footer>

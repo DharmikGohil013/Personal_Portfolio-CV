@@ -779,7 +779,7 @@ body {
     }
 
     .section-title h2 {
-      font-family: 'Press Start 2P', cursive;
+      font-family: 'JetBrains Mono', monospace;
       font-size: clamp(1.8rem, 6vw, 2.5rem);
       color: #fff;
       text-shadow: 0 0 15px #00eaff;
@@ -828,7 +828,7 @@ body {
     }
 
     .portfolio-info h3 {
-      font-family: 'Press Start 2P', cursive;
+      font-family: 'JetBrains Mono', monospace;
       color: #00eaff;
       text-shadow: 0 0 10px #00eaff;
       font-size: clamp(1.2rem, 4vw, 1.5rem);
@@ -855,7 +855,7 @@ body {
     }
 
     .portfolio-description h2 {
-      font-family: 'Press Start 2P', cursive;
+      font-family: 'JetBrains Mono', monospace;
       color: #00eaff;
       text-shadow: 0 0 10px #00eaff;
       font-size: clamp(1.2rem, 4vw, 1.5rem);
@@ -1295,7 +1295,7 @@ body {
 }
 
 .header h1 {
-  font-family: 'Press Start 2P', cursive;
+  font-family: 'JetBrains Mono', monospace;
   font-size: 2rem;
   text-transform: uppercase;
   letter-spacing: 2px;
@@ -1366,7 +1366,7 @@ body {
 }
 
 .hero h2 {
-  font-family: 'Press Start 2P', cursive;
+  font-family: 'JetBrains Mono', monospace;
   font-size: 3.5rem;
   color: #fff;
   text-shadow: 0 0 15px #00eaff, 0 0 30px #00eaff;
@@ -1423,7 +1423,7 @@ body {
 }
 
 .notification h3 {
-  font-family: 'Press Start 2P', cursive;
+  font-family: 'JetBrains Mono', monospace;
   font-size: 1.5rem;
   color: #15ff00;
   text-shadow: 0 0 10px #15ff00;
