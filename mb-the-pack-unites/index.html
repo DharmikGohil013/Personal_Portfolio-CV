@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maverick Battleground - The Pack Unites | Immersive Combat Experience</title>
+    <meta name="description" content="Maverick Battleground - The Pack Unites. Experience the ultimate tactical combat game with stunning visuals and intense multiplayer action.">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/favicon.png">
+    <link rel="shortcut icon" type="image/png" href="assets/favicon.png">
+    <link rel="apple-touch-icon" href="assets/favicon.png">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;600;700&family=Teko:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Three.js and Vanta.js for animated background -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.waves.min.js"></script>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body, html {
+            width: 100%;
+            height: 100%;
+            overflow-x: hidden;
+            font-family: 'Rajdhani', sans-serif;
+            color: #00FFFF;
+        }
+
+        #vanta-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+        }
+
+        .content-wrapper {
+            position: relative;
+            z-index: 1;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            animation: fadeInUp 1.5s ease-out;
+        }
+
+        .game-logo {
+            font-family: 'Orbitron', sans-serif;
+            font-size: clamp(2.5rem, 8vw, 6rem);
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 8px;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, #0066CC 0%, #003D82 50%, #001F4D 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-shadow: 0 0 30px rgba(255, 255, 255, 0.5),
+                         0 0 60px rgba(0, 61, 130, 0.3);
+            animation: neonPulse 2s ease-in-out infinite alternate;
+            position: relative;
+        }
+
+        .game-logo::before {
+            content: 'MAVERICK';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #0066CC 0%, #003D82 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            opacity: 0.3;
+            filter: blur(10px);
+            z-index: -1;
+        }
+
+        .game-subtitle {
+            font-family: 'Orbitron', sans-serif;
+            font-size: clamp(1.5rem, 4vw, 3rem);
+            font-weight: 700;
+            letter-spacing: 6px;
+            color: #d9ecff;
+            text-shadow: 0 0 20px rgba(0, 102, 204, 0.8),
+                         0 0 40px rgba(0, 61, 130, 0.5);
+            margin-bottom: 15px;
+            animation: fadeInUp 1.8s ease-out 0.3s both;
+        }
+
+        .game-tagline {
+            font-family: 'Teko', sans-serif;
+            font-size: clamp(1.2rem, 3vw, 2.2rem);
+            font-weight: 500;
+            letter-spacing: 6px;
+            color: #9ecdfe;
+            text-transform: uppercase;
+            margin-bottom: 50px;
+            text-shadow: 0 0 15px rgba(77, 163, 255, 0.6);
+            animation: fadeInUp 2s ease-out 0.6s both;
+            font-style: italic;
+        }
+
+        /* Glitch Effect */
+        .glitch {
+            position: relative;
+            display: inline-block;
+        }
+
+        .glitch::before,
+        .glitch::after {
+            content: attr(data-text);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.8;
+        }
+
+        .glitch::before {
+            animation: glitch-1 0.3s infinite;
+            color: #0066CC;
+            z-index: -1;
+        }
+
+        .glitch::after {
+            animation: glitch-2 0.3s infinite;
+            color: #003D82;
+            z-index: -2;
+        }
+
+        /* Action Buttons */
+        .action-buttons {
+            display: flex;
+            gap: 30px;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 60px;
+            animation: fadeInUp 2.3s ease-out 0.9s both;
+        }
+
+        .btn {
+            font-family: 'Orbitron', sans-serif;
+            font-size: clamp(1rem, 2vw, 1.3rem);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            padding: 20px 50px;
+            border: 3px solid #0066CC;
+            background: rgba(0, 102, 204, 0.1);
+            color: #b8dbff;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s ease;
+            text-decoration: none;
+            display: inline-block;
+            clip-path: polygon(10% 0%, 100% 0%, 90% 100%, 0% 100%);
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(0, 102, 204, 0.4), transparent);
+            transition: left 0.6s ease;
+        }
+
+        .btn:hover::before {
+            left: 100%;
+        }
+
+        .btn:hover {
+            background: rgba(0, 102, 204, 0.3);
+            box-shadow: 0 0 30px rgba(0, 102, 204, 0.6),
+                        inset 0 0 20px rgba(0, 102, 204, 0.2);
+            transform: translateY(-5px);
+        }
+
+        .btn-primary {
+            border-color: #0066CC;
+            background: rgba(0, 102, 204, 0.2);
+            box-shadow: 0 0 20px rgba(0, 102, 204, 0.4);
+        }
+
+        .btn-secondary {
+            border-color: #003D82;
+            color: #003D82;
+            background: rgba(0, 61, 130, 0.1);
+        }
+
+        .btn-secondary:hover {
+            border-color: #0066CC;
+            color: #0066CC;
+            background: rgba(0, 61, 130, 0.3);
+        }
+
+        /* Features Section */
+        .features {
+            margin-top: 100px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            width: 100%;
+            max-width: 1200px;
+            animation: fadeInUp 2.6s ease-out 1.2s both;
+        }
+
+        .feature-card {
+            background: rgba(0, 83, 156, 0.2);
+            border: 2px solid rgba(0, 102, 204, 0.3);
+            padding: 40px 30px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s ease;
+            clip-path: polygon(0% 10%, 100% 0%, 100% 90%, 0% 100%);
+        }
+
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(0, 102, 204, 0.1), transparent);
+            transform: rotate(45deg);
+            transition: all 0.6s ease;
+        }
+
+        .feature-card:hover::before {
+            transform: rotate(45deg) translate(50%, 50%);
+        }
+
+        .feature-card:hover {
+            border-color: #0066CC;
+            box-shadow: 0 0 40px rgba(0, 102, 204, 0.4);
+            transform: translateY(-10px);
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            color: #0066CC;
+            text-shadow: 0 0 20px rgba(0, 102, 204, 0.8);
+        }
+
+        .feature-title {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            color: #0066CC;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+        }
+
+        .feature-description {
+            font-size: 1rem;
+            line-height: 1.6;
+            color: #003D82;
+            letter-spacing: 1px;
+        }
+
+        /* Release Date */
+        .release-date {
+            position: fixed;
+            bottom: 40px;
+            right: 40px;
+            text-align: center;
+            padding: 20px 30px;
+            background: rgba(0, 83, 156, 0.3);
+            border: 2px solid rgba(0, 102, 204, 0.5);
+            clip-path: polygon(10% 0%, 100% 0%, 90% 100%, 0% 100%);
+            animation: fadeInUp 2.8s ease-out 1.5s both;
+            z-index: 10;
+        }
+
+        .release-text {
+            font-family: 'Teko', sans-serif;
+            font-size: 1rem;
+            font-weight: 500;
+            letter-spacing: 3px;
+            color: #9ecdfe;
+            text-transform: uppercase;
+            margin-bottom: 5px;
+        }
+
+        .release-date-text {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            color: #f8f9f9;
+            text-shadow: 0 0 20px rgba(0, 102, 204, 0.8);
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes neonPulse {
+            from {
+                text-shadow: 0 0 20px rgba(0, 102, 204, 0.4),
+                             0 0 40px rgba(0, 61, 130, 0.2);
+            }
+            to {
+                text-shadow: 0 0 40px rgba(0, 102, 204, 0.8),
+                             0 0 80px rgba(0, 61, 130, 0.5);
+            }
+        }
+
+        @keyframes glitch-1 {
+            0%, 100% {
+                transform: translate(0);
+            }
+            33% {
+                transform: translate(-2px, 2px);
+            }
+            66% {
+                transform: translate(2px, -2px);
+            }
+        }
+
+        @keyframes glitch-2 {
+            0%, 100% {
+                transform: translate(0);
+            }
+            33% {
+                transform: translate(2px, -2px);
+            }
+            66% {
+                transform: translate(-2px, 2px);
+            }
+        }
+
+        /* Scroll indicator */
+        .scroll-indicator {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: bounce 2s infinite;
+        }
+
+        .scroll-indicator::before {
+            content: '▼';
+            font-size: 2rem;
+            color: #0066CC;
+            text-shadow: 0 0 20px rgba(0, 102, 204, 0.8);
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateX(-50%) translateY(0);
+            }
+            40% {
+                transform: translateX(-50%) translateY(-20px);
+            }
+            60% {
+                transform: translateX(-50%) translateY(-10px);
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .game-logo {
+                letter-spacing: 4px;
+            }
+            
+            .game-subtitle {
+                letter-spacing: 3px;
+            }
+            
+            .game-tagline {
+                letter-spacing: 4px;
+            }
+            
+            .action-buttons {
+                flex-direction: column;
+                gap: 20px;
+            }
+            
+            .btn {
+                padding: 15px 40px;
+                letter-spacing: 2px;
+            }
+            
+            .features {
+                margin-top: 60px;
+                gap: 30px;
+            }
+
+            .release-date {
+                bottom: 20px;
+                right: 20px;
+                padding: 15px 20px;
+            }
+
+            .release-text {
+                font-size: 0.85rem;
+                letter-spacing: 2px;
+            }
+
+            .release-date-text {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Vanta.js Animated Background -->
+    <div id="vanta-bg"></div>
+
+    <!-- Main Content -->
+    <div class="content-wrapper">
+        <div class="hero">
+            <h1 class="game-logo glitch" data-text="MAVERICK">MAVERICK</h1>
+            <h2 class="game-subtitle">BATTLEGROUND</h2>
+            <p class="game-tagline">The Pack Unites</p>
+            
+            <div class="action-buttons">
+                <a href="#" class="btn btn-primary" style="pointer-events: none; opacity: 0.7;">Coming Soon</a>
+                <a href="learn-more.html" class="btn btn-secondary">Learn More</a>
+            </div>
+        </div>
+        
+        <!-- Release Date -->
+        <div class="release-date">
+            <p class="release-text">Release Date</p>
+            <p class="release-date-text">12th June 2028</p>
+        </div>
+    </div>
+
+    <!-- Vanta.js Initialization -->
+    <script>
+        VANTA.WAVES({
+            el: "#vanta-bg",
+            mouseControls: true,
+            touchControls: true,
+            gyroControls: false,
+            minHeight: 200.00,
+            minWidth: 200.00,
+            scale: 1.00,
+            scaleMobile: 1.00,
+            color: 0x5588,
+            shininess: 30,
+            waveHeight: 15,
+            waveSpeed: 1,
+            zoom: 1
+        });
+
+        // Prevent right-click for immersive experience (optional)
+        document.addEventListener('contextmenu', event => event.preventDefault());
+
+        // Add parallax effect to content
+        document.addEventListener('mousemove', (e) => {
+            const moveX = (e.clientX - window.innerWidth / 2) * 0.01;
+            const moveY = (e.clientY - window.innerHeight / 2) * 0.01;
+            
+            document.querySelector('.hero').style.transform = 
+                `translate(${moveX}px, ${moveY}px)`;
+        });
+    </script>
+</body>
+</html>

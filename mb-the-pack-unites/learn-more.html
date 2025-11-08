@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maverick Battleground - Learn More | The Pack Unites 2028</title>
+    <meta name="description" content="Discover the revolutionary features of Maverick Battleground - The Pack Unites. Experience futuristic combat with flying vehicles, AI-powered gameplay, and stunning cityscapes in 2028.">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/favicon.png">
+    <link rel="shortcut icon" type="image/png" href="assets/favicon.png">
+    <link rel="apple-touch-icon" href="assets/favicon.png">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;600;700&family=Teko:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Three.js and Vanta.js for animated background -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.waves.min.js"></script>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body, html {
+            width: 100%;
+            min-height: 100vh;
+            overflow-x: hidden;
+            font-family: 'Rajdhani', sans-serif;
+            color: #00FFFF;
+            background: #000a1a;
+        }
+
+        #vanta-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            filter: blur(8px);
+        }
+
+        .content-wrapper {
+            position: relative;
+            z-index: 1;
+            min-height: 100vh;
+            padding: 80px 20px;
+            backdrop-filter: blur(0px);
+        }
+
+        /* Header Section */
+        .header {
+            text-align: center;
+            margin-bottom: 80px;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .back-button {
+            position: fixed;
+            top: 30px;
+            left: 30px;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            padding: 15px 30px;
+            border: 2px solid #0066CC;
+            background: rgba(0, 102, 204, 0.2);
+            color: #b8dbff;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            clip-path: polygon(10% 0%, 100% 0%, 90% 100%, 0% 100%);
+            transition: all 0.4s ease;
+            z-index: 100;
+        }
+
+        .back-button:hover {
+            background: rgba(0, 102, 204, 0.4);
+            box-shadow: 0 0 30px rgba(0, 102, 204, 0.6);
+            transform: translateX(-5px);
+        }
+
+        .page-title {
+            font-family: 'Orbitron', sans-serif;
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 6px;
+            margin-bottom: 20px;
+            color: #4DA3FF;
+            text-shadow: 0 0 30px rgba(77, 163, 255, 0.8),
+                         0 0 60px rgba(77, 163, 255, 0.5);
+            animation: neonPulse 2s ease-in-out infinite alternate;
+        }
+
+        .page-subtitle {
+            font-family: 'Teko', sans-serif;
+            font-size: clamp(1.2rem, 3vw, 2rem);
+            font-weight: 500;
+            letter-spacing: 4px;
+            color: #66B3FF;
+            text-transform: uppercase;
+            margin-bottom: 30px;
+            text-shadow: 0 0 15px rgba(102, 179, 255, 0.6);
+        }
+
+        /* Content Sections */
+        .content-section {
+            max-width: 1400px;
+            margin: 0 auto 100px;
+            animation: fadeInUp 1.2s ease-out;
+        }
+
+        .section-title {
+            font-family: 'Orbitron', sans-serif;
+            font-size: clamp(1.8rem, 4vw, 3rem);
+            font-weight: 700;
+            letter-spacing: 4px;
+            color: #4DA3FF;
+            text-transform: uppercase;
+            margin-bottom: 40px;
+            text-align: center;
+            text-shadow: 0 0 20px rgba(77, 163, 255, 0.8);
+        }
+
+        /* Intro Section */
+        .intro-image-container {
+            width: 100%;
+            max-width: 100%;
+            margin: 0 auto 60px;
+            position: relative;
+            overflow: hidden;
+            border: none;
+            border-top: 3px solid rgba(0, 102, 204, 0.5);
+            border-bottom: 3px solid rgba(0, 102, 204, 0.5);
+            clip-path: none;
+            box-shadow: 0 0 40px rgba(0, 102, 204, 0.4);
+            animation: fadeInUp 1.5s ease-out;
+        }
+
+        .intro-image-container img {
+            width: 100%;
+            height: 100vh;
+            display: block;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+
+        .intro-image-container:hover img {
+            transform: scale(1.05);
+        }
+
+        .intro-text {
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto 60px;
+            padding: 30px;
+            background: rgba(0, 83, 156, 0.2);
+            border: 2px solid rgba(0, 102, 204, 0.3);
+            clip-path: polygon(0% 5%, 100% 0%, 100% 95%, 0% 100%);
+        }
+
+        .intro-text p {
+            font-size: clamp(1rem, 2vw, 1.3rem);
+            line-height: 1.8;
+            color: #b8dbff;
+            letter-spacing: 1px;
+            margin-bottom: 15px;
+        }
+
+        .intro-text .highlight {
+            color: #0066CC;
+            font-weight: 700;
+            text-shadow: 0 0 10px rgba(0, 102, 204, 0.6);
+        }
+
+        /* Feature Grid */
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+            gap: 60px;
+            margin-top: 60px;
+        }
+
+        .feature-item {
+            background: rgba(0, 83, 156, 0.2);
+            border: 2px solid rgba(0, 102, 204, 0.3);
+            padding: 0;
+            overflow: hidden;
+            transition: all 0.4s ease;
+            clip-path: polygon(0% 3%, 100% 0%, 100% 97%, 0% 100%);
+        }
+
+        .feature-item:hover {
+            border-color: #0066CC;
+            box-shadow: 0 0 50px rgba(0, 102, 204, 0.5);
+            transform: translateY(-10px);
+        }
+
+        .feature-image {
+            width: 100%;
+            height: 80vh;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .feature-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+
+        .feature-image.placeholder {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.5rem;
+            color: rgba(0, 102, 204, 0.5);
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+
+        .feature-item:hover .feature-image img {
+            transform: scale(1.1);
+        }
+
+        .feature-content {
+            padding: 30px;
+        }
+
+        .feature-title {
+            font-family: 'Orbitron', sans-serif;
+            font-size: clamp(1.3rem, 2.5vw, 1.8rem);
+            font-weight: 700;
+            letter-spacing: 3px;
+            color: #4DA3FF;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            text-shadow: 0 0 15px rgba(77, 163, 255, 0.6);
+        }
+
+        .feature-description {
+            font-size: clamp(1rem, 1.5vw, 1.2rem);
+            line-height: 1.8;
+            color: #9ecdfe;
+            letter-spacing: 1px;
+        }
+
+        .feature-badge {
+            display: inline-block;
+            padding: 8px 20px;
+            background: rgba(0, 102, 204, 0.3);
+            border: 1px solid #0066CC;
+            color: #0066CC;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 0.9rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-top: 15px;
+            clip-path: polygon(5% 0%, 100% 0%, 95% 100%, 0% 100%);
+        }
+
+        /* City Showcase */
+        .city-showcase {
+            margin-top: 80px;
+            text-align: center;
+        }
+
+        .city-image-container {
+            width: 100%;
+            max-width: 1400px;
+            margin: 0 auto;
+            position: relative;
+            overflow: hidden;
+            border: 3px solid rgba(0, 102, 204, 0.5);
+            clip-path: polygon(1% 0%, 100% 0%, 99% 100%, 0% 100%);
+            box-shadow: 0 0 50px rgba(0, 102, 204, 0.5);
+        }
+
+        .city-image-container img {
+            width: 100%;
+            height: 100vh;
+            display: block;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+
+        .city-image-container:hover img {
+            transform: scale(1.03);
+        }
+
+        .city-description {
+            max-width: 1000px;
+            margin: 40px auto 0;
+            padding: 40px;
+            background: rgba(0, 83, 156, 0.25);
+            border: 2px solid rgba(0, 102, 204, 0.4);
+            clip-path: polygon(0% 5%, 100% 0%, 100% 95%, 0% 100%);
+        }
+
+        .city-description h3 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: clamp(1.5rem, 3vw, 2.2rem);
+            font-weight: 700;
+            letter-spacing: 3px;
+            color: #4DA3FF;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            text-shadow: 0 0 15px rgba(77, 163, 255, 0.6);
+        }
+
+        .city-description p {
+            font-size: clamp(1rem, 2vw, 1.3rem);
+            line-height: 1.8;
+            color: #b8dbff;
+            letter-spacing: 1px;
+            margin-bottom: 15px;
+        }
+
+        /* Release Info */
+        .release-info {
+            text-align: center;
+            margin-top: 100px;
+            padding: 50px 30px;
+            background: rgba(0, 102, 204, 0.15);
+            border: 3px solid rgba(0, 102, 204, 0.4);
+            clip-path: polygon(0% 2%, 100% 0%, 100% 98%, 0% 100%);
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .release-info h3 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: clamp(1.5rem, 3vw, 2.5rem);
+            font-weight: 900;
+            letter-spacing: 4px;
+            color: #4DA3FF;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            text-shadow: 0 0 25px rgba(77, 163, 255, 0.8);
+        }
+
+        .release-info p {
+            font-family: 'Teko', sans-serif;
+            font-size: clamp(1.2rem, 2.5vw, 1.8rem);
+            color: #9ecdfe;
+            letter-spacing: 3px;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes neonPulse {
+            from {
+                text-shadow: 0 0 20px rgba(77, 163, 255, 0.6);
+            }
+            to {
+                text-shadow: 0 0 40px rgba(77, 163, 255, 1);
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .content-wrapper {
+                padding: 60px 0;
+            }
+
+            .back-button {
+                top: 15px;
+                left: 15px;
+                padding: 12px 20px;
+                font-size: 0.9rem;
+            }
+
+            .header {
+                margin-bottom: 50px;
+            }
+
+            .feature-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .feature-image {
+                height: 60vh;
+            }
+
+            .feature-content {
+                padding: 20px;
+            }
+
+            .intro-text, .city-description {
+                padding: 20px;
+            }
+
+            .intro-image-container img {
+                height: 70vh;
+            }
+
+            .city-image-container img {
+                height: 70vh;
+            }
+
+            .city-showcase {
+                margin-top: 50px;
+            }
+
+            .release-info {
+                margin-top: 60px;
+                padding: 30px 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .feature-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Vanta.js Animated Background -->
+    <div id="vanta-bg"></div>
+
+    <!-- Back Button -->
+    <a href="index.html" class="back-button">← Back</a>
+
+    <!-- Main Content -->
+    <div class="content-wrapper">
+        <!-- Header -->
+        <div class="header">
+            <h1 class="page-title">The Pack Unites</h1>
+            <p class="page-subtitle">Maverick Battleground 2.0 - AI Version</p>
+        </div>
+
+        <!-- Intro Section -->
+        <section class="content-section">
+            <div class="intro-image-container">
+                <img src="assets/images/intro-banner.jpg" alt="Mavericks Battleground - The Pack Unites 12th June 2028" loading="lazy">
+            </div>
+            
+            <div class="intro-text">
+                <p><span class="highlight">The battleground is no longer just about survival.</span></p>
+                <p>A new intelligence has taken root, commanding a horde that fights as one. It's time to find your pack.</p>
+                <p>Maverick Battlegrounds is evolving with <span class="highlight">AI-powered combat systems</span>, revolutionary gameplay mechanics, and a world that breathes with next-generation technology.</p>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section class="content-section">
+            <h2 class="section-title">Revolutionary Features</h2>
+            
+            <div class="feature-grid">
+                <!-- Flying Vehicles Feature 1 -->
+                <div class="feature-item">
+                    <div class="feature-image">
+                        <img src="assets/images/flying-car-1.jpg" alt="Futuristic Flying Vehicle in Mavericks Battleground" loading="lazy">
+                    </div>
+                    <div class="feature-content">
+                        <h3 class="feature-title">Aerial Combat Vehicles</h3>
+                        <p class="feature-description">
+                            Experience the next evolution of combat with <strong>flying vehicles</strong>. Navigate through sprawling cityscapes, execute high-speed chases, and engage in aerial dogfights. The future of 2028 brings unprecedented mobility to the battlefield.
+                        </p>
+                        <span class="feature-badge">New Concept 2028</span>
+                    </div>
+                </div>
+
+                <!-- Flying Vehicle 2 -->
+                <div class="feature-item">
+                    <div class="feature-image">
+                        <img src="assets/images/flying-car-2.jpg" alt="Advanced Flying Combat System" loading="lazy">
+                    </div>
+                    <div class="feature-content">
+                        <h3 class="feature-title">Advanced Flight Mechanics</h3>
+                        <p class="feature-description">
+                            Master the skies with intuitive flight controls and tactical aerial maneuvers. Each vehicle is equipped with state-of-the-art technology, offering unique advantages in combat scenarios. Dominate from above or strike from the shadows below.
+                        </p>
+                        <span class="feature-badge">Innovation 2028</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- City Showcase -->
+        <section class="content-section city-showcase">
+            <h2 class="section-title">Futuristic Urban Warfare</h2>
+            
+            <div class="city-image-container">
+                <img src="assets/images/city-view.jpg" alt="Futuristic City Environment in Mavericks Battleground 2028" loading="lazy">
+            </div>
+            
+            <div class="city-description">
+                <h3>Immersive Urban Landscapes</h3>
+                <p>
+                    Battle across breathtaking futuristic cityscapes that stretch as far as the eye can see. From towering megastructures to ground-level industrial zones, every corner of the map offers tactical opportunities.
+                </p>
+                <p>
+                    The city of 2028 is alive with dynamic weather systems, destructible environments, and vertical gameplay elements that transform traditional combat into a three-dimensional tactical experience.
+                </p>
+                <p>
+                    <strong>Day and night cycles</strong> affect visibility and strategy, while <strong>environmental hazards</strong> keep you on your toes. This is urban warfare reimagined for the next generation.
+                </p>
+            </div>
+        </section>
+
+        <!-- Release Info -->
+        <div class="release-info">
+            <h3>Coming Soon</h3>
+            <p>Launch Date: 12th June 2028</p>
+        </div>
+    </div>
+
+    <!-- Vanta.js Initialization -->
+    <script>
+        VANTA.WAVES({
+            el: "#vanta-bg",
+            mouseControls: true,
+            touchControls: true,
+            gyroControls: false,
+            minHeight: 200.00,
+            minWidth: 200.00,
+            scale: 1.00,
+            scaleMobile: 1.00,
+            color: 0x5588,
+            shininess: 30,
+            waveHeight: 15,
+            waveSpeed: 1,
+            zoom: 1
+        });
+
+        // Smooth scroll behavior
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Lazy loading enhancement
+        if ('IntersectionObserver' in window) {
+            const imageObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const img = entry.target;
+                        img.classList.add('loaded');
+                        observer.unobserve(img);
+                    }
+                });
+            });
+
+            document.querySelectorAll('img[loading="lazy"]').forEach(img => {
+                imageObserver.observe(img);
+            });
+        }
+
+        // Parallax effect for images on scroll
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const parallaxElements = document.querySelectorAll('.feature-image img, .city-image-container img');
+            
+            parallaxElements.forEach(element => {
+                const speed = 0.5;
+                const yPos = -(scrolled * speed / 10);
+                element.style.transform = `translateY(${yPos}px)`;
+            });
+        });
+    </script>
+</body>
+</html>
