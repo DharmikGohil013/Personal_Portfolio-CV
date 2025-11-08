@@ -1,0 +1,32 @@
+# Robots.txt for dharmikgohil.fun
+# Optimized for SEO - Dharmik Gohil Game Developer Portfolio
+
+User-agent: *
+Allow: /
+Allow: /mb-the-pack-unites/
+Allow: /blog/
+Allow: /assets/img/
+Allow: /assets/css/
+Allow: /assets/js/
+
+# Disallow unnecessary crawling
+Disallow: /assets/games/
+Disallow: /forms/
+Disallow: /assets/vendor/
+Disallow: /assets/New folder/
+Disallow: /assets/New folder (2)/
+Disallow: /*.pdf$
+Disallow: /assets/scss/
+
+# Allow specific files
+Allow: /sitemap-enhanced.xml
+Allow: /sitemap.xml
+Allow: /image-sitemap.xml
+
+# Sitemaps
+Sitemap: https://dharmikgohil.fun/sitemap-enhanced.xml
+Sitemap: https://dharmikgohil.fun/sitemap.xml
+Sitemap: https://dharmikgohil.fun/image-sitemap.xml
+
+# Crawl-delay for politeness
+Crawl-delay: 1
