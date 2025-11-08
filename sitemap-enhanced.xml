@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+        http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+  
+  <!-- Homepage - Primary SEO Target: dharmik, dharmikgohil, game developer -->
+  <url>
+    <loc>https://dharmikgohil.fun/</loc>
+    <lastmod>2025-11-08</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://dharmikgohil.fun/assets/img/dharmik-gohil-professional-headshot-photo.png</image:loc>
+      <image:title>Dharmik Gohil Professional Game Developer Unity XR Specialist Portfolio</image:title>
+      <image:caption>Expert Game Developer Dharmik Gohil from CHARUSAT University specializing in Unity XR development mobile games VR AR</image:caption>
+    </image:image>
+  </url>
+  
+  <!-- About Page - Target: dharmik gohil, CHARUSAT University, DEPSTAR College -->
+  <url>
+    <loc>https://dharmikgohil.fun/about.html</loc>
+    <lastmod>2025-11-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  
+  <!-- Portfolio Page - Target: game developer portfolio, unity projects -->
+  <url>
+    <loc>https://dharmikgohil.fun/portfolio.html</loc>
+    <lastmod>2025-11-08</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+  </url>
+  
+  <!-- Services/Abilities Page -->
+  <url>
+    <loc>https://dharmikgohil.fun/services.html</loc>
+    <lastmod>2025-11-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  
+  <!-- Resume Page -->
+  <url>
+    <loc>https://dharmikgohil.fun/resume.html</loc>
+    <lastmod>2025-11-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <!-- Contact Page -->
+  <url>
+    <loc>https://dharmikgohil.fun/contact.html</loc>
+    <lastmod>2025-11-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <!-- Achievements Page -->
+  <url>
+    <loc>https://dharmikgohil.fun/Achivemtn.html</loc>
+    <lastmod>2025-11-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  
+  <!-- Blog Main Page -->
+  <url>
+    <loc>https://dharmikgohil.fun/blog.html</loc>
+    <lastmod>2025-11-08</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  
+  <!-- Logo/Design Portfolio -->
+  <url>
+    <loc>https://dharmikgohil.fun/logo.html</loc>
+    <lastmod>2025-11-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <!-- Mavericks Battleground - The Pack Unites (Featured Game) -->
+  <url>
+    <loc>https://dharmikgohil.fun/mb-the-pack-unites/index.html</loc>
+    <lastmod>2025-11-08</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+    <image:image>
+      <image:loc>https://dharmikgohil.fun/mb-the-pack-unites/assets/images/intro-banner.jpg</image:loc>
+      <image:title>Mavericks Battleground The Pack Unites Release Date June 12 2028 AI Powered Tactical Combat Game</image:title>
+      <image:caption>Mavericks Battleground The Pack Unites tactical multiplayer shooter with AI powered gameplay flying vehicles releasing June 2028 by Dharmik Gohil</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://dharmikgohil.fun/mb-the-pack-unites/assets/images/flying-car-1.jpg</image:loc>
+      <image:title>Mavericks Battleground Flying Vehicles Futuristic Aerial Combat Dharmik Gohil Game 2028</image:title>
+      <image:caption>Revolutionary flying vehicle combat system aerial warfare mechanics in Mavericks Battleground tactical shooter game developed by Dharmik Gohil Unity developer</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://dharmikgohil.fun/mb-the-pack-unites/assets/images/flying-car-2.jpg</image:loc>
+      <image:title>Mavericks Battleground Advanced Flight Mechanics Aerial Combat Game Dharmik Gohil</image:title>
+      <image:caption>Advanced flying car mechanics aerial dogfight system in Mavericks Battleground 2028 multiplayer game by game developer Dharmik Gohil</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://dharmikgohil.fun/mb-the-pack-unites/assets/images/city-view.jpg</image:loc>
+      <image:title>Mavericks Battleground Futuristic City Urban Warfare Environment 2028 Dharmik Gohil</image:title>
+      <image:caption>Stunning futuristic cityscape environment tactical urban warfare destructible environments in Mavericks Battleground game by Dharmik Gohil professional game developer</image:caption>
+    </image:image>
+  </url>
+  
+  <!-- Mavericks Battleground - Learn More Page -->
+  <url>
+    <loc>https://dharmikgohil.fun/mb-the-pack-unites/learn-more.html</loc>
+    <lastmod>2025-11-08</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  
+  <!-- Blog Posts -->
+  <url>
+    <loc>https://dharmikgohil.fun/blog/mavericks-battlegrounds-game-development-journey.html</loc>
+    <lastmod>2025-11-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  
+  <url>
+    <loc>https://dharmikgohil.fun/blog/unity-game-development-tips.html</loc>
+    <lastmod>2025-11-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>https://dharmikgohil.fun/blog/getting-started-unity-xr.html</loc>
+    <lastmod>2025-11-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>https://dharmikgohil.fun/blog/vr-ar-future-gaming.html</loc>
+    <lastmod>2025-11-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>https://dharmikgohil.fun/blog/mobile-game-optimization.html</loc>
+    <lastmod>2025-11-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>https://dharmikgohil.fun/blog/game-developer-career-guide.html</loc>
+    <lastmod>2025-11-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>https://dharmikgohil.fun/blog/iit-bombay-techfest-2024-experience.html</loc>
+    <lastmod>2025-11-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  
+  <url>
+    <loc>https://dharmikgohil.fun/blog/hackron-hackathon-2025-blinkit-experience.html</loc>
+    <lastmod>2025-11-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  
+  <url>
+    <loc>https://dharmikgohil.fun/blog/charusat-university-experience.html</loc>
+    <lastmod>2025-11-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  
+  <!-- Game Project Pages -->
+  <url>
+    <loc>https://dharmikgohil.fun/game1.html</loc>
+    <lastmod>2025-11-08</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>https://dharmikgohil.fun/game2.html</loc>
+    <lastmod>2025-11-08</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>https://dharmikgohil.fun/game3.html</loc>
+    <lastmod>2025-11-08</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>https://dharmikgohil.fun/game4.html</loc>
+    <lastmod>2025-11-08</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>https://dharmikgohil.fun/game5.html</loc>
+    <lastmod>2025-11-08</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+</urlset>
