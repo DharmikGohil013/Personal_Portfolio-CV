@@ -1,0 +1,8 @@
+User-agent: *
+Disallow:
+
+# Point to sitemap for fast discovery
+Sitemap: https://dharmikgohil.fun/sitemap.xml
+
+# Crawl-delay not necessary for most modern crawlers; add if you see overload issues:
+# Crawl-delay: 10

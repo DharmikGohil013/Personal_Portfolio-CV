@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://dharmikgohil.fun/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+    <lastmod>2025-11-08</lastmod>
+  </url>
+  <url>
+    <loc>https://dharmikgohil.fun/learn-more.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <lastmod>2025-11-08</lastmod>
+  </url>
+  <url>
+    <loc>https://dharmikgohil.fun/promo.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2025-11-08</lastmod>
+  </url>
+  <!-- Images referenced for enhanced indexing -->
+  <url>
+    <loc>https://dharmikgohil.fun/assets/images/intro-banner.jpg</loc>
+  </url>
+  <url>
+    <loc>https://dharmikgohil.fun/assets/images/flying-car-1.jpg</loc>
+  </url>
+  <url>
+    <loc>https://dharmikgohil.fun/assets/images/flying-car-2.jpg</loc>
+  </url>
+  <url>
+    <loc>https://dharmikgohil.fun/assets/images/city-view.jpg</loc>
+  </url>
+</urlset>
