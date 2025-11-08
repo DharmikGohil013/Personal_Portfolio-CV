@@ -1263,10 +1263,11 @@
           <li><a href="Achivemtn.html">Milestones</a></li>
           <li class="dropdown"><a href="#"><span>Time to Fun</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
             <ul>
+              <li><a href="https://dharmikgohil.itch.io/mavericks-battlegrounds" target="_blank">Mavericks Battleground - The War Zone</a></li>
+              <li><a href="mb-the-pack-unites.html">Mavericks Battleground - The Pack Units</a></li>
               <li><a href="https://dharmik086.itch.io/floppy-bird-860" target="_blank">Floppy Bird</a></li>
               <li><a href="https://dharmik086.itch.io/minimario" target="_blank">MiniMario</a></li>
-              <li><a href="https://dharmikgohil.itch.io/mavericks-battlegrounds" target="_blank">MAVERICKS BATTLEGROUNDS</a></li>
-              <li><a href="#" onclick="downloadBatGame(event)">⚙️ Windows Update (Prank)</a></li>
+              
             </ul>
           </li>
           <li><a href="blog.html">Blog</a></li>
@@ -1398,11 +1399,11 @@
               </div>
             </div>
             <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app3d filter-productpc filter-product">
-              <img src="assets/img/Mavericks Battlegrounds[1].png" class="img-fluid" alt="Dharmik Gohil Mavericks Battlegrounds Multiplayer Game - Unity Networking Project">
+              <img src="assets/img/portfolio/mavericks-battleground-thumbnail.jpg" class="img-fluid" alt="Dharmik Gohil Mavericks Battlegrounds Multiplayer Game - Unity Networking Project">
               <div class="portfolio-info">
                 <h4>Mavericks Battlegrounds</h4>
-                <p>First Multiplayer Game</p>
-                <a href="assets/img/Mavericks Battlegrounds[1].png" title="Mavericks Battlegrounds" data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                <p>The War Zone</p>
+                <a href="assets/img/portfolio/mavericks-battleground-thumbnail.jpg" title="Mavericks Battlegrounds" data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
                 <a href="game4.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
               </div>
             </div>
@@ -2273,7 +2274,7 @@
     'assets/img/dlogo.png',
     'assets/img/dharmik-gohil-professional-headshot-photo.png',
     'assets/img/indian-developer-community-logo.png',
-    'assets/img/Mavericks Battlegrounds[1].png',
+    'assets/img/portfolio/mavericks-battleground-thumbnail.jpg',
     'assets/img/masonry-portfolio/dharmik-gohil-unity-game-development-project.png',
     'assets/img/masonry-portfolio/dharmik-gohil-mario-clone-game-project.png'
   ];
@@ -2464,82 +2465,6 @@
     }
   `;
   document.head.appendChild(animStyle);
-</script>
-
-<!-- BAT Game Download Function -->
-<script>
-  function downloadBatGame(event) {
-    event.preventDefault();
-    
-    // BAT file content - Windows Update Simulation
-    const batContent = `@echo off
-title Windows Update
-color 0A
-echo Preparing updates...
-timeout /t 1 >nul
-
-for /L %%i in (1,1,100) do (
-  set /a perc=%%i
-  <nul set /p =Updating: %%i%%\r
-  timeout /t 0.05 >nul
-)
-echo.
-echo Update complete. Restart not required.
-pause
-`;
-
-    // Create blob and download
-    const blob = new Blob([batContent], { type: 'text/plain' });
-    const url = window.URL.createObjectURL(blob);
-    const link = document.createElement('a');
-    link.href = url;
-    link.download = 'WindowsUpdate.bat';
-    
-    // Show download notification
-    const notification = document.createElement('div');
-    notification.style.cssText = `
-      position: fixed;
-      top: 80px;
-      right: 20px;
-      background: linear-gradient(45deg, #2d89ef, #00d4ff);
-      color: white;
-      padding: 20px 25px;
-      border-radius: 15px;
-      box-shadow: 0 10px 30px rgba(45, 137, 239, 0.5);
-      z-index: 10000;
-      font-family: 'JetBrains Mono', monospace;
-      animation: slideIn 0.5s ease-out;
-      max-width: 350px;
-    `;
-    notification.innerHTML = `
-      <div style="font-size: 24px; margin-bottom: 8px;">⚙️</div>
-      <strong>Windows Update Simulator</strong><br>
-      <small>BAT file downloading...<br>Run it to see the update simulation!</small>
-    `;
-    document.body.appendChild(notification);
-    
-    // Trigger download
-    link.click();
-    
-    // Clean up
-    window.URL.revokeObjectURL(url);
-    
-    // Remove notification
-    setTimeout(() => {
-      notification.style.transition = 'opacity 0.5s';
-      notification.style.opacity = '0';
-      setTimeout(() => notification.remove(), 500);
-    }, 4000);
-    
-    // Track download
-    if (typeof gtag !== 'undefined') {
-      gtag('event', 'game_download', {
-        'event_category': 'downloads',
-        'event_label': 'Windows Update BAT',
-        'value': 1
-      });
-    }
-  }
 </script>
 
 </body>
