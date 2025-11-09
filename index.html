@@ -818,6 +818,141 @@
       color: #0a0f1f;
     }
 
+    /* Explore Section - Logo Loop */
+    .explore.section {
+      background: linear-gradient(135deg, #0f1624, #1e2b3f);
+      padding: 80px 0;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .logoloop-wrapper {
+      width: 100%;
+      padding: 40px 0;
+    }
+
+    .logoloop {
+      position: relative;
+      overflow: hidden;
+      width: 100%;
+      height: 120px;
+      display: flex;
+      align-items: center;
+    }
+
+    .logoloop::before,
+    .logoloop::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: clamp(40px, 10%, 150px);
+      pointer-events: none;
+      z-index: 2;
+    }
+
+    .logoloop::before {
+      left: 0;
+      background: linear-gradient(to right, #1e2b3f 0%, rgba(30, 43, 63, 0) 100%);
+    }
+
+    .logoloop::after {
+      right: 0;
+      background: linear-gradient(to left, #1e2b3f 0%, rgba(30, 43, 63, 0) 100%);
+    }
+
+    .logoloop__track {
+      display: flex;
+      width: max-content;
+      gap: 60px;
+      animation: logoScroll 40s linear infinite;
+      will-change: transform;
+    }
+
+    .logoloop:hover .logoloop__track {
+      animation-play-state: paused;
+    }
+
+    .logoloop__item {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 80px;
+      height: 80px;
+      padding: 15px;
+      background: rgba(10, 15, 31, 0.6);
+      border: 2px solid rgba(0, 234, 255, 0.3);
+      border-radius: 12px;
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+
+    .logoloop__item:hover {
+      transform: scale(1.2);
+      border-color: #15ff00;
+      box-shadow: 0 0 25px rgba(21, 255, 0, 0.6);
+      background: rgba(21, 255, 0, 0.1);
+    }
+
+    .logoloop__item img {
+      max-width: 100%;
+      max-height: 100%;
+      width: auto;
+      height: auto;
+      object-fit: contain;
+      filter: brightness(0.9);
+      transition: filter 0.3s ease;
+    }
+
+    .logoloop__item:hover img {
+      filter: brightness(1.2);
+    }
+
+    .logoloop__item i {
+      font-size: 48px;
+      color: #00eaff;
+      transition: color 0.3s ease;
+    }
+
+    .logoloop__item:hover i {
+      color: #15ff00;
+    }
+
+    @keyframes logoScroll {
+      0% {
+        transform: translateX(0);
+      }
+      100% {
+        transform: translateX(-50%);
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .logoloop__track {
+        animation: none !important;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .logoloop {
+        height: 100px;
+      }
+      
+      .logoloop__item {
+        min-width: 60px;
+        height: 60px;
+        padding: 10px;
+      }
+
+      .logoloop__item i {
+        font-size: 36px;
+      }
+
+      .logoloop__track {
+        gap: 40px;
+      }
+    }
+
     .actify-showcase {
     background: linear-gradient(145deg, #0a0f1f, #1a1e34);
     padding: 60px 30px;
@@ -1534,6 +1669,33 @@
         </div>
       </div>
     </section>
+
+    <!-- Explore Section - Technology Logo Loop -->
+    <section id="explore" class="explore section">
+      <div class="particles">
+        <div class="particle" style="left: 12%; top: 22%; animation-delay: 0s;"></div>
+        <div class="particle" style="left: 32%; top: 52%; animation-delay: 1s;"></div>
+        <div class="particle" style="left: 68%; top: 32%; animation-delay: 2s;"></div>
+        <div class="particle" style="left: 88%; top: 62%; animation-delay: 3s;"></div>
+      </div>
+      
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Explore Technologies</h2>
+        <p>Powered by cutting-edge tools and platforms</p>
+      </div>
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <div class="logoloop-wrapper">
+          <div class="logoloop" id="logoLoop">
+            <div class="logoloop__track">
+              <!-- Logos will be dynamically inserted here -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- /Explore Section -->
+
      <!-- About Section -->
      <section id="about" class="about section">
       <div class="particles">
@@ -2607,6 +2769,79 @@
   `;
   document.head.appendChild(animStyle);
 </script>
+
+<!-- Logo Loop Technology Showcase -->
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // Technology logos data with links
+    const techLogos = [
+      // Programming Languages
+      { name: 'Java', icon: 'devicon-java-plain', href: 'https://www.java.com' },
+      { name: 'JavaScript', icon: 'devicon-javascript-plain', href: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript' },
+      { name: 'Python', icon: 'devicon-python-plain', href: 'https://www.python.org' },
+      { name: 'C++', icon: 'devicon-cplusplus-plain', href: 'https://isocpp.org' },
+      { name: 'C', icon: 'devicon-c-plain', href: 'https://en.wikipedia.org/wiki/C_(programming_language)' },
+      { name: 'TypeScript', icon: 'devicon-typescript-plain', href: 'https://www.typescriptlang.org' },
+      { name: 'C#', icon: 'devicon-csharp-plain', href: 'https://docs.microsoft.com/en-us/dotnet/csharp/' },
+      { name: 'Unity', icon: 'devicon-unity-plain', href: 'https://unity.com' },
+      // Web Technologies
+      { name: 'HTML5', icon: 'devicon-html5-plain', href: 'https://developer.mozilla.org/en-US/docs/Web/HTML' },
+      { name: 'CSS3', icon: 'devicon-css3-plain', href: 'https://developer.mozilla.org/en-US/docs/Web/CSS' },
+      { name: 'React', icon: 'devicon-react-original', href: 'https://react.dev' },
+      { name: 'Node.js', icon: 'devicon-nodejs-plain', href: 'https://nodejs.org' },
+      { name: 'Tailwind CSS', icon: 'devicon-tailwindcss-plain', href: 'https://tailwindcss.com' },
+      { name: 'Bootstrap', icon: 'devicon-bootstrap-plain', href: 'https://getbootstrap.com' },
+      
+      // Databases
+      { name: 'MongoDB', icon: 'devicon-mongodb-plain', href: 'https://www.mongodb.com' },
+      { name: 'MySQL', icon: 'devicon-mysql-plain', href: 'https://www.mysql.com' },
+      { name: 'PostgreSQL', icon: 'devicon-postgresql-plain', href: 'https://www.postgresql.org' },
+      
+      // Tools & Platforms
+      { name: 'Git', icon: 'devicon-git-plain', href: 'https://git-scm.com' },
+      { name: 'GitHub', icon: 'devicon-github-original', href: 'https://github.com' },
+      { name: 'VS Code', icon: 'devicon-vscode-plain', href: 'https://code.visualstudio.com' },
+      { name: 'Docker', icon: 'devicon-docker-plain', href: 'https://www.docker.com' },
+      { name: 'Firebase', icon: 'devicon-firebase-plain', href: 'https://firebase.google.com' },
+      { name: 'Figma', icon: 'devicon-figma-plain', href: 'https://www.figma.com' },
+      
+      // Mobile & Game Dev
+      { name: 'Android', icon: 'devicon-android-plain', href: 'https://developer.android.com' },
+      { name: 'Flutter', icon: 'devicon-flutter-plain', href: 'https://flutter.dev' },
+      
+      // Cloud & DevOps
+      { name: 'Azure', icon: 'devicon-azure-plain', href: 'https://azure.microsoft.com' },
+      { name: 'AWS', icon: 'devicon-amazonwebservices-plain-wordmark', href: 'https://aws.amazon.com' },
+      { name: 'Vercel', icon: 'devicon-vercel-original', href: 'https://vercel.com' },
+      { name: 'Linux', icon: 'devicon-linux-plain', href: 'https://www.linux.org' }
+    ];
+
+    const logoLoopTrack = document.querySelector('.logoloop__track');
+    
+    if (logoLoopTrack) {
+      // Create logo items HTML
+      const createLogoItem = (logo) => {
+        return `
+          <a href="${logo.href}" 
+             class="logoloop__item" 
+             target="_blank" 
+             rel="noopener noreferrer"
+             title="${logo.name}"
+             aria-label="${logo.name}">
+            <i class="${logo.icon}"></i>
+          </a>
+        `;
+      };
+
+      // Double the logos for seamless infinite loop
+      const logosHTML = techLogos.map(createLogoItem).join('');
+      logoLoopTrack.innerHTML = logosHTML + logosHTML;
+    }
+  });
+</script>
+
+<!-- Add Devicon Library for Technology Icons -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
 
 </body>
 </html>
