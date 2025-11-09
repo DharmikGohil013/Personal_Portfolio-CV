@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dome Gallery Demo - Test Page</title>
+    <link rel="stylesheet" href="assets/css/dome-gallery.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'JetBrains Mono', monospace;
+            background: linear-gradient(135deg, #0f1624, #1e2b3f);
+            color: #fff;
+            overflow-x: hidden;
+        }
+
+        .demo-header {
+            text-align: center;
+            padding: 40px 20px;
+            background: rgba(0, 0, 0, 0.3);
+        }
+
+        .demo-header h1 {
+            font-size: 2.5rem;
+            color: #15ff00;
+            text-shadow: 0 0 15px #15ff00;
+            margin-bottom: 10px;
+        }
+
+        .demo-header p {
+            font-size: 1.2rem;
+            color: #00eaff;
+            text-shadow: 0 0 10px #00eaff;
+        }
+
+        .controls {
+            text-align: center;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.2);
+        }
+
+        .control-item {
+            display: inline-block;
+            margin: 10px 20px;
+            padding: 10px 20px;
+            background: rgba(21, 255, 0, 0.1);
+            border: 2px solid #15ff00;
+            border-radius: 10px;
+        }
+
+        .control-item strong {
+            color: #15ff00;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .gallery-container {
+            width: 100%;
+            height: 80vh;
+            min-height: 600px;
+            position: relative;
+            margin: 20px 0;
+        }
+
+        .demo-footer {
+            text-align: center;
+            padding: 40px 20px;
+            background: rgba(0, 0, 0, 0.3);
+        }
+
+        .demo-footer h3 {
+            color: #00eaff;
+            margin-bottom: 20px;
+        }
+
+        .demo-footer ul {
+            list-style: none;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .demo-footer li {
+            padding: 10px;
+            margin: 5px 0;
+            background: rgba(0, 234, 255, 0.1);
+            border-left: 3px solid #00eaff;
+        }
+
+        @media (max-width: 768px) {
+            .demo-header h1 {
+                font-size: 1.8rem;
+            }
+            
+            .gallery-container {
+                height: 60vh;
+                min-height: 400px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="demo-header">
+        <h1>🌟 Dome Gallery Demo 🌟</h1>
+        <p>Interactive 3D Spherical Photo Gallery</p>
+    </div>
+
+    <div class="controls">
+        <div class="control-item">
+            <strong>🖱️ Drag</strong>
+            <span>Click & drag to rotate</span>
+        </div>
+        <div class="control-item">
+            <strong>👆 Click</strong>
+            <span>Click image to enlarge</span>
+        </div>
+        <div class="control-item">
+            <strong>⌨️ ESC</strong>
+            <span>Press ESC to close</span>
+        </div>
+        <div class="control-item">
+            <strong>📱 Touch</strong>
+            <span>Swipe on mobile</span>
+        </div>
+    </div>
+
+    <div class="gallery-container">
+        <div id="domeGalleryDemo"></div>
+    </div>
+
+    <div class="demo-footer">
+        <h3>✨ Features Demonstrated</h3>
+        <ul>
+            <li>✅ 3D Spherical Layout - Images arranged in dome pattern</li>
+            <li>✅ Interactive Rotation - Drag horizontally and vertically</li>
+            <li>✅ Smooth Inertia - Natural momentum after drag release</li>
+            <li>✅ Click to Enlarge - Full-size image view</li>
+            <li>✅ Grayscale Effect - Color appears on interaction</li>
+            <li>✅ Touch Support - Mobile-optimized gestures</li>
+            <li>✅ Responsive Design - Adapts to all screen sizes</li>
+            <li>✅ Backdrop Blur - Background blur on enlarged view</li>
+            <li>✅ Keyboard Support - ESC key to close</li>
+            <li>✅ Smooth Animations - 60fps performance</li>
+        </ul>
+    </div>
+
+    <script src="assets/js/dome-gallery.js"></script>
+    <script>
+        // Initialize demo gallery
+        document.addEventListener('DOMContentLoaded', function() {
+            // Demo images
+            const demoImages = [
+                { src: 'https://images.unsplash.com/photo-1755331039789-7e5680e26e8f?q=80&w=774&auto=format&fit=crop', alt: 'Abstract art' },
+                { src: 'https://images.unsplash.com/photo-1755569309049-98410b94f66d?q=80&w=772&auto=format&fit=crop', alt: 'Modern sculpture' },
+                { src: 'https://images.unsplash.com/photo-1755497595318-7e5e3523854f?q=80&w=774&auto=format&fit=crop', alt: 'Digital artwork' },
+                { src: 'https://images.unsplash.com/photo-1755353985163-c2a0fe5ac3d8?q=80&w=774&auto=format&fit=crop', alt: 'Contemporary art' },
+                { src: 'https://images.unsplash.com/photo-1745965976680-d00be7dc0377?q=80&w=774&auto=format&fit=crop', alt: 'Geometric pattern' },
+                { src: 'https://images.unsplash.com/photo-1752588975228-21f44630bb3c?q=80&w=774&auto=format&fit=crop', alt: 'Textured surface' },
+                { src: 'https://pbs.twimg.com/media/Gyla7NnXMAAXSo_?format=jpg&name=large', alt: 'Social media' }
+            ];
+
+            new DomeGallery('domeGalleryDemo', {
+                images: demoImages,
+                fit: 0.5,
+                segments: 35,
+                grayscale: true,
+                imageBorderRadius: '30px',
+                openedImageBorderRadius: '30px'
+            });
+
+            console.log('🎉 Dome Gallery Demo Loaded Successfully!');
+        });
+    </script>
+</body>
+</html>

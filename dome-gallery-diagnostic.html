@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dome Gallery Diagnostic</title>
+    <style>
+        body {
+            font-family: 'Courier New', monospace;
+            background: #0a0f1f;
+            color: #00ff00;
+            padding: 20px;
+        }
+        h1 {
+            color: #00eaff;
+        }
+        .log {
+            background: #1a1e34;
+            padding: 15px;
+            margin: 10px 0;
+            border: 1px solid #00eaff;
+            border-radius: 5px;
+        }
+        .success { color: #15ff00; }
+        .error { color: #ff0000; }
+        .warning { color: #ffdf00; }
+        button {
+            background: #00eaff;
+            color: #0a0f1f;
+            border: none;
+            padding: 10px 20px;
+            margin: 10px 5px;
+            cursor: pointer;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+        button:hover {
+            background: #15ff00;
+        }
+    </style>
+</head>
+<body>
+    <h1>🔍 Dome Gallery Diagnostic Tool</h1>
+    
+    <div class="log">
+        <h3>Diagnostic Log:</h3>
+        <div id="diagnosticLog"></div>
+    </div>
+    
+    <button onclick="checkFiles()">Check Files</button>
+    <button onclick="checkContainer()">Check Container</button>
+    <button onclick="checkImages()">Check Images</button>
+    <button onclick="testGallery()">Test Gallery</button>
+    <button onclick="openConsole()">Open Console</button>
+    
+    <hr>
+    <div id="testContainer"></div>
+    
+    <script>
+        const log = document.getElementById('diagnosticLog');
+        
+        function addLog(message, type = 'success') {
+            const p = document.createElement('p');
+            p.className = type;
+            p.textContent = `[${new Date().toLocaleTimeString()}] ${message}`;
+            log.appendChild(p);
+        }
+        
+        function checkFiles() {
+            addLog('🔍 Checking if files exist...', 'success');
+            
+            // Check CSS
+            fetch('assets/css/dome-gallery.css')
+                .then(response => {
+                    if (response.ok) {
+                        addLog('✅ CSS file found: dome-gallery.css', 'success');
+                    } else {
+                        addLog('❌ CSS file NOT found!', 'error');
+                    }
+                })
+                .catch(err => addLog('❌ Error checking CSS: ' + err.message, 'error'));
+            
+            // Check JS
+            fetch('assets/js/dome-gallery.js')
+                .then(response => {
+                    if (response.ok) {
+                        addLog('✅ JS file found: dome-gallery.js', 'success');
+                    } else {
+                        addLog('❌ JS file NOT found!', 'error');
+                    }
+                })
+                .catch(err => addLog('❌ Error checking JS: ' + err.message, 'error'));
+            
+            // Check first image
+            fetch('assets/img/memories/navratri-2025/IMG_20250924_232834.jpg')
+                .then(response => {
+                    if (response.ok) {
+                        addLog('✅ First Navratri photo found!', 'success');
+                    } else {
+                        addLog('❌ Navratri photos NOT found!', 'error');
+                    }
+                })
+                .catch(err => addLog('❌ Error checking photos: ' + err.message, 'error'));
+        }
+        
+        function checkContainer() {
+            addLog('🔍 Checking for #domeGallery container...', 'success');
+            const container = document.getElementById('domeGallery');
+            if (container) {
+                addLog('✅ Container #domeGallery found!', 'success');
+                addLog(`📏 Container dimensions: ${container.offsetWidth}x${container.offsetHeight}`, 'success');
+            } else {
+                addLog('❌ Container #domeGallery NOT found!', 'error');
+            }
+        }
+        
+        function checkImages() {
+            addLog('🔍 Checking DEFAULT_IMAGES array...', 'success');
+            if (typeof DEFAULT_IMAGES !== 'undefined') {
+                addLog(`✅ DEFAULT_IMAGES found with ${DEFAULT_IMAGES.length} images`, 'success');
+                addLog(`📸 First image: ${DEFAULT_IMAGES[0].src}`, 'success');
+            } else {
+                addLog('❌ DEFAULT_IMAGES not defined!', 'error');
+            }
+        }
+        
+        function testGallery() {
+            addLog('🧪 Testing gallery initialization...', 'success');
+            const testDiv = document.getElementById('testContainer');
+            testDiv.innerHTML = '<div id="testGallery" style="width: 600px; height: 400px; background: #1a1e34; margin: 20px 0;"></div>';
+            
+            try {
+                if (typeof DomeGallery !== 'undefined') {
+                    addLog('✅ DomeGallery class found!', 'success');
+                    new DomeGallery('testGallery', {
+                        images: DEFAULT_IMAGES.slice(0, 7),
+                        fit: 0.5,
+                        segments: 25
+                    });
+                    addLog('🎉 Test gallery created successfully!', 'success');
+                } else {
+                    addLog('❌ DomeGallery class not found!', 'error');
+                }
+            } catch (err) {
+                addLog('❌ Error creating gallery: ' + err.message, 'error');
+                console.error(err);
+            }
+        }
+        
+        function openConsole() {
+            addLog('💡 Press F12 to open browser console', 'warning');
+            addLog('💡 Look for Dome Gallery messages in the console', 'warning');
+        }
+        
+        // Auto-run checks on load
+        window.addEventListener('load', () => {
+            addLog('🚀 Diagnostic tool loaded', 'success');
+            addLog('📁 Current URL: ' + window.location.href, 'success');
+            checkFiles();
+        });
+    </script>
+    
+    <!-- Load Dome Gallery Files -->
+    <link href="assets/css/dome-gallery.css" rel="stylesheet">
+    <script src="assets/js/dome-gallery.js"></script>
+</body>
+</html>
