@@ -85,7 +85,7 @@
         /* Hero Section */
         .hero {
             text-align: center;
-            animation: fadeInUp 1.5s ease-out;
+            animation: fadeInUp 0.5s ease-out;
         }
 
         .game-logo {
@@ -419,6 +419,149 @@
             }
         }
 
+        /* Explore Section */
+        .explore-section {
+            position: relative;
+            width: 100%;
+            padding: 100px 20px;
+            background: rgba(0, 31, 77, 0.3);
+            backdrop-filter: blur(10px);
+            border-top: 2px solid rgba(0, 102, 204, 0.3);
+            border-bottom: 2px solid rgba(0, 102, 204, 0.3);
+            margin-top: 100px;
+        }
+
+        .explore-title {
+            font-family: 'Orbitron', sans-serif;
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 6px;
+            text-align: center;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, #0066CC 0%, #003D82 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-shadow: 0 0 30px rgba(0, 102, 204, 0.5);
+        }
+
+        .explore-subtitle {
+            font-family: 'Rajdhani', sans-serif;
+            font-size: clamp(1rem, 2vw, 1.3rem);
+            text-align: center;
+            color: #9ecdfe;
+            letter-spacing: 2px;
+            margin-bottom: 60px;
+            text-transform: uppercase;
+        }
+
+        /* Logo Loop Styles */
+        .logoloop {
+            position: relative;
+            overflow-x: hidden;
+            height: 120px;
+            margin: 0 auto;
+            padding: 20px 0;
+        }
+
+        .logoloop::before,
+        .logoloop::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: clamp(50px, 10%, 150px);
+            pointer-events: none;
+            z-index: 2;
+        }
+
+        .logoloop::before {
+            left: 0;
+            background: linear-gradient(to right, rgba(0, 31, 77, 0.9) 0%, transparent 100%);
+        }
+
+        .logoloop::after {
+            right: 0;
+            background: linear-gradient(to left, rgba(0, 31, 77, 0.9) 0%, transparent 100%);
+        }
+
+        .logoloop__track {
+            display: flex;
+            width: max-content;
+            animation: scroll-left 30s linear infinite;
+            will-change: transform;
+        }
+
+        .logoloop:hover .logoloop__track {
+            animation-play-state: paused;
+        }
+
+        .logoloop__list {
+            display: flex;
+            align-items: center;
+            gap: 60px;
+            padding: 0 30px;
+        }
+
+        .logoloop__item {
+            flex: 0 0 auto;
+            transition: transform 0.3s ease;
+        }
+
+        .logoloop:hover .logoloop__item:hover {
+            transform: scale(1.2);
+        }
+
+        .logoloop__link {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-decoration: none;
+            gap: 10px;
+            transition: opacity 0.3s ease;
+        }
+
+        .logoloop__link:hover {
+            opacity: 0.8;
+        }
+
+        .logoloop__icon {
+            width: 64px;
+            height: 64px;
+            object-fit: contain;
+            filter: drop-shadow(0 0 10px rgba(0, 102, 204, 0.5));
+            transition: filter 0.3s ease;
+        }
+
+        .logoloop__link:hover .logoloop__icon {
+            filter: drop-shadow(0 0 20px rgba(0, 102, 204, 0.8));
+        }
+
+        .logoloop__title {
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: #b8dbff;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        @keyframes scroll-left {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .logoloop__track {
+                animation: none !important;
+            }
+        }
+
         /* Responsive */
         @media (max-width: 768px) {
             .game-logo {
@@ -461,6 +604,28 @@
 
             .release-date-text {
                 font-size: 1.2rem;
+            }
+
+            .explore-section {
+                padding: 60px 20px;
+                margin-top: 60px;
+            }
+
+            .logoloop {
+                height: 100px;
+            }
+
+            .logoloop__list {
+                gap: 40px;
+            }
+
+            .logoloop__icon {
+                width: 48px;
+                height: 48px;
+            }
+
+            .logoloop__title {
+                font-size: 0.75rem;
             }
         }
     </style>
@@ -538,16 +703,16 @@
             el: "#vanta-bg",
             mouseControls: true,
             touchControls: true,
-            gyroControls: false,
-            minHeight: 200.00,
-            minWidth: 200.00,
+            gyroControls: true,
+            minHeight: 2.00,
+            minWidth: 2.00,
             scale: 1.00,
             scaleMobile: 1.00,
             color: 0x5588,
-            shininess: 30,
-            waveHeight: 15,
-            waveSpeed: 1,
-            zoom: 1
+            shininess: 80,
+            waveHeight: 20,
+            waveSpeed: 1.5,
+            zoom: .7
         });
 
         // Prevent right-click for immersive experience (optional)
