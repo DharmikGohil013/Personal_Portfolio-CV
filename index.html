@@ -113,9 +113,6 @@
   <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
   <link href="index.css" rel="stylesheet">
 
-  <!-- Particles.js -->
-  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-
   <!-- Dome Gallery CSS -->
   <link href="assets/css/dome-gallery.css" rel="stylesheet">
 
@@ -146,7 +143,7 @@
       pointer-events: none;
     }
 
-    /* Hero Section - Universe Particle Background */
+    /* Hero Section - Professional Static Background */
     #hero {
       position: relative;
       min-height: 100vh;
@@ -154,20 +151,17 @@
       align-items: center;
       justify-content: center;
       overflow: hidden;
-      background: radial-gradient(ellipse at bottom, #1B2735 0%, #090A0F 100%);
+      background: 
+        linear-gradient(135deg, rgba(10, 15, 31, 0.95) 0%, rgba(26, 30, 52, 0.9) 50%, rgba(43, 53, 87, 0.95) 100%),
+        linear-gradient(45deg, #0a0f1f 25%, transparent 25%),
+        linear-gradient(-45deg, #0a0f1f 25%, transparent 25%),
+        linear-gradient(45deg, transparent 75%, #0a0f1f 75%),
+        linear-gradient(-45deg, transparent 75%, #0a0f1f 75%);
+      background-size: 100% 100%, 60px 60px, 60px 60px, 60px 60px, 60px 60px;
+      background-position: 0 0, 0 0, 0 30px, 30px -30px, -30px 0;
     }
 
-    /* Particles.js container for hero */
-    #particles-js {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      top: 0;
-      left: 0;
-      z-index: 1;
-    }
-
-    /* Animated stars background */
+    /* Professional geometric pattern overlay */
     #hero::before {
       content: '';
       position: absolute;
@@ -176,154 +170,45 @@
       top: 0;
       left: 0;
       background: 
-        radial-gradient(2px 2px at 20px 30px, #eee, transparent),
-        radial-gradient(2px 2px at 60px 70px, #fff, transparent),
-        radial-gradient(1px 1px at 50px 50px, #ddd, transparent),
-        radial-gradient(1px 1px at 130px 80px, #fff, transparent),
-        radial-gradient(2px 2px at 90px 10px, #eee, transparent);
-      background-size: 200px 200px;
-      animation: twinkle 3s infinite, moveStars 60s linear infinite;
-      opacity: 0.5;
-      z-index: 0;
+        repeating-linear-gradient(
+          90deg,
+          rgba(0, 234, 255, 0.03) 0px,
+          transparent 1px,
+          transparent 40px,
+          rgba(0, 234, 255, 0.03) 41px
+        ),
+        repeating-linear-gradient(
+          0deg,
+          rgba(21, 255, 0, 0.02) 0px,
+          transparent 1px,
+          transparent 40px,
+          rgba(21, 255, 0, 0.02) 41px
+        );
+      z-index: 1;
     }
 
-    @keyframes twinkle {
-      0%, 100% { opacity: 0.5; }
-      50% { opacity: 1; }
-    }
-
-    @keyframes moveStars {
-      0% { transform: translate(0, 0); }
-      100% { transform: translate(-50px, -50px); }
-    }
-
-    /* Random blinking stars */
-    .random-star {
+    /* Professional accent elements */
+    .accent-line {
       position: absolute;
-      width: 3px;
-      height: 3px;
-      background: white;
-      border-radius: 50%;
-      box-shadow: 
-        0 0 5px 2px rgba(255, 255, 255, 0.8),
-        0 0 10px 4px rgba(255, 255, 255, 0.4);
-      animation: randomBlink 5s ease-in-out infinite;
-      opacity: 0;
-      pointer-events: none;
-    }
-
-    @keyframes randomBlink {
-      0% {
-        opacity: 0;
-        transform: scale(0);
-      }
-      10% {
-        opacity: 1;
-        transform: scale(1.5);
-      }
-      50% {
-        opacity: 0.8;
-        transform: scale(1);
-      }
-      90% {
-        opacity: 1;
-        transform: scale(1.2);
-      }
-      100% {
-        opacity: 0;
-        transform: scale(0);
-      }
-    }
-
-    /* Different random star animations with different delays */
-    .random-star:nth-child(1) { animation-delay: 0s; }
-    .random-star:nth-child(2) { animation-delay: 0.5s; }
-    .random-star:nth-child(3) { animation-delay: 1s; }
-    .random-star:nth-child(4) { animation-delay: 1.5s; }
-    .random-star:nth-child(5) { animation-delay: 2s; }
-    .random-star:nth-child(6) { animation-delay: 2.5s; }
-    .random-star:nth-child(7) { animation-delay: 3s; }
-    .random-star:nth-child(8) { animation-delay: 3.5s; }
-    .random-star:nth-child(9) { animation-delay: 4s; }
-    .random-star:nth-child(10) { animation-delay: 4.5s; }
-
-    /* Color variations for random stars */
-    .random-star.cyan {
-      background: #00eaff;
-      box-shadow: 
-        0 0 5px 2px rgba(0, 234, 255, 0.8),
-        0 0 10px 4px rgba(0, 234, 255, 0.4);
-    }
-
-    .random-star.green {
-      background: #15ff00;
-      box-shadow: 
-        0 0 5px 2px rgba(21, 255, 0, 0.8),
-        0 0 10px 4px rgba(21, 255, 0, 0.4);
-    }
-
-    .random-star.pink {
-      background: #ff007f;
-      box-shadow: 
-        0 0 5px 2px rgba(255, 0, 127, 0.8),
-        0 0 10px 4px rgba(255, 0, 127, 0.4);
-    }
-
-    .random-star.yellow {
-      background: #ffdf00;
-      box-shadow: 
-        0 0 5px 2px rgba(255, 223, 0, 0.8),
-        0 0 10px 4px rgba(255, 223, 0, 0.4);
-    }
-
-    /* Shooting stars */
-    .shooting-star {
-      position: absolute;
-      width: 2px;
       height: 2px;
-      background: white;
-      border-radius: 50%;
-      box-shadow: 0 0 10px 2px rgba(255, 255, 255, 0.5);
-      animation: shoot 3s linear infinite;
-      opacity: 0;
+      background: linear-gradient(90deg, transparent, rgba(0, 234, 255, 0.5), transparent);
+      width: 100%;
+      z-index: 2;
     }
 
-    .shooting-star:nth-child(1) {
-      top: 10%;
-      left: 20%;
-      animation-delay: 0s;
+    .accent-line:nth-child(1) {
+      top: 20%;
     }
 
-    .shooting-star:nth-child(2) {
-      top: 30%;
-      left: 80%;
-      animation-delay: 1.5s;
+    .accent-line:nth-child(2) {
+      top: 50%;
     }
 
-    .shooting-star:nth-child(3) {
-      top: 60%;
-      left: 40%;
-      animation-delay: 3s;
-    }
-
-    .shooting-star:nth-child(4) {
+    .accent-line:nth-child(3) {
       top: 80%;
-      left: 70%;
-      animation-delay: 4.5s;
     }
 
-    @keyframes shoot {
-      0% {
-        transform: translateX(0) translateY(0);
-        opacity: 1;
-      }
-      100% {
-        transform: translateX(300px) translateY(300px);
-        opacity: 0;
-      }
-    }
-
-    /* Nebula effect */
+    /* Professional corner accents */
     #hero::after {
       content: '';
       position: absolute;
@@ -332,22 +217,18 @@
       top: 0;
       left: 0;
       background: 
-        radial-gradient(circle at 20% 50%, rgba(138, 43, 226, 0.1) 0%, transparent 50%),
-        radial-gradient(circle at 80% 80%, rgba(0, 212, 255, 0.1) 0%, transparent 50%),
-        radial-gradient(circle at 40% 20%, rgba(255, 20, 147, 0.1) 0%, transparent 50%);
-      animation: nebula 20s ease-in-out infinite alternate;
-      z-index: 0;
-    }
-
-    @keyframes nebula {
-      0% { opacity: 0.3; transform: scale(1); }
-      100% { opacity: 0.6; transform: scale(1.1); }
+        linear-gradient(135deg, rgba(0, 234, 255, 0.08) 0%, transparent 30%),
+        linear-gradient(-135deg, rgba(21, 255, 0, 0.05) 0%, transparent 30%),
+        linear-gradient(45deg, transparent 70%, rgba(0, 234, 255, 0.08) 100%),
+        linear-gradient(-45deg, transparent 70%, rgba(21, 255, 0, 0.05) 100%);
+      z-index: 2;
     }
 
     /* Hero content */
     #hero .container {
       position: relative;
       z-index: 10;
+      padding: 40px 20px;
     }
 
     #hero h2 {
@@ -460,48 +341,40 @@
         inset 0 0 20px rgba(21, 255, 0, 0.3);
     }
 
-    /* Floating planets */
-    .planet {
+    /* Professional geometric shapes */
+    .geo-shape {
       position: absolute;
-      border-radius: 50%;
-      opacity: 0.3;
-      animation: float-planet 20s ease-in-out infinite;
+      border: 2px solid rgba(0, 234, 255, 0.2);
+      opacity: 0.4;
+      z-index: 3;
     }
 
-    .planet-1 {
+    .geo-shape-1 {
+      width: 150px;
+      height: 150px;
+      top: 10%;
+      right: 15%;
+      border-radius: 0;
+      transform: rotate(45deg);
+    }
+
+    .geo-shape-2 {
       width: 100px;
       height: 100px;
-      background: radial-gradient(circle at 30% 30%, rgba(255, 100, 100, 0.5), rgba(200, 50, 50, 0.3));
-      top: 15%;
-      right: 10%;
-      animation-delay: 0s;
+      bottom: 15%;
+      left: 10%;
+      border-radius: 50%;
+      border-color: rgba(21, 255, 0, 0.2);
     }
 
-    .planet-2 {
-      width: 60px;
-      height: 60px;
-      background: radial-gradient(circle at 30% 30%, rgba(100, 100, 255, 0.5), rgba(50, 50, 200, 0.3));
-      bottom: 20%;
-      left: 15%;
-      animation-delay: 5s;
-    }
-
-    .planet-3 {
-      width: 80px;
-      height: 80px;
-      background: radial-gradient(circle at 30% 30%, rgba(255, 200, 100, 0.5), rgba(200, 150, 50, 0.3));
-      top: 50%;
-      right: 20%;
-      animation-delay: 10s;
-    }
-
-    @keyframes float-planet {
-      0%, 100% {
-        transform: translateY(0) rotate(0deg);
-      }
-      50% {
-        transform: translateY(-30px) rotate(180deg);
-      }
+    .geo-shape-3 {
+      width: 120px;
+      height: 120px;
+      top: 45%;
+      right: 25%;
+      clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+      border: none;
+      background: rgba(0, 234, 255, 0.05);
     }
 
     /* Responsive */
@@ -512,8 +385,11 @@
       #hero p {
         font-size: 1.1rem;
       }
-      .planet {
+      .geo-shape {
         display: none;
+      }
+      #hero .container {
+        padding: 20px 15px;
       }
     }
 
@@ -550,30 +426,6 @@
     @keyframes gridMove {
       0% { background-position: 0 0; }
       100% { background-position: 100px 100px; }
-    }
-
-    .portfolio .particles {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      pointer-events: none;
-      z-index: 1;
-    }
-
-    .portfolio .particle {
-      position: absolute;
-      width: 8px;
-      height: 8px;
-      background: rgba(0, 234, 255, 0.7);
-      border-radius: 50%;
-      animation: float 6s infinite ease-in-out;
-    }
-
-    @keyframes float {
-      0%, 100% { transform: translateY(0); opacity: 0.5; }
-      50% { transform: translateY(-30px); opacity: 1; }
     }
 
     .portfolio .container {
@@ -1659,22 +1511,15 @@
   <main class="main">
     <!-- Hero Section -->
     <section id="hero" class="hero section">
-      <!-- Particles.js Universe Background -->
-      <div id="particles-js"></div>
+      <!-- Professional Accent Lines -->
+      <div class="accent-line"></div>
+      <div class="accent-line"></div>
+      <div class="accent-line"></div>
       
-      <!-- Random Blinking Stars (appear/disappear every 5 seconds) -->
-      <div class="random-stars-container"></div>
-      
-      <!-- Shooting Stars -->
-      <div class="shooting-star"></div>
-      <div class="shooting-star"></div>
-      <div class="shooting-star"></div>
-      <div class="shooting-star"></div>
-      
-      <!-- Floating Planets -->
-      <div class="planet planet-1"></div>
-      <div class="planet planet-2"></div>
-      <div class="planet planet-3"></div>
+      <!-- Geometric Shapes -->
+      <div class="geo-shape geo-shape-1"></div>
+      <div class="geo-shape geo-shape-2"></div>
+      <div class="geo-shape geo-shape-3"></div>
       
       <div class="container text-center" data-aos="zoom-out" data-aos-delay="100">
         <div class="row justify-content-center">
@@ -1689,13 +1534,6 @@
     </section>
 
     <section id="portfolio" class="portfolio section">
-      <div class="particles">
-        <div class="particle" style="left: 10%; top: 20%; animation-delay: 0s;"></div>
-        <div class="particle" style="left: 30%; top: 50%; animation-delay: 1s;"></div>
-        <div class="particle" style="left: 70%; top: 30%; animation-delay: 2s;"></div>
-        <div class="particle" style="left: 90%; top: 60%; animation-delay: 3s;"></div>
-        <div class="particle" style="left: 50%; top: 80%; animation-delay: 4s;"></div>
-      </div>
       <div class="container section-title" data-aos="fade-up">
         <h2>Games</h2>
         <p>Explore my creations in game development</p>
@@ -1831,13 +1669,6 @@
 
     <!-- Explore Section - Technology Logo Loop -->
     <section id="explore" class="explore section">
-      <div class="particles">
-        <div class="particle" style="left: 12%; top: 22%; animation-delay: 0s;"></div>
-        <div class="particle" style="left: 32%; top: 52%; animation-delay: 1s;"></div>
-        <div class="particle" style="left: 68%; top: 32%; animation-delay: 2s;"></div>
-        <div class="particle" style="left: 88%; top: 62%; animation-delay: 3s;"></div>
-      </div>
-      
       <div class="container section-title" data-aos="fade-up">
         <h2>Explore Technologies</h2>
         <p>Powered by cutting-edge tools and platforms</p>
@@ -1857,12 +1688,6 @@
 
      <!-- About Section -->
      <section id="about" class="about section">
-      <div class="particles">
-        <div class="particle" style="left: 10%; top: 20%; animation-delay: 0s;"></div>
-        <div class="particle" style="left: 30%; top: 50%; animation-delay: 1s;"></div>
-        <div class="particle" style="left: 70%; top: 30%; animation-delay: 2s;"></div>
-        <div class="particle" style="left: 90%; top: 60%; animation-delay: 3s;"></div>
-      </div>
       <div class="container section-title" data-aos="fade-up">
         <h2>About</h2>
         <p>Needed for something valuable, escaping while keeping it simple and clear</p>
@@ -1932,13 +1757,6 @@
 
     <!-- Indian Developer Community Section -->
     <section id="idc" class="idc section">
-      <div class="particles">
-        <div class="particle" style="left: 15%; top: 25%; animation-delay: 0s;"></div>
-        <div class="particle" style="left: 35%; top: 55%; animation-delay: 1s;"></div>
-        <div class="particle" style="left: 65%; top: 35%; animation-delay: 2s;"></div>
-        <div class="particle" style="left: 85%; top: 65%; animation-delay: 3s;"></div>
-      </div>
-      
       <div class="container section-title" data-aos="fade-up">
         <h2>Community Leadership</h2>
         <p>Building and nurturing the Indian developer ecosystem</p>
@@ -2003,12 +1821,6 @@
 
     <!-- Skills Section -->
     <section id="skills" class="skills section">
-      <div class="particles">
-        <div class="particle" style="left: 15%; top: 25%; animation-delay: 0s;"></div>
-        <div class="particle" style="left: 35%; top: 55%; animation-delay: 1s;"></div>
-        <div class="particle" style="left: 65%; top: 35%; animation-delay: 2s;"></div>
-        <div class="particle" style="left: 85%; top: 65%; animation-delay: 3s;"></div>
-      </div>
       <div class="container section-title" data-aos="fade-up">
         <h2>Skills</h2>
         <p>The necessity for him to pursue something, escape it, and indeed maintain a meaningful connection</p>
@@ -2060,15 +1872,7 @@
     </section>
     <!-- Resume Section -->
      <!-- Resume Section -->
-    <section id="resume" class="resume section">
-      <div class="particles">
-        <div class="particle" style="left: 10%; top: 20%; animation-delay: 0s;"></div>
-        <div class="particle" style="left: 30%; top: 50%; animation-delay: 1s;"></div>
-        <div class="particle" style="left: 70%; top: 30%; animation-delay: 2s;"></div>
-        <div class="particle" style="left: 90%; top: 60%; animation-delay: 3s;"></div>
-      </div>
-
-      <div class="container section-title" data-aos="fade-up">
+    <section id="resume" class="resume section">\n\n      <div class="container section-title" data-aos="fade-up">
         <h2>Resume</h2>
         <p>His needs are to be followed by something, to escape him, indeed, to be pursued.</p>
       </div>
@@ -2188,12 +1992,6 @@
     </section><!-- /Resume Section -->
     <!-- Stats Section -->
     <section id="stats" class="stats section">
-      <div class="particles">
-        <div class="particle" style="left: 20%; top: 30%; animation-delay: 0s;"></div>
-        <div class="particle" style="left: 40%; top: 60%; animation-delay: 1s;"></div>
-        <div class="particle" style="left: 60%; top: 40%; animation-delay: 2s;"></div>
-        <div class="particle" style="left: 80%; top: 70%; animation-delay: 3s;"></div>
-      </div>
       <div class="container section-title" data-aos="fade-up">
         <h2>Facts</h2>
         <p>His needs are met through something valuable, escaping while maintaining clarity and focus</p>
@@ -2230,12 +2028,6 @@
 
     <!-- Testimonials Section -->
     <section id="testimonials" class="testimonials section">
-      <div class="particles">
-        <div class="particle" style="left: 25%; top: 35%; animation-delay: 0s;"></div>
-        <div class="particle" style="left: 45%; top: 65%; animation-delay: 1s;"></div>
-        <div class="particle" style="left: 55%; top: 45%; animation-delay: 2s;"></div>
-        <div class="particle" style="left: 75%; top: 75%; animation-delay: 3s;"></div>
-      </div>
       <div class="container section-title" data-aos="fade-up">
         <h2>Testimonials</h2>
         <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
@@ -2341,13 +2133,6 @@
 
     <!-- Contact Section -->
     <section id="contact" class="contact section">
-      <div class="particles">
-        <div class="particle" style="left: 10%; top: 20%; animation-delay: 0s;"></div>
-        <div class="particle" style="left: 30%; top: 50%; animation-delay: 1s;"></div>
-        <div class="particle" style="left: 70%; top: 30%; animation-delay: 2s;"></div>
-        <div class="particle" style="left: 90%; top: 60%; animation-delay: 3s;"></div>
-        <div class="particle" style="left: 50%; top: 80%; animation-delay: 4s;"></div>
-      </div>
       <div class="container section-title" data-aos="fade-up">
         <h2>Contact Me</h2>
         <p>Ready to collaborate on your next game project? Let's connect!</p>
@@ -2493,172 +2278,6 @@
 
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
-
-  <!-- Particles.js Universe Configuration -->
-  <script>
-    // Initialize Particles.js for Universe Background
-    particlesJS('particles-js', {
-      particles: {
-        number: {
-          value: 150,
-          density: {
-            enable: true,
-            value_area: 800
-          }
-        },
-        color: {
-          value: ['#ffffff', '#00eaff', '#15ff00', '#ff007f', '#ffdf00']
-        },
-        shape: {
-          type: ['circle', 'triangle', 'edge'],
-          stroke: {
-            width: 0,
-            color: '#000000'
-          }
-        },
-        opacity: {
-          value: 0.8,
-          random: true,
-          anim: {
-            enable: true,
-            speed: 1,
-            opacity_min: 0.1,
-            sync: false
-          }
-        },
-        size: {
-          value: 3,
-          random: true,
-          anim: {
-            enable: true,
-            speed: 2,
-            size_min: 0.3,
-            sync: false
-          }
-        },
-        line_linked: {
-          enable: true,
-          distance: 150,
-          color: '#00eaff',
-          opacity: 0.3,
-          width: 1
-        },
-        move: {
-          enable: true,
-          speed: 1.5,
-          direction: 'none',
-          random: true,
-          straight: false,
-          out_mode: 'out',
-          bounce: false,
-          attract: {
-            enable: true,
-            rotateX: 600,
-            rotateY: 1200
-          }
-        }
-      },
-      interactivity: {
-        detect_on: 'canvas',
-        events: {
-          onhover: {
-            enable: true,
-            mode: 'grab'
-          },
-          onclick: {
-            enable: true,
-            mode: 'push'
-          },
-          resize: true
-        },
-        modes: {
-          grab: {
-            distance: 200,
-            line_linked: {
-              opacity: 0.8
-            }
-          },
-          bubble: {
-            distance: 400,
-            size: 6,
-            duration: 2,
-            opacity: 0.8,
-            speed: 3
-          },
-          repulse: {
-            distance: 200,
-            duration: 0.4
-          },
-          push: {
-            particles_nb: 4
-          },
-          remove: {
-            particles_nb: 2
-          }
-        }
-      },
-      retina_detect: true
-    });
-
-    // Random Blinking Stars System
-    document.addEventListener('DOMContentLoaded', function() {
-      const heroSection = document.getElementById('hero');
-      const randomStarsContainer = document.querySelector('.random-stars-container');
-      
-      if (!randomStarsContainer) {
-        console.log('Random stars container not found');
-        return;
-      }
-
-      const colors = ['white', 'cyan', 'green', 'pink', 'yellow'];
-      
-      // Function to create a random star
-      function createRandomStar() {
-        const star = document.createElement('div');
-        star.className = 'random-star';
-        
-        // Random color
-        const colorClass = colors[Math.floor(Math.random() * colors.length)];
-        if (colorClass !== 'white') {
-          star.classList.add(colorClass);
-        }
-        
-        // Random position within hero section
-        const randomX = Math.random() * 100;
-        const randomY = Math.random() * 100;
-        star.style.left = randomX + '%';
-        star.style.top = randomY + '%';
-        
-        // Random size variation
-        const size = 2 + Math.random() * 3; // 2-5px
-        star.style.width = size + 'px';
-        star.style.height = size + 'px';
-        
-        randomStarsContainer.appendChild(star);
-        
-        // Remove star after animation completes (5 seconds)
-        setTimeout(() => {
-          star.remove();
-        }, 5000);
-      }
-      
-      // Create initial batch of random stars
-      function createStarBatch() {
-        const numStars = 8 + Math.floor(Math.random() * 5); // 8-12 stars per batch
-        for (let i = 0; i < numStars; i++) {
-          setTimeout(() => {
-            createRandomStar();
-          }, i * 100); // Stagger creation slightly
-        }
-      }
-      
-      // Create first batch immediately
-      createStarBatch();
-      
-      // Create new batch every 5 seconds
-      setInterval(createStarBatch, 5000);
-    });
-  </script>
 
   <script>
     document.addEventListener("DOMContentLoaded", function () {
