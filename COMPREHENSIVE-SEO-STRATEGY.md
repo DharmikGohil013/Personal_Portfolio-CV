@@ -78,8 +78,8 @@ Disallow: /forms/
 Disallow: /assets/vendor/
 Disallow: /*.pdf$
 
-Sitemap: https://dharmikgohil.fun/sitemap-enhanced.xml
-Sitemap: https://dharmikgohil.fun/image-sitemap.xml
+Sitemap: https://dharmikgohil.art/sitemap-enhanced.xml
+Sitemap: https://dharmikgohil.art/image-sitemap.xml
 ```
 
 ### 1.3 Core Web Vitals Optimization
@@ -280,12 +280,12 @@ Sitemap: https://dharmikgohil.fun/image-sitemap.xml
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
-    <loc>https://dharmikgohil.fun/mb-the-pack-unites/</loc>
+    <loc>https://dharmikgohil.art/mb-the-pack-unites/</loc>
     <image:image>
-      <image:loc>https://dharmikgohil.fun/mb-the-pack-unites/assets/images/intro-banner.jpg</image:loc>
+      <image:loc>https://dharmikgohil.art/mb-the-pack-unites/assets/images/intro-banner.jpg</image:loc>
       <image:title>Mavericks Battleground The Pack Unites Release Date June 12 2028 AI Powered Tactical Combat Game</image:title>
       <image:caption>Mavericks Battleground The Pack Unites tactical multiplayer shooter with AI powered gameplay flying vehicles releasing June 2028 by Dharmik Gohil professional game developer Unity specialist</image:caption>
-      <image:license>https://dharmikgohil.fun/</image:license>
+      <image:license>https://dharmikgohil.art/</image:license>
     </image:image>
   </url>
 </urlset>
@@ -311,7 +311,7 @@ Sitemap: https://dharmikgohil.fun/image-sitemap.xml
    - Contact information
    - Awards and achievements
 
-2. **WebSite Entity** (dharmikgohil.fun)
+2. **WebSite Entity** (dharmikgohil.art)
    - Site information
    - Publisher details
    - Search action
@@ -374,9 +374,9 @@ Sitemap: https://dharmikgohil.fun/image-sitemap.xml
 <meta property="og:type" content="video.game">
 <meta property="og:title" content="Mavericks Battleground: The Pack Unites - AI-Powered Tactical Shooter 2028">
 <meta property="og:description" content="Revolutionary tactical shooter with flying vehicles, 5v5 combat, AI-powered gameplay. Release June 12, 2028. Developed by Dharmik Gohil.">
-<meta property="og:image" content="https://dharmikgohil.fun/mb-the-pack-unites/assets/images/intro-banner.jpg">
+<meta property="og:image" content="https://dharmikgohil.art/mb-the-pack-unites/assets/images/intro-banner.jpg">
 <meta property="og:image:alt" content="Mavericks Battleground The Pack Unites game banner">
-<meta property="og:url" content="https://dharmikgohil.fun/mb-the-pack-unites/">
+<meta property="og:url" content="https://dharmikgohil.art/mb-the-pack-unites/">
 <meta property="og:site_name" content="Dharmik Gohil Game Developer">
 <meta property="og:locale" content="en_US">
 <meta property="video:release_date" content="2028-06-12">
@@ -394,7 +394,7 @@ Sitemap: https://dharmikgohil.fun/image-sitemap.xml
 <meta name="twitter:creator" content="@Dharmik086">
 <meta name="twitter:title" content="Mavericks Battleground: The Pack Unites - Coming June 2028">
 <meta name="twitter:description" content="AI-powered tactical shooter with flying vehicles and revolutionary gameplay. By Dharmik Gohil.">
-<meta name="twitter:image" content="https://dharmikgohil.fun/mb-the-pack-unites/assets/images/intro-banner.jpg">
+<meta name="twitter:image" content="https://dharmikgohil.art/mb-the-pack-unites/assets/images/intro-banner.jpg">
 <meta name="twitter:image:alt" content="Mavericks Battleground game featuring flying vehicles and futuristic combat">
 ```
 
@@ -620,7 +620,7 @@ Sitemap: https://dharmikgohil.fun/image-sitemap.xml
 - Business Name: Dharmik Gohil Game Development
 - Category: Software Company, Game Developer
 - Location: Surat, Gujarat, India
-- Website: https://dharmikgohil.fun
+- Website: https://dharmikgohil.art
 - Description: Professional game developer specializing in Unity XR, mobile games, and tactical shooters
 - Photos: Portfolio images, workspace, projects
 - Posts: Regular updates about projects
@@ -680,7 +680,7 @@ gtag('event', 'external_link_click', {
 
 **Setup Tasks**:
 1. Verify property ownership
-2. Submit sitemap: `https://dharmikgohil.fun/sitemap-enhanced.xml`
+2. Submit sitemap: `https://dharmikgohil.art/sitemap-enhanced.xml`
 3. Check indexing status
 4. Monitor search performance
 5. Fix crawl errors
@@ -916,7 +916,7 @@ gtag('event', 'external_link_click', {
   "@type": "VideoObject",
   "name": "Mavericks Battleground: The Pack Unites - Official Trailer",
   "description": "Official reveal trailer for Mavericks Battleground: The Pack Unites featuring flying vehicle combat, AI-powered gameplay, and 5v5 tactical action. Developed by Dharmik Gohil.",
-  "thumbnailUrl": "https://dharmikgohil.fun/assets/video-thumbnail.jpg",
+  "thumbnailUrl": "https://dharmikgohil.art/assets/video-thumbnail.jpg",
   "uploadDate": "2025-11-08",
   "duration": "PT2M30S",
   "contentUrl": "https://youtube.com/watch?v=VIDEO_ID",
@@ -1083,4 +1083,4 @@ This comprehensive SEO strategy provides everything needed to establish **Dharmi
 
 *Document Created: November 8, 2025*
 *Version: 1.0 - Complete Enterprise SEO Strategy*
-*Author: Comprehensive SEO Implementation for dharmikgohil.fun*
+*Author: Comprehensive SEO Implementation for dharmikgohil.art*

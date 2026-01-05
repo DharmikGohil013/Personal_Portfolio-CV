@@ -19,7 +19,7 @@ seo_config = {
         'description': 'Explore Dharmik Gohil\'s portfolio featuring innovative game development, Unity projects, web applications, and interactive experiences. Based in Surat, Gujarat, specializing in mobile and PC game development.',
         'keywords': 'Dharmik Gohil, game developer, Unity developer, web developer, mobile games, PC games, portfolio, Surat, Gujarat, India, game design, interactive experiences',
         'h1': 'Dharmik Gohil - Game Developer & Interactive Experience Designer',
-        'canonical': 'https://dharmikgohil.fun/',
+        'canonical': 'https://dharmikgohil.art/',
         'og_type': 'website'
     },
     'about.html': {
@@ -27,7 +27,7 @@ seo_config = {
         'description': 'Learn about Dharmik Gohil, an 18-year-old passionate game developer from Surat, Gujarat. Discover his journey, skills, education, and commitment to creating immersive gaming experiences.',
         'keywords': 'Dharmik Gohil about, game developer biography, Unity developer background, web developer profile, Surat game developer, student developer',
         'h1': 'About Dharmik Gohil',
-        'canonical': 'https://dharmikgohil.fun/about.html',
+        'canonical': 'https://dharmikgohil.art/about.html',
         'og_type': 'profile'
     },
     'contact.html': {
@@ -35,7 +35,7 @@ seo_config = {
         'description': 'Contact Dharmik Gohil for game development projects, collaborations, and inquiries. Based in Surat, Gujarat. Available for freelance work and exciting opportunities.',
         'keywords': 'contact Dharmik Gohil, game developer contact, hire game developer, Unity developer contact, web developer Surat, freelance game developer',
         'h1': 'Contact Dharmik Gohil',
-        'canonical': 'https://dharmikgohil.fun/contact.html',
+        'canonical': 'https://dharmikgohil.art/contact.html',
         'og_type': 'website'
     },
     'resume.html': {
@@ -43,7 +43,7 @@ seo_config = {
         'description': 'View Dharmik Gohil\'s professional resume showcasing game development skills, programming languages, projects, education, and technical expertise in Unity, C#, JavaScript, and more.',
         'keywords': 'Dharmik Gohil resume, game developer CV, Unity developer resume, programming skills, technical skills, education, projects, portfolio resume',
         'h1': 'Dharmik Gohil - Professional Resume',
-        'canonical': 'https://dharmikgohil.fun/resume.html',
+        'canonical': 'https://dharmikgohil.art/resume.html',
         'og_type': 'profile'
     },
     'portfolio.html': {
@@ -51,7 +51,7 @@ seo_config = {
         'description': 'Explore Dharmik Gohil\'s game development portfolio featuring Unity games, mobile apps, web applications, and interactive experiences. See live demos and project details.',
         'keywords': 'Dharmik Gohil portfolio, Unity games, mobile games, web games, game portfolio, interactive projects, game development showcase',
         'h1': 'Game Development Portfolio',
-        'canonical': 'https://dharmikgohil.fun/portfolio.html',
+        'canonical': 'https://dharmikgohil.art/portfolio.html',
         'og_type': 'website'
     },
     'services.html': {
@@ -59,7 +59,7 @@ seo_config = {
         'description': 'Professional game development services by Dharmik Gohil. Specializing in Unity game development, web applications, mobile apps, UI/UX design, and interactive experiences.',
         'keywords': 'game development services, Unity development services, web development services, mobile app development, UI UX design, freelance game developer services',
         'h1': 'Professional Development Services',
-        'canonical': 'https://dharmikgohil.fun/services.html',
+        'canonical': 'https://dharmikgohil.art/services.html',
         'og_type': 'service'
     },
     'Achivemtn.html': {
@@ -67,7 +67,7 @@ seo_config = {
         'description': 'Discover Dharmik Gohil\'s achievements, milestones, certifications, and recognition in game development, programming competitions, and educational accomplishments.',
         'keywords': 'Dharmik Gohil achievements, game developer milestones, programming achievements, certifications, awards, recognition, success stories',
         'h1': 'Achievements & Milestones',
-        'canonical': 'https://dharmikgohil.fun/Achivemtn.html',
+        'canonical': 'https://dharmikgohil.art/Achivemtn.html',
         'og_type': 'website'
     },
     'game1.html': {
@@ -75,7 +75,7 @@ seo_config = {
         'description': 'Play Floppy Bird, an addictive mobile game developed by Dharmik Gohil using Unity. Features challenging gameplay, smooth controls, and engaging mechanics.',
         'keywords': 'Floppy Bird game, Unity mobile game, casual game, mobile gaming, Unity game development, Dharmik Gohil games',
         'h1': 'Floppy Bird - Mobile Unity Game',
-        'canonical': 'https://dharmikgohil.fun/game1.html',
+        'canonical': 'https://dharmikgohil.art/game1.html',
         'og_type': 'website'
     },
     'game2.html': {
@@ -83,7 +83,7 @@ seo_config = {
         'description': 'Experience Cross Out, a strategic puzzle game developed with Unity by Dharmik Gohil. Features innovative gameplay mechanics and challenging levels.',
         'keywords': 'Cross Out game, Unity puzzle game, strategy game, puzzle mechanics, Unity game development, Dharmik Gohil games',
         'h1': 'Cross Out - Strategic Puzzle Game',
-        'canonical': 'https://dharmikgohil.fun/game2.html',
+        'canonical': 'https://dharmikgohil.art/game2.html',
         'og_type': 'website'
     },
     'game3.html': {
@@ -91,7 +91,7 @@ seo_config = {
         'description': 'Play Mini Mario, a classic platformer game developed by Dharmik Gohil. Features traditional Mario-style gameplay with modern Unity engine.',
         'keywords': 'Mini Mario game, platform game, Unity platformer, classic gameplay, Mario clone, Unity game development',
         'h1': 'Mini Mario - Platform Adventure Game',
-        'canonical': 'https://dharmikgohil.fun/game3.html',
+        'canonical': 'https://dharmikgohil.art/game3.html',
         'og_type': 'website'
     },
     'game4.html': {
@@ -99,7 +99,7 @@ seo_config = {
         'description': 'Experience Mavericks Battlegrounds, an exciting multiplayer game developed by Dharmik Gohil. Features real-time multiplayer gameplay and competitive mechanics.',
         'keywords': 'Mavericks Battlegrounds, multiplayer game, Unity multiplayer, online gaming, competitive game, Dharmik Gohil games',
         'h1': 'Mavericks Battlegrounds - Multiplayer Game',
-        'canonical': 'https://dharmikgohil.fun/game4.html',
+        'canonical': 'https://dharmikgohil.art/game4.html',
         'og_type': 'website'
     },
     'game5.html': {
@@ -107,7 +107,7 @@ seo_config = {
         'description': 'Manage your virtual hotel in this business simulation game developed by Dharmik Gohil. Features resource management, customer service, and strategic gameplay.',
         'keywords': 'Hotel Management game, business simulation, management game, Unity simulation, strategy game, Dharmik Gohil games',
         'h1': 'Hotel Management - Business Simulation Game',
-        'canonical': 'https://dharmikgohil.fun/game5.html',
+        'canonical': 'https://dharmikgohil.art/game5.html',
         'og_type': 'website'
     },
     'vr.html': {
@@ -115,7 +115,7 @@ seo_config = {
         'description': 'Explore Dharmik Gohil\'s AR/VR projects showcasing cutting-edge immersive technology, virtual reality experiences, and augmented reality applications.',
         'keywords': 'AR VR projects, virtual reality, augmented reality, immersive technology, VR development, AR development, Unity VR, Unity AR',
         'h1': 'AR/VR Projects & Immersive Experiences',
-        'canonical': 'https://dharmikgohil.fun/vr.html',
+        'canonical': 'https://dharmikgohil.art/vr.html',
         'og_type': 'website'
     },
     'logo.html': {
@@ -123,7 +123,7 @@ seo_config = {
         'description': 'Explore Dharmik Gohil\'s UI/UX design portfolio featuring creative logos, user interface designs, and visual identity projects for games and applications.',
         'keywords': 'UI UX design, logo design, graphic design, user interface, user experience, visual design, creative portfolio, Dharmik Gohil design',
         'h1': 'UI/UX Design Portfolio',
-        'canonical': 'https://dharmikgohil.fun/logo.html',
+        'canonical': 'https://dharmikgohil.art/logo.html',
         'og_type': 'website'
     }
 }
@@ -138,8 +138,8 @@ def add_structured_data(filename):
   "name": "Dharmik Gohil",
   "jobTitle": "Game Developer",
   "description": "Professional game developer specializing in Unity, web development, and interactive experiences",
-  "url": "https://dharmikgohil.fun",
-  "image": "https://dharmikgohil.fun/assets/img/DharmikGohil (1).png",
+  "url": "https://dharmikgohil.art",
+  "image": "https://dharmikgohil.art/assets/img/DharmikGohil (1).png",
   "address": {
     "@type": "PostalAddress",
     "addressLocality": "Surat",
@@ -178,7 +178,7 @@ def add_structured_data(filename):
     "name": "Dharmik Gohil"
   }},
   "description": "{seo_config.get(filename, {}).get('description', '')}",
-  "url": "https://dharmikgohil.fun/{filename}",
+  "url": "https://dharmikgohil.art/{filename}",
   "gamePlatform": ["Unity", "Mobile", "Web"],
   "genre": "Casual Game"
 }}
@@ -190,7 +190,7 @@ def add_structured_data(filename):
   "@type": "WebPage",
   "name": "{seo_config.get(filename, {}).get('title', '')}",
   "description": "{seo_config.get(filename, {}).get('description', '')}",
-  "url": "https://dharmikgohil.fun/{filename}",
+  "url": "https://dharmikgohil.art/{filename}",
   "author": {{
     "@type": "Person",
     "name": "Dharmik Gohil"
@@ -249,14 +249,14 @@ def optimize_seo_for_file(file_path):
   <meta property="og:url" content="{config["canonical"]}">
   <meta property="og:title" content="{config["title"]}">
   <meta property="og:description" content="{config["description"]}">
-  <meta property="og:image" content="https://dharmikgohil.fun/assets/img/DharmikGohil (1).png">
+  <meta property="og:image" content="https://dharmikgohil.art/assets/img/DharmikGohil (1).png">
 
   <!-- Twitter -->
   <meta property="twitter:card" content="summary_large_image">
   <meta property="twitter:url" content="{config["canonical"]}">
   <meta property="twitter:title" content="{config["title"]}">
   <meta property="twitter:description" content="{config["description"]}">
-  <meta property="twitter:image" content="https://dharmikgohil.fun/assets/img/DharmikGohil (1).png">
+  <meta property="twitter:image" content="https://dharmikgohil.art/assets/img/DharmikGohil (1).png">
 
   <!-- Additional SEO Meta Tags -->
   <meta name="robots" content="index, follow">

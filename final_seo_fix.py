@@ -19,7 +19,7 @@ def fix_missing_seo_elements(file_path):
         
         # Add canonical URL if missing
         if 'rel="canonical"' not in content:
-            canonical_tag = f'\\n  <link rel="canonical" href="https://dharmikgohil.fun/{filename}">'
+            canonical_tag = f'\\n  <link rel="canonical" href="https://dharmikgohil.art/{filename}">'
             # Add after author meta tag
             author_pattern = r'(<meta name="author"[^>]*>)'
             if re.search(author_pattern, content):
@@ -62,8 +62,8 @@ def fix_missing_seo_elements(file_path):
     "@context": "https://schema.org",
     "@type": "Person",
     "name": "Dharmik Gohil",
-    "url": "https://dharmikgohil.fun/",
-    "image": "https://dharmikgohil.fun/assets/img/DharmikGohil%20(1).png",
+    "url": "https://dharmikgohil.art/",
+    "image": "https://dharmikgohil.art/assets/img/DharmikGohil%20(1).png",
     "sameAs": [
       "https://github.com/dharmikgohil013"
     ],
@@ -127,7 +127,7 @@ def fix_missing_seo_elements(file_path):
     "@context": "https://schema.org",
     "@type": "VideoGame",
     "name": "{page_title}",
-    "url": "https://dharmikgohil.fun/{filename}",
+    "url": "https://dharmikgohil.art/{filename}",
     "description": "Professional mobile game developed by Dharmik Gohil using Unity engine",
     "gamePlatform": ["Android", "Mobile"],
     "genre": "Mobile Game",
@@ -135,7 +135,7 @@ def fix_missing_seo_elements(file_path):
       "@type": "Person",
       "name": "Dharmik Gohil",
       "jobTitle": "Game Developer",
-      "url": "https://dharmikgohil.fun/"
+      "url": "https://dharmikgohil.art/"
     }},
     "datePublished": "2024",
     "inLanguage": "en"
@@ -149,7 +149,7 @@ def fix_missing_seo_elements(file_path):
     "@context": "https://schema.org",
     "@type": "WebPage",
     "name": "{page_title}",
-    "url": "https://dharmikgohil.fun/{filename}",
+    "url": "https://dharmikgohil.art/{filename}",
     "description": "Professional page by Dharmik Gohil, expert game developer from CHARUSAT University",
     "author": {{
       "@type": "Person",

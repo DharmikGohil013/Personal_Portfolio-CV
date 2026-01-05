@@ -31,7 +31,7 @@ Successfully standardized the navigation header across all HTML pages in the por
 ## 🎨 **Standard Header Structure:**
 
 ### Navigation Menu Items:
-1. **Home** → https://dharmikgohil.fun
+1. **Home** → https://dharmikgohil.art
 2. **About** → #about
 3. **Resume** → #resume
 4. **Abilities** → services.html
@@ -42,13 +42,13 @@ Successfully standardized the navigation header across all HTML pages in the por
    - **UI/UX** (Sub-dropdown):
      - Designs → logo.html
    - **Websites** (Sub-dropdown):
-     - GDGS Games → http://gdgs.dharmikgohil.fun/
-     - Flipkart Clone → http://flipcart.dharmikgohil.fun/
-     - Krishna Construction → http://krishna.dharmikgohil.fun/
+     - GDGS Games → http://gdgs.dharmikgohil.art/
+     - Flipkart Clone → http://flipcart.dharmikgohil.art/
+     - Krishna Construction → http://krishna.dharmikgohil.art/
    - **Java** (Sub-dropdown):
      - CampusAdminPro Report → Google Drive link
    - **Node Js** (Sub-dropdown):
-     - IndianTurijam → https://indianturijam.dharmikgohil.fun/
+     - IndianTurijam → https://indianturijam.dharmikgohil.art/
      - Contact Page → contact.html
    - **C & C++** (Sub-dropdown):
      - Hostel Management → GitHub link
@@ -60,10 +60,10 @@ Successfully standardized the navigation header across all HTML pages in the por
    - MiniMario → itch.io link
    - MAVERICKS BATTLEGROUNDS → itch.io link
 9. **Services** (Dropdown - highlighted in green):
-   - Actify → https://actify.dharmikgohil.fun/
+   - Actify → https://actify.dharmikgohil.art/
    - Wifi Service → https://fkm.vercel.app/
    - Fit Sync → assets/Fit Sync.apk
-   - Learn Link → https://learnlink.dharmikgohil.fun
+   - Learn Link → https://learnlink.dharmikgohil.art
 
 ### Social Media Links:
 - **GitHub** → https://github.com/DharmikGohil013
@@ -143,7 +143,7 @@ Success rate: 100.0%
 ✅ Navigation Menu Structure
 ✅ Social Links Section
 ✅ Mobile Toggle Button
-✅ Home Link to dharmikgohil.fun
+✅ Home Link to dharmikgohil.art
 ✅ Projects Dropdown
 ✅ Services Section (Green highlight)
 

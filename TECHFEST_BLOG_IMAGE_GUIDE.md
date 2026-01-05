@@ -219,12 +219,12 @@ Use this template for each image:
 
 **Live Blog URL (after publishing):**
 ```
-https://dharmikgohil.fun/blog/iit-bombay-techfest-2024-experience.html
+https://dharmikgohil.art/blog/iit-bombay-techfest-2024-experience.html
 ```
 
 **Blog Listed On:**
 ```
-https://dharmikgohil.fun/blog.html
+https://dharmikgohil.art/blog.html
 ```
 
 ## 🎯 Blog Features

@@ -2,7 +2,7 @@
 
 ## 🚀 **MISSION ACCOMPLISHED - ALL IMAGES OPTIMIZED**
 
-I have successfully scanned and updated **ALL 165 images** across your entire dharmikgohil.fun website with keyword-rich SEO alt attributes!
+I have successfully scanned and updated **ALL 165 images** across your entire dharmikgohil.art website with keyword-rich SEO alt attributes!
 
 ---
 
@@ -223,7 +223,7 @@ The optimization script intelligently categorizes images:
 
 ## 🚀 **CONGRATULATIONS!**
 
-Your dharmikgohil.fun website now has **COMPLETE IMAGE SEO OPTIMIZATION**! Every single image across your entire site contributes to your keyword rankings while maintaining perfect accessibility and visual integrity.
+Your dharmikgohil.art website now has **COMPLETE IMAGE SEO OPTIMIZATION**! Every single image across your entire site contributes to your keyword rankings while maintaining perfect accessibility and visual integrity.
 
 **🎯 Result**: Your website now has 165 additional strategic keyword mentions embedded naturally in image alt attributes, significantly boosting your SEO power for "dharmik gohil", "dharmik gohil fun", and "gohil dharmik" searches!
 

@@ -177,7 +177,7 @@ def enhance_page_seo(file_path):
   <meta name="expertise" content="Mobile Game Development, VR/AR, Backend Development">
   
   <!-- Canonical URL -->
-  <link rel="canonical" href="https://dharmikgohil.fun/{filename}">'''
+  <link rel="canonical" href="https://dharmikgohil.art/{filename}">'''
         
         # Add after existing meta tags
         meta_insertion = r'(<meta name="keywords"[^>]*>)'
@@ -189,19 +189,19 @@ def enhance_page_seo(file_path):
   
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://dharmikgohil.fun/{filename}">
+  <meta property="og:url" content="https://dharmikgohil.art/{filename}">
   <meta property="og:title" content="{config.get('title', 'Dharmik Gohil - Game Developer')}">
   <meta property="og:description" content="{config.get('description', 'Professional Game Developer')}">
-  <meta property="og:image" content="https://dharmikgohil.fun/assets/img/DharmikGohil%20(1).png">
+  <meta property="og:image" content="https://dharmikgohil.art/assets/img/DharmikGohil%20(1).png">
   <meta property="og:locale" content="en_US">
   <meta property="og:site_name" content="Dharmik Gohil Portfolio">
   
   <!-- Twitter -->
   <meta property="twitter:card" content="summary_large_image">
-  <meta property="twitter:url" content="https://dharmikgohil.fun/{filename}">
+  <meta property="twitter:url" content="https://dharmikgohil.art/{filename}">
   <meta property="twitter:title" content="{config.get('title', 'Dharmik Gohil - Game Developer')}">
   <meta property="twitter:description" content="{config.get('description', 'Professional Game Developer')}">
-  <meta property="twitter:image" content="https://dharmikgohil.fun/assets/img/DharmikGohil%20(1).png">
+  <meta property="twitter:image" content="https://dharmikgohil.art/assets/img/DharmikGohil%20(1).png">
   <meta property="twitter:creator" content="@dharmikgohil">'''
         
         # Add social meta after canonical link
@@ -218,8 +218,8 @@ def enhance_page_seo(file_path):
     "@context": "https://schema.org",
     "@type": "Person",
     "name": "Dharmik Gohil",
-    "url": "https://dharmikgohil.fun/",
-    "image": "https://dharmikgohil.fun/assets/img/DharmikGohil%20(1).png",
+    "url": "https://dharmikgohil.art/",
+    "image": "https://dharmikgohil.art/assets/img/DharmikGohil%20(1).png",
     "sameAs": [
       "https://github.com/dharmikgohil013",
       "https://linkedin.com/in/dharmikgohil"
@@ -265,7 +265,7 @@ def enhance_page_seo(file_path):
     "@context": "https://schema.org",
     "@type": "WebPage",
     "name": "{config.get('title', 'Dharmik Gohil Page')}",
-    "url": "https://dharmikgohil.fun/{filename}",
+    "url": "https://dharmikgohil.art/{filename}",
     "description": "{config.get('description', 'Dharmik Gohil professional page')}",
     "author": {{
       "@type": "Person",
@@ -281,7 +281,7 @@ def enhance_page_seo(file_path):
     "isPartOf": {{
       "@type": "WebSite",
       "name": "Dharmik Gohil Portfolio",
-      "url": "https://dharmikgohil.fun/"
+      "url": "https://dharmikgohil.art/"
     }}
   }}
   </script>'''

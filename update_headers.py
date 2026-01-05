@@ -19,11 +19,11 @@ standard_header = '''  <header id="header" class="header d-flex align-items-cent
       </a>
       <nav id="navmenu" class="navmenu">
         <ul>
-          <li><a href="https://dharmikgohil.fun" class="active">Home</a></li>
+          <li><a href="https://dharmikgohil.art" class="active">Home</a></li>
           <li><a href="#about">About</a></li>
           <li><a href="#resume">Resume</a></li>
           <li><a href="services.html">Abilities</a></li>
-          <li class="dropdown"><a href="https://dharmikgohil.fun/portfolio.html"><span>Projects</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+          <li class="dropdown"><a href="https://dharmikgohil.art/portfolio.html"><span>Projects</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
             <ul>
               <li><a href="portfolio.html">Games</a></li>
               </li>
@@ -39,10 +39,10 @@ standard_header = '''  <header id="header" class="header d-flex align-items-cent
               </li>
               <li class="dropdown"><a href="#"><span>Websites</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
                 <ul>
-                  <li><a href="http://gdgs.dharmikgohil.fun/">GDGS Games</a></li>
+                  <li><a href="http://gdgs.dharmikgohil.art/">GDGS Games</a></li>
                   <!-- <li><a href="https://dharmikgohil013.github.io/DHARMIK-GOHIL-FILMS/">Film industry</a></li> -->
-                  <li><a href="http://flipcart.dharmikgohil.fun/">Flipkart Clone</a></li>
-                  <li><a href="http://krishna.dharmikgohil.fun/">Krishna Construction</a></li>
+                  <li><a href="http://flipcart.dharmikgohil.art/">Flipkart Clone</a></li>
+                  <li><a href="http://krishna.dharmikgohil.art/">Krishna Construction</a></li>
                   <!-- <li><a href="#">MedCare</a></li> -->
                 </ul>
               
@@ -59,7 +59,7 @@ standard_header = '''  <header id="header" class="header d-flex align-items-cent
               </li>
               <li class="dropdown"><a href="#"><span>Node Js</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
                 <ul>
-                  <li><a href="https://indianturijam.dharmikgohil.fun/">IndianTurijam</a></li>
+                  <li><a href="https://indianturijam.dharmikgohil.art/">IndianTurijam</a></li>
                   <li><a href="contact.html">Contact Page</a></li>
                 </ul>
               </li>
@@ -83,10 +83,10 @@ standard_header = '''  <header id="header" class="header d-flex align-items-cent
           <li class="dropdown">
   <a href="#"><span style="color: #15ff00;">Services</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
   <ul>
-    <li><a href="https://actify.dharmikgohil.fun/" target="_blank">Actify</a></li> <!-- ✅ NEW ENTRY -->
+    <li><a href="https://actify.dharmikgohil.art/" target="_blank">Actify</a></li> <!-- ✅ NEW ENTRY -->
     <li><a href="https://fkm.vercel.app/" target="_blank">Wifi Service</a></li>
     <li><a href="assets/Fit Sync.apk" target="_blank">Fit Sync</a></li>
-    <li><a href="https://learnlink.dharmikgohil.fun" target="_blank">Learn Link</a></li>
+    <li><a href="https://learnlink.dharmikgohil.art" target="_blank">Learn Link</a></li>
     
   </ul>
 </li>

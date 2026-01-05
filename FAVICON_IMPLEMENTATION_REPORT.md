@@ -2,7 +2,7 @@
 
 ## 🏆 **YOUR DHARMIK GOHIL LOGO IS NOW THE FAVICON!**
 
-I have successfully implemented comprehensive favicon support across your entire dharmikgohil.fun website using your personal logo (`dlogo.png`)!
+I have successfully implemented comprehensive favicon support across your entire dharmikgohil.art website using your personal logo (`dlogo.png`)!
 
 ---
 
@@ -221,7 +221,7 @@ I have successfully implemented comprehensive favicon support across your entire
 
 ## 🏆 **CONGRATULATIONS!**
 
-Your **Dharmik Gohil logo** is now the official favicon across your entire dharmikgohil.fun website! 
+Your **Dharmik Gohil logo** is now the official favicon across your entire dharmikgohil.art website! 
 
 **🎯 Result**: Every visitor will see your professional logo in browser tabs, bookmarks, mobile home screens, and Windows tiles. Your brand is now consistently represented across all platforms and devices!
 

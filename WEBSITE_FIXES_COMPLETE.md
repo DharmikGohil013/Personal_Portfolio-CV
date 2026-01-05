@@ -2,7 +2,7 @@
 
 ## ✅ **BOTH PROBLEMS SOLVED SUCCESSFULLY**
 
-I have successfully fixed both issues with your dharmikgohil.fun website:
+I have successfully fixed both issues with your dharmikgohil.art website:
 
 1. **✅ Fixed `\1 \1 \1 \1 \1 \1` Display Problem**: Completely removed all 99 `\1` characters
 2. **✅ Added Comprehensive Favicon**: Your Dharmik Gohil logo is now the favicon across all pages
@@ -185,7 +185,7 @@ I have successfully fixed both issues with your dharmikgohil.fun website:
 
 ## 🚀 **CONGRATULATIONS!**
 
-Your dharmikgohil.fun website is now **COMPLETELY FIXED** and **PROFESSIONALLY ENHANCED**!
+Your dharmikgohil.art website is now **COMPLETELY FIXED** and **PROFESSIONALLY ENHANCED**!
 
 **🎯 Summary**: 
 - ✅ **Display Issue**: No more `\1 \1 \1 \1 \1 \1` appearing on your pages

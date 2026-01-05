@@ -36,7 +36,7 @@ I've created a beautiful, secure password-protected HTML page that allows users 
 ## 🚀 **HOW TO ACCESS**
 
 ### 🌐 **URL Access**
-Visit: `https://dharmikgohil.fun/protected-access.html`
+Visit: `https://dharmikgohil.art/protected-access.html`
 
 ### 🔑 **Login Process**
 1. **Enter Password**: `dharmik2024`
@@ -204,7 +204,7 @@ gtag('event', 'protected_access', {
 
 ### 🌐 **Live Access**
 Once uploaded to your server:
-- **URL**: `https://dharmikgohil.fun/protected-access.html`
+- **URL**: `https://dharmikgohil.art/protected-access.html`
 - **Password**: `dharmik2024`
 - **File**: Downloads `Password_Dharmik.xlsx`
 

@@ -45,7 +45,7 @@
 
 **Steps:**
 1. Go to the tool
-2. Enter URL: `https://dharmikgohil.fun/Achivemtn.html`
+2. Enter URL: `https://dharmikgohil.art/Achivemtn.html`
 3. Click "Test URL"
 4. Check for errors (should show "Person" schema)
 5. Fix any warnings
@@ -115,7 +115,7 @@ Move-Item "Achivemtn.html" "achievements.html"
 Add to your sitemap:
 ```xml
 <url>
-  <loc>https://dharmikgohil.fun/achievements.html</loc>
+  <loc>https://dharmikgohil.art/achievements.html</loc>
   <lastmod>2025-11-16</lastmod>
   <changefreq>monthly</changefreq>
   <priority>0.9</priority>
@@ -127,7 +127,7 @@ Add to your sitemap:
 ### 7. Submit to Google Search Console
 1. Go to: https://search.google.com/search-console
 2. Click "URL Inspection"
-3. Enter: `https://dharmikgohil.fun/achievements.html`
+3. Enter: `https://dharmikgohil.art/achievements.html`
 4. Click "Request Indexing"
 
 ---
@@ -138,17 +138,17 @@ Copy-paste these to test:
 
 1. **Rich Results Test:**
    ```
-   https://search.google.com/test/rich-results?url=https://dharmikgohil.fun/Achivemtn.html
+   https://search.google.com/test/rich-results?url=https://dharmikgohil.art/Achivemtn.html
    ```
 
 2. **Mobile-Friendly Test:**
    ```
-   https://search.google.com/test/mobile-friendly?url=https://dharmikgohil.fun/Achivemtn.html
+   https://search.google.com/test/mobile-friendly?url=https://dharmikgohil.art/Achivemtn.html
    ```
 
 3. **PageSpeed Insights:**
    ```
-   https://pagespeed.web.dev/analysis?url=https://dharmikgohil.fun/Achivemtn.html
+   https://pagespeed.web.dev/analysis?url=https://dharmikgohil.art/Achivemtn.html
    ```
 
 ---

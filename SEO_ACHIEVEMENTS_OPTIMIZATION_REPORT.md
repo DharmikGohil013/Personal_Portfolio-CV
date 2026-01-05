@@ -185,7 +185,7 @@ contributed to real-world blockchain projects.
 
 #### Canonical URL
 ```html
-<link rel="canonical" href="https://dharmikgohil.fun/achievements.html">
+<link rel="canonical" href="https://dharmikgohil.art/achievements.html">
 ```
 ⚠️ **Note:** File should be renamed from `Achivemtn.html` to `achievements.html` for clean URL
 
@@ -305,8 +305,8 @@ contributed to real-world blockchain projects.
 
 ## 🔗 URL Structure Recommendation
 
-**Current:** `https://dharmikgohil.fun/Achivemtn.html`  
-**Recommended:** `https://dharmikgohil.fun/achievements.html`
+**Current:** `https://dharmikgohil.art/Achivemtn.html`  
+**Recommended:** `https://dharmikgohil.art/achievements.html`
 
 **Steps to Rename:**
 1. Rename file from `Achivemtn.html` to `achievements.html`
