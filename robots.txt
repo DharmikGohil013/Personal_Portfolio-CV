@@ -1,36 +1,65 @@
-# Robots.txt for Dharmik Gohil Portfolio - Maximum SEO Crawlability
-# Optimized for aggressive search engine indexing and keyword targeting
-# Target keywords: dharmik, dharmikgohil, gohil dharmik, game developer, unity developer, XR developer
-# Target institutions: CHARUSAT University, DEPSTAR College
+# =====================================================================
+# ULTRA-POWERFUL ROBOTS.TXT - DHARMIK GOHIL PORTFOLIO
+# MAXIMUM SEO CRAWLABILITY & INDEXING POWER
+# =====================================================================
+# TARGET KEYWORDS: dharmik, dharmikgohil, dharmik gohil, gohil dharmik
+# SPECIALTY: India's #1 Elite Game Developer, Unity XR Virtuoso, Metaverse Pioneer
+# INSTITUTION: CHARUSAT University Legend, DEPSTAR College Prodigy
+# EXPERTISE: Game Development, VR/AR, Metaverse, Mobile Games, Backend
+# =====================================================================
 
 User-agent: *
 Allow: /
+Crawl-delay: 0
 
-# Allow all major search engine bots with optimized crawling
+# AGGRESSIVE GOOGLE INDEXING - MAXIMUM VISIBILITY
 User-agent: Googlebot
 Allow: /
-Crawl-delay: 1
+Allow: /*.html
+Allow: /*.css
+Allow: /*.js
+Allow: /*.png
+Allow: /*.jpg
+Allow: /*.webp
+Allow: /*.gif
+Allow: /assets/
+Allow: /blog/
+Crawl-delay: 0
 
+# GOOGLE IMAGE BOT - FULL IMAGE INDEXING
+User-agent: Googlebot-Image
+Allow: /
+Allow: /assets/img/
+Allow: /*.png
+Allow: /*.jpg
+Allow: /*.webp
+
+# BING MAXIMUM INDEXING
 User-agent: Bingbot  
 Allow: /
-Crawl-delay: 1
+Crawl-delay: 0
 
+# YAHOO CRAWLER
 User-agent: Slurp
 Allow: /
-Crawl-delay: 1
+Crawl-delay: 0
 
+# DUCKDUCKGO INDEXING
 User-agent: DuckDuckBot
 Allow: /
-Crawl-delay: 1
+Crawl-delay: 0
 
+# BAIDU CHINESE SEARCH
 User-agent: Baiduspider
 Allow: /
-Crawl-delay: 1
+Crawl-delay: 0
 
+# YANDEX RUSSIAN SEARCH
 User-agent: YandexBot
 Allow: /
-Crawl-delay: 1
+Crawl-delay: 0
 
+# SOCIAL MEDIA BOTS - MAXIMUM SHARING POTENTIAL
 User-agent: facebookexternalhit
 Allow: /
 
@@ -40,7 +69,19 @@ Allow: /
 User-agent: LinkedInBot
 Allow: /
 
-# Priority pages for aggressive SEO targeting
+User-agent: WhatsApp
+Allow: /
+
+User-agent: TelegramBot
+Allow: /
+
+User-agent: PinterestBot
+Allow: /
+
+User-agent: Discordbot
+Allow: /
+
+# PRIORITY PAGES - MAXIMUM SEO POWER
 Allow: /index.html
 Allow: /about.html
 Allow: /portfolio.html
@@ -48,6 +89,8 @@ Allow: /resume.html
 Allow: /contact.html
 Allow: /services.html
 Allow: /Achivemtn.html
+Allow: /blog.html
+Allow: /blog/
 Allow: /vr.html
 Allow: /logo.html
 Allow: /game1.html
