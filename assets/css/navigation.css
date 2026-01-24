@@ -47,13 +47,13 @@
 .logo .sitename {
   font-size: 26px;
   font-weight: 700;
-  color: #00d4ff;
+  color: #ffffff !important;
   margin: 0;
   letter-spacing: 1px;
-  background: linear-gradient(135deg, #00d4ff, #00ffff);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  text-shadow: none !important;
+  filter: none !important;
+  -webkit-text-fill-color: #ffffff !important;
+  background: none !important;
 }
 
 /* Navigation Menu */
@@ -118,7 +118,7 @@
   position: relative;
 }
 
-.dropdown > a {
+.dropdown>a {
   padding-right: 22px;
 }
 
@@ -152,7 +152,7 @@
   border: 1px solid rgba(0, 212, 255, 0.2);
 }
 
-.dropdown:hover > ul {
+.dropdown:hover>ul {
   opacity: 1;
   visibility: visible;
   transform: translateY(0);
@@ -180,7 +180,7 @@
   position: relative;
 }
 
-.dropdown .dropdown > a::after {
+.dropdown .dropdown>a::after {
   content: "\f285";
   font-family: "bootstrap-icons";
   position: absolute;
@@ -194,7 +194,7 @@
   margin: 0 0 0 10px;
 }
 
-.dropdown .dropdown:hover > ul {
+.dropdown .dropdown:hover>ul {
   opacity: 1;
   visibility: visible;
   transform: translateX(0);
@@ -372,12 +372,12 @@
     position: relative;
   }
 
-  .navmenu .dropdown > a {
+  .navmenu .dropdown>a {
     position: relative;
     padding-right: 55px;
   }
 
-  .navmenu .dropdown.active > a {
+  .navmenu .dropdown.active>a {
     background: rgba(0, 212, 255, 0.1);
     color: #00d4ff !important;
   }
@@ -412,7 +412,7 @@
   }
 
   /* Show dropdown when active */
-  .dropdown.active > ul {
+  .dropdown.active>ul {
     max-height: 500px;
     padding: 5px 0;
   }
@@ -459,7 +459,7 @@
     justify-content: center;
   }
 
-  .dropdown.active > a .toggle-dropdown {
+  .dropdown.active>a .toggle-dropdown {
     transform: translateY(-50%) rotate(180deg);
     color: #00d4ff;
   }
@@ -528,6 +528,7 @@
     opacity: 0;
     transform: translateX(-20px);
   }
+
   to {
     opacity: 1;
     transform: translateX(0);
@@ -538,13 +539,33 @@ body.mobile-nav-active .navmenu li {
   animation: slideInRight 0.3s ease forwards;
 }
 
-body.mobile-nav-active .navmenu li:nth-child(1) { animation-delay: 0.05s; }
-body.mobile-nav-active .navmenu li:nth-child(2) { animation-delay: 0.1s; }
-body.mobile-nav-active .navmenu li:nth-child(3) { animation-delay: 0.15s; }
-body.mobile-nav-active .navmenu li:nth-child(4) { animation-delay: 0.2s; }
-body.mobile-nav-active .navmenu li:nth-child(5) { animation-delay: 0.25s; }
-body.mobile-nav-active .navmenu li:nth-child(6) { animation-delay: 0.3s; }
-body.mobile-nav-active .navmenu li:nth-child(7) { animation-delay: 0.35s; }
+body.mobile-nav-active .navmenu li:nth-child(1) {
+  animation-delay: 0.05s;
+}
+
+body.mobile-nav-active .navmenu li:nth-child(2) {
+  animation-delay: 0.1s;
+}
+
+body.mobile-nav-active .navmenu li:nth-child(3) {
+  animation-delay: 0.15s;
+}
+
+body.mobile-nav-active .navmenu li:nth-child(4) {
+  animation-delay: 0.2s;
+}
+
+body.mobile-nav-active .navmenu li:nth-child(5) {
+  animation-delay: 0.25s;
+}
+
+body.mobile-nav-active .navmenu li:nth-child(6) {
+  animation-delay: 0.3s;
+}
+
+body.mobile-nav-active .navmenu li:nth-child(7) {
+  animation-delay: 0.35s;
+}
 
 /* Mobile overlay backdrop */
 body.mobile-nav-active::before {
@@ -566,6 +587,7 @@ body.mobile-nav-active::before {
   from {
     opacity: 0;
   }
+
   to {
     opacity: 1;
   }

@@ -1,9 +1,18 @@
 /* ----------- START index.css ----------- */
 
+/* Color Variables */
+:root {
+  --accent-orange: #F5B461;
+  --dark-blue-1: #2C3E50;
+  --dark-blue-2: #4A5F7F;
+  --very-dark: #1A1F2E;
+  --text-white: #ffffff;
+}
+
 /* Global Styles */
 body {
-  background: #0a0f1f;
-  color: #fff;
+  background: var(--very-dark);
+  color: var(--text-white);
   font-family: 'JetBrains Mono', monospace;
   overflow-x: hidden;
   position: relative;
@@ -12,8 +21,8 @@ body {
 
 /* Header */
 .header {
-  background: #1a1e34;
-  border-bottom: 1px solid rgba(0, 234, 255, 0.2);
+  background: var(--dark-blue-1);
+  border-bottom: 1px solid rgba(245, 180, 97, 0.2);
   padding: 15px 0;
   transition: all 0.5s;
   z-index: 997;
@@ -24,29 +33,20 @@ body {
   font-size: 2rem;
   text-transform: uppercase;
   letter-spacing: 2px;
-  color: #00eaff;
-  text-shadow: 0 0 10px #00eaff;
-  animation: neonGlow 1.5s ease-in-out infinite alternate;
-}
-
-@keyframes neonGlow {
-  from {
-    text-shadow: 0 0 5px #00eaff, 0 0 10px #00eaff;
-  }
-
-  to {
-    text-shadow: 0 0 15px #00eaff, 0 0 25px #00eaff;
-  }
+  color: #ffffff !important;
+  text-shadow: none !important;
+  filter: none !important;
+  animation: none !important;
 }
 
 .header .header-social-links a {
-  color: #00eaff;
+  color: var(--accent-orange);
   transition: all 0.3s ease;
 }
 
 .header .header-social-links a:hover {
-  color: #15ff00;
-  text-shadow: 0 0 15px #15ff00;
+  color: var(--text-white);
+  transform: scale(1.1);
 }
 
 /* Portfolio Section */
@@ -54,7 +54,7 @@ body {
   position: relative;
   min-height: 100vh;
   padding: 80px 0;
-  background: linear-gradient(135deg, #1a1e34, #2b3557);
+  background: linear-gradient(135deg, var(--very-dark), var(--dark-blue-1));
   overflow: hidden;
 }
 
@@ -65,7 +65,7 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"><rect width="20" height="20" fill="none" stroke="rgba(0,234,255,0.1)" stroke-width="1"/></svg>') repeat;
+  background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"><rect width="20" height="20" fill="none" stroke="rgba(245,180,97,0.1)" stroke-width="1"/></svg>') repeat;
   animation: gridMove 20s linear infinite;
   z-index: 0;
 }
@@ -88,8 +88,7 @@ body {
 .section-title h2 {
   font-family: 'JetBrains Mono', monospace;
   font-size: 2.5rem;
-  color: #fff;
-  text-shadow: 0 0 15px #00eaff;
+  color: var(--text-white);
   animation: flicker 3s infinite alternate;
 }
 
@@ -108,8 +107,7 @@ body {
 .section-title p {
   font-family: 'JetBrains Mono', monospace;
   font-size: 1.2rem;
-  color: #15ff00;
-  text-shadow: 0 0 10px #15ff00;
+  color: var(--accent-orange);
 }
 
 /* Updated Portfolio Filters */
@@ -123,31 +121,29 @@ body {
 
 .portfolio-filters .filter-btn {
   font-family: 'JetBrains Mono', monospace;
-  background: rgba(26, 30, 52, 0.9);
-  color: #00eaff;
+  background: rgba(44, 62, 80, 0.9);
+  color: var(--accent-orange);
   padding: 10px 20px;
-  border: 2px solid #00eaff;
+  border: 2px solid var(--accent-orange);
   border-radius: 25px;
   text-transform: uppercase;
   font-size: 0.9rem;
   font-weight: bold;
-  text-shadow: 0 0 5px #00eaff;
   transition: all 0.3s ease;
   cursor: pointer;
 }
 
 .portfolio-filters .filter-btn:hover,
 .portfolio-filters .filter-btn.filter-active {
-  background: #15ff00;
-  color: #0a0f1f;
-  border-color: #15ff00;
-  box-shadow: 0 0 15px #15ff00;
-  text-shadow: none;
+  background: var(--accent-orange);
+  color: var(--very-dark);
+  border-color: var(--accent-orange);
+  box-shadow: 0 0 15px var(--accent-orange);
 }
 
 .portfolio-item img {
-  border: 2px solid #00eaff;
-  box-shadow: 0 0 15px rgba(0, 234, 255, 0.5);
+  border: 2px solid var(--accent-orange);
+  box-shadow: 0 0 15px rgba(245, 180, 97, 0.5);
   transition: transform 0.3s ease;
 }
 
@@ -156,28 +152,25 @@ body {
 }
 
 .portfolio-info {
-  background: rgba(26, 30, 52, 0.9);
-  border: 1px solid rgba(0, 234, 255, 0.2);
+  background: rgba(44, 62, 80, 0.9);
+  border: 1px solid rgba(245, 180, 97, 0.2);
 }
 
 .portfolio-info h4 {
   font-family: 'JetBrains Mono', monospace;
-  color: #00eaff;
-  text-shadow: 0 0 5px #00eaff;
+  color: var(--accent-orange);
 }
 
 .portfolio-info p {
-  color: #15ff00;
-  text-shadow: 0 0 5px #15ff00;
+  color: var(--text-white);
 }
 
 .portfolio-info a {
-  color: #00eaff;
+  color: var(--accent-orange);
 }
 
 .portfolio-info a:hover {
-  color: #15ff00;
-  text-shadow: 0 0 10px #15ff00;
+  color: var(--text-white);
 }
 
 /* Birthday Notification */
@@ -190,10 +183,10 @@ body {
   max-width: 90vw;
   padding: 25px;
   border-radius: 20px;
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(44, 62, 80, 0.95);
   backdrop-filter: blur(20px);
-  box-shadow: 0 0 30px rgba(255, 223, 0, 0.7), 0 0 20px rgba(255, 0, 255, 0.3);
-  border: 2px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 30px rgba(245, 180, 97, 0.7);
+  border: 2px solid rgba(245, 180, 97, 0.3);
   animation: glowPulse 2s ease-in-out infinite alternate, slideIn 1s ease-in-out;
   text-align: center;
   overflow: hidden;
@@ -201,11 +194,9 @@ body {
 
 .notification.birthday h3 {
   font-size: 1.8rem;
-  color: #fff700;
+  color: var(--accent-orange);
   margin-bottom: 10px;
   font-family: 'JetBrains Mono', monospace;
-  text-shadow: 0 0 10px #fff700, 0 0 25px #ff007f;
-  animation: shimmer 3s infinite linear;
 }
 
 .notification.birthday p {
@@ -220,8 +211,8 @@ body {
   width: 100%;
   border-radius: 12px;
   margin-bottom: 15px;
-  border: 2px solid #15ff00;
-  box-shadow: 0 0 15px rgba(21, 255, 0, 0.7);
+  border: 2px solid var(--accent-orange);
+  box-shadow: 0 0 15px rgba(245, 180, 97, 0.7);
 }
 
 .notification .button-container {
@@ -233,14 +224,14 @@ body {
 
 .notification .preview-btn,
 .notification .close-btn {
-  background: linear-gradient(135deg, #00eaff, #15ff00);
-  color: #0a0f1f;
+  background: var(--accent-orange);
+  color: var(--very-dark);
   padding: 10px 20px;
   font-weight: bold;
   border: none;
   border-radius: 50px;
   font-family: 'JetBrains Mono', monospace;
-  box-shadow: 0 0 20px rgba(0, 234, 255, 0.6);
+  box-shadow: 0 0 20px rgba(245, 180, 97, 0.6);
   transition: all 0.3s ease;
   cursor: pointer;
 }
@@ -248,17 +239,18 @@ body {
 .notification .preview-btn:hover,
 .notification .close-btn:hover {
   transform: scale(1.08);
-  box-shadow: 0 0 25px rgba(21, 255, 0, 0.9);
-  background: linear-gradient(135deg, #15ff00, #00eaff);
+  box-shadow: 0 0 25px rgba(245, 180, 97, 0.9);
+  background: var(--text-white);
+  color: var(--very-dark);
 }
 
 @keyframes glowPulse {
   0% {
-    box-shadow: 0 0 10px #ffdf00, 0 0 20px #ff007f;
+    box-shadow: 0 0 10px rgba(245, 180, 97, 0.5);
   }
 
   100% {
-    box-shadow: 0 0 30px #ffdf00, 0 0 40px #ff007f;
+    box-shadow: 0 0 30px rgba(245, 180, 97, 0.8);
   }
 }
 
@@ -307,9 +299,9 @@ body {
 
 /* Footer */
 .footer {
-  background: #1a1e34;
+  background: var(--dark-blue-1);
   padding: 20px 0;
-  border-top: 1px solid rgba(0, 234, 255, 0.2);
+  border-top: 1px solid rgba(245, 180, 97, 0.2);
 }
 
 .footer .copyright p {
@@ -318,18 +310,17 @@ body {
 }
 
 .footer .sitename {
-  color: #00eaff;
-  text-shadow: 0 0 10px #00eaff;
+  color: var(--accent-orange);
 }
 
 .footer .social-links a {
-  color: #00eaff;
+  color: var(--accent-orange);
   transition: all 0.3s ease;
 }
 
 .footer .social-links a:hover {
-  color: #15ff00;
-  text-shadow: 0 0 15px #15ff00;
+  color: var(--text-white);
+  transform: scale(1.1);
 }
 
 /* Preloader */
@@ -337,7 +328,7 @@ body {
   position: fixed;
   inset: 0;
   z-index: 9999;
-  background-color: #0a0f1f;
+  background-color: var(--very-dark);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -360,9 +351,9 @@ body {
   width: 100%;
   height: 100%;
   border: 4px solid transparent;
-  border-top: 4px solid #ff007f;
+  border-top: 4px solid var(--accent-orange);
   border-radius: 50%;
-  box-shadow: 0 0 15px #ff007f;
+  box-shadow: 0 0 15px var(--accent-orange);
   animation: rotate-loader 1.2s linear infinite;
 }
 
@@ -373,9 +364,9 @@ body {
   top: 10%;
   left: 10%;
   border: 4px solid transparent;
-  border-bottom: 4px solid #00eaff;
+  border-bottom: 4px solid var(--dark-blue-2);
   border-radius: 50%;
-  box-shadow: 0 0 15px #00eaff;
+  box-shadow: 0 0 15px var(--dark-blue-2);
   animation: rotate-loader 1.5s linear infinite reverse;
 }
 
@@ -385,10 +376,10 @@ body {
   height: 60%;
   top: 20%;
   left: 20%;
-  border: 4px solid #ffdf00;
+  border: 4px solid var(--accent-orange);
   border-left-color: transparent;
   border-radius: 50%;
-  box-shadow: 0 0 15px #ffdf00;
+  box-shadow: 0 0 15px var(--accent-orange);
   animation: pulse-loader 2s ease-in-out infinite;
 }
 
@@ -441,8 +432,8 @@ body {
 
 /* Scroll Top - Positioned on LEFT to avoid OmniDimension widget overlap */
 .scroll-top {
-  background: #00eaff;
-  box-shadow: 0 0 15px rgba(0, 234, 255, 0.5);
+  background: var(--accent-orange);
+  box-shadow: 0 0 15px rgba(245, 180, 97, 0.5);
   position: fixed;
   left: 15px;
   bottom: 15px;
@@ -450,12 +441,12 @@ body {
 }
 
 .scroll-top:hover {
-  background: #15ff00;
-  box-shadow: 0 0 25px rgba(21, 255, 0, 0.8);
+  background: var(--text-white);
+  box-shadow: 0 0 25px rgba(245, 180, 97, 0.8);
 }
 
 .scroll-top i {
-  color: #0a0f1f;
+  color: var(--very-dark);
 }
 
 /* ----------- END index.css ----------- */
