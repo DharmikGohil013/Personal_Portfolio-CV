@@ -404,30 +404,65 @@
       font-family: 'JetBrains Mono', monospace;
       font-size: 3.5rem;
       color: #fff;
-      text-shadow:
-        0 0 10px rgba(0, 234, 255, 0.8),
-        0 0 20px rgba(0, 234, 255, 0.6),
-        0 0 30px rgba(0, 234, 255, 0.4),
-        0 0 40px rgba(0, 234, 255, 0.2);
-      animation: glow 2s ease-in-out infinite alternate;
       margin-bottom: 20px;
+      margin-top: 30px;
     }
 
-    @keyframes glow {
+    /* Hero Profile Photo */
+    .hero-profile-photo {
+      width: 180px;
+      height: 180px;
+      margin: 0 auto 30px;
+      border-radius: 50%;
+      overflow: hidden;
+      border: 4px solid rgba(0, 234, 255, 0.8);
+      box-shadow:
+        0 0 20px rgba(0, 234, 255, 0.6),
+        0 0 40px rgba(0, 234, 255, 0.4),
+        inset 0 0 20px rgba(0, 234, 255, 0.2);
+      animation: profile-glow 3s ease-in-out infinite alternate;
+      position: relative;
+      z-index: 10;
+    }
+
+    .hero-profile-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    @keyframes profile-glow {
       from {
-        text-shadow:
-          0 0 10px rgba(0, 234, 255, 0.8),
+        box-shadow:
           0 0 20px rgba(0, 234, 255, 0.6),
-          0 0 30px rgba(0, 234, 255, 0.4);
+          0 0 40px rgba(0, 234, 255, 0.4),
+          inset 0 0 20px rgba(0, 234, 255, 0.2);
       }
 
       to {
-        text-shadow:
-          0 0 20px rgba(0, 234, 255, 1),
-          0 0 30px rgba(0, 234, 255, 0.8),
-          0 0 40px rgba(0, 234, 255, 0.6),
-          0 0 50px rgba(0, 234, 255, 0.4);
+        box-shadow:
+          0 0 30px rgba(0, 234, 255, 0.9),
+          0 0 60px rgba(0, 234, 255, 0.6),
+          inset 0 0 30px rgba(0, 234, 255, 0.3);
       }
+    }
+
+    /* Hero Subtitle */
+    #hero p.hero-subtitle {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 1.2rem;
+      color: #fff;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      font-weight: 400;
+      margin-bottom: 40px;
+      opacity: 0.9;
+    }
+
+    /* Hero Buttons Container */
+    .hero-buttons {
+      margin-top: 30px;
     }
 
     #hero p {
@@ -576,10 +611,6 @@
     /* About Section - Photo Styling */
     .about .img-fluid {
       border-radius: 20px;
-      box-shadow:
-        0 10px 40px rgba(0, 234, 255, 0.3),
-        0 0 20px rgba(0, 234, 255, 0.2);
-      border: 3px solid rgba(0, 234, 255, 0.5);
     }
 
     /* Portfolio Section */
@@ -1792,10 +1823,19 @@
       <div class="container text-center" data-aos="zoom-out" data-aos-delay="100">
         <div class="row justify-content-center">
           <div class="col-lg-8">
-            <h2>Dharmik Gohil</h2>
-            <p>"Crafting Worlds, One Game at a Time"</p>
-            <a href="#about" class="btn-get-started">About Me</a>
-            <a href="contact.html" class="btn-get-started">Support</a>
+            <!-- Profile Photo -->
+            <div class="hero-profile-photo">
+              <img src="assets/img/dharmik-gohil-profile.jpg" alt="Dharmik Gohil - Game Developer">
+            </div>
+            <!-- Main Heading -->
+            <h2>Hi, I'm Dharmik Gohil</h2>
+            <!-- Subtitle -->
+            <p class="hero-subtitle">I'M GAME DEVELOPER</p>
+            <!-- Buttons -->
+            <div class="hero-buttons">
+              <a href="#about" class="btn-get-started">About Me</a>
+              <a href="contact.html" class="btn-get-started">Support</a>
+            </div>
           </div>
         </div>
       </div>

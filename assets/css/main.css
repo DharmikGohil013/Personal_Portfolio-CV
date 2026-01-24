@@ -1481,8 +1481,6 @@ body {
   font-family: 'JetBrains Mono', monospace;
   font-size: 3.5rem;
   color: #fff;
-  text-shadow: 0 0 15px #00eaff, 0 0 30px #00eaff;
-  animation: flicker 3s infinite alternate;
 }
 
 @keyframes flicker {
