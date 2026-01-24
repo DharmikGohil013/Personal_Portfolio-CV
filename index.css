@@ -30,8 +30,13 @@ body {
 }
 
 @keyframes neonGlow {
-  from { text-shadow: 0 0 5px #00eaff, 0 0 10px #00eaff; }
-  to { text-shadow: 0 0 15px #00eaff, 0 0 25px #00eaff; }
+  from {
+    text-shadow: 0 0 5px #00eaff, 0 0 10px #00eaff;
+  }
+
+  to {
+    text-shadow: 0 0 15px #00eaff, 0 0 25px #00eaff;
+  }
 }
 
 .header .header-social-links a {
@@ -66,8 +71,13 @@ body {
 }
 
 @keyframes gridMove {
-  0% { background-position: 0 0; }
-  100% { background-position: 100px 100px; }
+  0% {
+    background-position: 0 0;
+  }
+
+  100% {
+    background-position: 100px 100px;
+  }
 }
 
 .portfolio .container {
@@ -84,8 +94,15 @@ body {
 }
 
 @keyframes flicker {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.8; }
+
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.8;
+  }
 }
 
 .section-title p {
@@ -236,19 +253,39 @@ body {
 }
 
 @keyframes glowPulse {
-  0% { box-shadow: 0 0 10px #ffdf00, 0 0 20px #ff007f; }
-  100% { box-shadow: 0 0 30px #ffdf00, 0 0 40px #ff007f; }
+  0% {
+    box-shadow: 0 0 10px #ffdf00, 0 0 20px #ff007f;
+  }
+
+  100% {
+    box-shadow: 0 0 30px #ffdf00, 0 0 40px #ff007f;
+  }
 }
 
 @keyframes shimmer {
-  0% { text-shadow: 0 0 10px #fff700, 0 0 25px #ff007f; }
-  50% { text-shadow: 0 0 20px #ff007f, 0 0 35px #00eaff; }
-  100% { text-shadow: 0 0 10px #fff700, 0 0 25px #ff007f; }
+  0% {
+    text-shadow: 0 0 10px #fff700, 0 0 25px #ff007f;
+  }
+
+  50% {
+    text-shadow: 0 0 20px #ff007f, 0 0 35px #00eaff;
+  }
+
+  100% {
+    text-shadow: 0 0 10px #fff700, 0 0 25px #ff007f;
+  }
 }
 
 @keyframes slideIn {
-  from { opacity: 0; transform: translateX(100%); }
-  to { opacity: 1; transform: translateX(0); }
+  from {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
 @media (max-width: 480px) {
@@ -258,9 +295,11 @@ body {
     padding: 20px;
     width: 90vw;
   }
+
   .notification.birthday h3 {
     font-size: 1.4rem;
   }
+
   .notification.birthday p {
     font-size: 0.95rem;
   }
@@ -367,24 +406,47 @@ body {
 }
 
 @keyframes rotate-loader {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 @keyframes pulse-loader {
-  0%, 100% { transform: scale(1); opacity: 1; }
-  50% { transform: scale(1.2); opacity: 0.7; }
+
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  50% {
+    transform: scale(1.2);
+    opacity: 0.7;
+  }
 }
 
 @keyframes fade-text {
-  0% { opacity: 1; }
-  100% { opacity: 0.5; }
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0.5;
+  }
 }
 
-/* Scroll Top */
+/* Scroll Top - Positioned on LEFT to avoid OmniDimension widget overlap */
 .scroll-top {
   background: #00eaff;
   box-shadow: 0 0 15px rgba(0, 234, 255, 0.5);
+  position: fixed;
+  left: 15px;
+  bottom: 15px;
+  z-index: 99998;
 }
 
 .scroll-top:hover {
@@ -398,4 +460,42 @@ body {
 
 /* ----------- END index.css ----------- */
 
+/* OmniDimension Web Widget - Fixed Bottom Right */
+#omnidimension-web-widget,
+#omnidimension-widget-container,
+[id*="omnidim"],
+[class*="omnidim"] {
+  position: fixed !important;
+  bottom: 20px !important;
+  right: 20px !important;
+  z-index: 999999 !important;
+  max-width: 400px !important;
+}
 
+/* Ensure widget button stays visible */
+#omnidimension-web-widget iframe,
+[id*="omnidim"] iframe {
+  position: fixed !important;
+  bottom: 20px !important;
+  right: 20px !important;
+  z-index: 999999 !important;
+}
+
+/* Mobile responsiveness for widget */
+@media (max-width: 768px) {
+
+  #omnidimension-web-widget,
+  #omnidimension-widget-container,
+  [id*="omnidim"],
+  [class*="omnidim"] {
+    bottom: 15px !important;
+    right: 15px !important;
+    max-width: 90vw !important;
+  }
+
+  #omnidimension-web-widget iframe,
+  [id*="omnidim"] iframe {
+    bottom: 15px !important;
+    right: 15px !important;
+  }
+}
