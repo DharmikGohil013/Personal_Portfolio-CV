@@ -6,10 +6,10 @@
 
 /* Header Styles */
 .header {
-  background-color: rgba(10, 15, 31, 0.98);
+  background-color: rgba(26, 31, 46, 0.98);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
-  box-shadow: 0 2px 20px rgba(0, 212, 255, 0.1);
+  box-shadow: 0 2px 20px rgba(245, 180, 97, 0.1);
   transition: all 0.3s ease;
   padding: 12px 0;
   z-index: 1001;
@@ -92,8 +92,8 @@
 
 .navmenu a:hover,
 .navmenu a.active {
-  color: #00d4ff;
-  background: rgba(0, 212, 255, 0.1);
+  color: #F5B461;
+  background: rgba(245, 180, 97, 0.1);
 }
 
 .navmenu a::after {
@@ -104,7 +104,7 @@
   transform: translateX(-50%) scaleX(0);
   width: 80%;
   height: 2px;
-  background: linear-gradient(90deg, #00d4ff, #00ffff);
+  background: linear-gradient(90deg, #F5B461, #F5B461);
   transition: transform 0.3s ease;
 }
 
@@ -136,20 +136,20 @@
   position: absolute;
   top: 100%;
   left: 0;
-  background: rgba(10, 15, 31, 0.98);
+  background: rgba(26, 31, 46, 0.98);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   padding: 10px 0;
   margin: 10px 0 0 0;
   border-radius: 8px;
-  box-shadow: 0 5px 25px rgba(0, 212, 255, 0.2);
+  box-shadow: 0 5px 25px rgba(245, 180, 97, 0.2);
   min-width: 220px;
   opacity: 0;
   visibility: hidden;
   transform: translateY(-10px);
   transition: all 0.3s ease;
   z-index: 99;
-  border: 1px solid rgba(0, 212, 255, 0.2);
+  border: 1px solid rgba(245, 180, 97, 0.2);
 }
 
 .dropdown:hover>ul {
@@ -171,7 +171,7 @@
 }
 
 .dropdown ul a:hover {
-  background: rgba(0, 212, 255, 0.15);
+  background: rgba(245, 180, 97, 0.15);
   padding-left: 25px;
 }
 
@@ -215,30 +215,30 @@
   width: 36px;
   height: 36px;
   border-radius: 50%;
-  background: rgba(0, 212, 255, 0.1);
-  color: #00d4ff;
+  background: rgba(245, 180, 97, 0.1);
+  color: #F5B461;
   font-size: 15px;
   transition: all 0.3s ease;
   text-decoration: none;
 }
 
 .header-social-links a:hover {
-  background: rgba(0, 212, 255, 0.3);
-  color: #00ffff;
+  background: rgba(245, 180, 97, 0.3);
+  color: #F5B461;
   transform: translateY(-3px);
-  box-shadow: 0 5px 15px rgba(0, 212, 255, 0.4);
+  box-shadow: 0 5px 15px rgba(245, 180, 97, 0.4);
 }
 
 /* Download Resume Button - Same style as other icons */
 .header-social-links .download-resume {
-  background: rgba(0, 212, 255, 0.1);
-  color: #00d4ff;
+  background: rgba(245, 180, 97, 0.1);
+  color: #F5B461;
 }
 
 .header-social-links .download-resume:hover {
-  background: rgba(0, 212, 255, 0.3);
-  color: #00ffff;
-  box-shadow: 0 5px 15px rgba(0, 212, 255, 0.4);
+  background: rgba(245, 180, 97, 0.3);
+  color: #F5B461;
+  box-shadow: 0 5px 15px rgba(245, 180, 97, 0.4);
   transform: translateY(-3px);
 }
 
@@ -262,7 +262,7 @@
   position: absolute;
   height: 3px;
   width: 100%;
-  background: #00d4ff;
+  background: #F5B461;
   border-radius: 3px;
   opacity: 1;
   left: 0;
@@ -299,7 +299,7 @@
 }
 
 .mobile-nav-toggle:hover span {
-  background: #00ffff;
+  background: #F5B461;
 }
 
 /* Mobile Responsive Styles */
@@ -326,7 +326,7 @@
     transition: right 0.4s ease;
     z-index: 999;
     box-shadow: -5px 0 25px rgba(0, 0, 0, 0.3);
-    border-left: 2px solid rgba(0, 212, 255, 0.3);
+    border-left: 2px solid rgba(245, 180, 97, 0.3);
     padding-top: 70px;
     visibility: hidden;
     opacity: 0;
@@ -354,7 +354,7 @@
     width: 100%;
     padding: 12px 20px;
     font-size: 16px;
-    color: #1a1a2e !important;
+    color: #2C3E50 !important;
     font-weight: 600;
     display: flex;
     align-items: center;
@@ -363,8 +363,8 @@
 
   .navmenu a:hover,
   .navmenu a.active {
-    color: #00d4ff !important;
-    background: rgba(0, 212, 255, 0.1);
+    color: #F5B461 !important;
+    background: rgba(245, 180, 97, 0.1);
   }
 
   /* Dropdown styling for mobile */
@@ -378,8 +378,8 @@
   }
 
   .navmenu .dropdown.active>a {
-    background: rgba(0, 212, 255, 0.1);
-    color: #00d4ff !important;
+    background: rgba(245, 180, 97, 0.1);
+    color: #F5B461 !important;
   }
 
   .dropdown ul {
@@ -388,14 +388,14 @@
     visibility: visible;
     transform: none;
     box-shadow: none;
-    background: rgba(0, 212, 255, 0.05);
+    background: rgba(245, 180, 97, 0.05);
     margin: 0;
     padding: 0;
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.4s ease, padding 0.4s ease;
     border: none;
-    border-left: 3px solid rgba(0, 212, 255, 0.5);
+    border-left: 3px solid rgba(245, 180, 97, 0.5);
     margin-left: 10px;
   }
 
@@ -407,8 +407,8 @@
   }
 
   .dropdown ul a:hover {
-    color: #00d4ff !important;
-    background: rgba(0, 212, 255, 0.15);
+    color: #F5B461 !important;
+    background: rgba(245, 180, 97, 0.15);
   }
 
   /* Show dropdown when active */
@@ -420,7 +420,7 @@
   /* Nested dropdowns (2nd level and deeper) */
   .dropdown .dropdown ul {
     margin-left: 15px;
-    border-left: 2px solid rgba(0, 212, 255, 0.3);
+    border-left: 2px solid rgba(245, 180, 97, 0.3);
   }
 
   .dropdown .dropdown ul a {
@@ -448,7 +448,7 @@
     right: 20px;
     top: 50%;
     transform: translateY(-50%);
-    color: #1a1a2e;
+    color: #2C3E50;
     font-size: 18px;
     transition: all 0.3s ease;
     cursor: pointer;
@@ -461,7 +461,7 @@
 
   .dropdown.active>a .toggle-dropdown {
     transform: translateY(-50%) rotate(180deg);
-    color: #00d4ff;
+    color: #F5B461;
   }
 
   .header-social-links {
@@ -514,12 +514,12 @@
 }
 
 .navmenu::-webkit-scrollbar-thumb {
-  background: rgba(0, 212, 255, 0.5);
+  background: rgba(245, 180, 97, 0.5);
   border-radius: 3px;
 }
 
 .navmenu::-webkit-scrollbar-thumb:hover {
-  background: rgba(0, 212, 255, 0.8);
+  background: rgba(245, 180, 97, 0.8);
 }
 
 /* Animation for menu items */
