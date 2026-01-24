@@ -1,4 +1,4 @@
-/**
+﻿/**
 * Template Name: Kelly
 * Template URL: https://bootstrapmade.com/kelly-free-bootstrap-cv-resume-html-template/
 * Updated: Aug 07 2024 with Bootstrap v5.3.3
@@ -502,7 +502,7 @@ h6 {
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  border: 1px solid color-mix(in srgb, var(--default-color), transparent 50%);
+  border: none;
   font-size: 16px;
   /* color: color-mix(in srgb, var(--default-color), transparent 50%); */
   margin: 0 5px;
@@ -2600,3 +2600,4 @@ body {
     transform: translateY(-50%) rotate(360deg);
   }
 }
+
