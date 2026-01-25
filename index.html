@@ -1474,6 +1474,57 @@
       box-shadow: 0 0 15px rgba(255, 0, 127, 0.6);
       letter-spacing: 1px;
     }
+
+    /* ========================================
+       MOBILE NAVIGATION FIXES - CRITICAL
+       Override conflicting styles from main.css
+       ======================================== */
+
+    /* Force dark background on mobile menu */
+    @media (max-width: 1199px) {
+      .navmenu {
+        background: rgba(26, 31, 46, 0.98) !important;
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+      }
+
+      /* Force white/light text color */
+      .navmenu a {
+        color: rgba(255, 255, 255, 0.9) !important;
+      }
+
+      .navmenu a:hover,
+      .navmenu a.active {
+        color: #F5B461 !important;
+      }
+
+      /* Fix dropdown text colors */
+      .dropdown ul a {
+        color: rgba(255, 255, 255, 0.8) !important;
+      }
+
+      .dropdown ul a:hover {
+        color: #F5B461 !important;
+      }
+
+      /* Fix toggle dropdown icon color */
+      .toggle-dropdown {
+        color: rgba(255, 255, 255, 0.9) !important;
+        background: transparent !important;
+        border: none !important;
+        box-shadow: none !important;
+      }
+
+      .dropdown.active>a .toggle-dropdown {
+        color: #F5B461 !important;
+      }
+
+      /* Remove any background from dropdown icons */
+      .navmenu a i {
+        background-color: transparent !important;
+        border: none !important;
+      }
+    }
   </style>
   <link href="assets/css/main.css" rel="stylesheet">
   <link href="assets/css/navigation.css" rel="stylesheet">
