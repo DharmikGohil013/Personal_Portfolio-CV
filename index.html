@@ -338,64 +338,11 @@
       background-attachment: fixed;
     }
 
-    /* Professional geometric pattern overlay */
-    #hero::before {
-      content: '';
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      top: 0;
-      left: 0;
-      background:
-        repeating-linear-gradient(90deg,
-          rgba(245, 180, 97, 0.03) 0px,
-          transparent 1px,
-          transparent 40px,
-          rgba(245, 180, 97, 0.03) 41px),
-        repeating-linear-gradient(0deg,
-          rgba(245, 180, 97, 0.02) 0px,
-          transparent 1px,
-          transparent 40px,
-          rgba(245, 180, 97, 0.02) 41px);
-      z-index: 1;
-    }
+    /* Professional geometric pattern overlay - removed */
 
-    /* Professional accent elements */
-    .accent-line {
-      position: absolute;
-      height: 2px;
-      background: linear-gradient(90deg, transparent, rgba(245, 180, 97, 0.5), transparent);
-      width: 100%;
-      z-index: 2;
-    }
+    /* Professional accent elements - removed */
 
-    .accent-line:nth-child(1) {
-      top: 20%;
-    }
-
-    .accent-line:nth-child(2) {
-      top: 50%;
-    }
-
-    .accent-line:nth-child(3) {
-      top: 80%;
-    }
-
-    /* Professional corner accents */
-    #hero::after {
-      content: '';
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      top: 0;
-      left: 0;
-      background:
-        linear-gradient(135deg, rgba(245, 180, 97, 0.08) 0%, transparent 30%),
-        linear-gradient(-135deg, rgba(245, 180, 97, 0.05) 0%, transparent 30%),
-        linear-gradient(45deg, transparent 70%, rgba(245, 180, 97, 0.08) 100%),
-        linear-gradient(-45deg, transparent 70%, rgba(245, 180, 97, 0.05) 100%);
-      z-index: 2;
-    }
+    /* Professional corner accents - removed */
 
     /* Hero content */
     #hero .container {
@@ -419,12 +366,8 @@
       margin: 0 auto 30px;
       border-radius: 50%;
       overflow: hidden;
-      border: 4px solid rgba(245, 180, 97, 0.8);
-      box-shadow:
-        0 0 20px rgba(245, 180, 97, 0.6),
-        0 0 40px rgba(245, 180, 97, 0.4),
-        inset 0 0 20px rgba(245, 180, 97, 0.2);
-      animation: profile-glow 3s ease-in-out infinite alternate;
+      border: 4px solid rgba(255, 255, 255, 0.3);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
       position: relative;
       z-index: 10;
     }
@@ -436,21 +379,7 @@
       display: block;
     }
 
-    @keyframes profile-glow {
-      from {
-        box-shadow:
-          0 0 20px rgba(245, 180, 97, 0.6),
-          0 0 40px rgba(245, 180, 97, 0.4),
-          inset 0 0 20px rgba(245, 180, 97, 0.2);
-      }
-
-      to {
-        box-shadow:
-          0 0 30px rgba(245, 180, 97, 0.9),
-          0 0 60px rgba(245, 180, 97, 0.6),
-          inset 0 0 30px rgba(245, 180, 97, 0.3);
-      }
-    }
+    /* Profile glow animation removed */
 
     /* Hero Subtitle */
     #hero p.hero-subtitle {
@@ -528,10 +457,7 @@
       background: #F5B461;
       color: #1A1F2E;
       border-color: #F5B461;
-      box-shadow:
-        0 0 30px rgba(245, 180, 97, 0.8),
-        0 0 50px rgba(245, 180, 97, 0.5),
-        inset 0 0 20px rgba(245, 180, 97, 0.3);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
       transform: translateY(-3px);
     }
 
@@ -539,56 +465,17 @@
       border-color: #F5B461;
       background: rgba(245, 180, 97, 0.1);
       color: #F5B461;
-      box-shadow:
-        0 0 20px rgba(245, 180, 97, 0.3),
-        inset 0 0 20px rgba(245, 180, 97, 0.1);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
     }
 
     #hero .btn-get-started:nth-child(2):hover {
       background: #F5B461;
       color: #1A1F2E;
       border-color: #F5B461;
-      box-shadow:
-        0 0 30px rgba(245, 180, 97, 0.8),
-        0 0 50px rgba(245, 180, 97, 0.5),
-        inset 0 0 20px rgba(245, 180, 97, 0.3);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
     }
 
-    /* Professional geometric shapes */
-    .geo-shape {
-      position: absolute;
-      border: 2px solid rgba(245, 180, 97, 0.2);
-      opacity: 0.4;
-      z-index: 3;
-    }
-
-    .geo-shape-1 {
-      width: 150px;
-      height: 150px;
-      top: 10%;
-      right: 15%;
-      border-radius: 0;
-      transform: rotate(45deg);
-    }
-
-    .geo-shape-2 {
-      width: 100px;
-      height: 100px;
-      bottom: 15%;
-      left: 10%;
-      border-radius: 50%;
-      border-color: rgba(245, 180, 97, 0.2);
-    }
-
-    .geo-shape-3 {
-      width: 120px;
-      height: 120px;
-      top: 45%;
-      right: 25%;
-      clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
-      border: none;
-      background: rgba(245, 180, 97, 0.05);
-    }
+    /* Professional geometric shapes - removed */
 
     /* Responsive */
     @media (max-width: 768px) {
@@ -762,19 +649,7 @@
       box-shadow: 0 0 30px rgba(245, 180, 97, 0.8) !important;
     }
 
-    @keyframes pulse {
-      0% {
-        box-shadow: 0 0 20px rgba(245, 180, 97, 0.5);
-      }
-
-      50% {
-        box-shadow: 0 0 30px rgba(245, 180, 97, 0.8);
-      }
-
-      100% {
-        box-shadow: 0 0 20px rgba(245, 180, 97, 0.5);
-      }
-    }
+    /* Pulse animation removed */
 
     .footer .copyright p {
       color: #d0d0d0;
@@ -782,16 +657,16 @@
     }
 
     .footer .sitename {
-      color: #F5B461;
+      color: #ffffff;
     }
 
     .footer .social-links a {
-      color: #F5B461;
+      color: #d0d0d0;
       transition: all 0.3s ease;
     }
 
     .footer .social-links a:hover {
-      color: #F5B461;
+      color: #ffffff;
     }
 
     /* Preloader */
@@ -1336,11 +1211,7 @@
       overflow: hidden;
     }
 
-    .portfolio-info .play-btn:before {
-      content: '?';
-      margin-right: 5px;
-      font-size: 0.8rem;
-    }
+    /* Play button icon removed - using HTML icon instead */
 
     .portfolio-info .play-btn:hover {
       background: linear-gradient(135deg, #F5B461, #F5B461);
@@ -2198,32 +2069,32 @@
               </div>
             </div>
             <div class="progress">
-              <span class="skill"><span>JavaScript</span> <i class="val">10%</i></span>
+              <span class="skill"><span>JavaScript</span> <i class="val">60%</i></span>
               <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100">
+                <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100">
                 </div>
               </div>
             </div>
           </div>
           <div class="col-lg-6">
             <div class="progress">
-              <span class="skill"><span>Java</span> <i class="val">80%</i></span>
+              <span class="skill"><span>DevOps Manage</span> <i class="val">60%</i></span>
               <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">
+                <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100">
                 </div>
               </div>
             </div>
             <div class="progress">
-              <span class="skill"><span>Full Stack</span> <i class="val">70%</i></span>
+              <span class="skill"><span>Backend Development</span> <i class="val">70%</i></span>
               <div class="progress-bar-wrap">
                 <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">
                 </div>
               </div>
             </div>
             <div class="progress">
-              <span class="skill"><span>Ui/Ux</span> <i class="val">75%</i></span>
+              <span class="skill"><span>Ui/Ux</span> <i class="val">60%</i></span>
               <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100">
+                <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100">
                 </div>
               </div>
             </div>
