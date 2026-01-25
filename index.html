@@ -293,6 +293,7 @@
   <!-- Main CSS Files -->
   <link href="assets/css/main.css" rel="stylesheet">
   <link href="assets/css/navigation.css" rel="stylesheet">
+  <link href="assets/css/responsive-global.css" rel="stylesheet">
 
   <!-- Additional Inline Styles -->
   <style>
@@ -477,14 +478,41 @@
 
     /* Professional geometric shapes - removed */
 
-    /* Responsive */
+    /* ========================================
+       COMPREHENSIVE RESPONSIVE STYLES
+       ======================================== */
+
+    /* Tablets and Below (768px and below) */
     @media (max-width: 768px) {
+      #hero {
+        min-height: 80vh;
+        padding: 60px 0;
+      }
+
       #hero h2 {
         font-size: 2rem;
+        margin-top: 20px;
       }
 
       #hero p {
         font-size: 1.1rem;
+      }
+
+      #hero p.hero-subtitle {
+        font-size: 1rem;
+        letter-spacing: 2px;
+      }
+
+      .hero-profile-photo {
+        width: 150px;
+        height: 150px;
+        margin: 0 auto 25px;
+      }
+
+      #hero .btn-get-started {
+        font-size: 0.9rem;
+        padding: 10px 28px;
+        margin: 8px;
       }
 
       .geo-shape {
@@ -493,6 +521,207 @@
 
       #hero .container {
         padding: 20px 15px;
+      }
+
+      .explore.section {
+        padding: 60px 0;
+      }
+
+      .actify-section {
+        padding: 60px 0;
+      }
+
+      .idc.section {
+        padding: 60px 0;
+      }
+    }
+
+    /* Small Tablets and Large Phones (576px to 767px) */
+    @media (min-width: 576px) and (max-width: 767px) {
+      #hero h2 {
+        font-size: 1.8rem;
+      }
+
+      #hero p {
+        font-size: 1rem;
+      }
+
+      #hero p.hero-subtitle {
+        font-size: 0.95rem;
+        letter-spacing: 1.5px;
+      }
+
+      .hero-profile-photo {
+        width: 140px;
+        height: 140px;
+      }
+
+      #hero .btn-get-started {
+        font-size: 0.85rem;
+        padding: 10px 25px;
+      }
+    }
+
+    /* Mobile Devices (575px and below) */
+    @media (max-width: 575px) {
+      #hero {
+        min-height: 100vh;
+        padding: 40px 0;
+      }
+
+      #hero h2 {
+        font-size: 1.5rem;
+        margin-top: 15px;
+        margin-bottom: 15px;
+      }
+
+      #hero p {
+        font-size: 0.95rem;
+        margin-bottom: 20px;
+      }
+
+      #hero p.hero-subtitle {
+        font-size: 0.85rem;
+        letter-spacing: 1px;
+        margin-bottom: 30px;
+      }
+
+      .hero-profile-photo {
+        width: 120px;
+        height: 120px;
+        margin: 0 auto 20px;
+        border: 3px solid rgba(255, 255, 255, 0.3);
+      }
+
+      #hero .btn-get-started {
+        font-size: 0.8rem;
+        padding: 10px 22px;
+        margin: 6px;
+        border-radius: 40px;
+      }
+
+      .hero-buttons {
+        margin-top: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .hero-buttons .btn-get-started {
+        width: 100%;
+        max-width: 250px;
+      }
+
+      #hero .container {
+        padding: 15px 10px;
+      }
+
+      .explore.section {
+        padding: 40px 0;
+      }
+
+      .actify-section {
+        padding: 40px 0;
+      }
+
+      .idc.section {
+        padding: 40px 0;
+      }
+
+      .actify-showcase {
+        padding: 40px 20px;
+      }
+
+      .actify-showcase h4 {
+        font-size: 1.2rem;
+      }
+
+      .actify-showcase p {
+        font-size: 0.95rem;
+      }
+    }
+
+    /* Very Small Mobile Devices (400px and below) */
+    @media (max-width: 400px) {
+      #hero h2 {
+        font-size: 1.3rem;
+      }
+
+      #hero p {
+        font-size: 0.85rem;
+      }
+
+      #hero p.hero-subtitle {
+        font-size: 0.75rem;
+        letter-spacing: 0.5px;
+      }
+
+      .hero-profile-photo {
+        width: 100px;
+        height: 100px;
+        border: 2px solid rgba(255, 255, 255, 0.3);
+      }
+
+      #hero .btn-get-started {
+        font-size: 0.75rem;
+        padding: 8px 18px;
+      }
+
+      .actify-showcase h4 {
+        font-size: 1.1rem;
+      }
+
+      .actify-showcase p {
+        font-size: 0.9rem;
+      }
+    }
+
+    /* Landscape Orientation for Mobile */
+    @media (max-height: 500px) and (orientation: landscape) {
+      #hero {
+        min-height: auto;
+        padding: 30px 0;
+      }
+
+      #hero h2 {
+        font-size: 1.5rem;
+        margin-top: 10px;
+      }
+
+      .hero-profile-photo {
+        width: 80px;
+        height: 80px;
+        margin: 0 auto 15px;
+      }
+
+      #hero .btn-get-started {
+        padding: 8px 20px;
+        font-size: 0.8rem;
+      }
+
+      .hero-buttons {
+        margin-top: 15px;
+      }
+    }
+
+    /* Extra Large Screens (1400px and up) */
+    @media (min-width: 1400px) {
+      #hero h2 {
+        font-size: 4rem;
+      }
+
+      #hero p {
+        font-size: 1.7rem;
+      }
+
+      #hero p.hero-subtitle {
+        font-size: 1.3rem;
+      }
+
+      .hero-profile-photo {
+        width: 200px;
+        height: 200px;
       }
     }
 

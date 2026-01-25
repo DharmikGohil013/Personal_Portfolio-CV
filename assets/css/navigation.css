@@ -317,9 +317,9 @@
     top: 0;
     right: -100%;
     width: 100%;
-    max-width: 320px;
+    max-width: 280px;
     height: 100vh;
-    background: rgba(255, 255, 255, 0.98);
+    background: rgba(26, 31, 46, 0.98);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     overflow-y: auto;
@@ -354,7 +354,7 @@
     width: 100%;
     padding: 12px 20px;
     font-size: 16px;
-    color: #2C3E50 !important;
+    color: rgba(255, 255, 255, 0.9) !important;
     font-weight: 600;
     display: flex;
     align-items: center;
@@ -400,7 +400,7 @@
   }
 
   .dropdown ul a {
-    color: #333333 !important;
+    color: rgba(255, 255, 255, 0.8) !important;
     padding: 10px 15px 10px 25px;
     font-size: 15px;
     font-weight: 500;
@@ -448,7 +448,7 @@
     right: 20px;
     top: 50%;
     transform: translateY(-50%);
-    color: #2C3E50;
+    color: rgba(255, 255, 255, 0.9);
     font-size: 18px;
     transition: all 0.3s ease;
     cursor: pointer;
@@ -477,15 +477,15 @@
 
 @media (max-width: 575px) {
   .logo .sitename {
-    font-size: 22px;
+    font-size: 20px;
   }
 
   .logo img {
-    height: 35px;
+    height: 32px;
   }
 
   .navmenu {
-    max-width: 280px;
+    max-width: 260px;
   }
 
   .navmenu a {
@@ -501,6 +501,31 @@
 
   .header-social-links {
     gap: 6px;
+  }
+}
+
+@media (max-width: 400px) {
+  .logo .sitename {
+    font-size: 18px;
+  }
+
+  .logo img {
+    height: 28px;
+  }
+
+  .navmenu {
+    max-width: 240px;
+  }
+
+  .navmenu a {
+    font-size: 13px;
+    padding: 9px 12px;
+  }
+
+  .header-social-links a {
+    width: 28px;
+    height: 28px;
+    font-size: 12px;
   }
 }
 

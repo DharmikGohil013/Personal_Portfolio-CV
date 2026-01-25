@@ -439,6 +439,298 @@ body {
 
 /* ----------- END index.css ----------- */
 
+/* ========================================
+   COMPREHENSIVE RESPONSIVE STYLES
+   ======================================== */
+
+/* Extra Large Devices (Large Desktops, 1400px and up) */
+@media (min-width: 1400px) {
+  .container {
+    max-width: 1320px;
+  }
+}
+
+/* Large Devices (Desktops, 1200px and up) */
+@media (min-width: 1200px) and (max-width: 1399px) {
+  .header h1 {
+    font-size: 2rem;
+  }
+
+  .container {
+    max-width: 1140px;
+  }
+}
+
+/* Medium Devices (Tablets, 768px to 1199px) */
+@media (min-width: 768px) and (max-width: 1199px) {
+  .header {
+    padding: 10px 0;
+  }
+
+  .header h1 {
+    font-size: 1.5rem;
+    letter-spacing: 2px;
+  }
+
+  .header .logo img {
+    max-height: 30px;
+  }
+
+  .section-title h2 {
+    font-size: 2rem;
+  }
+
+  .section-title p {
+    font-size: 1rem;
+  }
+
+  .portfolio-filters .filter-btn {
+    padding: 8px 16px;
+    font-size: 0.8rem;
+  }
+
+  .notification.birthday {
+    width: 320px;
+    padding: 20px;
+  }
+
+  .notification.birthday h3 {
+    font-size: 1.5rem;
+  }
+}
+
+/* Small Devices (Phones in landscape, 576px to 767px) */
+@media (min-width: 576px) and (max-width: 767px) {
+  .header {
+    padding: 8px 0;
+  }
+
+  .header h1 {
+    font-size: 1.3rem;
+    letter-spacing: 1px;
+  }
+
+  .header .logo img {
+    max-height: 28px;
+    margin-right: 5px;
+  }
+
+  .section-title h2 {
+    font-size: 1.8rem;
+  }
+
+  .section-title p {
+    font-size: 0.95rem;
+  }
+
+  .portfolio-filters {
+    gap: 10px;
+    margin-bottom: 30px;
+  }
+
+  .portfolio-filters .filter-btn {
+    padding: 7px 14px;
+    font-size: 0.75rem;
+  }
+
+  .notification.birthday {
+    width: 90vw;
+    max-width: 340px;
+    padding: 18px;
+    bottom: 20px;
+    right: 20px;
+  }
+
+  .notification.birthday h3 {
+    font-size: 1.3rem;
+  }
+
+  .notification.birthday p {
+    font-size: 0.9rem;
+  }
+}
+
+/* Extra Small Devices (Phones in portrait, less than 576px) */
+@media (max-width: 575px) {
+  body {
+    font-size: 14px;
+  }
+
+  .header {
+    padding: 8px 0;
+  }
+
+  .header h1 {
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+  }
+
+  .header .logo img {
+    max-height: 24px;
+    margin-right: 4px;
+  }
+
+  .header .header-social-links {
+    padding-right: 8px;
+  }
+
+  .header .header-social-links a {
+    font-size: 14px;
+    margin: 0 3px;
+  }
+
+  .section-title h2 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+  }
+
+  .section-title p {
+    font-size: 0.85rem;
+    margin-bottom: 20px;
+  }
+
+  .portfolio {
+    padding: 40px 0;
+  }
+
+  .portfolio-filters {
+    gap: 8px;
+    margin-bottom: 25px;
+  }
+
+  .portfolio-filters .filter-btn {
+    padding: 6px 12px;
+    font-size: 0.7rem;
+    border-radius: 20px;
+  }
+
+  .notification.birthday {
+    width: 90vw;
+    padding: 15px;
+    bottom: 15px;
+    right: 15px;
+    border-radius: 15px;
+  }
+
+  .notification.birthday h3 {
+    font-size: 1.2rem;
+    margin-bottom: 8px;
+  }
+
+  .notification.birthday p {
+    font-size: 0.85rem;
+    margin-bottom: 12px;
+  }
+
+  .notification .preview-btn,
+  .notification .close-btn {
+    padding: 8px 16px;
+    font-size: 0.85rem;
+  }
+
+  .footer {
+    padding: 15px 0;
+  }
+
+  .footer .copyright p {
+    font-size: 0.8rem;
+  }
+
+  .footer .social-links a {
+    width: 35px;
+    height: 35px;
+    font-size: 14px;
+  }
+
+  .scroll-top {
+    width: 38px;
+    height: 38px;
+    left: 10px;
+    bottom: 10px;
+  }
+
+  .scroll-top i {
+    font-size: 20px;
+  }
+}
+
+/* Very Small Devices (Phones in portrait, less than 400px) */
+@media (max-width: 399px) {
+  body {
+    font-size: 13px;
+  }
+
+  .header h1 {
+    font-size: 0.95rem;
+    letter-spacing: 0.5px;
+  }
+
+  .header .logo img {
+    max-height: 20px;
+    margin-right: 3px;
+  }
+
+  .section-title h2 {
+    font-size: 1.3rem;
+  }
+
+  .section-title p {
+    font-size: 0.8rem;
+  }
+
+  .portfolio-filters .filter-btn {
+    padding: 5px 10px;
+    font-size: 0.65rem;
+  }
+
+  .notification.birthday {
+    padding: 12px;
+  }
+
+  .notification.birthday h3 {
+    font-size: 1.1rem;
+  }
+
+  .notification.birthday p {
+    font-size: 0.8rem;
+  }
+
+  .notification .preview-btn,
+  .notification .close-btn {
+    padding: 7px 14px;
+    font-size: 0.8rem;
+  }
+
+  .scroll-top {
+    width: 35px;
+    height: 35px;
+  }
+
+  .scroll-top i {
+    font-size: 18px;
+  }
+}
+
+/* Landscape Orientation Fixes */
+@media (max-height: 500px) and (orientation: landscape) {
+  .header {
+    padding: 5px 0;
+  }
+
+  .header h1 {
+    font-size: 1rem;
+  }
+
+  .section-title h2 {
+    font-size: 1.5rem;
+  }
+
+  .notification.birthday {
+    max-height: 80vh;
+    overflow-y: auto;
+  }
+}
+
 /* OmniDimension Web Widget - Fixed Bottom Right */
 #omnidimension-web-widget,
 #omnidimension-widget-container,
@@ -476,5 +768,23 @@ body {
   [id*="omnidim"] iframe {
     bottom: 15px !important;
     right: 15px !important;
+  }
+}
+
+@media (max-width: 480px) {
+
+  #omnidimension-web-widget,
+  #omnidimension-widget-container,
+  [id*="omnidim"],
+  [class*="omnidim"] {
+    bottom: 10px !important;
+    right: 10px !important;
+    max-width: 85vw !important;
+  }
+
+  #omnidimension-web-widget iframe,
+  [id*="omnidim"] iframe {
+    bottom: 10px !important;
+    right: 10px !important;
   }
 }
