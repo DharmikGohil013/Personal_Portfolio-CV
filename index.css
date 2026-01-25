@@ -254,19 +254,7 @@ body {
   }
 }
 
-@keyframes shimmer {
-  0% {
-    text-shadow: 0 0 10px #fff700, 0 0 25px #ff007f;
-  }
 
-  50% {
-    text-shadow: 0 0 20px #ff007f, 0 0 35px #00eaff;
-  }
-
-  100% {
-    text-shadow: 0 0 10px #fff700, 0 0 25px #ff007f;
-  }
-}
 
 @keyframes slideIn {
   from {
