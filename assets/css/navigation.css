@@ -339,6 +339,7 @@
   }
 
   .navmenu ul {
+    display: flex !important;
     flex-direction: column;
     align-items: flex-start;
     width: 100%;
