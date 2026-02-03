@@ -2,9 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   
-  <!-- Dharmik Gohil Professional Headshot - Primary Image for SEO -->
+  <!-- Dharmik Gohil Profile Photo 2026 - PRIMARY IMAGE FOR SEO RANKING -->
   <url>
     <loc>https://dharmikgohil.art/</loc>
+    <image:image>
+      <image:loc>https://dharmikgohil.art/assets/img/dharmik-profile-photo-2026.jpg</image:loc>
+      <image:caption>Dharmik Gohil - India's Top Game Developer, Unity XR Expert, Professional Photo 2026. Award-winning developer from CHARUSAT University specializing in VR/AR, Metaverse, and Mobile Game Development.</image:caption>
+      <image:title>Dharmik Gohil - Professional Game Developer Photo 2026 | India's Elite Unity XR Specialist</image:title>
+      <image:geo_location>Surat, Gujarat, India</image:geo_location>
+      <image:license>https://dharmikgohil.art/contact.html</image:license>
+    </image:image>
     <image:image>
       <image:loc>https://dharmikgohil.art/assets/img/dharmik-gohil-professional-headshot-photo.png</image:loc>
       <image:caption>Dharmik Gohil Professional Headshot Photo - Expert Game Developer and Unity XR Specialist</image:caption>
