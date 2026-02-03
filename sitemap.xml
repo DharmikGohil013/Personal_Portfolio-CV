@@ -15,12 +15,17 @@
   <!-- HOMEPAGE - MAXIMUM PRIORITY - Primary Target: India's #1 Game Developer -->
   <url>
     <loc>https://dharmikgohil.art/</loc>
-    <lastmod>2026-01-22</lastmod>
+    <lastmod>2026-02-03</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
     <image:image>
+      <image:loc>https://dharmikgohil.art/assets/img/dharmik-profile-photo-2026.jpg</image:loc>
+      <image:title>Dharmik Gohil - India's #1 Elite Game Developer Professional Photo 2026</image:title>
+      <image:caption>Professional photograph of Dharmik Gohil - Award-winning Game Developer, Unity XR Expert, Metaverse Architect from CHARUSAT University, Gujarat, India</image:caption>
+    </image:image>
+    <image:image>
       <image:loc>https://dharmikgohil.art/assets/img/dharmik-gohil-professional-headshot-photo.png</image:loc>
-      <image:title>Dharmik Gohil - India's #1 Elite Game Developer Professional Photo</image:title>
+      <image:title>Dharmik Gohil - Professional Headshot Photo</image:title>
       <image:caption>Award-winning Game Developer Dharmik Gohil from CHARUSAT University</image:caption>
     </image:image>
   </url>

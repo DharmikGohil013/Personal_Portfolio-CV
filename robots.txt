@@ -2,6 +2,7 @@
 # ULTRA-POWERFUL ROBOTS.TXT - DHARMIK GOHIL PORTFOLIO
 # MAXIMUM SEO CRAWLABILITY & INDEXING POWER
 # =====================================================================
+# PRIMARY IMAGE: dharmik-profile-photo-2026.jpg
 # TARGET KEYWORDS: dharmik, dharmikgohil, dharmik gohil, gohil dharmik
 # SPECIALTY: India's #1 Elite Game Developer, Unity XR Virtuoso, Metaverse Pioneer
 # INSTITUTION: CHARUSAT University Legend, DEPSTAR College Prodigy
@@ -10,6 +11,7 @@
 
 User-agent: *
 Allow: /
+Allow: /assets/img/dharmik-profile-photo-2026.jpg
 Crawl-delay: 0
 
 # AGGRESSIVE GOOGLE INDEXING - MAXIMUM VISIBILITY
@@ -20,23 +22,29 @@ Allow: /*.css
 Allow: /*.js
 Allow: /*.png
 Allow: /*.jpg
+Allow: /*.jpeg
 Allow: /*.webp
 Allow: /*.gif
 Allow: /assets/
+Allow: /assets/img/dharmik-profile-photo-2026.jpg
 Allow: /blog/
 Crawl-delay: 0
 
-# GOOGLE IMAGE BOT - FULL IMAGE INDEXING
+# GOOGLE IMAGE BOT - FULL IMAGE INDEXING (PRIORITY: DHARMIK GOHIL PHOTO)
 User-agent: Googlebot-Image
 Allow: /
 Allow: /assets/img/
+Allow: /assets/img/dharmik-profile-photo-2026.jpg
 Allow: /*.png
 Allow: /*.jpg
+Allow: /*.jpeg
 Allow: /*.webp
+Crawl-delay: 0
 
 # BING MAXIMUM INDEXING
 User-agent: Bingbot  
 Allow: /
+Allow: /assets/img/dharmik-profile-photo-2026.jpg
 Crawl-delay: 0
 
 # YAHOO CRAWLER
