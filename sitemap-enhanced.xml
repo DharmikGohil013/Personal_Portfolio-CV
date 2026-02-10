@@ -8,9 +8,14 @@
   <!-- Homepage - Primary SEO Target: dharmik, dharmikgohil, game developer -->
   <url>
     <loc>https://dharmikgohil.art/</loc>
-    <lastmod>2026-01-05</lastmod>
+    <lastmod>2026-02-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://dharmikgohil.art/assets/img/dharmik-profile-photo-2026.jpg</image:loc>
+      <image:title>Dharmik Gohil - India's #1 Elite Game Developer Professional Photo 2026 | Unity XR Virtuoso | Metaverse Architect</image:title>
+      <image:caption>Professional photograph of Dharmik Gohil - India's Award-Winning Game Developer, Unity XR Expert, Metaverse Architect from CHARUSAT University, Gujarat, India. Specialist in VR/AR development, mobile games, multiplayer systems, and cutting-edge metaverse solutions</image:caption>
+    </image:image>
     <image:image>
       <image:loc>https://dharmikgohil.art/assets/img/dharmik-gohil-professional-headshot-photo.png</image:loc>
       <image:title>Dharmik Gohil Professional Game Developer Unity XR Specialist Portfolio</image:title>
