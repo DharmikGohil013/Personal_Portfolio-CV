@@ -1591,6 +1591,425 @@
         border: none !important;
       }
     }
+
+    /* ========================================
+       CHROME EXTENSION SECTION STYLES
+       ======================================== */
+    
+    .chrome-extension.section {
+      background: linear-gradient(135deg, rgba(18, 29, 51, 0.95) 0%, rgba(26, 31, 46, 0.98) 100%);
+      padding: 80px 0;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .chrome-extension.section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: 
+        radial-gradient(circle at 20% 50%, rgba(99, 102, 241, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 50%, rgba(245, 180, 97, 0.1) 0%, transparent 50%);
+      pointer-events: none;
+    }
+
+    .extension-showcase {
+      position: relative;
+      z-index: 2;
+    }
+
+    .extension-content {
+      padding: 20px;
+    }
+
+    .extension-header {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      margin-bottom: 25px;
+    }
+
+    .extension-icon {
+      width: 80px;
+      height: 80px;
+      border-radius: 16px;
+      box-shadow: 0 8px 32px rgba(99, 102, 241, 0.3);
+      animation: float 3s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-10px); }
+    }
+
+    .extension-header h3 {
+      margin: 0;
+      font-size: 1.8rem;
+      font-weight: 700;
+      background: linear-gradient(135deg, #6366F1 0%, #F5B461 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .extension-tagline {
+      color: rgba(255, 255, 255, 0.7);
+      font-size: 0.95rem;
+      margin: 5px 0 0 0;
+    }
+
+    .extension-description {
+      color: rgba(255, 255, 255, 0.85);
+      font-size: 1.05rem;
+      line-height: 1.7;
+      margin-bottom: 30px;
+    }
+
+    .extension-features {
+      display: grid;
+      gap: 20px;
+      margin-bottom: 30px;
+    }
+
+    .feature-item {
+      display: flex;
+      gap: 15px;
+      padding: 20px;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 12px;
+      transition: all 0.3s ease;
+    }
+
+    .feature-item:hover {
+      background: rgba(255, 255, 255, 0.06);
+      border-color: rgba(99, 102, 241, 0.3);
+      transform: translateX(5px);
+    }
+
+    .feature-item i {
+      font-size: 1.8rem;
+      color: #6366F1;
+      min-width: 30px;
+    }
+
+    .feature-item h4 {
+      margin: 0 0 5px 0;
+      font-size: 1.1rem;
+      color: #fff;
+      font-weight: 600;
+    }
+
+    .feature-item p {
+      margin: 0;
+      color: rgba(255, 255, 255, 0.7);
+      font-size: 0.9rem;
+      line-height: 1.5;
+    }
+
+    .extension-stats {
+      display: flex;
+      gap: 20px;
+      margin-bottom: 30px;
+      justify-content: flex-start;
+    }
+
+    .stat-box {
+      text-align: center;
+      padding: 20px 30px;
+      background: rgba(99, 102, 241, 0.1);
+      border: 1px solid rgba(99, 102, 241, 0.2);
+      border-radius: 12px;
+      min-width: 120px;
+    }
+
+    .stat-number {
+      font-size: 2rem;
+      font-weight: 700;
+      color: #6366F1;
+      margin-bottom: 5px;
+    }
+
+    .stat-label {
+      font-size: 0.85rem;
+      color: rgba(255, 255, 255, 0.7);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .extension-buttons {
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .btn-add-chrome {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 15px 35px;
+      background: linear-gradient(135deg, #6366F1 0%, #4F46E5 100%);
+      color: #fff;
+      text-decoration: none;
+      border-radius: 50px;
+      font-weight: 600;
+      font-size: 1rem;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 20px rgba(99, 102, 241, 0.4);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .btn-add-chrome::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+      transition: left 0.5s ease;
+    }
+
+    .btn-add-chrome:hover::before {
+      left: 100%;
+    }
+
+    .btn-add-chrome:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 30px rgba(99, 102, 241, 0.6);
+      color: #fff;
+    }
+
+    .btn-add-chrome i {
+      font-size: 1.2rem;
+    }
+
+    .btn-learn-more {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 15px 35px;
+      background: rgba(255, 255, 255, 0.05);
+      color: #fff;
+      text-decoration: none;
+      border-radius: 50px;
+      font-weight: 600;
+      font-size: 1rem;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      transition: all 0.3s ease;
+    }
+
+    .btn-learn-more:hover {
+      background: rgba(255, 255, 255, 0.1);
+      border-color: rgba(255, 255, 255, 0.2);
+      transform: translateY(-2px);
+      color: #fff;
+    }
+
+    /* Browser Mockup */
+    .extension-preview {
+      padding: 20px;
+    }
+
+    .browser-mockup {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    }
+
+    .browser-header {
+      background: rgba(255, 255, 255, 0.08);
+      padding: 12px 20px;
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .browser-dots {
+      display: flex;
+      gap: 6px;
+    }
+
+    .browser-dots span {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.3);
+    }
+
+    .browser-dots span:nth-child(1) { background: #FF5F56; }
+    .browser-dots span:nth-child(2) { background: #FFBD2E; }
+    .browser-dots span:nth-child(3) { background: #27C93F; }
+
+    .browser-url {
+      flex: 1;
+      background: rgba(0, 0, 0, 0.2);
+      padding: 6px 15px;
+      border-radius: 6px;
+      font-size: 0.85rem;
+      color: rgba(255, 255, 255, 0.6);
+    }
+
+    .browser-content {
+      padding: 40px;
+      background: rgba(18, 29, 51, 0.3);
+      min-height: 300px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .extension-card-preview {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 16px;
+      padding: 30px;
+      text-align: center;
+      max-width: 350px;
+      backdrop-filter: blur(10px);
+    }
+
+    .preview-icon {
+      width: 100px;
+      height: 100px;
+      margin: 0 auto 20px;
+      border-radius: 20px;
+      box-shadow: 0 10px 40px rgba(99, 102, 241, 0.4);
+    }
+
+    .extension-card-preview h4 {
+      color: #fff;
+      font-size: 1.5rem;
+      margin-bottom: 10px;
+      font-weight: 700;
+    }
+
+    .extension-card-preview p {
+      color: rgba(255, 255, 255, 0.7);
+      margin-bottom: 20px;
+    }
+
+    .preview-features {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: center;
+    }
+
+    .badge-feature {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      padding: 6px 12px;
+      background: rgba(99, 102, 241, 0.2);
+      border: 1px solid rgba(99, 102, 241, 0.3);
+      border-radius: 20px;
+      font-size: 0.8rem;
+      color: #fff;
+    }
+
+    .badge-feature i {
+      color: #6366F1;
+    }
+
+    /* Responsive Styles */
+    @media (max-width: 991px) {
+      .extension-header {
+        flex-direction: column;
+        align-items: flex-start;
+        text-align: left;
+      }
+
+      .extension-icon {
+        width: 60px;
+        height: 60px;
+      }
+
+      .extension-header h3 {
+        font-size: 1.5rem;
+      }
+
+      .extension-stats {
+        justify-content: space-between;
+      }
+
+      .stat-box {
+        flex: 1;
+        min-width: auto;
+        padding: 15px 20px;
+      }
+
+      .browser-content {
+        padding: 30px 20px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .chrome-extension.section {
+        padding: 60px 0;
+      }
+
+      .extension-header h3 {
+        font-size: 1.3rem;
+      }
+
+      .extension-buttons {
+        flex-direction: column;
+      }
+
+      .btn-add-chrome,
+      .btn-learn-more {
+        width: 100%;
+        justify-content: center;
+      }
+
+      .extension-stats {
+        flex-direction: column;
+      }
+
+      .stat-box {
+        width: 100%;
+      }
+
+      .browser-content {
+        padding: 20px;
+        min-height: 250px;
+      }
+
+      .extension-card-preview {
+        padding: 20px;
+      }
+
+      .preview-icon {
+        width: 80px;
+        height: 80px;
+      }
+    }
+
+    @media (max-width: 576px) {
+      .feature-item {
+        padding: 15px;
+      }
+
+      .feature-item i {
+        font-size: 1.5rem;
+      }
+
+      .feature-item h4 {
+        font-size: 1rem;
+      }
+
+      .stat-number {
+        font-size: 1.5rem;
+      }
+    }
   </style>
   <link href="assets/css/main.css" rel="stylesheet">
   <link href="assets/css/navigation.css" rel="stylesheet">
@@ -2021,6 +2440,12 @@
                   <li><a href="https://github.com/DharmikGohil013/Bank_Mangemnt_System">Bank Management</a></li>
                 </ul>
               </li>
+              <li class="dropdown"><a href="#chrome-extension"><span>Chrome Extension</span> <i
+                    class="bi bi-chevron-down toggle-dropdown"></i></a>
+                <ul>
+                  <li><a href="#chrome-extension">XPulse - Productivity Tracker</a></li>
+                </ul>
+              </li>
             </ul>
           </li>
           <li><a href="Achivemtn.html">Milestones</a></li>
@@ -2293,6 +2718,122 @@
               </div>
             </div>
 
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Chrome Extension Section -->
+    <section id="chrome-extension" class="chrome-extension section">
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Chrome Extension</h2>
+        <p>Transform your browsing into a productivity game</p>
+      </div>
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <div class="extension-showcase">
+          <div class="row align-items-center">
+            <!-- Extension Info -->
+            <div class="col-lg-6">
+              <div class="extension-content">
+                <div class="extension-header">
+                  <img src="XPulse---Plugin/assets/icons/icon128.png" alt="XPulse Chrome Extension Icon" class="extension-icon">
+                  <div>
+                    <h3>⚡ XPulse — Gamified Productivity Tracker</h3>
+                    <p class="extension-tagline">Your Browser as an RPG-Style Productivity Engine</p>
+                  </div>
+                </div>
+
+                <p class="extension-description">
+                  XPulse transforms your browsing into an immersive RPG experience. Track your productivity, 
+                  earn XP, level up, maintain streaks, and unlock achievements—all while browsing the web!
+                </p>
+
+                <div class="extension-features">
+                  <div class="feature-item">
+                    <i class="bi bi-lightning-charge-fill"></i>
+                    <div>
+                      <h4>XP System</h4>
+                      <p>Earn +10 XP/min on productive sites, level up with dynamic progression</p>
+                    </div>
+                  </div>
+                  <div class="feature-item">
+                    <i class="bi bi-trophy-fill"></i>
+                    <div>
+                      <h4>25+ Achievements</h4>
+                      <p>Unlock tiered achievements from Beginner to Elite ranks</p>
+                    </div>
+                  </div>
+                  <div class="feature-item">
+                    <i class="bi bi-fire"></i>
+                    <div>
+                      <h4>Daily Streaks</h4>
+                      <p>Maintain productive browsing streaks and build consistency</p>
+                    </div>
+                  </div>
+                  <div class="feature-item">
+                    <i class="bi bi-graph-up-arrow"></i>
+                    <div>
+                      <h4>Premium UI</h4>
+                      <p>Dark glassmorphism design with live stats and weekly charts</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="extension-stats">
+                  <div class="stat-box">
+                    <div class="stat-number">2.0</div>
+                    <div class="stat-label">Version</div>
+                  </div>
+                  <div class="stat-box">
+                    <div class="stat-number">25+</div>
+                    <div class="stat-label">Achievements</div>
+                  </div>
+                  <div class="stat-box">
+                    <div class="stat-number">100%</div>
+                    <div class="stat-label">Free</div>
+                  </div>
+                </div>
+
+                <div class="extension-buttons">
+                  <a href="javascript:void(0)" class="btn-add-chrome" id="addToChromeBtn">
+                    <i class="bi bi-download"></i>
+                    <span>Add to Chrome</span>
+                  </a>
+                  <a href="https://github.com/DharmikGohil013/XPulse---Plugin" target="_blank" class="btn-learn-more">
+                    <i class="bi bi-info-circle"></i>
+                    <span>Learn More</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Extension Preview -->
+            <div class="col-lg-6">
+              <div class="extension-preview">
+                <div class="browser-mockup">
+                  <div class="browser-header">
+                    <div class="browser-dots">
+                      <span></span><span></span><span></span>
+                    </div>
+                    <div class="browser-url">chrome://extensions</div>
+                  </div>
+                  <div class="browser-content">
+                    <div class="extension-card-preview">
+                      <img src="XPulse---Plugin/assets/icons/icon128.png" alt="XPulse Preview" class="preview-icon">
+                      <h4>XPulse</h4>
+                      <p>Gamified Productivity Tracker</p>
+                      <div class="preview-features">
+                        <span class="badge-feature"><i class="bi bi-check-circle-fill"></i> RPG Leveling</span>
+                        <span class="badge-feature"><i class="bi bi-check-circle-fill"></i> Streak System</span>
+                        <span class="badge-feature"><i class="bi bi-check-circle-fill"></i> Achievements</span>
+                        <span class="badge-feature"><i class="bi bi-check-circle-fill"></i> Live Stats</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -3458,6 +3999,158 @@
         // Double the logos for seamless infinite loop
         const logosHTML = techLogos.map(createLogoItem).join('');
         logoLoopTrack.innerHTML = logosHTML + logosHTML;
+      }
+    });
+  </script>
+
+  <!-- Chrome Extension Installation Script -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const addToChromeBtn = document.getElementById('addToChromeBtn');
+      
+      if (addToChromeBtn) {
+        addToChromeBtn.addEventListener('click', function(e) {
+          e.preventDefault();
+          
+          // Check if running on Chrome
+          const isChrome = /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor);
+          
+          if (!isChrome) {
+            alert('⚠️ XPulse is designed for Google Chrome. Please use Chrome browser to install this extension.');
+            return;
+          }
+          
+          // Show installation instructions
+          const modal = document.createElement('div');
+          modal.style.cssText = `
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.85);
+            backdrop-filter: blur(10px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 10000;
+            animation: fadeIn 0.3s ease;
+          `;
+          
+          modal.innerHTML = `
+            <div style="
+              background: linear-gradient(135deg, rgba(26, 31, 46, 0.98) 0%, rgba(18, 29, 51, 0.98) 100%);
+              border: 1px solid rgba(99, 102, 241, 0.3);
+              border-radius: 20px;
+              padding: 40px;
+              max-width: 600px;
+              width: 90%;
+              box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+              position: relative;
+            ">
+              <button id="closeModal" style="
+                position: absolute;
+                top: 15px;
+                right: 15px;
+                background: rgba(255, 255, 255, 0.1);
+                border: none;
+                color: #fff;
+                font-size: 24px;
+                width: 40px;
+                height: 40px;
+                border-radius: 50%;
+                cursor: pointer;
+                transition: all 0.3s ease;
+              ">×</button>
+              
+              <h2 style="
+                color: #fff;
+                font-size: 2rem;
+                margin-bottom: 20px;
+                background: linear-gradient(135deg, #6366F1 0%, #F5B461 100%);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+              ">⚡ Install XPulse Extension</h2>
+              
+              <p style="color: rgba(255, 255, 255, 0.8); margin-bottom: 25px; line-height: 1.6;">
+                Follow these simple steps to install XPulse Chrome Extension:
+              </p>
+              
+              <ol style="color: rgba(255, 255, 255, 0.85); line-height: 2; padding-left: 20px; margin-bottom: 30px;">
+                <li><strong style="color: #6366F1;">Download</strong> the XPulse extension folder from the repository</li>
+                <li>Open Chrome and go to <code style="background: rgba(99, 102, 241, 0.2); padding: 2px 8px; border-radius: 4px;">chrome://extensions/</code></li>
+                <li>Enable <strong style="color: #6366F1;">Developer mode</strong> in the top right corner</li>
+                <li>Click <strong style="color: #6366F1;">"Load unpacked"</strong> and select the XPulse folder</li>
+                <li>Pin the extension to your toolbar and start earning XP! 🎮</li>
+              </ol>
+              
+              <div style="display: flex; gap: 15px; flex-wrap: wrap;">
+                <a href="https://github.com/DharmikGohil013/XPulse---Plugin" target="_blank" style="
+                  display: inline-flex;
+                  align-items: center;
+                  gap: 10px;
+                  padding: 12px 25px;
+                  background: linear-gradient(135deg, #6366F1 0%, #4F46E5 100%);
+                  color: #fff;
+                  text-decoration: none;
+                  border-radius: 50px;
+                  font-weight: 600;
+                  transition: all 0.3s ease;
+                  box-shadow: 0 4px 20px rgba(99, 102, 241, 0.4);
+                ">
+                  <i class="bi bi-github"></i>
+                  <span>Download from GitHub</span>
+                </a>
+                
+                <button onclick="window.open('chrome://extensions/', '_blank')" style="
+                  display: inline-flex;
+                  align-items: center;
+                  gap: 10px;
+                  padding: 12px 25px;
+                  background: rgba(255, 255, 255, 0.1);
+                  color: #fff;
+                  border: 1px solid rgba(255, 255, 255, 0.2);
+                  text-decoration: none;
+                  border-radius: 50px;
+                  font-weight: 600;
+                  cursor: pointer;
+                  transition: all 0.3s ease;
+                ">
+                  <i class="bi bi-box-arrow-up-right"></i>
+                  <span>Open Extensions Page</span>
+                </button>
+              </div>
+            </div>
+          `;
+          
+          document.body.appendChild(modal);
+          
+          // Close modal handlers
+          const closeBtn = document.getElementById('closeModal');
+          closeBtn.addEventListener('click', () => modal.remove());
+          closeBtn.addEventListener('mouseenter', function() {
+            this.style.background = 'rgba(255, 255, 255, 0.2)';
+            this.style.transform = 'rotate(90deg)';
+          });
+          closeBtn.addEventListener('mouseleave', function() {
+            this.style.background = 'rgba(255, 255, 255, 0.1)';
+            this.style.transform = 'rotate(0deg)';
+          });
+          
+          modal.addEventListener('click', (e) => {
+            if (e.target === modal) modal.remove();
+          });
+          
+          // Add fade-in animation
+          const style = document.createElement('style');
+          style.textContent = `
+            @keyframes fadeIn {
+              from { opacity: 0; }
+              to { opacity: 1; }
+            }
+          `;
+          document.head.appendChild(style);
+        });
       }
     });
   </script>
