@@ -1882,46 +1882,75 @@
       margin-bottom: 30px;
     }
 
-    .extension-features {
-      display: grid;
-      gap: 20px;
-      margin-bottom: 30px;
+    /* XPulse compact card */
+    .xpulse-card {
+      max-width: 680px;
+      margin: 0 auto;
+      text-align: center;
     }
-
-    .feature-item {
+    .xpulse-title {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 1.35rem;
+      font-weight: 800;
+      color: #F5B461;
+      margin: 0 0 10px;
+      letter-spacing: 0.5px;
+    }
+    .xpulse-sub {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.5);
+      margin: 0 0 32px;
+      line-height: 1.6;
+    }
+    .xpulse-features {
       display: flex;
-      gap: 15px;
-      padding: 20px;
-      background: rgba(255, 255, 255, 0.03);
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      border-radius: 12px;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 16px;
+      margin-bottom: 32px;
+    }
+    .xpulse-feature {
+      flex: 1;
+      min-width: 150px;
+      max-width: 200px;
+      padding: 20px 16px;
+      background: rgba(99,102,241,0.07);
+      border: 1px solid rgba(99,102,241,0.2);
+      border-radius: 14px;
       transition: all 0.3s ease;
     }
-
-    .feature-item:hover {
-      background: rgba(255, 255, 255, 0.06);
-      border-color: rgba(99, 102, 241, 0.3);
-      transform: translateX(5px);
+    .xpulse-feature:hover {
+      background: rgba(99,102,241,0.14);
+      border-color: rgba(99,102,241,0.45);
+      transform: translateY(-4px);
+      box-shadow: 0 8px 24px rgba(99,102,241,0.2);
     }
-
-    .feature-item i {
-      font-size: 1.8rem;
+    .xpulse-feature i {
+      font-size: 1.7rem;
       color: #6366F1;
-      min-width: 30px;
+      display: block;
+      margin-bottom: 10px;
     }
-
-    .feature-item h4 {
-      margin: 0 0 5px 0;
-      font-size: 1.1rem;
-      color: #fff;
-      font-weight: 600;
-    }
-
-    .feature-item p {
-      margin: 0;
-      color: rgba(255, 255, 255, 0.7);
+    .xpulse-feature h4 {
+      font-family: 'JetBrains Mono', monospace;
       font-size: 0.9rem;
+      font-weight: 700;
+      color: #fff;
+      margin: 0 0 6px;
+    }
+    .xpulse-feature p {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.75rem;
+      color: rgba(255,255,255,0.5);
+      margin: 0;
       line-height: 1.5;
+    }
+    .xpulse-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 14px;
+      flex-wrap: wrap;
     }
 
     .extension-stats {
@@ -2965,34 +2994,35 @@
       </div>
 
       <div class="container" data-aos="fade-up" data-aos-delay="100">
-        <div class="extension-showcase">
-          <div class="extension-content" style="max-width:700px;margin:0 auto;text-align:center;">
-            <h3 style="font-family:'JetBrains Mono',monospace;color:#F5B461;font-size:1.4rem;margin-bottom:8px;">⚡ XPulse — Gamified Productivity Tracker</h3>
-            <p style="color:rgba(255,255,255,0.55);font-family:'JetBrains Mono',monospace;font-size:0.85rem;margin-bottom:28px;">Earn XP, level up, maintain streaks &amp; unlock achievements — all while browsing.</p>
+        <div class="xpulse-card">
+          <h3 class="xpulse-title">⚡ XPulse — Gamified Productivity Tracker</h3>
+          <p class="xpulse-sub">Earn XP, level up, maintain streaks &amp; unlock achievements — all while browsing.</p>
 
-            <div class="extension-features" style="display:flex;flex-wrap:wrap;justify-content:center;gap:14px;margin-bottom:28px;">
-              <div class="feature-item" style="flex:1;min-width:140px;max-width:180px;">
-                <i class="bi bi-lightning-charge-fill"></i>
-                <div><h4>XP System</h4><p>+10 XP/min on productive sites</p></div>
-              </div>
-              <div class="feature-item" style="flex:1;min-width:140px;max-width:180px;">
-                <i class="bi bi-trophy-fill"></i>
-                <div><h4>25+ Achievements</h4><p>Beginner to Elite ranks</p></div>
-              </div>
-              <div class="feature-item" style="flex:1;min-width:140px;max-width:180px;">
-                <i class="bi bi-fire"></i>
-                <div><h4>Daily Streaks</h4><p>Build consistent habits</p></div>
-              </div>
+          <div class="xpulse-features">
+            <div class="xpulse-feature">
+              <i class="bi bi-lightning-charge-fill"></i>
+              <h4>XP System</h4>
+              <p>+10 XP/min on productive sites</p>
             </div>
+            <div class="xpulse-feature">
+              <i class="bi bi-trophy-fill"></i>
+              <h4>25+ Achievements</h4>
+              <p>Beginner to Elite ranks</p>
+            </div>
+            <div class="xpulse-feature">
+              <i class="bi bi-fire"></i>
+              <h4>Daily Streaks</h4>
+              <p>Build consistent habits</p>
+            </div>
+          </div>
 
-            <div class="extension-buttons" style="justify-content:center;">
-              <a href="javascript:void(0)" class="btn-add-chrome" id="addToChromeBtn">
-                <i class="bi bi-download"></i><span>Add to Chrome</span>
-              </a>
-              <a href="https://github.com/DharmikGohil013/XPulse---Plugin" target="_blank" class="btn-learn-more">
-                <i class="bi bi-github"></i><span>GitHub</span>
-              </a>
-            </div>
+          <div class="xpulse-buttons">
+            <a href="javascript:void(0)" class="btn-add-chrome" id="addToChromeBtn">
+              <i class="bi bi-download"></i><span>Add to Chrome</span>
+            </a>
+            <a href="https://github.com/DharmikGohil013/XPulse---Plugin" target="_blank" class="btn-learn-more">
+              <i class="bi bi-github"></i><span>GitHub</span>
+            </a>
           </div>
         </div>
       </div>
