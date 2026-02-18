@@ -857,68 +857,335 @@
       color: #F5B461;
     }
 
-    /* Updated Portfolio Filters */
+    /* ============================================
+       REDESIGNED GAMES SECTION — NEON CARD GRID
+       ============================================ */
+    #portfolio.portfolio.section {
+      background: linear-gradient(160deg, #0a0e1a 0%, #111827 50%, #0a0e1a 100%);
+      padding: 80px 0 100px;
+      position: relative;
+      overflow: hidden;
+    }
+    #portfolio.portfolio.section::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 60% 40% at 20% 20%, rgba(245,180,97,0.07) 0%, transparent 60%),
+        radial-gradient(ellipse 50% 50% at 80% 80%, rgba(99,102,241,0.07) 0%, transparent 60%);
+      pointer-events: none;
+    }
+
+    /* Section Title */
+    #portfolio .section-title h2 {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 800;
+      color: #F5B461;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      text-shadow: 0 0 30px rgba(245,180,97,0.5);
+    }
+    #portfolio .section-title p {
+      color: rgba(255,255,255,0.55);
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.95rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    /* Filter Bar */
     .portfolio-filters {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      gap: 15px;
-      margin-bottom: 40px;
+      gap: 10px;
+      margin-bottom: 48px;
     }
-
     .portfolio-filters .filter-btn {
       font-family: 'JetBrains Mono', monospace;
-      background: rgba(44, 62, 80, 0.9);
-      color: #F5B461;
-      padding: 10px 20px;
-      border: 2px solid #F5B461;
-      border-radius: 25px;
+      background: transparent;
+      color: rgba(245,180,97,0.75);
+      padding: 8px 18px;
+      border: 1.5px solid rgba(245,180,97,0.35);
+      border-radius: 30px;
       text-transform: uppercase;
-      font-size: 0.9rem;
-      font-weight: bold;
-      transition: all 0.3s ease;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      transition: all 0.3s cubic-bezier(.4,0,.2,1);
       cursor: pointer;
+      backdrop-filter: blur(6px);
     }
-
-    .portfolio-filters .filter-btn:hover,
+    .portfolio-filters .filter-btn:hover {
+      background: rgba(245,180,97,0.12);
+      color: #F5B461;
+      border-color: #F5B461;
+      box-shadow: 0 0 18px rgba(245,180,97,0.3);
+    }
     .portfolio-filters .filter-btn.filter-active {
       background: #F5B461;
-      color: #1A1F2E;
+      color: #0a0e1a;
       border-color: #F5B461;
-      box-shadow: 0 0 15px #F5B461;
+      box-shadow: 0 0 24px rgba(245,180,97,0.55), 0 0 60px rgba(245,180,97,0.2);
       text-shadow: none;
     }
 
-    .portfolio-item img {
-      border: 2px solid #F5B461;
-      box-shadow: 0 0 15px rgba(245, 180, 97, 0.5);
-      transition: transform 0.3s ease;
+    /* Games Grid — custom Isotope-friendly grid (no Bootstrap row) */
+    .games-grid {
+      display: block;        /* Isotope needs block, not flex */
+      margin: 0 -10px;       /* compensate for item padding */
+    }
+    .games-grid .portfolio-item {
+      padding: 10px;
+      box-sizing: border-box;
+      float: left;           /* Isotope fitRows uses float */
+      /* default: 33.333% = 3 columns */
+      width: 33.333%;
+    }
+    .games-grid .portfolio-item.featured-game {
+      width: 66.666%;        /* featured spans 2 columns */
+    }
+    @media (max-width: 991px) {
+      .games-grid .portfolio-item,
+      .games-grid .portfolio-item.featured-game {
+        width: 50%;          /* 2 columns on tablet */
+      }
+    }
+    @media (max-width: 575px) {
+      .games-grid .portfolio-item,
+      .games-grid .portfolio-item.featured-game {
+        width: 100%;         /* 1 column on mobile */
+      }
+    }
+    /* clearfix */
+    .games-grid::after {
+      content: '';
+      display: block;
+      clear: both;
     }
 
-    .portfolio-item:hover img {
-      transform: scale(1.05);
+    /* Game Card */
+    .portfolio-item {
+      position: relative;
+      box-sizing: border-box;
+    }
+    .game-card {
+      border-radius: 16px;
+      overflow: hidden;
+      background: #111827;
+      border: 1px solid rgba(245,180,97,0.15);
+      box-shadow: 0 4px 30px rgba(0,0,0,0.5);
+      transition: transform 0.35s cubic-bezier(.4,0,.2,1),
+                  box-shadow 0.35s cubic-bezier(.4,0,.2,1),
+                  border-color 0.35s ease;
+      cursor: pointer;
+      position: relative;
+    }
+    .game-card:hover {
+      transform: translateY(-8px) scale(1.01);
+      border-color: rgba(245,180,97,0.55);
+      box-shadow: 0 16px 50px rgba(0,0,0,0.6),
+                  0 0 40px rgba(245,180,97,0.2);
     }
 
+    /* Featured hero card */
+    .portfolio-item.featured-game .game-card {
+      border-color: rgba(245,180,97,0.5);
+      box-shadow: 0 0 0 2px rgba(245,180,97,0.25),
+                  0 8px 40px rgba(0,0,0,0.6),
+                  0 0 60px rgba(245,180,97,0.12);
+    }
+    .portfolio-item.featured-game .game-card:hover {
+      box-shadow: 0 0 0 2px #F5B461,
+                  0 20px 60px rgba(0,0,0,0.7),
+                  0 0 80px rgba(245,180,97,0.3);
+    }
+
+    /* Thumbnail */
+    .game-card img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.5s cubic-bezier(.4,0,.2,1), filter 0.4s ease;
+      filter: brightness(0.85);
+    }
+    .portfolio-item.featured-game .game-card img {
+      height: 280px;
+    }
+    .game-card:hover img {
+      transform: scale(1.07);
+      filter: brightness(1);
+    }
+
+    /* Gradient overlay over image */
+    .game-card .img-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 220px;
+      background: linear-gradient(to bottom,
+        rgba(0,0,0,0) 30%,
+        rgba(10,14,26,0.9) 100%);
+      pointer-events: none;
+    }
+    .portfolio-item.featured-game .game-card .img-overlay {
+      height: 280px;
+    }
+
+    /* Card Body */
     .portfolio-info {
-      background: rgba(44, 62, 80, 0.9);
-      border: 1px solid rgba(245, 180, 97, 0.2);
+      background: transparent;
+      border: none;
+      position: relative;
+      padding: 16px 18px 20px;
     }
+
+    /* Tags row */
+    .game-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: 10px;
+    }
+    .game-tag {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      padding: 3px 9px;
+      border-radius: 20px;
+      border: 1px solid;
+    }
+    .game-tag.tag-type      { color: #a78bfa; border-color: rgba(167,139,250,0.4); background: rgba(167,139,250,0.1); }
+    .game-tag.tag-platform  { color: #34d399; border-color: rgba(52,211,153,0.4); background: rgba(52,211,153,0.1); }
+    .game-tag.tag-special   { color: #f472b6; border-color: rgba(244,114,182,0.4); background: rgba(244,114,182,0.1); }
+    .game-tag.tag-highlight { color: #F5B461; border-color: rgba(245,180,97,0.4); background: rgba(245,180,97,0.1); }
 
     .portfolio-info h4 {
       font-family: 'JetBrains Mono', monospace;
-      color: #F5B461;
+      color: #ffffff;
+      font-size: 1.05rem;
+      font-weight: 700;
+      margin: 0 0 4px;
+      letter-spacing: 0.5px;
     }
-
+    .portfolio-item.featured-game .portfolio-info h4 {
+      font-size: 1.25rem;
+      color: #F5B461;
+      text-shadow: 0 0 20px rgba(245,180,97,0.4);
+    }
     .portfolio-info p {
-      color: #F5B461;
+      color: rgba(255,255,255,0.45);
+      font-size: 0.8rem;
+      margin: 0 0 14px;
+      font-family: 'JetBrains Mono', monospace;
     }
 
+    /* Action row */
+    .portfolio-actions {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
     .portfolio-info a {
-      color: #F5B461;
+      color: rgba(245,180,97,0.6);
+      transition: color 0.2s, transform 0.2s;
+      font-size: 1.1rem;
     }
-
     .portfolio-info a:hover {
       color: #F5B461;
+      transform: scale(1.15);
+    }
+    .icon-btn {
+      width: 34px;
+      height: 34px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      border: 1px solid rgba(245,180,97,0.3);
+      background: rgba(245,180,97,0.07);
+      color: rgba(245,180,97,0.7) !important;
+      transition: all 0.25s ease !important;
+      font-size: 0.95rem !important;
+      flex-shrink: 0;
+    }
+    .icon-btn:hover {
+      background: rgba(245,180,97,0.18) !important;
+      border-color: #F5B461 !important;
+      color: #F5B461 !important;
+      transform: scale(1.1) !important;
+    }
+
+    /* VR / Featured Badges */
+    .game-card .vr-badge,
+    .game-card .featured-badge {
+      position: absolute;
+      top: 12px;
+      right: 14px;
+      padding: 5px 12px;
+      border-radius: 20px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.68rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      z-index: 10;
+    }
+    .vr-badge {
+      background: linear-gradient(135deg, rgba(244,114,182,0.9), rgba(167,139,250,0.9));
+      color: #fff;
+      box-shadow: 0 0 20px rgba(244,114,182,0.5);
+    }
+    .featured-badge {
+      background: linear-gradient(135deg, #F5B461, #e8953a);
+      color: #0a0e1a;
+      box-shadow: 0 0 20px rgba(245,180,97,0.6);
+    }
+
+    /* Play Button */
+    .portfolio-info .play-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 18px;
+      background: linear-gradient(135deg, #F5B461 0%, #e8953a 100%);
+      color: #0a0e1a;
+      font-family: 'JetBrains Mono', monospace;
+      font-weight: 800;
+      font-size: 0.72rem;
+      text-decoration: none;
+      border-radius: 25px;
+      transition: all 0.3s ease;
+      box-shadow: 0 0 18px rgba(245,180,97,0.4);
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      position: relative;
+      overflow: hidden;
+      flex-shrink: 0;
+      margin-left: auto;
+    }
+    .portfolio-info .play-btn::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(255,255,255,0.15), transparent);
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+    .portfolio-info .play-btn:hover {
+      box-shadow: 0 0 30px rgba(245,180,97,0.7), 0 4px 15px rgba(0,0,0,0.3);
+      transform: translateY(-2px);
+      color: #0a0e1a;
+    }
+    .portfolio-info .play-btn:hover::before { opacity: 1; }
+    .portfolio-info a.play-btn i {
+      font-size: 0.8rem;
     }
 
     /* Footer */
@@ -1486,60 +1753,7 @@
       }
     }
 
-    /* Play Button Styles */
-    .portfolio-info .play-btn {
-      display: inline-block;
-      margin-top: 10px;
-      padding: 8px 20px;
-      background: linear-gradient(135deg, #F5B461, #F5B461);
-      color: #1A1F2E;
-      font-family: 'JetBrains Mono', monospace;
-      font-weight: bold;
-      font-size: 0.9rem;
-      text-decoration: none;
-      border-radius: 25px;
-      transition: all 0.3s ease;
-      box-shadow: 0 0 15px rgba(245, 180, 97, 0.5);
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      position: relative;
-      overflow: hidden;
-    }
-
-    /* Play button icon removed - using HTML icon instead */
-
-    .portfolio-info .play-btn:hover {
-      background: linear-gradient(135deg, #F5B461, #F5B461);
-      box-shadow: 0 0 25px rgba(245, 180, 97, 0.8);
-      transform: translateY(-2px);
-      color: #1A1F2E;
-    }
-
-    .portfolio-info a.play-btn i {
-      margin-right: 5px;
-    }
-
-    /* VR Badge */
-    .portfolio-item {
-      position: relative;
-    }
-
-    .vr-badge {
-      position: absolute;
-      top: 10px;
-      right: 20px;
-      background: rgba(255, 0, 127, 0.9);
-      color: #fff;
-      padding: 5px 12px;
-      border-radius: 20px;
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.75rem;
-      font-weight: bold;
-      text-transform: uppercase;
-      z-index: 10;
-      box-shadow: 0 0 15px rgba(255, 0, 127, 0.6);
-      letter-spacing: 1px;
-    }
+    /* Play/VR styles handled in portfolio redesign block above */
 
     /* ========================================
        MOBILE NAVIGATION FIXES - CRITICAL
@@ -2563,162 +2777,182 @@
       </div>
       <div class="container">
         <div class="isotope-layout" data-default-filter="*" data-layout="masonry" data-sort="original-order">
-          <!-- Updated Filters as Buttons -->
+
+          <!-- Filter Bar -->
           <div class="portfolio-filters isotope-filters" data-aos="fade-up" data-aos-delay="100">
-            <button class="filter-btn filter-active" data-filter="*">All Games</button>
-            <button class="filter-btn" data-filter=".filter-app">2D Game</button>
-            <button class="filter-btn" data-filter=".filter-app3d">3D Game</button>
-            <button class="filter-btn" data-filter=".filter-product">Multiplayer</button>
-            <button class="filter-btn" data-filter=".filter-appmobile">Mobile Game</button>
-            <button class="filter-btn" data-filter=".filter-appsingleplayer">Singleplayer</button>
-            <button class="filter-btn" data-filter=".filter-productpc">PC Game</button>
-            <button class="filter-btn" data-filter=".filter-arvr">AR/VR</button>
+            <button class="filter-btn filter-active" data-filter="*"><i class="bi bi-grid-fill me-1"></i>All Games</button>
+            <button class="filter-btn" data-filter=".filter-app"><i class="bi bi-phone me-1"></i>2D Game</button>
+            <button class="filter-btn" data-filter=".filter-app3d"><i class="bi bi-box me-1"></i>3D Game</button>
+            <button class="filter-btn" data-filter=".filter-product"><i class="bi bi-people-fill me-1"></i>Multiplayer</button>
+            <button class="filter-btn" data-filter=".filter-appmobile"><i class="bi bi-phone-fill me-1"></i>Mobile</button>
+            <button class="filter-btn" data-filter=".filter-appsingleplayer"><i class="bi bi-person-fill me-1"></i>Singleplayer</button>
+            <button class="filter-btn" data-filter=".filter-productpc"><i class="bi bi-display me-1"></i>PC Game</button>
+            <button class="filter-btn" data-filter=".filter-arvr"><i class="bi bi-headset-vr me-1"></i>AR/VR</button>
           </div>
 
-          <div class="row gy-4 isotope-container" data-aos="fade-up" data-aos-delay="200">
-            <!-- Mavericks Battlegrounds - FIRST -->
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app3d filter-productpc filter-product">
+          <div class="games-grid isotope-container" data-aos="fade-up" data-aos-delay="200">
+
+            <!-- ★ FEATURED: Mavericks Battlegrounds -->
+            <div class="portfolio-item isotope-item featured-game filter-app3d filter-productpc filter-product">
+              <div class="game-card">
+              <span class="featured-badge"><i class="bi bi-star-fill me-1"></i>Featured</span>
               <img src="assets/img/portfolio/mavericks-battleground-thumbnail.jpg" class="img-fluid"
                 alt="Dharmik Gohil Mavericks Battlegrounds Multiplayer Game - Unity Networking Project">
+              <div class="img-overlay"></div>
               <div class="portfolio-info">
+                <div class="game-tags">
+                  <span class="game-tag tag-type">3D</span>
+                  <span class="game-tag tag-platform">PC</span>
+                  <span class="game-tag tag-highlight">Multiplayer</span>
+                  <span class="game-tag tag-type">Unity 6</span>
+                  <span class="game-tag tag-special">Photon Networking</span>
+                </div>
                 <h4>Mavericks Battlegrounds</h4>
-                <p>The War Zone</p>
-                <a href="assets/img/portfolio/mavericks-battleground-thumbnail.jpg" title="Mavericks Battlegrounds"
-                  data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i
-                    class="bi bi-zoom-in"></i></a>
-                <a href="game4.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-                <a href="https://dharmikgohil.itch.io/mavericks-battlegrounds" target="_blank" class="play-btn"><i
-                    class="bi bi-play-fill"></i>Play Now</a>
+                <p>The War Zone — Unity 6 Multiplayer Battle Arena</p>
+                <div class="portfolio-actions">
+                  <a href="assets/img/portfolio/mavericks-battleground-thumbnail.jpg" title="Preview"
+                    data-gallery="portfolio-gallery-branding" class="glightbox icon-btn"><i class="bi bi-zoom-in"></i></a>
+                  <a href="game4.html" class="icon-btn" title="Details"><i class="bi bi-info-circle"></i></a>
+                  <a href="https://dharmikgohil.itch.io/mavericks-battlegrounds" target="_blank" class="play-btn"><i
+                      class="bi bi-play-fill"></i>Play Now</a>
+                </div>
+              </div>
               </div>
             </div>
 
-            <!-- VR Game 1 -->
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-arvr filter-app3d filter-productpc">
-              <span class="vr-badge">Only for VR</span>
+            <!-- VR: Archviz Visualization -->
+            <div class="portfolio-item isotope-item filter-arvr filter-app3d filter-productpc">
+              <div class="game-card">
+              <span class="vr-badge"><i class="bi bi-headset-vr me-1"></i>VR Only</span>
               <img src="assets/dharmik-gohil-vr-gaming-expertise-showcase.jpg" class="img-fluid"
                 alt="Dharmik Gohil Archviz Visualization - VR Home Visualization Technology">
+              <div class="img-overlay"></div>
               <div class="portfolio-info">
-                <h4>Archviz Visualization Your Home</h4>
-                <p>Experience your dream home in immersive virtual reality</p>
-                <a href="assets/dharmik-gohil-vr-gaming-expertise-showcase.jpg" title="Archviz Visualization Your Home"
-                  data-gallery="portfolio-gallery-vr" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <a href="vrgame1.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-                <a href="vrgame1.html" target="_blank" class="play-btn"><i class="bi bi-eye"></i>Explore</a>
+                <div class="game-tags">
+                  <span class="game-tag tag-special">VR</span>
+                  <span class="game-tag tag-type">Archviz</span>
+                  <span class="game-tag tag-platform">Immersive</span>
+                </div>
+                <h4>Archviz Visualization</h4>
+                <p>Experience your dream home in virtual reality</p>
+                <div class="portfolio-actions">
+                  <a href="assets/dharmik-gohil-vr-gaming-expertise-showcase.jpg" title="Preview"
+                    data-gallery="portfolio-gallery-vr" class="glightbox icon-btn"><i class="bi bi-zoom-in"></i></a>
+                  <a href="vrgame1.html" target="_blank" class="play-btn"><i class="bi bi-eye-fill"></i>Explore</a>
+                </div>
+              </div>
               </div>
             </div>
 
-            <!-- AR Game -->
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-arvr filter-app3d filter-appsingleplayer">
+            <!-- AR Explorer -->
+            <div class="portfolio-item isotope-item filter-arvr filter-app3d filter-appsingleplayer">
+              <div class="game-card">
               <img src="assets/img/ar-explorer-thumbnail.jpg" class="img-fluid"
                 alt="Dharmik Gohil AR Explorer - Augmented Reality Development">
+              <div class="img-overlay"></div>
               <div class="portfolio-info">
+                <div class="game-tags">
+                  <span class="game-tag tag-special">AR</span>
+                  <span class="game-tag tag-type">Mobile</span>
+                  <span class="game-tag tag-platform">Real World</span>
+                </div>
                 <h4>AR Explorer</h4>
                 <p>Explore the world with augmented reality</p>
-                <a href="assets/img/ar-explorer-thumbnail.jpg" title="AR Explorer" data-gallery="portfolio-gallery-vr"
-                  class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <a href="https://ar-code.com/" target="_blank" rel="noopener noreferrer" class="play-btn"><i
-                    class="bi bi-download"></i>Download AR App</a>
+                <div class="portfolio-actions">
+                  <a href="assets/img/ar-explorer-thumbnail.jpg" title="Preview" data-gallery="portfolio-gallery-vr"
+                    class="glightbox icon-btn"><i class="bi bi-zoom-in"></i></a>
+                  <a href="https://ar-code.com/" target="_blank" rel="noopener noreferrer" class="play-btn"><i
+                      class="bi bi-download"></i>Download</a>
+                </div>
+              </div>
               </div>
             </div>
 
             <!-- Floppy Ball -->
-            <div
-              class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app filter-appsingleplayer filter-productpc">
+            <div class="portfolio-item isotope-item filter-app filter-appsingleplayer filter-productpc">
+              <div class="game-card">
               <img src="assets/img/flappy-bird-thumbnail.jpg" class="img-fluid"
                 alt="Dharmik Gohil Floppy Ball Mobile Game - Unity Game Development Project">
+              <div class="img-overlay"></div>
               <div class="portfolio-info">
+                <div class="game-tags">
+                  <span class="game-tag tag-type">2D</span>
+                  <span class="game-tag tag-platform">Casual</span>
+                  <span class="game-tag tag-highlight">First Game</span>
+                </div>
                 <h4>Floppy Ball</h4>
-                <p>First Simple Game</p>
-                <a href="assets/img/flappy-bird-thumbnail.jpg" title="Floppy Ball" data-gallery="portfolio-gallery-app"
-                  class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <a href="game1.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-                <a href="https://dharmik086.itch.io/floppy-bird-860" target="_blank" class="play-btn"><i
-                    class="bi bi-play-fill"></i>Play Now</a>
+                <p>First Simple Casual Game</p>
+                <div class="portfolio-actions">
+                  <a href="assets/img/flappy-bird-thumbnail.jpg" title="Preview" data-gallery="portfolio-gallery-app"
+                    class="glightbox icon-btn"><i class="bi bi-zoom-in"></i></a>
+                  <a href="game1.html" class="icon-btn" title="Details"><i class="bi bi-info-circle"></i></a>
+                  <a href="https://dharmik086.itch.io/floppy-bird-860" target="_blank" class="play-btn"><i
+                      class="bi bi-play-fill"></i>Play Now</a>
+                </div>
+              </div>
               </div>
             </div>
 
             <!-- MiniMario -->
-            <div
-              class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app filter-productpc filter-appmobile filter-appsingleplayer">
+            <div class="portfolio-item isotope-item filter-app filter-productpc filter-appmobile filter-appsingleplayer">
+              <div class="game-card">
               <img src="assets/img/masonry-portfolio/dharmik-gohil-mario-clone-game-project.png" class="img-fluid"
                 alt="Dharmik Gohil Mini Mario Clone Game - Unity Mobile and PC Game Development">
+              <div class="img-overlay"></div>
               <div class="portfolio-info">
+                <div class="game-tags">
+                  <span class="game-tag tag-type">2D</span>
+                  <span class="game-tag tag-platform">Mobile</span>
+                  <span class="game-tag tag-platform">PC</span>
+                  <span class="game-tag tag-highlight">Platformer</span>
+                </div>
                 <h4>MiniMario</h4>
-                <p>Level Game For Mobile and Pc</p>
-                <a href="assets/img/masonry-portfolio/dharmik-gohil-mario-clone-game-project.png" title="Clone Of Mario"
-                  data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i
-                    class="bi bi-zoom-in"></i></a>
-                <a href="game3.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-                <a href="https://dharmik086.itch.io/minimario" target="_blank" class="play-btn"><i
-                    class="bi bi-play-fill"></i>Play Now</a>
+                <p>Classic Level Platformer — Mobile & PC</p>
+                <div class="portfolio-actions">
+                  <a href="assets/img/masonry-portfolio/dharmik-gohil-mario-clone-game-project.png" title="Preview"
+                    data-gallery="portfolio-gallery-branding" class="glightbox icon-btn"><i class="bi bi-zoom-in"></i></a>
+                  <a href="game3.html" class="icon-btn" title="Details"><i class="bi bi-info-circle"></i></a>
+                  <a href="https://dharmik086.itch.io/minimario" target="_blank" class="play-btn"><i
+                      class="bi bi-play-fill"></i>Play Now</a>
+                </div>
+              </div>
               </div>
             </div>
 
-            <!-- Hotel H -->
-            <div
-              class="col-lg-4 col-md-6 portfolio-item isotope-item   filter-appmobile filter-appsingleplayer filter-app3d">
-              <img src="assets/img/portfolio/dharmik-gohil-industry-game-project.jpg" class="img-fluid"
-                alt="Dharmik Gohil Hotel Management Game - Unity Mobile Game Development">
+            <!-- Facade - Global Game Jam -->
+            <div class="portfolio-item isotope-item filter-app3d filter-appsingleplayer filter-productpc">
+              <div class="game-card">
+              <span class="featured-badge" style="background:linear-gradient(135deg,#a78bfa,#6366f1);color:#fff;box-shadow:0 0 20px rgba(99,102,241,0.6);"><i class="bi bi-globe me-1"></i>Global Game Jam</span>
+              <img src="assets/img/facade/facade-cover.png" class="img-fluid"
+                alt="Dharmik Gohil Facade - Global Game Jam Unity Game Development">
+              <div class="img-overlay"></div>
+              <!-- Lightbox extras -->
+              <a href="assets/img/facade/facade-ss1.png" data-gallery="portfolio-gallery-facade" class="glightbox d-none"></a>
+              <a href="assets/img/facade/facade-ss2.png" data-gallery="portfolio-gallery-facade" class="glightbox d-none"></a>
+              <a href="assets/img/facade/facade-ss3.png" data-gallery="portfolio-gallery-facade" class="glightbox d-none"></a>
+              <a href="assets/img/facade/facade-ss4.png" data-gallery="portfolio-gallery-facade" class="glightbox d-none"></a>
+              <a href="assets/img/facade/facade-ss5.png" data-gallery="portfolio-gallery-facade" class="glightbox d-none"></a>
               <div class="portfolio-info">
-                <h4>Hotel H</h4>
-                <p>Manage Hotel</p>
-                <a href="assets/img/portfolio/dharmik-gohil-industry-game-project.jpg" title="Hotel Management Game"
-                  data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i
-                    class="bi bi-zoom-in"></i></a>
-                <a href="game4.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-                <a href="game4.html" target="_blank" class="play-btn"><i class="bi bi-play-fill"></i>Play Now</a>
+                <div class="game-tags">
+                  <span class="game-tag tag-type">3D</span>
+                  <span class="game-tag tag-platform">PC</span>
+                  <span class="game-tag tag-special">Game Jam</span>
+                  <span class="game-tag tag-highlight">Unity</span>
+                </div>
+                <h4>Facade</h4>
+                <p>Global Game Jam — Exploration & Puzzle</p>
+                <div class="portfolio-actions">
+                  <a href="assets/img/facade/facade-cover.png" title="Preview"
+                    data-gallery="portfolio-gallery-facade" class="glightbox icon-btn"><i class="bi bi-zoom-in"></i></a>
+                  <a href="https://dharmikgohil.itch.io/facade" target="_blank" class="play-btn"><i
+                      class="bi bi-play-fill"></i>Play Now</a>
+                </div>
+              </div>
               </div>
             </div>
 
-            <!-- Trash In Pro -->
-            <div
-              class="col-lg-4 col-md-6 portfolio-item isotope-item   filter-appmobile filter-appsingleplayer filter-app3d">
-              <img src="assets/img/portfolio/dharmik-gohil-creative-design-portfolio-showcase.jpg" class="img-fluid"
-                alt="Dharmik Gohil Trash City Clean Game - Unity Environmental Game Development">
-              <div class="portfolio-info">
-                <h4>Trash In Pro</h4>
-                <p>Clean City / Trash City</p>
-                <a href="assets/img/portfolio/dharmik-gohil-creative-design-portfolio-showcase.jpg"
-                  title="Trash City Clean Game" data-gallery="portfolio-gallery-branding"
-                  class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <a href="game4.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-                <a href="game4.html" target="_blank" class="play-btn"><i class="bi bi-play-fill"></i>Play Now</a>
-              </div>
-            </div>
 
-            <!-- Unity Prototype 1 - MOVED TO END -->
-            <div
-              class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app3d filter-appsingleplayer filter-productpc">
-              <img src="assets/img/masonry-portfolio/dharmik-gohil-unity-game-development-project.png" class="img-fluid"
-                alt="Dharmik Gohil Unity Prototype Game Development - Professional Portfolio Project">
-              <div class="portfolio-info">
-                <h4>Unity Prototype 1</h4>
-                <p>Learning Unity</p>
-                <a href="assets/img/masonry-portfolio/dharmik-gohil-unity-game-development-project.png"
-                  title="Car Control" data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i
-                    class="bi bi-zoom-in"></i></a>
-                <a href="game2.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-                <a href="game2.html" target="_blank" class="play-btn"><i class="bi bi-play-fill"></i>Play Now</a>
-              </div>
-            </div>
-
-            <!-- Unity Prototype 2 - MOVED TO END -->
-            <div
-              class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app3d filter-appsingleplayer filter-productpc">
-              <img src="assets/img/masonry-portfolio/p1 (7).png" class="img-fluid"
-                alt="Dharmik Gohil Animal Kill Game - Unity Game Development Portfolio Project">
-              <div class="portfolio-info">
-                <h4>Unity Prototype 2</h4>
-                <p>Learning Unity</p>
-                <a href="assets/img/masonry-portfolio/p1 (7).png" title="Animal Kill Game"
-                  data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i
-                    class="bi bi-zoom-in"></i></a>
-                <a href="game5.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-                <a href="game5.html" target="_blank" class="play-btn"><i class="bi bi-play-fill"></i>Play Now</a>
-              </div>
-            </div>
-
-          </div>
+          </div><!-- end isotope-container -->
         </div>
       </div>
     </section>
@@ -2732,296 +2966,37 @@
 
       <div class="container" data-aos="fade-up" data-aos-delay="100">
         <div class="extension-showcase">
-          <div class="row align-items-center">
-            <!-- Extension Info -->
-            <div class="col-lg-6">
-              <div class="extension-content">
-                <div class="extension-header">
-                  <img src="XPulse---Plugin/assets/icons/icon128.png" alt="XPulse Chrome Extension Icon" class="extension-icon">
-                  <div>
-                    <h3>⚡ XPulse — Gamified Productivity Tracker</h3>
-                    <p class="extension-tagline">Your Browser as an RPG-Style Productivity Engine</p>
-                  </div>
-                </div>
+          <div class="extension-content" style="max-width:700px;margin:0 auto;text-align:center;">
+            <h3 style="font-family:'JetBrains Mono',monospace;color:#F5B461;font-size:1.4rem;margin-bottom:8px;">⚡ XPulse — Gamified Productivity Tracker</h3>
+            <p style="color:rgba(255,255,255,0.55);font-family:'JetBrains Mono',monospace;font-size:0.85rem;margin-bottom:28px;">Earn XP, level up, maintain streaks &amp; unlock achievements — all while browsing.</p>
 
-                <p class="extension-description">
-                  XPulse transforms your browsing into an immersive RPG experience. Track your productivity, 
-                  earn XP, level up, maintain streaks, and unlock achievements—all while browsing the web!
-                </p>
-
-                <div class="extension-features">
-                  <div class="feature-item">
-                    <i class="bi bi-lightning-charge-fill"></i>
-                    <div>
-                      <h4>XP System</h4>
-                      <p>Earn +10 XP/min on productive sites, level up with dynamic progression</p>
-                    </div>
-                  </div>
-                  <div class="feature-item">
-                    <i class="bi bi-trophy-fill"></i>
-                    <div>
-                      <h4>25+ Achievements</h4>
-                      <p>Unlock tiered achievements from Beginner to Elite ranks</p>
-                    </div>
-                  </div>
-                  <div class="feature-item">
-                    <i class="bi bi-fire"></i>
-                    <div>
-                      <h4>Daily Streaks</h4>
-                      <p>Maintain productive browsing streaks and build consistency</p>
-                    </div>
-                  </div>
-                  <div class="feature-item">
-                    <i class="bi bi-graph-up-arrow"></i>
-                    <div>
-                      <h4>Premium UI</h4>
-                      <p>Dark glassmorphism design with live stats and weekly charts</p>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="extension-stats">
-                  <div class="stat-box">
-                    <div class="stat-number">2.0</div>
-                    <div class="stat-label">Version</div>
-                  </div>
-                  <div class="stat-box">
-                    <div class="stat-number">25+</div>
-                    <div class="stat-label">Achievements</div>
-                  </div>
-                  <div class="stat-box">
-                    <div class="stat-number">100%</div>
-                    <div class="stat-label">Free</div>
-                  </div>
-                </div>
-
-                <div class="extension-buttons">
-                  <a href="javascript:void(0)" class="btn-add-chrome" id="addToChromeBtn">
-                    <i class="bi bi-download"></i>
-                    <span>Add to Chrome</span>
-                  </a>
-                  <a href="https://github.com/DharmikGohil013/XPulse---Plugin" target="_blank" class="btn-learn-more">
-                    <i class="bi bi-info-circle"></i>
-                    <span>Learn More</span>
-                  </a>
-                </div>
+            <div class="extension-features" style="display:flex;flex-wrap:wrap;justify-content:center;gap:14px;margin-bottom:28px;">
+              <div class="feature-item" style="flex:1;min-width:140px;max-width:180px;">
+                <i class="bi bi-lightning-charge-fill"></i>
+                <div><h4>XP System</h4><p>+10 XP/min on productive sites</p></div>
+              </div>
+              <div class="feature-item" style="flex:1;min-width:140px;max-width:180px;">
+                <i class="bi bi-trophy-fill"></i>
+                <div><h4>25+ Achievements</h4><p>Beginner to Elite ranks</p></div>
+              </div>
+              <div class="feature-item" style="flex:1;min-width:140px;max-width:180px;">
+                <i class="bi bi-fire"></i>
+                <div><h4>Daily Streaks</h4><p>Build consistent habits</p></div>
               </div>
             </div>
 
-            <!-- Extension Preview -->
-            <div class="col-lg-6">
-              <div class="extension-preview">
-                <div class="browser-mockup">
-                  <div class="browser-header">
-                    <div class="browser-dots">
-                      <span></span><span></span><span></span>
-                    </div>
-                    <div class="browser-url">chrome://extensions</div>
-                  </div>
-                  <div class="browser-content">
-                    <div class="extension-card-preview">
-                      <img src="XPulse---Plugin/assets/icons/icon128.png" alt="XPulse Preview" class="preview-icon">
-                      <h4>XPulse</h4>
-                      <p>Gamified Productivity Tracker</p>
-                      <div class="preview-features">
-                        <span class="badge-feature"><i class="bi bi-check-circle-fill"></i> RPG Leveling</span>
-                        <span class="badge-feature"><i class="bi bi-check-circle-fill"></i> Streak System</span>
-                        <span class="badge-feature"><i class="bi bi-check-circle-fill"></i> Achievements</span>
-                        <span class="badge-feature"><i class="bi bi-check-circle-fill"></i> Live Stats</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+            <div class="extension-buttons" style="justify-content:center;">
+              <a href="javascript:void(0)" class="btn-add-chrome" id="addToChromeBtn">
+                <i class="bi bi-download"></i><span>Add to Chrome</span>
+              </a>
+              <a href="https://github.com/DharmikGohil013/XPulse---Plugin" target="_blank" class="btn-learn-more">
+                <i class="bi bi-github"></i><span>GitHub</span>
+              </a>
             </div>
           </div>
         </div>
       </div>
     </section>
-
-    <!-- Hackathons Section -->
-    <section id="hackathons" class="hackathons section">
-      <div class="container section-title" data-aos="fade-up">
-        <h2>Hackathons & Game Jams</h2>
-        <p>48-hour innovation marathons and creative challenges</p>
-      </div>
-
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
-        <div class="hackathon-scroll-wrapper">
-          <div class="hackathon-scroll-container">
-            <!-- Hackathon Card 1 -->
-            <div class="hackathon-card">
-              <div class="hackathon-content">
-                <div class="hackathon-left">
-                  <h3>Global Game Jam 2026</h3>
-                  <div class="hackathon-details">
-                    <span class="detail-item"><i class="bi bi-clock"></i> 48 Hours</span>
-                    <span class="detail-item"><i class="bi bi-calendar"></i> Jan 2026</span>
-                    <span class="detail-item"><i class="bi bi-trophy"></i> Completed</span>
-                  </div>
-                  <p class="hackathon-desc">Developed an innovative game prototype within 48 hours, collaborating with developers worldwide in the largest game creation event.</p>
-                </div>
-                <div class="hackathon-right">
-                  <div class="hackathon-badge">
-                    <i class="bi bi-controller"></i>
-                    <span>Game Jam</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Hackathon Card 2 -->
-            <div class="hackathon-card">
-              <div class="hackathon-content">
-                <div class="hackathon-left">
-                  <h3>Unity Hackathon 2025</h3>
-                  <div class="hackathon-details">
-                    <span class="detail-item"><i class="bi bi-clock"></i> 48 Hours</span>
-                    <span class="detail-item"><i class="bi bi-calendar"></i> Dec 2025</span>
-                    <span class="detail-item"><i class="bi bi-trophy"></i> Winner</span>
-                  </div>
-                  <p class="hackathon-desc">Created a cutting-edge Unity XR experience, winning first place among 500+ participants with innovative mechanics and stunning visuals.</p>
-                </div>
-                <div class="hackathon-right">
-                  <div class="hackathon-badge">
-                    <i class="bi bi-code-slash"></i>
-                    <span>Hackathon</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Hackathon Card 3 -->
-            <div class="hackathon-card">
-              <div class="hackathon-content">
-                <div class="hackathon-left">
-                  <h3>CHARUSAT TechFest 2025</h3>
-                  <div class="hackathon-details">
-                    <span class="detail-item"><i class="bi bi-clock"></i> 48 Hours</span>
-                    <span class="detail-item"><i class="bi bi-calendar"></i> Nov 2025</span>
-                    <span class="detail-item"><i class="bi bi-trophy"></i> 2nd Place</span>
-                  </div>
-                  <p class="hackathon-desc">Built a multiplayer game solution addressing real-world challenges, securing second place in the university's premier tech competition.</p>
-                </div>
-                <div class="hackathon-right">
-                  <div class="hackathon-badge">
-                    <i class="bi bi-trophy-fill"></i>
-                    <span>Competition</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Hackathon Card 4 -->
-            <div class="hackathon-card">
-              <div class="hackathon-content">
-                <div class="hackathon-left">
-                  <h3>Meta AR/VR Challenge</h3>
-                  <div class="hackathon-details">
-                    <span class="detail-item"><i class="bi bi-clock"></i> 48 Hours</span>
-                    <span class="detail-item"><i class="bi bi-calendar"></i> Oct 2025</span>
-                    <span class="detail-item"><i class="bi bi-trophy"></i> Finalist</span>
-                  </div>
-                  <p class="hackathon-desc">Designed immersive AR experience pushing the boundaries of spatial computing, reaching finals among global AR/VR developers.</p>
-                </div>
-                <div class="hackathon-right">
-                  <div class="hackathon-badge">
-                    <i class="bi bi-headset-vr"></i>
-                    <span>VR/AR</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Hackathon Card 5 -->
-            <div class="hackathon-card">
-              <div class="hackathon-content">
-                <div class="hackathon-left">
-                  <h3>Google GameDev Summit</h3>
-                  <div class="hackathon-details">
-                    <span class="detail-item"><i class="bi bi-clock"></i> 48 Hours</span>
-                    <span class="detail-item"><i class="bi bi-calendar"></i> Sep 2025</span>
-                    <span class="detail-item"><i class="bi bi-trophy"></i> Participant</span>
-                  </div>
-                  <p class="hackathon-desc">Participated in Google's exclusive game development summit, creating innovative mobile game mechanics with cloud integration features.</p>
-                </div>
-                <div class="hackathon-right">
-                  <div class="hackathon-badge">
-                    <i class="bi bi-google"></i>
-                    <span>Mobile</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Hackathon Card 6 -->
-            <div class="hackathon-card">
-              <div class="hackathon-content">
-                <div class="hackathon-left">
-                  <h3>Indie Game Jam 2025</h3>
-                  <div class="hackathon-details">
-                    <span class="detail-item"><i class="bi bi-clock"></i> 48 Hours</span>
-                    <span class="detail-item"><i class="bi bi-calendar"></i> Aug 2025</span>
-                    <span class="detail-item"><i class="bi bi-trophy"></i> Top 10</span>
-                  </div>
-                  <p class="hackathon-desc">Crafted unique indie game concept with innovative storytelling and gameplay mechanics, ranking in top 10 among 1000+ submissions.</p>
-                </div>
-                <div class="hackathon-right">
-                  <div class="hackathon-badge">
-                    <i class="bi bi-stars"></i>
-                    <span>Indie</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Hackathon Card 7 -->
-            <div class="hackathon-card">
-              <div class="hackathon-content">
-                <div class="hackathon-left">
-                  <h3>Smart India Hackathon</h3>
-                  <div class="hackathon-details">
-                    <span class="detail-item"><i class="bi bi-clock"></i> 48 Hours</span>
-                    <span class="detail-item"><i class="bi bi-calendar"></i> Jul 2025</span>
-                    <span class="detail-item"><i class="bi bi-trophy"></i> Finalist</span>
-                  </div>
-                  <p class="hackathon-desc">Developed gamified educational platform solving real-world problems, advancing to national finals with innovative tech solutions.</p>
-                </div>
-                <div class="hackathon-right">
-                  <div class="hackathon-badge">
-                    <i class="bi bi-flag"></i>
-                    <span>National</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Hackathon Card 8 -->
-            <div class="hackathon-card">
-              <div class="hackathon-content">
-                <div class="hackathon-left">
-                  <h3>Itch.io Game Jam 2025</h3>
-                  <div class="hackathon-details">
-                    <span class="detail-item"><i class="bi bi-clock"></i> 48 Hours</span>
-                    <span class="detail-item"><i class="bi bi-calendar"></i> Jun 2025</span>
-                    <span class="detail-item"><i class="bi bi-trophy"></i> Featured</span>
-                  </div>
-                  <p class="hackathon-desc">Published creative game on Itch.io platform, gaining recognition and feature placement among community favorites with unique gameplay.</p>
-                </div>
-                <div class="hackathon-right">
-                  <div class="hackathon-badge">
-                    <i class="bi bi-joystick"></i>
-                    <span>Online</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- /Hackathons Section -->
 
     <!-- Explore Section - Technology Logo Loop -->
     <section id="explore" class="explore section">
@@ -3703,7 +3678,8 @@
       const isotopeContainer = document.querySelector('.isotope-container');
       const isotope = new Isotope(isotopeContainer, {
         itemSelector: '.portfolio-item',
-        layoutMode: 'masonry'
+        layoutMode: 'fitRows',
+        percentPosition: true
       });
 
       filterButtons.forEach(button => {
