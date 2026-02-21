@@ -1742,94 +1742,78 @@
       visibility: hidden;
     }
 
-    #preloader .loader-container {
+    .cube-loader {
       position: relative;
-      width: 100px;
-      height: 100px;
+      width: 75px;
+      height: 75px;
+      transform-style: preserve-3d;
+      transform: rotateX(-30deg);
+      animation: cube-animate 4s linear infinite;
     }
 
-    .loader-outer {
+    @keyframes cube-animate {
+      0% {
+        transform: rotateX(-30deg) rotateY(0);
+      }
+      100% {
+        transform: rotateX(-30deg) rotateY(360deg);
+      }
+    }
+
+    .cube-loader .cube-wrapper {
       position: absolute;
       width: 100%;
       height: 100%;
-      border: 4px solid transparent;
-      border-top: 4px solid #ff007f;
-      border-radius: 50%;
-      box-shadow: 0 0 15px #ff007f;
-      animation: rotate-loader 1.2s linear infinite;
+      transform-style: preserve-3d;
     }
 
-    .loader-middle {
+    .cube-loader .cube-wrapper .cube-span {
       position: absolute;
-      width: 80%;
-      height: 80%;
-      top: 10%;
-      left: 10%;
-      border: 4px solid transparent;
-      border-bottom: 4px solid #F5B461;
-      border-radius: 50%;
-      box-shadow: 0 0 15px #F5B461;
-      animation: rotate-loader 1.5s linear infinite reverse;
-    }
-
-    .loader-inner {
-      position: absolute;
-      width: 60%;
-      height: 60%;
-      top: 20%;
-      left: 20%;
-      border: 4px solid #ffdf00;
-      border-left-color: transparent;
-      border-radius: 50%;
-      box-shadow: 0 0 15px #ffdf00;
-      animation: pulse-loader 2s ease-in-out infinite;
-    }
-
-    .loading-text {
-      position: absolute;
-      bottom: -40px;
       width: 100%;
-      text-align: center;
-      font-size: 1.2rem;
-      font-weight: bold;
-      color: #ffffff;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-      animation: fade-text 1.5s infinite alternate ease-in-out;
+      height: 100%;
+      transform: rotateY(calc(90deg * var(--i))) translateZ(37.5px);
+      background: linear-gradient(
+        to bottom,
+        hsl(330, 3.13%, 25.1%) 0%,
+        hsl(177.27, 21.71%, 32.06%) 5.5%,
+        hsl(176.67, 34.1%, 36.88%) 12.1%,
+        hsl(176.61, 42.28%, 40.7%) 19.6%,
+        hsl(176.63, 48.32%, 43.88%) 27.9%,
+        hsl(176.66, 53.07%, 46.58%) 36.6%,
+        hsl(176.7, 56.94%, 48.91%) 45.6%,
+        hsl(176.74, 62.39%, 50.91%) 54.6%,
+        hsl(176.77, 69.86%, 52.62%) 63.4%,
+        hsl(176.8, 76.78%, 54.08%) 71.7%,
+        hsl(176.83, 83.02%, 55.29%) 79.4%,
+        hsl(176.85, 88.44%, 56.28%) 86.2%,
+        hsl(176.86, 92.9%, 57.04%) 91.9%,
+        hsl(176.88, 96.24%, 57.59%) 96.3%,
+        hsl(176.88, 98.34%, 57.93%) 99%,
+        hsl(176.89, 99.07%, 58.04%) 100%
+      );
     }
 
-    @keyframes rotate-loader {
-      0% {
-        transform: rotate(0deg);
-      }
-
-      100% {
-        transform: rotate(360deg);
-      }
+    .cube-top {
+      position: absolute;
+      width: 75px;
+      height: 75px;
+      background: hsl(330, 3.13%, 25.1%);
+      transform: rotateX(90deg) translateZ(37.5px);
+      transform-style: preserve-3d;
     }
 
-    @keyframes pulse-loader {
-
-      0%,
-      100% {
-        transform: scale(1);
-        opacity: 1;
-      }
-
-      50% {
-        transform: scale(1.2);
-        opacity: 0.7;
-      }
-    }
-
-    @keyframes fade-text {
-      0% {
-        opacity: 1;
-      }
-
-      100% {
-        opacity: 0.5;
-      }
+    .cube-top::before {
+      content: '';
+      position: absolute;
+      width: 75px;
+      height: 75px;
+      background: hsl(176.61, 42.28%, 40.7%);
+      transform: translateZ(-90px);
+      filter: blur(10px);
+      box-shadow: 0 0 10px #323232,
+                  0 0 20px hsl(176.61, 42.28%, 40.7%),
+                  0 0 30px #323232,
+                  0 0 40px hsl(176.61, 42.28%, 40.7%);
     }
 
     /* Scroll Top */
@@ -5190,11 +5174,14 @@
 
   <!-- Preloader -->
   <div id="preloader">
-    <div class="loader-container">
-      <div class="loader loader-outer"></div>
-      <div class="loader loader-middle"></div>
-      <div class="loader loader-inner"></div>
-      <div class="loading-text">LOADING...</div>
+    <div class="cube-loader">
+      <div class="cube-top"></div>
+      <div class="cube-wrapper">
+        <span style="--i:0" class="cube-span"></span>
+        <span style="--i:1" class="cube-span"></span>
+        <span style="--i:2" class="cube-span"></span>
+        <span style="--i:3" class="cube-span"></span>
+      </div>
     </div>
   </div>
 
