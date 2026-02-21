@@ -123,10 +123,13 @@
 
   /**
    * Preloader
+   * Note: When cinematic intro is active, preloader is handled by the intro script
    */
   const preloader = document.querySelector('#preloader');
   if (preloader) {
     window.addEventListener('load', () => {
+      // If cinematic intro exists, let it handle preloader removal
+      if (document.getElementById('cinematic-intro')) return;
       preloader.remove();
     });
   }

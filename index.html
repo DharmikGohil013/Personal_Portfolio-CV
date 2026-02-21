@@ -12,10 +12,6 @@
     gtag('config', 'G-KHJXN2DGEE');
   </script>
 
-  <!-- OmniDimension Web Widget -->
-  <script id="omnidimension-web-widget" async
-    src="https://omnidim.io/web_widget.js?secret_key=8ffa6f396e40e6a0b16ff8dcf4347d05"></script>
-
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <title>Dharmik Gohil || XR & Unity Game Developer || CHARUSAT universty</title>
@@ -342,7 +338,7 @@
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com" rel="preconnect">
   <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Press+Start+2P&display=swap"
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;700&family=Press+Start+2P&display=swap"
     rel="stylesheet">
 
   <!-- Vendor CSS Files -->
@@ -388,407 +384,695 @@
       pointer-events: none;
     }
 
-    /* Hero Section - Professional Static Background */
+    /* ============================================
+       macOS-INSPIRED HERO SECTION
+       Sonoma/Sequoia Dark Mode Aesthetic
+       ============================================ */
+
+    /* macOS Desktop Background */
     #hero {
       position: relative;
       min-height: 100vh;
       display: flex;
+      flex-direction: column;
       align-items: center;
       justify-content: center;
       overflow: hidden;
-      background:
-        linear-gradient(135deg, rgba(10, 15, 31, 0.85) 0%, rgba(44, 62, 80, 0.75) 50%, rgba(43, 53, 87, 0.85) 100%),
-        url('assets/img/hero-gamer-background.jpg');
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      background-attachment: fixed;
+      background: #09090F;
+      padding: 0;
     }
 
-    /* Professional geometric pattern overlay - removed */
-
-    /* Professional accent elements - removed */
-
-    /* Professional corner accents - removed */
-
-    /* Hero content */
-    #hero .container {
-      position: relative;
-      z-index: 10;
-      padding: 40px 20px;
-    }
-
-    #hero h2 {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 3.5rem;
-      color: #fff;
-      margin-bottom: 20px;
-      margin-top: 30px;
-    }
-
-    /* Hero Profile Photo */
-    .hero-profile-photo {
-      width: 180px;
-      height: 180px;
-      margin: 0 auto 30px;
-      border-radius: 50%;
-      overflow: hidden;
-      border: 4px solid rgba(255, 255, 255, 0.3);
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-      position: relative;
-      z-index: 10;
-    }
-
-    .hero-profile-photo img {
+    /* Video Background */
+    #hero-video-bg {
+      position: absolute;
+      inset: 0;
       width: 100%;
       height: 100%;
       object-fit: cover;
-      display: block;
+      opacity: 0.50;
+      z-index: 0;
+      pointer-events: none;
     }
 
-    /* Profile glow animation removed */
-
-    /* Hero Subtitle */
-    #hero p.hero-subtitle {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 1.2rem;
-      color: #fff;
-      text-transform: uppercase;
-      letter-spacing: 3px;
-      font-weight: 400;
-      margin-bottom: 40px;
-      opacity: 0.9;
+    /* Dark overlay on top of video */
+    #hero-video-overlay {
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 80% 50% at 15% 85%, rgba(255,149,0,0.10) 0%, transparent 55%),
+        radial-gradient(ellipse 70% 60% at 85% 15%, rgba(191,90,242,0.12) 0%, transparent 55%),
+        radial-gradient(ellipse 60% 60% at 50% 50%, rgba(10,132,255,0.05) 0%, transparent 70%),
+        linear-gradient(160deg, rgba(9,9,15,0.72) 0%, rgba(17,16,32,0.68) 40%, rgba(12,12,26,0.72) 70%, rgba(16,12,24,0.75) 100%);
+      z-index: 1;
+      pointer-events: none;
     }
 
-    /* Hero Buttons Container */
-    .hero-buttons {
-      margin-top: 30px;
-    }
-
-    #hero p {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 1.5rem;
-      color: #F5B461;
-      margin-bottom: 30px;
-      animation: pulse-text 3s ease-in-out infinite;
-    }
-
-    @keyframes pulse-text {
-
-      0%,
-      100% {
-        opacity: 0.8;
-      }
-
-      50% {
-        opacity: 1;
-      }
-    }
-
-    #hero .btn-get-started {
-      font-family: 'JetBrains Mono', monospace;
-      font-weight: bold;
-      font-size: 1rem;
-      padding: 12px 35px;
-      margin: 10px;
-      border-radius: 50px;
-      transition: all 0.3s ease;
-      border: 2px solid #F5B461;
-      background: rgba(245, 180, 97, 0.1);
-      color: #F5B461;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      box-shadow:
-        0 0 20px rgba(245, 180, 97, 0.3),
-        inset 0 0 20px rgba(245, 180, 97, 0.1);
-      position: relative;
-      overflow: hidden;
-    }
-
-    #hero .btn-get-started::before {
+    /* Subtle star field */
+    #hero::before {
       content: '';
       position: absolute;
+      inset: 0;
+      background-image:
+        radial-gradient(1.5px 1.5px at 12% 18%, rgba(255,255,255,0.65) 0%, transparent 100%),
+        radial-gradient(1px 1px at 38% 8%, rgba(255,255,255,0.5) 0%, transparent 100%),
+        radial-gradient(1px 1px at 72% 30%, rgba(255,255,255,0.55) 0%, transparent 100%),
+        radial-gradient(1.5px 1.5px at 88% 65%, rgba(255,255,255,0.4) 0%, transparent 100%),
+        radial-gradient(1px 1px at 25% 72%, rgba(255,255,255,0.45) 0%, transparent 100%),
+        radial-gradient(2px 2px at 62% 88%, rgba(255,255,255,0.3) 0%, transparent 100%),
+        radial-gradient(1px 1px at 91% 12%, rgba(255,255,255,0.55) 0%, transparent 100%),
+        radial-gradient(1px 1px at 8% 90%, rgba(255,255,255,0.35) 0%, transparent 100%),
+        radial-gradient(1px 1px at 55% 55%, rgba(255,255,255,0.2) 0%, transparent 100%),
+        radial-gradient(1.5px 1.5px at 44% 40%, rgba(191,90,242,0.4) 0%, transparent 100%);
+      pointer-events: none;
+      z-index: 2;
+      animation: starsTwinkle 6s ease-in-out infinite alternate;
+    }
+
+    @keyframes starsTwinkle {
+      0% { opacity: 0.5; }
+      100% { opacity: 1; }
+    }
+
+    /* macOS Menu Bar */
+    .macos-menubar {
+      position: fixed;
       top: 0;
-      left: -100%;
+      left: 0;
+      right: 0;
+      height: 28px;
+      background: rgba(22,22,26,0.92);
+      backdrop-filter: blur(25px) saturate(2);
+      -webkit-backdrop-filter: blur(25px) saturate(2);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 18px;
+      z-index: 9998;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      box-shadow: 0 1px 0 rgba(0,0,0,0.15);
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+
+    .menubar-left {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .menubar-apple {
+      font-size: 16px;
+      color: rgba(255,255,255,0.95);
+    }
+
+    .menubar-left span {
+      font-size: 13px;
+      font-weight: 500;
+      color: rgba(255,255,255,0.88);
+      cursor: default;
+      user-select: none;
+      transition: color 0.15s ease;
+    }
+
+    .menubar-left span:hover:not(.menubar-apple) {
+      color: rgba(255,255,255,1);
+    }
+
+    .menubar-left span.menubar-brand {
+      font-weight: 700;
+      color: rgba(255,255,255,0.95);
+    }
+
+    .menubar-right {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      font-size: 12px;
+      color: rgba(255,255,255,0.85);
+    }
+
+    .menubar-right a {
+      color: inherit;
+      text-decoration: none;
+      transition: color 0.15s ease;
+      display: flex;
+      align-items: center;
+    }
+
+    .menubar-right a:hover {
+      color: rgba(255,255,255,1);
+    }
+
+    .menubar-right i {
+      font-size: 14px;
+      transition: color 0.15s ease;
+    }
+
+    .menubar-right i:hover {
+      color: rgba(255,255,255,1);
+    }
+
+    #menubar-clock {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      font-size: 12px;
+      font-weight: 500;
+      color: rgba(255,255,255,0.9);
+      letter-spacing: 0.4px;
+      min-width: 44px;
+      text-align: right;
+    }
+
+    /* macOS Desktop wrapper */
+    .macos-desktop {
+      position: relative;
+      z-index: 10;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      min-height: 100vh;
+      padding: 60px 20px 110px;
+    }
+
+    /* macOS Frosted Glass Window */
+    .macos-window {
+      width: 100%;
+      max-width: 900px;
+      background: rgba(28,28,38,0.72);
+      backdrop-filter: blur(40px) saturate(1.8);
+      -webkit-backdrop-filter: blur(40px) saturate(1.8);
+      border: 1px solid rgba(255,255,255,0.10);
+      border-radius: 16px;
+      box-shadow:
+        0 0 0 1px rgba(255,255,255,0.04),
+        0 32px 80px rgba(0,0,0,0.65),
+        0 0 60px rgba(191,90,242,0.07),
+        0 0 120px rgba(10,132,255,0.05);
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .macos-window:hover {
+      transform: translateY(-5px);
+      box-shadow:
+        0 0 0 1px rgba(255,255,255,0.08),
+        0 40px 100px rgba(0,0,0,0.75),
+        0 0 80px rgba(191,90,242,0.10),
+        0 0 160px rgba(10,132,255,0.07);
+    }
+
+    /* Window Title Bar */
+    .window-titlebar {
+      background: rgba(255,255,255,0.04);
+      border-bottom: 1px solid rgba(255,255,255,0.07);
+      padding: 13px 18px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      user-select: none;
+    }
+
+    /* Traffic Light Buttons */
+    .window-controls {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+      flex-shrink: 0;
+    }
+
+    .window-controls span {
+      width: 13px;
+      height: 13px;
+      border-radius: 50%;
+      display: inline-block;
+      transition: filter 0.2s, transform 0.2s;
+      cursor: default;
+    }
+
+    .window-controls span:hover {
+      filter: brightness(1.25);
+      transform: scale(1.1);
+    }
+
+    .btn-close   { background: #FF5F56; box-shadow: 0 0 8px rgba(255,95,86,0.5); }
+    .btn-minimize { background: #FFBD2E; box-shadow: 0 0 8px rgba(255,189,46,0.5); }
+    .btn-maximize { background: #27C93F; box-shadow: 0 0 8px rgba(39,201,63,0.5); }
+
+    .window-title {
+      flex: 1;
+      text-align: center;
+      font-family: 'Inter', -apple-system, sans-serif;
+      font-size: 13px;
+      font-weight: 500;
+      color: rgba(255,255,255,0.5);
+      letter-spacing: 0.2px;
+    }
+
+    /* Window Content - Two Column Layout */
+    .window-content {
+      display: flex;
+      align-items: center;
+      min-height: 400px;
+      padding: 36px 44px;
+      gap: 36px;
+    }
+
+    /* Left: Text Content */
+    .window-main {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 16px;
+      min-width: 0;
+    }
+
+    /* Right: Photo Area */
+    .window-photo-area {
+      flex-shrink: 0;
+      width: 260px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .hero-photo-frame {
+      width: 240px;
+      height: 300px;
+      border-radius: 50% 50% 50% 50% / 40% 40% 60% 60%;
+      overflow: hidden;
+      border: 2.5px solid rgba(10,132,255,0.55);
+      box-shadow:
+        0 0 0 6px rgba(10,132,255,0.10),
+        0 0 40px rgba(10,132,255,0.20),
+        0 0 80px rgba(191,90,242,0.12),
+        0 20px 50px rgba(0,0,0,0.55);
+      flex-shrink: 0;
+      transition: transform 0.35s ease, box-shadow 0.35s ease;
+    }
+
+    .hero-photo-frame:hover {
+      transform: scale(1.04) translateY(-4px);
+      box-shadow:
+        0 0 0 8px rgba(10,132,255,0.14),
+        0 0 60px rgba(10,132,255,0.32),
+        0 0 100px rgba(191,90,242,0.18),
+        0 28px 65px rgba(0,0,0,0.65);
+    }
+
+    .hero-photo {
       width: 100%;
       height: 100%;
-      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
-      transition: left 0.5s;
+      object-fit: cover;
+      object-position: center top;
+      display: block;
+      /* Override .hero img from main.css and global img from responsive-global.css */
+      position: static !important;
+      inset: auto !important;
+      z-index: auto !important;
+      max-width: none !important;
     }
 
-    #hero .btn-get-started:hover::before {
-      left: 100%;
+    .profile-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      background: rgba(48,209,88,0.12);
+      border: 1px solid rgba(48,209,88,0.35);
+      color: #30D158;
+      font-family: 'Inter', sans-serif;
+      font-size: 11px;
+      font-weight: 600;
+      padding: 4px 12px;
+      border-radius: 20px;
+      white-space: nowrap;
     }
 
-    #hero .btn-get-started:hover {
-      background: #F5B461;
-      color: #1A1F2E;
-      border-color: #F5B461;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-      transform: translateY(-3px);
+    .profile-badge i { font-size: 9px; }
+
+    .sidebar-links {
+      display: flex;
+      gap: 8px;
+      justify-content: center;
+      flex-wrap: wrap;
     }
 
-    #hero .btn-get-started:nth-child(2) {
-      border-color: #F5B461;
-      background: rgba(245, 180, 97, 0.1);
-      color: #F5B461;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    .sidebar-links a {
+      width: 34px;
+      height: 34px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.09);
+      border-radius: 9px;
+      color: rgba(255,255,255,0.65);
+      font-size: 14px;
+      transition: all 0.2s;
+      text-decoration: none;
     }
 
-    #hero .btn-get-started:nth-child(2):hover {
-      background: #F5B461;
-      color: #1A1F2E;
-      border-color: #F5B461;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    .sidebar-links a:hover {
+      background: rgba(10,132,255,0.18);
+      border-color: rgba(10,132,255,0.45);
+      color: #0A84FF;
+      transform: translateY(-2px);
     }
 
-    /* Professional geometric shapes - removed */
+    .window-main-header {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
 
-    /* ========================================
-       COMPREHENSIVE RESPONSIVE STYLES
-       ======================================== */
+    .status-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #30D158;
+      box-shadow: 0 0 6px rgba(48,209,88,0.9);
+      animation: statusPulse 2.5s ease-in-out infinite;
+      flex-shrink: 0;
+    }
 
-    /* Tablets and Below (768px and below) */
+    @keyframes statusPulse {
+      0%, 100% { box-shadow: 0 0 5px rgba(48,209,88,0.7); }
+      50%       { box-shadow: 0 0 14px rgba(48,209,88,1), 0 0 24px rgba(48,209,88,0.35); }
+    }
+
+    .status-label {
+      font-family: 'Inter', sans-serif;
+      font-size: 11.5px;
+      font-weight: 600;
+      color: rgba(255,255,255,0.4);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    /* Override old h2 style for hero */
+    .hero-name {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif !important;
+      font-size: clamp(2rem, 4.5vw, 3.2rem) !important;
+      font-weight: 700 !important;
+      color: #fff !important;
+      letter-spacing: -0.8px !important;
+      line-height: 1.08 !important;
+      margin: 0 !important;
+    }
+
+    .hero-role {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.95rem;
+      color: #BF5AF2;
+      margin: 0;
+      min-height: 1.5em;
+      letter-spacing: 0.5px;
+    }
+
+    .typing-cursor::after {
+      content: '|';
+      animation: blink 0.75s step-end infinite;
+      color: #0A84FF;
+      margin-left: 2px;
+      font-weight: 300;
+    }
+
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50%       { opacity: 0; }
+    }
+
+    /* Skill Tags */
+    .skill-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+    }
+
+    .skill-tag {
+      display: inline-block;
+      padding: 5px 11px;
+      background: rgba(10,132,255,0.10);
+      border: 1px solid rgba(10,132,255,0.25);
+      border-radius: 7px;
+      font-family: 'Inter', sans-serif;
+      font-size: 11.5px;
+      font-weight: 500;
+      color: rgba(255,255,255,0.75);
+      letter-spacing: 0.2px;
+      transition: all 0.2s;
+      cursor: default;
+    }
+
+    .skill-tag:hover {
+      background: rgba(10,132,255,0.20);
+      border-color: rgba(10,132,255,0.5);
+      color: #fff;
+      transform: translateY(-1px);
+    }
+
+    /* macOS-style Buttons */
+    .hero-buttons {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 2px;
+    }
+
+    .mac-btn {
+      display: inline-flex;
+      align-items: center;
+      padding: 10px 22px;
+      border-radius: 10px;
+      font-family: 'Inter', -apple-system, sans-serif;
+      font-size: 14px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.2s cubic-bezier(.4,0,.2,1);
+      cursor: pointer;
+      border: none;
+      letter-spacing: 0.1px;
+      white-space: nowrap;
+    }
+
+    .mac-btn-primary {
+      background: #0A84FF;
+      color: #fff;
+      box-shadow: 0 4px 18px rgba(10,132,255,0.4);
+    }
+
+    .mac-btn-primary:hover {
+      background: #1B90FF;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 26px rgba(10,132,255,0.55);
+      color: #fff;
+    }
+
+    .mac-btn-secondary {
+      background: rgba(255,255,255,0.09);
+      border: 1px solid rgba(255,255,255,0.14);
+      color: rgba(255,255,255,0.88);
+      backdrop-filter: blur(10px);
+    }
+
+    .mac-btn-secondary:hover {
+      background: rgba(255,255,255,0.16);
+      border-color: rgba(255,255,255,0.28);
+      transform: translateY(-2px);
+      color: #fff;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.2);
+    }
+
+    /* Stats Row */
+    .hero-stats {
+      display: flex;
+      gap: 24px;
+      padding-top: 10px;
+      border-top: 1px solid rgba(255,255,255,0.07);
+      margin-top: 2px;
+      flex-wrap: wrap;
+    }
+
+    .hero-stats .stat {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .stat-num {
+      font-family: 'Inter', sans-serif;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #fff;
+      line-height: 1;
+    }
+
+    .stat-label {
+      font-family: 'Inter', sans-serif;
+      font-size: 10.5px;
+      color: rgba(255,255,255,0.38);
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      font-weight: 500;
+    }
+
+    /* macOS Dock */
+    .macos-dock {
+      position: fixed;
+      bottom: 12px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 1000;
+      background: rgba(255,255,255,0.12);
+      backdrop-filter: blur(40px) saturate(2.5);
+      -webkit-backdrop-filter: blur(40px) saturate(2.5);
+      border: 1px solid rgba(255,255,255,0.18);
+      border-radius: 18px;
+      padding: 5px 10px;
+      box-shadow:
+        0 12px 48px rgba(0,0,0,0.6),
+        0 0 0 0.5px rgba(255,255,255,0.08) inset,
+        inset 0 1px 0 rgba(255,255,255,0.12);
+    }
+
+    .dock-items {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .dock-item {
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 11px;
+      background: rgba(255,255,255,0.09);
+      border: 1px solid rgba(255,255,255,0.12);
+      color: rgba(255,255,255,0.75);
+      font-size: 18px;
+      text-decoration: none;
+      transition: all 0.25s cubic-bezier(.4,0,.2,1);
+      position: relative;
+      flex-shrink: 0;
+    }
+
+    .dock-item::before {
+      content: attr(data-tooltip);
+      position: absolute;
+      bottom: calc(100% + 8px);
+      left: 50%;
+      transform: translateX(-50%) scale(0.85);
+      background: rgba(25,25,25,0.92);
+      color: rgba(255,255,255,0.95);
+      padding: 4px 10px;
+      border-radius: 6px;
+      font-size: 11px;
+      font-weight: 500;
+      white-space: nowrap;
+      opacity: 0;
+      pointer-events: none;
+      transition: all 0.18s ease;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      letter-spacing: 0.2px;
+    }
+
+    .dock-item:hover::before {
+      opacity: 1;
+      transform: translateX(-50%) scale(1);
+    }
+
+    .dock-item:hover {
+      transform: translateY(-8px) scale(1.15);
+      background: rgba(10,132,255,0.20);
+      border-color: rgba(10,132,255,0.45);
+      color: #0A84FF;
+      box-shadow: 
+        0 8px 24px rgba(10,132,255,0.35),
+        0 0 0 1px rgba(10,132,255,0.2);
+    }
+
+    .dock-item.active {
+      background: rgba(10,132,255,0.25);
+      border-color: rgba(10,132,255,0.5);
+      color: #0A84FF;
+    }
+
+    .dock-item.active::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 4px;
+      height: 4px;
+      border-radius: 50%;
+      background: #0A84FF;
+      box-shadow: 0 0 6px rgba(10,132,255,0.6);
+    }
+
+    .dock-separator {
+      width: 1px;
+      height: 28px;
+      background: linear-gradient(to bottom, transparent, rgba(255,255,255,0.18) 15%, rgba(255,255,255,0.18) 85%, transparent);
+      margin: 0 3px;
+    }
+
+    /* ===== HERO RESPONSIVE ===== */
+    @media (max-width: 900px) {
+      .window-content { padding: 28px 28px; gap: 24px; }
+      .window-photo-area { width: 220px; }
+      .hero-photo-frame { width: 200px; height: 250px; }
+      .hero-name { font-size: 2.2rem !important; }
+    }
+
     @media (max-width: 768px) {
-      #hero {
-        min-height: 80vh;
-        padding: 60px 0;
-      }
-
-      #hero h2 {
-        font-size: 2rem;
-        margin-top: 20px;
-      }
-
-      #hero p {
-        font-size: 1.1rem;
-      }
-
-      #hero p.hero-subtitle {
-        font-size: 1rem;
-        letter-spacing: 2px;
-      }
-
-      .hero-profile-photo {
-        width: 150px;
-        height: 150px;
-        margin: 0 auto 25px;
-      }
-
-      #hero .btn-get-started {
-        font-size: 0.9rem;
-        padding: 10px 28px;
-        margin: 8px;
-      }
-
-      .geo-shape {
-        display: none;
-      }
-
-      #hero .container {
-        padding: 20px 15px;
-      }
-
-      .explore.section {
-        padding: 60px 0;
-      }
-
-      .actify-section {
-        padding: 60px 0;
-      }
-
-      .idc.section {
-        padding: 60px 0;
-      }
-    }
-
-    /* Small Tablets and Large Phones (576px to 767px) */
-    @media (min-width: 576px) and (max-width: 767px) {
-      #hero h2 {
-        font-size: 1.8rem;
-      }
-
-      #hero p {
-        font-size: 1rem;
-      }
-
-      #hero p.hero-subtitle {
-        font-size: 0.95rem;
-        letter-spacing: 1.5px;
-      }
-
-      .hero-profile-photo {
-        width: 140px;
-        height: 140px;
-      }
-
-      #hero .btn-get-started {
-        font-size: 0.85rem;
-        padding: 10px 25px;
-      }
-    }
-
-    /* Mobile Devices (575px and below) */
-    @media (max-width: 575px) {
-      #hero {
-        min-height: 100vh;
-        padding: 40px 0;
-      }
-
-      #hero h2 {
-        font-size: 1.5rem;
-        margin-top: 15px;
-        margin-bottom: 15px;
-      }
-
-      #hero p {
-        font-size: 0.95rem;
-        margin-bottom: 20px;
-      }
-
-      #hero p.hero-subtitle {
-        font-size: 0.85rem;
-        letter-spacing: 1px;
-        margin-bottom: 30px;
-      }
-
-      .hero-profile-photo {
-        width: 120px;
-        height: 120px;
-        margin: 0 auto 20px;
-        border: 3px solid rgba(255, 255, 255, 0.3);
-      }
-
-      #hero .btn-get-started {
-        font-size: 0.8rem;
-        padding: 10px 22px;
-        margin: 6px;
-        border-radius: 40px;
-      }
-
-      .hero-buttons {
-        margin-top: 20px;
-        display: flex;
-        flex-direction: column;
+      .window-content {
+        flex-direction: column-reverse;
         align-items: center;
-        gap: 10px;
+        padding: 24px 22px;
+        gap: 20px;
       }
-
-      .hero-buttons .btn-get-started {
-        width: 100%;
-        max-width: 250px;
-      }
-
-      #hero .container {
-        padding: 15px 10px;
-      }
-
-      .explore.section {
-        padding: 40px 0;
-      }
-
-      .actify-section {
-        padding: 40px 0;
-      }
-
-      .idc.section {
-        padding: 40px 0;
-      }
-
-      .actify-showcase {
-        padding: 40px 20px;
-      }
-
-      .actify-showcase h4 {
-        font-size: 1.2rem;
-      }
-
-      .actify-showcase p {
-        font-size: 0.95rem;
-      }
+      .window-photo-area { width: auto; flex-direction: row; gap: 16px; align-items: center; }
+      .hero-photo-frame { width: 110px; height: 138px; }
+      .window-main { gap: 12px; }
+      .hero-name { font-size: 2rem !important; }
+      .hero-stats { gap: 14px; }
+      .macos-dock { display: none; }
+      .floating-icons { display: none; }
+      .macos-menubar { display: none; }
+      .macos-desktop { padding: 20px 12px; min-height: 100vh; }
     }
 
-    /* Very Small Mobile Devices (400px and below) */
+    @media (max-width: 575px) {
+      .window-content { padding: 18px 16px; gap: 16px; }
+      .window-titlebar { padding: 10px 13px; }
+      .hero-name { font-size: 1.65rem !important; }
+      .hero-buttons { flex-direction: column; }
+      .mac-btn { width: 100%; justify-content: center; }
+      .hero-stats { gap: 12px; }
+      .stat-num { font-size: 1.3rem; }
+      .skill-tags { gap: 5px; }
+      .hero-photo-frame { width: 90px; height: 112px; }
+    }
+
     @media (max-width: 400px) {
-      #hero h2 {
-        font-size: 1.3rem;
-      }
-
-      #hero p {
-        font-size: 0.85rem;
-      }
-
-      #hero p.hero-subtitle {
-        font-size: 0.75rem;
-        letter-spacing: 0.5px;
-      }
-
-      .hero-profile-photo {
-        width: 100px;
-        height: 100px;
-        border: 2px solid rgba(255, 255, 255, 0.3);
-      }
-
-      #hero .btn-get-started {
-        font-size: 0.75rem;
-        padding: 8px 18px;
-      }
-
-      .actify-showcase h4 {
-        font-size: 1.1rem;
-      }
-
-      .actify-showcase p {
-        font-size: 0.9rem;
-      }
+      .hero-name { font-size: 1.4rem !important; }
     }
 
-    /* Landscape Orientation for Mobile */
     @media (max-height: 500px) and (orientation: landscape) {
-      #hero {
-        min-height: auto;
-        padding: 30px 0;
-      }
-
-      #hero h2 {
-        font-size: 1.5rem;
-        margin-top: 10px;
-      }
-
-      .hero-profile-photo {
-        width: 80px;
-        height: 80px;
-        margin: 0 auto 15px;
-      }
-
-      #hero .btn-get-started {
-        padding: 8px 20px;
-        font-size: 0.8rem;
-      }
-
-      .hero-buttons {
-        margin-top: 15px;
-      }
+      .macos-desktop { padding: 50px 12px 30px; min-height: auto; }
+      .window-content { flex-direction: row; padding: 20px 24px; }
+      .hero-photo-frame { width: 120px; height: 150px; }
+      .hero-name { font-size: 1.4rem !important; }
     }
 
-    /* Extra Large Screens (1400px and up) */
     @media (min-width: 1400px) {
-      #hero h2 {
-        font-size: 4rem;
-      }
-
-      #hero p {
-        font-size: 1.7rem;
-      }
-
-      #hero p.hero-subtitle {
-        font-size: 1.3rem;
-      }
-
-      .hero-profile-photo {
-        width: 200px;
-        height: 200px;
-      }
+      .hero-name { font-size: 3.4rem !important; }
+      .macos-window { max-width: 1060px; }
+      .window-photo-area { width: 300px; }
+      .hero-photo-frame { width: 280px; height: 350px; }
     }
 
     /* About Section - Photo Styling */
@@ -931,38 +1215,33 @@
       text-shadow: none;
     }
 
-    /* Games Grid — custom Isotope-friendly grid (no Bootstrap row) */
+    /* Games Grid — CSS Grid layout (no Isotope dependency) */
     .games-grid {
-      display: block;        /* Isotope needs block, not flex */
-      margin: 0 -10px;       /* compensate for item padding */
-    }
-    .games-grid .portfolio-item {
-      padding: 10px;
-      box-sizing: border-box;
-      float: left;           /* Isotope fitRows uses float */
-      /* default: 33.333% = 3 columns */
-      width: 33.333%;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
     }
     .games-grid .portfolio-item.featured-game {
-      width: 66.666%;        /* featured spans 2 columns */
+      grid-column: span 2;
+    }
+    .games-grid .portfolio-item.hidden-item {
+      display: none;
     }
     @media (max-width: 991px) {
-      .games-grid .portfolio-item,
+      .games-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
       .games-grid .portfolio-item.featured-game {
-        width: 50%;          /* 2 columns on tablet */
+        grid-column: span 2;
       }
     }
     @media (max-width: 575px) {
-      .games-grid .portfolio-item,
-      .games-grid .portfolio-item.featured-game {
-        width: 100%;         /* 1 column on mobile */
+      .games-grid {
+        grid-template-columns: 1fr;
       }
-    }
-    /* clearfix */
-    .games-grid::after {
-      content: '';
-      display: block;
-      clear: both;
+      .games-grid .portfolio-item.featured-game {
+        grid-column: span 1;
+      }
     }
 
     /* Game Card */
@@ -1191,27 +1470,10 @@
     /* Footer */
     .footer {
       background: #2C3E50;
-      padding: 20px 0;
+      padding: 20px 0 80px 0;
       border-top: 1px solid rgba(245, 180, 97, 0.2);
     }
 
-    /* Indian Developer Community Section */
-    .idc.section {
-      background: linear-gradient(135deg, #0f1624, #1e2b3f);
-      padding: 80px 0;
-      overflow: hidden;
-    }
-
-    .community-logo {
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .community-logo:hover {
-      transform: scale(1.05);
-      box-shadow: 0 0 30px rgba(245, 180, 97, 0.8) !important;
-    }
-
-    /* Pulse animation removed */
 
     .footer .copyright p {
       color: #d0d0d0;
@@ -1230,6 +1492,238 @@
     .footer .social-links a:hover {
       color: #ffffff;
     }
+
+    /* ============================================
+       CINEMATIC VIDEO INTRO STYLES
+       ============================================ */
+    #cinematic-intro {
+      position: fixed;
+      inset: 0;
+      z-index: 99999;
+      background: #000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    #cinematic-intro.hidden {
+      pointer-events: none;
+    }
+
+    #intro-video {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0;
+      transition: opacity 1.5s ease;
+    }
+
+    #intro-video.visible {
+      opacity: 1;
+    }
+
+    #intro-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        135deg,
+        rgba(0, 0, 0, 0.6) 0%,
+        rgba(10, 10, 30, 0.4) 50%,
+        rgba(0, 0, 0, 0.6) 100%
+      );
+      z-index: 1;
+    }
+
+    #intro-vignette {
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at center, transparent 40%, rgba(0, 0, 0, 0.7) 100%);
+      z-index: 2;
+      pointer-events: none;
+    }
+
+    #intro-particles {
+      position: absolute;
+      inset: 0;
+      z-index: 3;
+      pointer-events: none;
+    }
+
+    #intro-content {
+      position: relative;
+      z-index: 4;
+      text-align: center;
+      color: #fff;
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 1s ease 0.5s, transform 1s ease 0.5s;
+    }
+
+    #intro-content.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .intro-line {
+      opacity: 0;
+      transform: translateY(40px);
+    }
+
+    .intro-line-1 {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: clamp(0.9rem, 2vw, 1.4rem);
+      letter-spacing: 8px;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.6);
+      margin-bottom: 15px;
+    }
+
+    .intro-line-2 {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: clamp(2.5rem, 8vw, 6rem);
+      font-weight: 900;
+      letter-spacing: 6px;
+      background: linear-gradient(135deg, #fff 0%, #F5B461 40%, #ff007f 70%, #6366F1 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      text-shadow: none;
+      margin-bottom: 20px;
+      line-height: 1.1;
+    }
+
+    .intro-line-3 {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: clamp(0.7rem, 1.5vw, 1rem);
+      letter-spacing: 4px;
+      color: rgba(255, 255, 255, 0.5);
+      margin-bottom: 40px;
+    }
+
+    .intro-logo-pulse {
+      opacity: 0;
+      transform: scale(0.5);
+    }
+
+    .intro-logo-pulse img {
+      width: clamp(50px, 8vw, 80px);
+      height: auto;
+      filter: drop-shadow(0 0 30px rgba(245, 180, 97, 0.6));
+    }
+
+    /* Scroll hint indicator */
+    #intro-scroll-hint {
+      position: absolute;
+      bottom: 40px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 10;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+      opacity: 0;
+      animation: scrollHintFadeIn 1s ease 3s forwards;
+    }
+
+    #intro-scroll-hint span {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.7rem;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.4);
+    }
+
+    .scroll-mouse {
+      width: 26px;
+      height: 42px;
+      border: 2px solid rgba(255, 255, 255, 0.3);
+      border-radius: 15px;
+      position: relative;
+      display: flex;
+      justify-content: center;
+    }
+
+    .scroll-wheel {
+      width: 4px;
+      height: 8px;
+      background: rgba(245, 180, 97, 0.8);
+      border-radius: 4px;
+      margin-top: 8px;
+      animation: scrollWheelAnim 2s ease-in-out infinite;
+    }
+
+    @keyframes scrollWheelAnim {
+      0% { transform: translateY(0); opacity: 1; }
+      50% { transform: translateY(12px); opacity: 0.3; }
+      100% { transform: translateY(0); opacity: 1; }
+    }
+
+    @keyframes scrollHintFadeIn {
+      from { opacity: 0; transform: translateX(-50%) translateY(20px); }
+      to { opacity: 1; transform: translateX(-50%) translateY(0); }
+    }
+
+    /* Cinematic transition - video shrinks to hero */
+    #cinematic-intro.transitioning {
+      transition: all 1.8s cubic-bezier(0.76, 0, 0.24, 1);
+    }
+
+    #cinematic-intro.transitioning #intro-content,
+    #cinematic-intro.transitioning #intro-overlay,
+    #cinematic-intro.transitioning #intro-vignette,
+    #cinematic-intro.transitioning #intro-particles,
+    #cinematic-intro.transitioning #intro-scroll-hint {
+      opacity: 0 !important;
+      transition: opacity 0.6s ease;
+    }
+
+    #cinematic-intro.zoom-out {
+      opacity: 0;
+      transform: scale(1.1);
+      transition: opacity 1s ease 0.4s, transform 1.5s cubic-bezier(0.76, 0, 0.24, 1);
+    }
+
+    /* Intro line animations */
+    @keyframes introLineReveal {
+      0% {
+        opacity: 0;
+        transform: translateY(40px);
+        filter: blur(10px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+        filter: blur(0);
+      }
+    }
+
+    @keyframes introLogoPulse {
+      0% {
+        opacity: 0;
+        transform: scale(0.5);
+      }
+      60% {
+        opacity: 1;
+        transform: scale(1.15);
+      }
+      100% {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    @keyframes introGlow {
+      0%, 100% { filter: drop-shadow(0 0 20px rgba(245, 180, 97, 0.4)); }
+      50% { filter: drop-shadow(0 0 40px rgba(245, 180, 97, 0.8)) drop-shadow(0 0 80px rgba(255, 0, 127, 0.3)); }
+    }
+
+    /* ============================================
+       END CINEMATIC VIDEO INTRO STYLES
+       ============================================ */
 
     /* Preloader */
     #preloader {
@@ -1754,6 +2248,1004 @@
     }
 
     /* Play/VR styles handled in portfolio redesign block above */
+
+    /* =====================================================
+       macOS-STYLE DARK THEME — ALL CONTENT SECTIONS
+       Frosted glass, rounded containers, dark backgrounds
+       ===================================================== */
+
+    /* ---------- GLOBAL SECTION OVERRIDES ---------- */
+    section.section,
+    .section {
+      background: #0f1420 !important;
+      position: relative;
+    }
+
+    /* Subtle radial glow behind each section */
+    .about.section::before,
+    .skills.section::before,
+    .resume.section::before,
+    .stats.section::before,
+    .testimonials.section::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 50% 40% at 30% 20%, rgba(10,132,255,0.04) 0%, transparent 70%),
+        radial-gradient(ellipse 50% 50% at 80% 70%, rgba(191,90,242,0.04) 0%, transparent 70%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .about.section .container,
+    .skills.section .container,
+    .resume.section .container,
+    .stats.section .container,
+    .testimonials.section .container,
+    .contact.section .container {
+      position: relative;
+      z-index: 1;
+    }
+
+    /* ---------- macOS SECTION TITLE ---------- */
+    .section-title h2 {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'JetBrains Mono', sans-serif !important;
+      font-size: clamp(1.8rem, 3vw, 2.4rem) !important;
+      font-weight: 700 !important;
+      color: #fff !important;
+      letter-spacing: -0.5px !important;
+      animation: none !important;
+    }
+
+    .section-title h2::after {
+      background: linear-gradient(90deg, #0A84FF, #BF5AF2) !important;
+      height: 3px !important;
+      width: 60px !important;
+      border-radius: 3px;
+    }
+
+    .section-title p {
+      font-family: 'Inter', -apple-system, sans-serif !important;
+      color: rgba(255,255,255,0.45) !important;
+      font-size: 0.92rem !important;
+      letter-spacing: 0.2px;
+    }
+
+    /* ---------- macOS GLASS CARD MIXIN ---------- */
+    .mac-glass-card {
+      background: rgba(28,28,38,0.55);
+      backdrop-filter: blur(40px) saturate(1.8);
+      -webkit-backdrop-filter: blur(40px) saturate(1.8);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 16px;
+      box-shadow:
+        0 8px 32px rgba(0,0,0,0.4),
+        inset 0 1px 0 rgba(255,255,255,0.06);
+    }
+
+    /* ---------- ABOUT SECTION ---------- */
+    .about.section {
+      background: linear-gradient(180deg, #0f1420 0%, #131a2b 100%) !important;
+    }
+
+    .about .about-photo-wrapper {
+      background: rgba(28,28,38,0.55);
+      backdrop-filter: blur(40px) saturate(1.8);
+      -webkit-backdrop-filter: blur(40px) saturate(1.8);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 20px;
+      padding: 12px;
+      box-shadow:
+        0 12px 40px rgba(0,0,0,0.45),
+        inset 0 1px 0 rgba(255,255,255,0.06);
+    }
+
+    .about .img-fluid {
+      border-radius: 14px !important;
+      width: 100%;
+    }
+
+    .about .content h2 {
+      font-family: 'Inter', -apple-system, 'JetBrains Mono', sans-serif !important;
+      font-size: 1.5rem !important;
+      color: #fff !important;
+      letter-spacing: -0.3px;
+      font-weight: 700;
+    }
+
+    .about .content p,
+    .about .content .fst-italic {
+      color: rgba(255,255,255,0.6) !important;
+      font-family: 'Inter', -apple-system, sans-serif;
+      font-size: 0.9rem;
+      line-height: 1.7;
+    }
+
+    .about .content ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .about .content ul li {
+      color: rgba(255,255,255,0.7) !important;
+      font-family: 'Inter', -apple-system, sans-serif;
+      font-size: 0.88rem;
+      padding: 6px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.04);
+    }
+
+    .about .content ul li strong {
+      color: #fff;
+      font-weight: 600;
+    }
+
+    .about .content ul li i {
+      color: #0A84FF;
+      font-size: 0.7rem;
+    }
+
+    /* ---------- SKILLS SECTION ---------- */
+    .skills.section {
+      background: linear-gradient(180deg, #131a2b 0%, #0f1420 100%) !important;
+    }
+
+    .skills .progress {
+      background: rgba(28,28,38,0.45);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 12px;
+      padding: 14px 18px;
+      margin-bottom: 14px;
+      height: auto !important;
+    }
+
+    .skills .progress .skill {
+      color: rgba(255,255,255,0.85) !important;
+      font-family: 'Inter', -apple-system, sans-serif !important;
+      font-size: 0.82rem !important;
+      font-weight: 600;
+      text-transform: none !important;
+      letter-spacing: 0.2px;
+      margin-bottom: 8px !important;
+    }
+
+    .skills .progress .skill .val {
+      color: #0A84FF !important;
+      font-weight: 700;
+    }
+
+    .skills .progress-bar-wrap {
+      background: rgba(255,255,255,0.06) !important;
+      border-radius: 6px !important;
+      height: 6px !important;
+      overflow: hidden;
+    }
+
+    .skills .progress-bar {
+      background: linear-gradient(90deg, #0A84FF 0%, #BF5AF2 100%) !important;
+      border-radius: 6px !important;
+      height: 6px !important;
+      box-shadow: 0 0 12px rgba(10,132,255,0.4);
+    }
+
+    /* ---------- RESUME SECTION ---------- */
+    .resume.section {
+      background: linear-gradient(180deg, #0f1420 0%, #131a2b 100%) !important;
+    }
+
+    .resume .resume-title {
+      font-family: 'Inter', -apple-system, 'JetBrains Mono', sans-serif !important;
+      font-size: 1.3rem !important;
+      color: #0A84FF !important;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      font-weight: 700;
+      padding-bottom: 10px;
+      border-bottom: 2px solid rgba(10,132,255,0.2);
+    }
+
+    .resume .resume-item {
+      background: rgba(28,28,38,0.4);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 14px;
+      padding: 22px 24px !important;
+      margin-bottom: 16px;
+      border-left: 3px solid rgba(10,132,255,0.5) !important;
+      transition: all 0.3s ease;
+    }
+
+    .resume .resume-item:hover {
+      border-left-color: #0A84FF !important;
+      background: rgba(28,28,38,0.6);
+      transform: translateX(4px);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+    }
+
+    .resume .resume-item::before {
+      display: none !important;
+    }
+
+    .resume .resume-item h4 {
+      font-family: 'Inter', -apple-system, sans-serif !important;
+      color: #fff !important;
+      font-size: 1.1rem !important;
+      font-weight: 600;
+    }
+
+    .resume .resume-item h5 {
+      color: #0A84FF !important;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.8rem !important;
+      font-weight: 600;
+      background: rgba(10,132,255,0.1);
+      display: inline-block;
+      padding: 3px 10px;
+      border-radius: 6px;
+      border: 1px solid rgba(10,132,255,0.2);
+    }
+
+    .resume .resume-item p {
+      color: rgba(255,255,255,0.6) !important;
+      font-family: 'Inter', -apple-system, sans-serif;
+      font-size: 0.88rem;
+    }
+
+    .resume .resume-item p em {
+      color: rgba(255,255,255,0.5) !important;
+    }
+
+    .resume .resume-item ul li {
+      color: rgba(255,255,255,0.6) !important;
+      font-size: 0.85rem;
+      font-family: 'Inter', -apple-system, sans-serif;
+      padding: 3px 0;
+    }
+
+    .resume .resume-item a {
+      color: #0A84FF;
+      text-decoration: none;
+      font-size: 0.82rem;
+      font-weight: 600;
+      transition: color 0.2s;
+    }
+
+    .resume .resume-item a:hover {
+      color: #3ba1ff;
+    }
+
+    .resume .resume-item .badge {
+      font-family: 'Inter', -apple-system, sans-serif !important;
+      font-weight: 600 !important;
+      font-size: 0.65rem !important;
+      padding: 3px 8px !important;
+      border-radius: 6px !important;
+    }
+
+    /* ---------- STATS SECTION ---------- */
+    .stats.section {
+      background: linear-gradient(180deg, #131a2b 0%, #0f1420 100%) !important;
+    }
+
+    .stats .stats-item {
+      background: rgba(28,28,38,0.55) !important;
+      backdrop-filter: blur(30px) saturate(1.5);
+      -webkit-backdrop-filter: blur(30px) saturate(1.5);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 16px;
+      padding: 32px 24px !important;
+      transition: all 0.3s ease;
+    }
+
+    .stats .stats-item:hover {
+      background: rgba(28,28,38,0.7) !important;
+      border-color: rgba(10,132,255,0.3);
+      transform: translateY(-6px);
+      box-shadow: 0 16px 40px rgba(0,0,0,0.35), 0 0 20px rgba(10,132,255,0.1);
+    }
+
+    .stats .stats-item span {
+      font-family: 'Inter', -apple-system, sans-serif !important;
+      font-size: 2.4rem !important;
+      font-weight: 800 !important;
+      color: #0A84FF !important;
+      display: block;
+      line-height: 1;
+    }
+
+    .stats .stats-item span::after {
+      display: none !important;
+    }
+
+    .stats .stats-item p {
+      font-family: 'Inter', -apple-system, sans-serif !important;
+      color: rgba(255,255,255,0.5) !important;
+      font-size: 0.82rem !important;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      font-weight: 500;
+      margin-top: 8px;
+    }
+
+    /* ---------- TESTIMONIALS SECTION ---------- */
+    .testimonials.section {
+      background: linear-gradient(180deg, #0f1420 0%, #131a2b 100%) !important;
+    }
+
+    .testimonials .testimonial-item {
+      background: rgba(28,28,38,0.55) !important;
+      backdrop-filter: blur(40px) saturate(1.8);
+      -webkit-backdrop-filter: blur(40px) saturate(1.8);
+      border: 1px solid rgba(255,255,255,0.08) !important;
+      border-radius: 16px !important;
+      padding: 30px 30px 30px 30px !important;
+      margin: 30px 20px !important;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+      text-align: center;
+    }
+
+    .testimonials .testimonial-item .testimonial-img {
+      width: 80px !important;
+      height: 80px !important;
+      border-radius: 50% !important;
+      border: 3px solid rgba(10,132,255,0.3) !important;
+      margin: 0 auto 16px !important;
+      object-fit: cover;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.3);
+    }
+
+    .testimonials .testimonial-item h3 {
+      font-family: 'Inter', -apple-system, sans-serif !important;
+      font-size: 1.1rem !important;
+      font-weight: 700 !important;
+      color: #fff !important;
+      margin-bottom: 4px;
+    }
+
+    .testimonials .testimonial-item h4 {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.75rem !important;
+      color: rgba(255,255,255,0.4) !important;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-weight: 500;
+    }
+
+    .testimonials .testimonial-item .stars i {
+      color: #FF9F0A !important;
+      font-size: 0.85rem;
+    }
+
+    .testimonials .testimonial-item .quote-icon-left,
+    .testimonials .testimonial-item .quote-icon-right {
+      color: rgba(10,132,255,0.3) !important;
+      font-size: 1.4rem;
+    }
+
+    .testimonials .testimonial-item p {
+      font-family: 'Inter', -apple-system, sans-serif !important;
+      color: rgba(255,255,255,0.6) !important;
+      font-size: 0.9rem !important;
+      line-height: 1.7;
+      font-style: italic;
+    }
+
+    .testimonials .swiper-pagination .swiper-pagination-bullet {
+      background: rgba(255,255,255,0.2) !important;
+      opacity: 1 !important;
+      width: 8px;
+      height: 8px;
+    }
+
+    .testimonials .swiper-pagination .swiper-pagination-bullet-active {
+      background: #0A84FF !important;
+      width: 24px !important;
+      border-radius: 4px !important;
+    }
+
+    /* ---------- CONTACT SECTION ---------- */
+    .contact.section {
+      background: linear-gradient(180deg, #131a2b 0%, #0f1420 100%) !important;
+      min-height: auto !important;
+    }
+
+    .contact.section::before {
+      display: none !important;
+    }
+
+    .contact .contact-info {
+      background: rgba(28,28,38,0.55);
+      backdrop-filter: blur(40px) saturate(1.8);
+      -webkit-backdrop-filter: blur(40px) saturate(1.8);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 16px;
+      padding: 28px 24px;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+    }
+
+    .contact .contact-info h3 {
+      font-family: 'Inter', -apple-system, sans-serif !important;
+      font-size: 1.3rem !important;
+      color: #fff !important;
+      font-weight: 700;
+      margin-bottom: 16px;
+    }
+
+    .contact .contact-info p {
+      font-family: 'Inter', -apple-system, sans-serif !important;
+      color: rgba(255,255,255,0.6) !important;
+      font-size: 0.9rem;
+      margin-bottom: 10px;
+    }
+
+    .contact .contact-info p i {
+      color: #0A84FF !important;
+      margin-right: 10px;
+      font-size: 1rem;
+    }
+
+    .contact .map-container iframe {
+      border: 1px solid rgba(255,255,255,0.08) !important;
+      border-radius: 14px !important;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.3) !important;
+    }
+
+    .contact .contact-form {
+      background: rgba(28,28,38,0.55) !important;
+      backdrop-filter: blur(40px) saturate(1.8) !important;
+      -webkit-backdrop-filter: blur(40px) saturate(1.8) !important;
+      border: 1px solid rgba(255,255,255,0.08) !important;
+      border-radius: 16px !important;
+      padding: 28px 24px !important;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.3) !important;
+    }
+
+    /* macOS-style window titlebar on contact form */
+    .contact .contact-form::before {
+      content: '';
+      display: block;
+      width: 100%;
+      height: 36px;
+      margin-bottom: 16px;
+      background: rgba(255,255,255,0.03);
+      border-radius: 8px;
+      position: relative;
+      background-image:
+        radial-gradient(circle 5px at 18px 50%, #FF5F56 100%, transparent 100%),
+        radial-gradient(circle 5px at 38px 50%, #FFBD2E 100%, transparent 100%),
+        radial-gradient(circle 5px at 58px 50%, #27C93F 100%, transparent 100%);
+      background-repeat: no-repeat;
+    }
+
+    .contact .contact-form h3 {
+      font-family: 'Inter', -apple-system, sans-serif !important;
+      font-size: 1.3rem !important;
+      color: #fff !important;
+      font-weight: 700;
+    }
+
+    .contact .contact-form .form-control {
+      background: rgba(255,255,255,0.05) !important;
+      border: 1px solid rgba(255,255,255,0.1) !important;
+      color: #fff !important;
+      font-family: 'Inter', -apple-system, sans-serif !important;
+      font-size: 0.88rem;
+      border-radius: 10px !important;
+      padding: 12px 16px !important;
+      transition: all 0.2s ease;
+    }
+
+    .contact .contact-form .form-control::placeholder {
+      color: rgba(255,255,255,0.3);
+    }
+
+    .contact .contact-form .form-control:focus {
+      border-color: rgba(10,132,255,0.5) !important;
+      box-shadow: 0 0 0 3px rgba(10,132,255,0.15), 0 0 12px rgba(10,132,255,0.2) !important;
+      background: rgba(255,255,255,0.08) !important;
+    }
+
+    .contact .contact-form .btn-submit {
+      font-family: 'Inter', -apple-system, sans-serif !important;
+      background: #0A84FF !important;
+      color: #fff !important;
+      border: none;
+      border-radius: 10px !important;
+      padding: 12px 32px !important;
+      font-weight: 600;
+      font-size: 0.9rem;
+      box-shadow: 0 4px 16px rgba(10,132,255,0.4) !important;
+      transition: all 0.2s ease;
+    }
+
+    .contact .contact-form .btn-submit:hover {
+      background: #1B90FF !important;
+      transform: translateY(-2px) !important;
+      box-shadow: 0 8px 24px rgba(10,132,255,0.5) !important;
+    }
+
+    /* ---------- FOOTER ---------- */
+    .footer {
+      background: #0a0e18 !important;
+      border-top: 1px solid rgba(255,255,255,0.06) !important;
+      padding: 30px 0 80px 0 !important;
+      position: relative;
+      z-index: 1;
+    }
+
+    .footer .container {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+    }
+
+    .footer hr {
+      border-color: rgba(255,255,255,0.06) !important;
+      width: 100%;
+    }
+
+    .footer .copyright {
+      text-align: right !important;
+    }
+
+    .footer .copyright p {
+      font-family: 'Inter', -apple-system, sans-serif !important;
+      color: rgba(255,255,255,0.4) !important;
+      font-size: 0.85rem;
+    }
+
+    .footer .sitename a {
+      color: #0A84FF !important;
+      font-weight: 600;
+    }
+
+    .footer .social-links {
+      justify-content: flex-end !important;
+    }
+
+    .footer .social-links a {
+      width: 36px;
+      height: 36px;
+      display: inline-flex !important;
+      align-items: center;
+      justify-content: center;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 10px;
+      color: rgba(255,255,255,0.5) !important;
+      font-size: 1rem;
+      transition: all 0.2s ease;
+      margin: 0 5px !important;
+    }
+
+    .footer .social-links a:hover {
+      background: rgba(10,132,255,0.15) !important;
+      border-color: rgba(10,132,255,0.4) !important;
+      color: #0A84FF !important;
+      transform: translateY(-3px);
+    }
+
+    /* ---------- SCROLL TOP ---------- */
+    .scroll-top {
+      background: rgba(10,132,255,0.85) !important;
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(10,132,255,0.3);
+      border-radius: 12px !important;
+      box-shadow: 0 4px 16px rgba(10,132,255,0.3) !important;
+    }
+
+    .scroll-top:hover {
+      background: #0A84FF !important;
+      box-shadow: 0 8px 24px rgba(10,132,255,0.5) !important;
+    }
+
+    .scroll-top i {
+      color: #fff !important;
+    }
+
+    /* =====================================================
+       macOS-STYLE — GAMES / PORTFOLIO SECTION
+       ===================================================== */
+    #portfolio.portfolio.section {
+      background: linear-gradient(180deg, #0a0e18 0%, #0f1420 50%, #0a0e18 100%) !important;
+    }
+
+    #portfolio.portfolio.section::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 50% 40% at 20% 30%, rgba(10,132,255,0.04) 0%, transparent 70%),
+        radial-gradient(ellipse 50% 50% at 80% 70%, rgba(191,90,242,0.04) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    /* macOS-style filter bar */
+    .portfolio-filters {
+      background: rgba(28,28,38,0.45);
+      backdrop-filter: blur(30px) saturate(1.5);
+      -webkit-backdrop-filter: blur(30px) saturate(1.5);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 14px;
+      padding: 8px 10px !important;
+      display: inline-flex !important;
+      gap: 4px !important;
+      margin-bottom: 40px !important;
+    }
+
+    .portfolio-filters .filter-btn {
+      font-family: 'Inter', -apple-system, sans-serif !important;
+      background: transparent !important;
+      color: rgba(255,255,255,0.5) !important;
+      border: none !important;
+      border-radius: 10px !important;
+      padding: 8px 14px !important;
+      font-size: 0.72rem !important;
+      font-weight: 600 !important;
+      letter-spacing: 0.3px !important;
+      text-transform: none !important;
+      transition: all 0.2s ease !important;
+      backdrop-filter: none !important;
+    }
+
+    .portfolio-filters .filter-btn:hover {
+      background: rgba(255,255,255,0.06) !important;
+      color: rgba(255,255,255,0.85) !important;
+      box-shadow: none !important;
+    }
+
+    .portfolio-filters .filter-btn.filter-active {
+      background: rgba(10,132,255,0.2) !important;
+      color: #0A84FF !important;
+      box-shadow: none !important;
+      text-shadow: none !important;
+      border: 1px solid rgba(10,132,255,0.3) !important;
+    }
+
+    /* macOS-style game cards */
+    .game-card {
+      background: rgba(28,28,38,0.6) !important;
+      backdrop-filter: blur(30px) saturate(1.5);
+      -webkit-backdrop-filter: blur(30px) saturate(1.5);
+      border: 1px solid rgba(255,255,255,0.08) !important;
+      border-radius: 16px !important;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.35) !important;
+      overflow: hidden;
+      transition: all 0.3s cubic-bezier(.4,0,.2,1) !important;
+    }
+
+    .game-card:hover {
+      border-color: rgba(10,132,255,0.3) !important;
+      box-shadow: 0 16px 48px rgba(0,0,0,0.45), 0 0 24px rgba(10,132,255,0.1) !important;
+      transform: translateY(-6px) !important;
+    }
+
+    .portfolio-item.featured-game .game-card {
+      border-color: rgba(10,132,255,0.2) !important;
+      box-shadow: 0 0 0 1px rgba(10,132,255,0.15), 0 12px 40px rgba(0,0,0,0.4) !important;
+    }
+
+    .portfolio-item.featured-game .game-card:hover {
+      border-color: rgba(10,132,255,0.5) !important;
+      box-shadow: 0 0 0 1px #0A84FF, 0 20px 60px rgba(0,0,0,0.5), 0 0 40px rgba(10,132,255,0.15) !important;
+    }
+
+    /* Card info area */
+    .portfolio-info {
+      padding: 18px 20px 22px !important;
+    }
+
+    /* macOS-style game tags */
+    .game-tag {
+      font-family: 'Inter', -apple-system, sans-serif !important;
+      font-size: 0.62rem !important;
+      font-weight: 600 !important;
+      letter-spacing: 0.5px !important;
+      border-radius: 8px !important;
+      padding: 3px 10px !important;
+    }
+
+    .game-tag.tag-type {
+      color: #BF5AF2 !important;
+      border-color: rgba(191,90,242,0.3) !important;
+      background: rgba(191,90,242,0.1) !important;
+    }
+
+    .game-tag.tag-platform {
+      color: #30D158 !important;
+      border-color: rgba(48,209,88,0.3) !important;
+      background: rgba(48,209,88,0.1) !important;
+    }
+
+    .game-tag.tag-special {
+      color: #FF375F !important;
+      border-color: rgba(255,55,95,0.3) !important;
+      background: rgba(255,55,95,0.1) !important;
+    }
+
+    .game-tag.tag-highlight {
+      color: #0A84FF !important;
+      border-color: rgba(10,132,255,0.3) !important;
+      background: rgba(10,132,255,0.1) !important;
+    }
+
+    .portfolio-info h4 {
+      font-family: 'Inter', -apple-system, sans-serif !important;
+      font-weight: 700 !important;
+      letter-spacing: -0.2px !important;
+    }
+
+    .portfolio-item.featured-game .portfolio-info h4 {
+      color: #0A84FF !important;
+      text-shadow: none !important;
+    }
+
+    .portfolio-info p {
+      font-family: 'Inter', -apple-system, sans-serif !important;
+      color: rgba(255,255,255,0.4) !important;
+    }
+
+    /* macOS-style action buttons */
+    .icon-btn {
+      border: 1px solid rgba(255,255,255,0.1) !important;
+      background: rgba(255,255,255,0.05) !important;
+      color: rgba(255,255,255,0.5) !important;
+      border-radius: 10px !important;
+      transition: all 0.2s ease !important;
+    }
+
+    .icon-btn:hover {
+      background: rgba(10,132,255,0.15) !important;
+      border-color: rgba(10,132,255,0.4) !important;
+      color: #0A84FF !important;
+    }
+
+    .portfolio-info .play-btn {
+      background: #0A84FF !important;
+      color: #fff !important;
+      font-family: 'Inter', -apple-system, sans-serif !important;
+      font-weight: 700 !important;
+      font-size: 0.72rem !important;
+      border-radius: 10px !important;
+      box-shadow: 0 4px 16px rgba(10,132,255,0.35) !important;
+      letter-spacing: 0.5px !important;
+      padding: 9px 18px !important;
+    }
+
+    .portfolio-info .play-btn:hover {
+      background: #1B90FF !important;
+      box-shadow: 0 8px 24px rgba(10,132,255,0.5) !important;
+      color: #fff !important;
+    }
+
+    /* VR & Featured badges — macOS pill style */
+    .game-card .vr-badge {
+      background: linear-gradient(135deg, rgba(191,90,242,0.85), rgba(10,132,255,0.85)) !important;
+      color: #fff !important;
+      font-family: 'Inter', -apple-system, sans-serif !important;
+      font-weight: 700 !important;
+      border-radius: 10px !important;
+      box-shadow: 0 4px 12px rgba(191,90,242,0.3) !important;
+      backdrop-filter: blur(8px);
+    }
+
+    .game-card .featured-badge {
+      background: rgba(10,132,255,0.9) !important;
+      color: #fff !important;
+      font-family: 'Inter', -apple-system, sans-serif !important;
+      font-weight: 700 !important;
+      border-radius: 10px !important;
+      box-shadow: 0 4px 12px rgba(10,132,255,0.4) !important;
+    }
+
+    /* =====================================================
+       macOS-STYLE — CHROME EXTENSION SECTION
+       ===================================================== */
+    .chrome-extension.section {
+      background: linear-gradient(180deg, #0f1420 0%, #0a0e18 100%) !important;
+    }
+
+    .chrome-extension.section::before {
+      background:
+        radial-gradient(circle at 30% 50%, rgba(10,132,255,0.06) 0%, transparent 50%),
+        radial-gradient(circle at 70% 50%, rgba(191,90,242,0.06) 0%, transparent 50%) !important;
+    }
+
+    .xpulse-card {
+      background: rgba(28,28,38,0.55);
+      backdrop-filter: blur(40px) saturate(1.8);
+      -webkit-backdrop-filter: blur(40px) saturate(1.8);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 20px;
+      padding: 40px 36px;
+      box-shadow: 0 12px 40px rgba(0,0,0,0.35);
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* macOS traffic-light dots at top of card */
+    .xpulse-card::before {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 16px;
+      left: 20px;
+      width: 60px;
+      height: 12px;
+      background-image:
+        radial-gradient(circle 5px at 6px 6px, #FF5F56 100%, transparent 100%),
+        radial-gradient(circle 5px at 24px 6px, #FFBD2E 100%, transparent 100%),
+        radial-gradient(circle 5px at 42px 6px, #27C93F 100%, transparent 100%);
+      background-repeat: no-repeat;
+    }
+
+    .xpulse-title {
+      font-family: 'Inter', -apple-system, sans-serif !important;
+      color: #fff !important;
+      font-size: 1.3rem !important;
+      font-weight: 700 !important;
+      margin-top: 16px !important;
+    }
+
+    .xpulse-sub {
+      font-family: 'Inter', -apple-system, sans-serif !important;
+      color: rgba(255,255,255,0.45) !important;
+      font-size: 0.85rem !important;
+    }
+
+    /* macOS-style feature cards */
+    .xpulse-feature {
+      background: rgba(255,255,255,0.04) !important;
+      border: 1px solid rgba(255,255,255,0.08) !important;
+      border-radius: 14px !important;
+      transition: all 0.25s ease !important;
+    }
+
+    .xpulse-feature:hover {
+      background: rgba(10,132,255,0.08) !important;
+      border-color: rgba(10,132,255,0.25) !important;
+      transform: translateY(-4px) !important;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.25) !important;
+    }
+
+    .xpulse-feature i {
+      color: #0A84FF !important;
+    }
+
+    .xpulse-feature h4 {
+      font-family: 'Inter', -apple-system, sans-serif !important;
+      color: #fff !important;
+    }
+
+    .xpulse-feature p {
+      font-family: 'Inter', -apple-system, sans-serif !important;
+      color: rgba(255,255,255,0.4) !important;
+    }
+
+    /* macOS-style buttons */
+    .btn-add-chrome {
+      background: #0A84FF !important;
+      color: #fff !important;
+      font-family: 'Inter', -apple-system, sans-serif !important;
+      font-weight: 600 !important;
+      border-radius: 12px !important;
+      padding: 13px 28px !important;
+      box-shadow: 0 4px 16px rgba(10,132,255,0.35) !important;
+      transition: all 0.2s ease !important;
+    }
+
+    .btn-add-chrome:hover {
+      background: #1B90FF !important;
+      box-shadow: 0 8px 24px rgba(10,132,255,0.5) !important;
+      color: #fff !important;
+    }
+
+    .btn-learn-more {
+      font-family: 'Inter', -apple-system, sans-serif !important;
+      background: rgba(255,255,255,0.06) !important;
+      border: 1px solid rgba(255,255,255,0.1) !important;
+      border-radius: 12px !important;
+      padding: 13px 28px !important;
+      color: rgba(255,255,255,0.8) !important;
+      font-weight: 600 !important;
+      transition: all 0.2s ease !important;
+    }
+
+    .btn-learn-more:hover {
+      background: rgba(255,255,255,0.1) !important;
+      border-color: rgba(255,255,255,0.2) !important;
+      color: #fff !important;
+    }
+
+    /* =====================================================
+       macOS-STYLE — EXPLORE TECHNOLOGIES SECTION
+       ===================================================== */
+    .explore.section {
+      background: linear-gradient(180deg, #0a0e18 0%, #0f1420 100%) !important;
+    }
+
+    .logoloop {
+      background: rgba(28,28,38,0.35);
+      backdrop-filter: blur(20px) saturate(1.5);
+      -webkit-backdrop-filter: blur(20px) saturate(1.5);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 16px;
+      padding: 20px 0;
+    }
+
+    .logoloop::before {
+      background: linear-gradient(to right, #0f1420 0%, rgba(15,20,32,0) 100%) !important;
+      z-index: 3;
+    }
+
+    .logoloop::after {
+      background: linear-gradient(to left, #0f1420 0%, rgba(15,20,32,0) 100%) !important;
+      z-index: 3;
+    }
+
+    .logoloop__item {
+      background: rgba(255,255,255,0.04) !important;
+      border: 1px solid rgba(255,255,255,0.06) !important;
+      border-radius: 14px !important;
+      transition: all 0.25s ease !important;
+    }
+
+    .logoloop__item:hover {
+      background: rgba(10,132,255,0.1) !important;
+      border-color: rgba(10,132,255,0.3) !important;
+      box-shadow: 0 8px 24px rgba(10,132,255,0.2) !important;
+      transform: scale(1.15) !important;
+    }
+
+    .logoloop__item i {
+      color: rgba(255,255,255,0.6) !important;
+      transition: color 0.25s ease;
+    }
+
+    .logoloop__item:hover i {
+      color: #0A84FF !important;
+    }
+
+    /* ---------- RESPONSIVE for macOS glass ---------- */
+    @media (max-width: 768px) {
+      .resume .resume-item {
+        padding: 16px 16px !important;
+      }
+
+      .stats .stats-item {
+        padding: 24px 16px !important;
+      }
+
+      .testimonials .testimonial-item {
+        margin: 20px 8px !important;
+        padding: 24px 18px !important;
+      }
+
+      .contact .contact-info,
+      .contact .contact-form {
+        padding: 20px 16px !important;
+      }
+
+      .portfolio-filters {
+        flex-wrap: wrap !important;
+        border-radius: 14px !important;
+      }
+
+      .portfolio-filters .filter-btn {
+        font-size: 0.65rem !important;
+        padding: 6px 10px !important;
+      }
+
+      .xpulse-card {
+        padding: 32px 20px;
+      }
+
+      .logoloop {
+        border-radius: 12px;
+      }
+    }
 
     /* ========================================
        MOBILE NAVIGATION FIXES - CRITICAL
@@ -2298,9 +3790,9 @@
     content="Dharmik Gohil | Professional Game Developer | Unity XR Developer | CHARUSAT University Graduate">
   <meta property="twitter:description"
     content="Dharmik Gohil - Expert Game Developer & Unity XR Developer from CHARUSAT University, DEPSTAR College. Specializing in Unity development, mobile games, VR/AR experiences, and backend development. Top game developer portfolio.">
-  <meta property="twitter:image"
+  <!-- <meta property="twitter:image"
     content="https://dharmikgohil.art/assets/img/dharmik-profile-photo-2026.jpg">
-  <meta property="twitter:creator" content="@dharmikgohil">
+  <meta property="twitter:creator" content="@dharmikgohil"> -->
 
   <script type="application/ld+json">
   {
@@ -2311,7 +3803,6 @@
     "image": "https://dharmikgohil.art/assets/img/dharmik-profile-photo-2026.jpg",
     "sameAs": [
       "https://github.com/dharmikgohil",
-      "https://github.com/dharmikgohil013",
       "https://in.linkedin.com/in/dharmikgohil086",
       "https://linkedin.com/in/dharmikgohil086"
     ],
@@ -2621,182 +4112,182 @@
 <body class="index-page">
   <div class="custom-cursor"></div>
 
-  <header id="header" class="header d-flex align-items-center sticky-top">
-    <div class="container-fluid position-relative d-flex align-items-center justify-content-between">
-      <a href="index.html" class="logo d-flex align-items-center me-auto me-xl-0">
-        <img src="assets/img/dlogo.png" alt="dharmik gohil personal portfolio logo and brand identity">
-        <h1 class="sitename">DHARMIK</h1>
-      </a>
-      <nav id="navmenu" class="navmenu">
-        <ul>
-          <li><a href="https://dharmikgohil.art" class="active">Home</a></li>
-          <li><a href="services.html">Abilities</a></li>
-          <li class="dropdown"><a href="#"><span>Projects</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-            <ul>
-              <li class="dropdown"><a href="#"><span>Flutter App</span> <i
-                    class="bi bi-chevron-down toggle-dropdown"></i></a>
-                <ul>
-                  <li><a href="assets/Fit Sync.apk">Fit Sync</a></li>
-                </ul>
-              </li>
-              <li class="dropdown"><a href="logo.html"><span>Ui/ux</span> <i
-                    class="bi bi-chevron-down toggle-dropdown"></i></a>
-                <ul>
-                  <li><a href="logo.html">Designs</a></li>
-                </ul>
-              </li>
-              <li class="dropdown"><a href="#"><span>Websites</span> <i
-                    class="bi bi-chevron-down toggle-dropdown"></i></a>
-                <ul>
-                  <li><a href="http://gdgs.dharmikgohil.art/">GDGS Games</a></li>
-                  <!-- <li><a href="https://dharmikgohil013.github.io/DHARMIK-GOHIL-FILMS/">Film industry</a></li> -->
-                  <li><a href="http://flipcart.dharmikgohil.art/">Flipkart Clone</a></li>
-                  <li><a href="http://krishna.dharmikgohil.art/">Krishna Construction</a></li>
-                  <!-- <li><a href="#">MedCare</a></li> -->
-                </ul>
-
-              <li class="dropdown"><a href="#"><span>Java</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-                <ul>
-                  <li class="dropdown"><a href="#"><span>CampusAdminPro</span> <i
-                        class="bi bi-chevron-down toggle-dropdown"></i></a>
-                    <ul>
-                      <li><a
-                          href="https://drive.google.com/file/d/15YNf77gERCt2LYfRYSdXiYU3yAkx7EvC/view?usp=drive_link">Report</a>
-                      </li>
-                    </ul>
-                  </li>
-
-                </ul>
-              </li>
-              <li class="dropdown"><a href="#"><span>Node Js</span> <i
-                    class="bi bi-chevron-down toggle-dropdown"></i></a>
-                <ul>
-                  <li><a href="https://indianturijam.dharmikgohil.art/">IndianTurijam</a></li>
-                  <li><a href="contact.html">Contact Page</a></li>
-                </ul>
-              </li>
-              <li class="dropdown"><a href="#"><span>C & C++</span> <i
-                    class="bi bi-chevron-down toggle-dropdown"></i></a>
-                <ul>
-                  <li><a href="https://github.com/DharmikGohil013/Hostel_Menegment_System_iDGAWS-">Hostel Management</a>
-                  </li>
-                  <li><a href="https://github.com/DharmikGohil013/Bank_Mangemnt_System">Bank Management</a></li>
-                </ul>
-              </li>
-              <li class="dropdown"><a href="#chrome-extension"><span>Chrome Extension</span> <i
-                    class="bi bi-chevron-down toggle-dropdown"></i></a>
-                <ul>
-                  <li><a href="#chrome-extension">XPulse - Productivity Tracker</a></li>
-                </ul>
-              </li>
-            </ul>
-          </li>
-          <li><a href="Achivemtn.html">Milestones</a></li>
-          <li class="dropdown"><a href="#"><span>Time to Fun</span> <i
-                class="bi bi-chevron-down toggle-dropdown"></i></a>
-            <ul>
-              <li><a href="mb-the-pack-unites/index.html" target="_blank">Mavericks Battleground - The Pack Unites</a>
-              </li>
-              <li><a href="https://dharmikgohil.itch.io/mavericks-battlegrounds" target="_blank">Mavericks Battleground
-                  - The War Zone</a></li>
-              <li><a href="https://dharmik086.itch.io/floppy-bird-860" target="_blank">Floppy Bird</a></li>
-              <li><a href="https://dharmik086.itch.io/minimario" target="_blank">MiniMario</a></li>
-
-            </ul>
-          </li>
-          <li><a href="blog.html">Blog</a></li>
-          <li class="dropdown">
-            <a href="#"><span style="color: #F5B461;">Services</span> <i
-                class="bi bi-chevron-down toggle-dropdown"></i></a>
-            <ul>
-              <li><a href="https://actify.dharmikgohil.art/" target="_blank">Actify</a></li> <!-- ? NEW ENTRY -->
-              <li><a href="https://fkm.vercel.app/" target="_blank">Wifi Service</a></li>
-              <li><a href="assets/Fit Sync.apk" target="_blank">Fit Sync</a></li>
-              <li><a href="https://learnlink.dharmikgohil.art" target="_blank">Learn Link</a></li>
-              <li><a href="protected-access.html">Protected Access</a></li> <!-- ? NEW PASSWORD PROTECTED SERVICE -->
-
-            </ul>
-          </li>
-        </ul>
-      </nav>
-      <div class="header-social-links d-none d-xl-flex">
-        <a href="https://github.com/DharmikGohil013" target="_blank"><i class="bi bi-github"></i></a>
-        <a href="https://www.linkedin.com/in/dharmikgohil086/" target="_blank"><i class="bi bi-linkedin"></i></a>
-        <a href="https://www.instagram.com/dharmik.086/?next=%2F" target="_blank"><i class="bi bi-instagram"></i></a>
-        <a href="https://x.com/Dharmik086" target="_blank"><i class="bi bi-twitter"></i></a>
-        <a href="https://play.google.com/store/apps/details?id=com.dharmikgohilfun.crossout" target="_blank"><i
-            class="bi bi-google-play"></i></a>
-        <a href="assets/img/Dharmik Gohil Resume.pdf" class="download-resume" download><i
-            class="bi bi-download"></i></a>
+  <!-- ============================================
+       CINEMATIC VIDEO INTRO - First Visit Only
+       ============================================ -->
+  <div id="cinematic-intro">
+    <video id="intro-video" muted playsinline preload="auto">
+      <source src="assets/bg-video.mp4" type="video/mp4">
+    </video>
+    <div id="intro-overlay"></div>
+    <div id="intro-content">
+      <div class="intro-line intro-line-1">Welcome to</div>
+      <div class="intro-line intro-line-2">DHARMIK GOHIL</div>
+      <div class="intro-line intro-line-3">Game Developer &bull; XR Virtuoso &bull; Metaverse Architect</div>
+      <div class="intro-logo-pulse">
+        <img src="assets/img/dlogo.png" alt="DG Logo" />
       </div>
-      <button class="mobile-nav-toggle d-xl-none" aria-label="Toggle navigation">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
     </div>
-  </header>
+    <div id="intro-vignette"></div>
+    <canvas id="intro-particles"></canvas>
+    <div id="intro-scroll-hint">
+      <div class="scroll-mouse">
+        <div class="scroll-wheel"></div>
+      </div>
+      <span>Scroll to explore</span>
+    </div>
+  </div>
 
   <!-- Mobile Nav Overlay -->
   <div class="mobile-nav-overlay"></div>
 
   <main class="main">
-    <!-- Hero Section -->
+    <!-- Hero Section - macOS Inspired Design -->
     <section id="hero" class="hero section">
-      <!-- Geometric Shapes -->
-      <div class="geo-shape geo-shape-1"></div>
-      <div class="geo-shape geo-shape-2"></div>
-      <div class="geo-shape geo-shape-3"></div>
 
-      <div class="container text-center" data-aos="zoom-out" data-aos-delay="100">
-        <div class="row justify-content-center">
-          <div class="col-lg-8">
-            <!-- Profile Photo - Dharmik Gohil Primary Image - ULTRA SEO OPTIMIZED -->
-            <div class="hero-profile-photo" itemscope itemtype="https://schema.org/ImageObject">
-              <img src="assets/img/dharmik-profile-photo-2026.jpg" 
-                   alt="Dharmik Gohil - India's #1 Elite Game Developer | Award-Winning Unity XR Virtuoso | Metaverse Architect | VR/AR Pioneer | CHARUSAT University Technology Leader | Professional Headshot 2026 | Gujarat's Premier Mobile Gaming Expert"
-                   title="Dharmik Gohil - Professional Game Developer Photo 2026 | India's Top Unity XR Expert & Metaverse Specialist | CHARUSAT University | VR AR Mobile Gaming Pioneer"
-                   loading="eager"
-                   fetchpriority="high"
-                   decoding="sync"
-                   importance="high"
-                   width="1200"
-                   height="1200"
-                   itemprop="contentUrl"
-                   itemid="https://dharmikgohil.art/assets/img/dharmik-profile-photo-2026.jpg"
-                   class="dharmik-gohil-photo"
-                   data-keywords="Dharmik Gohil, game developer, Unity XR, VR AR, metaverse, CHARUSAT, Gujarat, India, professional photo"
-                   data-category="Professional Portrait"
-                   data-person="Dharmik Gohil"
-                   aria-label="Professional photograph of Dharmik Gohil, India's leading game developer and Unity XR specialist">
-              <meta itemprop="name" content="Dharmik Gohil - India's Elite Game Developer Professional Photo 2026 | Unity XR Virtuoso | Metaverse Architect">
-              <meta itemprop="description" content="High-quality professional headshot photograph of Dharmik Gohil, India's most innovative and award-winning game developer, Unity XR virtuoso, and metaverse architect from CHARUSAT University, Gujarat. Recognized expert in VR/AR development, immersive experiences, mobile game creation, multiplayer systems, 3D graphics optimization, and cutting-edge metaverse solutions. Top-rated freelance game developer with 100% client satisfaction.">
-              <meta itemprop="creator" content="Dharmik Gohil">
-              <meta itemprop="copyrightHolder" content="Dharmik Gohil">
-              <meta itemprop="copyrightNotice" content="© 2026 Dharmik Gohil. All Rights Reserved.">
-              <meta itemprop="keywords" content="Dharmik Gohil, India game developer, Unity XR expert, VR AR specialist, metaverse architect, CHARUSAT University, Gujarat developer, mobile gaming, professional developer photo, elite tech professional, award-winning developer">
-              <meta itemprop="uploadDate" content="2026-01-15">
-              <meta itemprop="datePublished" content="2026-01-15">
-              <meta itemprop="inLanguage" content="en-US">
-              <meta itemprop="encodingFormat" content="image/jpeg">
-              <meta itemprop="width" content="1200">
-              <meta itemprop="height" content="1200">
-              <meta itemprop="representativeOfPage" content="true">
-              <link itemprop="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/">
-              <link itemprop="acquireLicensePage" href="https://dharmikgohil.art/contact.html">
-            </div>
-            <!-- Main Heading -->
-            <h2>Hi, I'm Dharmik Gohil</h2>
-            <!-- Subtitle -->
-            <p class="hero-subtitle">I'M GAME DEVELOPER</p>
-            <!-- Buttons -->
-            <div class="hero-buttons">
-              <a href="#about" class="btn-get-started">About Me</a>
-              <a href="contact.html" class="btn-get-started">Support</a>
-            </div>
-          </div>
+      <!-- Video Background -->
+      <video id="hero-video-bg" autoplay muted loop playsinline preload="auto">
+        <source src="assets/bg-video.mp4" type="video/mp4">
+      </video>
+      <div id="hero-video-overlay"></div>
+
+      <!-- macOS Menu Bar -->
+      <div class="macos-menubar">
+        <div class="menubar-left">
+          <span class="menubar-apple"><i class="bi bi-house-fill"></i></span>
+          <span class="menubar-brand">Dharmik Gohil</span>
+          <span>Portfolio</span>
+          <span>Games</span>
+          <span>About</span>
+        </div>
+        <div class="menubar-right">
+          <a href="https://github.com/DharmikGohil013" target="_blank"><i class="bi bi-github"></i></a>
+          <a href="https://www.linkedin.com/in/dharmikgohil086/" target="_blank"><i class="bi bi-linkedin"></i></a>
+          <a href="https://www.instagram.com/dharmik.086/?next=%2F" target="_blank"><i class="bi bi-instagram"></i></a>
+          <a href="https://x.com/Dharmik086" target="_blank"><i class="bi bi-twitter"></i></a>
+          <i class="bi bi-wifi"></i>
+          <i class="bi bi-battery-full"></i>
+          <span id="menubar-clock">--:--</span>
         </div>
       </div>
+
+      <!-- macOS Desktop Area -->
+      <div class="macos-desktop">
+
+        <!-- macOS App Window -->
+        <div class="macos-window" data-aos="zoom-in" data-aos-delay="100">
+
+          <!-- Window Title Bar with Traffic Lights -->
+          <div class="window-titlebar">
+            <div class="window-controls">
+              <span class="btn-close"    title="Close"></span>
+              <span class="btn-minimize" title="Minimize"></span>
+              <span class="btn-maximize" title="Maximize"></span>
+            </div>
+            <div class="window-title">Dharmik Gohil &mdash; Portfolio.app</div>
+            <div style="width:55px;flex-shrink:0;"></div>
+          </div>
+
+          <!-- Window Body -->
+          <div class="window-content">
+
+            <!-- Left: Text Content -->
+            <div class="window-main">
+
+              <div class="window-main-header">
+                <div class="status-dot"></div>
+                <span class="status-label">Open to Work &amp; New Projects</span>
+              </div>
+
+              <h2 class="hero-name">Dharmik Gohil</h2>
+
+              <p class="hero-role"><span id="typing-text" class="typing-cursor"></span></p>
+
+              <div class="skill-tags">
+                <span class="skill-tag">Unity 3D</span>
+                <span class="skill-tag">XR / VR / AR</span>
+                <span class="skill-tag">C#</span>
+                <span class="skill-tag">Multiplayer</span>
+                <span class="skill-tag">Mobile Games</span>
+                <span class="skill-tag">Game Design</span>
+              </div>
+
+              <div class="hero-buttons">
+                <a href="#about"       class="mac-btn mac-btn-primary"><i class="bi bi-person-circle me-2"></i>About Me</a>
+                <a href="contact.html" class="mac-btn mac-btn-secondary"><i class="bi bi-envelope me-2"></i>Contact</a>
+              </div>
+
+              <div class="hero-stats">
+                <div class="stat">
+                  <span class="stat-num">10+</span>
+                  <span class="stat-label">Games Built</span>
+                </div>
+                <div class="stat">
+                  <span class="stat-num">3+</span>
+                  <span class="stat-label">Years Exp.</span>
+                </div>
+                <div class="stat">
+                  <span class="stat-num">100%</span>
+                  <span class="stat-label">Satisfaction</span>
+                </div>
+                <div class="stat">
+                  <span class="stat-num">5+</span>
+                  <span class="stat-label">Awards</span>
+                </div>
+              </div>
+
+            </div><!-- end .window-main -->
+
+            <!-- Right: Profile Photo -->
+            <div class="window-photo-area">
+              <div class="hero-photo-frame" itemscope itemtype="https://schema.org/ImageObject">
+                <img src="assets/img/dharmik-profile-photo-2026.jpg"
+                     class="hero-photo dharmik-gohil-photo"
+                     alt="Dharmik Gohil - India's #1 Elite Game Developer | Award-Winning Unity XR Virtuoso | Metaverse Architect | CHARUSAT University"
+                     title="Dharmik Gohil - Professional Game Developer Photo 2026"
+                     loading="eager" fetchpriority="high" decoding="sync"
+                     width="240" height="300"
+                     itemprop="contentUrl"
+                     itemid="https://dharmikgohil.art/assets/img/dharmik-profile-photo-2026.jpg"
+                     aria-label="Professional photograph of Dharmik Gohil, India's leading game developer">
+                <meta itemprop="name" content="Dharmik Gohil - India's Elite Game Developer Professional Photo 2026">
+                <meta itemprop="description" content="Professional photograph of Dharmik Gohil, India's most innovative game developer and Unity XR virtuoso from CHARUSAT University, Gujarat.">
+                <meta itemprop="encodingFormat" content="image/jpeg">
+                <meta itemprop="width" content="1200">
+                <meta itemprop="height" content="1200">
+                <meta itemprop="representativeOfPage" content="true">
+              </div>
+              <div class="profile-badge"><i class="bi bi-check-circle-fill"></i> Available for Work</div>
+              <div class="sidebar-links">
+                <a href="https://github.com/DharmikGohil013"          target="_blank" title="GitHub"><i class="bi bi-github"></i></a>
+                <a href="https://www.linkedin.com/in/dharmikgohil086/" target="_blank" title="LinkedIn"><i class="bi bi-linkedin"></i></a>
+                <a href="https://www.instagram.com/dharmik.086/"       target="_blank" title="Instagram"><i class="bi bi-instagram"></i></a>
+                <a href="https://x.com/Dharmik086"                     target="_blank" title="X / Twitter"><i class="bi bi-twitter-x"></i></a>
+                <a href="https://dharmikgohil.itch.io/"                target="_blank" title="Itch.io"><i class="bi bi-controller"></i></a>
+              </div>
+            </div><!-- end .window-photo-area -->
+
+          </div><!-- end .window-content -->
+
+        </div><!-- end .macos-window -->
+
+      </div><!-- end .macos-desktop -->
+
+      <!-- macOS Dock -->
+      <div class="macos-dock">
+        <div class="dock-items">
+          <a href="index.html"    class="dock-item active" data-tooltip="Home"><i class="bi bi-house-fill"></i></a>
+          <a href="services.html" class="dock-item"        data-tooltip="Abilities"><i class="bi bi-lightning-charge-fill"></i></a>
+          <a href="portfolio.html" class="dock-item"       data-tooltip="Portfolio"><i class="bi bi-grid-fill"></i></a>
+          <div class="dock-separator"></div>
+          <a href="Achivemtn.html" class="dock-item"       data-tooltip="Achievements"><i class="bi bi-trophy-fill"></i></a>
+          <a href="services.html" class="dock-item"        data-tooltip="Services"><i class="bi bi-briefcase-fill"></i></a>
+          <div class="dock-separator"></div>
+          <a href="contact.html"  class="dock-item"        data-tooltip="Contact"><i class="bi bi-envelope-fill"></i></a>
+          <a href="assets/img/Dharmik Gohil Resume.pdf" class="dock-item" data-tooltip="Resume" download><i class="bi bi-file-earmark-person"></i></a>
+        </div>
+      </div>
+
     </section>
 
     <section id="portfolio" class="portfolio section">
@@ -2805,10 +4296,10 @@
         <p>Explore my creations in game development</p>
       </div>
       <div class="container">
-        <div class="isotope-layout" data-default-filter="*" data-layout="masonry" data-sort="original-order">
+        <div class="games-section">
 
           <!-- Filter Bar -->
-          <div class="portfolio-filters isotope-filters" data-aos="fade-up" data-aos-delay="100">
+          <div class="portfolio-filters" data-aos="fade-up" data-aos-delay="100">
             <button class="filter-btn filter-active" data-filter="*"><i class="bi bi-grid-fill me-1"></i>All Games</button>
             <button class="filter-btn" data-filter=".filter-app"><i class="bi bi-phone me-1"></i>2D Game</button>
             <button class="filter-btn" data-filter=".filter-app3d"><i class="bi bi-box me-1"></i>3D Game</button>
@@ -2819,10 +4310,10 @@
             <button class="filter-btn" data-filter=".filter-arvr"><i class="bi bi-headset-vr me-1"></i>AR/VR</button>
           </div>
 
-          <div class="games-grid isotope-container" data-aos="fade-up" data-aos-delay="200">
+          <div class="games-grid" data-aos="fade-up" data-aos-delay="200">
 
             <!-- ★ FEATURED: Mavericks Battlegrounds -->
-            <div class="portfolio-item isotope-item featured-game filter-app3d filter-productpc filter-product">
+            <div class="portfolio-item featured-game filter-app3d filter-productpc filter-product">
               <div class="game-card">
               <span class="featured-badge"><i class="bi bi-star-fill me-1"></i>Featured</span>
               <img src="assets/img/portfolio/mavericks-battleground-thumbnail.jpg" class="img-fluid"
@@ -2850,7 +4341,7 @@
             </div>
 
             <!-- VR: Archviz Visualization -->
-            <div class="portfolio-item isotope-item filter-arvr filter-app3d filter-productpc">
+            <div class="portfolio-item filter-arvr filter-app3d filter-productpc">
               <div class="game-card">
               <span class="vr-badge"><i class="bi bi-headset-vr me-1"></i>VR Only</span>
               <img src="assets/dharmik-gohil-vr-gaming-expertise-showcase.jpg" class="img-fluid"
@@ -2874,7 +4365,7 @@
             </div>
 
             <!-- AR Explorer -->
-            <div class="portfolio-item isotope-item filter-arvr filter-app3d filter-appsingleplayer">
+            <div class="portfolio-item filter-arvr filter-app3d filter-appsingleplayer">
               <div class="game-card">
               <img src="assets/img/ar-explorer-thumbnail.jpg" class="img-fluid"
                 alt="Dharmik Gohil AR Explorer - Augmented Reality Development">
@@ -2898,7 +4389,7 @@
             </div>
 
             <!-- Floppy Ball -->
-            <div class="portfolio-item isotope-item filter-app filter-appsingleplayer filter-productpc">
+            <div class="portfolio-item filter-app filter-appsingleplayer filter-productpc">
               <div class="game-card">
               <img src="assets/img/flappy-bird-thumbnail.jpg" class="img-fluid"
                 alt="Dharmik Gohil Floppy Ball Mobile Game - Unity Game Development Project">
@@ -2923,7 +4414,7 @@
             </div>
 
             <!-- MiniMario -->
-            <div class="portfolio-item isotope-item filter-app filter-productpc filter-appmobile filter-appsingleplayer">
+            <div class="portfolio-item filter-app filter-productpc filter-appmobile filter-appsingleplayer">
               <div class="game-card">
               <img src="assets/img/masonry-portfolio/dharmik-gohil-mario-clone-game-project.png" class="img-fluid"
                 alt="Dharmik Gohil Mini Mario Clone Game - Unity Mobile and PC Game Development">
@@ -2949,7 +4440,7 @@
             </div>
 
             <!-- Facade - Global Game Jam -->
-            <div class="portfolio-item isotope-item filter-app3d filter-appsingleplayer filter-productpc">
+            <div class="portfolio-item filter-app3d filter-appsingleplayer filter-productpc">
               <div class="game-card">
               <span class="featured-badge" style="background:linear-gradient(135deg,#a78bfa,#6366f1);color:#fff;box-shadow:0 0 20px rgba(99,102,241,0.6);"><i class="bi bi-globe me-1"></i>Global Game Jam</span>
               <img src="assets/img/facade/facade-cover.png" class="img-fluid"
@@ -2981,8 +4472,8 @@
             </div>
 
 
-          </div><!-- end isotope-container -->
-        </div>
+          </div><!-- end games-grid -->
+        </div><!-- end games-section -->
       </div>
     </section>
 
@@ -3125,97 +4616,12 @@
               addressing challenges with precision. Committed to ensuring efficiency and satisfaction through expert
               craftsmanship and attention to detail.
             </p>
-
-            <!-- LinkedIn Profile Badge -->
-            <div class="linkedin-badge-container" style="margin-top: 20px;" itemscope
-              itemtype="https://schema.org/Person">
-              <meta itemprop="name" content="Dharmik Gohil">
-              <meta itemprop="jobTitle" content="Game Developer & Unity XR Specialist">
-              <meta itemprop="url" content="https://in.linkedin.com/in/dharmikgohil086">
-              <meta itemprop="sameAs" content="https://in.linkedin.com/in/dharmikgohil086">
-              <div class="badge-base LI-profile-badge" data-locale="en_US" data-size="medium" data-theme="dark"
-                data-type="VERTICAL" data-vanity="dharmikgohil086" data-version="v1">
-                <a class="badge-base__link LI-simple-link"
-                  href="https://in.linkedin.com/in/dharmikgohil086?trk=profile-badge" rel="noopener noreferrer nofollow"
-                  target="_blank"
-                  title="Connect with Dharmik Gohil on LinkedIn - Professional Game Developer & Unity XR Specialist"
-                  aria-label="View Dharmik Gohil's LinkedIn profile - Game Developer and Unity XR Expert">
-                  Dharmik Gohil - Professional LinkedIn Profile
-                </a>
-              </div>
-            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Indian Developer Community Section -->
-    <section id="idc" class="idc section">
-      <div class="container section-title" data-aos="fade-up">
-        <h2>Community Leadership</h2>
-        <p>Building and nurturing the Indian developer ecosystem</p>
-      </div>
 
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
-        <div class="row gy-4 justify-content-center align-items-center">
-          <div class="col-lg-6 text-center">
-            <img src="assets/img/indian-developer-community-logo.png" class="img-fluid community-logo"
-              alt="Indian Developer Community Logo - Co-founded by Dharmik Gohil"
-              title="Indian Developer Community - EST. 2025" loading="lazy" width="400" height="400"
-              style="border: 2px solid #F5B461; border-radius: 20px; box-shadow: 0 0 20px rgba(245, 180, 97, 0.5); animation: pulse 2s infinite;">
-          </div>
-          <div class="col-lg-6 content">
-            <h2
-              style="color: #F5B461; text-shadow: 0 0 15px #F5B461; font-family: 'JetBrains Mono', monospace; margin-bottom: 15px;">
-              Co-Founder</h2>
-            <h3
-              style="color: #F5B461; text-shadow: 0 0 10px #F5B461; font-family: 'JetBrains Mono', monospace; margin-bottom: 10px;">
-              Indian Developer Community</h3>
-            <h4 style="color: #ffdf00; font-family: 'JetBrains Mono', monospace; margin-bottom: 20px;">EST. 2025</h4>
-
-            <p class="fst-italic py-3" style="color: #fff; font-family: 'JetBrains Mono', monospace;">
-              Pioneering a collaborative platform for Indian developers to connect, learn, and grow together.
-            </p>
-
-            <div class="community-features">
-              <h4 style="color: #F5B461; text-shadow: 0 0 10px #F5B461; margin-bottom: 15px;">What We Offer</h4>
-              <div class="row">
-                <div class="col-6">
-                  <ul style="color: #F5B461; font-family: 'JetBrains Mono', monospace;">
-                    <li style="margin-bottom: 8px;"><i class="bi bi-chevron-right" style="color: #F5B461;"></i>
-                      <strong>Knowledge Sharing</strong>
-                    </li>
-                    <li style="margin-bottom: 8px;"><i class="bi bi-chevron-right" style="color: #F5B461;"></i>
-                      <strong>Tech Workshops</strong>
-                    </li>
-                    <li style="margin-bottom: 8px;"><i class="bi bi-chevron-right" style="color: #F5B461;"></i>
-                      <strong>Networking</strong>
-                    </li>
-                  </ul>
-                </div>
-                <div class="col-6">
-                  <ul style="color: #F5B461; font-family: 'JetBrains Mono', monospace;">
-                    <li style="margin-bottom: 8px;"><i class="bi bi-chevron-right" style="color: #F5B461;"></i>
-                      <strong>Mentorship</strong>
-                    </li>
-                    <li style="margin-bottom: 8px;"><i class="bi bi-chevron-right" style="color: #F5B461;"></i>
-                      <strong>Career Growth</strong>
-                    </li>
-                    <li style="margin-bottom: 8px;"><i class="bi bi-chevron-right" style="color: #F5B461;"></i>
-                      <strong>Open Source</strong>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-
-            <p style="color: #fff; font-family: 'JetBrains Mono', monospace; margin-top: 20px;">
-              Building a thriving ecosystem for Indian developers to excel and innovate.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section><!-- /Indian Developer Community Section -->
 
     <!-- Skills Section -->
     <section id="skills" class="skills section">
@@ -3620,12 +5026,12 @@
 
       <hr style="border-color: rgba(245, 180, 97, 0.3); margin: 30px 0;">
 
-      <div class="copyright text-center">
+      <div class="copyright">
         <p>© <strong class="px-1 sitename"><a href="https://dharmikgohil.art/"
               style="color: #F5B461; text-decoration: none;">Dharmik Gohil</a></strong> <span>All Rights Reserved</span>
         </p>
       </div>
-      <div class="social-links d-flex justify-content-center" style="margin-top: 20px;">
+      <div class="social-links d-flex" style="margin-top: 20px;">
         <a href="https://github.com/DharmikGohil013" style="margin: 0 10px;"><i class="bi bi-github"></i></a>
         <a href="https://www.linkedin.com/in/dharmikgohil086/" style="margin: 0 10px;"><i
             class="bi bi-linkedin"></i></a>
@@ -3703,21 +5109,23 @@
         once: true
       });
 
-      // Isotope Filter Button Logic
+      // Simple CSS Grid Filter (no Isotope)
       const filterButtons = document.querySelectorAll('.filter-btn');
-      const isotopeContainer = document.querySelector('.isotope-container');
-      const isotope = new Isotope(isotopeContainer, {
-        itemSelector: '.portfolio-item',
-        layoutMode: 'fitRows',
-        percentPosition: true
-      });
+      const portfolioItems = document.querySelectorAll('.games-grid .portfolio-item');
 
       filterButtons.forEach(button => {
         button.addEventListener('click', function () {
           filterButtons.forEach(btn => btn.classList.remove('filter-active'));
           this.classList.add('filter-active');
           const filterValue = this.getAttribute('data-filter');
-          isotope.arrange({ filter: filterValue });
+
+          portfolioItems.forEach(item => {
+            if (filterValue === '*' || item.classList.contains(filterValue.replace('.', ''))) {
+              item.classList.remove('hidden-item');
+            } else {
+              item.classList.add('hidden-item');
+            }
+          });
         });
       });
     });
@@ -4161,11 +5569,480 @@
     });
   </script>
 
+  <!-- macOS Menu Bar Clock & Typing Animation for Hero -->
+  <script>
+    // — macOS Clock —
+    (function updateMenubarClock() {
+      var el = document.getElementById('menubar-clock');
+      if (!el) return;
+      var now = new Date();
+      var h = now.getHours().toString().padStart(2,'0');
+      var m = now.getMinutes().toString().padStart(2,'0');
+      el.textContent = h + ':' + m;
+      setTimeout(updateMenubarClock, 15000);
+    })();
+
+    // — Typing Animation —
+    var roles = [
+      'Game Developer',
+      'Unity XR Developer',
+      'VR / AR Specialist',
+      'Mobile Game Creator',
+      'Metaverse Architect',
+      'C# Programmer'
+    ];
+    var roleIndex = 0, charIndex = 0, isDeleting = false;
+    var typingEl = null;
+
+    function typeRole() {
+      if (!typingEl) typingEl = document.getElementById('typing-text');
+      if (!typingEl) return;
+      var current = roles[roleIndex];
+      if (!isDeleting) {
+        typingEl.textContent = current.slice(0, charIndex + 1);
+        charIndex++;
+        if (charIndex === current.length) {
+          isDeleting = true;
+          setTimeout(typeRole, 2200);
+          return;
+        }
+      } else {
+        typingEl.textContent = current.slice(0, charIndex - 1);
+        charIndex--;
+        if (charIndex === 0) {
+          isDeleting = false;
+          roleIndex = (roleIndex + 1) % roles.length;
+        }
+      }
+      setTimeout(typeRole, isDeleting ? 48 : 90);
+    }
+
+    document.addEventListener('DOMContentLoaded', function() { setTimeout(typeRole, 700); });
+  </script>
+
   <!-- Add Devicon Library for Technology Icons -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
 
   <!-- Dome Gallery JavaScript -->
   <script src="assets/js/dome-gallery.js"></script>
+
+  <!-- ============================================
+       CINEMATIC VIDEO INTRO SCRIPT
+       ============================================ -->
+  <script>
+  (function() {
+    'use strict';
+
+    const intro = document.getElementById('cinematic-intro');
+    const introVideo = document.getElementById('intro-video');
+    const introContent = document.getElementById('intro-content');
+    const introParticles = document.getElementById('intro-particles');
+    const heroVideo = document.getElementById('hero-video-bg');
+
+    // Check if this is the first visit this session
+    const hasSeenIntro = sessionStorage.getItem('introSeen');
+
+    if (hasSeenIntro || !intro) {
+      // Skip intro entirely - remove overlay immediately
+      if (intro) intro.remove();
+      return;
+    }
+
+    // Hide main content initially
+    document.querySelector('.main').style.opacity = '0';
+    document.querySelector('.main').style.transition = 'opacity 1s ease';
+    const footer = document.getElementById('footer');
+    if (footer) {
+      footer.style.opacity = '0';
+      footer.style.transition = 'opacity 1s ease';
+    }
+
+    // ---- Particle System ----
+    function initParticles() {
+      const canvas = introParticles;
+      if (!canvas) return;
+      const ctx = canvas.getContext('2d');
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+
+      const particles = [];
+      const count = Math.min(80, Math.floor(window.innerWidth / 15));
+
+      for (let i = 0; i < count; i++) {
+        particles.push({
+          x: Math.random() * canvas.width,
+          y: Math.random() * canvas.height,
+          vx: (Math.random() - 0.5) * 0.5,
+          vy: (Math.random() - 0.5) * 0.5,
+          size: Math.random() * 2 + 0.5,
+          opacity: Math.random() * 0.5 + 0.1,
+          color: ['#F5B461', '#ff007f', '#6366F1', '#ffffff'][Math.floor(Math.random() * 4)]
+        });
+      }
+
+      let animId;
+      function animate() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        particles.forEach(p => {
+          p.x += p.vx;
+          p.y += p.vy;
+          if (p.x < 0) p.x = canvas.width;
+          if (p.x > canvas.width) p.x = 0;
+          if (p.y < 0) p.y = canvas.height;
+          if (p.y > canvas.height) p.y = 0;
+
+          ctx.beginPath();
+          ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+          ctx.fillStyle = p.color;
+          ctx.globalAlpha = p.opacity;
+          ctx.fill();
+        });
+        ctx.globalAlpha = 1;
+
+        // Draw connecting lines
+        for (let i = 0; i < particles.length; i++) {
+          for (let j = i + 1; j < particles.length; j++) {
+            const dx = particles[i].x - particles[j].x;
+            const dy = particles[i].y - particles[j].y;
+            const dist = Math.sqrt(dx * dx + dy * dy);
+            if (dist < 120) {
+              ctx.beginPath();
+              ctx.moveTo(particles[i].x, particles[i].y);
+              ctx.lineTo(particles[j].x, particles[j].y);
+              ctx.strokeStyle = 'rgba(245, 180, 97, ' + (0.08 * (1 - dist / 120)) + ')';
+              ctx.lineWidth = 0.5;
+              ctx.stroke();
+            }
+          }
+        }
+        animId = requestAnimationFrame(animate);
+      }
+      animate();
+
+      // Cleanup on transition
+      return function stopParticles() {
+        cancelAnimationFrame(animId);
+      };
+    }
+
+    // ---- Animate intro text lines ----
+    function animateIntroContent() {
+      const lines = document.querySelectorAll('.intro-line');
+      const logo = document.querySelector('.intro-logo-pulse');
+
+      lines.forEach((line, i) => {
+        setTimeout(() => {
+          line.style.animation = 'introLineReveal 1s cubic-bezier(0.16, 1, 0.3, 1) forwards';
+        }, i * 500);
+      });
+
+      if (logo) {
+        setTimeout(() => {
+          logo.style.animation = 'introLogoPulse 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards';
+          setTimeout(() => {
+            logo.querySelector('img').style.animation = 'introGlow 3s ease-in-out infinite';
+          }, 1200);
+        }, lines.length * 500 + 200);
+      }
+
+      introContent.classList.add('visible');
+    }
+
+    // ---- Scroll-driven transition system ----
+    let stopParticles = null;
+    let transitioned = false;
+    let scrollProgress = 0;
+    let accumulatedScroll = 0;
+    const SCROLL_THRESHOLD = 600; // Total scroll needed to fully transition
+    let introReady = false; // Prevent scroll before content appears
+    let introHidden = false; // Track if intro is currently hidden (page mode)
+
+    function updateScrollProgress(progress) {
+      // progress: 0 (full intro) to 1 (fully transitioned)
+      scrollProgress = Math.max(0, Math.min(1, progress));
+
+      // If coming back from page to intro
+      if (scrollProgress < 1 && introHidden) {
+        introHidden = false;
+        intro.style.display = 'flex';
+        intro.style.pointerEvents = 'auto';
+        // Resume intro video when coming back
+        if (introVideo) {
+          introVideo.play().catch(() => {});
+        }
+        // Force page scroll to top when intro is visible
+        window.scrollTo(0, 0);
+      }
+
+      // Scale the intro overlay: from scale(1) to scale(1.15)
+      const scale = 1 + (scrollProgress * 0.15);
+      intro.style.transform = 'scale(' + scale + ')';
+
+      // Fade out the intro: from opacity 1 to 0
+      intro.style.opacity = (1 - scrollProgress).toString();
+
+      // Parallax the content upward
+      if (introContent) {
+        introContent.style.transform = 'translateY(' + (-scrollProgress * 120) + 'px)';
+        introContent.style.opacity = Math.max(0, 1 - scrollProgress * 2).toString();
+      }
+
+      // Fade out scroll hint faster
+      const scrollHint = document.getElementById('intro-scroll-hint');
+      if (scrollHint) {
+        scrollHint.style.opacity = Math.max(0, 1 - scrollProgress * 4).toString();
+      }
+
+      // Fade out particles and vignette
+      const particles = document.getElementById('intro-particles');
+      const vignette = document.getElementById('intro-vignette');
+      const overlay = document.getElementById('intro-overlay');
+      if (particles) particles.style.opacity = Math.max(0, 1 - scrollProgress * 1.5).toString();
+      if (vignette) vignette.style.opacity = Math.max(0, 1 - scrollProgress * 1.5).toString();
+      if (overlay) overlay.style.opacity = Math.max(0, 1 - scrollProgress * 1.5).toString();
+
+      // Progressively reveal main content underneath
+      const mainEl = document.querySelector('.main');
+      if (mainEl) {
+        mainEl.style.opacity = scrollProgress.toString();
+      }
+      if (footer) {
+        footer.style.opacity = scrollProgress.toString();
+      }
+
+      // When fully scrolled down, hide intro but keep it in DOM for reverse
+      if (scrollProgress >= 1 && !introHidden) {
+        introHidden = true;
+        intro.style.display = 'none';
+        intro.style.pointerEvents = 'none';
+
+        // Ensure hero video is playing
+        if (heroVideo) {
+          heroVideo.play().catch(() => {});
+        }
+
+        // Ensure main content fully visible
+        document.querySelector('.main').style.opacity = '1';
+        if (footer) footer.style.opacity = '1';
+
+        // Re-trigger AOS animations
+        if (typeof AOS !== 'undefined') {
+          setTimeout(() => AOS.refresh(), 100);
+        }
+      }
+    }
+
+    // Permanently finalize (called when user scrolls deep into page)
+    function finalizeTransition() {
+      if (transitioned) return;
+      transitioned = true;
+
+      sessionStorage.setItem('introSeen', 'true');
+
+      // Remove intro permanently
+      intro.style.display = 'none';
+      intro.remove();
+
+      // Ensure main content fully visible
+      document.querySelector('.main').style.opacity = '1';
+      document.querySelector('.main').style.transition = 'none';
+      if (footer) {
+        footer.style.opacity = '1';
+        footer.style.transition = 'none';
+      }
+
+      // Stop particles
+      if (stopParticles) stopParticles();
+
+      // Remove scroll listeners
+      window.removeEventListener('wheel', onIntroWheel);
+      window.removeEventListener('touchmove', onIntroTouch);
+      window.removeEventListener('touchstart', onIntroTouchStart);
+      window.removeEventListener('scroll', onPageScroll);
+    }
+
+    // Fallback direct transition (for auto-timer)
+    function transitionToPage() {
+      if (transitioned) return;
+      transitioned = true;
+
+      sessionStorage.setItem('introSeen', 'true');
+
+      // Phase 1: Fade out intro content
+      intro.classList.add('transitioning');
+
+      setTimeout(() => {
+        // Phase 2: Zoom out & fade the whole intro
+        intro.classList.add('zoom-out');
+
+        if (heroVideo) {
+          heroVideo.play().catch(() => {});
+        }
+
+        setTimeout(() => {
+          intro.style.display = 'none';
+          intro.remove();
+
+          document.querySelector('.main').style.opacity = '1';
+          if (footer) footer.style.opacity = '1';
+
+          if (stopParticles) stopParticles();
+
+          // Remove scroll listeners
+          window.removeEventListener('wheel', onIntroWheel);
+          window.removeEventListener('touchmove', onIntroTouch);
+          window.removeEventListener('touchstart', onIntroTouchStart);
+          window.removeEventListener('scroll', onPageScroll);
+
+          if (typeof AOS !== 'undefined') {
+            AOS.refresh();
+          }
+        }, 1500);
+      }, 700);
+    }
+
+    // ---- Scroll event handlers ----
+    function onIntroWheel(e) {
+      if (transitioned) return;
+
+      // If intro is hidden and page is at scroll top, allow reverse scroll (scroll up)
+      if (introHidden) {
+        if (window.scrollY <= 0 && e.deltaY < 0) {
+          // User is at top of page and scrolling up → bring intro back
+          e.preventDefault();
+          accumulatedScroll = Math.max(0, accumulatedScroll + e.deltaY);
+          const progress = accumulatedScroll / SCROLL_THRESHOLD;
+          updateScrollProgress(progress);
+        }
+        // If scrolling down while intro is hidden, let page scroll normally
+        // If page scrolled far enough, permanently finalize
+        if (window.scrollY > 400) {
+          finalizeTransition();
+        }
+        return;
+      }
+
+      if (!introReady) return;
+      e.preventDefault();
+
+      // Allow both directions: deltaY > 0 (scroll down), deltaY < 0 (scroll up/reverse)
+      accumulatedScroll = Math.max(0, accumulatedScroll + e.deltaY);
+      const progress = accumulatedScroll / SCROLL_THRESHOLD;
+      updateScrollProgress(progress);
+    }
+
+    let lastTouchY = 0;
+    function onIntroTouchStart(e) {
+      lastTouchY = e.touches[0].clientY;
+    }
+
+    function onIntroTouch(e) {
+      if (transitioned) return;
+
+      const currentY = e.touches[0].clientY;
+      const delta = lastTouchY - currentY; // positive = swipe up (scroll down), negative = swipe down (scroll up/reverse)
+      lastTouchY = currentY;
+
+      // If intro is hidden and page is at scroll top, allow reverse swipe
+      if (introHidden) {
+        if (window.scrollY <= 0 && delta < 0) {
+          e.preventDefault();
+          accumulatedScroll = Math.max(0, accumulatedScroll + delta * 2);
+          const progress = accumulatedScroll / SCROLL_THRESHOLD;
+          updateScrollProgress(progress);
+        }
+        if (window.scrollY > 400) {
+          finalizeTransition();
+        }
+        return;
+      }
+
+      if (!introReady) return;
+      e.preventDefault();
+
+      accumulatedScroll = Math.max(0, accumulatedScroll + delta * 2); // Amplify touch movement
+      const progress = accumulatedScroll / SCROLL_THRESHOLD;
+      updateScrollProgress(progress);
+    }
+
+    // Page scroll listener — if user scrolls deep enough, finalize permanently
+    function onPageScroll() {
+      if (transitioned) return;
+      if (window.scrollY > 400) {
+        finalizeTransition();
+      }
+    }
+
+    // ---- Main intro sequence ----
+    function startIntroSequence() {
+      // Start video playback
+      introVideo.play().catch(() => {
+        // Auto-play blocked, skip intro
+        transitionToPage();
+        return;
+      });
+
+      // Fade in video
+      setTimeout(() => {
+        introVideo.classList.add('visible');
+      }, 100);
+
+      // Init particles
+      stopParticles = initParticles();
+
+      // Animate text after video fades in
+      setTimeout(() => {
+        animateIntroContent();
+      }, 1200);
+
+      // Enable scroll-based transition after content appears
+      setTimeout(() => {
+        introReady = true;
+        window.addEventListener('wheel', onIntroWheel, { passive: false });
+        window.addEventListener('touchstart', onIntroTouchStart, { passive: true });
+        window.addEventListener('touchmove', onIntroTouch, { passive: false });
+        window.addEventListener('scroll', onPageScroll, { passive: true });
+      }, 2500);
+
+      // Auto-transition fallback after 15 seconds (if user doesn't scroll)
+      setTimeout(() => {
+        if (!transitioned) transitionToPage();
+      }, 15000);
+    }
+
+    // ---- Wait for preloader to finish, then start intro ----
+    // Override the default preloader removal
+    window.addEventListener('load', function() {
+      const preloader = document.getElementById('preloader');
+
+      if (preloader) {
+        // Fade out preloader
+        setTimeout(() => {
+          preloader.style.transition = 'opacity 0.6s ease';
+          preloader.style.opacity = '0';
+
+          setTimeout(() => {
+            preloader.remove();
+            // Now start the cinematic intro
+            startIntroSequence();
+          }, 600);
+        }, 800);
+      } else {
+        // No preloader, start intro directly
+        startIntroSequence();
+      }
+    });
+
+    // Handle window resize for particles
+    window.addEventListener('resize', () => {
+      if (introParticles && introParticles.getContext) {
+        introParticles.width = window.innerWidth;
+        introParticles.height = window.innerHeight;
+      }
+    });
+
+  })();
+  </script>
 
 </body>
 
