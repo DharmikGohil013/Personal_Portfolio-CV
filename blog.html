@@ -586,7 +586,82 @@
     }
 
     @media (max-width: 768px) {
-      .macos-menubar { display: none; }
+      .macos-menubar {
+        height: 36px;
+        padding: 0 12px;
+      }
+      .menubar-left {
+        gap: 10px;
+        overflow: hidden;
+      }
+      .menubar-left span {
+        font-size: 12px;
+      }
+      .menubar-left span.menubar-brand {
+        font-size: 12px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        max-width: 110px;
+      }
+      .menubar-left span:not(.menubar-apple):not(.menubar-brand) {
+        display: none;
+      }
+      .menubar-right {
+        gap: 10px;
+      }
+      .menubar-right i {
+        font-size: 13px;
+      }
+      #menubar-clock {
+        font-size: 11px;
+        min-width: 38px;
+      }
+      .menubar-right > i.bi-wifi,
+      .menubar-right > i.bi-battery-full {
+        display: none;
+      }
+    }
+
+    @media (max-width: 575px) {
+      .macos-menubar {
+        height: 34px;
+        padding: 0 10px;
+      }
+      .menubar-left {
+        gap: 8px;
+      }
+      .menubar-apple i {
+        font-size: 14px;
+      }
+      .menubar-left span.menubar-brand {
+        max-width: 90px;
+        font-size: 11px;
+      }
+      .menubar-right {
+        gap: 8px;
+      }
+      .menubar-right a i {
+        font-size: 12px;
+      }
+      #menubar-clock {
+        font-size: 10px;
+        min-width: 34px;
+      }
+    }
+
+    @media (max-width: 380px) {
+      .menubar-left span.menubar-brand {
+        max-width: 70px;
+        font-size: 10px;
+      }
+      .menubar-right {
+        gap: 6px;
+      }
+      .menubar-right a:nth-child(3),
+      .menubar-right a:nth-child(4) {
+        display: none;
+      }
     }
 
     /* ---- Footer ---- */
@@ -769,7 +844,7 @@
 
     /* ---- Responsive ---- */
     @media (max-width: 768px) {
-      .blog-page-macos { padding: 20px 0 100px; }
+      .blog-page-macos { padding: 44px 0 60px; }
       .page-header { padding: 20px 0 30px; }
       .page-header h1 { font-size: 1.8rem; }
       .mac-window-body { padding: 20px 16px 24px; }
@@ -777,9 +852,14 @@
     }
 
     @media (max-width: 575px) {
+      .blog-page-macos { padding: 40px 0 56px; }
       .mac-window-titlebar { padding: 10px 13px; }
       .mac-window-body { padding: 16px 12px 20px; }
       .page-header h1 { font-size: 1.5rem; }
+    }
+
+    @media (max-width: 380px) {
+      .blog-page-macos { padding: 38px 0 50px; }
     }
 
     @media (prefers-reduced-motion: reduce) {

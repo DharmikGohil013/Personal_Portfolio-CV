@@ -713,8 +713,86 @@ body {
   text-align: right;
 }
 
+/* Menubar responsive - tablet */
 @media (max-width: 768px) {
-  .macos-menubar { display: none; }
+  .macos-menubar {
+    height: 36px;
+    padding: 0 12px;
+  }
+  .menubar-left {
+    gap: 10px;
+    overflow: hidden;
+  }
+  .menubar-left span {
+    font-size: 12px;
+  }
+  .menubar-left span.menubar-brand {
+    font-size: 12px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 110px;
+  }
+  .menubar-left span:not(.menubar-apple):not(.menubar-brand) {
+    display: none;
+  }
+  .menubar-right {
+    gap: 10px;
+  }
+  .menubar-right i {
+    font-size: 13px;
+  }
+  #menubar-clock {
+    font-size: 11px;
+    min-width: 38px;
+  }
+  .menubar-right > i.bi-wifi,
+  .menubar-right > i.bi-battery-full {
+    display: none;
+  }
+}
+
+/* Menubar responsive - small phones */
+@media (max-width: 575px) {
+  .macos-menubar {
+    height: 34px;
+    padding: 0 10px;
+  }
+  .menubar-left {
+    gap: 8px;
+  }
+  .menubar-apple i {
+    font-size: 14px;
+  }
+  .menubar-left span.menubar-brand {
+    max-width: 90px;
+    font-size: 11px;
+  }
+  .menubar-right {
+    gap: 8px;
+  }
+  .menubar-right a i {
+    font-size: 12px;
+  }
+  #menubar-clock {
+    font-size: 10px;
+    min-width: 34px;
+  }
+}
+
+/* Menubar responsive - very small phones */
+@media (max-width: 380px) {
+  .menubar-left span.menubar-brand {
+    max-width: 70px;
+    font-size: 10px;
+  }
+  .menubar-right {
+    gap: 6px;
+  }
+  .menubar-right a:nth-child(3),
+  .menubar-right a:nth-child(4) {
+    display: none;
+  }
 }
 
 /*--------------------------------------------------------------
@@ -901,8 +979,91 @@ body {
   flex: 1;
 }
 
+/* Dock responsive - tablet */
 @media (max-width: 768px) {
-  .macos-dock { display: none; }
+  .macos-dock {
+    bottom: 8px;
+    padding: 4px 8px;
+    border-radius: 16px;
+    max-width: calc(100vw - 16px);
+  }
+  .dock-items {
+    gap: 3px;
+  }
+  .dock-item {
+    width: 36px;
+    height: 36px;
+    font-size: 16px;
+    border-radius: 10px;
+  }
+  .dock-separator {
+    height: 22px;
+    margin: 0 2px;
+  }
+  .dock-item::before {
+    display: none;
+  }
+  .dock-item:hover {
+    transform: translateY(-4px) scale(1.08);
+  }
+  .games-dropdown-menu {
+    width: 220px;
+    bottom: calc(100% + 8px);
+  }
+  .game-dropdown-item {
+    padding: 8px 10px;
+    font-size: 12px;
+    gap: 8px;
+  }
+  .games-dropdown-header {
+    padding: 10px 14px;
+    font-size: 12px;
+  }
+}
+
+/* Dock responsive - small phones */
+@media (max-width: 575px) {
+  .macos-dock {
+    bottom: 6px;
+    padding: 3px 6px;
+    border-radius: 14px;
+  }
+  .dock-items {
+    gap: 2px;
+  }
+  .dock-item {
+    width: 32px;
+    height: 32px;
+    font-size: 14px;
+    border-radius: 9px;
+  }
+  .dock-separator {
+    height: 20px;
+    margin: 0 1px;
+  }
+  .games-dropdown-menu {
+    width: 200px;
+    max-height: 280px;
+    overflow-y: auto;
+  }
+}
+
+/* Dock responsive - very small phones */
+@media (max-width: 380px) {
+  .macos-dock {
+    bottom: 4px;
+    padding: 3px 5px;
+    border-radius: 12px;
+  }
+  .dock-item {
+    width: 28px;
+    height: 28px;
+    font-size: 13px;
+    border-radius: 8px;
+  }
+  .dock-separator {
+    height: 18px;
+  }
 }
 
 /*--------------------------------------------------------------

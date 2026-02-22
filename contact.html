@@ -548,21 +548,96 @@
     }
 
     /* ---- Responsive ---- */
-    @media (max-width: 768px) {
-      .contact-page { padding: 20px 0 100px; }
-      .page-header { padding: 20px 0 30px; }
-      .page-header h1 { font-size: 1.8rem; }
-      .mac-window-body { padding: 20px 16px 24px; }
-      .mac-contact-card { padding: 16px 15px; gap: 12px; }
-      .mac-contact-icon { width: 40px; height: 40px; font-size: 1rem; }
+
+    /* Tablet landscape & small desktops */
+    @media (max-width: 991px) {
+      .contact-page { padding: 30px 0 120px; }
+      .page-header { padding: 24px 0 36px; }
+      .mac-window-body { padding: 22px 20px 26px; }
+
+      /* Stack columns on tablets */
+      .row.g-4 > .col-lg-5,
+      .row.g-4 > .col-lg-7 {
+        flex: 0 0 100%;
+        max-width: 100%;
+        width: 100%;
+      }
     }
 
+    /* Tablet portrait */
+    @media (max-width: 768px) {
+      .contact-page { padding: 44px 0 60px; }
+      .page-header { padding: 20px 0 28px; }
+      .page-header h1 { font-size: 1.8rem; }
+      .page-header p { font-size: 0.88rem; }
+      .mac-window { border-radius: 14px; margin-bottom: 24px; }
+      .mac-window-body { padding: 20px 16px 24px; }
+      .mac-contact-card { padding: 16px 15px; gap: 12px; }
+      .mac-contact-icon { width: 42px; height: 42px; font-size: 1rem; border-radius: 12px; }
+      .mac-contact-detail h4 { font-size: 0.75rem; }
+      .mac-contact-detail p,
+      .mac-contact-detail a { font-size: 0.88rem; word-break: break-word; }
+      .mac-map-wrap iframe { height: 180px; }
+      .mac-form-group { margin-bottom: 14px; }
+      .mac-input, .mac-textarea { padding: 11px 14px; font-size: 0.88rem; }
+      .mac-textarea { min-height: 100px; }
+      .mac-submit-btn { padding: 11px 24px; font-size: 0.88rem; }
+      .mac-social-grid { gap: 10px; }
+      .mac-social-btn { padding: 9px 16px; font-size: 0.8rem; }
+
+      /* Footer mobile */
+      .footer { padding: 24px 0 60px 0 !important; }
+      .footer .container { align-items: center; }
+      .footer .copyright { text-align: center !important; }
+      .footer .social-links { justify-content: center !important; }
+    }
+
+    /* Mobile phones */
     @media (max-width: 575px) {
+      .contact-page { padding: 40px 0 56px; }
+      .page-header { padding: 14px 0 22px; }
+      .page-header h1 { font-size: 1.4rem; letter-spacing: -0.5px; }
+      .page-header p { font-size: 0.82rem; padding: 0 8px; }
+      .page-header-badge { font-size: 10px; padding: 4px 11px; }
+      .mac-window { border-radius: 12px; margin-bottom: 18px; }
       .mac-window-titlebar { padding: 10px 13px; }
-      .mac-window-body { padding: 16px 12px 20px; }
-      .page-header h1 { font-size: 1.5rem; }
-      .mac-social-grid { gap: 8px; }
-      .mac-social-btn { padding: 8px 14px; font-size: 0.78rem; }
+      .mac-window-label { font-size: 12px; }
+      .mac-window-dots span { width: 11px; height: 11px; }
+      .mac-window-body { padding: 14px 12px 18px; }
+      .mac-contact-card { padding: 14px 12px; gap: 10px; flex-direction: row; border-radius: 12px; margin-bottom: 12px; }
+      .mac-contact-icon { width: 38px; height: 38px; font-size: 0.95rem; border-radius: 10px; }
+      .mac-contact-detail h4 { font-size: 0.7rem; margin-bottom: 2px; }
+      .mac-contact-detail p,
+      .mac-contact-detail a { font-size: 0.82rem; word-break: break-all; overflow-wrap: anywhere; }
+      .mac-map-wrap iframe { height: 160px; }
+      .mac-form-label { font-size: 0.75rem; margin-bottom: 5px; }
+      .mac-input, .mac-textarea { padding: 10px 12px; font-size: 0.85rem; border-radius: 8px; }
+      .mac-textarea { min-height: 90px; }
+      .mac-submit-btn { padding: 11px 20px; font-size: 0.85rem; border-radius: 8px; }
+      .mac-social-grid { gap: 8px; justify-content: center; }
+      .mac-social-btn { padding: 8px 12px; font-size: 0.75rem; border-radius: 8px; flex: 1 1 auto; min-width: 0; justify-content: center; }
+      .mac-social-btn i { font-size: 0.95rem; }
+
+      /* Footer small mobile */
+      .footer { padding: 20px 0 56px 0 !important; }
+      .footer .copyright p { font-size: 0.78rem; }
+      .footer .social-links a { width: 32px; height: 32px; font-size: 0.9rem; border-radius: 8px; }
+    }
+
+    /* Very small screens */
+    @media (max-width: 380px) {
+      .contact-page { padding: 38px 0 50px; }
+      .page-header h1 { font-size: 1.2rem; }
+      .page-header p { font-size: 0.78rem; }
+      .mac-window-body { padding: 12px 10px 14px; }
+      .mac-contact-card { padding: 12px 10px; gap: 8px; }
+      .mac-contact-icon { width: 34px; height: 34px; font-size: 0.85rem; }
+      .mac-contact-detail p,
+      .mac-contact-detail a { font-size: 0.78rem; }
+      .mac-social-grid { flex-direction: column; gap: 6px; }
+      .mac-social-btn { width: 100%; justify-content: center; flex: unset; }
+      .mac-input, .mac-textarea { padding: 9px 10px; font-size: 0.82rem; }
+      .mac-submit-btn { padding: 10px 16px; font-size: 0.82rem; }
     }
 
     /* ---- macOS Menu Bar ---- */
@@ -654,7 +729,88 @@
     }
 
     @media (max-width: 768px) {
-      .macos-menubar { display: none; }
+      .macos-menubar {
+        height: 36px;
+        padding: 0 12px;
+      }
+      .menubar-left {
+        gap: 10px;
+        overflow: hidden;
+      }
+      .menubar-left span {
+        font-size: 12px;
+      }
+      .menubar-left span.menubar-brand {
+        font-size: 12px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        max-width: 110px;
+      }
+      /* Hide extra menu text items on mobile, keep home & brand */
+      .menubar-left span:not(.menubar-apple):not(.menubar-brand) {
+        display: none;
+      }
+      .menubar-right {
+        gap: 10px;
+      }
+      .menubar-right i {
+        font-size: 13px;
+      }
+      #menubar-clock {
+        font-size: 11px;
+        min-width: 38px;
+      }
+      /* Hide wifi/battery icons on mobile */
+      .menubar-right > i.bi-wifi,
+      .menubar-right > i.bi-battery-full {
+        display: none;
+      }
+      .contact-page {
+        padding-top: 44px;
+      }
+    }
+
+    @media (max-width: 575px) {
+      .macos-menubar {
+        height: 34px;
+        padding: 0 10px;
+      }
+      .menubar-left {
+        gap: 8px;
+      }
+      .menubar-apple i {
+        font-size: 14px;
+      }
+      .menubar-left span.menubar-brand {
+        max-width: 90px;
+        font-size: 11px;
+      }
+      .menubar-right {
+        gap: 8px;
+      }
+      .menubar-right a i {
+        font-size: 12px;
+      }
+      #menubar-clock {
+        font-size: 10px;
+        min-width: 34px;
+      }
+    }
+
+    @media (max-width: 380px) {
+      .menubar-left span.menubar-brand {
+        max-width: 70px;
+        font-size: 10px;
+      }
+      .menubar-right {
+        gap: 6px;
+      }
+      /* Hide some social icons on very small screens to save space */
+      .menubar-right a:nth-child(3),
+      .menubar-right a:nth-child(4) {
+        display: none;
+      }
     }
   </style>
 
