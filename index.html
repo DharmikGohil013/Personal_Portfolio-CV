@@ -1019,6 +1019,85 @@
       margin: 0 3px;
     }
 
+    /* Games Dropdown Menu */
+    .games-menu-trigger,
+    .apps-menu-trigger {
+      position: relative;
+      cursor: pointer;
+    }
+
+    .games-dropdown-menu {
+      position: absolute;
+      bottom: calc(100% + 12px);
+      left: 50%;
+      transform: translateX(-50%) translateY(10px);
+      width: 240px;
+      background: rgba(30, 30, 30, 0.95);
+      backdrop-filter: blur(40px) saturate(2);
+      -webkit-backdrop-filter: blur(40px) saturate(2);
+      border: 1px solid rgba(255,255,255,0.15);
+      border-radius: 12px;
+      overflow: hidden;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      z-index: 1001;
+      box-shadow: 
+        0 20px 60px rgba(0,0,0,0.8),
+        0 0 0 0.5px rgba(255,255,255,0.1) inset;
+    }
+
+    .games-dropdown-menu.show {
+      opacity: 1;
+      visibility: visible;
+      transform: translateX(-50%) translateY(0);
+    }
+
+    .games-dropdown-header {
+      padding: 12px 16px;
+      background: rgba(10,132,255,0.15);
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+      color: #0A84FF;
+      font-weight: 600;
+      font-size: 13px;
+      display: flex;
+      align-items: center;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+
+    .games-dropdown-list {
+      padding: 8px;
+    }
+
+    .game-dropdown-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 10px 12px;
+      color: rgba(255,255,255,0.85);
+      text-decoration: none;
+      border-radius: 8px;
+      transition: all 0.2s ease;
+      font-size: 13px;
+      font-weight: 500;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+
+    .game-dropdown-item:hover {
+      background: rgba(10,132,255,0.2);
+      color: #0A84FF;
+      transform: translateX(4px);
+    }
+
+    .game-dropdown-item i {
+      font-size: 16px;
+      flex-shrink: 0;
+    }
+
+    .game-dropdown-item span {
+      flex: 1;
+    }
+
     /* ===== HERO RESPONSIVE ===== */
     @media (max-width: 900px) {
       .window-content { padding: 28px 28px; gap: 24px; }
@@ -3850,6 +3929,250 @@
         font-size: 1.5rem;
       }
     }
+
+    /* ============================================
+       EXCLUSIVE SMOOTH SCROLL ANIMATIONS
+       Premium reveal effects on scroll
+       ============================================ */
+
+    /* --- Smooth Page Scroll --- */
+    html {
+      scroll-behavior: smooth;
+    }
+
+    /* --- Base hidden state for scroll-reveal elements --- */
+    .scroll-reveal {
+      opacity: 0;
+      transform: translateY(60px);
+      filter: blur(6px);
+      transition: all 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+      will-change: opacity, transform, filter;
+    }
+    .scroll-reveal.revealed {
+      opacity: 1;
+      transform: translateY(0);
+      filter: blur(0);
+    }
+
+    /* --- Slide from Left --- */
+    .scroll-reveal-left {
+      opacity: 0;
+      transform: translateX(-80px);
+      filter: blur(5px);
+      transition: all 1s cubic-bezier(0.22, 1, 0.36, 1);
+      will-change: opacity, transform, filter;
+    }
+    .scroll-reveal-left.revealed {
+      opacity: 1;
+      transform: translateX(0);
+      filter: blur(0);
+    }
+
+    /* --- Slide from Right --- */
+    .scroll-reveal-right {
+      opacity: 0;
+      transform: translateX(80px);
+      filter: blur(5px);
+      transition: all 1s cubic-bezier(0.22, 1, 0.36, 1);
+      will-change: opacity, transform, filter;
+    }
+    .scroll-reveal-right.revealed {
+      opacity: 1;
+      transform: translateX(0);
+      filter: blur(0);
+    }
+
+    /* --- Scale Up Reveal --- */
+    .scroll-reveal-scale {
+      opacity: 0;
+      transform: scale(0.85);
+      filter: blur(4px);
+      transition: all 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+      will-change: opacity, transform, filter;
+    }
+    .scroll-reveal-scale.revealed {
+      opacity: 1;
+      transform: scale(1);
+      filter: blur(0);
+    }
+
+    /* --- Rotate In Reveal --- */
+    .scroll-reveal-rotate {
+      opacity: 0;
+      transform: perspective(600px) rotateY(15deg) translateX(40px);
+      filter: blur(3px);
+      transition: all 1.1s cubic-bezier(0.22, 1, 0.36, 1);
+      will-change: opacity, transform, filter;
+    }
+    .scroll-reveal-rotate.revealed {
+      opacity: 1;
+      transform: perspective(600px) rotateY(0deg) translateX(0);
+      filter: blur(0);
+    }
+
+    /* --- Staggered Children Animation --- */
+    .stagger-children > * {
+      opacity: 0;
+      transform: translateY(40px);
+      filter: blur(3px);
+      transition: all 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+      will-change: opacity, transform, filter;
+    }
+    .stagger-children.revealed > * {
+      opacity: 1;
+      transform: translateY(0);
+      filter: blur(0);
+    }
+    .stagger-children.revealed > *:nth-child(1) { transition-delay: 0.05s; }
+    .stagger-children.revealed > *:nth-child(2) { transition-delay: 0.12s; }
+    .stagger-children.revealed > *:nth-child(3) { transition-delay: 0.19s; }
+    .stagger-children.revealed > *:nth-child(4) { transition-delay: 0.26s; }
+    .stagger-children.revealed > *:nth-child(5) { transition-delay: 0.33s; }
+    .stagger-children.revealed > *:nth-child(6) { transition-delay: 0.40s; }
+    .stagger-children.revealed > *:nth-child(7) { transition-delay: 0.47s; }
+    .stagger-children.revealed > *:nth-child(8) { transition-delay: 0.54s; }
+
+    /* --- Glow Pulse on Reveal --- */
+    .scroll-glow.revealed {
+      animation: glowPulseReveal 1.5s ease-out forwards;
+    }
+    @keyframes glowPulseReveal {
+      0%   { box-shadow: 0 0 0 rgba(99, 102, 241, 0); }
+      40%  { box-shadow: 0 0 40px rgba(99, 102, 241, 0.25), 0 0 80px rgba(99, 102, 241, 0.1); }
+      100% { box-shadow: 0 0 0 rgba(99, 102, 241, 0); }
+    }
+
+    /* --- Floating Parallax Layer --- */
+    .parallax-layer {
+      will-change: transform;
+      transition: transform 0.05s linear;
+    }
+
+    /* --- Section Divider Line Animation --- */
+    .section-title h2::after {
+      transition: width 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.3s;
+    }
+    .scroll-reveal .section-title h2::after,
+    .scroll-reveal-left .section-title h2::after,
+    .scroll-reveal-right .section-title h2::after {
+      width: 0 !important;
+    }
+    .scroll-reveal.revealed .section-title h2::after,
+    .scroll-reveal-left.revealed .section-title h2::after,
+    .scroll-reveal-right.revealed .section-title h2::after {
+      width: 50px !important;
+    }
+
+    /* --- Progress Bar Fill on Scroll --- */
+    .skills.section .progress-bar {
+      width: 0 !important;
+      transition: width 1.4s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .skills.section.skills-animated .progress-bar {
+      /* width set via JS to actual value */
+    }
+
+    /* --- Stats Counter Pop --- */
+    .stats-item {
+      transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.5s ease;
+    }
+    .stats-item.counter-pop {
+      animation: counterPop 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    @keyframes counterPop {
+      0%   { transform: scale(0.7); opacity: 0; }
+      60%  { transform: scale(1.08); }
+      100% { transform: scale(1); opacity: 1; }
+    }
+
+    /* --- Testimonial Card Slide Up --- */
+    .testimonial-item {
+      transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.6s ease;
+    }
+
+    /* --- Smooth Section Separator Gradient --- */
+    section.section::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 10%;
+      width: 80%;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(99, 102, 241, 0.25), transparent);
+      opacity: 0;
+      transition: opacity 0.8s ease 0.5s;
+      pointer-events: none;
+    }
+    section.section.revealed::after,
+    section.section:has(.revealed)::after {
+      opacity: 1;
+    }
+
+    /* --- Custom Cursor Trail (scroll-based glow) --- */
+    .scroll-progress-glow {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      z-index: 9999;
+      background: linear-gradient(90deg, #6366F1, #a855f7, #ec4899, #6366F1);
+      background-size: 300% 100%;
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.15s ease-out;
+      animation: progressGradient 3s linear infinite;
+      pointer-events: none;
+    }
+    @keyframes progressGradient {
+      0%   { background-position: 0% 50%; }
+      100% { background-position: 300% 50%; }
+    }
+
+    /* --- Floating Particles on Scroll (CSS-only) --- */
+    .scroll-particles {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      pointer-events: none;
+      z-index: 9998;
+      overflow: hidden;
+    }
+    .scroll-particle {
+      position: absolute;
+      width: 4px; height: 4px;
+      border-radius: 50%;
+      background: rgba(99, 102, 241, 0.4);
+      opacity: 0;
+      animation: floatParticle 4s ease-in-out infinite;
+    }
+    .scroll-particle:nth-child(2) { background: rgba(168, 85, 247, 0.35); animation-delay: 0.8s; left: 20%; }
+    .scroll-particle:nth-child(3) { background: rgba(236, 72, 153, 0.3); animation-delay: 1.6s; left: 50%; }
+    .scroll-particle:nth-child(4) { background: rgba(99, 102, 241, 0.3); animation-delay: 2.4s; left: 75%; }
+    .scroll-particle:nth-child(5) { background: rgba(168, 85, 247, 0.25); animation-delay: 3.2s; left: 90%; }
+    @keyframes floatParticle {
+      0%   { transform: translateY(100vh) scale(0); opacity: 0; }
+      20%  { opacity: 1; }
+      80%  { opacity: 0.6; }
+      100% { transform: translateY(-20vh) scale(1.5); opacity: 0; }
+    }
+
+    /* --- Reduce motion for accessibility --- */
+    @media (prefers-reduced-motion: reduce) {
+      .scroll-reveal,
+      .scroll-reveal-left,
+      .scroll-reveal-right,
+      .scroll-reveal-scale,
+      .scroll-reveal-rotate,
+      .stagger-children > * {
+        transition: none !important;
+        opacity: 1 !important;
+        transform: none !important;
+        filter: none !important;
+      }
+      .scroll-progress-glow,
+      .scroll-particles { display: none !important; }
+    }
   </style>
   <link href="assets/css/main.css" rel="stylesheet">
   <link href="assets/css/navigation.css" rel="stylesheet">
@@ -4221,7 +4544,7 @@
        CINEMATIC VIDEO INTRO - First Visit Only
        ============================================ -->
   <div id="cinematic-intro">
-    <video id="intro-video" muted playsinline preload="auto">
+    <video id="intro-video" muted loop playsinline preload="auto">
       <source src="assets/bg-video.mp4" type="video/mp4">
     </video>
     <div id="intro-overlay"></div>
@@ -4261,6 +4584,7 @@
         <div class="menubar-left">
           <span class="menubar-apple"><i class="bi bi-house-fill"></i></span>
           <span class="menubar-brand">Dharmik Gohil</span>
+          <span><a href="blog.html" style="color:inherit;text-decoration:none;display:flex;align-items:center;gap:4px;"><i class="bi bi-rss"></i> Blog</a></span>
           <span>Portfolio</span>
           <span>Games</span>
           <span>About</span>
@@ -4380,10 +4704,78 @@
         <div class="dock-items">
           <a href="index.html"    class="dock-item active" data-tooltip="Home"><i class="bi bi-house-fill"></i></a>
           <a href="services.html" class="dock-item"        data-tooltip="Abilities"><i class="bi bi-lightning-charge-fill"></i></a>
-          <a href="portfolio.html" class="dock-item"       data-tooltip="Portfolio"><i class="bi bi-grid-fill"></i></a>
           <div class="dock-separator"></div>
+          <div class="dock-item games-menu-trigger" data-tooltip="My Games">
+            <i class="bi bi-controller"></i>
+            <!-- Games Dropdown Menu -->
+            <div class="games-dropdown-menu" id="gamesDropdown">
+              <div class="games-dropdown-header">
+                <i class="bi bi-controller me-2"></i>My Games
+              </div>
+              <div class="games-dropdown-list">
+                <a href="https://dharmikgohil.itch.io/mavericks-battlegrounds" target="_blank" class="game-dropdown-item">
+                  <i class="bi bi-play-circle-fill"></i>
+                  <span>Mavericks Battleground</span>
+                </a>
+                <a href="https://dharmik086.itch.io/floppy-bird-860" target="_blank" class="game-dropdown-item">
+                  <i class="bi bi-play-circle-fill"></i>
+                  <span>Floppy Bird</span>
+                </a>
+                <a href="https://dharmikgohil.itch.io/facade" target="_blank" class="game-dropdown-item">
+                  <i class="bi bi-play-circle-fill"></i>
+                  <span>Facade</span>
+                </a>
+                <a href="https://dharmikgohil.itch.io/go-galaxy" target="_blank" class="game-dropdown-item">
+                  <i class="bi bi-play-circle-fill"></i>
+                  <span>Go Galaxy</span>
+                </a>
+                <a href="https://dharmikgohil.itch.io/drone-training" target="_blank" class="game-dropdown-item">
+                  <i class="bi bi-play-circle-fill"></i>
+                  <span>Drone Training</span>
+                </a>
+              </div>
+            </div>
+          </div>
           <a href="Achivemtn.html" class="dock-item"       data-tooltip="Achievements"><i class="bi bi-trophy-fill"></i></a>
-          <a href="services.html" class="dock-item"        data-tooltip="Services"><i class="bi bi-briefcase-fill"></i></a>
+          <div class="dock-item apps-menu-trigger" data-tooltip="Live Apps & Websites">
+            <i class="bi bi-briefcase-fill"></i>
+            <!-- Apps & Websites Dropdown Menu -->
+            <div class="games-dropdown-menu" id="appsDropdown">
+              <div class="games-dropdown-header">
+                <i class="bi bi-briefcase-fill me-2"></i>Live Projects
+              </div>
+              <div class="games-dropdown-list">
+                <a href="assets/Fit Sync.apk" download class="game-dropdown-item">
+                  <i class="bi bi-download"></i>
+                  <span>FitSync App (APK)</span>
+                </a>
+                <a href="https://actify.dharmikgohil.art/" target="_blank" class="game-dropdown-item">
+                  <i class="bi bi-globe"></i>
+                  <span>Actify</span>
+                </a>
+                <a href="https://learnlink.dharmikgohil.art" target="_blank" class="game-dropdown-item">
+                  <i class="bi bi-globe"></i>
+                  <span>Learn Link</span>
+                </a>
+                <a href="http://gdgs.dharmikgohil.art/" target="_blank" class="game-dropdown-item">
+                  <i class="bi bi-globe"></i>
+                  <span>GDGS Games</span>
+                </a>
+                <a href="http://flipcart.dharmikgohil.art/" target="_blank" class="game-dropdown-item">
+                  <i class="bi bi-globe"></i>
+                  <span>Flipkart Clone</span>
+                </a>
+                <a href="http://krishna.dharmikgohil.art/" target="_blank" class="game-dropdown-item">
+                  <i class="bi bi-globe"></i>
+                  <span>Krishna Construction</span>
+                </a>
+                <a href="https://fkm.vercel.app/" target="_blank" class="game-dropdown-item">
+                  <i class="bi bi-globe"></i>
+                  <span>WiFi Service</span>
+                </a>
+              </div>
+            </div>
+          </div>
           <div class="dock-separator"></div>
           <a href="contact.html"  class="dock-item"        data-tooltip="Contact"><i class="bi bi-envelope-fill"></i></a>
           <a href="assets/img/Dharmik Gohil Resume.pdf" class="dock-item" data-tooltip="Resume" download><i class="bi bi-file-earmark-person"></i></a>
@@ -4392,7 +4784,7 @@
 
     </section>
 
-    <section id="portfolio" class="portfolio section">
+    <section id="portfolio" class="portfolio section scroll-reveal">
       <div class="container section-title" data-aos="fade-up">
         <h2>Games</h2>
         <p>Explore my creations in game development</p>
@@ -4644,7 +5036,7 @@
     </section>
 
     <!-- Explore Section - Technology Logo Loop -->
-    <section id="explore" class="explore section">
+    <section id="explore" class="explore section scroll-reveal-scale">
       <div class="container section-title" data-aos="fade-up">
         <h2>Explore Technologies</h2>
         <p>Powered by cutting-edge tools and platforms</p>
@@ -4663,7 +5055,7 @@
     <!-- /Explore Section -->
 
     <!-- About Section -->
-    <section id="about" class="about section">
+    <section id="about" class="about section scroll-reveal-left">
       <div class="container section-title" data-aos="fade-up">
         <h2>About</h2>
         <p>Needed for something valuable, escaping while keeping it simple and clear</p>
@@ -4748,7 +5140,7 @@
 
 
     <!-- Skills Section -->
-    <section id="skills" class="skills section">
+    <section id="skills" class="skills section scroll-reveal-right">
       <div class="container section-title" data-aos="fade-up">
         <h2>Skills</h2>
         <p>The necessity for him to pursue something, escape it, and indeed maintain a meaningful connection</p>
@@ -4806,7 +5198,7 @@
     </section>
     <!-- Resume Section -->
     <!-- Resume Section -->
-    <section id="resume" class="resume section">\n\n <div class="container section-title" data-aos="fade-up">
+    <section id="resume" class="resume section scroll-reveal-left">\n\n <div class="container section-title" data-aos="fade-up">
         <h2>Resume</h2>
         <p>His needs are to be followed by something, to escape him, indeed, to be pursued.</p>
       </div>
@@ -4934,7 +5326,7 @@
       </div>
     </section><!-- /Resume Section -->
     <!-- Stats Section -->
-    <section id="stats" class="stats section">
+    <section id="stats" class="stats section scroll-reveal-scale scroll-glow">
       <div class="container section-title" data-aos="fade-up">
         <h2>Facts</h2>
         <p>His needs are met through something valuable, escaping while maintaining clarity and focus</p>
@@ -4974,7 +5366,7 @@
     </section>
 
     <!-- Testimonials Section -->
-    <section id="testimonials" class="testimonials section">
+    <section id="testimonials" class="testimonials section scroll-reveal-rotate">
       <div class="container section-title" data-aos="fade-up">
         <h2>Testimonials</h2>
         <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
@@ -5095,7 +5487,7 @@
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="contact section">
+    <section id="contact" class="contact section scroll-reveal scroll-glow">
       <div class="container section-title" data-aos="fade-up">
         <h2>Contact Me</h2>
         <p>Ready to collaborate on your next game project? Let's connect!</p>
@@ -6502,6 +6894,214 @@
       }
     });
 
+  })();
+  </script>
+
+  <!-- Games Dropdown Menu Script -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const gamesTrigger = document.querySelector('.games-menu-trigger');
+      const gamesDropdown = document.getElementById('gamesDropdown');
+      const appsTrigger = document.querySelector('.apps-menu-trigger');
+      const appsDropdown = document.getElementById('appsDropdown');
+
+      if (gamesTrigger && gamesDropdown) {
+        // Toggle dropdown on click
+        gamesTrigger.addEventListener('click', function (e) {
+          e.stopPropagation();
+          // Close apps dropdown if open
+          if (appsDropdown) appsDropdown.classList.remove('show');
+          gamesDropdown.classList.toggle('show');
+        });
+
+        // Close dropdown when clicking outside
+        document.addEventListener('click', function (e) {
+          if (!gamesTrigger.contains(e.target)) {
+            gamesDropdown.classList.remove('show');
+          }
+        });
+
+        // Prevent dropdown from closing when clicking inside it
+        gamesDropdown.addEventListener('click', function (e) {
+          e.stopPropagation();
+        });
+      }
+
+      // Apps Dropdown Menu
+      if (appsTrigger && appsDropdown) {
+        // Toggle dropdown on click
+        appsTrigger.addEventListener('click', function (e) {
+          e.stopPropagation();
+          // Close games dropdown if open
+          if (gamesDropdown) gamesDropdown.classList.remove('show');
+          appsDropdown.classList.toggle('show');
+        });
+
+        // Close dropdown when clicking outside
+        document.addEventListener('click', function (e) {
+          if (!appsTrigger.contains(e.target)) {
+            appsDropdown.classList.remove('show');
+          }
+        });
+
+        // Prevent dropdown from closing when clicking inside it
+        appsDropdown.addEventListener('click', function (e) {
+          e.stopPropagation();
+        });
+      }
+    });
+  </script>
+
+  <!-- ============================================
+       EXCLUSIVE SMOOTH SCROLL ANIMATION ENGINE
+       Premium reveal + parallax + progress bar
+       ============================================ -->
+  <script>
+  (function() {
+    'use strict';
+
+    /* --- 1. Scroll Progress Glow Bar --- */
+    const progressBar = document.createElement('div');
+    progressBar.className = 'scroll-progress-glow';
+    document.body.appendChild(progressBar);
+
+    /* --- 2. Floating Scroll Particles --- */
+    const particlesContainer = document.createElement('div');
+    particlesContainer.className = 'scroll-particles';
+    for (let i = 0; i < 5; i++) {
+      const p = document.createElement('span');
+      p.className = 'scroll-particle';
+      p.style.left = (Math.random() * 100) + '%';
+      particlesContainer.appendChild(p);
+    }
+    document.body.appendChild(particlesContainer);
+
+    /* --- 3. Intersection Observer for Scroll Reveals --- */
+    const revealSelectors = [
+      '.scroll-reveal',
+      '.scroll-reveal-left',
+      '.scroll-reveal-right',
+      '.scroll-reveal-scale',
+      '.scroll-reveal-rotate',
+      '.stagger-children'
+    ];
+
+    const revealObserver = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('revealed');
+
+          // Skills progress bar fill
+          if (entry.target.classList.contains('skills')) {
+            entry.target.classList.add('skills-animated');
+            entry.target.querySelectorAll('.progress-bar').forEach(function(bar) {
+              const val = bar.getAttribute('aria-valuenow');
+              bar.style.width = val + '%';
+            });
+          }
+
+          // Stats counter pop
+          if (entry.target.id === 'stats') {
+            entry.target.querySelectorAll('.stats-item').forEach(function(item, i) {
+              setTimeout(function() {
+                item.classList.add('counter-pop');
+              }, i * 150);
+            });
+          }
+        }
+      });
+    }, {
+      threshold: 0.12,
+      rootMargin: '0px 0px -60px 0px'
+    });
+
+    document.querySelectorAll(revealSelectors.join(',')).forEach(function(el) {
+      revealObserver.observe(el);
+    });
+
+    /* --- 4. Game Cards Stagger Animation --- */
+    const gamesGrid = document.querySelector('.games-grid');
+    if (gamesGrid) {
+      gamesGrid.classList.add('stagger-children');
+      revealObserver.observe(gamesGrid);
+    }
+
+    /* --- 5. Scroll Progress Bar Update --- */
+    function updateScrollProgress() {
+      const scrollTop = window.scrollY || document.documentElement.scrollTop;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const progress = docHeight > 0 ? scrollTop / docHeight : 0;
+      progressBar.style.transform = 'scaleX(' + progress + ')';
+    }
+
+    /* --- 6. Parallax Layers on Scroll --- */
+    function updateParallax() {
+      const scrollY = window.scrollY;
+      document.querySelectorAll('.parallax-layer').forEach(function(layer) {
+        const speed = parseFloat(layer.dataset.speed) || 0.15;
+        layer.style.transform = 'translateY(' + (scrollY * speed) + 'px)';
+      });
+    }
+
+    /* --- 7. Section Title Parallax Depth --- */
+    function updateTitleDepth() {
+      document.querySelectorAll('.section-title h2').forEach(function(title) {
+        const rect = title.getBoundingClientRect();
+        const viewH = window.innerHeight;
+        if (rect.top < viewH && rect.bottom > 0) {
+          const ratio = (viewH - rect.top) / (viewH + rect.height);
+          const offset = (ratio - 0.5) * 20;
+          title.style.transform = 'translateY(' + offset + 'px)';
+        }
+      });
+    }
+
+    /* --- 8. Particles visibility toggle based on scroll activity --- */
+    let scrollTimeout;
+    function handleScrollActivity() {
+      particlesContainer.style.opacity = '1';
+      clearTimeout(scrollTimeout);
+      scrollTimeout = setTimeout(function() {
+        particlesContainer.style.opacity = '0';
+      }, 1500);
+    }
+    particlesContainer.style.transition = 'opacity 0.6s ease';
+    particlesContainer.style.opacity = '0';
+
+    /* --- 9. Unified Scroll Handler (throttled via rAF) --- */
+    let ticking = false;
+    function onScroll() {
+      if (!ticking) {
+        requestAnimationFrame(function() {
+          updateScrollProgress();
+          updateParallax();
+          updateTitleDepth();
+          ticking = false;
+        });
+        ticking = true;
+      }
+      handleScrollActivity();
+    }
+    window.addEventListener('scroll', onScroll, { passive: true });
+
+    /* --- 10. Initial call --- */
+    updateScrollProgress();
+
+    /* --- 11. Smooth reveal for hero to first section transition --- */
+    const heroSection = document.getElementById('hero');
+    if (heroSection) {
+      const heroObserver = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          if (!entry.isIntersecting) {
+            particlesContainer.style.opacity = '1';
+            setTimeout(function() {
+              particlesContainer.style.opacity = '0';
+            }, 2000);
+          }
+        });
+      }, { threshold: 0.3 });
+      heroObserver.observe(heroSection);
+    }
   })();
   </script>
 

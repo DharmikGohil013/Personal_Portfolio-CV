@@ -286,9 +286,7 @@
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com" rel="preconnect">
   <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Poppins:wght@300;400;600&display=swap"
-    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
   <!-- Vendor CSS Files -->
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -303,395 +301,704 @@
   <link href="assets/css/responsive-global.css" rel="stylesheet">
 
   <style>
-    /* YouTube-Style Certificate Cards */
+    /* ============================================
+       macOS-INSPIRED ACHIEVEMENTS PAGE
+       Sonoma/Sequoia Dark Mode Aesthetic
+       ============================================ */
+
     body {
-      background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+      background: #09090F !important;
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+    }
+
+    .achievements-page {
+      position: relative;
       min-height: 100vh;
-      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(180deg, #0f1420 0%, #0a0e18 50%, #0f1420 100%);
+      padding: 40px 0 120px;
     }
 
-    .certificates {
-      padding: 80px 20px;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .certificates h1,
-    .certificates h2 {
-      text-align: center;
-      font-size: 3rem;
-      font-weight: 700;
-      color: #fff;
-      margin-bottom: 60px;
-      font-family: 'Orbitron', sans-serif;
-      text-transform: uppercase;
-      letter-spacing: 3px;
-      position: relative;
-      z-index: 10;
-    }
-
-    .certificates h1 {
-      font-size: 3.5rem;
-      margin-bottom: 20px;
-    }
-
-    @media (max-width: 768px) {
-      .certificates h1 {
-        font-size: 2rem;
-      }
-
-      .certificates h2 {
-        font-size: 1.8rem;
-      }
-    }
-
-
-    /* Floating Particles Background */
-    .particles {
+    .achievements-page::before {
+      content: '';
       position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 60% 40% at 15% 20%, rgba(191,90,242,0.06) 0%, transparent 60%),
+        radial-gradient(ellipse 50% 50% at 85% 60%, rgba(10,132,255,0.05) 0%, transparent 60%),
+        radial-gradient(ellipse 40% 30% at 50% 90%, rgba(255,159,10,0.04) 0%, transparent 50%);
       pointer-events: none;
+      z-index: 0;
+    }
+
+    .achievements-page > .container {
+      position: relative;
       z-index: 1;
     }
 
-    .particle {
-      position: absolute;
-      width: 10px;
-      height: 10px;
-      background: rgba(245, 180, 97, 0.6);
-      border-radius: 50%;
-      animation: float 6s infinite ease-in-out;
-      box-shadow: 0 0 15px rgba(245, 180, 97, 0.8);
+    /* ---- Page Header ---- */
+    .page-header {
+      text-align: center;
+      padding: 30px 0 50px;
     }
 
-    @keyframes float {
-
-      0%,
-      100% {
-        transform: translateY(0) scale(1);
-        opacity: 0.6;
-      }
-
-      50% {
-        transform: translateY(-30px) scale(1.2);
-        opacity: 1;
-      }
+    .page-header-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(191,90,242,0.1);
+      border: 1px solid rgba(191,90,242,0.25);
+      color: #BF5AF2;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      font-weight: 600;
+      padding: 5px 14px;
+      border-radius: 20px;
+      margin-bottom: 16px;
+      letter-spacing: 0.5px;
     }
 
-    /* Certificate Grid - YouTube Style */
-    .certificates-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-      gap: 30px;
-      max-width: 1400px;
+    .page-header h1 {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 700;
+      color: #fff;
+      letter-spacing: -0.8px;
+      margin: 0 0 10px;
+      line-height: 1.1;
+    }
+
+    .page-header p {
+      font-family: 'Inter', -apple-system, sans-serif;
+      color: rgba(255,255,255,0.4);
+      font-size: 0.95rem;
+      max-width: 550px;
       margin: 0 auto;
-      position: relative;
-      z-index: 10;
-      padding: 0 20px;
     }
 
-    .certificate {
-      background: #1a1a2e;
-      border-radius: 12px;
+    /* ---- macOS Category Window ---- */
+    .mac-category-window {
+      background: rgba(28,28,38,0.55);
+      backdrop-filter: blur(40px) saturate(1.8);
+      -webkit-backdrop-filter: blur(40px) saturate(1.8);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 16px;
+      box-shadow:
+        0 8px 32px rgba(0,0,0,0.4),
+        inset 0 1px 0 rgba(255,255,255,0.06);
       overflow: hidden;
-      transition: all 0.3s ease;
-      cursor: pointer;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+      margin-bottom: 36px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
-    .certificate:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 12px 30px rgba(245, 180, 97, 0.4);
+    .mac-category-window:hover {
+      transform: translateY(-3px);
+      box-shadow:
+        0 16px 48px rgba(0,0,0,0.5),
+        0 0 40px rgba(10,132,255,0.06),
+        inset 0 1px 0 rgba(255,255,255,0.08);
     }
 
-    /* Remove the flip card structure */
-    .certificate-inner {
-      position: relative;
-      width: 100%;
+    /* Window Titlebar */
+    .mac-window-titlebar {
+      background: rgba(255,255,255,0.04);
+      border-bottom: 1px solid rgba(255,255,255,0.07);
+      padding: 13px 18px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      user-select: none;
+    }
+
+    .mac-window-dots {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+      flex-shrink: 0;
+    }
+
+    .mac-window-dots span {
+      width: 13px;
+      height: 13px;
+      border-radius: 50%;
+      display: inline-block;
+      transition: filter 0.2s, transform 0.2s;
+      cursor: default;
+    }
+
+    .mac-window-dots span:hover {
+      filter: brightness(1.25);
+      transform: scale(1.1);
+    }
+
+    .mac-dot-red { background: #FF5F56; box-shadow: 0 0 8px rgba(255,95,86,0.5); }
+    .mac-dot-yellow { background: #FFBD2E; box-shadow: 0 0 8px rgba(255,189,46,0.5); }
+    .mac-dot-green { background: #27C93F; box-shadow: 0 0 8px rgba(39,201,63,0.5); }
+
+    .mac-window-label {
+      flex: 1;
+      text-align: center;
+      font-family: 'Inter', -apple-system, sans-serif;
+      font-size: 13px;
+      font-weight: 500;
+      color: rgba(255,255,255,0.5);
+      letter-spacing: 0.2px;
+    }
+
+    .mac-window-label i {
+      margin-right: 6px;
+      font-size: 12px;
+    }
+
+    .mac-window-body {
+      padding: 28px 28px 32px;
+    }
+
+    /* ---- Certificate Card ---- */
+    .mac-cert-card {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 14px;
+      overflow: hidden;
+      transition: all 0.3s cubic-bezier(.4,0,.2,1);
       height: 100%;
+      display: flex;
+      flex-direction: column;
     }
 
-    .certificate-front,
-    .certificate-back {
-      display: none;
-      /* Hide old structure */
+    .mac-cert-card:hover {
+      background: rgba(255,255,255,0.06);
+      border-color: rgba(10,132,255,0.25);
+      transform: translateY(-6px);
+      box-shadow: 0 12px 36px rgba(0,0,0,0.3), 0 0 20px rgba(10,132,255,0.08);
     }
 
-    /* YouTube-Style Thumbnail */
-    .certificate-thumbnail {
+    /* Thumbnail */
+    .mac-cert-thumb {
       position: relative;
       width: 100%;
       padding-top: 56.25%;
-      /* 16:9 Aspect Ratio */
       overflow: hidden;
-      background: linear-gradient(135deg, #2d2d44, #1a1a2e);
+      background: rgba(255,255,255,0.02);
     }
 
-    .certificate-thumbnail img {
+    .mac-cert-thumb img {
       position: absolute;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
       object-fit: cover;
-      transition: transform 0.3s ease;
+      transition: transform 0.4s cubic-bezier(.4,0,.2,1);
     }
 
-    .certificate:hover .certificate-thumbnail img {
-      transform: scale(1.1);
+    .mac-cert-card:hover .mac-cert-thumb img {
+      transform: scale(1.06);
     }
 
-    /* Certificate Badge Overlay */
-    .certificate-badge {
+    /* Type Badge */
+    .mac-type-badge {
       position: absolute;
       top: 10px;
       right: 10px;
-      background: rgba(245, 180, 97, 0.9);
-      color: #fff;
-      padding: 5px 12px;
-      border-radius: 20px;
-      font-size: 11px;
-      font-weight: 600;
+      padding: 4px 12px;
+      border-radius: 8px;
+      font-family: 'Inter', -apple-system, sans-serif;
+      font-size: 10px;
+      font-weight: 700;
       text-transform: uppercase;
-      letter-spacing: 1px;
-      box-shadow: 0 2px 8px rgba(245, 180, 97, 0.5);
+      letter-spacing: 0.8px;
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
     }
 
-    .certificate-badge.achievement {
-      background: linear-gradient(135deg, #f093fb, #f5576c);
+    .mac-type-badge.achievement {
+      background: rgba(191,90,242,0.85);
+      color: #fff;
+      box-shadow: 0 2px 10px rgba(191,90,242,0.4);
     }
 
-    .certificate-badge.learning {
-      background: linear-gradient(135deg, #4facfe, #00f2fe);
+    .mac-type-badge.learning {
+      background: rgba(10,132,255,0.85);
+      color: #fff;
+      box-shadow: 0 2px 10px rgba(10,132,255,0.4);
     }
 
-    .certificate-badge.participate {
-      background: linear-gradient(135deg, #43e97b, #38f9d7);
+    .mac-type-badge.participate {
+      background: rgba(48,209,88,0.85);
+      color: #fff;
+      box-shadow: 0 2px 10px rgba(48,209,88,0.4);
     }
 
-    .certificate-badge.hackathon {
-      background: linear-gradient(135deg, #fa709a, #fee140);
+    .mac-type-badge.hackathon {
+      background: rgba(255,159,10,0.85);
+      color: #fff;
+      box-shadow: 0 2px 10px rgba(255,159,10,0.4);
     }
 
-    .certificate-badge.extra {
-      background: linear-gradient(135deg, #30cfd0, #330867);
+    .mac-type-badge.gamejam {
+      background: rgba(255,55,95,0.85);
+      color: #fff;
+      box-shadow: 0 2px 10px rgba(255,55,95,0.4);
     }
 
-    /* Duration Badge (like YouTube duration) */
-    .duration-badge {
+    .mac-type-badge.extra {
+      background: rgba(100,210,255,0.85);
+      color: #fff;
+      box-shadow: 0 2px 10px rgba(100,210,255,0.4);
+    }
+
+    /* Duration Pill */
+    .mac-duration-pill {
       position: absolute;
       bottom: 10px;
       right: 10px;
-      background: rgba(0, 0, 0, 0.85);
-      color: #fff;
-      padding: 3px 8px;
-      border-radius: 4px;
-      font-size: 12px;
-      font-weight: 600;
-    }
-
-    /* Certificate Content */
-    .certificate-content {
-      padding: 15px;
-      background: #16213e;
-    }
-
-    .certificate-title {
-      font-size: 16px;
-      font-weight: 600;
-      color: #fff;
-      margin: 0 0 8px 0;
-      line-height: 1.4;
-      display: -webkit-box;
-      -webkit-line-clamp: 2;
-      -webkit-box-orient: vertical;
-      overflow: hidden;
-      height: 44px;
-    }
-
-    .certificate-meta {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      color: #aaa;
-      font-size: 13px;
-      margin-bottom: 8px;
-    }
-
-    .certificate-meta i {
-      color: #F5B461;
-    }
-
-    .certificate-description {
-      color: #bbb;
-      font-size: 13px;
-      line-height: 1.5;
-      margin-bottom: 12px;
-      display: -webkit-box;
-      -webkit-line-clamp: 2;
-      -webkit-box-orient: vertical;
-      overflow: hidden;
-      height: 40px;
-    }
-
-    .certificate-actions {
-      display: flex;
-      gap: 10px;
-      flex-wrap: wrap;
-    }
-
-    .view-certificate {
-      display: inline-flex;
-      align-items: center;
-      gap: 5px;
-      background: linear-gradient(135deg, #F5B461, #e09a4a);
-      color: #fff;
-      padding: 8px 16px;
+      background: rgba(0,0,0,0.75);
+      backdrop-filter: blur(8px);
+      color: rgba(255,255,255,0.9);
+      padding: 3px 10px;
       border-radius: 6px;
-      text-decoration: none;
-      font-size: 13px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
       font-weight: 600;
-      transition: all 0.3s ease;
-      box-shadow: 0 2px 8px rgba(245, 180, 97, 0.3);
+      border: 1px solid rgba(255,255,255,0.1);
     }
 
-    .view-certificate:hover {
-      background: linear-gradient(135deg, #ffc570, #F5B461);
-      transform: translateY(-2px);
-      box-shadow: 0 4px 12px rgba(245, 180, 97, 0.5);
-      color: #fff;
-    }
-
-    .view-certificate i {
-      font-size: 14px;
-    }
-
-    /* Verified Icon */
-    .verified-icon {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 18px;
-      height: 18px;
-      background: #F5B461;
-      border-radius: 50%;
-      margin-left: 5px;
-    }
-
-    .verified-icon i {
-      color: #fff;
-      font-size: 10px;
-    }
-
-    /* Responsive Design */
-    @media (max-width: 768px) {
-      .certificates h2 {
-        font-size: 2rem;
-        margin-bottom: 40px;
-      }
-
-      .certificates-grid {
-        grid-template-columns: 1fr;
-        gap: 20px;
-      }
-
-      .certificate-title {
-        font-size: 15px;
-      }
-    }
-
-    @media (min-width: 769px) and (max-width: 1024px) {
-      .certificates-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
-
-    @media (min-width: 1025px) {
-      .certificates-grid {
-        grid-template-columns: repeat(3, 1fr);
-      }
-    }
-
-    /* Hover Play Icon (Like YouTube) */
-    .play-overlay {
+    /* Hover Icon Overlay */
+    .mac-hover-icon {
       position: absolute;
       top: 50%;
       left: 50%;
-      transform: translate(-50%, -50%);
-      width: 60px;
-      height: 60px;
-      background: rgba(0, 0, 0, 0.7);
-      border-radius: 50%;
+      transform: translate(-50%, -50%) scale(0.8);
+      width: 52px;
+      height: 52px;
+      background: rgba(10,132,255,0.85);
+      backdrop-filter: blur(10px);
+      border-radius: 14px;
       display: flex;
       align-items: center;
       justify-content: center;
       opacity: 0;
-      transition: opacity 0.3s ease;
+      transition: all 0.3s cubic-bezier(.4,0,.2,1);
       pointer-events: none;
+      box-shadow: 0 8px 24px rgba(10,132,255,0.4);
     }
 
-    .certificate:hover .play-overlay {
+    .mac-cert-card:hover .mac-hover-icon {
       opacity: 1;
+      transform: translate(-50%, -50%) scale(1);
     }
 
-    .play-overlay i {
-      color: #F5B461;
-      font-size: 24px;
-      margin-left: 4px;
+    .mac-hover-icon i {
+      color: #fff;
+      font-size: 20px;
     }
 
-    /* ========================================
-       MOBILE NAVIGATION FIXES - CRITICAL
-       Override conflicting styles from main.css
-       ======================================== */
+    /* Card Content */
+    .mac-cert-content {
+      padding: 18px 18px 20px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
 
-    /* Force dark background on mobile menu */
-    @media (max-width: 1199px) {
-      .navmenu {
-        background: rgba(26, 31, 46, 0.98) !important;
-        backdrop-filter: blur(10px);
-        -webkit-backdrop-filter: blur(10px);
-      }
+    .mac-cert-title {
+      font-family: 'Inter', -apple-system, sans-serif;
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: #fff;
+      margin: 0 0 6px;
+      line-height: 1.4;
+      letter-spacing: -0.2px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
 
-      /* Force white/light text color */
-      .navmenu a {
-        color: rgba(255, 255, 255, 0.9) !important;
-      }
+    .mac-verified {
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background: #0A84FF;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
 
-      .navmenu a:hover,
-      .navmenu a.active {
-        color: #F5B461 !important;
-      }
+    .mac-verified i {
+      color: #fff;
+      font-size: 8px;
+    }
 
-      /* Fix dropdown text colors */
-      .dropdown ul a {
-        color: rgba(255, 255, 255, 0.8) !important;
-      }
+    .mac-cert-meta {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-family: 'Inter', -apple-system, sans-serif;
+      color: rgba(255,255,255,0.35);
+      font-size: 0.78rem;
+      margin-bottom: 10px;
+    }
 
-      .dropdown ul a:hover {
-        color: #F5B461 !important;
-      }
+    .mac-cert-meta i {
+      color: #0A84FF;
+      font-size: 0.7rem;
+    }
 
-      /* Fix toggle dropdown icon color */
-      .toggle-dropdown {
-        color: rgba(255, 255, 255, 0.9) !important;
-        background: transparent !important;
-        border: none !important;
-        box-shadow: none !important;
-      }
+    .mac-cert-desc {
+      font-family: 'Inter', -apple-system, sans-serif;
+      color: rgba(255,255,255,0.45);
+      font-size: 0.82rem;
+      line-height: 1.55;
+      margin: 0 0 16px;
+      flex: 1;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
 
-      .dropdown.active>a .toggle-dropdown {
-        color: #F5B461 !important;
-      }
+    /* Action Buttons */
+    .mac-cert-actions {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-top: auto;
+    }
 
-      /* Remove any background from dropdown icons */
-      .navmenu a i {
-        background-color: transparent !important;
-        border: none !important;
+    .mac-view-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      background: #0A84FF;
+      color: #fff;
+      padding: 7px 14px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-family: 'Inter', -apple-system, sans-serif;
+      font-size: 0.75rem;
+      font-weight: 600;
+      transition: all 0.2s ease;
+      box-shadow: 0 2px 10px rgba(10,132,255,0.3);
+      letter-spacing: 0.2px;
+    }
+
+    .mac-view-btn:hover {
+      background: #1B90FF;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 18px rgba(10,132,255,0.45);
+      color: #fff;
+    }
+
+    .mac-view-btn.secondary {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.1);
+      color: rgba(255,255,255,0.7);
+      box-shadow: none;
+    }
+
+    .mac-view-btn.secondary:hover {
+      background: rgba(255,255,255,0.12);
+      border-color: rgba(255,255,255,0.2);
+      color: #fff;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    }
+
+    .mac-view-btn i {
+      font-size: 12px;
+    }
+
+    /* ---- Footer ---- */
+    .footer {
+      background: #0a0e18 !important;
+      border-top: 1px solid rgba(255,255,255,0.06) !important;
+      padding: 30px 0 80px 0 !important;
+      position: relative;
+      z-index: 1;
+    }
+
+    .footer .container {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+    }
+
+    .footer .copyright {
+      text-align: right !important;
+    }
+
+    .footer .copyright p {
+      font-family: 'Inter', -apple-system, sans-serif !important;
+      color: rgba(255,255,255,0.4) !important;
+      font-size: 0.85rem;
+    }
+
+    .footer .social-links {
+      justify-content: flex-end !important;
+    }
+
+    .footer .social-links a {
+      width: 36px;
+      height: 36px;
+      display: inline-flex !important;
+      align-items: center;
+      justify-content: center;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 10px;
+      color: rgba(255,255,255,0.5) !important;
+      font-size: 1rem;
+      transition: all 0.2s ease;
+      margin: 0 5px !important;
+    }
+
+    .footer .social-links a:hover {
+      background: rgba(10,132,255,0.15) !important;
+      border-color: rgba(10,132,255,0.4) !important;
+      color: #0A84FF !important;
+      transform: translateY(-3px);
+    }
+
+    /* ---- Responsive ---- */
+    @media (max-width: 768px) {
+      .achievements-page { padding: 20px 0 100px; }
+      .page-header { padding: 20px 0 30px; }
+      .page-header h1 { font-size: 1.8rem; }
+      .mac-window-body { padding: 20px 16px 24px; }
+      .mac-cert-content { padding: 14px 14px 16px; }
+    }
+
+    @media (max-width: 575px) {
+      .mac-window-titlebar { padding: 10px 13px; }
+      .mac-window-body { padding: 16px 12px 20px; }
+      .page-header h1 { font-size: 1.5rem; }
+    }
+
+    /* ====== PREMIUM SCROLL ANIMATIONS ====== */
+    .scroll-progress-glow {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 3px;
+      width: 0%;
+      background: linear-gradient(90deg, #0A84FF, #BF5AF2, #FF375F, #FF9F0A);
+      z-index: 99999;
+      transition: width 0.1s linear;
+      box-shadow: 0 0 15px rgba(10, 132, 255, 0.5), 0 0 30px rgba(191, 90, 242, 0.3);
+    }
+
+    .scroll-reveal {
+      opacity: 0;
+      transform: translateY(60px);
+      transition: all 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+      will-change: transform, opacity;
+    }
+    .scroll-reveal.revealed {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .scroll-reveal-left {
+      opacity: 0;
+      transform: translateX(-80px);
+      transition: all 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+      will-change: transform, opacity;
+    }
+    .scroll-reveal-left.revealed {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    .scroll-reveal-right {
+      opacity: 0;
+      transform: translateX(80px);
+      transition: all 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+      will-change: transform, opacity;
+    }
+    .scroll-reveal-right.revealed {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    .scroll-reveal-scale {
+      opacity: 0;
+      transform: scale(0.85);
+      transition: all 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+      will-change: transform, opacity;
+    }
+    .scroll-reveal-scale.revealed {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    .scroll-reveal-rotate {
+      opacity: 0;
+      transform: perspective(800px) rotateY(15deg) translateX(40px);
+      transition: all 1s cubic-bezier(0.22, 1, 0.36, 1);
+      will-change: transform, opacity;
+    }
+    .scroll-reveal-rotate.revealed {
+      opacity: 1;
+      transform: perspective(800px) rotateY(0deg) translateX(0);
+    }
+
+    .scroll-glow {
+      transition: box-shadow 0.6s ease;
+    }
+    .scroll-glow.revealed {
+      box-shadow: 0 0 30px rgba(191, 90, 242, 0.15), 0 8px 32px rgba(0, 0, 0, 0.3);
+    }
+
+    .scroll-particle {
+      position: fixed;
+      width: 4px;
+      height: 4px;
+      border-radius: 50%;
+      pointer-events: none;
+      z-index: 99998;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .mac-cert-card {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .revealed .mac-cert-card {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .revealed .col-md-6:nth-child(1) .mac-cert-card,
+    .revealed .col-lg-4:nth-child(1) .mac-cert-card { transition-delay: 0.05s; }
+    .revealed .col-md-6:nth-child(2) .mac-cert-card,
+    .revealed .col-lg-4:nth-child(2) .mac-cert-card { transition-delay: 0.12s; }
+    .revealed .col-md-6:nth-child(3) .mac-cert-card,
+    .revealed .col-lg-4:nth-child(3) .mac-cert-card { transition-delay: 0.19s; }
+    .revealed .col-md-6:nth-child(4) .mac-cert-card,
+    .revealed .col-lg-4:nth-child(4) .mac-cert-card { transition-delay: 0.26s; }
+    .revealed .col-md-6:nth-child(5) .mac-cert-card,
+    .revealed .col-lg-4:nth-child(5) .mac-cert-card { transition-delay: 0.33s; }
+    .revealed .col-md-6:nth-child(6) .mac-cert-card,
+    .revealed .col-lg-4:nth-child(6) .mac-cert-card { transition-delay: 0.40s; }
+    .revealed .col-md-6:nth-child(7) .mac-cert-card,
+    .revealed .col-lg-4:nth-child(7) .mac-cert-card { transition-delay: 0.47s; }
+    .revealed .col-md-6:nth-child(8) .mac-cert-card,
+    .revealed .col-lg-4:nth-child(8) .mac-cert-card { transition-delay: 0.54s; }
+
+    .page-header .page-header-badge,
+    .page-header h1,
+    .page-header p {
+      transition: transform 0.3s ease-out;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .scroll-reveal, .scroll-reveal-left, .scroll-reveal-right,
+      .scroll-reveal-scale, .scroll-reveal-rotate {
+        opacity: 1 !important;
+        transform: none !important;
+        transition: none !important;
       }
+      .mac-cert-card {
+        opacity: 1 !important;
+        transform: none !important;
+        transition: none !important;
+      }
+      .scroll-progress-glow { display: none; }
+    }
+
+    /* ---- macOS Menu Bar ---- */
+    .macos-menubar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 28px;
+      background: rgba(22,22,26,0.92);
+      backdrop-filter: blur(25px) saturate(2);
+      -webkit-backdrop-filter: blur(25px) saturate(2);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 18px;
+      z-index: 9998;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      box-shadow: 0 1px 0 rgba(0,0,0,0.15);
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+
+    .menubar-left {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .menubar-apple {
+      font-size: 16px;
+      color: rgba(255,255,255,0.95);
+    }
+
+    .menubar-left span {
+      font-size: 13px;
+      font-weight: 500;
+      color: rgba(255,255,255,0.88);
+      cursor: default;
+      user-select: none;
+      transition: color 0.15s ease;
+    }
+
+    .menubar-left span:hover:not(.menubar-apple) {
+      color: rgba(255,255,255,1);
+    }
+
+    .menubar-left span.menubar-brand {
+      font-weight: 700;
+      color: rgba(255,255,255,0.95);
+    }
+
+    .menubar-right {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      font-size: 12px;
+      color: rgba(255,255,255,0.85);
+    }
+
+    .menubar-right a {
+      color: inherit;
+      text-decoration: none;
+      transition: color 0.15s ease;
+      display: flex;
+      align-items: center;
+    }
+
+    .menubar-right a:hover {
+      color: rgba(255,255,255,1);
+    }
+
+    .menubar-right i {
+      font-size: 14px;
+      transition: color 0.15s ease;
+    }
+
+    .menubar-right i:hover {
+      color: rgba(255,255,255,1);
+    }
+
+    #menubar-clock {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      font-size: 12px;
+      font-weight: 500;
+      color: rgba(255,255,255,0.9);
+      letter-spacing: 0.4px;
+      min-width: 44px;
+      text-align: right;
+    }
+
+    @media (max-width: 768px) {
+      .macos-menubar { display: none; }
     }
   </style>
 
@@ -759,890 +1066,669 @@
   <meta name="application-name" content="Dharmik Gohil">
 
 <body class="index-page">
-  <header id="header" class="header d-flex align-items-center sticky-top">
-    <div class="container-fluid position-relative d-flex align-items-center justify-content-between">
-      <a href="index.html" class="logo d-flex align-items-center me-auto me-xl-0">
-        <img src="assets/img/dlogo.png" alt="dharmik gohil personal portfolio logo and brand identity">
-        <h1 class="sitename">DHARMIK</h1>
-      </a>
-      <nav id="navmenu" class="navmenu">
-        <ul>
-          <li><a href="https://dharmikgohil.art">Home</a></li>
-          <li><a href="services.html">Abilities</a></li>
-          <li class="dropdown"><a href="https://dharmikgohil.art/portfolio.html"><span>Projects</span> <i
-                class="bi bi-chevron-down toggle-dropdown"></i></a>
-            <ul>
-              <li><a href="portfolio.html">Games</a></li>
-          </li>
-          <li class="dropdown"><a href="#"><span>Flutter App</span> <i
-                class="bi bi-chevron-down toggle-dropdown"></i></a>
-            <ul>
-              <li><a href="assets/Fit Sync.apk">Fit Sync</a></li>
-            </ul>
-          </li>
-          <li class="dropdown"><a href="logo.html"><span>Ui/ux</span> <i
-                class="bi bi-chevron-down toggle-dropdown"></i></a>
-            <ul>
-              <li><a href="logo.html">Designs</a></li>
-            </ul>
-          </li>
-          <li class="dropdown"><a href="#"><span>Websites</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-            <ul>
-              <li><a href="http://gdgs.dharmikgohil.art/">GDGS Games</a></li>
-              <!-- <li><a href="https://dharmikgohil013.github.io/DHARMIK-GOHIL-FILMS/">Film industry</a></li> -->
-              <li><a href="http://flipcart.dharmikgohil.art/">Flipkart Clone</a></li>
-              <li><a href="http://krishna.dharmikgohil.art/">Krishna Construction</a></li>
-              <!-- <li><a href="#">MedCare</a></li> -->
-            </ul>
 
-          <li class="dropdown"><a href="#"><span>Java</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-            <ul>
-              <li class="dropdown"><a href="#"><span>CampusAdminPro</span> <i
-                    class="bi bi-chevron-down toggle-dropdown"></i></a>
-                <ul>
-                  <li><a
-                      href="https://drive.google.com/file/d/15YNf77gERCt2LYfRYSdXiYU3yAkx7EvC/view?usp=drive_link">Report</a>
-                  </li>
-                </ul>
-              </li>
+  <!-- macOS Menu Bar -->
+  <div class="macos-menubar">
+    <div class="menubar-left">
+      <span class="menubar-apple"><a href="index.html" style="color:inherit;text-decoration:none;"><i class="bi bi-house-fill"></i></a></span>
+      <span class="menubar-brand">Dharmik Gohil</span>
+      <span><a href="blog.html" style="color:inherit;text-decoration:none;display:flex;align-items:center;gap:4px;"><i class="bi bi-rss"></i> Blog</a></span>
+      <span>Achievements</span>
+      <span>Certifications</span>
+    </div>
+    <div class="menubar-right">
+      <a href="https://github.com/DharmikGohil013" target="_blank" rel="noopener noreferrer"><i class="bi bi-github"></i></a>
+      <a href="https://www.linkedin.com/in/dharmikgohil086/" target="_blank" rel="noopener noreferrer"><i class="bi bi-linkedin"></i></a>
+      <a href="https://www.instagram.com/dharmik.086/?next=%2F" target="_blank" rel="noopener noreferrer"><i class="bi bi-instagram"></i></a>
+      <a href="https://x.com/Dharmik086" target="_blank" rel="noopener noreferrer"><i class="bi bi-twitter"></i></a>
+      <i class="bi bi-wifi"></i>
+      <i class="bi bi-battery-full"></i>
+      <span id="menubar-clock">--:--</span>
+    </div>
+  </div>
 
-            </ul>
-          </li>
-          <li class="dropdown"><a href="#"><span>Node Js</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-            <ul>
-              <li><a href="https://indianturijam.dharmikgohil.art/">IndianTurijam</a></li>
-              <li><a href="contact.html">Contact Page</a></li>
-            </ul>
-          </li>
-          <li class="dropdown"><a href="#"><span>C & C++</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-            <ul>
-              <li><a href="https://github.com/DharmikGohil013/Hostel_Menegment_System_iDGAWS-">Hostel Management</a>
-              </li>
-              <li><a href="https://github.com/DharmikGohil013/Bank_Mangemnt_System">Bank Management</a></li>
-            </ul>
-          </li>
-        </ul>
-        </li>
-        <li><a href="Achivemtn.html" class="active">Milestones</a></li>
-        <li class="dropdown"><a href="#"><span>Time to Fun</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-          <ul>
-            <li><a href="https://dharmik086.itch.io/floppy-bird-860" target="_blank" rel="noopener noreferrer">Floppy
-                Bird</a></li>
-            <li><a href="https://dharmik086.itch.io/minimario" target="_blank" rel="noopener noreferrer">MiniMario</a>
-            </li>
-            <li><a href="https://dharmikgohil.itch.io/mavericks-battlegrounds" target="_blank"
-                rel="noopener noreferrer">MAVERICKS BATTLEGROUNDS</a></li>
-          </ul>
-        </li>
-        <li><a href="blog.html">Blog</a></li>
-        <li class="dropdown">
-          <a href="#"><span style="color: #15ff00;">Services</span> <i
-              class="bi bi-chevron-down toggle-dropdown"></i></a>
-          <ul>
-            <li><a href="https://actify.dharmikgohil.art/" target="_blank" rel="noopener noreferrer">Actify</a></li>
-            <!-- ✅ NEW ENTRY -->
-            <li><a href="https://fkm.vercel.app/" target="_blank" rel="noopener noreferrer">Wifi Service</a></li>
-            <li><a href="assets/Fit Sync.apk" target="_blank" rel="noopener noreferrer">Fit Sync</a></li>
-            <li><a href="https://learnlink.dharmikgohil.art" target="_blank" rel="noopener noreferrer">Learn Link</a>
-            </li>
-
-          </ul>
-        </li>
-        </ul>
-        <button class="mobile-nav-toggle d-xl-none" aria-label="Toggle navigation">
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
-      </nav>
-      <div class="header-social-links">
-        <a href="https://github.com/DharmikGohil013" target="_blank" rel="noopener noreferrer"><i
-            class="bi bi-github"></i></a>
-        <a href="https://www.linkedin.com/in/dharmikgohil086/" target="_blank" rel="noopener noreferrer"><i
-            class="bi bi-linkedin"></i></a>
-        <a href="https://www.instagram.com/dharmik.086/?next=%2F" target="_blank" rel="noopener noreferrer"><i
-            class="bi bi-instagram"></i></a>
-        <a href="https://x.com/Dharmik086" target="_blank" rel="noopener noreferrer"><i class="bi bi-twitter"></i></a>
-        <a href="https://play.google.com/store/apps/details?id=com.dharmikgohilfun.crossout" target="_blank"
-          rel="noopener noreferrer"><i class="bi bi-google-play"></i></a>
-        <a href="assets/img/Dharmik Gohil Resume.pdf" class="download-resume" download><i
-            class="bi bi-download"></i></a>
+  <!-- Preloader -->
+  <div id="preloader">
+    <div class="cube-loader">
+      <div class="cube-top"></div>
+      <div class="cube-wrapper">
+        <span style="--i:0" class="cube-span"></span>
+        <span style="--i:1" class="cube-span"></span>
+        <span style="--i:2" class="cube-span"></span>
+        <span style="--i:3" class="cube-span"></span>
       </div>
     </div>
-  </header>
+  </div>
 
   <main>
-    <!-- Achievements Section -->
-    <section class="certificates">
-      <h1 data-aos="fade-down" data-aos-delay="100">Dharmik Gohil: Achievements & Certifications</h1>
-      <div class="particles">
-        <div class="particle" style="left: 10%; top: 20%; animation-delay: 0s;"></div>
-        <div class="particle" style="left: 30%; top: 50%; animation-delay: 1s;"></div>
-        <div class="particle" style="left: 70%; top: 30%; animation-delay: 2s;"></div>
-        <div class="particle" style="left: 90%; top: 60%; animation-delay: 3s;"></div>
-      </div>
-      <div class="certificates-grid">
-        <div class="certificate" data-aos="zoom-in" data-aos-delay="200">
-          <div class="certificate-thumbnail">
-            <img src="assets/img/Cer/1.jpg" alt="NPTEL DSA with Java Certificate">
-            <div class="certificate-badge achievement">Achievement</div>
-            <div class="duration-badge">Certified</div>
-            <div class="play-overlay">
-              <i class="bi bi-award-fill"></i>
+    <div class="achievements-page">
+      <div class="container">
+
+        <!-- Page Header -->
+        <div class="page-header scroll-reveal" data-aos="fade-down" data-aos-delay="100">
+          <div class="page-header-badge"><i class="bi bi-trophy-fill"></i> Portfolio</div>
+          <h1>Achievements &amp; Certifications</h1>
+          <p>A curated collection of milestones, certifications, hackathons, and learning journeys.</p>
+        </div>
+
+        <!-- ===================== ACHIEVEMENTS ===================== -->
+        <div class="mac-category-window scroll-reveal-left scroll-glow" data-aos="fade-up" data-aos-delay="150">
+          <div class="mac-window-titlebar">
+            <div class="mac-window-dots">
+              <span class="mac-dot-red"></span>
+              <span class="mac-dot-yellow"></span>
+              <span class="mac-dot-green"></span>
             </div>
+            <div class="mac-window-label"><i class="bi bi-award-fill"></i> Achievements</div>
           </div>
-          <div class="certificate-content">
-            <h3 class="certificate-title">
-              NPTEL DSA with Java
-              <span class="verified-icon"><i class="bi bi-patch-check-fill"></i></span>
-            </h3>
-            <div class="certificate-meta">
-              <i class="bi bi-calendar-event"></i>
-              <span>Completed 2024</span>
-            </div>
-            <p class="certificate-description">
-              Comprehensive certification showcasing proficiency in core data structures (arrays, linked lists, stacks,
-              queues, trees, graphs) and advanced algorithms (sorting, searching, dynamic programming, greedy
-              algorithms) implemented in Java. Completed through NPTEL, India's premier online learning platform by IITs
-              and IISc.
-            </p>
-            <div class="certificate-actions">
-              <a href="https://drive.google.com/file/d/10fyM4RjQnd6qBhr-30kK-eW3GnWvYLf4/view?usp=drive_link"
-                class="view-certificate" target="_blank" rel="noopener noreferrer">
-                <i class="bi bi-eye"></i> View Certificate
-              </a>
+          <div class="mac-window-body">
+            <div class="row g-4">
+
+              <!-- NPTEL DSA -->
+              <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="200">
+                <div class="mac-cert-card">
+                  <div class="mac-cert-thumb">
+                    <img src="assets/img/Cer/1.jpg" alt="NPTEL DSA with Java Certificate" loading="lazy">
+                    <span class="mac-type-badge achievement">Achievement</span>
+                    <span class="mac-duration-pill">Certified</span>
+                    <div class="mac-hover-icon"><i class="bi bi-award-fill"></i></div>
+                  </div>
+                  <div class="mac-cert-content">
+                    <h3 class="mac-cert-title">
+                      NPTEL DSA with Java
+                      <span class="mac-verified"><i class="bi bi-check2"></i></span>
+                    </h3>
+                    <div class="mac-cert-meta"><i class="bi bi-calendar-event"></i> Completed 2024</div>
+                    <p class="mac-cert-desc">Comprehensive certification showcasing proficiency in core data structures and advanced algorithms implemented in Java through NPTEL.</p>
+                    <div class="mac-cert-actions">
+                      <a href="https://drive.google.com/file/d/10fyM4RjQnd6qBhr-30kK-eW3GnWvYLf4/view?usp=drive_link" class="mac-view-btn" target="_blank" rel="noopener noreferrer"><i class="bi bi-eye"></i> View Certificate</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Code Raider Clash -->
+              <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="250">
+                <div class="mac-cert-card">
+                  <div class="mac-cert-thumb">
+                    <img src="assets/img/Cer/2.jpg" alt="Code Raider Clash 1st Rank" loading="lazy">
+                    <span class="mac-type-badge achievement">Achievement</span>
+                    <span class="mac-duration-pill">1st Rank</span>
+                    <div class="mac-hover-icon"><i class="bi bi-trophy-fill"></i></div>
+                  </div>
+                  <div class="mac-cert-content">
+                    <h3 class="mac-cert-title">
+                      Code Raider Clash – 1st Rank
+                      <span class="mac-verified"><i class="bi bi-check2"></i></span>
+                    </h3>
+                    <div class="mac-cert-meta"><i class="bi bi-award"></i> Competition Winner</div>
+                    <p class="mac-cert-desc">Secured 1st rank in the "Code Raider Clash" competitive programming competition hosted by DEPSTAR College at CHARUSAT University.</p>
+                    <div class="mac-cert-actions">
+                      <a href="https://drive.google.com/file/d/1HAT6VD7gDQ5_xn15_eVMGcsMDQg6-Ebk/view?usp=drive_link" class="mac-view-btn" target="_blank" rel="noopener noreferrer"><i class="bi bi-eye"></i> View Certificate</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- HackerRank C# -->
+              <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="300">
+                <div class="mac-cert-card">
+                  <div class="mac-cert-thumb">
+                    <img src="assets/img/Cer/11.jpg" alt="HackerRank C# Basic Certificate" loading="lazy">
+                    <span class="mac-type-badge achievement">Achievement</span>
+                    <span class="mac-duration-pill">Certified</span>
+                    <div class="mac-hover-icon"><i class="bi bi-code-slash"></i></div>
+                  </div>
+                  <div class="mac-cert-content">
+                    <h3 class="mac-cert-title">
+                      HackerRank C# Basic
+                      <span class="mac-verified"><i class="bi bi-check2"></i></span>
+                    </h3>
+                    <div class="mac-cert-meta"><i class="bi bi-file-earmark-code"></i> HackerRank Certified</div>
+                    <p class="mac-cert-desc">Earned HackerRank C# Certification, validating skills in C# programming and problem-solving.</p>
+                    <div class="mac-cert-actions">
+                      <a href="https://www.hackerrank.com/certificates/iframe/f0ec81cd0589" class="mac-view-btn" target="_blank" rel="noopener noreferrer"><i class="bi bi-eye"></i> View Certificate</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Web 3.0 Internship -->
+              <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="350">
+                <div class="mac-cert-card">
+                  <div class="mac-cert-thumb">
+                    <img src="assets/img/Cer/12.jpg" alt="Web 3.0 Project at Technook Pro" loading="lazy">
+                    <span class="mac-type-badge achievement">Achievement</span>
+                    <span class="mac-duration-pill">Internship</span>
+                    <div class="mac-hover-icon"><i class="bi bi-briefcase-fill"></i></div>
+                  </div>
+                  <div class="mac-cert-content">
+                    <h3 class="mac-cert-title">
+                      Web 3.0 Project at Technook Pro
+                      <span class="mac-verified"><i class="bi bi-check2"></i></span>
+                    </h3>
+                    <div class="mac-cert-meta"><i class="bi bi-building"></i> Professional Experience</div>
+                    <p class="mac-cert-desc">Completed Web 3.0 development internship focusing on blockchain technology, dApps, smart contracts, and Web3 development practices.</p>
+                    <div class="mac-cert-actions">
+                      <a href="https://drive.google.com/file/d/1QpViYnj7yfiFMvlsdorI4lIuISOcx2FO/view?usp=drive_link" class="mac-view-btn" target="_blank" rel="noopener noreferrer"><i class="bi bi-eye"></i> Internship Cert</a>
+                      <a href="https://drive.google.com/file/d/1wecLs0kkqwPDM5_wiVb-QeJcV4AbO4SK/view?usp=drive_link" class="mac-view-btn secondary" target="_blank" rel="noopener noreferrer"><i class="bi bi-file-text"></i> Offer Letter</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Google Cloud -->
+              <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="400">
+                <div class="mac-cert-card">
+                  <div class="mac-cert-thumb">
+                    <img src="assets/img/Cer/13.jpg" alt="Google Cloud Impact Hackathon" loading="lazy">
+                    <span class="mac-type-badge achievement">Achievement</span>
+                    <span class="mac-duration-pill">Hackathon</span>
+                    <div class="mac-hover-icon"><i class="bi bi-cloud-fill"></i></div>
+                  </div>
+                  <div class="mac-cert-content">
+                    <h3 class="mac-cert-title">
+                      Google Cloud Impact Hackathon
+                      <span class="mac-verified"><i class="bi bi-check2"></i></span>
+                    </h3>
+                    <div class="mac-cert-meta"><i class="bi bi-google"></i> Google Cloud</div>
+                    <p class="mac-cert-desc">Developed a Web 3.0 project during an internship, gaining experience in blockchain and decentralized tech.</p>
+                    <div class="mac-cert-actions">
+                      <a href="https://drive.google.com/file/d/1841zh602nc0RXIuiryb3wgKrdohY5gzV/view?usp=drive_link" class="mac-view-btn" target="_blank" rel="noopener noreferrer"><i class="bi bi-eye"></i> View Certificate</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
             </div>
           </div>
         </div>
 
-
-
-        <div class="certificate" data-aos="zoom-in" data-aos-delay="300">
-          <div class="certificate-thumbnail">
-            <img src="assets/img/Cer/2.jpg" alt="Code Raider Clash 1st Rank">
-            <div class="certificate-badge achievement">Achievement</div>
-            <div class="duration-badge">1st Rank</div>
-            <div class="play-overlay">
-              <i class="bi bi-trophy-fill"></i>
+        <!-- ===================== LEARNING ===================== -->
+        <div class="mac-category-window scroll-reveal-right scroll-glow" data-aos="fade-up" data-aos-delay="150">
+          <div class="mac-window-titlebar">
+            <div class="mac-window-dots">
+              <span class="mac-dot-red"></span>
+              <span class="mac-dot-yellow"></span>
+              <span class="mac-dot-green"></span>
             </div>
+            <div class="mac-window-label"><i class="bi bi-book-fill"></i> Learning</div>
           </div>
-          <div class="certificate-content">
-            <h3 class="certificate-title">
-              Code Raider Clash – 1st Rank
-              <span class="verified-icon"><i class="bi bi-patch-check-fill"></i></span>
-            </h3>
-            <div class="certificate-meta">
-              <i class="bi bi-award"></i>
-              <span>Competition Winner</span>
-            </div>
-            <p class="certificate-description">
-              Secured 1st rank in the "Code Raider Clash" competitive programming competition hosted by DEPSTAR College
-              at CHARUSAT University. Competed against fellow students solving algorithmic challenges using data
-              structures, problem-solving techniques, and efficient coding practices in a timed environment.
-            </p>
-            <div class="certificate-actions">
-              <a href="https://drive.google.com/file/d/1HAT6VD7gDQ5_xn15_eVMGcsMDQg6-Ebk/view?usp=drive_link"
-                class="view-certificate" target="_blank" rel="noopener noreferrer">
-                <i class="bi bi-eye"></i> View Certificate
-              </a>
+          <div class="mac-window-body">
+            <div class="row g-4">
+
+              <!-- Java Course -->
+              <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="200">
+                <div class="mac-cert-card">
+                  <div class="mac-cert-thumb">
+                    <img src="assets/img/Cer/8.jpg" alt="Java from Beginner to Master Course" loading="lazy">
+                    <span class="mac-type-badge learning">Learning</span>
+                    <span class="mac-duration-pill">Course</span>
+                    <div class="mac-hover-icon"><i class="bi bi-book-fill"></i></div>
+                  </div>
+                  <div class="mac-cert-content">
+                    <h3 class="mac-cert-title">
+                      Java from Beginner to Master
+                      <span class="mac-verified"><i class="bi bi-check2"></i></span>
+                    </h3>
+                    <div class="mac-cert-meta"><i class="bi bi-mortarboard"></i> Udemy Course</div>
+                    <p class="mac-cert-desc">Completed a comprehensive Java course on Udemy, building a strong foundation in Java programming.</p>
+                    <div class="mac-cert-actions">
+                      <a href="https://drive.google.com/file/d/1rWywyan2-RrT5_aUG4aHIYd3-ruvRY8g/view?usp=drive_link" class="mac-view-btn" target="_blank" rel="noopener noreferrer"><i class="bi bi-eye"></i> View Certificate</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- C & C++ -->
+              <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="250">
+                <div class="mac-cert-card">
+                  <div class="mac-cert-thumb">
+                    <img src="assets/img/Cer/2.jpg" alt="C & C++ Programming Course" loading="lazy">
+                    <span class="mac-type-badge learning">Learning</span>
+                    <span class="mac-duration-pill">A+ Grade</span>
+                    <div class="mac-hover-icon"><i class="bi bi-file-earmark-code"></i></div>
+                  </div>
+                  <div class="mac-cert-content">
+                    <h3 class="mac-cert-title">
+                      C &amp; C++ Programming
+                      <span class="mac-verified"><i class="bi bi-check2"></i></span>
+                    </h3>
+                    <div class="mac-cert-meta"><i class="bi bi-building"></i> CDMI Institute</div>
+                    <p class="mac-cert-desc">Earned an A+ grade in a C & C++ course at Creative Design & Multimedia Institute.</p>
+                    <div class="mac-cert-actions">
+                      <a href="https://drive.google.com/file/d/1N7b0S4DX6pHi2xFKjocrusdcfwZ6FNxj/view?usp=drive_link" class="mac-view-btn" target="_blank" rel="noopener noreferrer"><i class="bi bi-eye"></i> View Certificate</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
             </div>
           </div>
         </div>
 
-        <div class="certificate" data-aos="zoom-in" data-aos-delay="400">
-          <div class="certificate-thumbnail">
-            <img src="assets/img/Cer/11.jpg" alt="HackerRank C# Basic Certificate">
-            <div class="certificate-badge achievement">Achievement</div>
-            <div class="duration-badge">Certified</div>
-            <div class="play-overlay">
-              <i class="bi bi-code-slash"></i>
+        <!-- ===================== PARTICIPATE ===================== -->
+        <div class="mac-category-window scroll-reveal-scale scroll-glow" data-aos="fade-up" data-aos-delay="150">
+          <div class="mac-window-titlebar">
+            <div class="mac-window-dots">
+              <span class="mac-dot-red"></span>
+              <span class="mac-dot-yellow"></span>
+              <span class="mac-dot-green"></span>
             </div>
+            <div class="mac-window-label"><i class="bi bi-people-fill"></i> Participate</div>
           </div>
-          <div class="certificate-content">
-            <h3 class="certificate-title">
-              HackerRank C# Basic
-              <span class="verified-icon"><i class="bi bi-patch-check-fill"></i></span>
-            </h3>
-            <div class="certificate-meta">
-              <i class="bi bi-file-earmark-code"></i>
-              <span>HackerRank Certified</span>
-            </div>
-            <p class="certificate-description">
-              Earned HackerRank C# Certification, validating skills in C# programming and problem-solving.
-            </p>
-            <div class="certificate-actions">
-              <a href="https://www.hackerrank.com/certificates/iframe/f0ec81cd0589" class="view-certificate"
-                target="_blank" rel="noopener noreferrer">
-                <i class="bi bi-eye"></i> View Certificate
-              </a>
+          <div class="mac-window-body">
+            <div class="row g-4">
+
+              <!-- AWS Community Day -->
+              <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="200">
+                <div class="mac-cert-card">
+                  <div class="mac-cert-thumb">
+                    <img src="assets/img/Cer/13.jpg" alt="AWS Students Community Day" loading="lazy">
+                    <span class="mac-type-badge participate">Participate</span>
+                    <span class="mac-duration-pill">AWS Event</span>
+                    <div class="mac-hover-icon"><i class="bi bi-cloud-check"></i></div>
+                  </div>
+                  <div class="mac-cert-content">
+                    <h3 class="mac-cert-title">
+                      AWS Students Community Day
+                      <span class="mac-verified"><i class="bi bi-check2"></i></span>
+                    </h3>
+                    <div class="mac-cert-meta"><i class="bi bi-calendar-event"></i> September 27, 2024</div>
+                    <p class="mac-cert-desc">Participated in AWS Students Community Day at CHARUSAT on September 27, 2024.</p>
+                    <div class="mac-cert-actions">
+                      <a href="https://drive.google.com/file/d/1E_MtTjt7yAivM7P8JWSsIEaCi5EVxTJd/view?usp=drive_link" class="mac-view-btn" target="_blank" rel="noopener noreferrer"><i class="bi bi-eye"></i> View Certificate</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Bharat Blockchain -->
+              <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="250">
+                <div class="mac-cert-card">
+                  <div class="mac-cert-thumb">
+                    <img src="assets/img/Cer/6.jpg" alt="Bharat Blockchain Yatra" loading="lazy">
+                    <span class="mac-type-badge participate">Participate</span>
+                    <span class="mac-duration-pill">Blockchain</span>
+                    <div class="mac-hover-icon"><i class="bi bi-diagram-3"></i></div>
+                  </div>
+                  <div class="mac-cert-content">
+                    <h3 class="mac-cert-title">
+                      Bharat Blockchain Yatra
+                      <span class="mac-verified"><i class="bi bi-check2"></i></span>
+                    </h3>
+                    <div class="mac-cert-meta"><i class="bi bi-calendar-event"></i> March 5, 2024</div>
+                    <p class="mac-cert-desc">Recognized for participation in Bharat Blockchain Yatra on March 5, 2024.</p>
+                    <div class="mac-cert-actions">
+                      <a href="https://drive.google.com/file/d/1SJ7wHyweiakqu03csNXPHOgG5_65d_0s/view?usp=drive_link" class="mac-view-btn" target="_blank" rel="noopener noreferrer"><i class="bi bi-eye"></i> View Certificate</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Fashion Show -->
+              <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="300">
+                <div class="mac-cert-card">
+                  <div class="mac-cert-thumb">
+                    <img src="assets/img/Cer/images.jpg" alt="Fashion Show at CHARUSAT" loading="lazy">
+                    <span class="mac-type-badge participate">Participate</span>
+                    <span class="mac-duration-pill">Event</span>
+                    <div class="mac-hover-icon"><i class="bi bi-stars"></i></div>
+                  </div>
+                  <div class="mac-cert-content">
+                    <h3 class="mac-cert-title">
+                      Fashion Show at CHARUSAT
+                      <span class="mac-verified"><i class="bi bi-check2"></i></span>
+                    </h3>
+                    <div class="mac-cert-meta"><i class="bi bi-calendar-event"></i> January 2024</div>
+                    <p class="mac-cert-desc">Participated in the Fashion Show at CHARUSAT from January 2024 to January 31, 2024.</p>
+                    <div class="mac-cert-actions">
+                      <a href="https://drive.google.com/file/d/1IRuyOF6duBgI-eoogG8NFqtXFABg8gwL/view?usp=drive_link" class="mac-view-btn" target="_blank" rel="noopener noreferrer"><i class="bi bi-eye"></i> View Certificate</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
             </div>
           </div>
         </div>
 
-        <div class="certificate" data-aos="zoom-in" data-aos-delay="500">
-          <div class="certificate-thumbnail">
-            <img src="assets/img/Cer/12.jpg" alt="Web 3.0 Project at Technook Pro">
-            <div class="certificate-badge achievement">Achievement</div>
-            <div class="duration-badge">Internship</div>
-            <div class="play-overlay">
-              <i class="bi bi-briefcase-fill"></i>
+        <!-- ===================== HACKATHONS & WORKSHOPS ===================== -->
+        <div class="mac-category-window scroll-reveal-rotate scroll-glow" data-aos="fade-up" data-aos-delay="150">
+          <div class="mac-window-titlebar">
+            <div class="mac-window-dots">
+              <span class="mac-dot-red"></span>
+              <span class="mac-dot-yellow"></span>
+              <span class="mac-dot-green"></span>
             </div>
+            <div class="mac-window-label"><i class="bi bi-lightning-fill"></i> Hackathons &amp; Workshops</div>
           </div>
-          <div class="certificate-content">
-            <h3 class="certificate-title">
-              Web 3.0 Project at Technook Pro
-              <span class="verified-icon"><i class="bi bi-patch-check-fill"></i></span>
-            </h3>
-            <div class="certificate-meta">
-              <i class="bi bi-building"></i>
-              <span>Professional Experience</span>
-            </div>
-            <p class="certificate-description">
-              Completed Web 3.0 development internship at Teachnook Pro, focusing on blockchain technology,
-              decentralized applications (dApps), smart contracts, and Web3 development practices. Gained hands-on
-              experience with modern decentralized technologies and contributed to real-world blockchain projects.
-            </p>
-            <div class="certificate-actions">
-              <a href="https://drive.google.com/file/d/1QpViYnj7yfiFMvlsdorI4lIuISOcx2FO/view?usp=drive_link"
-                class="view-certificate" target="_blank" rel="noopener noreferrer">
-                <i class="bi bi-eye"></i> Internship Cert
-              </a>
-              <a href="https://drive.google.com/file/d/1wecLs0kkqwPDM5_wiVb-QeJcV4AbO4SK/view?usp=drive_link"
-                class="view-certificate" target="_blank" rel="noopener noreferrer">
-                <i class="bi bi-file-text"></i> Offer Letter
-              </a>
+          <div class="mac-window-body">
+            <div class="row g-4">
+
+              <!-- HackConclave'24 -->
+              <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="200">
+                <div class="mac-cert-card">
+                  <div class="mac-cert-thumb">
+                    <img src="assets/img/Cer/9.jpg" alt="HackConclave'24 at IIT Guwahati" loading="lazy">
+                    <span class="mac-type-badge hackathon">Hackathon</span>
+                    <span class="mac-duration-pill">IIT Guwahati</span>
+                    <div class="mac-hover-icon"><i class="bi bi-lightning-fill"></i></div>
+                  </div>
+                  <div class="mac-cert-content">
+                    <h3 class="mac-cert-title">
+                      HackConclave'24
+                      <span class="mac-verified"><i class="bi bi-check2"></i></span>
+                    </h3>
+                    <div class="mac-cert-meta"><i class="bi bi-mortarboard-fill"></i> IIT Guwahati</div>
+                    <p class="mac-cert-desc">Participated in HackConclave'24 at IIT Guwahati under Research & Industrial Conclave.</p>
+                    <div class="mac-cert-actions">
+                      <a href="https://drive.google.com/file/d/1hQlBOnd_6l6sxh_WfEebbOSisrFK-vbj/view?usp=drive_link" class="mac-view-btn" target="_blank" rel="noopener noreferrer"><i class="bi bi-eye"></i> View Certificate</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Game Dev Workshop IIT Bombay 2k24 -->
+              <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="250">
+                <div class="mac-cert-card">
+                  <div class="mac-cert-thumb">
+                    <img src="assets/img/Cer/3.jpg" alt="Game Dev Workshop by IIT Bombay" loading="lazy">
+                    <span class="mac-type-badge hackathon">Workshop</span>
+                    <span class="mac-duration-pill">IIT Bombay</span>
+                    <div class="mac-hover-icon"><i class="bi bi-controller"></i></div>
+                  </div>
+                  <div class="mac-cert-content">
+                    <h3 class="mac-cert-title">
+                      Game Dev Workshop IIT Bombay 2k24
+                      <span class="mac-verified"><i class="bi bi-check2"></i></span>
+                    </h3>
+                    <div class="mac-cert-meta"><i class="bi bi-mortarboard-fill"></i> Techfest IIT Bombay</div>
+                    <p class="mac-cert-desc">Completed a Game Development workshop by Techfest, IIT Bombay.</p>
+                    <div class="mac-cert-actions">
+                      <a href="https://drive.google.com/file/d/1PjZ4lNQndANnHXuRkUS_TX4LJZbVidDn/view?usp=sharing" class="mac-view-btn" target="_blank" rel="noopener noreferrer"><i class="bi bi-eye"></i> View Certificate</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Game Dev Workshop IIT Bombay 2k25 -->
+              <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="300">
+                <div class="mac-cert-card">
+                  <div class="mac-cert-thumb">
+                    <img src="assets/img/Cer/3.jpg" alt="Game Dev Workshop by IIT Bombay 2k25" loading="lazy">
+                    <span class="mac-type-badge hackathon">Workshop</span>
+                    <span class="mac-duration-pill">IIT Bombay</span>
+                    <div class="mac-hover-icon"><i class="bi bi-controller"></i></div>
+                  </div>
+                  <div class="mac-cert-content">
+                    <h3 class="mac-cert-title">
+                      Game Dev Workshop IIT Bombay 2k25
+                      <span class="mac-verified"><i class="bi bi-check2"></i></span>
+                    </h3>
+                    <div class="mac-cert-meta"><i class="bi bi-mortarboard-fill"></i> Techfest IIT Bombay</div>
+                    <p class="mac-cert-desc">Completed a Game Development workshop by Techfest, IIT Bombay.</p>
+                    <div class="mac-cert-actions">
+                      <a href="https://drive.google.com/file/d/1TtLgU6UvrrdXN5o-Z8B2bIZNIb2FEwgs/view?usp=sharing" class="mac-view-btn" target="_blank" rel="noopener noreferrer"><i class="bi bi-eye"></i> View Certificate</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Frolic Code-A-Thon -->
+              <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="350">
+                <div class="mac-cert-card">
+                  <div class="mac-cert-thumb">
+                    <img src="assets/img/Cer/7.jpg" alt="Frolic 2024 Code-A-Thon" loading="lazy">
+                    <span class="mac-type-badge hackathon">Hackathon</span>
+                    <span class="mac-duration-pill">Code-A-Thon</span>
+                    <div class="mac-hover-icon"><i class="bi bi-code-slash"></i></div>
+                  </div>
+                  <div class="mac-cert-content">
+                    <h3 class="mac-cert-title">
+                      Frolic 2024 Code-A-Thon
+                      <span class="mac-verified"><i class="bi bi-check2"></i></span>
+                    </h3>
+                    <div class="mac-cert-meta"><i class="bi bi-building"></i> Darshan University</div>
+                    <p class="mac-cert-desc">Participated in the Code-A-Thon at Frolic 2024, Darshan University.</p>
+                    <div class="mac-cert-actions">
+                      <a href="https://drive.google.com/file/d/1-8-FclZrcfDBBsgiGnSmgvbdIRDRSyYj/view?usp=drive_link" class="mac-view-btn" target="_blank" rel="noopener noreferrer"><i class="bi bi-eye"></i> View Certificate</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Odoo x CHARUSAT -->
+              <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="400">
+                <div class="mac-cert-card">
+                  <div class="mac-cert-thumb">
+                    <img src="assets/img/Cer/odoo-logo.png" alt="Odoo x CHARUSAT Hackathon '25" loading="lazy">
+                    <span class="mac-type-badge hackathon">Hackathon</span>
+                    <span class="mac-duration-pill">24 Hours</span>
+                    <div class="mac-hover-icon"><i class="bi bi-lightning-fill"></i></div>
+                  </div>
+                  <div class="mac-cert-content">
+                    <h3 class="mac-cert-title">
+                      Odoo x CHARUSAT Hackathon '25
+                      <span class="mac-verified"><i class="bi bi-check2"></i></span>
+                    </h3>
+                    <div class="mac-cert-meta"><i class="bi bi-calendar-event"></i> 02 March 2025</div>
+                    <p class="mac-cert-desc">Participated in 24 hours hackathon organized by Odoo and CHARUSAT University. Collaborated on innovative solutions using Odoo ERP platform.</p>
+                    <div class="mac-cert-actions">
+                      <a href="https://drive.google.com/file/d/12fys1NzUmmp_FV90M4Q1UICbLymCuxpB/view?usp=sharing" class="mac-view-btn" target="_blank" rel="noopener noreferrer"><i class="bi bi-eye"></i> View Certificate</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Hackron TEKRON 2025 -->
+              <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="450">
+                <div class="mac-cert-card">
+                  <div class="mac-cert-thumb">
+                    <img src="assets/img/Cer/blinkit-logo.jpeg" alt="Hackron - TEKRON 2025" loading="lazy">
+                    <span class="mac-type-badge hackathon">Hackathon</span>
+                    <span class="mac-duration-pill">TEKRON 2025</span>
+                    <div class="mac-hover-icon"><i class="bi bi-lightning-fill"></i></div>
+                  </div>
+                  <div class="mac-cert-content">
+                    <h3 class="mac-cert-title">
+                      Hackron – TEKRON 2025
+                      <span class="mac-verified"><i class="bi bi-check2"></i></span>
+                    </h3>
+                    <div class="mac-cert-meta"><i class="bi bi-calendar-event"></i> 5-6 March 2025</div>
+                    <p class="mac-cert-desc">Participated in 24-hour Hackron hackathon at Newton School of Technology, ADYPU, Pune. Presented by Ajeenkya DY Patil University with Blinkit.</p>
+                    <div class="mac-cert-actions">
+                      <a href="https://drive.google.com/file/d/1FwSXx26Y0FBstvT0_QDVmKSaNcPj4_dK/view?usp=sharing" class="mac-view-btn" target="_blank" rel="noopener noreferrer"><i class="bi bi-eye"></i> View Certificate</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- CodeArena 1.0 -->
+              <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="500">
+                <div class="mac-cert-card">
+                  <div class="mac-cert-thumb">
+                    <img src="assets/img/Cer/darshan-logo.webp" alt="CodeArena 1.0 Hackathon" loading="lazy">
+                    <span class="mac-type-badge hackathon">Hackathon</span>
+                    <span class="mac-duration-pill">24 Hours</span>
+                    <div class="mac-hover-icon"><i class="bi bi-code-slash"></i></div>
+                  </div>
+                  <div class="mac-cert-content">
+                    <h3 class="mac-cert-title">
+                      CodeArena 1.0
+                      <span class="mac-verified"><i class="bi bi-check2"></i></span>
+                    </h3>
+                    <div class="mac-cert-meta"><i class="bi bi-calendar-event"></i> 19-20 July 2025</div>
+                    <p class="mac-cert-desc">Participated in 24-hour CodeArena 1.0 hackathon at Department of CSE, Darshan University, Rajkot.</p>
+                    <div class="mac-cert-actions">
+                      <a href="https://drive.google.com/file/d/16yRoF11VewDCZTzrboE3j6QtOm1P9YZ2/view?usp=sharing" class="mac-view-btn" target="_blank" rel="noopener noreferrer"><i class="bi bi-eye"></i> View Certificate</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- HACKHAZARDS '25 -->
+              <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="550">
+                <div class="mac-cert-card">
+                  <div class="mac-cert-thumb">
+                    <img src="assets/img/Cer/namespace-logo.png" alt="HACKHAZARDS '25" loading="lazy">
+                    <span class="mac-type-badge hackathon">Hackathon</span>
+                    <span class="mac-duration-pill">Online - Global</span>
+                    <div class="mac-hover-icon"><i class="bi bi-globe"></i></div>
+                  </div>
+                  <div class="mac-cert-content">
+                    <h3 class="mac-cert-title">
+                      HACKHAZARDS '25
+                      <span class="mac-verified"><i class="bi bi-check2"></i></span>
+                    </h3>
+                    <div class="mac-cert-meta"><i class="bi bi-calendar-event"></i> 11-27 April 2025</div>
+                    <p class="mac-cert-desc">World's largest independent community-run hackathon by The NAMESPACE Community. 17,000+ hackers across 25+ countries. Team: BUG BUSTER.</p>
+                    <div class="mac-cert-actions">
+                      <a href="https://drive.google.com/file/d/1Xg8-frN80p4Tkt7gfA1Q_pHKq0-CtnMe/view?usp=sharing" class="mac-view-btn" target="_blank" rel="noopener noreferrer"><i class="bi bi-eye"></i> View Certificate</a>
+                      <a href="https://verification.givemycertificate.com/v/943311c9-5253-44b2-b3b4-ac970fbf0e24" class="mac-view-btn secondary" target="_blank" rel="noopener noreferrer"><i class="bi bi-shield-check"></i> Verify</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- DATAQUEST 2025 -->
+              <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="600">
+                <div class="mac-cert-card">
+                  <div class="mac-cert-thumb">
+                    <img src="assets/img/Cer/msbc-logo.png" alt="DATAQUEST HACKATHON 2025" loading="lazy">
+                    <span class="mac-type-badge hackathon">Hackathon</span>
+                    <span class="mac-duration-pill">Data Science</span>
+                    <div class="mac-hover-icon"><i class="bi bi-graph-up"></i></div>
+                  </div>
+                  <div class="mac-cert-content">
+                    <h3 class="mac-cert-title">
+                      DATAQUEST HACKATHON 2025
+                      <span class="mac-verified"><i class="bi bi-check2"></i></span>
+                    </h3>
+                    <div class="mac-cert-meta"><i class="bi bi-calendar-event"></i> 20 September 2025</div>
+                    <p class="mac-cert-desc">Participated in DATAQUEST organized by MSBC Group and CHARUSAT University. Data science and ML challenges. Team: Bug Busters.</p>
+                    <div class="mac-cert-actions">
+                      <a href="https://drive.google.com/file/d/1CZaBgfBQyZ2sm3V--lHwVT8a0bQaksxZ/view?usp=sharing" class="mac-view-btn" target="_blank" rel="noopener noreferrer"><i class="bi bi-eye"></i> View Certificate</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
             </div>
           </div>
         </div>
 
-        <div class="certificate" data-aos="zoom-in" data-aos-delay="600">
-          <div class="certificate-thumbnail">
-            <img src="assets/img/Cer/13.jpg" alt="Google Cloud Impact Hackathon">
-            <div class="certificate-badge achievement">Achievement</div>
-            <div class="duration-badge">Hackathon</div>
-            <div class="play-overlay">
-              <i class="bi bi-cloud-fill"></i>
+        <!-- ===================== GAME JAM ===================== -->
+        <div class="mac-category-window scroll-reveal-left scroll-glow" data-aos="fade-up" data-aos-delay="150">
+          <div class="mac-window-titlebar">
+            <div class="mac-window-dots">
+              <span class="mac-dot-red"></span>
+              <span class="mac-dot-yellow"></span>
+              <span class="mac-dot-green"></span>
             </div>
+            <div class="mac-window-label"><i class="bi bi-controller"></i> Game Jam</div>
           </div>
-          <div class="certificate-content">
-            <h3 class="certificate-title">
-              Google Cloud Impact Hackathon
-              <span class="verified-icon"><i class="bi bi-patch-check-fill"></i></span>
-            </h3>
-            <div class="certificate-meta">
-              <i class="bi bi-google"></i>
-              <span>Google Cloud</span>
-            </div>
-            <p class="certificate-description">
-              Developed a Web 3.0 project during an internship, gaining experience in blockchain and decentralized tech.
-            </p>
-            <div class="certificate-actions">
-              <a href="https://drive.google.com/file/d/1841zh602nc0RXIuiryb3wgKrdohY5gzV/view?usp=drive_link"
-                class="view-certificate" target="_blank" rel="noopener noreferrer">
-                <i class="bi bi-eye"></i> View Certificate
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+          <div class="mac-window-body">
+            <div class="row g-4">
 
+              <!-- Global Game Jam 2026 -->
+              <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="200">
+                <div class="mac-cert-card">
+                  <div class="mac-cert-thumb">
+                    <img src="assets/img/Cer/game-jam-logo.jpg" alt="Global Game Jam 2026 Certificate" loading="lazy">
+                    <span class="mac-type-badge gamejam">Game Jam</span>
+                    <span class="mac-duration-pill">48 Hours</span>
+                    <div class="mac-hover-icon"><i class="bi bi-controller"></i></div>
+                  </div>
+                  <div class="mac-cert-content">
+                    <h3 class="mac-cert-title">
+                      Global Game Jam 2026
+                      <span class="mac-verified"><i class="bi bi-check2"></i></span>
+                    </h3>
+                    <div class="mac-cert-meta"><i class="bi bi-calendar-event"></i> January 2026</div>
+                    <p class="mac-cert-desc">Participated in the world's largest game creation event, developing an innovative game prototype within 48 hours alongside developers worldwide.</p>
+                    <div class="mac-cert-actions">
+                      <a href="https://drive.google.com/file/d/1XBBhHxxZfTfY78IHJhOuH5v1uZJfGhJf/view?usp=sharing" class="mac-view-btn" target="_blank" rel="noopener noreferrer"><i class="bi bi-eye"></i> View Certificate</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
 
-
-    <!-- Learning Section -->
-    <section class="certificates">
-      <h2 data-aos="fade-down" data-aos-delay="100">Learning</h2>
-      <div class="particles">
-        <div class="particle" style="left: 15%; top: 25%; animation-delay: 0s;"></div>
-        <div class="particle" style="left: 35%; top: 55%; animation-delay: 1s;"></div>
-        <div class="particle" style="left: 65%; top: 35%; animation-delay: 2s;"></div>
-      </div>
-      <div class="certificates-grid">
-        <div class="certificate" data-aos="zoom-in" data-aos-delay="200">
-          <div class="certificate-thumbnail">
-            <img src="assets/img/Cer/8.jpg" alt="Java from Beginner to Master Course">
-            <div class="certificate-badge learning">Learning</div>
-            <div class="duration-badge">Course</div>
-            <div class="play-overlay">
-              <i class="bi bi-book-fill"></i>
-            </div>
-          </div>
-          <div class="certificate-content">
-            <h3 class="certificate-title">
-              Java from Beginner to Master
-              <span class="verified-icon"><i class="bi bi-patch-check-fill"></i></span>
-            </h3>
-            <div class="certificate-meta">
-              <i class="bi bi-mortarboard"></i>
-              <span>Udemy Course</span>
-            </div>
-            <p class="certificate-description">
-              Completed a comprehensive Java course on Udemy, building a strong foundation in Java programming.
-            </p>
-            <div class="certificate-actions">
-              <a href="https://drive.google.com/file/d/1rWywyan2-RrT5_aUG4aHIYd3-ruvRY8g/view?usp=drive_link"
-                class="view-certificate" target="_blank" rel="noopener noreferrer">
-                <i class="bi bi-eye"></i> View Certificate
-              </a>
             </div>
           </div>
         </div>
 
-
-
-        <div class="certificate" data-aos="zoom-in" data-aos-delay="500">
-          <div class="certificate-thumbnail">
-            <img src="assets/img/Cer/2.jpg" alt="C & C++ Programming Course">
-            <div class="certificate-badge learning">Learning</div>
-            <div class="duration-badge">A+ Grade</div>
-            <div class="play-overlay">
-              <i class="bi bi-file-earmark-code"></i>
+        <!-- ===================== EXTRA ACTIVITY ===================== -->
+        <div class="mac-category-window scroll-reveal-right scroll-glow" data-aos="fade-up" data-aos-delay="150">
+          <div class="mac-window-titlebar">
+            <div class="mac-window-dots">
+              <span class="mac-dot-red"></span>
+              <span class="mac-dot-yellow"></span>
+              <span class="mac-dot-green"></span>
             </div>
+            <div class="mac-window-label"><i class="bi bi-star-fill"></i> Extra Activity</div>
           </div>
-          <div class="certificate-content">
-            <h3 class="certificate-title">
-              C & C++ Programming
-              <span class="verified-icon"><i class="bi bi-patch-check-fill"></i></span>
-            </h3>
-            <div class="certificate-meta">
-              <i class="bi bi-building"></i>
-              <span>CDMI Institute</span>
-            </div>
-            <p class="certificate-description">
-              Earned an A+ grade in a C & C++ course at Creative Design & Multimedia Institute.
-            </p>
-            <div class="certificate-actions">
-              <a href="https://drive.google.com/file/d/1N7b0S4DX6pHi2xFKjocrusdcfwZ6FNxj/view?usp=drive_link"
-                class="view-certificate" target="_blank" rel="noopener noreferrer">
-                <i class="bi bi-eye"></i> View Certificate
-              </a>
+          <div class="mac-window-body">
+            <div class="row g-4">
+
+              <!-- Sardar Patel College Event -->
+              <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="200">
+                <div class="mac-cert-card">
+                  <div class="mac-cert-thumb">
+                    <img src="assets/img/Cer/images.png" alt="Sardar Patel College Event" loading="lazy">
+                    <span class="mac-type-badge extra">Extra Activity</span>
+                    <span class="mac-duration-pill">Event</span>
+                    <div class="mac-hover-icon"><i class="bi bi-star-fill"></i></div>
+                  </div>
+                  <div class="mac-cert-content">
+                    <h3 class="mac-cert-title">
+                      Sardar Patel College Event
+                      <span class="mac-verified"><i class="bi bi-check2"></i></span>
+                    </h3>
+                    <div class="mac-cert-meta"><i class="bi bi-calendar-event"></i> February 7-8, 2024</div>
+                    <p class="mac-cert-desc">Participated in an event at Sardar Patel College of Engineering on February 7-8, 2024.</p>
+                    <div class="mac-cert-actions">
+                      <a href="https://drive.google.com/file/d/1hzybXykrM3v1E1owfTEkHFGqo9baY6YP/view?usp=drive_link" class="mac-view-btn" target="_blank" rel="noopener noreferrer"><i class="bi bi-eye"></i> View Certificate</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Box Soccer -->
+              <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="250">
+                <div class="mac-cert-card">
+                  <div class="mac-cert-thumb">
+                    <img src="assets/img/Cer/111.jpg" alt="Box Soccer at CHARUSAT" loading="lazy">
+                    <span class="mac-type-badge extra">Extra Activity</span>
+                    <span class="mac-duration-pill">Sports</span>
+                    <div class="mac-hover-icon"><i class="bi bi-trophy"></i></div>
+                  </div>
+                  <div class="mac-cert-content">
+                    <h3 class="mac-cert-title">
+                      Box Soccer at CHARUSAT
+                      <span class="mac-verified"><i class="bi bi-check2"></i></span>
+                    </h3>
+                    <div class="mac-cert-meta"><i class="bi bi-calendar-event"></i> January 18-19, 2024</div>
+                    <p class="mac-cert-desc">Participated in Box Soccer during Cognizance'24 at CHARUSAT on January 18-19, 2024.</p>
+                    <div class="mac-cert-actions">
+                      <a href="https://drive.google.com/file/d/1Iju-iIfXOetg38L4LPhM5TVhgSau1fhN/view?usp=drive_link" class="mac-view-btn" target="_blank" rel="noopener noreferrer"><i class="bi bi-eye"></i> View Certificate</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
             </div>
           </div>
         </div>
-      </div>
-    </section>
-
-    <!-- Participate Section -->
-    <section class="certificates">
-      <h2 data-aos="fade-down" data-aos-delay="100">Participate</h2>
-      <div class="particles">
-        <div class="particle" style="left: 20%; top: 30%; animation-delay: 0s;"></div>
-        <div class="particle" style="left: 40%; top: 60%; animation-delay: 1s;"></div>
-        <div class="particle" style="left: 80%; top: 40%; animation-delay: 2s;"></div>
-      </div>
-      <div class="certificates-grid">
-        <div class="certificate" data-aos="zoom-in" data-aos-delay="200">
-          <div class="certificate-thumbnail">
-            <img src="assets/img/Cer/13.jpg" alt="AWS Students Community Day">
-            <div class="certificate-badge participate">Participate</div>
-            <div class="duration-badge">AWS Event</div>
-            <div class="play-overlay">
-              <i class="bi bi-cloud-check"></i>
-            </div>
-          </div>
-          <div class="certificate-content">
-            <h3 class="certificate-title">
-              AWS Students Community Day
-              <span class="verified-icon"><i class="bi bi-patch-check-fill"></i></span>
-            </h3>
-            <div class="certificate-meta">
-              <i class="bi bi-calendar-event"></i>
-              <span>September 27, 2024</span>
-            </div>
-            <p class="certificate-description">
-              Participated in AWS Students Community Day at CHARUSAT on September 27, 2024.
-            </p>
-            <div class="certificate-actions">
-              <a href="https://drive.google.com/file/d/1E_MtTjt7yAivM7P8JWSsIEaCi5EVxTJd/view?usp=drive_link"
-                class="view-certificate" target="_blank" rel="noopener noreferrer">
-                <i class="bi bi-eye"></i> View Certificate
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <div class="certificate" data-aos="zoom-in" data-aos-delay="300">
-          <div class="certificate-thumbnail">
-            <img src="assets/img/Cer/6.jpg" alt="Bharat Blockchain Yatra">
-            <div class="certificate-badge participate">Participate</div>
-            <div class="duration-badge">Blockchain</div>
-            <div class="play-overlay">
-              <i class="bi bi-diagram-3"></i>
-            </div>
-          </div>
-          <div class="certificate-content">
-            <h3 class="certificate-title">
-              Bharat Blockchain Yatra
-              <span class="verified-icon"><i class="bi bi-patch-check-fill"></i></span>
-            </h3>
-            <div class="certificate-meta">
-              <i class="bi bi-calendar-event"></i>
-              <span>March 5, 2024</span>
-            </div>
-            <p class="certificate-description">
-              Recognized for participation in Bharat Blockchain Yatra on March 5, 2024.
-            </p>
-            <div class="certificate-actions">
-              <a href="https://drive.google.com/file/d/1SJ7wHyweiakqu03csNXPHOgG5_65d_0s/view?usp=drive_link"
-                class="view-certificate" target="_blank" rel="noopener noreferrer">
-                <i class="bi bi-eye"></i> View Certificate
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <div class="certificate" data-aos="zoom-in" data-aos-delay="400">
-          <div class="certificate-thumbnail">
-            <img src="assets/img/Cer/images.jpg" alt="Fashion Show at CHARUSAT">
-            <div class="certificate-badge participate">Participate</div>
-            <div class="duration-badge">Event</div>
-            <div class="play-overlay">
-              <i class="bi bi-stars"></i>
-            </div>
-          </div>
-          <div class="certificate-content">
-            <h3 class="certificate-title">
-              Fashion Show at CHARUSAT
-              <span class="verified-icon"><i class="bi bi-patch-check-fill"></i></span>
-            </h3>
-            <div class="certificate-meta">
-              <i class="bi bi-calendar-event"></i>
-              <span>January 2024</span>
-            </div>
-            <p class="certificate-description">
-              Participated in the Fashion Show at CHARUSAT from January 2024 to January 31, 2024.
-            </p>
-            <div class="certificate-actions">
-              <a href="https://drive.google.com/file/d/1IRuyOF6duBgI-eoogG8NFqtXFABg8gwL/view?usp=drive_link"
-                class="view-certificate" target="_blank" rel="noopener noreferrer">
-                <i class="bi bi-eye"></i> View Certificate
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Hackathons & Workshops Section -->
-    <section class="certificates">
-      <h2 data-aos="fade-down" data-aos-delay="100">Hackathons & Workshops</h2>
-      <div class="particles">
-        <div class="particle" style="left: 25%; top: 35%; animation-delay: 0s;"></div>
-        <div class="particle" style="left: 45%; top: 65%; animation-delay: 1s;"></div>
-        <div class="particle" style="left: 85%; top: 45%; animation-delay: 2s;"></div>
-      </div>
-      <div class="certificates-grid">
-        <div class="certificate" data-aos="zoom-in" data-aos-delay="200">
-          <div class="certificate-thumbnail">
-            <img src="assets/img/Cer/9.jpg" alt="HackConclave'24 at IIT Guwahati">
-            <div class="certificate-badge hackathon">Hackathon</div>
-            <div class="duration-badge">IIT Guwahati</div>
-            <div class="play-overlay">
-              <i class="bi bi-lightning-fill"></i>
-            </div>
-          </div>
-          <div class="certificate-content">
-            <h3 class="certificate-title">
-              HackConclave'24
-              <span class="verified-icon"><i class="bi bi-patch-check-fill"></i></span>
-            </h3>
-            <div class="certificate-meta">
-              <i class="bi bi-mortarboard-fill"></i>
-              <span>IIT Guwahati</span>
-            </div>
-            <p class="certificate-description">
-              Participated in HackConclave'24 at IIT Guwahati under Research & Industrial Conclave.
-            </p>
-            <div class="certificate-actions">
-              <a href="https://drive.google.com/file/d/1hQlBOnd_6l6sxh_WfEebbOSisrFK-vbj/view?usp=drive_link"
-                class="view-certificate" target="_blank" rel="noopener noreferrer">
-                <i class="bi bi-eye"></i> View Certificate
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <div class="certificate" data-aos="zoom-in" data-aos-delay="300">
-          <div class="certificate-thumbnail">
-            <img src="assets/img/Cer/3.jpg" alt="Game Dev Workshop by IIT Bombay">
-            <div class="certificate-badge hackathon">Workshop</div>
-            <div class="duration-badge">IIT Bombay</div>
-            <div class="play-overlay">
-              <i class="bi bi-controller"></i>
-            </div>
-          </div>
-          <div class="certificate-content">
-            <h3 class="certificate-title">
-              Game Dev Workshop by IIT Bombay 2k24
-              <span class="verified-icon"><i class="bi bi-patch-check-fill"></i></span>
-            </h3>
-            <div class="certificate-meta">
-              <i class="bi bi-mortarboard-fill"></i>
-              <span>Techfest IIT Bombay</span>
-            </div>
-            <p class="certificate-description">
-              Completed a Game Development workshop by Techfest, IIT Bombay.
-            </p>
-            <div class="certificate-actions">
-              <a href="https://drive.google.com/file/d/1PjZ4lNQndANnHXuRkUS_TX4LJZbVidDn/view?usp=sharing"
-                class="view-certificate" target="_blank" rel="noopener noreferrer">
-                <i class="bi bi-eye"></i> View Certificate
-              </a>
-            </div>
-          </div>
-        </div>
-        <div class="certificate" data-aos="zoom-in" data-aos-delay="300">
-          <div class="certificate-thumbnail">
-            <img src="assets/img/Cer/3.jpg" alt="Game Dev Workshop by IIT Bombay">
-            <div class="certificate-badge hackathon">Workshop</div>
-            <div class="duration-badge">IIT Bombay</div>
-            <div class="play-overlay">
-              <i class="bi bi-controller"></i>
-            </div>
-          </div>
-          <div class="certificate-content">
-            <h3 class="certificate-title">
-              Game Dev Workshop by IIT Bombay 2k25
-              <span class="verified-icon"><i class="bi bi-patch-check-fill"></i></span>
-            </h3>
-            <div class="certificate-meta">
-              <i class="bi bi-mortarboard-fill"></i>
-              <span>Techfest IIT Bombay</span>
-            </div>
-            <p class="certificate-description">
-              Completed a Game Development workshop by Techfest, IIT Bombay.
-            </p>
-            <div class="certificate-actions">
-              <a href="https://drive.google.com/file/d/1TtLgU6UvrrdXN5o-Z8B2bIZNIb2FEwgs/view?usp=sharing"
-                class="view-certificate" target="_blank" rel="noopener noreferrer">
-                <i class="bi bi-eye"></i> View Certificate
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <div class="certificate" data-aos="zoom-in" data-aos-delay="400">
-          <div class="certificate-thumbnail">
-            <img src="assets/img/Cer/7.jpg" alt="Frolic 2024 Code-A-Thon">
-            <div class="certificate-badge hackathon">Hackathon</div>
-            <div class="duration-badge">Code-A-Thon</div>
-            <div class="play-overlay">
-              <i class="bi bi-code-slash"></i>
-            </div>
-          </div>
-          <div class="certificate-content">
-            <h3 class="certificate-title">
-              Frolic 2024 Code-A-Thon
-              <span class="verified-icon"><i class="bi bi-patch-check-fill"></i></span>
-            </h3>
-            <div class="certificate-meta">
-              <i class="bi bi-building"></i>
-              <span>Darshan University</span>
-            </div>
-            <p class="certificate-description">
-              Participated in the Code-A-Thon at Frolic 2024, Darshan University.
-            </p>
-            <div class="certificate-actions">
-              <a href="https://drive.google.com/file/d/1-8-FclZrcfDBBsgiGnSmgvbdIRDRSyYj/view?usp=drive_link"
-                class="view-certificate" target="_blank" rel="noopener noreferrer">
-                <i class="bi bi-eye"></i> View Certificate
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Odoo x CHARUSAT Hackathon '25 -->
-        <div class="certificate" data-aos="zoom-in" data-aos-delay="500">
-          <div class="certificate-thumbnail">
-            <img src="assets/img/Cer/odoo-logo.png" alt="Odoo x CHARUSAT Hackathon '25">
-            <div class="certificate-badge hackathon">Hackathon</div>
-            <div class="duration-badge">24 Hours</div>
-            <div class="play-overlay">
-              <i class="bi bi-lightning-fill"></i>
-            </div>
-          </div>
-          <div class="certificate-content">
-            <h3 class="certificate-title">
-              Odoo x CHARUSAT Hackathon '25
-              <span class="verified-icon"><i class="bi bi-patch-check-fill"></i></span>
-            </h3>
-            <div class="certificate-meta">
-              <i class="bi bi-calendar-event"></i>
-              <span>02 March 2025</span>
-            </div>
-            <p class="certificate-description">
-              Participated in 24 hours hackathon organized by Odoo and CHARUSAT University at CHARUSAT, Changa.
-              Collaborated on innovative solutions using Odoo ERP platform.
-            </p>
-            <div class="certificate-actions">
-              <a href="https://drive.google.com/file/d/12fys1NzUmmp_FV90M4Q1UICbLymCuxpB/view?usp=sharing"
-                class="view-certificate" target="_blank" rel="noopener noreferrer">
-                <i class="bi bi-eye"></i> View Certificate
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Hackron Hackathon by Blinkit -->
-        <div class="certificate" data-aos="zoom-in" data-aos-delay="600">
-          <div class="certificate-thumbnail">
-            <img src="assets/img/Cer/blinkit-logo.jpeg" alt="Hackron - 24 Hour Hackathon">
-            <div class="certificate-badge hackathon">Hackathon</div>
-            <div class="duration-badge">TEKRON 2025</div>
-            <div class="play-overlay">
-              <i class="bi bi-lightning-fill"></i>
-            </div>
-          </div>
-          <div class="certificate-content">
-            <h3 class="certificate-title">
-              Hackron - TEKRON 2025
-              <span class="verified-icon"><i class="bi bi-patch-check-fill"></i></span>
-            </h3>
-            <div class="certificate-meta">
-              <i class="bi bi-calendar-event"></i>
-              <span>5-6 March 2025</span>
-            </div>
-            <p class="certificate-description">
-              Participated in 24-hour Hackron hackathon at Newton School of Technology, ADYPU, Pune. Event presented by
-              Ajeenkya DY Patil University in collaboration with Blinkit, focusing on e-commerce and quick-commerce
-              solutions.
-            </p>
-            <div class="certificate-actions">
-              <a href="https://drive.google.com/file/d/1FwSXx26Y0FBstvT0_QDVmKSaNcPj4_dK/view?usp=sharing"
-                class="view-certificate" target="_blank" rel="noopener noreferrer">
-                <i class="bi bi-eye"></i> View Certificate
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <!-- CodeArena 1.0 at Darshan University -->
-        <div class="certificate" data-aos="zoom-in" data-aos-delay="700">
-          <div class="certificate-thumbnail">
-            <img src="assets/img/Cer/darshan-logo.webp" alt="CodeArena 1.0 Hackathon">
-            <div class="certificate-badge hackathon">Hackathon</div>
-            <div class="duration-badge">24 Hours</div>
-            <div class="play-overlay">
-              <i class="bi bi-code-slash"></i>
-            </div>
-          </div>
-          <div class="certificate-content">
-            <h3 class="certificate-title">
-              CodeArena 1.0
-              <span class="verified-icon"><i class="bi bi-patch-check-fill"></i></span>
-            </h3>
-            <div class="certificate-meta">
-              <i class="bi bi-calendar-event"></i>
-              <span>19-20 July 2025</span>
-            </div>
-            <p class="certificate-description">
-              Participated in 24-hour CodeArena 1.0 hackathon organized by Department of Computer Science & Engineering,
-              Darshan University, Rajkot. Event sponsored by Conversantech, RITA, and SSIP.
-            </p>
-            <div class="certificate-actions">
-              <a href="https://drive.google.com/file/d/16yRoF11VewDCZTzrboE3j6QtOm1P9YZ2/view?usp=sharing"
-                class="view-certificate" target="_blank" rel="noopener noreferrer">
-                <i class="bi bi-eye"></i> View Certificate
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <!-- HACKHAZARDS '25 -->
-        <div class="certificate" data-aos="zoom-in" data-aos-delay="800">
-          <div class="certificate-thumbnail">
-            <img src="assets/img/Cer/namespace-logo.png" alt="HACKHAZARDS '25">
-            <div class="certificate-badge hackathon">Hackathon</div>
-            <div class="duration-badge">Online - Global</div>
-            <div class="play-overlay">
-              <i class="bi bi-globe"></i>
-            </div>
-          </div>
-          <div class="certificate-content">
-            <h3 class="certificate-title">
-              HACKHAZARDS '25
-              <span class="verified-icon"><i class="bi bi-patch-check-fill"></i></span>
-            </h3>
-            <div class="certificate-meta">
-              <i class="bi bi-calendar-event"></i>
-              <span>11-27 April 2025</span>
-            </div>
-            <p class="certificate-description">
-              Participated in world's largest independent community-run hackathon by The NAMESPACE Community. Competed
-              with 17,000+ hackers across 25+ countries, working on cutting-edge projects in AI, Web3, Software, and
-              Infrastructure. Team: BUG BUSTER.
-            </p>
-            <div class="certificate-actions">
-              <a href="https://drive.google.com/file/d/1Xg8-frN80p4Tkt7gfA1Q_pHKq0-CtnMe/view?usp=sharing"
-                class="view-certificate" target="_blank" rel="noopener noreferrer">
-                <i class="bi bi-eye"></i> View Certificate
-              </a>
-              <a href="https://verification.givemycertificate.com/v/943311c9-5253-44b2-b3b4-ac970fbf0e24"
-                class="view-certificate" target="_blank" rel="noopener noreferrer">
-                <i class="bi bi-shield-check"></i> Verify
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <!-- DATAQUEST HACKATHON 2025 -->
-        <div class="certificate" data-aos="zoom-in" data-aos-delay="900">
-          <div class="certificate-thumbnail">
-            <img src="assets/img/Cer/msbc-logo.png" alt="DATAQUEST HACKATHON 2025">
-            <div class="certificate-badge hackathon">Hackathon</div>
-            <div class="duration-badge">Data Science</div>
-            <div class="play-overlay">
-              <i class="bi bi-graph-up"></i>
-            </div>
-          </div>
-          <div class="certificate-content">
-            <h3 class="certificate-title">
-              DATAQUEST HACKATHON 2025
-              <span class="verified-icon"><i class="bi bi-patch-check-fill"></i></span>
-            </h3>
-            <div class="certificate-meta">
-              <i class="bi bi-calendar-event"></i>
-              <span>20 September 2025</span>
-            </div>
-            <p class="certificate-description">
-              Participated in DATAQUEST HACKATHON 2025 organized by MSBC Group and CHARUSAT University. Focused on data
-              science, analytics, and machine learning challenges. Team: Bug Busters.
-            </p>
-            <div class="certificate-actions">
-              <a href="https://drive.google.com/file/d/1CZaBgfBQyZ2sm3V--lHwVT8a0bQaksxZ/view?usp=sharing"
-                class="view-certificate" target="_blank" rel="noopener noreferrer">
-                <i class="bi bi-eye"></i> View Certificate
-              </a>
-            </div>
-          </div>
-        </div>
-
 
       </div>
-      </div>
-    </section>
-
-    <!-- Game Jam Section -->
-    <section class="certificates">
-      <h2 data-aos="fade-down" data-aos-delay="100">Game Jam</h2>
-      <div class="particles">
-        <div class="particle" style="left: 15%; top: 35%; animation-delay: 0s;"></div>
-        <div class="particle" style="left: 65%; top: 65%; animation-delay: 1.5s;"></div>
-        <div class="particle" style="left: 85%; top: 45%; animation-delay: 2.5s;"></div>
-      </div>
-      <div class="certificates-grid">
-        <div class="certificate" data-aos="zoom-in" data-aos-delay="200">
-          <div class="certificate-thumbnail">
-            <img src="assets/img/Cer/game-jam-logo.jpg" alt="Global Game Jam 2026 Certificate">
-            <div class="certificate-badge achievement">Game Jam</div>
-            <div class="duration-badge">48 Hours</div>
-            <div class="play-overlay">
-              <i class="bi bi-controller"></i>
-            </div>
-          </div>
-          <div class="certificate-content">
-            <h3 class="certificate-title">
-              Global Game Jam 2026
-              <span class="verified-icon"><i class="bi bi-patch-check-fill"></i></span>
-            </h3>
-            <div class="certificate-meta">
-              <i class="bi bi-calendar-event"></i>
-              <span>January 2026</span>
-            </div>
-            <p class="certificate-description">
-              Participated in the world's largest game creation event, developing an innovative game prototype within 48 hours alongside developers worldwide.
-            </p>
-            <div class="certificate-actions">
-              <a href="https://drive.google.com/file/d/1XBBhHxxZfTfY78IHJhOuH5v1uZJfGhJf/view?usp=sharing"
-                class="view-certificate" target="_blank" rel="noopener noreferrer">
-                <i class="bi bi-eye"></i> View Certificate
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Extra Activity Section -->
-    <section class="certificates">
-      <h2 data-aos="fade-down" data-aos-delay="100">Extra Activity</h2>
-      <div class="particles">
-        <div class="particle" style="left: 30%; top: 40%; animation-delay: 0s;"></div>
-        <div class="particle" style="left: 50%; top: 70%; animation-delay: 1s;"></div>
-        <div class="particle" style="left: 90%; top: 50%; animation-delay: 2s;"></div>
-      </div>
-      <div class="certificates-grid">
-        <div class="certificate" data-aos="zoom-in" data-aos-delay="200">
-          <div class="certificate-thumbnail">
-            <img src="assets/img/Cer/images.png" alt="Sardar Patel College Event">
-            <div class="certificate-badge extra">Extra Activity</div>
-            <div class="duration-badge">Event</div>
-            <div class="play-overlay">
-              <i class="bi bi-star-fill"></i>
-            </div>
-          </div>
-          <div class="certificate-content">
-            <h3 class="certificate-title">
-              Sardar Patel College Event
-              <span class="verified-icon"><i class="bi bi-patch-check-fill"></i></span>
-            </h3>
-            <div class="certificate-meta">
-              <i class="bi bi-calendar-event"></i>
-              <span>February 7-8, 2024</span>
-            </div>
-            <p class="certificate-description">
-              Participated in an event at Sardar Patel College of Engineering on February 7-8, 2024.
-            </p>
-            <div class="certificate-actions">
-              <a href="https://drive.google.com/file/d/1hzybXykrM3v1E1owfTEkHFGqo9baY6YP/view?usp=drive_link"
-                class="view-certificate" target="_blank" rel="noopener noreferrer">
-                <i class="bi bi-eye"></i> View Certificate
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <div class="certificate" data-aos="zoom-in" data-aos-delay="300">
-          <div class="certificate-thumbnail">
-            <img src="assets/img/Cer/111.jpg" alt="Box Soccer at CHARUSAT">
-            <div class="certificate-badge extra">Extra Activity</div>
-            <div class="duration-badge">Sports</div>
-            <div class="play-overlay">
-              <i class="bi bi-trophy"></i>
-            </div>
-          </div>
-          <div class="certificate-content">
-            <h3 class="certificate-title">
-              Box Soccer at CHARUSAT
-              <span class="verified-icon"><i class="bi bi-patch-check-fill"></i></span>
-            </h3>
-            <div class="certificate-meta">
-              <i class="bi bi-calendar-event"></i>
-              <span>January 18-19, 2024</span>
-            </div>
-            <p class="certificate-description">
-              Participated in Box Soccer during Cognizance'24 at CHARUSAT on January 18-19, 2024.
-            </p>
-            <div class="certificate-actions">
-              <a href="https://drive.google.com/file/d/1Iju-iIfXOetg38L4LPhM5TVhgSau1fhN/view?usp=drive_link"
-                class="view-certificate" target="_blank" rel="noopener noreferrer">
-                <i class="bi bi-eye"></i> View Certificate
-              </a>
-            </div>
-          </div>
-        </div>
-
-
-      </div>
-    </section>
+    </div>
   </main>
 
-  <footer id="footer" class="footer light-background">
+  <footer id="footer" class="footer">
     <div class="container">
       <div class="copyright text-center">
-        <p>© <span>Copyright</span> <strong class="px-1 sitename"><a
-              href="https://www.linkedin.com/in/dharmikgohil086/">Dharmik Gohil</a></strong> <span>All Rights
-            Reserved<br></span></p>
+        <p>&copy; <span>Copyright</span> <strong class="px-1 sitename"><a href="https://www.linkedin.com/in/dharmikgohil086/">Dharmik Gohil</a></strong> <span>All Rights Reserved</span></p>
       </div>
       <div class="social-links d-flex justify-content-center">
         <a href="https://github.com/DharmikGohil013"><i class="bi bi-github"></i></a>
@@ -1657,6 +1743,87 @@
   <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i
       class="bi bi-arrow-up-short"></i></a>
 
+  <!-- macOS Dock Navigation -->
+  <div class="macos-dock">
+    <div class="dock-items">
+      <a href="index.html" class="dock-item" data-tooltip="Home"><i class="bi bi-house-fill"></i></a>
+      <a href="services.html" class="dock-item" data-tooltip="Abilities"><i class="bi bi-lightning-charge-fill"></i></a>
+      <div class="dock-separator"></div>
+      <div class="dock-item games-menu-trigger" data-tooltip="My Games">
+        <i class="bi bi-controller"></i>
+        <div class="games-dropdown-menu" id="gamesDropdown">
+          <div class="games-dropdown-header">
+            <i class="bi bi-controller me-2"></i>My Games
+          </div>
+          <div class="games-dropdown-list">
+            <a href="https://dharmikgohil.itch.io/mavericks-battlegrounds" target="_blank" class="game-dropdown-item">
+              <i class="bi bi-play-circle-fill"></i>
+              <span>Mavericks Battleground</span>
+            </a>
+            <a href="https://dharmik086.itch.io/floppy-bird-860" target="_blank" class="game-dropdown-item">
+              <i class="bi bi-play-circle-fill"></i>
+              <span>Floppy Bird</span>
+            </a>
+            <a href="https://dharmikgohil.itch.io/facade" target="_blank" class="game-dropdown-item">
+              <i class="bi bi-play-circle-fill"></i>
+              <span>Facade</span>
+            </a>
+            <a href="https://dharmikgohil.itch.io/go-galaxy" target="_blank" class="game-dropdown-item">
+              <i class="bi bi-play-circle-fill"></i>
+              <span>Go Galaxy</span>
+            </a>
+            <a href="https://dharmikgohil.itch.io/drone-training" target="_blank" class="game-dropdown-item">
+              <i class="bi bi-play-circle-fill"></i>
+              <span>Drone Training</span>
+            </a>
+          </div>
+        </div>
+      </div>
+      <a href="Achivemtn.html" class="dock-item active" data-tooltip="Achievements"><i class="bi bi-trophy-fill"></i></a>
+      <div class="dock-item apps-menu-trigger" data-tooltip="Live Apps & Websites">
+        <i class="bi bi-briefcase-fill"></i>
+        <div class="games-dropdown-menu" id="appsDropdown">
+          <div class="games-dropdown-header">
+            <i class="bi bi-briefcase-fill me-2"></i>Live Projects
+          </div>
+          <div class="games-dropdown-list">
+            <a href="assets/Fit Sync.apk" download class="game-dropdown-item">
+              <i class="bi bi-download"></i>
+              <span>FitSync App (APK)</span>
+            </a>
+            <a href="https://actify.dharmikgohil.art/" target="_blank" class="game-dropdown-item">
+              <i class="bi bi-globe"></i>
+              <span>Actify</span>
+            </a>
+            <a href="https://learnlink.dharmikgohil.art" target="_blank" class="game-dropdown-item">
+              <i class="bi bi-globe"></i>
+              <span>Learn Link</span>
+            </a>
+            <a href="http://gdgs.dharmikgohil.art/" target="_blank" class="game-dropdown-item">
+              <i class="bi bi-globe"></i>
+              <span>GDGS Games</span>
+            </a>
+            <a href="http://flipcart.dharmikgohil.art/" target="_blank" class="game-dropdown-item">
+              <i class="bi bi-globe"></i>
+              <span>Flipkart Clone</span>
+            </a>
+            <a href="http://krishna.dharmikgohil.art/" target="_blank" class="game-dropdown-item">
+              <i class="bi bi-globe"></i>
+              <span>Krishna Construction</span>
+            </a>
+            <a href="https://fkm.vercel.app/" target="_blank" class="game-dropdown-item">
+              <i class="bi bi-globe"></i>
+              <span>WiFi Service</span>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="dock-separator"></div>
+      <a href="contact.html" class="dock-item" data-tooltip="Contact"><i class="bi bi-envelope-fill"></i></a>
+      <a href="assets/img/Dharmik Gohil Resume.pdf" class="dock-item" data-tooltip="Resume" download><i class="bi bi-file-earmark-person"></i></a>
+    </div>
+  </div>
+
   <!-- Vendor JS Files -->
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="assets/vendor/php-email-form/validate.js"></script>
@@ -1670,6 +1837,99 @@
 
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
+  <script src="assets/js/dock-dropdowns.js"></script>
+
+  <!-- Premium Scroll Animation Engine -->
+  <script>
+  (function() {
+    'use strict';
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+    /* Scroll Progress Bar */
+    const progressBar = document.createElement('div');
+    progressBar.className = 'scroll-progress-glow';
+    document.body.prepend(progressBar);
+
+    /* Floating Particles */
+    const particleColors = ['#0A84FF','#BF5AF2','#FF375F','#30D158','#FF9F0A'];
+    const particles = [];
+    for (let i = 0; i < 6; i++) {
+      const p = document.createElement('div');
+      p.className = 'scroll-particle';
+      p.style.background = particleColors[i % particleColors.length];
+      p.style.width = (3 + Math.random() * 4) + 'px';
+      p.style.height = p.style.width;
+      p.style.left = (Math.random() * 100) + 'vw';
+      p.style.top = (Math.random() * 100) + 'vh';
+      p.style.filter = 'blur(' + (1 + Math.random() * 2) + 'px)';
+      document.body.appendChild(p);
+      particles.push({ el: p, speed: 0.3 + Math.random() * 0.7, x: Math.random() * 100, baseY: Math.random() * 100 });
+    }
+
+    let ticking = false;
+    let lastScroll = 0;
+    window.addEventListener('scroll', function() {
+      lastScroll = window.scrollY;
+      if (!ticking) {
+        requestAnimationFrame(function() {
+          const docH = document.documentElement.scrollHeight - window.innerHeight;
+          const pct = docH > 0 ? (lastScroll / docH) * 100 : 0;
+          progressBar.style.width = pct + '%';
+
+          /* Parallax on page title */
+          const header = document.querySelector('.page-header');
+          if (header) {
+            const depth = lastScroll * 0.15;
+            const badge = header.querySelector('.page-header-badge');
+            const h1 = header.querySelector('h1');
+            const para = header.querySelector('p');
+            if (badge) badge.style.transform = 'translateY(' + (depth * 0.3) + 'px)';
+            if (h1) h1.style.transform = 'translateY(' + (depth * 0.5) + 'px)';
+            if (para) para.style.transform = 'translateY(' + (depth * 0.7) + 'px)';
+          }
+
+          /* Floating particles movement */
+          particles.forEach(function(pt) {
+            const offsetY = Math.sin(lastScroll * 0.003 * pt.speed + pt.x) * 30;
+            pt.el.style.transform = 'translateY(' + offsetY + 'px)';
+            pt.el.style.opacity = (pct > 2 && pct < 98) ? '0.5' : '0';
+          });
+
+          ticking = false;
+        });
+        ticking = true;
+      }
+    }, { passive: true });
+
+    /* Intersection Observer for scroll reveals */
+    const revealClasses = ['scroll-reveal','scroll-reveal-left','scroll-reveal-right','scroll-reveal-scale','scroll-reveal-rotate'];
+    const targets = document.querySelectorAll(revealClasses.map(function(c){return '.'+c;}).join(','));
+
+    const observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('revealed');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+    targets.forEach(function(el) { observer.observe(el); });
+  })();
+  </script>
+
+  <!-- macOS Menubar Clock -->
+  <script>
+    (function updateMenubarClock() {
+      var el = document.getElementById('menubar-clock');
+      if (!el) return;
+      var now = new Date();
+      var h = now.getHours().toString().padStart(2,'0');
+      var m = now.getMinutes().toString().padStart(2,'0');
+      el.textContent = h + ':' + m;
+      setTimeout(updateMenubarClock, 15000);
+    })();
+  </script>
 
 </body>
 

@@ -77,24 +77,6 @@
   <link href="assets/css/main.css" rel="stylesheet">
   <link href="assets/css/navigation.css" rel="stylesheet">
 
-  <!-- Custom Styles -->
-  <style>
-    /* Round icon styling for PNG images */
-    .service-item .icon img {
-      background: linear-gradient(135deg, rgba(0, 234, 255, 0.1), rgba(0, 123, 255, 0.1)) !important;
-      border-radius: 50% !important;
-      padding: 15px !important;
-      border: 2px solid rgba(0, 234, 255, 0.3) !important;
-      box-shadow: 0 4px 15px rgba(0, 234, 255, 0.2) !important;
-    }
-    
-    .service-item .icon {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-  </style>
-
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="service">
   <meta property="og:url" content="https://dharmikgohil.art/services.html">
@@ -149,390 +131,1194 @@
   <meta name="apple-mobile-web-app-title" content="Dharmik Gohil">
   <meta name="application-name" content="Dharmik Gohil">
 
+<style>
+    /* ============================================
+       macOS-INSPIRED ABILITIES PAGE
+       Sonoma/Sequoia Dark Mode Aesthetic
+       ============================================ */
+
+    body {
+      background: #09090F !important;
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+    }
+
+    /* Page Background */
+    .abilities-page {
+      position: relative;
+      min-height: 100vh;
+      background: linear-gradient(180deg, #0f1420 0%, #0a0e18 50%, #0f1420 100%);
+      padding: 40px 0 120px;
+    }
+
+    /* Subtle ambient glow */
+    .abilities-page::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 60% 40% at 20% 15%, rgba(10,132,255,0.06) 0%, transparent 60%),
+        radial-gradient(ellipse 50% 50% at 80% 60%, rgba(191,90,242,0.05) 0%, transparent 60%),
+        radial-gradient(ellipse 40% 30% at 50% 90%, rgba(48,209,88,0.04) 0%, transparent 50%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .abilities-page > .container {
+      position: relative;
+      z-index: 1;
+    }
+
+    /* ---- Page Header ---- */
+    .page-header {
+      text-align: center;
+      padding: 30px 0 50px;
+    }
+
+    .page-header-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(10,132,255,0.1);
+      border: 1px solid rgba(10,132,255,0.25);
+      color: #0A84FF;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      font-weight: 600;
+      padding: 5px 14px;
+      border-radius: 20px;
+      margin-bottom: 16px;
+      letter-spacing: 0.5px;
+    }
+
+    .page-header h1 {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 700;
+      color: #fff;
+      letter-spacing: -0.8px;
+      margin: 0 0 10px;
+      line-height: 1.1;
+    }
+
+    .page-header p {
+      font-family: 'Inter', -apple-system, sans-serif;
+      color: rgba(255,255,255,0.4);
+      font-size: 0.95rem;
+      max-width: 500px;
+      margin: 0 auto;
+    }
+
+    /* ---- macOS Category Window ---- */
+    .mac-category-window {
+      background: rgba(28,28,38,0.55);
+      backdrop-filter: blur(40px) saturate(1.8);
+      -webkit-backdrop-filter: blur(40px) saturate(1.8);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 16px;
+      box-shadow:
+        0 8px 32px rgba(0,0,0,0.4),
+        inset 0 1px 0 rgba(255,255,255,0.06);
+      overflow: hidden;
+      margin-bottom: 36px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .mac-category-window:hover {
+      transform: translateY(-3px);
+      box-shadow:
+        0 16px 48px rgba(0,0,0,0.5),
+        0 0 40px rgba(10,132,255,0.06),
+        inset 0 1px 0 rgba(255,255,255,0.08);
+    }
+
+    /* Window Titlebar */
+    .mac-window-titlebar {
+      background: rgba(255,255,255,0.04);
+      border-bottom: 1px solid rgba(255,255,255,0.07);
+      padding: 13px 18px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      user-select: none;
+    }
+
+    .mac-window-dots {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+      flex-shrink: 0;
+    }
+
+    .mac-window-dots span {
+      width: 13px;
+      height: 13px;
+      border-radius: 50%;
+      display: inline-block;
+      transition: filter 0.2s, transform 0.2s;
+      cursor: default;
+    }
+
+    .mac-window-dots span:hover {
+      filter: brightness(1.25);
+      transform: scale(1.1);
+    }
+
+    .mac-dot-red { background: #FF5F56; box-shadow: 0 0 8px rgba(255,95,86,0.5); }
+    .mac-dot-yellow { background: #FFBD2E; box-shadow: 0 0 8px rgba(255,189,46,0.5); }
+    .mac-dot-green { background: #27C93F; box-shadow: 0 0 8px rgba(39,201,63,0.5); }
+
+    .mac-window-label {
+      flex: 1;
+      text-align: center;
+      font-family: 'Inter', -apple-system, sans-serif;
+      font-size: 13px;
+      font-weight: 500;
+      color: rgba(255,255,255,0.5);
+      letter-spacing: 0.2px;
+    }
+
+    .mac-window-label i {
+      margin-right: 6px;
+      font-size: 12px;
+    }
+
+    /* Window Content */
+    .mac-window-body {
+      padding: 28px 28px 32px;
+    }
+
+    /* ---- Skill Card (glass) ---- */
+    .mac-skill-card {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 14px;
+      padding: 24px 20px;
+      transition: all 0.3s cubic-bezier(.4,0,.2,1);
+      position: relative;
+      overflow: hidden;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .mac-skill-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 80% 80% at 50% 0%, rgba(10,132,255,0.04) 0%, transparent 60%);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      pointer-events: none;
+    }
+
+    .mac-skill-card:hover {
+      background: rgba(255,255,255,0.06);
+      border-color: rgba(10,132,255,0.25);
+      transform: translateY(-6px);
+      box-shadow: 0 12px 36px rgba(0,0,0,0.3), 0 0 20px rgba(10,132,255,0.08);
+    }
+
+    .mac-skill-card:hover::before {
+      opacity: 1;
+    }
+
+    /* Card Header */
+    .skill-card-header {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 14px;
+    }
+
+    .skill-card-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      background: rgba(10,132,255,0.08);
+      border: 1px solid rgba(10,132,255,0.15);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      overflow: hidden;
+      transition: all 0.3s ease;
+    }
+
+    .mac-skill-card:hover .skill-card-icon {
+      background: rgba(10,132,255,0.15);
+      border-color: rgba(10,132,255,0.35);
+      box-shadow: 0 4px 16px rgba(10,132,255,0.2);
+    }
+
+    .skill-card-icon img {
+      width: 28px;
+      height: 28px;
+      object-fit: contain;
+      border-radius: 0 !important;
+      padding: 0 !important;
+      border: none !important;
+      box-shadow: none !important;
+      background: transparent !important;
+    }
+
+    .skill-card-info h3 {
+      font-family: 'Inter', -apple-system, sans-serif;
+      font-size: 1rem;
+      font-weight: 700;
+      color: #fff;
+      margin: 0 0 2px;
+      letter-spacing: -0.2px;
+    }
+
+    .skill-card-info h3 a {
+      color: inherit;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .skill-card-info h3 a:hover {
+      color: #0A84FF;
+    }
+
+    .skill-card-desc {
+      font-family: 'Inter', -apple-system, sans-serif;
+      color: rgba(255,255,255,0.45);
+      font-size: 0.82rem;
+      line-height: 1.5;
+      margin: 0 0 16px;
+      flex: 1;
+    }
+
+    /* Progress Bar */
+    .mac-progress-wrap {
+      margin-top: auto;
+    }
+
+    .mac-progress-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 8px;
+    }
+
+    .mac-progress-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.7rem;
+      color: rgba(255,255,255,0.4);
+      letter-spacing: 0.3px;
+    }
+
+    .mac-progress-value {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: #0A84FF;
+    }
+
+    .mac-progress-track {
+      width: 100%;
+      height: 6px;
+      background: rgba(255,255,255,0.06);
+      border-radius: 6px;
+      overflow: hidden;
+      margin-bottom: 10px;
+    }
+
+    .mac-progress-fill {
+      height: 100%;
+      border-radius: 6px;
+      background: linear-gradient(90deg, #0A84FF 0%, #BF5AF2 100%);
+      box-shadow: 0 0 12px rgba(10,132,255,0.4);
+      transition: width 1.5s cubic-bezier(.4,0,.2,1);
+    }
+
+    .mac-progress-fill.green {
+      background: linear-gradient(90deg, #30D158 0%, #34C759 100%);
+      box-shadow: 0 0 12px rgba(48,209,88,0.4);
+    }
+
+    .mac-progress-fill.purple {
+      background: linear-gradient(90deg, #BF5AF2 0%, #AF52DE 100%);
+      box-shadow: 0 0 12px rgba(191,90,242,0.4);
+    }
+
+    .mac-progress-fill.orange {
+      background: linear-gradient(90deg, #FF9F0A 0%, #FF9500 100%);
+      box-shadow: 0 0 12px rgba(255,159,10,0.4);
+    }
+
+    .mac-progress-fill.cyan {
+      background: linear-gradient(90deg, #64D2FF 0%, #5AC8FA 100%);
+      box-shadow: 0 0 12px rgba(100,210,255,0.4);
+    }
+
+    .mac-progress-fill.pink {
+      background: linear-gradient(90deg, #FF375F 0%, #FF2D55 100%);
+      box-shadow: 0 0 12px rgba(255,55,95,0.4);
+    }
+
+    /* Project Status Badge */
+    .mac-status-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      font-family: 'Inter', -apple-system, sans-serif;
+      font-size: 0.7rem;
+      font-weight: 600;
+      padding: 3px 10px;
+      border-radius: 8px;
+      letter-spacing: 0.3px;
+    }
+
+    .mac-status-badge.completed {
+      background: rgba(48,209,88,0.1);
+      border: 1px solid rgba(48,209,88,0.25);
+      color: #30D158;
+    }
+
+    .mac-status-badge.no-project {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      color: rgba(255,255,255,0.35);
+    }
+
+    .mac-status-badge i {
+      font-size: 0.6rem;
+    }
+
+    /* ---- Footer ---- */
+    .footer {
+      background: #0a0e18 !important;
+      border-top: 1px solid rgba(255,255,255,0.06) !important;
+      padding: 30px 0 80px 0 !important;
+      position: relative;
+      z-index: 1;
+    }
+
+    .footer .container {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+    }
+
+    .footer .copyright {
+      text-align: right !important;
+    }
+
+    .footer .copyright p {
+      font-family: 'Inter', -apple-system, sans-serif !important;
+      color: rgba(255,255,255,0.4) !important;
+      font-size: 0.85rem;
+    }
+
+    .footer .social-links {
+      justify-content: flex-end !important;
+    }
+
+    .footer .social-links a {
+      width: 36px;
+      height: 36px;
+      display: inline-flex !important;
+      align-items: center;
+      justify-content: center;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 10px;
+      color: rgba(255,255,255,0.5) !important;
+      font-size: 1rem;
+      transition: all 0.2s ease;
+      margin: 0 5px !important;
+    }
+
+    .footer .social-links a:hover {
+      background: rgba(10,132,255,0.15) !important;
+      border-color: rgba(10,132,255,0.4) !important;
+      color: #0A84FF !important;
+      transform: translateY(-3px);
+    }
+
+    /* ---- Responsive ---- */
+    @media (max-width: 768px) {
+      .abilities-page { padding: 20px 0 100px; }
+      .page-header { padding: 20px 0 30px; }
+      .page-header h1 { font-size: 1.8rem; }
+      .mac-window-body { padding: 20px 16px 24px; }
+      .mac-skill-card { padding: 18px 16px; }
+      .skill-card-icon { width: 40px; height: 40px; }
+      .skill-card-icon img { width: 22px; height: 22px; }
+    }
+
+    @media (max-width: 575px) {
+      .mac-window-titlebar { padding: 10px 13px; }
+      .mac-window-body { padding: 16px 12px 20px; }
+      .page-header h1 { font-size: 1.5rem; }
+    }
+
+    /* ---- macOS Menu Bar ---- */
+    .macos-menubar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 28px;
+      background: rgba(22,22,26,0.92);
+      backdrop-filter: blur(25px) saturate(2);
+      -webkit-backdrop-filter: blur(25px) saturate(2);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 18px;
+      z-index: 9998;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      box-shadow: 0 1px 0 rgba(0,0,0,0.15);
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+
+    .menubar-left {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .menubar-apple {
+      font-size: 16px;
+      color: rgba(255,255,255,0.95);
+    }
+
+    .menubar-left span {
+      font-size: 13px;
+      font-weight: 500;
+      color: rgba(255,255,255,0.88);
+      cursor: default;
+      user-select: none;
+      transition: color 0.15s ease;
+    }
+
+    .menubar-left span:hover:not(.menubar-apple) {
+      color: rgba(255,255,255,1);
+    }
+
+    .menubar-left span.menubar-brand {
+      font-weight: 700;
+      color: rgba(255,255,255,0.95);
+    }
+
+    .menubar-right {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      font-size: 12px;
+      color: rgba(255,255,255,0.85);
+    }
+
+    .menubar-right a {
+      color: inherit;
+      text-decoration: none;
+      transition: color 0.15s ease;
+      display: flex;
+      align-items: center;
+    }
+
+    .menubar-right a:hover {
+      color: rgba(255,255,255,1);
+    }
+
+    .menubar-right i {
+      font-size: 14px;
+      transition: color 0.15s ease;
+    }
+
+    .menubar-right i:hover {
+      color: rgba(255,255,255,1);
+    }
+
+    #menubar-clock {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      font-size: 12px;
+      font-weight: 500;
+      color: rgba(255,255,255,0.9);
+      letter-spacing: 0.4px;
+      min-width: 44px;
+      text-align: right;
+    }
+
+    @media (max-width: 768px) {
+      .macos-menubar { display: none; }
+    }
+
+    /* ============================================
+       EXCLUSIVE SMOOTH SCROLL ANIMATIONS
+       Premium reveal effects on scroll
+       ============================================ */
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    /* --- Base hidden state for scroll-reveal elements --- */
+    .scroll-reveal {
+      opacity: 0;
+      transform: translateY(60px);
+      filter: blur(6px);
+      transition: all 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+      will-change: opacity, transform, filter;
+    }
+    .scroll-reveal.revealed {
+      opacity: 1;
+      transform: translateY(0);
+      filter: blur(0);
+    }
+
+    /* --- Slide from Left --- */
+    .scroll-reveal-left {
+      opacity: 0;
+      transform: translateX(-80px);
+      filter: blur(5px);
+      transition: all 1s cubic-bezier(0.22, 1, 0.36, 1);
+      will-change: opacity, transform, filter;
+    }
+    .scroll-reveal-left.revealed {
+      opacity: 1;
+      transform: translateX(0);
+      filter: blur(0);
+    }
+
+    /* --- Slide from Right --- */
+    .scroll-reveal-right {
+      opacity: 0;
+      transform: translateX(80px);
+      filter: blur(5px);
+      transition: all 1s cubic-bezier(0.22, 1, 0.36, 1);
+      will-change: opacity, transform, filter;
+    }
+    .scroll-reveal-right.revealed {
+      opacity: 1;
+      transform: translateX(0);
+      filter: blur(0);
+    }
+
+    /* --- Scale Up Reveal --- */
+    .scroll-reveal-scale {
+      opacity: 0;
+      transform: scale(0.85);
+      filter: blur(4px);
+      transition: all 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+      will-change: opacity, transform, filter;
+    }
+    .scroll-reveal-scale.revealed {
+      opacity: 1;
+      transform: scale(1);
+      filter: blur(0);
+    }
+
+    /* --- Rotate In Reveal --- */
+    .scroll-reveal-rotate {
+      opacity: 0;
+      transform: perspective(600px) rotateY(15deg) translateX(40px);
+      filter: blur(3px);
+      transition: all 1.1s cubic-bezier(0.22, 1, 0.36, 1);
+      will-change: opacity, transform, filter;
+    }
+    .scroll-reveal-rotate.revealed {
+      opacity: 1;
+      transform: perspective(600px) rotateY(0deg) translateX(0);
+      filter: blur(0);
+    }
+
+    /* --- Staggered Children Animation --- */
+    .stagger-children > * {
+      opacity: 0;
+      transform: translateY(40px);
+      filter: blur(3px);
+      transition: all 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+      will-change: opacity, transform, filter;
+    }
+    .stagger-children.revealed > * {
+      opacity: 1;
+      transform: translateY(0);
+      filter: blur(0);
+    }
+    .stagger-children.revealed > *:nth-child(1) { transition-delay: 0.05s; }
+    .stagger-children.revealed > *:nth-child(2) { transition-delay: 0.12s; }
+    .stagger-children.revealed > *:nth-child(3) { transition-delay: 0.19s; }
+    .stagger-children.revealed > *:nth-child(4) { transition-delay: 0.26s; }
+    .stagger-children.revealed > *:nth-child(5) { transition-delay: 0.33s; }
+    .stagger-children.revealed > *:nth-child(6) { transition-delay: 0.40s; }
+    .stagger-children.revealed > *:nth-child(7) { transition-delay: 0.47s; }
+    .stagger-children.revealed > *:nth-child(8) { transition-delay: 0.54s; }
+
+    /* --- Glow Pulse on Reveal --- */
+    .scroll-glow.revealed {
+      animation: glowPulseReveal 1.5s ease-out forwards;
+    }
+    @keyframes glowPulseReveal {
+      0%   { box-shadow: 0 0 0 rgba(10, 132, 255, 0); }
+      40%  { box-shadow: 0 0 40px rgba(10, 132, 255, 0.2), 0 0 80px rgba(191, 90, 242, 0.1); }
+      100% { box-shadow: 0 0 0 rgba(10, 132, 255, 0); }
+    }
+
+    /* --- Progress Bar Fill on Scroll --- */
+    .mac-progress-fill {
+      width: 0 !important;
+      transition: width 1.4s cubic-bezier(0.22, 1, 0.36, 1) !important;
+    }
+    .mac-category-window.revealed .mac-progress-fill {
+      /* width restored by JS */
+    }
+
+    /* --- Skill Card Stagger Inside Window --- */
+    .mac-window-body .row.g-3 > div {
+      opacity: 0;
+      transform: translateY(30px) scale(0.95);
+      filter: blur(3px);
+      transition: all 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+      will-change: opacity, transform, filter;
+    }
+    .mac-category-window.revealed .mac-window-body .row.g-3 > div {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+      filter: blur(0);
+    }
+    .mac-category-window.revealed .mac-window-body .row.g-3 > div:nth-child(1) { transition-delay: 0.08s; }
+    .mac-category-window.revealed .mac-window-body .row.g-3 > div:nth-child(2) { transition-delay: 0.16s; }
+    .mac-category-window.revealed .mac-window-body .row.g-3 > div:nth-child(3) { transition-delay: 0.24s; }
+    .mac-category-window.revealed .mac-window-body .row.g-3 > div:nth-child(4) { transition-delay: 0.32s; }
+    .mac-category-window.revealed .mac-window-body .row.g-3 > div:nth-child(5) { transition-delay: 0.40s; }
+    .mac-category-window.revealed .mac-window-body .row.g-3 > div:nth-child(6) { transition-delay: 0.48s; }
+    .mac-category-window.revealed .mac-window-body .row.g-3 > div:nth-child(7) { transition-delay: 0.56s; }
+
+    /* --- Scroll Progress Glow Bar --- */
+    .scroll-progress-glow {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      z-index: 9999;
+      background: linear-gradient(90deg, #0A84FF, #BF5AF2, #FF375F, #0A84FF);
+      background-size: 300% 100%;
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.15s ease-out;
+      animation: progressGradient 3s linear infinite;
+      pointer-events: none;
+    }
+    @keyframes progressGradient {
+      0%   { background-position: 0% 50%; }
+      100% { background-position: 300% 50%; }
+    }
+
+    /* --- Floating Particles on Scroll --- */
+    .scroll-particles {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      pointer-events: none;
+      z-index: 9998;
+      overflow: hidden;
+    }
+    .scroll-particle {
+      position: absolute;
+      width: 4px; height: 4px;
+      border-radius: 50%;
+      background: rgba(10, 132, 255, 0.4);
+      opacity: 0;
+      animation: floatParticle 4s ease-in-out infinite;
+    }
+    .scroll-particle:nth-child(2) { background: rgba(191, 90, 242, 0.35); animation-delay: 0.8s; left: 20%; }
+    .scroll-particle:nth-child(3) { background: rgba(255, 55, 95, 0.3); animation-delay: 1.6s; left: 50%; }
+    .scroll-particle:nth-child(4) { background: rgba(10, 132, 255, 0.3); animation-delay: 2.4s; left: 75%; }
+    .scroll-particle:nth-child(5) { background: rgba(48, 209, 88, 0.25); animation-delay: 3.2s; left: 90%; }
+    @keyframes floatParticle {
+      0%   { transform: translateY(100vh) scale(0); opacity: 0; }
+      20%  { opacity: 1; }
+      80%  { opacity: 0.6; }
+      100% { transform: translateY(-20vh) scale(1.5); opacity: 0; }
+    }
+
+    /* --- Window Separator Glow --- */
+    .mac-category-window::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 10%;
+      width: 80%;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(10, 132, 255, 0.2), transparent);
+      opacity: 0;
+      transition: opacity 0.8s ease 0.5s;
+      pointer-events: none;
+    }
+    .mac-category-window.revealed::after {
+      opacity: 1;
+    }
+
+    /* --- Reduce motion for accessibility --- */
+    @media (prefers-reduced-motion: reduce) {
+      .scroll-reveal,
+      .scroll-reveal-left,
+      .scroll-reveal-right,
+      .scroll-reveal-scale,
+      .scroll-reveal-rotate,
+      .stagger-children > *,
+      .mac-window-body .row.g-3 > div {
+        transition: none !important;
+        opacity: 1 !important;
+        transform: none !important;
+        filter: none !important;
+      }
+      .mac-progress-fill {
+        transition: none !important;
+      }
+      .scroll-progress-glow,
+      .scroll-particles { display: none !important; }
+    }
+  </style>
+
 <body class="index-page">
   <div class="custom-cursor"></div>
-    <header id="header" class="header d-flex align-items-center sticky-top">
-    <div class="container-fluid position-relative d-flex align-items-center justify-content-between">
-      <a href="index.html" class="logo d-flex align-items-center me-auto me-xl-0">
-        <img src="assets/img/dlogo.png" alt="dharmik gohil personal portfolio logo and brand identity">
-        <h1 class="sitename">DHARMIK</h1>
-      </a>
-      <nav id="navmenu" class="navmenu">
-        <ul>
-          <li><a href="https://dharmikgohil.art">Home</a></li>
-<li><a href="services.html" class="active">Abilities</a></li>
-          <li class="dropdown"><a href="https://dharmikgohil.art/portfolio.html"><span>Projects</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-            <ul>
-              <li><a href="portfolio.html">Games</a></li>
-              </li>
-              <li class="dropdown"><a href="#"><span>Flutter App</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-                <ul>
-                  <li><a href="assets/Fit Sync.apk">Fit Sync</a></li>
-                </ul>
-              </li>
-              <li class="dropdown"><a href="logo.html"><span>Ui/ux</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-                <ul>
-                  <li><a href="logo.html">Designs</a></li>
-                </ul>
-              </li>
-              <li class="dropdown"><a href="#"><span>Websites</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-                <ul>
-                  <li><a href="http://gdgs.dharmikgohil.art/">GDGS Games</a></li>
-                  <!-- <li><a href="https://dharmikgohil013.github.io/DHARMIK-GOHIL-FILMS/">Film industry</a></li> -->
-                  <li><a href="http://flipcart.dharmikgohil.art/">Flipkart Clone</a></li>
-                  <li><a href="http://krishna.dharmikgohil.art/">Krishna Construction</a></li>
-                  <!-- <li><a href="#">MedCare</a></li> -->
-                </ul>
-              
-              <li class="dropdown"><a href="#"><span>Java</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-                <ul>
-                  <li class="dropdown"><a href="#"><span>CampusAdminPro</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-                    <ul>
-                      <li><a href="https://drive.google.com/file/d/15YNf77gERCt2LYfRYSdXiYU3yAkx7EvC/view?usp=drive_link">Report</a></li>
-                    </ul>
-                  </li>
-                    
-                </ul>
-              </li>
-              <li class="dropdown"><a href="#"><span>Node Js</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-                <ul>
-                  <li><a href="https://indianturijam.dharmikgohil.art/">IndianTurijam</a></li>
-                  <li><a href="contact.html">Contact Page</a></li>
-                </ul>
-              </li>
-              <li class="dropdown"><a href="#"><span>C & C++</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-                <ul>
-                  <li><a href="https://github.com/DharmikGohil013/Hostel_Menegment_System_iDGAWS-">Hostel Management</a></li>
-                  <li><a href="https://github.com/DharmikGohil013/Bank_Mangemnt_System">Bank Management</a></li>
-                </ul>
-              </li>
-            </ul>
-          </li>
-          <li><a href="Achivemtn.html">Milestones</a></li>
-<li class="dropdown"><a href="#"><span>Time to Fun</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-            <ul>
-              <li><a href="https://dharmik086.itch.io/floppy-bird-860" target="_blank">Floppy Bird</a></li>
-              <li><a href="https://dharmik086.itch.io/minimario" target="_blank">MiniMario</a></li>
-              <li><a href="https://dharmikgohil.itch.io/mavericks-battlegrounds" target="_blank">MAVERICKS BATTLEGROUNDS</a></li> 
-            </ul>
-          </li>
-          <li><a href="blog.html">Blog</a></li>
-          <li class="dropdown">
-  <a href="#"><span style="color: #15ff00;">Services</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-  <ul>
-    <li><a href="https://actify.dharmikgohil.art/" target="_blank">Actify</a></li> <!-- ✅ NEW ENTRY -->
-    <li><a href="https://fkm.vercel.app/" target="_blank">Wifi Service</a></li>
-    <li><a href="assets/Fit Sync.apk" target="_blank">Fit Sync</a></li>
-    <li><a href="https://learnlink.dharmikgohil.art" target="_blank">Learn Link</a></li>
-    
-  </ul>
-</li>
-        </ul>
-        <button class="mobile-nav-toggle d-xl-none" aria-label="Toggle navigation">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-      </nav>
-      <div class="header-social-links">
-        <a href="https://github.com/DharmikGohil013" target="_blank"><i class="bi bi-github"></i></a>
-        <a href="https://www.linkedin.com/in/dharmikgohil086/" target="_blank"><i class="bi bi-linkedin"></i></a>
-        <a href="https://www.instagram.com/dharmik.086/?next=%2F" target="_blank"><i class="bi bi-instagram"></i></a>
-        <a href="https://x.com/Dharmik086" target="_blank"><i class="bi bi-twitter"></i></a>
-        <a href="https://play.google.com/store/apps/details?id=com.dharmikgohilfun.crossout" target="_blank"><i class="bi bi-google-play"></i></a>
-        <a href="assets/img/Dharmik Gohil Resume.pdf" class="download-resume" download><i class="bi bi-download"></i></a>
-      </div>
+
+  <!-- macOS Menu Bar -->
+  <div class="macos-menubar">
+    <div class="menubar-left">
+      <span class="menubar-apple"><a href="index.html" style="color:inherit;text-decoration:none;"><i class="bi bi-house-fill"></i></a></span>
+      <span class="menubar-brand">Dharmik Gohil</span>
+      <span><a href="blog.html" style="color:inherit;text-decoration:none;display:flex;align-items:center;gap:4px;"><i class="bi bi-rss"></i> Blog</a></span>
+      <span>Abilities</span>
+      <span>Skills</span>
     </div>
-  </header>
+    <div class="menubar-right">
+      <a href="https://github.com/DharmikGohil013" target="_blank" rel="noopener noreferrer"><i class="bi bi-github"></i></a>
+      <a href="https://www.linkedin.com/in/dharmikgohil086/" target="_blank" rel="noopener noreferrer"><i class="bi bi-linkedin"></i></a>
+      <a href="https://www.instagram.com/dharmik.086/?next=%2F" target="_blank" rel="noopener noreferrer"><i class="bi bi-instagram"></i></a>
+      <a href="https://x.com/Dharmik086" target="_blank" rel="noopener noreferrer"><i class="bi bi-twitter"></i></a>
+      <i class="bi bi-wifi"></i>
+      <i class="bi bi-battery-full"></i>
+      <span id="menubar-clock">--:--</span>
+    </div>
+  </div>
 
   <main class="main">
-    <!-- Services Section -->
-    <section id="services" class="services section">
-      <div class="particles">
-        <div class="particle" style="left: 10%; top: 20%; animation-delay: 0s;"></div>
-        <div class="particle" style="left: 30%; top: 50%; animation-delay: 1s;"></div>
-        <div class="particle" style="left: 70%; top: 30%; animation-delay: 2s;"></div>
-        <div class="particle" style="left: 90%; top: 60%; animation-delay: 3s;"></div>
-      </div>
-
-      <!-- Languages Section -->
-      <div class="container section-title" data-aos="fade-up">
-        <h2>Abilities</h2>
-        <p>Mastering tools and technologies to build innovative solutions.</p>
-      </div>
+    <div class="abilities-page">
       <div class="container">
-        <div class="row gy-4">
-          <div class="col-lg-4 col-md-6" data-aos="zoom-in" data-aos-delay="100">
-            <div class="service-item">
-              <div class="icon">
-                <img src="assets/img/C_Programming_Language.svg.png" alt="c programming language skill dharmik gohil developer">
-              </div>
-              <a href="https://github.com/DharmikGohil013/C-All-Functiona-Methods" class="stretched-link">
-                <h3>C Language</h3>
-              </a>
-              <p>Proficient in algorithms, data structures, and optimized code.</p>
-              <div class="progress">
-                <div class="progress-bar" style="width: 80%; background-color: #006d18;" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-              <p class="progress-text">Learning Progress: 80%</p>
-              <p class="project-status">!!No Any Project</p>
+
+        <!-- Page Header -->
+        <div class="page-header scroll-reveal" data-aos="fade-down">
+          <div class="page-header-badge"><i class="bi bi-lightning-charge-fill"></i> TECH STACK</div>
+          <h1>Abilities & Skills</h1>
+          <p>Mastering tools and technologies to build innovative solutions.</p>
+        </div>
+
+        <!-- ============ LANGUAGES WINDOW ============ -->
+        <div class="mac-category-window scroll-reveal-left scroll-glow" data-aos="fade-up">
+          <div class="mac-window-titlebar">
+            <div class="mac-window-dots">
+              <span class="mac-dot-red"></span>
+              <span class="mac-dot-yellow"></span>
+              <span class="mac-dot-green"></span>
             </div>
+            <div class="mac-window-label"><i class="bi bi-code-slash"></i> Languages & Tools</div>
           </div>
-          <div class="col-lg-4 col-md-6" data-aos="zoom-in" data-aos-delay="200">
-            <div class="service-item">
-              <div class="icon">
-                <img src="assets/img/C++_logo.png" alt="c++ programming expertise by gohil dharmik">
+          <div class="mac-window-body">
+            <div class="row g-3">
+              <!-- C Language -->
+              <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="50">
+                <div class="mac-skill-card">
+                  <div class="skill-card-header">
+                    <div class="skill-card-icon">
+                      <img src="assets/img/C_Programming_Language.svg.png" alt="c programming language skill dharmik gohil developer">
+                    </div>
+                    <div class="skill-card-info">
+                      <h3><a href="https://github.com/DharmikGohil013/C-All-Functiona-Methods" target="_blank">C Language</a></h3>
+                    </div>
+                  </div>
+                  <p class="skill-card-desc">Proficient in algorithms, data structures, and optimized code.</p>
+                  <div class="mac-progress-wrap">
+                    <div class="mac-progress-header">
+                      <span class="mac-progress-label">Progress</span>
+                      <span class="mac-progress-value">80%</span>
+                    </div>
+                    <div class="mac-progress-track">
+                      <div class="mac-progress-fill green" style="width: 80%;"></div>
+                    </div>
+                    <span class="mac-status-badge no-project"><i class="bi bi-dash-circle"></i> No Projects Yet</span>
+                  </div>
+                </div>
               </div>
-              <a href="https://github.com/DharmikGohil013/CPP-Projects" class="stretched-link">
-                <h3>C++ Language</h3>
-              </a>
-              <p>Skilled in OOP and advanced data structures.</p>
-              <div class="progress">
-                <div class="progress-bar" style="width: 70%; background-color: #008b1e;" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
+              <!-- C++ -->
+              <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                <div class="mac-skill-card">
+                  <div class="skill-card-header">
+                    <div class="skill-card-icon">
+                      <img src="assets/img/C++_logo.png" alt="c++ programming expertise by gohil dharmik">
+                    </div>
+                    <div class="skill-card-info">
+                      <h3><a href="https://github.com/DharmikGohil013/CPP-Projects" target="_blank">C++ Language</a></h3>
+                    </div>
+                  </div>
+                  <p class="skill-card-desc">Skilled in OOP and advanced data structures.</p>
+                  <div class="mac-progress-wrap">
+                    <div class="mac-progress-header">
+                      <span class="mac-progress-label">Progress</span>
+                      <span class="mac-progress-value">70%</span>
+                    </div>
+                    <div class="mac-progress-track">
+                      <div class="mac-progress-fill" style="width: 70%;"></div>
+                    </div>
+                    <span class="mac-status-badge completed"><i class="bi bi-check-circle-fill"></i> 3 Projects</span>
+                  </div>
+                </div>
               </div>
-              <p class="progress-text">Learning Progress: 70%</p>
-              <p class="project-status completed">Projects Completed: 3</p>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-6" data-aos="zoom-in" data-aos-delay="300">
-            <div class="service-item">
-              <div class="icon">
-                <img src="assets/img/226777.png" alt="creative design element by dharmik gohil developer">
+              <!-- Java & Swing -->
+              <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="150">
+                <div class="mac-skill-card">
+                  <div class="skill-card-header">
+                    <div class="skill-card-icon">
+                      <img src="assets/img/226777.png" alt="creative design element by dharmik gohil developer">
+                    </div>
+                    <div class="skill-card-info">
+                      <h3><a href="https://github.com/DharmikGohil013/Java-Swing-Projects" target="_blank">Java & Swing</a></h3>
+                    </div>
+                  </div>
+                  <p class="skill-card-desc">Expert in cross-platform apps and GUI design.</p>
+                  <div class="mac-progress-wrap">
+                    <div class="mac-progress-header">
+                      <span class="mac-progress-label">Progress</span>
+                      <span class="mac-progress-value">70%</span>
+                    </div>
+                    <div class="mac-progress-track">
+                      <div class="mac-progress-fill purple" style="width: 70%;"></div>
+                    </div>
+                    <span class="mac-status-badge completed"><i class="bi bi-check-circle-fill"></i> 5 Projects</span>
+                  </div>
+                </div>
               </div>
-              <a href="https://github.com/DharmikGohil013/Java-Swing-Projects" class="stretched-link">
-                <h3>Java & Swing</h3>
-              </a>
-              <p>Expert in cross-platform apps and GUI design.</p>
-              <div class="progress">
-                <div class="progress-bar" style="width: 70%; background-color: #008b1e;" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
+              <!-- HTML & CSS -->
+              <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                <div class="mac-skill-card">
+                  <div class="skill-card-header">
+                    <div class="skill-card-icon">
+                      <img src="assets/img/hc.jpg" alt="professional project image by gohil dharmik">
+                    </div>
+                    <div class="skill-card-info">
+                      <h3><a href="https://github.com/DharmikGohil013/HTML-CSS-Projects" target="_blank">HTML & CSS</a></h3>
+                    </div>
+                  </div>
+                  <p class="skill-card-desc">Skilled in responsive and modern web design.</p>
+                  <div class="mac-progress-wrap">
+                    <div class="mac-progress-header">
+                      <span class="mac-progress-label">Progress</span>
+                      <span class="mac-progress-value">80%</span>
+                    </div>
+                    <div class="mac-progress-track">
+                      <div class="mac-progress-fill orange" style="width: 80%;"></div>
+                    </div>
+                    <span class="mac-status-badge completed"><i class="bi bi-check-circle-fill"></i> 3 Projects</span>
+                  </div>
+                </div>
               </div>
-              <p class="progress-text">Learning Progress: 70%</p>
-              <p class="project-status completed">Projects Completed: 5</p>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-6" data-aos="zoom-in" data-aos-delay="400">
-            <div class="service-item">
-              <div class="icon">
-                <img src="assets/img/hc.jpg" alt="professional project image by gohil dharmik">
+              <!-- JavaScript -->
+              <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="250">
+                <div class="mac-skill-card">
+                  <div class="skill-card-header">
+                    <div class="skill-card-icon">
+                      <img src="assets/img/js.png" alt="javascript programming expertise by dharmik gohil">
+                    </div>
+                    <div class="skill-card-info">
+                      <h3><a href="https://github.com/DharmikGohil013/JavaScript-Projects" target="_blank">JavaScript</a></h3>
+                    </div>
+                  </div>
+                  <p class="skill-card-desc">Proficient in interactive web development.</p>
+                  <div class="mac-progress-wrap">
+                    <div class="mac-progress-header">
+                      <span class="mac-progress-label">Progress</span>
+                      <span class="mac-progress-value">50%</span>
+                    </div>
+                    <div class="mac-progress-track">
+                      <div class="mac-progress-fill cyan" style="width: 50%;"></div>
+                    </div>
+                    <span class="mac-status-badge completed"><i class="bi bi-check-circle-fill"></i> 4 Projects</span>
+                  </div>
+                </div>
               </div>
-              <a href="https://github.com/DharmikGohil013/HTML-CSS-Projects" class="stretched-link">
-                <h3>HTML & CSS</h3>
-              </a>
-              <p>Skilled in responsive and modern web design.</p>
-              <div class="progress">
-                <div class="progress-bar" style="width: 80%; background-color: #007bff;" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+              <!-- Python -->
+              <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+                <div class="mac-skill-card">
+                  <div class="skill-card-header">
+                    <div class="skill-card-icon">
+                      <img src="assets/img/Python-logo-notext.svg.png" alt="python programming skill dharmik gohil fun developer">
+                    </div>
+                    <div class="skill-card-info">
+                      <h3><a href="https://github.com/DharmikGohil013/Python-Projects" target="_blank">Python (ML)</a></h3>
+                    </div>
+                  </div>
+                  <p class="skill-card-desc">Machine Learning and data analysis expertise.</p>
+                  <div class="mac-progress-wrap">
+                    <div class="mac-progress-header">
+                      <span class="mac-progress-label">Progress</span>
+                      <span class="mac-progress-value">50%</span>
+                    </div>
+                    <div class="mac-progress-track">
+                      <div class="mac-progress-fill" style="width: 50%;"></div>
+                    </div>
+                    <span class="mac-status-badge completed"><i class="bi bi-check-circle-fill"></i> 1 Project</span>
+                  </div>
+                </div>
               </div>
-              <p class="progress-text">Learning Progress: 80%</p>
-              <p class="project-status completed">Projects Completed: 3</p>
-            </div>
-          </div>
-          <!-- JavaScript Progress Updated -->
-          <div class="col-lg-4 col-md-6" data-aos="zoom-in" data-aos-delay="500">
-            <div class="service-item">
-              <div class="icon">
-                <img src="assets/img/js.png" alt="javascript programming expertise by dharmik gohil">
+              <!-- Canva -->
+              <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="350">
+                <div class="mac-skill-card">
+                  <div class="skill-card-header">
+                    <div class="skill-card-icon">
+                      <img src="https://freelogopng.com/images/all_img/1656733807canva-icon-png.png" alt="canva design tool expertise by dharmik gohil">
+                    </div>
+                    <div class="skill-card-info">
+                      <h3><a href="https://www.canva.com/" target="_blank">Canva</a></h3>
+                    </div>
+                  </div>
+                  <p class="skill-card-desc">Professional graphic design and visual content creation.</p>
+                  <div class="mac-progress-wrap">
+                    <div class="mac-progress-header">
+                      <span class="mac-progress-label">Progress</span>
+                      <span class="mac-progress-value">70%</span>
+                    </div>
+                    <div class="mac-progress-track">
+                      <div class="mac-progress-fill pink" style="width: 70%;"></div>
+                    </div>
+                    <span class="mac-status-badge completed"><i class="bi bi-check-circle-fill"></i> 100+ Designs</span>
+                  </div>
+                </div>
               </div>
-              <a href="https://github.com/DharmikGohil013/JavaScript-Projects" class="stretched-link">
-                <h3>JavaScript</h3>
-              </a>
-              <p>Proficient in interactive web development.</p>
-              <div class="progress">
-                <div class="progress-bar" style="width: 50%; background-color: #f0db4f;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-              <p class="progress-text">Learning Progress: 50%</p>
-              <p class="project-status completed">Projects Completed: 4</p>
-            </div>
-          </div>
-          <!-- Python Progress Updated -->
-          <div class="col-lg-4 col-md-6" data-aos="zoom-in" data-aos-delay="600">
-            <div class="service-item">
-              <div class="icon">
-                <img src="assets/img/Python-logo-notext.svg.png" alt="python programming skill dharmik gohil fun developer">
-              </div>
-              <a href="https://github.com/DharmikGohil013/Python-Projects" class="stretched-link">
-                <h3>Python (ML)</h3>
-              </a>
-              <p>Machine Learning and data analysis expertise.</p>
-              <div class="progress">
-                <div class="progress-bar" style="width: 50%; background-color: #306998;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-              <p class="progress-text">Learning Progress: 50%</p>
-              <p class="project-status completed">Projects Completed: 1</p>
-            </div>
-          </div>
-          <!-- Canva Design -->
-          <div class="col-lg-4 col-md-6" data-aos="zoom-in" data-aos-delay="700">
-            <div class="service-item">
-              <div class="icon">
-                <img src="https://freelogopng.com/images/all_img/1656733807canva-icon-png.png" alt="canva design tool expertise by dharmik gohil">
-              </div>
-              <a href="https://www.canva.com/" class="stretched-link">
-                <h3>Canva</h3>
-              </a>
-              <p>Professional graphic design and visual content creation.</p>
-              <div class="progress">
-                <div class="progress-bar" style="width: 70%; background-color: #00c4cc;" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-              <p class="progress-text">Learning Progress: 70%</p>
-              <p class="project-status completed">Designs Created: 100+</p>
             </div>
           </div>
         </div>
-      </div>
 
-      <!-- Platform Section -->
-      <div class="container section-title" data-aos="fade-up">
-        <h2>Platform</h2>
-        <p>Building immersive gaming experiences.</p>
-      </div>
-      <div class="container">
-        <div class="row gy-4">
-          <!-- Unity 2D Progress Updated -->
-          <div class="col-lg-4 col-md-6" data-aos="zoom-in" data-aos-delay="100">
-            <div class="service-item">
-              <div class="icon">
-                <img src="assets/img/Unity.webp" alt="unity game engine expertise by dharmik gohil fun">
-              </div>
-              <a href="https://github.com/DharmikGohil013/Unity-2D-Projects" class="stretched-link">
-                <h3>Unity 2D</h3>
-              </a>
-              <p>Skilled in 2D game development.</p>
-              <div class="progress">
-                <div class="progress-bar" style="width: 60%; background-color: #9c27b0;" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-              <p class="progress-text">Learning Progress: 60%</p>
-              <p class="project-status completed">Projects Completed: 2</p>
+        <!-- ============ PLATFORMS WINDOW ============ -->
+        <div class="mac-category-window scroll-reveal-right scroll-glow" data-aos="fade-up">
+          <div class="mac-window-titlebar">
+            <div class="mac-window-dots">
+              <span class="mac-dot-red"></span>
+              <span class="mac-dot-yellow"></span>
+              <span class="mac-dot-green"></span>
             </div>
+            <div class="mac-window-label"><i class="bi bi-controller"></i> Game Engines & Platforms</div>
           </div>
-          <!-- Unity 3D Progress Updated -->
-          <div class="col-lg-4 col-md-6" data-aos="zoom-in" data-aos-delay="200">
-            <div class="service-item">
-              <div class="icon">
-                <img src="assets/img/Unity.webp" alt="unity game engine expertise by dharmik gohil fun">
+          <div class="mac-window-body">
+            <div class="row g-3">
+              <!-- Unity 2D -->
+              <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="50">
+                <div class="mac-skill-card">
+                  <div class="skill-card-header">
+                    <div class="skill-card-icon">
+                      <img src="assets/img/Unity.webp" alt="unity game engine expertise by dharmik gohil fun">
+                    </div>
+                    <div class="skill-card-info">
+                      <h3><a href="https://github.com/DharmikGohil013/Unity-2D-Projects" target="_blank">Unity 2D</a></h3>
+                    </div>
+                  </div>
+                  <p class="skill-card-desc">Skilled in 2D game development.</p>
+                  <div class="mac-progress-wrap">
+                    <div class="mac-progress-header">
+                      <span class="mac-progress-label">Progress</span>
+                      <span class="mac-progress-value">60%</span>
+                    </div>
+                    <div class="mac-progress-track">
+                      <div class="mac-progress-fill purple" style="width: 60%;"></div>
+                    </div>
+                    <span class="mac-status-badge completed"><i class="bi bi-check-circle-fill"></i> 2 Projects</span>
+                  </div>
+                </div>
               </div>
-              <a href="https://github.com/DharmikGohil013/Unity-3D-Projects" class="stretched-link">
-                <h3>Unity 3D</h3>
-              </a>
-              <p>Experienced in 3D game creation.</p>
-              <div class="progress">
-                <div class="progress-bar" style="width: 60%; background-color: #ff5722;" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
+              <!-- Unity 3D -->
+              <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                <div class="mac-skill-card">
+                  <div class="skill-card-header">
+                    <div class="skill-card-icon">
+                      <img src="assets/img/Unity.webp" alt="unity game engine expertise by dharmik gohil fun">
+                    </div>
+                    <div class="skill-card-info">
+                      <h3><a href="https://github.com/DharmikGohil013/Unity-3D-Projects" target="_blank">Unity 3D</a></h3>
+                    </div>
+                  </div>
+                  <p class="skill-card-desc">Experienced in 3D game creation.</p>
+                  <div class="mac-progress-wrap">
+                    <div class="mac-progress-header">
+                      <span class="mac-progress-label">Progress</span>
+                      <span class="mac-progress-value">60%</span>
+                    </div>
+                    <div class="mac-progress-track">
+                      <div class="mac-progress-fill orange" style="width: 60%;"></div>
+                    </div>
+                    <span class="mac-status-badge completed"><i class="bi bi-check-circle-fill"></i> 2 Projects</span>
+                  </div>
+                </div>
               </div>
-              <p class="progress-text">Learning Progress: 60%</p>
-              <p class="project-status completed">Projects Completed: 2</p>
-            </div>
-          </div>
-          <!-- Unity AR/VR NEW CARD -->
-          <div class="col-lg-4 col-md-6" data-aos="zoom-in" data-aos-delay="300">
-            <div class="service-item">
-              <div class="icon">
-                <img src="assets/img/Unity.webp" alt="unity game engine expertise by dharmik gohil fun">
+              <!-- Unity AR/VR -->
+              <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="150">
+                <div class="mac-skill-card">
+                  <div class="skill-card-header">
+                    <div class="skill-card-icon">
+                      <img src="assets/img/Unity.webp" alt="unity game engine expertise by dharmik gohil fun">
+                    </div>
+                    <div class="skill-card-info">
+                      <h3><a href="https://github.com/DharmikGohil013/Unity-ARVR-Projects" target="_blank">Unity AR/VR</a></h3>
+                    </div>
+                  </div>
+                  <p class="skill-card-desc">Exploring augmented and virtual reality development.</p>
+                  <div class="mac-progress-wrap">
+                    <div class="mac-progress-header">
+                      <span class="mac-progress-label">Progress</span>
+                      <span class="mac-progress-value">55%</span>
+                    </div>
+                    <div class="mac-progress-track">
+                      <div class="mac-progress-fill cyan" style="width: 55%;"></div>
+                    </div>
+                    <span class="mac-status-badge completed"><i class="bi bi-check-circle-fill"></i> 3 Projects</span>
+                  </div>
+                </div>
               </div>
-              <a href="https://github.com/DharmikGohil013/Unity-ARVR-Projects" class="stretched-link">
-                <h3>Unity AR/VR</h3>
-              </a>
-              <p>Exploring augmented and virtual reality development.</p>
-              <div class="progress">
-                <div class="progress-bar" style="width: 55%; background-color: #00bcd4;" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-              <p class="progress-text">Learning Progress: 55%</p>
-              <p class="project-status completed">Projects Completed: 3</p>
             </div>
           </div>
         </div>
-      </div>
 
-      <!-- Database Section -->
-      <div class="container section-title" data-aos="fade-up">
-        <h2>Database</h2>
-        <p>Managing data with precision.</p>
-      </div>
-      <div class="container">
-        <div class="row gy-4">
-          <div class="col-lg-4 col-md-6" data-aos="zoom-in" data-aos-delay="100">
-            <div class="service-item">
-              <div class="icon">
-                <img src="assets/img/Mysql_logo.png" alt="mysql database skill by dharmik gohil developer">
-              </div>
-              <a href="https://github.com/DharmikGohil013" class="stretched-link">
-                <h3>MySQL</h3>
-              </a>
-              <p>Proficient in relational databases.</p>
-              <div class="progress">
-                <div class="progress-bar" style="width: 50%; background-color: #00618a;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-              <p class="progress-text">Learning Progress: 50%</p>
-              <p class="project-status completed">Projects Completed: 2</p>
+        <!-- ============ DATABASE WINDOW ============ -->
+        <div class="mac-category-window scroll-reveal-scale scroll-glow" data-aos="fade-up">
+          <div class="mac-window-titlebar">
+            <div class="mac-window-dots">
+              <span class="mac-dot-red"></span>
+              <span class="mac-dot-yellow"></span>
+              <span class="mac-dot-green"></span>
             </div>
+            <div class="mac-window-label"><i class="bi bi-database"></i> Database Technologies</div>
           </div>
-          <div class="col-lg-4 col-md-6" data-aos="zoom-in" data-aos-delay="200">
-            <div class="service-item">
-              <div class="icon">
-                <img src="assets/img/mongodb.svg" alt="mongodb database expertise dharmik gohil fun">
+          <div class="mac-window-body">
+            <div class="row g-3">
+              <!-- MySQL -->
+              <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="50">
+                <div class="mac-skill-card">
+                  <div class="skill-card-header">
+                    <div class="skill-card-icon">
+                      <img src="assets/img/Mysql_logo.png" alt="mysql database skill by dharmik gohil developer">
+                    </div>
+                    <div class="skill-card-info">
+                      <h3><a href="https://github.com/DharmikGohil013" target="_blank">MySQL</a></h3>
+                    </div>
+                  </div>
+                  <p class="skill-card-desc">Proficient in relational databases.</p>
+                  <div class="mac-progress-wrap">
+                    <div class="mac-progress-header">
+                      <span class="mac-progress-label">Progress</span>
+                      <span class="mac-progress-value">50%</span>
+                    </div>
+                    <div class="mac-progress-track">
+                      <div class="mac-progress-fill" style="width: 50%;"></div>
+                    </div>
+                    <span class="mac-status-badge completed"><i class="bi bi-check-circle-fill"></i> 2 Projects</span>
+                  </div>
+                </div>
               </div>
-              <a href="https://github.com/DharmikGohil013" class="stretched-link">
-                <h3>MongoDB</h3>
-              </a>
-              <p>Skilled in NoSQL databases.</p>
-              <div class="progress">
-                <div class="progress-bar" style="width: 50%; background-color: #47A248;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+              <!-- MongoDB -->
+              <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                <div class="mac-skill-card">
+                  <div class="skill-card-header">
+                    <div class="skill-card-icon">
+                      <img src="assets/img/mongodb.svg" alt="mongodb database expertise dharmik gohil fun">
+                    </div>
+                    <div class="skill-card-info">
+                      <h3><a href="https://github.com/DharmikGohil013" target="_blank">MongoDB</a></h3>
+                    </div>
+                  </div>
+                  <p class="skill-card-desc">Skilled in NoSQL databases.</p>
+                  <div class="mac-progress-wrap">
+                    <div class="mac-progress-header">
+                      <span class="mac-progress-label">Progress</span>
+                      <span class="mac-progress-value">50%</span>
+                    </div>
+                    <div class="mac-progress-track">
+                      <div class="mac-progress-fill green" style="width: 50%;"></div>
+                    </div>
+                    <span class="mac-status-badge completed"><i class="bi bi-check-circle-fill"></i> 2 Projects</span>
+                  </div>
+                </div>
               </div>
-              <p class="progress-text">Learning Progress: 50%</p>
-              <p class="project-status completed">Projects Completed: 2</p>
             </div>
           </div>
         </div>
-      </div>
 
-      <!-- Backend Section -->
-      <div class="container section-title" data-aos="fade-up">
-        <h2>Backend</h2>
-        <p>Powering applications with robust logic.</p>
-      </div>
-      <div class="container">
-        <div class="row gy-4">
-          <div class="col-lg-4 col-md-6" data-aos="zoom-in" data-aos-delay="100">
-            <div class="service-item">
-              <div class="icon">
-                <img src="assets/img/node.png" alt="nodejs backend development by gohil dharmik">
+        <!-- ============ BACKEND WINDOW ============ -->
+        <div class="mac-category-window scroll-reveal-rotate scroll-glow" data-aos="fade-up">
+          <div class="mac-window-titlebar">
+            <div class="mac-window-dots">
+              <span class="mac-dot-red"></span>
+              <span class="mac-dot-yellow"></span>
+              <span class="mac-dot-green"></span>
+            </div>
+            <div class="mac-window-label"><i class="bi bi-hdd-rack"></i> Backend Development</div>
+          </div>
+          <div class="mac-window-body">
+            <div class="row g-3">
+              <!-- Node.js -->
+              <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="50">
+                <div class="mac-skill-card">
+                  <div class="skill-card-header">
+                    <div class="skill-card-icon">
+                      <img src="assets/img/node.png" alt="nodejs backend development by gohil dharmik">
+                    </div>
+                    <div class="skill-card-info">
+                      <h3><a href="https://github.com/DharmikGohil013/NodeJS-Projects" target="_blank">Node.js</a></h3>
+                    </div>
+                  </div>
+                  <p class="skill-card-desc">Building scalable backend services.</p>
+                  <div class="mac-progress-wrap">
+                    <div class="mac-progress-header">
+                      <span class="mac-progress-label">Progress</span>
+                      <span class="mac-progress-value">35%</span>
+                    </div>
+                    <div class="mac-progress-track">
+                      <div class="mac-progress-fill green" style="width: 35%;"></div>
+                    </div>
+                    <span class="mac-status-badge completed"><i class="bi bi-check-circle-fill"></i> 4 Projects</span>
+                  </div>
+                </div>
               </div>
-              <a href="https://github.com/DharmikGohil013/NodeJS-Projects" class="stretched-link">
-                <h3>Node.js</h3>
-              </a>
-              <p>Building scalable backend services.</p>
-              <div class="progress">
-                <div class="progress-bar" style="width: 35%; background-color: #68a063;" aria-valuenow="35" aria-valuemin="0" aria-valuemax="100"></div>
+              <!-- C# Backend -->
+              <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                <div class="mac-skill-card">
+                  <div class="skill-card-header">
+                    <div class="skill-card-icon">
+                      <img src="assets/img/c-logo-icon-18.png" alt="c programming icon dharmik gohil fun coding skills">
+                    </div>
+                    <div class="skill-card-info">
+                      <h3><a href="https://github.com/DharmikGohil013/CSharp-Projects" target="_blank">C# (Backend)</a></h3>
+                    </div>
+                  </div>
+                  <p class="skill-card-desc">Experienced in ASP.NET and APIs.</p>
+                  <div class="mac-progress-wrap">
+                    <div class="mac-progress-header">
+                      <span class="mac-progress-label">Progress</span>
+                      <span class="mac-progress-value">65%</span>
+                    </div>
+                    <div class="mac-progress-track">
+                      <div class="mac-progress-fill purple" style="width: 65%;"></div>
+                    </div>
+                    <span class="mac-status-badge completed"><i class="bi bi-check-circle-fill"></i> 5 Projects</span>
+                  </div>
+                </div>
               </div>
-              <p class="progress-text">Learning Progress: 35%</p>
-              <p class="project-status completed">Projects Completed: 4</p>
             </div>
           </div>
-          <!-- C# Backend Progress Updated -->
-          <div class="col-lg-4 col-md-6" data-aos="zoom-in" data-aos-delay="200">
-            <div class="service-item">
-              <div class="icon">
-                <img src="assets/img/c-logo-icon-18.png" alt="c programming icon dharmik gohil fun coding skills">
-              </div>
-              <a href="https://github.com/DharmikGohil013/CSharp-Projects" class="stretched-link">
-                <h3>C# (Backend)</h3>
-              </a>
-              <p>Experienced in ASP.NET and APIs.</p>
-              <div class="progress">
-                <div class="progress-bar" style="width: 65%; background-color: #e100ff;" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-              <p class="progress-text">Learning Progress: 65%</p>
-              <p class="project-status completed">Projects Completed: 5</p>
-            </div>
-          </div>
-
         </div>
+
       </div>
-    </section>
+    </div>
   </main>
 
-  <footer id="footer" class="footer light-background">
+  <footer id="footer" class="footer">
     <div class="container">
       <div class="copyright text-center">
-        <p>© <span>Copyright</span> <strong class="px-1 sitename">Dharmik</strong> <span>All Rights Reserved<br></span></p>
+        <p>&copy; <span>Copyright</span> <strong class="px-1 sitename">Dharmik</strong> <span>All Rights Reserved</span></p>
       </div>
       <div class="social-links d-flex justify-content-center">
         <a href="https://github.com/DharmikGohil013"><i class="bi bi-github"></i></a>
@@ -548,11 +1334,95 @@
 
   <!-- Preloader -->
   <div id="preloader">
-    <div class="loader-container">
-      <div class="loader loader-outer"></div>
-      <div class="loader loader-middle"></div>
-      <div class="loader loader-inner"></div>
-      <div class="loading-text">LOADING...</div>
+    <div class="cube-loader">
+      <div class="cube-top"></div>
+      <div class="cube-wrapper">
+        <span style="--i:0" class="cube-span"></span>
+        <span style="--i:1" class="cube-span"></span>
+        <span style="--i:2" class="cube-span"></span>
+        <span style="--i:3" class="cube-span"></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- macOS Dock Navigation -->
+  <div class="macos-dock">
+    <div class="dock-items">
+      <a href="index.html" class="dock-item" data-tooltip="Home"><i class="bi bi-house-fill"></i></a>
+      <a href="services.html" class="dock-item active" data-tooltip="Abilities"><i class="bi bi-lightning-charge-fill"></i></a>
+      <div class="dock-separator"></div>
+      <div class="dock-item games-menu-trigger" data-tooltip="My Games">
+        <i class="bi bi-controller"></i>
+        <div class="games-dropdown-menu" id="gamesDropdown">
+          <div class="games-dropdown-header">
+            <i class="bi bi-controller me-2"></i>My Games
+          </div>
+          <div class="games-dropdown-list">
+            <a href="https://dharmikgohil.itch.io/mavericks-battlegrounds" target="_blank" class="game-dropdown-item">
+              <i class="bi bi-play-circle-fill"></i>
+              <span>Mavericks Battleground</span>
+            </a>
+            <a href="https://dharmik086.itch.io/floppy-bird-860" target="_blank" class="game-dropdown-item">
+              <i class="bi bi-play-circle-fill"></i>
+              <span>Floppy Bird</span>
+            </a>
+            <a href="https://dharmikgohil.itch.io/facade" target="_blank" class="game-dropdown-item">
+              <i class="bi bi-play-circle-fill"></i>
+              <span>Facade</span>
+            </a>
+            <a href="https://dharmikgohil.itch.io/go-galaxy" target="_blank" class="game-dropdown-item">
+              <i class="bi bi-play-circle-fill"></i>
+              <span>Go Galaxy</span>
+            </a>
+            <a href="https://dharmikgohil.itch.io/drone-training" target="_blank" class="game-dropdown-item">
+              <i class="bi bi-play-circle-fill"></i>
+              <span>Drone Training</span>
+            </a>
+          </div>
+        </div>
+      </div>
+      <a href="Achivemtn.html" class="dock-item" data-tooltip="Achievements"><i class="bi bi-trophy-fill"></i></a>
+      <div class="dock-item apps-menu-trigger" data-tooltip="Live Apps & Websites">
+        <i class="bi bi-briefcase-fill"></i>
+        <div class="games-dropdown-menu" id="appsDropdown">
+          <div class="games-dropdown-header">
+            <i class="bi bi-briefcase-fill me-2"></i>Live Projects
+          </div>
+          <div class="games-dropdown-list">
+            <a href="assets/Fit Sync.apk" download class="game-dropdown-item">
+              <i class="bi bi-download"></i>
+              <span>FitSync App (APK)</span>
+            </a>
+            <a href="https://actify.dharmikgohil.art/" target="_blank" class="game-dropdown-item">
+              <i class="bi bi-globe"></i>
+              <span>Actify</span>
+            </a>
+            <a href="https://learnlink.dharmikgohil.art" target="_blank" class="game-dropdown-item">
+              <i class="bi bi-globe"></i>
+              <span>Learn Link</span>
+            </a>
+            <a href="http://gdgs.dharmikgohil.art/" target="_blank" class="game-dropdown-item">
+              <i class="bi bi-globe"></i>
+              <span>GDGS Games</span>
+            </a>
+            <a href="http://flipcart.dharmikgohil.art/" target="_blank" class="game-dropdown-item">
+              <i class="bi bi-globe"></i>
+              <span>Flipkart Clone</span>
+            </a>
+            <a href="http://krishna.dharmikgohil.art/" target="_blank" class="game-dropdown-item">
+              <i class="bi bi-globe"></i>
+              <span>Krishna Construction</span>
+            </a>
+            <a href="https://fkm.vercel.app/" target="_blank" class="game-dropdown-item">
+              <i class="bi bi-globe"></i>
+              <span>WiFi Service</span>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="dock-separator"></div>
+      <a href="contact.html" class="dock-item" data-tooltip="Contact"><i class="bi bi-envelope-fill"></i></a>
+      <a href="assets/img/Dharmik Gohil Resume.pdf" class="dock-item" data-tooltip="Resume" download><i class="bi bi-file-earmark-person"></i></a>
     </div>
   </div>
 
@@ -575,6 +1445,142 @@
       duration: 1000,
       once: true
     });
+  </script>
+  <script src="assets/js/dock-dropdowns.js"></script>
+
+  <!-- ============================================
+       EXCLUSIVE SMOOTH SCROLL ANIMATION ENGINE
+       Premium reveal + parallax + progress bar
+       ============================================ -->
+  <script>
+  (function() {
+    'use strict';
+
+    /* --- 1. Scroll Progress Glow Bar --- */
+    const progressBar = document.createElement('div');
+    progressBar.className = 'scroll-progress-glow';
+    document.body.appendChild(progressBar);
+
+    /* --- 2. Floating Scroll Particles --- */
+    const particlesContainer = document.createElement('div');
+    particlesContainer.className = 'scroll-particles';
+    for (let i = 0; i < 5; i++) {
+      const p = document.createElement('span');
+      p.className = 'scroll-particle';
+      p.style.left = (Math.random() * 100) + '%';
+      particlesContainer.appendChild(p);
+    }
+    document.body.appendChild(particlesContainer);
+
+    /* --- 3. Intersection Observer for Scroll Reveals --- */
+    const revealSelectors = [
+      '.scroll-reveal',
+      '.scroll-reveal-left',
+      '.scroll-reveal-right',
+      '.scroll-reveal-scale',
+      '.scroll-reveal-rotate',
+      '.stagger-children'
+    ];
+
+    const revealObserver = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('revealed');
+
+          // Restore progress bar widths inside revealed windows
+          if (entry.target.classList.contains('mac-category-window') ||
+              entry.target.querySelector('.mac-progress-fill')) {
+            const fills = entry.target.querySelectorAll('.mac-progress-fill');
+            fills.forEach(function(fill) {
+              const val = fill.getAttribute('data-width');
+              if (val) {
+                fill.style.width = val;
+              }
+            });
+          }
+        }
+      });
+    }, {
+      threshold: 0.12,
+      rootMargin: '0px 0px -60px 0px'
+    });
+
+    document.querySelectorAll(revealSelectors.join(',')).forEach(function(el) {
+      revealObserver.observe(el);
+    });
+
+    /* --- 4. Store original progress bar widths, then reset --- */
+    document.querySelectorAll('.mac-progress-fill').forEach(function(fill) {
+      const currentWidth = fill.style.width || '0%';
+      fill.setAttribute('data-width', currentWidth);
+      fill.style.width = '0%';
+    });
+
+    /* --- 5. Scroll Progress Bar Update --- */
+    function updateScrollProgress() {
+      const scrollTop = window.scrollY || document.documentElement.scrollTop;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const progress = docHeight > 0 ? scrollTop / docHeight : 0;
+      progressBar.style.transform = 'scaleX(' + progress + ')';
+    }
+
+    /* --- 6. Section Title Parallax Depth --- */
+    function updateTitleDepth() {
+      const pageHeader = document.querySelector('.page-header h1');
+      if (pageHeader) {
+        const rect = pageHeader.getBoundingClientRect();
+        const viewH = window.innerHeight;
+        if (rect.top < viewH && rect.bottom > 0) {
+          const ratio = (viewH - rect.top) / (viewH + rect.height);
+          const offset = (ratio - 0.5) * 15;
+          pageHeader.style.transform = 'translateY(' + offset + 'px)';
+        }
+      }
+    }
+
+    /* --- 7. Particles visibility toggle --- */
+    let scrollTimeout;
+    function handleScrollActivity() {
+      particlesContainer.style.opacity = '1';
+      clearTimeout(scrollTimeout);
+      scrollTimeout = setTimeout(function() {
+        particlesContainer.style.opacity = '0';
+      }, 1500);
+    }
+    particlesContainer.style.transition = 'opacity 0.6s ease';
+    particlesContainer.style.opacity = '0';
+
+    /* --- 8. Unified Scroll Handler (throttled via rAF) --- */
+    let ticking = false;
+    function onScroll() {
+      if (!ticking) {
+        requestAnimationFrame(function() {
+          updateScrollProgress();
+          updateTitleDepth();
+          ticking = false;
+        });
+        ticking = true;
+      }
+      handleScrollActivity();
+    }
+    window.addEventListener('scroll', onScroll, { passive: true });
+
+    /* --- 9. Initial call --- */
+    updateScrollProgress();
+  })();
+  </script>
+
+  <!-- macOS Menubar Clock -->
+  <script>
+    (function updateMenubarClock() {
+      var el = document.getElementById('menubar-clock');
+      if (!el) return;
+      var now = new Date();
+      var h = now.getHours().toString().padStart(2,'0');
+      var m = now.getMinutes().toString().padStart(2,'0');
+      el.textContent = h + ':' + m;
+      setTimeout(updateMenubarClock, 15000);
+    })();
   </script>
 </body>
 

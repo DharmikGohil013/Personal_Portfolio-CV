@@ -93,9 +93,569 @@
   <link href="assets/css/main.css" rel="stylesheet">
   <link href="assets/css/navigation.css" rel="stylesheet">
 
-  <!-- Custom Styles -->
+  <link href="assets/css/responsive-global.css" rel="stylesheet">
+
   <style>
-   
+    /* ============================================
+       macOS-INSPIRED CONTACT PAGE
+       Sonoma/Sequoia Dark Mode Aesthetic
+       ============================================ */
+
+    body {
+      background: #09090F !important;
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+    }
+
+    .contact-page {
+      position: relative;
+      min-height: 100vh;
+      background: linear-gradient(180deg, #0f1420 0%, #0a0e18 50%, #0f1420 100%);
+      padding: 40px 0 120px;
+    }
+
+    .contact-page::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 60% 40% at 20% 30%, rgba(10,132,255,0.06) 0%, transparent 60%),
+        radial-gradient(ellipse 50% 50% at 80% 60%, rgba(48,209,88,0.05) 0%, transparent 60%),
+        radial-gradient(ellipse 40% 30% at 50% 90%, rgba(191,90,242,0.04) 0%, transparent 50%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .contact-page > .container {
+      position: relative;
+      z-index: 1;
+    }
+
+    /* ---- Page Header ---- */
+    .page-header {
+      text-align: center;
+      padding: 30px 0 50px;
+    }
+
+    .page-header-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(10,132,255,0.1);
+      border: 1px solid rgba(10,132,255,0.25);
+      color: #0A84FF;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      font-weight: 600;
+      padding: 5px 14px;
+      border-radius: 20px;
+      margin-bottom: 16px;
+      letter-spacing: 0.5px;
+    }
+
+    .page-header h1 {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 700;
+      color: #fff;
+      letter-spacing: -0.8px;
+      margin: 0 0 10px;
+      line-height: 1.1;
+    }
+
+    .page-header p {
+      font-family: 'Inter', -apple-system, sans-serif;
+      color: rgba(255,255,255,0.4);
+      font-size: 0.95rem;
+      max-width: 550px;
+      margin: 0 auto;
+    }
+
+    /* ---- macOS Window ---- */
+    .mac-window {
+      background: rgba(28,28,38,0.55);
+      backdrop-filter: blur(40px) saturate(1.8);
+      -webkit-backdrop-filter: blur(40px) saturate(1.8);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 16px;
+      box-shadow:
+        0 8px 32px rgba(0,0,0,0.4),
+        inset 0 1px 0 rgba(255,255,255,0.06);
+      overflow: hidden;
+      margin-bottom: 36px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .mac-window:hover {
+      transform: translateY(-3px);
+      box-shadow:
+        0 16px 48px rgba(0,0,0,0.5),
+        0 0 40px rgba(10,132,255,0.06),
+        inset 0 1px 0 rgba(255,255,255,0.08);
+    }
+
+    .mac-window-titlebar {
+      background: rgba(255,255,255,0.04);
+      border-bottom: 1px solid rgba(255,255,255,0.07);
+      padding: 13px 18px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      user-select: none;
+    }
+
+    .mac-window-dots {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+      flex-shrink: 0;
+    }
+
+    .mac-window-dots span {
+      width: 13px;
+      height: 13px;
+      border-radius: 50%;
+      display: inline-block;
+      transition: filter 0.2s, transform 0.2s;
+      cursor: default;
+    }
+
+    .mac-window-dots span:hover {
+      filter: brightness(1.25);
+      transform: scale(1.1);
+    }
+
+    .mac-dot-red { background: #FF5F56; box-shadow: 0 0 8px rgba(255,95,86,0.5); }
+    .mac-dot-yellow { background: #FFBD2E; box-shadow: 0 0 8px rgba(255,189,46,0.5); }
+    .mac-dot-green { background: #27C93F; box-shadow: 0 0 8px rgba(39,201,63,0.5); }
+
+    .mac-window-label {
+      flex: 1;
+      text-align: center;
+      font-family: 'Inter', -apple-system, sans-serif;
+      font-size: 13px;
+      font-weight: 500;
+      color: rgba(255,255,255,0.5);
+      letter-spacing: 0.2px;
+    }
+
+    .mac-window-label i {
+      margin-right: 6px;
+      font-size: 12px;
+    }
+
+    .mac-window-body {
+      padding: 28px 28px 32px;
+    }
+
+    /* ---- Contact Info Cards ---- */
+    .mac-contact-card {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 14px;
+      padding: 22px 20px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      transition: all 0.3s cubic-bezier(.4,0,.2,1);
+      margin-bottom: 16px;
+    }
+
+    .mac-contact-card:hover {
+      background: rgba(255,255,255,0.06);
+      border-color: rgba(10,132,255,0.25);
+      transform: translateY(-3px);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.25), 0 0 16px rgba(10,132,255,0.08);
+    }
+
+    .mac-contact-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      font-size: 1.2rem;
+    }
+
+    .mac-contact-icon.blue {
+      background: rgba(10,132,255,0.15);
+      color: #0A84FF;
+      box-shadow: 0 0 15px rgba(10,132,255,0.15);
+    }
+
+    .mac-contact-icon.green {
+      background: rgba(48,209,88,0.15);
+      color: #30D158;
+      box-shadow: 0 0 15px rgba(48,209,88,0.15);
+    }
+
+    .mac-contact-icon.purple {
+      background: rgba(191,90,242,0.15);
+      color: #BF5AF2;
+      box-shadow: 0 0 15px rgba(191,90,242,0.15);
+    }
+
+    .mac-contact-icon.orange {
+      background: rgba(255,159,10,0.15);
+      color: #FF9F0A;
+      box-shadow: 0 0 15px rgba(255,159,10,0.15);
+    }
+
+    .mac-contact-detail h4 {
+      font-family: 'Inter', -apple-system, sans-serif;
+      font-size: 0.82rem;
+      font-weight: 500;
+      color: rgba(255,255,255,0.4);
+      margin: 0 0 4px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .mac-contact-detail p,
+    .mac-contact-detail a {
+      font-family: 'Inter', -apple-system, sans-serif;
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: #fff;
+      margin: 0;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .mac-contact-detail a:hover {
+      color: #0A84FF;
+    }
+
+    /* ---- Map Container ---- */
+    .mac-map-wrap {
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,0.06);
+      margin-top: 8px;
+    }
+
+    .mac-map-wrap iframe {
+      display: block;
+      width: 100%;
+      height: 220px;
+      filter: saturate(0.7) brightness(0.7) contrast(1.1);
+      transition: filter 0.3s;
+    }
+
+    .mac-map-wrap:hover iframe {
+      filter: saturate(1) brightness(0.85) contrast(1);
+    }
+
+    /* ---- Form Styles ---- */
+    .mac-form-group {
+      margin-bottom: 18px;
+    }
+
+    .mac-form-label {
+      display: block;
+      font-family: 'Inter', -apple-system, sans-serif;
+      font-size: 0.8rem;
+      font-weight: 500;
+      color: rgba(255,255,255,0.45);
+      margin-bottom: 7px;
+      letter-spacing: 0.3px;
+    }
+
+    .mac-input,
+    .mac-textarea {
+      width: 100%;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 10px;
+      padding: 12px 16px;
+      font-family: 'Inter', -apple-system, sans-serif;
+      font-size: 0.92rem;
+      color: #fff;
+      transition: all 0.2s ease;
+      outline: none;
+      box-sizing: border-box;
+    }
+
+    .mac-input::placeholder,
+    .mac-textarea::placeholder {
+      color: rgba(255,255,255,0.2);
+    }
+
+    .mac-input:focus,
+    .mac-textarea:focus {
+      border-color: rgba(10,132,255,0.5);
+      background: rgba(10,132,255,0.05);
+      box-shadow: 0 0 0 3px rgba(10,132,255,0.12), 0 4px 16px rgba(0,0,0,0.15);
+    }
+
+    .mac-textarea {
+      resize: vertical;
+      min-height: 120px;
+    }
+
+    .mac-submit-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      background: #0A84FF;
+      color: #fff;
+      border: none;
+      padding: 12px 32px;
+      border-radius: 10px;
+      font-family: 'Inter', -apple-system, sans-serif;
+      font-size: 0.9rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.25s ease;
+      box-shadow: 0 4px 16px rgba(10,132,255,0.35);
+      letter-spacing: 0.2px;
+      width: 100%;
+    }
+
+    .mac-submit-btn:hover {
+      background: #1B90FF;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(10,132,255,0.45);
+    }
+
+    .mac-submit-btn:active {
+      transform: translateY(0);
+    }
+
+    .mac-submit-btn:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+      transform: none;
+    }
+
+    .mac-submit-btn .spinner {
+      display: none;
+      width: 16px;
+      height: 16px;
+      border: 2px solid rgba(255,255,255,0.3);
+      border-top-color: #fff;
+      border-radius: 50%;
+      animation: spin 0.6s linear infinite;
+    }
+
+    .mac-submit-btn.loading .spinner {
+      display: inline-block;
+    }
+
+    .mac-submit-btn.loading span:first-child {
+      display: none;
+    }
+
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+
+    /* ---- Social Connect ---- */
+    .mac-social-grid {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 10px;
+    }
+
+    .mac-social-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 10px;
+      padding: 10px 18px;
+      color: rgba(255,255,255,0.7);
+      text-decoration: none;
+      font-family: 'Inter', -apple-system, sans-serif;
+      font-size: 0.82rem;
+      font-weight: 500;
+      transition: all 0.2s ease;
+    }
+
+    .mac-social-btn:hover {
+      background: rgba(255,255,255,0.08);
+      border-color: rgba(255,255,255,0.15);
+      color: #fff;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+    }
+
+    .mac-social-btn i {
+      font-size: 1.05rem;
+    }
+
+    .mac-social-btn.github:hover { border-color: rgba(255,255,255,0.3); color: #fff; }
+    .mac-social-btn.linkedin:hover { border-color: rgba(10,132,255,0.4); color: #0A84FF; }
+    .mac-social-btn.instagram:hover { border-color: rgba(255,55,95,0.4); color: #FF375F; }
+    .mac-social-btn.twitter:hover { border-color: rgba(100,210,255,0.4); color: #64D2FF; }
+    .mac-social-btn.playstore:hover { border-color: rgba(48,209,88,0.4); color: #30D158; }
+
+    /* ---- Footer ---- */
+    .footer {
+      background: #0a0e18 !important;
+      border-top: 1px solid rgba(255,255,255,0.06) !important;
+      padding: 30px 0 80px 0 !important;
+      position: relative;
+      z-index: 1;
+    }
+
+    .footer .container {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+    }
+
+    .footer .copyright {
+      text-align: right !important;
+    }
+
+    .footer .copyright p {
+      font-family: 'Inter', -apple-system, sans-serif !important;
+      color: rgba(255,255,255,0.4) !important;
+      font-size: 0.85rem;
+    }
+
+    .footer .social-links {
+      justify-content: flex-end !important;
+    }
+
+    .footer .social-links a {
+      width: 36px;
+      height: 36px;
+      display: inline-flex !important;
+      align-items: center;
+      justify-content: center;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 10px;
+      color: rgba(255,255,255,0.5) !important;
+      font-size: 1rem;
+      transition: all 0.2s ease;
+      margin: 0 5px !important;
+    }
+
+    .footer .social-links a:hover {
+      background: rgba(10,132,255,0.15) !important;
+      border-color: rgba(10,132,255,0.4) !important;
+      color: #0A84FF !important;
+      transform: translateY(-3px);
+    }
+
+    /* ---- Responsive ---- */
+    @media (max-width: 768px) {
+      .contact-page { padding: 20px 0 100px; }
+      .page-header { padding: 20px 0 30px; }
+      .page-header h1 { font-size: 1.8rem; }
+      .mac-window-body { padding: 20px 16px 24px; }
+      .mac-contact-card { padding: 16px 15px; gap: 12px; }
+      .mac-contact-icon { width: 40px; height: 40px; font-size: 1rem; }
+    }
+
+    @media (max-width: 575px) {
+      .mac-window-titlebar { padding: 10px 13px; }
+      .mac-window-body { padding: 16px 12px 20px; }
+      .page-header h1 { font-size: 1.5rem; }
+      .mac-social-grid { gap: 8px; }
+      .mac-social-btn { padding: 8px 14px; font-size: 0.78rem; }
+    }
+
+    /* ---- macOS Menu Bar ---- */
+    .macos-menubar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 28px;
+      background: rgba(22,22,26,0.92);
+      backdrop-filter: blur(25px) saturate(2);
+      -webkit-backdrop-filter: blur(25px) saturate(2);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 18px;
+      z-index: 9998;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      box-shadow: 0 1px 0 rgba(0,0,0,0.15);
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+
+    .menubar-left {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .menubar-apple {
+      font-size: 16px;
+      color: rgba(255,255,255,0.95);
+    }
+
+    .menubar-left span {
+      font-size: 13px;
+      font-weight: 500;
+      color: rgba(255,255,255,0.88);
+      cursor: default;
+      user-select: none;
+      transition: color 0.15s ease;
+    }
+
+    .menubar-left span:hover:not(.menubar-apple) {
+      color: rgba(255,255,255,1);
+    }
+
+    .menubar-left span.menubar-brand {
+      font-weight: 700;
+      color: rgba(255,255,255,0.95);
+    }
+
+    .menubar-right {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      font-size: 12px;
+      color: rgba(255,255,255,0.85);
+    }
+
+    .menubar-right a {
+      color: inherit;
+      text-decoration: none;
+      transition: color 0.15s ease;
+      display: flex;
+      align-items: center;
+    }
+
+    .menubar-right a:hover {
+      color: rgba(255,255,255,1);
+    }
+
+    .menubar-right i {
+      font-size: 14px;
+      transition: color 0.15s ease;
+    }
+
+    .menubar-right i:hover {
+      color: rgba(255,255,255,1);
+    }
+
+    #menubar-clock {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      font-size: 12px;
+      font-weight: 500;
+      color: rgba(255,255,255,0.9);
+      letter-spacing: 0.4px;
+      min-width: 44px;
+      text-align: right;
+    }
+
+    @media (max-width: 768px) {
+      .macos-menubar { display: none; }
+    }
   </style>
 
   <!-- Open Graph / Facebook -->
@@ -153,167 +713,172 @@
   <meta name="application-name" content="Dharmik Gohil">
 
 <body class="index-page">
-  <div class="custom-cursor"></div>
-    <header id="header" class="header d-flex align-items-center sticky-top">
-    <div class="container-fluid position-relative d-flex align-items-center justify-content-between">
-      <a href="index.html" class="logo d-flex align-items-center me-auto me-xl-0">
-        <img src="assets/img/dlogo.png" alt="dharmik gohil personal portfolio logo and brand identity">
-        <h1 class="sitename">DHARMIK</h1>
-      </a>
-      <nav id="navmenu" class="navmenu">
-        <ul>
-          <li><a href="https://dharmikgohil.art">Home</a></li>
-<li><a href="services.html">Abilities</a></li>
-          <li class="dropdown"><a href="https://dharmikgohil.art/portfolio.html"><span>Projects</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-            <ul>
-              <li><a href="portfolio.html">Games</a></li>
-              </li>
-              <li class="dropdown"><a href="#"><span>Flutter App</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-                <ul>
-                  <li><a href="assets/Fit Sync.apk">Fit Sync</a></li>
-                </ul>
-              </li>
-              <li class="dropdown"><a href="logo.html"><span>Ui/ux</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-                <ul>
-                  <li><a href="logo.html">Designs</a></li>
-                </ul>
-              </li>
-              <li class="dropdown"><a href="#"><span>Websites</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-                <ul>
-                  <li><a href="http://gdgs.dharmikgohil.art/">GDGS Games</a></li>
-                  <!-- <li><a href="https://dharmikgohil013.github.io/DHARMIK-GOHIL-FILMS/">Film industry</a></li> -->
-                  <li><a href="http://flipcart.dharmikgohil.art/">Flipkart Clone</a></li>
-                  <li><a href="http://krishna.dharmikgohil.art/">Krishna Construction</a></li>
-                  <!-- <li><a href="#">MedCare</a></li> -->
-                </ul>
-              
-              <li class="dropdown"><a href="#"><span>Java</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-                <ul>
-                  <li class="dropdown"><a href="#"><span>CampusAdminPro</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-                    <ul>
-                      <li><a href="https://drive.google.com/file/d/15YNf77gERCt2LYfRYSdXiYU3yAkx7EvC/view?usp=drive_link">Report</a></li>
-                    </ul>
-                  </li>
-                    
-                </ul>
-              </li>
-              <li class="dropdown"><a href="#"><span>Node Js</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-                <ul>
-                  <li><a href="https://indianturijam.dharmikgohil.art/">IndianTurijam</a></li>
-                  <li><a href="contact.html">Contact Page</a></li>
-                </ul>
-              </li>
-              <li class="dropdown"><a href="#"><span>C & C++</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-                <ul>
-                  <li><a href="https://github.com/DharmikGohil013/Hostel_Menegment_System_iDGAWS-">Hostel Management</a></li>
-                  <li><a href="https://github.com/DharmikGohil013/Bank_Mangemnt_System">Bank Management</a></li>
-                </ul>
-              </li>
-            </ul>
-          </li>
-          <li><a href="Achivemtn.html">Milestones</a></li>
-<li class="dropdown"><a href="#"><span>Time to Fun</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-            <ul>
-              <li><a href="https://dharmik086.itch.io/floppy-bird-860" target="_blank">Floppy Bird</a></li>
-              <li><a href="https://dharmik086.itch.io/minimario" target="_blank">MiniMario</a></li>
-              <li><a href="https://dharmikgohil.itch.io/mavericks-battlegrounds" target="_blank">MAVERICKS BATTLEGROUNDS</a></li> 
-            </ul>
-          </li>
-          <li><a href="blog.html">Blog</a></li>
-          <li class="dropdown">
-  <a href="#"><span style="color: #15ff00;">Services</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-  <ul>
-    <li><a href="https://actify.dharmikgohil.art/" target="_blank">Actify</a></li> <!-- ✅ NEW ENTRY -->
-    <li><a href="https://fkm.vercel.app/" target="_blank">Wifi Service</a></li>
-    <li><a href="assets/Fit Sync.apk" target="_blank">Fit Sync</a></li>
-    <li><a href="https://learnlink.dharmikgohil.art" target="_blank">Learn Link</a></li>
-    
-  </ul>
-</li>
-        </ul>
-        <button class="mobile-nav-toggle d-xl-none" aria-label="Toggle navigation">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-      </nav>
-      <div class="header-social-links">
-        <a href="https://github.com/DharmikGohil013" target="_blank"><i class="bi bi-github"></i></a>
-        <a href="https://www.linkedin.com/in/dharmikgohil086/" target="_blank"><i class="bi bi-linkedin"></i></a>
-        <a href="https://www.instagram.com/dharmik.086/?next=%2F" target="_blank"><i class="bi bi-instagram"></i></a>
-        <a href="https://x.com/Dharmik086" target="_blank"><i class="bi bi-twitter"></i></a>
-        <a href="https://play.google.com/store/apps/details?id=com.dharmikgohilfun.crossout" target="_blank"><i class="bi bi-google-play"></i></a>
-        <a href="assets/img/Dharmik Gohil Resume.pdf" class="download-resume" download><i class="bi bi-download"></i></a>
+
+  <!-- macOS Menu Bar -->
+  <div class="macos-menubar">
+    <div class="menubar-left">
+      <span class="menubar-apple"><a href="index.html" style="color:inherit;text-decoration:none;"><i class="bi bi-house-fill"></i></a></span>
+      <span class="menubar-brand">Dharmik Gohil</span>
+      <span><a href="blog.html" style="color:inherit;text-decoration:none;display:flex;align-items:center;gap:4px;"><i class="bi bi-rss"></i> Blog</a></span>
+      <span>Contact</span>
+      <span>Connect</span>
+    </div>
+    <div class="menubar-right">
+      <a href="https://github.com/DharmikGohil013" target="_blank" rel="noopener noreferrer"><i class="bi bi-github"></i></a>
+      <a href="https://www.linkedin.com/in/dharmikgohil086/" target="_blank" rel="noopener noreferrer"><i class="bi bi-linkedin"></i></a>
+      <a href="https://www.instagram.com/dharmik.086/?next=%2F" target="_blank" rel="noopener noreferrer"><i class="bi bi-instagram"></i></a>
+      <a href="https://x.com/Dharmik086" target="_blank" rel="noopener noreferrer"><i class="bi bi-twitter"></i></a>
+      <i class="bi bi-wifi"></i>
+      <i class="bi bi-battery-full"></i>
+      <span id="menubar-clock">--:--</span>
+    </div>
+  </div>
+
+  <!-- Preloader -->
+  <div id="preloader">
+    <div class="cube-loader">
+      <div class="cube-top"></div>
+      <div class="cube-wrapper">
+        <span style="--i:0" class="cube-span"></span>
+        <span style="--i:1" class="cube-span"></span>
+        <span style="--i:2" class="cube-span"></span>
+        <span style="--i:3" class="cube-span"></span>
       </div>
     </div>
-  </header>
+  </div>
 
-  <main class="main">
-    <!-- Contact Section -->
-    <section id="contact" class="contact section">
-      <div class="particles">
-        <div class="particle" style="left: 10%; top: 20%; animation-delay: 0s;"></div>
-        <div class="particle" style="left: 30%; top: 50%; animation-delay: 1s;"></div>
-        <div class="particle" style="left: 70%; top: 30%; animation-delay: 2s;"></div>
-        <div class="particle" style="left: 90%; top: 60%; animation-delay: 3s;"></div>
-        <div class="particle" style="left: 50%; top: 80%; animation-delay: 4s;"></div>
-      </div>
-      <div class="container section-title" data-aos="fade-up">
-        <h2>Contact Me</h2>
-        <p>Ready to collaborate on your next game project? Let's connect!</p>
-      </div>
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
-        <div class="row gy-4">
-          <!-- Contact Info -->
-          <div class="col-lg-6">
-            <div class="contact-info">
-              <h3>Get in Touch</h3>
-              <p><i class="bi bi-geo-alt"></i> 62 Radhaswami Soci, Katargam, Surat, Gujarat, India</p>
-              <p><i class="bi bi-telephone"></i> +91 9624105887</p>
-              <p><i class="bi bi-envelope"></i> dharmikgohil395003@gmail.com</p>
+  <main>
+    <div class="contact-page">
+      <div class="container">
+
+        <!-- Page Header -->
+        <div class="page-header" data-aos="fade-down" data-aos-delay="100">
+          <div class="page-header-badge"><i class="bi bi-envelope-fill"></i> Contact</div>
+          <h1>Get in Touch</h1>
+          <p>Ready to collaborate on your next project? Let's connect and make something amazing.</p>
+        </div>
+
+        <div class="row g-4">
+
+          <!-- ====== LEFT: Contact Info + Map ====== -->
+          <div class="col-lg-5">
+
+            <!-- Contact Info Window -->
+            <div class="mac-window" data-aos="fade-up" data-aos-delay="150">
+              <div class="mac-window-titlebar">
+                <div class="mac-window-dots">
+                  <span class="mac-dot-red"></span>
+                  <span class="mac-dot-yellow"></span>
+                  <span class="mac-dot-green"></span>
+                </div>
+                <div class="mac-window-label"><i class="bi bi-person-lines-fill"></i> Contact Info</div>
+              </div>
+              <div class="mac-window-body">
+
+                <div class="mac-contact-card">
+                  <div class="mac-contact-icon blue"><i class="bi bi-geo-alt-fill"></i></div>
+                  <div class="mac-contact-detail">
+                    <h4>Location</h4>
+                    <p>7, Dharmanandan Bungalows, Katargam, Surat</p>
+                  </div>
+                </div>
+
+                <div class="mac-contact-card">
+                  <div class="mac-contact-icon green"><i class="bi bi-telephone-fill"></i></div>
+                  <div class="mac-contact-detail">
+                    <h4>Phone</h4>
+                    <a href="tel:+919624105887">+91 9624105887</a>
+                  </div>
+                </div>
+
+                <div class="mac-contact-card">
+                  <div class="mac-contact-icon purple"><i class="bi bi-envelope-fill"></i></div>
+                  <div class="mac-contact-detail">
+                    <h4>Email</h4>
+                    <a href="mailto:dharmikgohil395003@gmail.com">dharmikgohil395003@gmail.com</a>
+                  </div>
+                </div>
+
+                <!-- Map -->
+                <div class="mac-map-wrap">
+                  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3719.159614682177!2d72.84219461488592!3d21.22623198588668!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be04f3b4e8e0c47%3A0x5e5c5e5e5e5e5e5e!2sKatargam%2C%20Surat%2C%20Gujarat%2C%20India!5e0!3m2!1sen!2sin!4v1698765432100!5m2!1sen!2sin" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+
+              </div>
             </div>
-            <div class="map-container mt-4">
-              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3719.159614682177!2d72.84219461488592!3d21.22623198588668!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be04f3b4e8e0c47%3A0x5e5c5e5e5e5e5e5e!2sKatargam%2C%20Surat%2C%20Gujarat%2C%20India!5e0!3m2!1sen!2sin!4v1698765432100!5m2!1sen!2sin" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+
+            <!-- Social Connect Window -->
+            <div class="mac-window" data-aos="fade-up" data-aos-delay="200">
+              <div class="mac-window-titlebar">
+                <div class="mac-window-dots">
+                  <span class="mac-dot-red"></span>
+                  <span class="mac-dot-yellow"></span>
+                  <span class="mac-dot-green"></span>
+                </div>
+                <div class="mac-window-label"><i class="bi bi-share-fill"></i> Connect</div>
+              </div>
+              <div class="mac-window-body">
+                <div class="mac-social-grid">
+                  <a href="https://github.com/DharmikGohil013" target="_blank" class="mac-social-btn github"><i class="bi bi-github"></i> GitHub</a>
+                  <a href="https://www.linkedin.com/in/dharmikgohil086/" target="_blank" class="mac-social-btn linkedin"><i class="bi bi-linkedin"></i> LinkedIn</a>
+                  <a href="https://www.instagram.com/dharmik.086/?next=%2F" target="_blank" class="mac-social-btn instagram"><i class="bi bi-instagram"></i> Instagram</a>
+                  <a href="https://x.com/Dharmik086" target="_blank" class="mac-social-btn twitter"><i class="bi bi-twitter"></i> Twitter</a>
+                  <a href="https://play.google.com/store/apps/details?id=com.dharmikgohilfun.crossout" target="_blank" class="mac-social-btn playstore"><i class="bi bi-google-play"></i> Play Store</a>
+                </div>
+              </div>
             </div>
+
           </div>
-          <div class="col-lg-6">
-            <div class="contact-form" style="position: relative; z-index: 10;">
-              <h3>Send a Message</h3>
-              <form id="contactForm" style="position: relative; z-index: 11;">
-                <div class="mb-3" style="position: relative; z-index: 12;">
-                  <input type="text" class="form-control" id="name" name="name" placeholder="Your Name" required>
+
+          <!-- ====== RIGHT: Message Form ====== -->
+          <div class="col-lg-7">
+            <div class="mac-window" data-aos="fade-up" data-aos-delay="200">
+              <div class="mac-window-titlebar">
+                <div class="mac-window-dots">
+                  <span class="mac-dot-red"></span>
+                  <span class="mac-dot-yellow"></span>
+                  <span class="mac-dot-green"></span>
                 </div>
-                <div class="mb-3" style="position: relative; z-index: 12;">
-                  <input type="email" class="form-control" id="email" name="email" placeholder="Your Email" required>
-                </div>
-                <div class="mb-3" style="position: relative; z-index: 12;">
-                  <textarea class="form-control" id="message" name="message" rows="5" placeholder="Your Message" required></textarea>
-                </div>
-                <div class="text-center" style="position: relative; z-index: 12;">
-                  <button type="submit" class="btn-submit">
-                    <span>Submit</span>
-                    <span class="loader"></span>
+                <div class="mac-window-label"><i class="bi bi-chat-dots-fill"></i> Send a Message</div>
+              </div>
+              <div class="mac-window-body">
+                <form id="contactForm">
+                  <div class="mac-form-group">
+                    <label class="mac-form-label" for="name">Your Name</label>
+                    <input type="text" class="mac-input" id="name" name="name" placeholder="e.g. John Doe" required>
+                  </div>
+                  <div class="mac-form-group">
+                    <label class="mac-form-label" for="email">Email Address</label>
+                    <input type="email" class="mac-input" id="email" name="email" placeholder="e.g. john@example.com" required>
+                  </div>
+                  <div class="mac-form-group">
+                    <label class="mac-form-label" for="message">Message</label>
+                    <textarea class="mac-textarea" id="message" name="message" rows="6" placeholder="Tell me about your project or idea..." required></textarea>
+                  </div>
+                  <button type="submit" class="mac-submit-btn">
+                    <span><i class="bi bi-send-fill"></i> Send Message</span>
+                    <span class="spinner"></span>
                   </button>
-                </div>
-              </form>
+                </form>
+              </div>
             </div>
           </div>
+
         </div>
       </div>
-    </section>
+    </div>
   </main>
 
   <footer id="footer" class="footer">
     <div class="container">
       <div class="copyright text-center">
-        <p>© <span>Copyright</span> <strong class="px-1 sitename">Dharmik</strong> <span>All Rights Reserved</span></p>
+        <p>&copy; <span>Copyright</span> <strong class="px-1 sitename"><a href="https://www.linkedin.com/in/dharmikgohil086/">Dharmik Gohil</a></strong> <span>All Rights Reserved</span></p>
       </div>
       <div class="social-links d-flex justify-content-center">
         <a href="https://github.com/DharmikGohil013"><i class="bi bi-github"></i></a>
         <a href="https://www.linkedin.com/in/dharmikgohil086/"><i class="bi bi-linkedin"></i></a>
         <a href="https://www.instagram.com/dharmik.086/?next=%2F"><i class="bi bi-instagram"></i></a>
         <a href="https://x.com/Dharmik086"><i class="bi bi-twitter"></i></a>
-        <a href="https://play.google.com/store/apps/details?id=com.dharmikgohilfun.crossout"><i class="bi bi-google-play"></i></a>
       </div>
     </div>
   </footer>
@@ -321,13 +886,84 @@
   <!-- Scroll Top -->
   <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
-  <!-- Preloader -->
-  <div id="preloader">
-    <div class="loader-container">
-      <div class="loader loader-outer"></div>
-      <div class="loader loader-middle"></div>
-      <div class="loader loader-inner"></div>
-      <div class="loading-text">LOADING...</div>
+  <!-- macOS Dock Navigation -->
+  <div class="macos-dock">
+    <div class="dock-items">
+      <a href="index.html" class="dock-item" data-tooltip="Home"><i class="bi bi-house-fill"></i></a>
+      <a href="services.html" class="dock-item" data-tooltip="Abilities"><i class="bi bi-lightning-charge-fill"></i></a>
+      <div class="dock-separator"></div>
+      <div class="dock-item games-menu-trigger" data-tooltip="My Games">
+        <i class="bi bi-controller"></i>
+        <div class="games-dropdown-menu" id="gamesDropdown">
+          <div class="games-dropdown-header">
+            <i class="bi bi-controller me-2"></i>My Games
+          </div>
+          <div class="games-dropdown-list">
+            <a href="https://dharmikgohil.itch.io/mavericks-battlegrounds" target="_blank" class="game-dropdown-item">
+              <i class="bi bi-play-circle-fill"></i>
+              <span>Mavericks Battleground</span>
+            </a>
+            <a href="https://dharmik086.itch.io/floppy-bird-860" target="_blank" class="game-dropdown-item">
+              <i class="bi bi-play-circle-fill"></i>
+              <span>Floppy Bird</span>
+            </a>
+            <a href="https://dharmikgohil.itch.io/facade" target="_blank" class="game-dropdown-item">
+              <i class="bi bi-play-circle-fill"></i>
+              <span>Facade</span>
+            </a>
+            <a href="https://dharmikgohil.itch.io/go-galaxy" target="_blank" class="game-dropdown-item">
+              <i class="bi bi-play-circle-fill"></i>
+              <span>Go Galaxy</span>
+            </a>
+            <a href="https://dharmikgohil.itch.io/drone-training" target="_blank" class="game-dropdown-item">
+              <i class="bi bi-play-circle-fill"></i>
+              <span>Drone Training</span>
+            </a>
+          </div>
+        </div>
+      </div>
+      <a href="Achivemtn.html" class="dock-item" data-tooltip="Achievements"><i class="bi bi-trophy-fill"></i></a>
+      <div class="dock-item apps-menu-trigger" data-tooltip="Live Apps & Websites">
+        <i class="bi bi-briefcase-fill"></i>
+        <div class="games-dropdown-menu" id="appsDropdown">
+          <div class="games-dropdown-header">
+            <i class="bi bi-briefcase-fill me-2"></i>Live Projects
+          </div>
+          <div class="games-dropdown-list">
+            <a href="assets/Fit Sync.apk" download class="game-dropdown-item">
+              <i class="bi bi-download"></i>
+              <span>FitSync App (APK)</span>
+            </a>
+            <a href="https://actify.dharmikgohil.art/" target="_blank" class="game-dropdown-item">
+              <i class="bi bi-globe"></i>
+              <span>Actify</span>
+            </a>
+            <a href="https://learnlink.dharmikgohil.art" target="_blank" class="game-dropdown-item">
+              <i class="bi bi-globe"></i>
+              <span>Learn Link</span>
+            </a>
+            <a href="http://gdgs.dharmikgohil.art/" target="_blank" class="game-dropdown-item">
+              <i class="bi bi-globe"></i>
+              <span>GDGS Games</span>
+            </a>
+            <a href="http://flipcart.dharmikgohil.art/" target="_blank" class="game-dropdown-item">
+              <i class="bi bi-globe"></i>
+              <span>Flipkart Clone</span>
+            </a>
+            <a href="http://krishna.dharmikgohil.art/" target="_blank" class="game-dropdown-item">
+              <i class="bi bi-globe"></i>
+              <span>Krishna Construction</span>
+            </a>
+            <a href="https://fkm.vercel.app/" target="_blank" class="game-dropdown-item">
+              <i class="bi bi-globe"></i>
+              <span>WiFi Service</span>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="dock-separator"></div>
+      <a href="contact.html" class="dock-item active" data-tooltip="Contact"><i class="bi bi-envelope-fill"></i></a>
+      <a href="assets/img/Dharmik Gohil Resume.pdf" class="dock-item" data-tooltip="Resume" download><i class="bi bi-file-earmark-person"></i></a>
     </div>
   </div>
 
@@ -353,7 +989,7 @@
 
       // Form Submission
       const form = document.getElementById('contactForm');
-      const submitBtn = form.querySelector('.btn-submit');
+      const submitBtn = form.querySelector('.mac-submit-btn');
 
       form.addEventListener('submit', async function (e) {
         e.preventDefault();
@@ -399,6 +1035,8 @@
       });
     });
   </script>
+  <script src="assets/js/dock-dropdowns.js"></script>
+  <script src="assets/js/menubar-clock.js"></script>
 </body>
 
 </html>

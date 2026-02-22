@@ -14,17 +14,55 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <title>Dharmik Gohil Blog | Elite Game Development Tutorials | Expert Unity Tips | VR/AR Masterclass | Metaverse Insights</title>
-  <meta name="description" content="📚 LEARN from India's #1 Game Developer! DHARMIK GOHIL's blog features elite game development tutorials, expert Unity tips, VR/AR masterclass content & metaverse insights. Pro-level knowledge from an award-winning developer!">
+  <meta name="description" content="LEARN from India's #1 Game Developer! DHARMIK GOHIL's blog features elite game development tutorials, expert Unity tips, VR/AR masterclass content & metaverse insights. Pro-level knowledge from an award-winning developer!">
   <meta name="keywords" content="Dharmik Gohil blog, game development tutorials, elite Unity tutorials, expert VR AR development, metaverse development guide, professional game programming, multiplayer game development secrets, Unity tips and tricks, Dharmik Gohil tutorials, advanced game development, game optimization techniques, Unity XR masterclass, mobile game development pro tips, backend development tutorials, game AI tutorials, procedural generation guide, Unity shader tutorials, C# game development, JavaScript game tutorials, cross-platform development guide, WebGL game tutorials, HTML5 game development, Android game tutorials, iOS game development guide, game monetization strategies, game marketing tips, game design principles, game art tutorials, game animation guide, game sound design, game UX best practices, indie game development tips, AAA game secrets, game industry insights, game career advice, game portfolio tips">
 
+  <!-- Advanced SEO Meta Tags -->
+  <link rel="canonical" href="https://dharmikgohil.art/blog.html">
+  <meta name="creator" content="Dharmik Gohil">
+  <meta name="publisher" content="Dharmik Gohil">
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+  <meta name="googlebot" content="index, follow">
+  <meta name="bingbot" content="index, follow">
+  <meta name="revisit-after" content="1 days">
+  <meta name="rating" content="general">
+  <meta name="distribution" content="global">
+  <meta name="language" content="en">
+  <meta name="geo.region" content="IN-GJ">
+  <meta name="geo.placename" content="Surat, Gujarat, India">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://dharmikgohil.art/blog.html">
+  <meta property="og:title" content="Dharmik Gohil Blog | Game Development Tutorials & Insights">
+  <meta property="og:description" content="Elite game development tutorials, Unity tips, VR/AR masterclass content & metaverse insights from India's top game developer.">
+  <meta property="og:image" content="https://dharmikgohil.art/assets/img/DharmikGohil%20(1).png">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:site_name" content="Dharmik Gohil Portfolio">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://dharmikgohil.art/blog.html">
+  <meta property="twitter:title" content="Dharmik Gohil Blog | Game Development Tutorials & Insights">
+  <meta property="twitter:description" content="Elite game development tutorials, Unity tips, VR/AR masterclass content & metaverse insights from India's top game developer.">
+  <meta property="twitter:image" content="https://dharmikgohil.art/assets/img/DharmikGohil%20(1).png">
+  <meta property="twitter:creator" content="@dharmikgohil">
+
   <!-- Favicons -->
-  <link href="assets/img/dlogo.png" rel="icon">
-  <link href="assets/img/dlogo.png" rel="apple-touch-icon">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/img/dlogo.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/img/dlogo.png">
+  <link rel="shortcut icon" href="assets/img/dlogo.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/img/dlogo.png">
+  <meta name="msapplication-TileImage" content="assets/img/dlogo.png">
+  <meta name="msapplication-TileColor" content="#2d89ef">
+  <meta name="theme-color" content="#0A84FF">
+  <meta name="apple-mobile-web-app-title" content="Dharmik Gohil">
+  <meta name="application-name" content="Dharmik Gohil">
 
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com" rel="preconnect">
   <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
 
   <!-- Vendor CSS Files -->
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -37,185 +75,394 @@
   <link href="assets/css/main.css" rel="stylesheet">
   <link href="assets/css/navigation.css" rel="stylesheet">
 
-  <!-- Custom Blog Page Styles -->
   <style>
-    .blog-grid {
-      margin-top: 40px;
+    /* ============================================
+       macOS-INSPIRED BLOG PAGE
+       Sonoma/Sequoia Dark Mode Aesthetic
+       ============================================ */
+
+    body {
+      background: #09090F !important;
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
     }
 
-    .blog-card {
-      background: #fff;
-      border-radius: 15px;
+    /* Page Background */
+    .blog-page-macos {
+      position: relative;
+      min-height: 100vh;
+      background: linear-gradient(180deg, #0f1420 0%, #0a0e18 50%, #0f1420 100%);
+      padding: 40px 0 120px;
+    }
+
+    /* Subtle ambient glow */
+    .blog-page-macos::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 60% 40% at 20% 15%, rgba(10,132,255,0.06) 0%, transparent 60%),
+        radial-gradient(ellipse 50% 50% at 80% 60%, rgba(191,90,242,0.05) 0%, transparent 60%),
+        radial-gradient(ellipse 40% 30% at 50% 90%, rgba(48,209,88,0.04) 0%, transparent 50%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .blog-page-macos > .container {
+      position: relative;
+      z-index: 1;
+    }
+
+    /* ---- Page Header ---- */
+    .page-header {
+      text-align: center;
+      padding: 30px 0 50px;
+    }
+
+    .page-header-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(10,132,255,0.1);
+      border: 1px solid rgba(10,132,255,0.25);
+      color: #0A84FF;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      font-weight: 600;
+      padding: 5px 14px;
+      border-radius: 20px;
+      margin-bottom: 16px;
+      letter-spacing: 0.5px;
+    }
+
+    .page-header h1 {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 700;
+      color: #fff;
+      letter-spacing: -0.8px;
+      margin: 0 0 10px;
+      line-height: 1.1;
+    }
+
+    .page-header p {
+      font-family: 'Inter', -apple-system, sans-serif;
+      color: rgba(255,255,255,0.4);
+      font-size: 0.95rem;
+      max-width: 500px;
+      margin: 0 auto;
+    }
+
+    /* ---- macOS Blog Window ---- */
+    .mac-blog-window {
+      background: rgba(28,28,38,0.55);
+      backdrop-filter: blur(40px) saturate(1.8);
+      -webkit-backdrop-filter: blur(40px) saturate(1.8);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 16px;
+      box-shadow:
+        0 8px 32px rgba(0,0,0,0.4),
+        inset 0 1px 0 rgba(255,255,255,0.06);
       overflow: hidden;
-      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-      transition: all 0.3s ease;
-      margin-bottom: 30px;
+      margin-bottom: 36px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      position: relative;
+    }
+
+    .mac-blog-window:hover {
+      transform: translateY(-3px);
+      box-shadow:
+        0 16px 48px rgba(0,0,0,0.5),
+        0 0 40px rgba(10,132,255,0.06),
+        inset 0 1px 0 rgba(255,255,255,0.08);
+    }
+
+    /* Window Titlebar */
+    .mac-window-titlebar {
+      background: rgba(255,255,255,0.04);
+      border-bottom: 1px solid rgba(255,255,255,0.07);
+      padding: 13px 18px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      user-select: none;
+    }
+
+    .mac-window-dots {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+      flex-shrink: 0;
+    }
+
+    .mac-window-dots span {
+      width: 13px;
+      height: 13px;
+      border-radius: 50%;
+      display: inline-block;
+      transition: filter 0.2s, transform 0.2s;
+      cursor: default;
+    }
+
+    .mac-window-dots span:hover {
+      filter: brightness(1.25);
+      transform: scale(1.1);
+    }
+
+    .mac-dot-red { background: #FF5F56; box-shadow: 0 0 8px rgba(255,95,86,0.5); }
+    .mac-dot-yellow { background: #FFBD2E; box-shadow: 0 0 8px rgba(255,189,46,0.5); }
+    .mac-dot-green { background: #27C93F; box-shadow: 0 0 8px rgba(39,201,63,0.5); }
+
+    .mac-window-label {
+      flex: 1;
+      text-align: center;
+      font-family: 'Inter', -apple-system, sans-serif;
+      font-size: 13px;
+      font-weight: 500;
+      color: rgba(255,255,255,0.5);
+      letter-spacing: 0.2px;
+    }
+
+    .mac-window-label i {
+      margin-right: 6px;
+      font-size: 12px;
+    }
+
+    /* Window Content */
+    .mac-window-body {
+      padding: 28px 28px 32px;
+    }
+
+    /* ---- Blog Card (glass) ---- */
+    .mac-blog-card {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 14px;
+      overflow: hidden;
+      transition: all 0.3s cubic-bezier(.4,0,.2,1);
+      position: relative;
       height: 100%;
       display: flex;
       flex-direction: column;
     }
 
-    .blog-card:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 15px 40px rgba(0, 212, 255, 0.3);
-    }
-
-    .blog-thumbnail {
-      position: relative;
-      width: 100%;
-      padding-top: 56.25%; /* 16:9 Aspect Ratio */
-      overflow: hidden;
-      background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .blog-thumbnail::before {
+    .mac-blog-card::before {
       content: '';
       position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+      inset: 0;
+      background: radial-gradient(ellipse 80% 80% at 50% 0%, rgba(10,132,255,0.04) 0%, transparent 60%);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      pointer-events: none;
       z-index: 0;
     }
 
-    .blog-thumbnail img {
+    .mac-blog-card:hover {
+      background: rgba(255,255,255,0.06);
+      border-color: rgba(10,132,255,0.25);
+      transform: translateY(-6px);
+      box-shadow: 0 12px 36px rgba(0,0,0,0.3), 0 0 20px rgba(10,132,255,0.08);
+    }
+
+    .mac-blog-card:hover::before {
+      opacity: 1;
+    }
+
+    /* Blog Thumbnail */
+    .mac-blog-thumbnail {
+      position: relative;
+      width: 100%;
+      padding-top: 56.25%;
+      overflow: hidden;
+      background: linear-gradient(135deg, rgba(10,132,255,0.08) 0%, rgba(191,90,242,0.08) 100%);
+    }
+
+    .mac-blog-thumbnail img {
       position: absolute;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
       object-fit: cover;
-      transition: transform 0.3s ease;
+      transition: transform 0.4s ease, opacity 0.3s ease;
       z-index: 1;
-      background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
     }
 
-    /* Fallback when image fails to load */
-    .blog-thumbnail img[alt]:after {
-      content: attr(alt);
+    .mac-blog-card:hover .mac-blog-thumbnail img {
+      transform: scale(1.08);
+    }
+
+    .mac-blog-overlay {
       position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: 90%;
-      text-align: center;
-      color: rgba(255, 255, 255, 0.7);
-      font-size: 14px;
-      font-weight: 500;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(180deg, transparent 40%, rgba(9,9,15,0.7) 100%);
       z-index: 2;
+      pointer-events: none;
     }
 
-    .blog-card:hover .blog-thumbnail img {
-      transform: scale(1.1);
-    }
-
-    .play-overlay {
+    .mac-play-icon {
       position: absolute;
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-      width: 70px;
-      height: 70px;
-      background: rgba(0, 212, 255, 0.9);
+      width: 56px;
+      height: 56px;
+      background: rgba(10,132,255,0.85);
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
       transition: all 0.3s ease;
       z-index: 10;
+      box-shadow: 0 4px 20px rgba(10,132,255,0.4);
     }
 
-    .blog-card:hover .play-overlay {
-      background: rgba(0, 255, 255, 0.95);
-      transform: translate(-50%, -50%) scale(1.1);
+    .mac-blog-card:hover .mac-play-icon {
+      background: rgba(10,132,255,1);
+      transform: translate(-50%, -50%) scale(1.12);
+      box-shadow: 0 6px 30px rgba(10,132,255,0.6);
     }
 
-    .play-overlay i {
+    .mac-play-icon i {
       color: #fff;
-      font-size: 28px;
-      margin-left: 5px;
+      font-size: 22px;
     }
 
-    .duration-badge {
+    .mac-duration-badge {
       position: absolute;
       bottom: 10px;
       right: 10px;
-      background: rgba(0, 0, 0, 0.8);
-      color: #fff;
-      padding: 3px 8px;
-      border-radius: 3px;
-      font-size: 12px;
+      background: rgba(0,0,0,0.75);
+      backdrop-filter: blur(8px);
+      color: rgba(255,255,255,0.9);
+      padding: 3px 10px;
+      border-radius: 6px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
       font-weight: 600;
       z-index: 10;
+      border: 1px solid rgba(255,255,255,0.06);
     }
 
-    /* Ensure blog card structure remains intact even without images */
-    .blog-card {
-      min-height: 450px;
-    }
-
-    .blog-thumbnail {
-      min-height: 200px;
-    }
-
-    /* Show gradient background if image fails to load */
-    .blog-thumbnail img:not([src]),
-    .blog-thumbnail img[src=""],
-    .blog-thumbnail img[src*="undefined"] {
-      opacity: 0;
-    }
-
-    .blog-content {
-      padding: 25px;
+    /* Blog Content */
+    .mac-blog-body {
+      padding: 22px 20px 24px;
       flex-grow: 1;
       display: flex;
       flex-direction: column;
+      position: relative;
+      z-index: 1;
     }
 
-    .blog-meta {
+    .mac-blog-meta {
       display: flex;
       align-items: center;
-      gap: 15px;
+      gap: 14px;
       margin-bottom: 12px;
-      color: #666;
-      font-size: 14px;
+      font-family: 'Inter', -apple-system, sans-serif;
+      font-size: 12px;
+      color: rgba(255,255,255,0.35);
     }
 
-    .blog-meta i {
-      color: #00d4ff;
+    .mac-blog-meta i {
+      color: #0A84FF;
+      font-size: 11px;
     }
 
-    .blog-title {
-      font-size: 20px;
+    .mac-blog-meta span {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .mac-blog-title {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      font-size: 1.05rem;
       font-weight: 700;
-      color: #1a1a2e;
-      margin-bottom: 12px;
+      color: #fff;
+      margin: 0 0 10px;
       line-height: 1.4;
+      letter-spacing: -0.2px;
       display: -webkit-box;
       -webkit-line-clamp: 2;
       -webkit-box-orient: vertical;
       overflow: hidden;
     }
 
-    .blog-title a {
-      color: #1a1a2e;
+    .mac-blog-title a {
+      color: inherit;
       text-decoration: none;
-      transition: color 0.3s ease;
+      transition: color 0.2s ease;
     }
 
-    .blog-title a:hover {
-      color: #00d4ff;
+    .mac-blog-title a:hover {
+      color: #0A84FF;
     }
 
-    .blog-excerpt {
-      color: #666;
-      font-size: 14px;
+    .mac-blog-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: 12px;
+    }
+
+    .mac-blog-tag {
+      display: inline-block;
+      padding: 3px 10px;
+      background: rgba(10,132,255,0.08);
+      border: 1px solid rgba(10,132,255,0.18);
+      border-radius: 7px;
+      font-family: 'Inter', sans-serif;
+      font-size: 10.5px;
+      font-weight: 500;
+      color: rgba(255,255,255,0.55);
+      letter-spacing: 0.2px;
+      transition: all 0.2s;
+    }
+
+    .mac-blog-tag:hover {
+      background: rgba(10,132,255,0.18);
+      border-color: rgba(10,132,255,0.4);
+      color: #fff;
+    }
+
+    .mac-blog-tag.purple {
+      background: rgba(191,90,242,0.08);
+      border-color: rgba(191,90,242,0.18);
+    }
+    .mac-blog-tag.purple:hover {
+      background: rgba(191,90,242,0.18);
+      border-color: rgba(191,90,242,0.4);
+    }
+
+    .mac-blog-tag.green {
+      background: rgba(48,209,88,0.08);
+      border-color: rgba(48,209,88,0.18);
+    }
+    .mac-blog-tag.green:hover {
+      background: rgba(48,209,88,0.18);
+      border-color: rgba(48,209,88,0.4);
+    }
+
+    .mac-blog-tag.orange {
+      background: rgba(255,159,10,0.08);
+      border-color: rgba(255,159,10,0.18);
+    }
+    .mac-blog-tag.orange:hover {
+      background: rgba(255,159,10,0.18);
+      border-color: rgba(255,159,10,0.4);
+    }
+
+    .mac-blog-excerpt {
+      font-family: 'Inter', -apple-system, sans-serif;
+      color: rgba(255,255,255,0.4);
+      font-size: 0.82rem;
       line-height: 1.6;
-      margin-bottom: 15px;
+      margin-bottom: 16px;
       display: -webkit-box;
       -webkit-line-clamp: 3;
       -webkit-box-orient: vertical;
@@ -223,553 +470,637 @@
       flex-grow: 1;
     }
 
-    .blog-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-bottom: 15px;
-    }
-
-    .blog-tag {
-      background: #f0f0f0;
-      color: #666;
-      padding: 4px 12px;
-      border-radius: 15px;
-      font-size: 12px;
-      font-weight: 500;
-    }
-
-    .read-more {
+    .mac-read-more {
       display: inline-flex;
       align-items: center;
-      color: #00d4ff;
+      gap: 6px;
+      font-family: 'Inter', -apple-system, sans-serif;
+      font-size: 0.82rem;
       font-weight: 600;
+      color: #0A84FF;
       text-decoration: none;
-      gap: 5px;
-      transition: gap 0.3s ease;
+      transition: all 0.2s ease;
+      margin-top: auto;
     }
 
-    .read-more:hover {
+    .mac-read-more:hover {
+      color: #1B90FF;
       gap: 10px;
-      color: #00ffff;
     }
 
-    .page-header {
-      background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0a0f1f 100%);
-      padding: 80px 0 60px;
-      margin-bottom: 60px;
-      position: relative;
-      overflow: hidden;
+    .mac-read-more i {
+      font-size: 12px;
+      transition: transform 0.2s ease;
     }
 
-    .page-header::before {
-      content: '';
-      position: absolute;
+    .mac-read-more:hover i {
+      transform: translateX(3px);
+    }
+
+    /* ---- macOS Menu Bar ---- */
+    .macos-menubar {
+      position: fixed;
       top: 0;
       left: 0;
       right: 0;
-      bottom: 0;
-      background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><rect fill="%2300d4ff" opacity="0.05" width="50" height="50"/></svg>');
-      animation: moveBackground 20s linear infinite;
+      height: 28px;
+      background: rgba(22,22,26,0.92);
+      backdrop-filter: blur(25px) saturate(2);
+      -webkit-backdrop-filter: blur(25px) saturate(2);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 18px;
+      z-index: 9998;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      box-shadow: 0 1px 0 rgba(0,0,0,0.15);
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
     }
 
-    @keyframes moveBackground {
-      0% { transform: translate(0, 0); }
-      100% { transform: translate(50px, 50px); }
+    .menubar-left {
+      display: flex;
+      align-items: center;
+      gap: 20px;
     }
 
-    .page-header h1 {
-      color: #fff;
-      font-size: 48px;
+    .menubar-apple {
+      font-size: 16px;
+      color: rgba(255,255,255,0.95);
+    }
+
+    .menubar-left span {
+      font-size: 13px;
+      font-weight: 500;
+      color: rgba(255,255,255,0.88);
+      cursor: default;
+      user-select: none;
+      transition: color 0.15s ease;
+    }
+
+    .menubar-left span:hover:not(.menubar-apple) {
+      color: rgba(255,255,255,1);
+    }
+
+    .menubar-left span.menubar-brand {
       font-weight: 700;
-      margin-bottom: 15px;
+      color: rgba(255,255,255,0.95);
+    }
+
+    .menubar-right {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      font-size: 12px;
+      color: rgba(255,255,255,0.85);
+    }
+
+    .menubar-right a {
+      color: inherit;
+      text-decoration: none;
+      transition: color 0.15s ease;
+      display: flex;
+      align-items: center;
+    }
+
+    .menubar-right a:hover {
+      color: rgba(255,255,255,1);
+    }
+
+    .menubar-right i {
+      font-size: 14px;
+      transition: color 0.15s ease;
+    }
+
+    .menubar-right i:hover {
+      color: rgba(255,255,255,1);
+    }
+
+    #menubar-clock {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      font-size: 12px;
+      font-weight: 500;
+      color: rgba(255,255,255,0.9);
+      letter-spacing: 0.4px;
+      min-width: 44px;
+      text-align: right;
+    }
+
+    @media (max-width: 768px) {
+      .macos-menubar { display: none; }
+    }
+
+    /* ---- Footer ---- */
+    .footer {
+      background: #0a0e18 !important;
+      border-top: 1px solid rgba(255,255,255,0.06) !important;
+      padding: 30px 0 80px 0 !important;
       position: relative;
       z-index: 1;
     }
 
-    .page-header p {
-      color: rgba(255, 255, 255, 0.8);
-      font-size: 18px;
-      position: relative;
-      z-index: 1;
+    .footer .container {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
     }
 
-    .section-title {
-      font-size: 32px;
-      font-weight: 700;
-      color: #1a1a2e;
-      margin-bottom: 40px;
-      position: relative;
-      padding-bottom: 15px;
+    .footer .copyright {
+      text-align: right !important;
     }
 
-    .section-title::after {
+    .footer .copyright p {
+      font-family: 'Inter', -apple-system, sans-serif !important;
+      color: rgba(255,255,255,0.4) !important;
+      font-size: 0.85rem;
+    }
+
+    .footer .social-links {
+      justify-content: flex-end !important;
+    }
+
+    .footer .social-links a {
+      width: 36px;
+      height: 36px;
+      display: inline-flex !important;
+      align-items: center;
+      justify-content: center;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 10px;
+      color: rgba(255,255,255,0.5) !important;
+      font-size: 1rem;
+      transition: all 0.2s ease;
+      margin: 0 5px !important;
+    }
+
+    .footer .social-links a:hover {
+      background: rgba(10,132,255,0.15) !important;
+      border-color: rgba(10,132,255,0.4) !important;
+      color: #0A84FF !important;
+      transform: translateY(-3px);
+    }
+
+    /* ============================================
+       SCROLL ANIMATIONS
+       ============================================ */
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    .scroll-reveal {
+      opacity: 0;
+      transform: translateY(60px);
+      filter: blur(6px);
+      transition: all 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+      will-change: opacity, transform, filter;
+    }
+    .scroll-reveal.revealed {
+      opacity: 1;
+      transform: translateY(0);
+      filter: blur(0);
+    }
+
+    .scroll-reveal-left {
+      opacity: 0;
+      transform: translateX(-80px);
+      filter: blur(5px);
+      transition: all 1s cubic-bezier(0.22, 1, 0.36, 1);
+      will-change: opacity, transform, filter;
+    }
+    .scroll-reveal-left.revealed {
+      opacity: 1;
+      transform: translateX(0);
+      filter: blur(0);
+    }
+
+    .scroll-glow.revealed {
+      animation: glowPulseReveal 1.5s ease-out forwards;
+    }
+    @keyframes glowPulseReveal {
+      0%   { box-shadow: 0 0 0 rgba(10, 132, 255, 0); }
+      40%  { box-shadow: 0 0 40px rgba(10, 132, 255, 0.2), 0 0 80px rgba(191, 90, 242, 0.1); }
+      100% { box-shadow: 0 0 0 rgba(10, 132, 255, 0); }
+    }
+
+    /* Stagger blog cards inside window */
+    .mac-window-body .row > div {
+      opacity: 0;
+      transform: translateY(30px) scale(0.95);
+      filter: blur(3px);
+      transition: all 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+      will-change: opacity, transform, filter;
+    }
+    .mac-blog-window.revealed .mac-window-body .row > div {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+      filter: blur(0);
+    }
+    .mac-blog-window.revealed .mac-window-body .row > div:nth-child(1) { transition-delay: 0.08s; }
+    .mac-blog-window.revealed .mac-window-body .row > div:nth-child(2) { transition-delay: 0.16s; }
+    .mac-blog-window.revealed .mac-window-body .row > div:nth-child(3) { transition-delay: 0.24s; }
+    .mac-blog-window.revealed .mac-window-body .row > div:nth-child(4) { transition-delay: 0.32s; }
+
+    /* Window glow separator */
+    .mac-blog-window::after {
       content: '';
       position: absolute;
       bottom: 0;
-      left: 0;
-      width: 60px;
-      height: 4px;
-      background: linear-gradient(90deg, #00d4ff, #00ffff);
-      border-radius: 2px;
-    }
-
-    /* Latest Posts Section - Animated Background */
-    .latest-posts-section {
-      position: relative;
-      overflow: hidden;
-      background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-      padding: 80px 0;
-    }
-
-    #latest-posts-canvas {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: 1;
-      opacity: 0.6;
-    }
-
-    .latest-posts-section .container {
-      position: relative;
-      z-index: 10;
-    }
-
-    /* Floating Geometric Shapes */
-    .floating-shapes {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: 2;
+      left: 10%;
+      width: 80%;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(10, 132, 255, 0.2), transparent);
+      opacity: 0;
+      transition: opacity 0.8s ease 0.5s;
       pointer-events: none;
+    }
+    .mac-blog-window.revealed::after {
+      opacity: 1;
+    }
+
+    /* Scroll progress glow bar */
+    .scroll-progress-glow {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      z-index: 9999;
+      background: linear-gradient(90deg, #0A84FF, #BF5AF2, #FF375F, #0A84FF);
+      background-size: 300% 100%;
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.15s ease-out;
+      animation: progressGradient 3s linear infinite;
+      pointer-events: none;
+    }
+    @keyframes progressGradient {
+      0%   { background-position: 0% 50%; }
+      100% { background-position: 300% 50%; }
+    }
+
+    /* Floating particles */
+    .scroll-particles {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      pointer-events: none;
+      z-index: 9997;
       overflow: hidden;
     }
-
-    .shape {
+    .scroll-particle {
       position: absolute;
-      opacity: 0.15;
-      animation: floatShape 20s infinite ease-in-out;
-    }
-
-    .shape-circle {
-      width: 150px;
-      height: 150px;
-      background: linear-gradient(135deg, #00d4ff, #00ffff);
+      width: 4px; height: 4px;
       border-radius: 50%;
-      top: 10%;
-      left: 5%;
-      animation-delay: 0s;
-      box-shadow: 0 0 40px rgba(0, 212, 255, 0.5);
+      background: rgba(10, 132, 255, 0.4);
+      opacity: 0;
+      animation: floatParticle 4s ease-in-out infinite;
+    }
+    .scroll-particle:nth-child(2) { background: rgba(191, 90, 242, 0.35); animation-delay: 0.8s; left: 20%; }
+    .scroll-particle:nth-child(3) { background: rgba(255, 55, 95, 0.3); animation-delay: 1.6s; left: 50%; }
+    .scroll-particle:nth-child(4) { background: rgba(10, 132, 255, 0.3); animation-delay: 2.4s; left: 75%; }
+    .scroll-particle:nth-child(5) { background: rgba(48, 209, 88, 0.25); animation-delay: 3.2s; left: 90%; }
+    @keyframes floatParticle {
+      0%   { transform: translateY(100vh) scale(0); opacity: 0; }
+      20%  { opacity: 1; }
+      80%  { opacity: 0.6; }
+      100% { transform: translateY(-20vh) scale(1.5); opacity: 0; }
     }
 
-    .shape-circle-2 {
-      width: 100px;
-      height: 100px;
-      background: linear-gradient(135deg, #ff6b6b, #ff8e53);
-      border-radius: 50%;
-      top: 70%;
-      right: 10%;
-      animation-delay: 3s;
-      box-shadow: 0 0 40px rgba(255, 107, 107, 0.5);
+    /* ---- Responsive ---- */
+    @media (max-width: 768px) {
+      .blog-page-macos { padding: 20px 0 100px; }
+      .page-header { padding: 20px 0 30px; }
+      .page-header h1 { font-size: 1.8rem; }
+      .mac-window-body { padding: 20px 16px 24px; }
+      .mac-blog-body { padding: 18px 16px 20px; }
     }
 
-    .shape-triangle {
-      width: 0;
-      height: 0;
-      border-left: 75px solid transparent;
-      border-right: 75px solid transparent;
-      border-bottom: 130px solid #4ecdc4;
-      top: 50%;
-      right: 15%;
-      animation-delay: 2s;
-      filter: drop-shadow(0 0 30px rgba(78, 205, 196, 0.5));
+    @media (max-width: 575px) {
+      .mac-window-titlebar { padding: 10px 13px; }
+      .mac-window-body { padding: 16px 12px 20px; }
+      .page-header h1 { font-size: 1.5rem; }
     }
 
-    .shape-square {
-      width: 120px;
-      height: 120px;
-      background: linear-gradient(135deg, #a8edea, #fed6e3);
-      transform: rotate(45deg);
-      bottom: 20%;
-      left: 15%;
-      animation-delay: 1s;
-      box-shadow: 0 0 40px rgba(168, 237, 234, 0.5);
-    }
-
-    .shape-square-2 {
-      width: 80px;
-      height: 80px;
-      background: linear-gradient(135deg, #ffeaa7, #fab1a0);
-      transform: rotate(25deg);
-      top: 30%;
-      left: 50%;
-      animation-delay: 4s;
-      box-shadow: 0 0 40px rgba(255, 234, 167, 0.5);
-    }
-
-    .shape-hexagon {
-      width: 100px;
-      height: 57.74px;
-      background: linear-gradient(135deg, #74b9ff, #a29bfe);
-      position: absolute;
-      top: 15%;
-      right: 30%;
-      animation-delay: 2.5s;
-      box-shadow: 0 0 40px rgba(116, 185, 255, 0.5);
-    }
-
-    .shape-hexagon:before,
-    .shape-hexagon:after {
-      content: "";
-      position: absolute;
-      width: 0;
-      border-left: 50px solid transparent;
-      border-right: 50px solid transparent;
-    }
-
-    .shape-hexagon:before {
-      bottom: 100%;
-      border-bottom: 28.87px solid #74b9ff;
-    }
-
-    .shape-hexagon:after {
-      top: 100%;
-      width: 0;
-      border-top: 28.87px solid #a29bfe;
-    }
-
-    @keyframes floatShape {
-      0%, 100% {
-        transform: translateY(0) rotate(0deg) scale(1);
+    @media (prefers-reduced-motion: reduce) {
+      .scroll-reveal,
+      .scroll-reveal-left,
+      .mac-window-body .row > div {
+        transition: none !important;
+        opacity: 1 !important;
+        transform: none !important;
+        filter: none !important;
       }
-      25% {
-        transform: translateY(-30px) rotate(90deg) scale(1.1);
-      }
-      50% {
-        transform: translateY(-60px) rotate(180deg) scale(0.9);
-      }
-      75% {
-        transform: translateY(-30px) rotate(270deg) scale(1.05);
-      }
-    }
-
-    /* Pulse animation for shapes */
-    .shape-circle,
-    .shape-circle-2 {
-      animation: floatShape 20s infinite ease-in-out, pulse 4s infinite ease-in-out;
-    }
-
-    @keyframes pulse {
-      0%, 100% {
-        opacity: 0.15;
-        transform: scale(1);
-      }
-      50% {
-        opacity: 0.25;
-        transform: scale(1.15);
-      }
-    }
-
-    /* Gradient Wave Animation */
-    .latest-posts-section::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: -50%;
-      width: 200%;
-      height: 100%;
-      background: 
-        linear-gradient(45deg, transparent 30%, rgba(0, 212, 255, 0.1) 50%, transparent 70%),
-        linear-gradient(-45deg, transparent 30%, rgba(255, 107, 107, 0.1) 50%, transparent 70%);
-      background-size: 200% 200%;
-      animation: gradientWave 15s ease infinite;
-      z-index: 1;
-    }
-
-    @keyframes gradientWave {
-      0% {
-        background-position: 0% 50%;
-      }
-      50% {
-        background-position: 100% 50%;
-      }
-      100% {
-        background-position: 0% 50%;
-      }
+      .scroll-progress-glow,
+      .scroll-particles { display: none !important; }
     }
   </style>
+</head>
 
-  <!-- Performance Optimization -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preconnect" href="https://www.google-analytics.com">
-  </head>
+<body class="index-page">
+  <div class="custom-cursor"></div>
 
-<body class="blog-page">
-
-  <header id="header" class="header d-flex align-items-center sticky-top">
-    <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
-
-      <a href="index.html" class="logo d-flex align-items-center">
-        <img src="assets/img/dlogo.png" alt="Dharmik Gohil Logo">
-        <h1 class="sitename">DHARMIK</h1>
-      </a>
-
-      <nav id="navmenu" class="navmenu">
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="resume.html">Resume</a></li>
-          <li><a href="services.html">Services</a></li>
-          <li><a href="portfolio.html">Portfolio</a></li>
-          <li><a href="blog.html" class="active">Blog</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-        <button class="mobile-nav-toggle d-xl-none" aria-label="Toggle navigation">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-      </nav>
-
+  <!-- Preloader -->
+  <div id="preloader">
+    <div class="cube-loader">
+      <div class="cube-top"></div>
+      <div class="cube-wrapper">
+        <span style="--i:0" class="cube-span"></span>
+        <span style="--i:1" class="cube-span"></span>
+        <span style="--i:2" class="cube-span"></span>
+        <span style="--i:3" class="cube-span"></span>
+      </div>
     </div>
-  </header>
+  </div>
+
+  <!-- macOS Menu Bar -->
+  <div class="macos-menubar">
+    <div class="menubar-left">
+      <span class="menubar-apple"><a href="index.html" style="color:inherit;text-decoration:none;"><i class="bi bi-house-fill"></i></a></span>
+      <span class="menubar-brand">Dharmik Gohil</span>
+      <span>Blog</span>
+      <span><a href="services.html" style="color:inherit;text-decoration:none;">Abilities</a></span>
+    </div>
+    <div class="menubar-right">
+      <a href="https://github.com/DharmikGohil013" target="_blank" rel="noopener noreferrer"><i class="bi bi-github"></i></a>
+      <a href="https://www.linkedin.com/in/dharmikgohil086/" target="_blank" rel="noopener noreferrer"><i class="bi bi-linkedin"></i></a>
+      <a href="https://www.instagram.com/dharmik.086/?next=%2F" target="_blank" rel="noopener noreferrer"><i class="bi bi-instagram"></i></a>
+      <a href="https://x.com/Dharmik086" target="_blank" rel="noopener noreferrer"><i class="bi bi-twitter"></i></a>
+      <i class="bi bi-wifi"></i>
+      <i class="bi bi-battery-full"></i>
+      <span id="menubar-clock">--:--</span>
+    </div>
+  </div>
 
   <main class="main">
-
-    <!-- Page Header -->
-    <div class="page-header">
-      <div class="container text-center" data-aos="fade-up">
-        <h1>Blog & Articles</h1>
-        <p>Game Development Insights, Unity Tutorials, and Tech Explorations</p>
-      </div>
-    </div>
-
-    <!-- Blog Grid Section -->
-    <section class="blog-grid section latest-posts-section">
-      <!-- Animated Background Canvas -->
-      <canvas id="latest-posts-canvas"></canvas>
-      
-      <!-- Floating Geometric Shapes -->
-      <div class="floating-shapes">
-        <div class="shape shape-circle"></div>
-        <div class="shape shape-triangle"></div>
-        <div class="shape shape-square"></div>
-        <div class="shape shape-hexagon"></div>
-        <div class="shape shape-circle-2"></div>
-        <div class="shape shape-square-2"></div>
-      </div>
-      
+    <div class="blog-page-macos">
       <div class="container">
 
-        <div class="section-title" data-aos="fade-up">
-          Latest Posts
+        <!-- Page Header -->
+        <div class="page-header scroll-reveal" data-aos="fade-down">
+          <div class="page-header-badge"><i class="bi bi-rss-fill"></i> BLOG & ARTICLES</div>
+          <h1>Blog & Insights</h1>
+          <p>Game development insights, tutorials, and tech explorations.</p>
         </div>
 
-        <div class="row">
+        <!-- ============ LATEST POSTS WINDOW ============ -->
+        <div class="mac-blog-window scroll-reveal-left scroll-glow" data-aos="fade-up">
+          <div class="mac-window-titlebar">
+            <div class="mac-window-dots">
+              <span class="mac-dot-red"></span>
+              <span class="mac-dot-yellow"></span>
+              <span class="mac-dot-green"></span>
+            </div>
+            <div class="mac-window-label"><i class="bi bi-journal-text"></i> Latest Posts</div>
+          </div>
+          <div class="mac-window-body">
+            <div class="row g-4">
 
-          <!-- Blog Post 1 - CHARUSAT Expo 3.0 -->
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
-            <div class="blog-card">
-              <div class="blog-thumbnail">
-                <img src="assets/img/blog/charusat-expo/cover.jpg" alt="CHARUSAT Expo 3.0 - Mavericks Battlegrounds Showcase">
-                <div class="play-overlay">
-                  <i class="bi bi-trophy-fill"></i>
+              <!-- Blog Post 1 - CHARUSAT Expo 3.0 -->
+              <div class="col-lg-6 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                <div class="mac-blog-card">
+                  <div class="mac-blog-thumbnail">
+                    <img src="assets/img/blog/charusat-expo/cover.jpg" alt="CHARUSAT Expo 3.0 - Mavericks Battlegrounds Showcase">
+                    <div class="mac-blog-overlay"></div>
+                    <div class="mac-play-icon">
+                      <i class="bi bi-trophy-fill"></i>
+                    </div>
+                    <div class="mac-duration-badge">10 min read</div>
+                  </div>
+                  <div class="mac-blog-body">
+                    <div class="mac-blog-meta">
+                      <span><i class="bi bi-calendar3"></i> Dec 16, 2025</span>
+                      <span><i class="bi bi-person-fill"></i> Dharmik Gohil</span>
+                    </div>
+                    <h3 class="mac-blog-title">
+                      <a href="blog/charusat-expo-3-mavericks-battlegrounds-showcase.html">CHARUSAT Expo 3.0 - Only IT Department Project Selected!</a>
+                    </h3>
+                    <div class="mac-blog-tags">
+                      <span class="mac-blog-tag">CHARUSAT Expo</span>
+                      <span class="mac-blog-tag purple">Mavericks</span>
+                      <span class="mac-blog-tag green">Exhibition</span>
+                      <span class="mac-blog-tag orange">5000+ Visitors</span>
+                    </div>
+                    <p class="mac-blog-excerpt">
+                      A proud moment! Our Mavericks Battlegrounds was the only project selected from the entire IT Department at CHARUSAT Expo 3.0. Over 5000+ students and faculty experienced our game and shared invaluable feedback!
+                    </p>
+                    <a href="blog/charusat-expo-3-mavericks-battlegrounds-showcase.html" class="mac-read-more">
+                      Read Full Story <i class="bi bi-arrow-right"></i>
+                    </a>
+                  </div>
                 </div>
-                <div class="duration-badge">10 min read</div>
               </div>
-              <div class="blog-content">
-                <div class="blog-meta">
-                  <span><i class="bi bi-calendar"></i> Dec 16, 2025</span>
-                  <span><i class="bi bi-person"></i> Dharmik Gohil</span>
+
+              <!-- Blog Post 2 - Hackron Hackathon 2025 -->
+              <div class="col-lg-6 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                <div class="mac-blog-card">
+                  <div class="mac-blog-thumbnail">
+                    <img src="assets/img/blog/hackron/cover.jpg" alt="Hackron Hackathon 2025 - Team Bug Busters">
+                    <div class="mac-blog-overlay"></div>
+                    <div class="mac-play-icon">
+                      <i class="bi bi-lightning-charge-fill"></i>
+                    </div>
+                    <div class="mac-duration-badge">12 min read</div>
+                  </div>
+                  <div class="mac-blog-body">
+                    <div class="mac-blog-meta">
+                      <span><i class="bi bi-calendar3"></i> April 2025</span>
+                      <span><i class="bi bi-person-fill"></i> Dharmik Gohil</span>
+                    </div>
+                    <h3 class="mac-blog-title">
+                      <a href="blog/hackron-hackathon-2025-blinkit-experience.html">Hackron Hackathon 2025 - Building SafaiNova for Blinkit</a>
+                    </h3>
+                    <div class="mac-blog-tags">
+                      <span class="mac-blog-tag">Hackathon</span>
+                      <span class="mac-blog-tag purple">Blinkit</span>
+                      <span class="mac-blog-tag green">Innovation</span>
+                      <span class="mac-blog-tag orange">24 Hours</span>
+                    </div>
+                    <p class="mac-blog-excerpt">
+                      Our team's thrilling 24-hour journey at Hackron Hackathon 2025 sponsored by Blinkit! We developed SafaiNova - an innovative waste management automation solution for dark stores at DY Patil University, Pune.
+                    </p>
+                    <a href="blog/hackron-hackathon-2025-blinkit-experience.html" class="mac-read-more">
+                      Read Full Story <i class="bi bi-arrow-right"></i>
+                    </a>
+                  </div>
                 </div>
-                <h3 class="blog-title">
-                  <a href="blog/charusat-expo-3-mavericks-battlegrounds-showcase.html">🏆 CHARUSAT Expo 3.0 - Only IT Department Project Selected!</a>
-                </h3>
-                <div class="blog-tags">
-                  <span class="blog-tag">CHARUSAT Expo</span>
-                  <span class="blog-tag">Mavericks</span>
-                  <span class="blog-tag">Exhibition</span>
-                  <span class="blog-tag">5000+ Visitors</span>
-                </div>
-                <p class="blog-excerpt">
-                  A proud moment! Our Mavericks Battlegrounds was the only project selected from the entire IT Department at CHARUSAT Expo 3.0. Over 5000+ students and faculty experienced our game and shared invaluable feedback!
-                </p>
-                <a href="blog/charusat-expo-3-mavericks-battlegrounds-showcase.html" class="read-more">
-                  Read Full Story <i class="bi bi-arrow-right"></i>
-                </a>
               </div>
+
+              <!-- Blog Post 3 - IIT Bombay TechFest'24 -->
+              <div class="col-lg-6 col-md-6" data-aos="fade-up" data-aos-delay="300">
+                <div class="mac-blog-card">
+                  <div class="mac-blog-thumbnail">
+                    <img src="assets/img/blog/techfest-main.jpg" alt="IIT Bombay TechFest 2024 Experience">
+                    <div class="mac-blog-overlay"></div>
+                    <div class="mac-play-icon">
+                      <i class="bi bi-rocket-takeoff-fill"></i>
+                    </div>
+                    <div class="mac-duration-badge">15 min read</div>
+                  </div>
+                  <div class="mac-blog-body">
+                    <div class="mac-blog-meta">
+                      <span><i class="bi bi-calendar3"></i> Dec 17, 2024</span>
+                      <span><i class="bi bi-person-fill"></i> Dharmik Gohil</span>
+                    </div>
+                    <h3 class="mac-blog-title">
+                      <a href="blog/iit-bombay-techfest-2024-experience.html">IIT Bombay TechFest'24 - My Unforgettable Tech Journey</a>
+                    </h3>
+                    <div class="mac-blog-tags">
+                      <span class="mac-blog-tag">TechFest</span>
+                      <span class="mac-blog-tag purple">Game Dev Workshop</span>
+                      <span class="mac-blog-tag green">Robotics</span>
+                      <span class="mac-blog-tag orange">Drones</span>
+                    </div>
+                    <p class="mac-blog-excerpt">
+                      Experience my incredible 5-day journey at Asia's largest science & technology festival! Game development workshop, robotics, drones, robot dogs, weapons tech, and innovation showcase at IIT Bombay.
+                    </p>
+                    <a href="blog/iit-bombay-techfest-2024-experience.html" class="mac-read-more">
+                      Read Full Story <i class="bi bi-arrow-right"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Blog Post 4 - Mavericks Battlegrounds -->
+              <div class="col-lg-6 col-md-6" data-aos="fade-up" data-aos-delay="400">
+                <div class="mac-blog-card">
+                  <div class="mac-blog-thumbnail">
+                    <img src="assets/img/mavericks-coming-soon-banner.jpg" alt="Mavericks Battlegrounds Game Development Journey">
+                    <div class="mac-blog-overlay"></div>
+                    <div class="mac-play-icon">
+                      <i class="bi bi-play-fill"></i>
+                    </div>
+                    <div class="mac-duration-badge">10 min read</div>
+                  </div>
+                  <div class="mac-blog-body">
+                    <div class="mac-blog-meta">
+                      <span><i class="bi bi-calendar3"></i> June 12, 2025</span>
+                      <span><i class="bi bi-person-fill"></i> Dharmik Gohil</span>
+                    </div>
+                    <h3 class="mac-blog-title">
+                      <a href="blog/mavericks-battlegrounds-game-development-journey.html">Mavericks Battlegrounds: Complete Game Development Journey</a>
+                    </h3>
+                    <div class="mac-blog-tags">
+                      <span class="mac-blog-tag">Unity 6</span>
+                      <span class="mac-blog-tag purple">Multiplayer</span>
+                      <span class="mac-blog-tag green">Game Dev</span>
+                      <span class="mac-blog-tag orange">Photon</span>
+                    </div>
+                    <p class="mac-blog-excerpt">
+                      Explore the complete development journey of Mavericks Battlegrounds, an epic multiplayer battle arena game developed in Unity 6 using Photon networking and Agile methodology at CHARUSAT University.
+                    </p>
+                    <a href="blog/mavericks-battlegrounds-game-development-journey.html" class="mac-read-more">
+                      Read Full Story <i class="bi bi-arrow-right"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+
             </div>
           </div>
-
-          <!-- Blog Post 2 - Hackron Hackathon 2025 -->
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
-            <div class="blog-card">
-              <div class="blog-thumbnail">
-                <img src="assets/img/blog/hackron/cover.jpg" alt="Hackron Hackathon 2025 - Team Bug Busters">
-                <div class="play-overlay">
-                  <i class="bi bi-lightning-charge-fill"></i>
-                </div>
-                <div class="duration-badge">12 min read</div>
-              </div>
-              <div class="blog-content">
-                <div class="blog-meta">
-                  <span><i class="bi bi-calendar"></i> April 2025</span>
-                  <span><i class="bi bi-person"></i> Dharmik Gohil</span>
-                </div>
-                <h3 class="blog-title">
-                  <a href="blog/hackron-hackathon-2025-blinkit-experience.html">Hackron Hackathon 2025 - Building SafaiNova for Blinkit</a>
-                </h3>
-                <div class="blog-tags">
-                  <span class="blog-tag">Hackathon</span>
-                  <span class="blog-tag">Blinkit</span>
-                  <span class="blog-tag">Innovation</span>
-                  <span class="blog-tag">24 Hours</span>
-                </div>
-                <p class="blog-excerpt">
-                  Our team's thrilling 24-hour journey at Hackron Hackathon 2025 sponsored by Blinkit! We developed SafaiNova - an innovative waste management automation solution for dark stores at DY Patil University, Pune.
-                </p>
-                <a href="blog/hackron-hackathon-2025-blinkit-experience.html" class="read-more">
-                  Read Full Story <i class="bi bi-arrow-right"></i>
-                </a>
-              </div>
-            </div>
-          </div>
-
-          <!-- Blog Post 3 - IIT Bombay TechFest'24 -->
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
-            <div class="blog-card">
-              <div class="blog-thumbnail">
-                <img src="assets/img/blog/techfest-main.jpg" alt="IIT Bombay TechFest 2024 Experience">
-                <div class="play-overlay">
-                  <i class="bi bi-rocket-takeoff-fill"></i>
-                </div>
-                <div class="duration-badge">15 min read</div>
-              </div>
-              <div class="blog-content">
-                <div class="blog-meta">
-                  <span><i class="bi bi-calendar"></i> Dec 17, 2024</span>
-                  <span><i class="bi bi-person"></i> Dharmik Gohil</span>
-                </div>
-                <h3 class="blog-title">
-                  <a href="blog/iit-bombay-techfest-2024-experience.html">🚀 IIT Bombay TechFest'24 - My Unforgettable Tech Journey</a>
-                </h3>
-                <div class="blog-tags">
-                  <span class="blog-tag">TechFest</span>
-                  <span class="blog-tag">Game Dev Workshop</span>
-                  <span class="blog-tag">Robotics</span>
-                  <span class="blog-tag">Drones</span>
-                </div>
-                <p class="blog-excerpt">
-                  Experience my incredible 5-day journey at Asia's largest science & technology festival! Game development workshop, robotics, drones, robot dogs, weapons tech, and innovation showcase at IIT Bombay.
-                </p>
-                <a href="blog/iit-bombay-techfest-2024-experience.html" class="read-more">
-                  Read Full Story <i class="bi bi-arrow-right"></i>
-                </a>
-              </div>
-            </div>
-          </div>
-
-          <!-- Blog Post 4 - Mavericks Battlegrounds -->
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
-            <div class="blog-card">
-              <div class="blog-thumbnail">
-                <img src="assets/img/mavericks-coming-soon-banner.jpg" alt="Mavericks Battlegrounds Game Development Journey">
-                <div class="play-overlay">
-                  <i class="bi bi-play-fill"></i>
-                </div>
-                <div class="duration-badge">10 min read</div>
-              </div>
-              <div class="blog-content">
-                <div class="blog-meta">
-                  <span><i class="bi bi-calendar"></i> June 12, 2025</span>
-                  <span><i class="bi bi-person"></i> Dharmik Gohil</span>
-                </div>
-                <h3 class="blog-title">
-                  <a href="blog/mavericks-battlegrounds-game-development-journey.html">Mavericks Battlegrounds: Complete Game Development Journey</a>
-                </h3>
-                <div class="blog-tags">
-                  <span class="blog-tag">Unity 6</span>
-                  <span class="blog-tag">Multiplayer</span>
-                  <span class="blog-tag">Game Dev</span>
-                  <span class="blog-tag">Photon</span>
-                </div>
-                <p class="blog-excerpt">
-                  Explore the complete development journey of Mavericks Battlegrounds, an epic multiplayer battle arena game developed in Unity 6 using Photon networking and Agile methodology at CHARUSAT University.
-                </p>
-                <a href="blog/mavericks-battlegrounds-game-development-journey.html" class="read-more">
-                  Read Full Story <i class="bi bi-arrow-right"></i>
-                </a>
-              </div>
-            </div>
-          </div>
-
-          <!-- Placeholder for future blog posts -->
-          <!-- You can duplicate the above structure for more blog posts -->
-
         </div>
 
       </div>
-    </section>
-
+    </div>
   </main>
 
   <footer id="footer" class="footer">
-    <div class="container footer-top">
-      <div class="row gy-4">
-        <div class="col-lg-5 col-md-12 footer-about">
-          <a href="index.html" class="logo d-flex align-items-center">
-            <span class="sitename">DHARMIK GOHIL</span>
-          </a>
-          <p>Professional Game Developer & Unity XR Specialist. Creating immersive experiences and pushing the boundaries of interactive entertainment.</p>
-          <div class="social-links d-flex mt-4">
-            <a href="https://github.com/dharmikgohil013" target="_blank"><i class="bi bi-github"></i></a>
-            <a href="https://in.linkedin.com/in/dharmikgohil086" target="_blank"><i class="bi bi-linkedin"></i></a>
-            <a href="https://www.youtube.com/@DharmikGohil086" target="_blank"><i class="bi bi-youtube"></i></a>
-          </div>
-        </div>
-
-        <div class="col-lg-2 col-6 footer-links">
-          <h4>Quick Links</h4>
-          <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="services.html">Services</a></li>
-            <li><a href="portfolio.html">Portfolio</a></li>
-            <li><a href="contact.html">Contact</a></li>
-          </ul>
-        </div>
-
-        <div class="col-lg-2 col-6 footer-links">
-          <h4>Services</h4>
-          <ul>
-            <li><a href="services.html">Game Development</a></li>
-            <li><a href="services.html">Unity XR</a></li>
-            <li><a href="services.html">VR/AR Development</a></li>
-            <li><a href="services.html">Multiplayer Games</a></li>
-          </ul>
-        </div>
-
-        <div class="col-lg-3 col-md-12 footer-contact text-center text-md-start">
-          <h4>Contact</h4>
-          <p>Gujarat, India</p>
-          <p class="mt-3"><strong>Email:</strong> <span>dharmikgohil086@gmail.com</span></p>
-        </div>
-
+    <div class="container">
+      <div class="copyright text-center">
+        <p>&copy; <span>Copyright</span> <strong class="px-1 sitename">Dharmik</strong> <span>All Rights Reserved</span></p>
       </div>
-    </div>
-
-    <div class="container copyright text-center mt-4">
-      <p>© <span>Copyright</span> <strong class="px-1 sitename">Dharmik Gohil</strong> <span>All Rights Reserved</span></p>
+      <div class="social-links d-flex justify-content-center">
+        <a href="https://github.com/DharmikGohil013"><i class="bi bi-github"></i></a>
+        <a href="https://www.linkedin.com/in/dharmikgohil086/"><i class="bi bi-linkedin"></i></a>
+        <a href="https://www.instagram.com/dharmik.086/?next=%2F"><i class="bi bi-instagram"></i></a>
+        <a href="https://x.com/Dharmik086"><i class="bi bi-twitter"></i></a>
+      </div>
     </div>
   </footer>
 
   <!-- Scroll Top -->
   <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- macOS Dock Navigation -->
+  <div class="macos-dock">
+    <div class="dock-items">
+      <a href="index.html" class="dock-item" data-tooltip="Home"><i class="bi bi-house-fill"></i></a>
+      <a href="services.html" class="dock-item" data-tooltip="Abilities"><i class="bi bi-lightning-charge-fill"></i></a>
+      <div class="dock-separator"></div>
+      <div class="dock-item games-menu-trigger" data-tooltip="My Games">
+        <i class="bi bi-controller"></i>
+        <div class="games-dropdown-menu" id="gamesDropdown">
+          <div class="games-dropdown-header">
+            <i class="bi bi-controller me-2"></i>My Games
+          </div>
+          <div class="games-dropdown-list">
+            <a href="https://dharmikgohil.itch.io/mavericks-battlegrounds" target="_blank" class="game-dropdown-item">
+              <i class="bi bi-play-circle-fill"></i>
+              <span>Mavericks Battleground</span>
+            </a>
+            <a href="https://dharmik086.itch.io/floppy-bird-860" target="_blank" class="game-dropdown-item">
+              <i class="bi bi-play-circle-fill"></i>
+              <span>Floppy Bird</span>
+            </a>
+            <a href="https://dharmikgohil.itch.io/facade" target="_blank" class="game-dropdown-item">
+              <i class="bi bi-play-circle-fill"></i>
+              <span>Facade</span>
+            </a>
+            <a href="https://dharmikgohil.itch.io/go-galaxy" target="_blank" class="game-dropdown-item">
+              <i class="bi bi-play-circle-fill"></i>
+              <span>Go Galaxy</span>
+            </a>
+            <a href="https://dharmikgohil.itch.io/drone-training" target="_blank" class="game-dropdown-item">
+              <i class="bi bi-play-circle-fill"></i>
+              <span>Drone Training</span>
+            </a>
+          </div>
+        </div>
+      </div>
+      <a href="Achivemtn.html" class="dock-item" data-tooltip="Achievements"><i class="bi bi-trophy-fill"></i></a>
+      <div class="dock-item apps-menu-trigger" data-tooltip="Live Apps & Websites">
+        <i class="bi bi-briefcase-fill"></i>
+        <div class="games-dropdown-menu" id="appsDropdown">
+          <div class="games-dropdown-header">
+            <i class="bi bi-briefcase-fill me-2"></i>Live Projects
+          </div>
+          <div class="games-dropdown-list">
+            <a href="assets/Fit Sync.apk" download class="game-dropdown-item">
+              <i class="bi bi-download"></i>
+              <span>FitSync App (APK)</span>
+            </a>
+            <a href="https://actify.dharmikgohil.art/" target="_blank" class="game-dropdown-item">
+              <i class="bi bi-globe"></i>
+              <span>Actify</span>
+            </a>
+            <a href="https://learnlink.dharmikgohil.art" target="_blank" class="game-dropdown-item">
+              <i class="bi bi-globe"></i>
+              <span>Learn Link</span>
+            </a>
+            <a href="http://gdgs.dharmikgohil.art/" target="_blank" class="game-dropdown-item">
+              <i class="bi bi-globe"></i>
+              <span>GDGS Games</span>
+            </a>
+            <a href="http://flipcart.dharmikgohil.art/" target="_blank" class="game-dropdown-item">
+              <i class="bi bi-globe"></i>
+              <span>Flipkart Clone</span>
+            </a>
+            <a href="http://krishna.dharmikgohil.art/" target="_blank" class="game-dropdown-item">
+              <i class="bi bi-globe"></i>
+              <span>Krishna Construction</span>
+            </a>
+            <a href="https://fkm.vercel.app/" target="_blank" class="game-dropdown-item">
+              <i class="bi bi-globe"></i>
+              <span>WiFi Service</span>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="dock-separator"></div>
+      <a href="contact.html" class="dock-item" data-tooltip="Contact"><i class="bi bi-envelope-fill"></i></a>
+      <a href="assets/img/Dharmik Gohil Resume.pdf" class="dock-item" data-tooltip="Resume" download><i class="bi bi-file-earmark-person"></i></a>
+    </div>
+  </div>
 
   <!-- Vendor JS Files -->
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -786,179 +1117,107 @@
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
 
-  <!-- Latest Posts Animated Canvas Script -->
+  <!-- AOS Initialization -->
   <script>
-    document.addEventListener("DOMContentLoaded", function() {
-      const canvas = document.getElementById('latest-posts-canvas');
-      if (!canvas) return;
-      
-      const ctx = canvas.getContext('2d');
-      const section = document.querySelector('.latest-posts-section');
-      
-      // Set canvas size
-      function resizeCanvas() {
-        canvas.width = section.offsetWidth;
-        canvas.height = section.offsetHeight;
-      }
-      resizeCanvas();
-      window.addEventListener('resize', resizeCanvas);
-      
-      // Wave parameters
-      let time = 0;
-      const waves = [
-        { amplitude: 30, frequency: 0.02, speed: 0.02, color: 'rgba(0, 212, 255, 0.3)', offset: 0 },
-        { amplitude: 40, frequency: 0.015, speed: 0.015, color: 'rgba(78, 205, 196, 0.25)', offset: Math.PI / 2 },
-        { amplitude: 35, frequency: 0.018, speed: 0.018, color: 'rgba(168, 237, 234, 0.2)', offset: Math.PI },
-        { amplitude: 45, frequency: 0.012, speed: 0.012, color: 'rgba(116, 185, 255, 0.15)', offset: Math.PI * 1.5 }
-      ];
-      
-      // Particle system
-      class Particle {
-        constructor() {
-          this.x = Math.random() * canvas.width;
-          this.y = Math.random() * canvas.height;
-          this.size = Math.random() * 3 + 1;
-          this.speedX = Math.random() * 0.5 - 0.25;
-          this.speedY = Math.random() * 0.5 - 0.25;
-          this.color = `rgba(${Math.random() * 100 + 100}, ${Math.random() * 100 + 150}, 255, ${Math.random() * 0.5 + 0.1})`;
-        }
-        
-        update() {
-          this.x += this.speedX;
-          this.y += this.speedY;
-          
-          if (this.x < 0 || this.x > canvas.width) this.speedX *= -1;
-          if (this.y < 0 || this.y > canvas.height) this.speedY *= -1;
-        }
-        
-        draw() {
-          ctx.fillStyle = this.color;
-          ctx.beginPath();
-          ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-          ctx.fill();
-          
-          // Glow effect
-          ctx.shadowBlur = 10;
-          ctx.shadowColor = this.color;
-          ctx.fill();
-          ctx.shadowBlur = 0;
-        }
-      }
-      
-      // Create particles
-      const particles = [];
-      for (let i = 0; i < 50; i++) {
-        particles.push(new Particle());
-      }
-      
-      // Draw flowing waves
-      function drawWaves() {
-        waves.forEach((wave, index) => {
-          ctx.beginPath();
-          ctx.moveTo(0, canvas.height / 2);
-          
-          for (let x = 0; x <= canvas.width; x += 5) {
-            const y = canvas.height / 2 + 
-                      Math.sin(x * wave.frequency + time * wave.speed + wave.offset) * wave.amplitude +
-                      Math.sin(x * wave.frequency * 1.5 + time * wave.speed * 0.7) * (wave.amplitude * 0.5);
-            ctx.lineTo(x, y);
-          }
-          
-          ctx.lineTo(canvas.width, canvas.height);
-          ctx.lineTo(0, canvas.height);
-          ctx.closePath();
-          
-          const gradient = ctx.createLinearGradient(0, 0, 0, canvas.height);
-          gradient.addColorStop(0, wave.color.replace('0.3', '0.1').replace('0.25', '0.08').replace('0.2', '0.05').replace('0.15', '0.03'));
-          gradient.addColorStop(1, wave.color);
-          
-          ctx.fillStyle = gradient;
-          ctx.fill();
-        });
-      }
-      
-      // Draw circular ripples
-      let ripples = [];
-      
-      function createRipple() {
-        if (Math.random() > 0.98) {
-          ripples.push({
-            x: Math.random() * canvas.width,
-            y: Math.random() * canvas.height,
-            radius: 0,
-            maxRadius: Math.random() * 100 + 50,
-            alpha: 0.5,
-            speed: Math.random() * 2 + 1
-          });
-        }
-      }
-      
-      function drawRipples() {
-        ripples = ripples.filter(ripple => ripple.alpha > 0);
-        
-        ripples.forEach(ripple => {
-          ripple.radius += ripple.speed;
-          ripple.alpha -= 0.005;
-          
-          ctx.strokeStyle = `rgba(0, 212, 255, ${ripple.alpha * 0.5})`;
-          ctx.lineWidth = 2;
-          ctx.beginPath();
-          ctx.arc(ripple.x, ripple.y, ripple.radius, 0, Math.PI * 2);
-          ctx.stroke();
-          
-          // Inner ripple
-          if (ripple.radius > 20) {
-            ctx.strokeStyle = `rgba(116, 185, 255, ${ripple.alpha * 0.3})`;
-            ctx.beginPath();
-            ctx.arc(ripple.x, ripple.y, ripple.radius - 20, 0, Math.PI * 2);
-            ctx.stroke();
-          }
-        });
-      }
-      
-      // Animation loop
-      function animate() {
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
-        
-        // Draw waves
-        drawWaves();
-        
-        // Update and draw particles
-        particles.forEach(particle => {
-          particle.update();
-          particle.draw();
-        });
-        
-        // Create and draw ripples
-        createRipple();
-        drawRipples();
-        
-        // Connect nearby particles
-        for (let i = 0; i < particles.length; i++) {
-          for (let j = i + 1; j < particles.length; j++) {
-            const dx = particles[i].x - particles[j].x;
-            const dy = particles[i].y - particles[j].y;
-            const distance = Math.sqrt(dx * dx + dy * dy);
-            
-            if (distance < 150) {
-              ctx.strokeStyle = `rgba(0, 212, 255, ${(1 - distance / 150) * 0.2})`;
-              ctx.lineWidth = 1;
-              ctx.beginPath();
-              ctx.moveTo(particles[i].x, particles[i].y);
-              ctx.lineTo(particles[j].x, particles[j].y);
-              ctx.stroke();
-            }
-          }
-        }
-        
-        time += 1;
-        requestAnimationFrame(animate);
-      }
-      
-      animate();
+    AOS.init({
+      duration: 1000,
+      once: true
     });
   </script>
 
+  <script src="assets/js/dock-dropdowns.js"></script>
+
+  <!-- Scroll Animation Engine -->
+  <script>
+  (function() {
+    'use strict';
+
+    /* Scroll Progress Glow Bar */
+    const progressBar = document.createElement('div');
+    progressBar.className = 'scroll-progress-glow';
+    document.body.appendChild(progressBar);
+
+    /* Floating Scroll Particles */
+    const particlesContainer = document.createElement('div');
+    particlesContainer.className = 'scroll-particles';
+    for (let i = 0; i < 5; i++) {
+      const p = document.createElement('span');
+      p.className = 'scroll-particle';
+      p.style.left = (Math.random() * 100) + '%';
+      particlesContainer.appendChild(p);
+    }
+    document.body.appendChild(particlesContainer);
+
+    /* Intersection Observer for Scroll Reveals */
+    const revealSelectors = [
+      '.scroll-reveal',
+      '.scroll-reveal-left'
+    ];
+
+    const revealObserver = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('revealed');
+        }
+      });
+    }, {
+      threshold: 0.12,
+      rootMargin: '0px 0px -60px 0px'
+    });
+
+    document.querySelectorAll(revealSelectors.join(',')).forEach(function(el) {
+      revealObserver.observe(el);
+    });
+
+    /* Scroll Progress Bar Update */
+    function updateScrollProgress() {
+      const scrollTop = window.scrollY || document.documentElement.scrollTop;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const progress = docHeight > 0 ? scrollTop / docHeight : 0;
+      progressBar.style.transform = 'scaleX(' + progress + ')';
+    }
+
+    /* Particles visibility toggle */
+    let scrollTimeout;
+    function handleScrollActivity() {
+      particlesContainer.style.opacity = '1';
+      clearTimeout(scrollTimeout);
+      scrollTimeout = setTimeout(function() {
+        particlesContainer.style.opacity = '0';
+      }, 1500);
+    }
+    particlesContainer.style.transition = 'opacity 0.6s ease';
+    particlesContainer.style.opacity = '0';
+
+    /* Unified Scroll Handler */
+    let ticking = false;
+    function onScroll() {
+      if (!ticking) {
+        requestAnimationFrame(function() {
+          updateScrollProgress();
+          ticking = false;
+        });
+        ticking = true;
+      }
+      handleScrollActivity();
+    }
+    window.addEventListener('scroll', onScroll, { passive: true });
+    updateScrollProgress();
+  })();
+  </script>
+
+  <!-- macOS Menubar Clock -->
+  <script>
+    (function updateMenubarClock() {
+      var el = document.getElementById('menubar-clock');
+      if (!el) return;
+      var now = new Date();
+      var h = now.getHours().toString().padStart(2,'0');
+      var m = now.getMinutes().toString().padStart(2,'0');
+      el.textContent = h + ':' + m;
+      setTimeout(updateMenubarClock, 15000);
+    })();
+  </script>
 </body>
 
 </html>

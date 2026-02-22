@@ -511,9 +511,6 @@ h6 {
 /*--------------------------------------------------------------
 # Preloader
 --------------------------------------------------------------*/
-/* Preloader Container */
-
-/* Preloader */
 #preloader {
   position: fixed;
   inset: 0;
@@ -530,60 +527,74 @@ h6 {
   visibility: hidden;
 }
 
-#preloader .loader-container {
+.cube-loader {
   position: relative;
-  width: 100px;
-  height: 100px;
+  width: 75px;
+  height: 75px;
+  transform-style: preserve-3d;
+  transform: rotateX(-30deg);
+  animation: cube-animate 4s linear infinite;
 }
 
-.loader-outer {
+@keyframes cube-animate {
+  0% { transform: rotateX(-30deg) rotateY(0); }
+  100% { transform: rotateX(-30deg) rotateY(360deg); }
+}
+
+.cube-loader .cube-wrapper {
   position: absolute;
   width: 100%;
   height: 100%;
-  border: 4px solid transparent;
-  border-top: 4px solid #ff007f;
-  border-radius: 50%;
-  box-shadow: 0 0 15px #ff007f;
-  animation: rotate-loader 1.2s linear infinite;
+  transform-style: preserve-3d;
 }
 
-.loader-middle {
+.cube-loader .cube-wrapper .cube-span {
   position: absolute;
-  width: 80%;
-  height: 80%;
-  top: 10%;
-  left: 10%;
-  border: 4px solid transparent;
-  border-bottom: 4px solid #F5B461;
-  border-radius: 50%;
-  box-shadow: 0 0 15px #F5B461;
-  animation: rotate-loader 1.5s linear infinite reverse;
-}
-
-.loader-inner {
-  position: absolute;
-  width: 60%;
-  height: 60%;
-  top: 20%;
-  left: 20%;
-  border: 4px solid #ffdf00;
-  border-left-color: transparent;
-  border-radius: 50%;
-  box-shadow: 0 0 15px #ffdf00;
-  animation: pulse-loader 2s ease-in-out infinite;
-}
-
-.loading-text {
-  position: absolute;
-  bottom: -40px;
   width: 100%;
-  text-align: center;
-  font-size: 1.2rem;
-  font-weight: bold;
-  color: #ffffff;
-  letter-spacing: 3px;
-  text-transform: uppercase;
-  animation: fade-text 1.5s infinite alternate ease-in-out;
+  height: 100%;
+  transform: rotateY(calc(90deg * var(--i))) translateZ(37.5px);
+  background: linear-gradient(
+    to bottom,
+    hsl(330, 3.13%, 25.1%) 0%,
+    hsl(177.27, 21.71%, 32.06%) 5.5%,
+    hsl(176.67, 34.1%, 36.88%) 12.1%,
+    hsl(176.61, 42.28%, 40.7%) 19.6%,
+    hsl(176.63, 48.32%, 43.88%) 27.9%,
+    hsl(176.66, 53.07%, 46.58%) 36.6%,
+    hsl(176.7, 56.94%, 48.91%) 45.6%,
+    hsl(176.74, 62.39%, 50.91%) 54.6%,
+    hsl(176.77, 69.86%, 52.62%) 63.4%,
+    hsl(176.8, 76.78%, 54.08%) 71.7%,
+    hsl(176.83, 83.02%, 55.29%) 79.4%,
+    hsl(176.85, 88.44%, 56.28%) 86.2%,
+    hsl(176.86, 92.9%, 57.04%) 91.9%,
+    hsl(176.88, 96.24%, 57.59%) 96.3%,
+    hsl(176.88, 98.34%, 57.93%) 99%,
+    hsl(176.89, 99.07%, 58.04%) 100%
+  );
+}
+
+.cube-top {
+  position: absolute;
+  width: 75px;
+  height: 75px;
+  background: hsl(330, 3.13%, 25.1%);
+  transform: rotateX(90deg) translateZ(37.5px);
+  transform-style: preserve-3d;
+}
+
+.cube-top::before {
+  content: '';
+  position: absolute;
+  width: 75px;
+  height: 75px;
+  background: hsl(176.61, 42.28%, 40.7%);
+  transform: translateZ(-90px);
+  filter: blur(10px);
+  box-shadow: 0 0 10px #323232,
+              0 0 20px hsl(176.61, 42.28%, 40.7%),
+              0 0 30px #323232,
+              0 0 40px hsl(176.61, 42.28%, 40.7%);
 }
 
 
@@ -606,146 +617,293 @@ body {
 
 
 
-/* Hide Preloader After Page Loads */
-#preloader.hidden {
+
+
+
+
+
+
+/*--------------------------------------------------------------
+# macOS Menubar
+--------------------------------------------------------------*/
+.macos-menubar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 28px;
+  background: rgba(22,22,26,0.92);
+  backdrop-filter: blur(25px) saturate(2);
+  -webkit-backdrop-filter: blur(25px) saturate(2);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 18px;
+  z-index: 9998;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  box-shadow: 0 1px 0 rgba(0,0,0,0.15);
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.menubar-left {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.menubar-apple {
+  font-size: 16px;
+  color: rgba(255,255,255,0.95);
+}
+
+.menubar-left span {
+  font-size: 13px;
+  font-weight: 500;
+  color: rgba(255,255,255,0.88);
+  cursor: default;
+  user-select: none;
+  transition: color 0.15s ease;
+}
+
+.menubar-left span:hover:not(.menubar-apple) {
+  color: rgba(255,255,255,1);
+}
+
+.menubar-left span.menubar-brand {
+  font-weight: 700;
+  color: rgba(255,255,255,0.95);
+}
+
+.menubar-right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-size: 12px;
+  color: rgba(255,255,255,0.85);
+}
+
+.menubar-right a {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.15s ease;
+  display: flex;
+  align-items: center;
+}
+
+.menubar-right a:hover {
+  color: rgba(255,255,255,1);
+}
+
+.menubar-right i {
+  font-size: 14px;
+  transition: color 0.15s ease;
+}
+
+.menubar-right i:hover {
+  color: rgba(255,255,255,1);
+}
+
+#menubar-clock {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  color: rgba(255,255,255,0.9);
+  letter-spacing: 0.4px;
+  min-width: 44px;
+  text-align: right;
+}
+
+@media (max-width: 768px) {
+  .macos-menubar { display: none; }
+}
+
+/*--------------------------------------------------------------
+# macOS Dock Navigation
+--------------------------------------------------------------*/
+.macos-dock {
+  position: fixed;
+  bottom: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+  background: rgba(255,255,255,0.12);
+  backdrop-filter: blur(40px) saturate(2.5);
+  -webkit-backdrop-filter: blur(40px) saturate(2.5);
+  border: 1px solid rgba(255,255,255,0.18);
+  border-radius: 18px;
+  padding: 5px 10px;
+  box-shadow:
+    0 12px 48px rgba(0,0,0,0.6),
+    0 0 0 0.5px rgba(255,255,255,0.08) inset,
+    inset 0 1px 0 rgba(255,255,255,0.12);
+}
+
+.dock-items {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.dock-item {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 11px;
+  background: rgba(255,255,255,0.09);
+  border: 1px solid rgba(255,255,255,0.12);
+  color: rgba(255,255,255,0.75);
+  font-size: 18px;
+  text-decoration: none;
+  transition: all 0.25s cubic-bezier(.4,0,.2,1);
+  position: relative;
+  flex-shrink: 0;
+}
+
+.dock-item::before {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: calc(100% + 8px);
+  left: 50%;
+  transform: translateX(-50%) scale(0.85);
+  background: rgba(25,25,25,0.92);
+  color: rgba(255,255,255,0.95);
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-size: 11px;
+  font-weight: 500;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.18s ease;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  letter-spacing: 0.2px;
+}
+
+.dock-item:hover::before {
+  opacity: 1;
+  transform: translateX(-50%) scale(1);
+}
+
+.dock-item:hover {
+  transform: translateY(-8px) scale(1.15);
+  background: rgba(10,132,255,0.20);
+  border-color: rgba(10,132,255,0.45);
+  color: #0A84FF;
+  box-shadow:
+    0 8px 24px rgba(10,132,255,0.35),
+    0 0 0 1px rgba(10,132,255,0.2);
+}
+
+.dock-item.active {
+  background: rgba(10,132,255,0.25);
+  border-color: rgba(10,132,255,0.5);
+  color: #0A84FF;
+}
+
+.dock-item.active::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: #0A84FF;
+  box-shadow: 0 0 6px rgba(10,132,255,0.6);
+}
+
+.dock-separator {
+  width: 1px;
+  height: 28px;
+  background: linear-gradient(to bottom, transparent, rgba(255,255,255,0.18) 15%, rgba(255,255,255,0.18) 85%, transparent);
+  margin: 0 3px;
+}
+
+/* Games & Apps Dropdown Menus */
+.games-menu-trigger,
+.apps-menu-trigger {
+  position: relative;
+  cursor: pointer;
+}
+
+.games-dropdown-menu {
+  position: absolute;
+  bottom: calc(100% + 12px);
+  left: 50%;
+  transform: translateX(-50%) translateY(10px);
+  width: 240px;
+  background: rgba(30, 30, 30, 0.95);
+  backdrop-filter: blur(40px) saturate(2);
+  -webkit-backdrop-filter: blur(40px) saturate(2);
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 12px;
+  overflow: hidden;
   opacity: 0;
   visibility: hidden;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 1001;
+  box-shadow: 
+    0 20px 60px rgba(0,0,0,0.8),
+    0 0 0 0.5px rgba(255,255,255,0.1) inset;
 }
 
-/* Loader Container */
-#preloader .loader-container {
-  position: relative;
-  width: 100px;
-  height: 100px;
+.games-dropdown-menu.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(0);
 }
 
-/* Outer Glowing Ring */
-.loader-outer {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  border: 4px solid transparent;
-  border-top: 4px solid #ff007f;
-  border-radius: 50%;
-  box-shadow: 0 0 15px #ff007f;
-  animation: rotate-loader 1.2s linear infinite;
+.games-dropdown-header {
+  padding: 12px 16px;
+  background: rgba(10,132,255,0.15);
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  color: #0A84FF;
+  font-weight: 600;
+  font-size: 13px;
+  display: flex;
+  align-items: center;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
-/* Middle Layer with Neon Effect */
-.loader-middle {
-  position: absolute;
-  width: 80%;
-  height: 80%;
-  top: 10%;
-  left: 10%;
-  border: 4px solid transparent;
-  border-bottom: 4px solid #F5B461;
-  border-radius: 50%;
-  box-shadow: 0 0 15px #F5B461;
-  animation: rotate-loader 1.5s linear infinite reverse;
+.games-dropdown-list {
+  padding: 8px;
 }
 
-/* Inner Pulsating Loader */
-.loader-inner {
-  position: absolute;
-  width: 60%;
-  height: 60%;
-  top: 20%;
-  left: 20%;
-  border: 4px solid #ffdf00;
-  border-left-color: transparent;
-  border-radius: 50%;
-  box-shadow: 0 0 15px #ffdf00;
-  animation: pulse-loader 2s ease-in-out infinite;
+.game-dropdown-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 12px;
+  color: rgba(255,255,255,0.85);
+  text-decoration: none;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+  font-size: 13px;
+  font-weight: 500;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
-/* Loading Text */
-.loading-text {
-  position: absolute;
-  bottom: -40px;
-  width: 100%;
-  text-align: center;
-  font-size: 1.2rem;
-  font-weight: bold;
-  color: #ffffff;
-  letter-spacing: 3px;
-  text-transform: uppercase;
-  animation: fade-text 1.5s infinite alternate ease-in-out;
+.game-dropdown-item:hover {
+  background: rgba(10,132,255,0.2);
+  color: #0A84FF;
+  transform: translateX(4px);
 }
 
-/* Animations */
-@keyframes rotate-loader {
-  0% {
-    transform: rotate(0deg);
-  }
-
-  100% {
-    transform: rotate(360deg);
-  }
+.game-dropdown-item i {
+  font-size: 16px;
+  flex-shrink: 0;
 }
 
-@keyframes pulse-loader {
-
-  0%,
-  100% {
-    transform: scale(1);
-    opacity: 1;
-  }
-
-  50% {
-    transform: scale(1.2);
-    opacity: 0.7;
-  }
+.game-dropdown-item span {
+  flex: 1;
 }
 
-@keyframes fade-text {
-  0% {
-    opacity: 1;
-  }
-
-  100% {
-    opacity: 0.5;
-  }
+@media (max-width: 768px) {
+  .macos-dock { display: none; }
 }
-
-
-/* Keyframes */
-@keyframes rotate-loader {
-  0% {
-    transform: rotate(0deg);
-  }
-
-  100% {
-    transform: rotate(360deg);
-  }
-}
-
-@keyframes pulse-loader {
-
-  0%,
-  100% {
-    transform: scale(1);
-    opacity: 0.7;
-  }
-
-  50% {
-    transform: scale(1.5);
-    opacity: 1;
-  }
-}
-
-@keyframes fade-text {
-
-  0%,
-  100% {
-    opacity: 1;
-  }
-
-  50% {
-    opacity: 0.3;
-  }
-}
-
 
 /*--------------------------------------------------------------
 # Scroll Top Button
