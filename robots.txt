@@ -30,11 +30,24 @@ Allow: /assets/img/dharmik-profile-photo-2026.jpg
 Allow: /blog/
 Crawl-delay: 0
 
-# GOOGLE IMAGE BOT - FULL IMAGE INDEXING (PRIORITY: DHARMIK GOHIL PHOTO)
+# GOOGLE IMAGE BOT - FULL IMAGE INDEXING (PRIORITY: DHARMIK GOHIL PHOTOS)
 User-agent: Googlebot-Image
 Allow: /
 Allow: /assets/img/
 Allow: /assets/img/dharmik-profile-photo-2026.jpg
+Allow: /assets/img/dharmik-gohil-casual-photo-2026.jpg
+Allow: /assets/img/dharmik-gohil-latest-photo-february-2026.jpeg
+Allow: /assets/dharmik-gohil-portfolio-photo.webp
+Allow: /assets/img/dharmik-gohil-professional-headshot-photo.png
+Allow: /assets/img/blog/hackron/team-2.jpg
+Allow: /assets/img/blog/hackron/team-3.jpg
+Allow: /assets/img/blog/hackron/hackathon-7.jpg
+Allow: /assets/img/blog/hackron/cover.jpg
+Allow: /assets/img/blog/charusat-expo/expo-3.jpg
+Allow: /assets/img/blog/charusat-expo/expo-5.jpg
+Allow: /assets/img/blog/charusat-expo/expo-6.jpg
+Allow: /assets/img/blog/charusat-expo/cover.jpg
+Allow: /assets/img/blog/
 Allow: /*.png
 Allow: /*.jpg
 Allow: /*.jpeg

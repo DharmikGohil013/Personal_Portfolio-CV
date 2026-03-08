@@ -12,30 +12,60 @@
   <!-- INSTITUTION: CHARUSAT University, DEPSTAR College, Charotar University -->
   <!-- LOCATION: Surat, Gujarat, India -->
   
-  <!-- HOMEPAGE - MAXIMUM PRIORITY - Primary Target: India's #1 Game Developer -->
+  <!-- HOMEPAGE - MAXIMUM PRIORITY -->
   <url>
     <loc>https://dharmikgohil.art/</loc>
-    <lastmod>2026-02-10</lastmod>
+    <lastmod>2026-03-08</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
     <image:image>
       <image:loc>https://dharmikgohil.art/assets/img/dharmik-profile-photo-2026.jpg</image:loc>
-      <image:title>Dharmik Gohil - India's #1 Elite Game Developer Professional Photo 2026</image:title>
-      <image:caption>Professional photograph of Dharmik Gohil - Award-winning Game Developer, Unity XR Expert, Metaverse Architect from CHARUSAT University, Gujarat, India</image:caption>
+      <image:title>Dharmik Gohil Professional Photo 2026</image:title>
+      <image:caption>Dharmik Gohil - Professional Game Developer, Unity XR Specialist, Metaverse Architect from CHARUSAT University, Surat Gujarat India</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://dharmikgohil.art/assets/img/dharmik-gohil-casual-photo-2026.jpg</image:loc>
+      <image:title>Dharmik Gohil Casual Photo 2026</image:title>
+      <image:caption>Dharmik Gohil - Young Game Developer from CHARUSAT University, Surat Gujarat</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://dharmikgohil.art/assets/img/dharmik-gohil-latest-photo-february-2026.jpeg</image:loc>
+      <image:title>Dharmik Gohil Latest Photo 2026</image:title>
+      <image:caption>Dharmik Gohil Latest Photo February 2026 - Game Developer India</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://dharmikgohil.art/assets/dharmik-gohil-portfolio-photo.webp</image:loc>
+      <image:title>Dharmik Gohil Portfolio Photo</image:title>
+      <image:caption>Dharmik Gohil Portfolio Photo - Professional Developer from CHARUSAT University</image:caption>
     </image:image>
     <image:image>
       <image:loc>https://dharmikgohil.art/assets/img/dharmik-gohil-professional-headshot-photo.png</image:loc>
-      <image:title>Dharmik Gohil - Professional Headshot Photo</image:title>
-      <image:caption>Award-winning Game Developer Dharmik Gohil from CHARUSAT University</image:caption>
+      <image:title>Dharmik Gohil Professional Headshot</image:title>
+      <image:caption>Dharmik Gohil - Expert Game Developer Professional Headshot Photo</image:caption>
     </image:image>
   </url>
   
   <!-- ABOUT PAGE - Target: Elite Developer Story, CHARUSAT University Legend -->
   <url>
     <loc>https://dharmikgohil.art/about.html</loc>
-    <lastmod>2026-01-22</lastmod>
+    <lastmod>2026-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.95</priority>
+    <image:image>
+      <image:loc>https://dharmikgohil.art/assets/img/dharmik-profile-photo-2026.jpg</image:loc>
+      <image:title>Dharmik Gohil - About Page Professional Photo</image:title>
+      <image:caption>Dharmik Gohil - Professional Game Developer from CHARUSAT University, Surat Gujarat India</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://dharmikgohil.art/assets/img/dharmik-gohil-casual-photo-2026.jpg</image:loc>
+      <image:title>Dharmik Gohil Casual Photo 2026</image:title>
+      <image:caption>Dharmik Gohil - Young Game Developer from Surat, Gujarat, CHARUSAT University Student</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://dharmikgohil.art/assets/dharmik-gohil-portfolio-photo.webp</image:loc>
+      <image:title>Dharmik Gohil Portfolio Photo</image:title>
+      <image:caption>Dharmik Gohil Portfolio Profile Picture - Game Developer and Unity XR Specialist</image:caption>
+    </image:image>
   </url>
   
   <!-- PORTFOLIO PAGE - Target: Award-Winning Game Projects, Viral Games -->
@@ -160,9 +190,24 @@
   
   <url>
     <loc>https://dharmikgohil.art/blog/hackron-hackathon-2025-blinkit-experience.html</loc>
-    <lastmod>2026-01-22</lastmod>
+    <lastmod>2026-03-08</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://dharmikgohil.art/assets/img/blog/hackron/team-2.jpg</image:loc>
+      <image:title>Dharmik Gohil Team Photo - Hackron Hackathon 2025</image:title>
+      <image:caption>Dharmik Gohil with Team Bug Busters at Hackron Hackathon 2025, DY Patil University</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://dharmikgohil.art/assets/img/blog/hackron/team-3.jpg</image:loc>
+      <image:title>Dharmik Gohil Team Bug Busters Group Photo</image:title>
+      <image:caption>Dharmik Gohil and Team Bug Busters at Hackron Hackathon 2025</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://dharmikgohil.art/assets/img/blog/hackron/hackathon-7.jpg</image:loc>
+      <image:title>Dharmik Gohil Coding at Hackron Hackathon</image:title>
+      <image:caption>Dharmik Gohil during 24-hour coding marathon at Hackron Hackathon 2025, DY Patil University</image:caption>
+    </image:image>
   </url>
   
   <url>
@@ -184,6 +229,28 @@
     <lastmod>2026-01-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>https://dharmikgohil.art/blog/charusat-expo-3-mavericks-battlegrounds-showcase.html</loc>
+    <lastmod>2026-03-08</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://dharmikgohil.art/assets/img/blog/charusat-expo/expo-3.jpg</image:loc>
+      <image:title>Dharmik Gohil at CHARUSAT Expo 3.0</image:title>
+      <image:caption>Dharmik Gohil showcasing Mavericks Battlegrounds at CHARUSAT Expo 3.0 Exhibition</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://dharmikgohil.art/assets/img/blog/charusat-expo/expo-5.jpg</image:loc>
+      <image:title>Dharmik Gohil Expo 5 Photo CHARUSAT</image:title>
+      <image:caption>Dharmik Gohil presenting game development project at CHARUSAT University Expo 3.0</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://dharmikgohil.art/assets/img/blog/charusat-expo/expo-6.jpg</image:loc>
+      <image:title>Dharmik Gohil CHARUSAT Expo Game Demo</image:title>
+      <image:caption>Dharmik Gohil demonstrating Mavericks Battlegrounds game at CHARUSAT Expo 3.0</image:caption>
+    </image:image>
   </url>
   
 </urlset>

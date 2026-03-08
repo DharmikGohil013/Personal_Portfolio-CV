@@ -2,45 +2,179 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   
-  <!-- Dharmik Gohil Profile Photo 2026 - ULTRA-POWERFUL PRIMARY IMAGE FOR MAXIMUM SEO RANKING -->
+  <!-- HOMEPAGE - Dharmik Gohil Primary Photos -->
   <url>
     <loc>https://dharmikgohil.art/</loc>
     <image:image>
       <image:loc>https://dharmikgohil.art/assets/img/dharmik-profile-photo-2026.jpg</image:loc>
-      <image:caption>Dharmik Gohil - India's #1 Elite Game Developer & Award-Winning Unity XR Virtuoso | Professional Headshot 2026 | CHARUSAT University Technology Leader | Premier Metaverse Architect & VR/AR Pioneer | Gujarat's Top Mobile Gaming Expert | Top-Rated Freelance Developer with 100% Client Satisfaction | Creator of Viral Games & Immersive Experiences | Expert in 3D Graphics, Multiplayer Systems, Game Optimization & Cutting-Edge Metaverse Solutions | Recognized Industry Leader in Game Development Innovation</image:caption>
-      <image:title>Dharmik Gohil - India's Premier Game Developer Professional Photo 2026 | Elite Unity XR Specialist & Metaverse Virtuoso | Award-Winning VR/AR Expert | CHARUSAT University | Top Mobile Gaming Pioneer</image:title>
+      <image:caption>Dharmik Gohil - Professional Headshot 2026 - India's Elite Game Developer, Unity XR Virtuoso and Metaverse Architect from CHARUSAT University, Surat Gujarat - Award-Winning Developer Photo</image:caption>
+      <image:title>Dharmik Gohil Professional Photo 2026 - Game Developer Portrait</image:title>
+      <image:geo_location>Surat, Gujarat, India</image:geo_location>
+      <image:license>https://dharmikgohil.art/contact.html</image:license>
+    </image:image>
+    <image:image>
+      <image:loc>https://dharmikgohil.art/assets/img/dharmik-gohil-casual-photo-2026.jpg</image:loc>
+      <image:caption>Dharmik Gohil Casual Photo 2026 - Young Game Developer and Unity XR Specialist from CHARUSAT University DEPSTAR College, Surat Gujarat India</image:caption>
+      <image:title>Dharmik Gohil Casual Photo - Game Developer India</image:title>
+      <image:geo_location>Surat, Gujarat, India</image:geo_location>
+      <image:license>https://dharmikgohil.art/contact.html</image:license>
+    </image:image>
+    <image:image>
+      <image:loc>https://dharmikgohil.art/assets/img/dharmik-gohil-latest-photo-february-2026.jpeg</image:loc>
+      <image:caption>Dharmik Gohil Latest Photo February 2026 - Professional Game Developer, Unity Expert and VR AR Specialist from Gujarat India</image:caption>
+      <image:title>Dharmik Gohil Latest Photo 2026 - Developer Profile</image:title>
+      <image:geo_location>Surat, Gujarat, India</image:geo_location>
+      <image:license>https://dharmikgohil.art/contact.html</image:license>
+    </image:image>
+    <image:image>
+      <image:loc>https://dharmikgohil.art/assets/dharmik-gohil-portfolio-photo.webp</image:loc>
+      <image:caption>Dharmik Gohil Portfolio Photo - Professional Game Developer and Unity XR Developer from CHARUSAT University, Expert in Mobile Games VR AR and Metaverse Development</image:caption>
+      <image:title>Dharmik Gohil Portfolio Photo - Developer Profile</image:title>
       <image:geo_location>Surat, Gujarat, India</image:geo_location>
       <image:license>https://dharmikgohil.art/contact.html</image:license>
     </image:image>
     <image:image>
       <image:loc>https://dharmikgohil.art/assets/img/dharmik-gohil-professional-headshot-photo.png</image:loc>
-      <image:caption>Dharmik Gohil Professional Headshot Photo - Expert Game Developer and Unity XR Specialist</image:caption>
-      <image:title>Dharmik Gohil - Professional Game Developer Portfolio Photo</image:title>
-      <image:geo_location>Surat, Gujarat, India</image:geo_location>
-      <image:license>https://dharmikgohil.art/contact.html</image:license>
-    </image:image>
-    <image:image>
-      <image:loc>https://dharmikgohil.art/dharmik-gohil-web-development-asset.png</image:loc>
-      <image:caption>Dharmik Gohil Web Development Asset - Professional Portfolio Showcase</image:caption>
-      <image:title>Web Development Skills by Dharmik Gohil</image:title>
-      <image:geo_location>Surat, Gujarat, India</image:geo_location>
-      <image:license>https://dharmikgohil.art/contact.html</image:license>
-    </image:image>
-    <image:image>
-      <image:loc>https://dharmikgohil.art/assets/dharmik-gohil-vr-ar-technology-showcase-1.png</image:loc>
-      <image:caption>Dharmik Gohil VR AR Technology Expertise - Unity XR Development Showcase</image:caption>
-      <image:title>VR AR Technology by Dharmik Gohil</image:title>
+      <image:caption>Dharmik Gohil Professional Headshot - Expert Game Developer and Unity XR Specialist from CHARUSAT University</image:caption>
+      <image:title>Dharmik Gohil Professional Headshot Photo</image:title>
       <image:geo_location>Surat, Gujarat, India</image:geo_location>
       <image:license>https://dharmikgohil.art/contact.html</image:license>
     </image:image>
   </url>
-  
+
+  <!-- ABOUT PAGE - Dharmik Gohil Profile Photos -->
+  <url>
+    <loc>https://dharmikgohil.art/about.html</loc>
+    <image:image>
+      <image:loc>https://dharmikgohil.art/assets/img/dharmik-profile-photo-2026.jpg</image:loc>
+      <image:caption>Dharmik Gohil About Page - Professional Game Developer Photo 2026, CHARUSAT University Student and Unity XR Expert</image:caption>
+      <image:title>About Dharmik Gohil - Professional Developer Photo</image:title>
+      <image:geo_location>Surat, Gujarat, India</image:geo_location>
+      <image:license>https://dharmikgohil.art/contact.html</image:license>
+    </image:image>
+    <image:image>
+      <image:loc>https://dharmikgohil.art/assets/img/dharmik-gohil-casual-photo-2026.jpg</image:loc>
+      <image:caption>Dharmik Gohil - Young Indian Game Developer from Surat Gujarat, CHARUSAT University DEPSTAR College Student</image:caption>
+      <image:title>Dharmik Gohil Casual Photo - About Page</image:title>
+      <image:geo_location>Surat, Gujarat, India</image:geo_location>
+      <image:license>https://dharmikgohil.art/contact.html</image:license>
+    </image:image>
+    <image:image>
+      <image:loc>https://dharmikgohil.art/assets/dharmik-gohil-portfolio-photo.webp</image:loc>
+      <image:caption>Dharmik Gohil Portfolio Picture - Game Developer Profile Photo from CHARUSAT University Gujarat India</image:caption>
+      <image:title>Dharmik Gohil Portfolio Picture</image:title>
+      <image:geo_location>Surat, Gujarat, India</image:geo_location>
+      <image:license>https://dharmikgohil.art/contact.html</image:license>
+    </image:image>
+  </url>
+
+  <!-- HACKRON HACKATHON BLOG - Dharmik Gohil Team Photos -->
+  <url>
+    <loc>https://dharmikgohil.art/blog/hackron-hackathon-2025-blinkit-experience.html</loc>
+    <image:image>
+      <image:loc>https://dharmikgohil.art/assets/img/blog/hackron/cover.jpg</image:loc>
+      <image:caption>Dharmik Gohil at Hackron Hackathon 2025 - Team Bug Busters at DY Patil University Blinkit Challenge</image:caption>
+      <image:title>Dharmik Gohil Hackron Hackathon 2025 Cover Photo</image:title>
+      <image:geo_location>Pune, Maharashtra, India</image:geo_location>
+      <image:license>https://dharmikgohil.art/contact.html</image:license>
+    </image:image>
+    <image:image>
+      <image:loc>https://dharmikgohil.art/assets/img/blog/hackron/team-2.jpg</image:loc>
+      <image:caption>Dharmik Gohil with Team Bug Busters at Hackron Hackathon 2025 DY Patil University - Blinkit SafaiNova Project Team Photo</image:caption>
+      <image:title>Dharmik Gohil Team Photo - Hackron Hackathon 2025</image:title>
+      <image:geo_location>Pune, Maharashtra, India</image:geo_location>
+      <image:license>https://dharmikgohil.art/contact.html</image:license>
+    </image:image>
+    <image:image>
+      <image:loc>https://dharmikgohil.art/assets/img/blog/hackron/team-3.jpg</image:loc>
+      <image:caption>Dharmik Gohil Team Bug Busters Group Photo at Hackron Hackathon 2025 - SafaiNova Waste Management Innovation Team</image:caption>
+      <image:title>Dharmik Gohil Hackathon Team Photo - Bug Busters</image:title>
+      <image:geo_location>Pune, Maharashtra, India</image:geo_location>
+      <image:license>https://dharmikgohil.art/contact.html</image:license>
+    </image:image>
+    <image:image>
+      <image:loc>https://dharmikgohil.art/assets/img/blog/hackron/hackathon-7.jpg</image:loc>
+      <image:caption>Dharmik Gohil Coding at Hackron Hackathon 2025 - 24 Hour Coding Marathon at DY Patil University Pune for Blinkit Challenge</image:caption>
+      <image:title>Dharmik Gohil at Hackron Hackathon - Coding Session</image:title>
+      <image:geo_location>Pune, Maharashtra, India</image:geo_location>
+      <image:license>https://dharmikgohil.art/contact.html</image:license>
+    </image:image>
+    <image:image>
+      <image:loc>https://dharmikgohil.art/assets/img/blog/hackron/team-1.jpg</image:loc>
+      <image:caption>Dharmik Gohil Leading Team Bug Busters - Hackron Hackathon 2025 Team Leader and Lead Developer</image:caption>
+      <image:title>Dharmik Gohil as Team Leader - Hackron 2025</image:title>
+      <image:geo_location>Pune, Maharashtra, India</image:geo_location>
+      <image:license>https://dharmikgohil.art/contact.html</image:license>
+    </image:image>
+  </url>
+
+  <!-- CHARUSAT EXPO BLOG - Dharmik Gohil Exhibition Photos -->
+  <url>
+    <loc>https://dharmikgohil.art/blog/charusat-expo-3-mavericks-battlegrounds-showcase.html</loc>
+    <image:image>
+      <image:loc>https://dharmikgohil.art/assets/img/blog/charusat-expo/cover.jpg</image:loc>
+      <image:caption>Dharmik Gohil at CHARUSAT Expo 3.0 - Mavericks Battlegrounds Game Showcase, Only IT Department Project Selected</image:caption>
+      <image:title>Dharmik Gohil CHARUSAT Expo 3.0 Cover Photo</image:title>
+      <image:geo_location>Anand, Gujarat, India</image:geo_location>
+      <image:license>https://dharmikgohil.art/contact.html</image:license>
+    </image:image>
+    <image:image>
+      <image:loc>https://dharmikgohil.art/assets/img/blog/charusat-expo/expo-3.jpg</image:loc>
+      <image:caption>Dharmik Gohil Presenting Mavericks Battlegrounds at CHARUSAT Expo 3.0 - Students Playing the Unity Multiplayer Game at DEPSTAR College Exhibition</image:caption>
+      <image:title>Dharmik Gohil at CHARUSAT Expo - Game Presentation</image:title>
+      <image:geo_location>Anand, Gujarat, India</image:geo_location>
+      <image:license>https://dharmikgohil.art/contact.html</image:license>
+    </image:image>
+    <image:image>
+      <image:loc>https://dharmikgohil.art/assets/img/blog/charusat-expo/expo-5.jpg</image:loc>
+      <image:caption>Dharmik Gohil Faculty Interaction at CHARUSAT Expo 3.0 - Demonstrating Mavericks Battlegrounds Game to University Faculty and Staff</image:caption>
+      <image:title>Dharmik Gohil with Faculty at CHARUSAT Expo 3.0</image:title>
+      <image:geo_location>Anand, Gujarat, India</image:geo_location>
+      <image:license>https://dharmikgohil.art/contact.html</image:license>
+    </image:image>
+    <image:image>
+      <image:loc>https://dharmikgohil.art/assets/img/blog/charusat-expo/expo-6.jpg</image:loc>
+      <image:caption>Dharmik Gohil Team Celebration at CHARUSAT Expo 3.0 - Successful Exhibition of Mavericks Battlegrounds with 5000+ Visitors</image:caption>
+      <image:title>Dharmik Gohil Team Celebration - CHARUSAT Expo</image:title>
+      <image:geo_location>Anand, Gujarat, India</image:geo_location>
+      <image:license>https://dharmikgohil.art/contact.html</image:license>
+    </image:image>
+    <image:image>
+      <image:loc>https://dharmikgohil.art/assets/img/blog/charusat-expo/expo-1.jpg</image:loc>
+      <image:caption>Dharmik Gohil Booth Setup at CHARUSAT Expo 3.0 - Mavericks Battlegrounds Exhibition Stand at DEPSTAR College</image:caption>
+      <image:title>Dharmik Gohil Exhibition Booth - CHARUSAT Expo 3.0</image:title>
+      <image:geo_location>Anand, Gujarat, India</image:geo_location>
+      <image:license>https://dharmikgohil.art/contact.html</image:license>
+    </image:image>
+    <image:image>
+      <image:loc>https://dharmikgohil.art/assets/img/blog/charusat-expo/expo-2.jpg</image:loc>
+      <image:caption>Dharmik Gohil with Team at CHARUSAT Expo 3.0 - Project Showcase with Ansh Kansara and Soham Patel</image:caption>
+      <image:title>Dharmik Gohil Team at CHARUSAT Expo 3.0</image:title>
+      <image:geo_location>Anand, Gujarat, India</image:geo_location>
+      <image:license>https://dharmikgohil.art/contact.html</image:license>
+    </image:image>
+    <image:image>
+      <image:loc>https://dharmikgohil.art/assets/img/blog/charusat-expo/expo-4.jpg</image:loc>
+      <image:caption>Dharmik Gohil Expo Crowd at CHARUSAT Expo 3.0 - Large Crowd Playing Mavericks Battlegrounds at University Exhibition</image:caption>
+      <image:title>Dharmik Gohil Expo Crowd - CHARUSAT Expo 3.0</image:title>
+      <image:geo_location>Anand, Gujarat, India</image:geo_location>
+      <image:license>https://dharmikgohil.art/contact.html</image:license>
+    </image:image>
+  </url>
+
   <!-- Portfolio Page with Game Project Images -->
   <url>
     <loc>https://dharmikgohil.art/portfolio.html</loc>
     <image:image>
+      <image:loc>https://dharmikgohil.art/assets/img/dharmik-profile-photo-2026.jpg</image:loc>
+      <image:caption>Dharmik Gohil - Game Developer Portfolio - Professional Photo of Unity XR Developer and Metaverse Expert</image:caption>
+      <image:title>Dharmik Gohil Portfolio - Developer Photo</image:title>
+      <image:geo_location>Surat, Gujarat, India</image:geo_location>
+      <image:license>https://dharmikgohil.art/contact.html</image:license>
+    </image:image>
+    <image:image>
       <image:loc>https://dharmikgohil.art/assets/img/dharmik-gohil-floppy-ball-mobile-game.png</image:loc>
-      <image:caption>Dharmik Gohil Floppy Ball Mobile Game - Unity Game Development Project</image:caption>
+      <image:caption>Dharmik Gohil Floppy Ball Mobile Game - Unity Game Development Project by Dharmik Gohil</image:caption>
       <image:title>Floppy Ball Game by Dharmik Gohil</image:title>
       <image:geo_location>Surat, Gujarat, India</image:geo_location>
       <image:license>https://dharmikgohil.art/contact.html</image:license>
@@ -54,30 +188,42 @@
     </image:image>
     <image:image>
       <image:loc>https://dharmikgohil.art/assets/img/dharmik-gohil-mario-clone-game-project.png</image:loc>
-      <image:caption>Dharmik Gohil Mini Mario Clone Game - Unity Mobile and PC Game Development</image:caption>
+      <image:caption>Dharmik Gohil Mario Clone Game - Unity Mobile and PC Game Development Project</image:caption>
       <image:title>Mario Clone Game by Dharmik Gohil</image:title>
       <image:geo_location>Surat, Gujarat, India</image:geo_location>
       <image:license>https://dharmikgohil.art/contact.html</image:license>
     </image:image>
   </url>
-  
-  <!-- VR Page with VR/AR Technology Images -->
+
+  <!-- Resume Page -->
   <url>
-    <loc>https://dharmikgohil.art/vr.html</loc>
+    <loc>https://dharmikgohil.art/resume.html</loc>
     <image:image>
-      <image:loc>https://dharmikgohil.art/assets/dharmik-gohil-vr-gaming-expertise-showcase.jpg</image:loc>
-      <image:caption>Dharmik Gohil VR Gaming Technology Expertise - Unity XR Development Specialist</image:caption>
-      <image:title>VR Gaming Technology by Dharmik Gohil</image:title>
+      <image:loc>https://dharmikgohil.art/assets/img/dharmik-profile-photo-2026.jpg</image:loc>
+      <image:caption>Dharmik Gohil Resume Photo - Professional Game Developer from CHARUSAT University, Surat Gujarat India</image:caption>
+      <image:title>Dharmik Gohil Resume - Professional Photo</image:title>
       <image:geo_location>Surat, Gujarat, India</image:geo_location>
       <image:license>https://dharmikgohil.art/contact.html</image:license>
     </image:image>
     <image:image>
-      <image:loc>https://dharmikgohil.art/assets/dharmik-gohil-ar-vr-development-skills.svg</image:loc>
-      <image:caption>Dharmik Gohil AR VR Development Skills - Professional XR Developer Portfolio</image:caption>
-      <image:title>AR VR Development Skills by Dharmik Gohil</image:title>
+      <image:loc>https://dharmikgohil.art/assets/img/dharmik-gohil-latest-photo-february-2026.jpeg</image:loc>
+      <image:caption>Dharmik Gohil Latest Photo 2026 - Professional Resume and Career Profile of Game Developer and Unity Expert</image:caption>
+      <image:title>Dharmik Gohil Latest Photo - Resume</image:title>
       <image:geo_location>Surat, Gujarat, India</image:geo_location>
       <image:license>https://dharmikgohil.art/contact.html</image:license>
     </image:image>
   </url>
-  
+
+  <!-- Services Page -->
+  <url>
+    <loc>https://dharmikgohil.art/services.html</loc>
+    <image:image>
+      <image:loc>https://dharmikgohil.art/assets/img/dharmik-profile-photo-2026.jpg</image:loc>
+      <image:caption>Dharmik Gohil - Game Development Services - Hire Professional Unity XR Developer and Metaverse Architect</image:caption>
+      <image:title>Dharmik Gohil Services - Developer Photo</image:title>
+      <image:geo_location>Surat, Gujarat, India</image:geo_location>
+      <image:license>https://dharmikgohil.art/contact.html</image:license>
+    </image:image>
+  </url>
+
 </urlset>
