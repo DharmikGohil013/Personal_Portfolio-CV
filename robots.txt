@@ -4,9 +4,9 @@
 # =====================================================================
 # PRIMARY IMAGE: dharmik-profile-photo-2026.jpg
 # TARGET KEYWORDS: dharmik, dharmikgohil, dharmik gohil, gohil dharmik
-# SPECIALTY: India's #1 Elite Game Developer, Unity XR Virtuoso, Metaverse Pioneer
-# INSTITUTION: CHARUSAT University Legend, DEPSTAR College Prodigy
-# EXPERTISE: Game Development, VR/AR, Metaverse, Mobile Games, Backend
+# SPECIALTY: Full Stack Web Developer, Game Developer, App Developer, Blockchain Expert
+# INSTITUTION: CHARUSAT University, DEPSTAR College
+# EXPERTISE: Web Development, App Development, Game Development, Blockchain, VR/AR, React.js, Node.js, Unity, Solidity
 # =====================================================================
 
 User-agent: *
