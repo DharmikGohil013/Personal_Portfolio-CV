@@ -62,14 +62,14 @@
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com" rel="preconnect">
   <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet"></noscript></noscript>
 
   <!-- Vendor CSS Files -->
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
-  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
-  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link rel="preload" href="assets/vendor/bootstrap-icons/bootstrap-icons.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="preload" href="assets/vendor/bootstrap-icons/bootstrap-icons.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet"></noscript></noscript>
+  <link rel="preload" href="assets/vendor/aos/aos.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="preload" href="assets/vendor/aos/aos.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link href="assets/vendor/aos/aos.css" rel="stylesheet"></noscript></noscript>
+  <link rel="preload" href="assets/vendor/swiper/swiper-bundle.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="preload" href="assets/vendor/swiper/swiper-bundle.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet"></noscript></noscript>
+  <link rel="preload" href="assets/vendor/glightbox/css/glightbox.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="preload" href="assets/vendor/glightbox/css/glightbox.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet"></noscript></noscript>
 
   <!-- Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
@@ -940,7 +940,7 @@
               <div class="col-lg-6 col-md-6" data-aos="fade-up" data-aos-delay="100">
                 <div class="mac-blog-card">
                   <div class="mac-blog-thumbnail">
-                    <img src="assets/img/blog/charusat-expo/cover.jpg" alt="CHARUSAT Expo 3.0 - Mavericks Battlegrounds Showcase">
+                    <img src="assets/img/blog/charusat-expo/cover.jpg" alt="CHARUSAT Expo 3.0 - Mavericks Battlegrounds Showcase" loading="lazy" decoding="async">
                     <div class="mac-blog-overlay"></div>
                     <div class="mac-play-icon">
                       <i class="bi bi-trophy-fill"></i>
@@ -975,7 +975,7 @@
               <div class="col-lg-6 col-md-6" data-aos="fade-up" data-aos-delay="200">
                 <div class="mac-blog-card">
                   <div class="mac-blog-thumbnail">
-                    <img src="assets/img/blog/hackron/cover.jpg" alt="Hackron Hackathon 2025 - Team Bug Busters">
+                    <img src="assets/img/blog/hackron/cover.jpg" alt="Hackron Hackathon 2025 - Team Bug Busters" loading="lazy" decoding="async">
                     <div class="mac-blog-overlay"></div>
                     <div class="mac-play-icon">
                       <i class="bi bi-lightning-charge-fill"></i>
@@ -1010,7 +1010,7 @@
               <div class="col-lg-6 col-md-6" data-aos="fade-up" data-aos-delay="300">
                 <div class="mac-blog-card">
                   <div class="mac-blog-thumbnail">
-                    <img src="assets/img/blog/techfest-main.jpg" alt="IIT Bombay TechFest 2024 Experience">
+                    <img src="assets/img/blog/techfest-main.jpg" alt="IIT Bombay TechFest 2024 Experience" loading="lazy" decoding="async">
                     <div class="mac-blog-overlay"></div>
                     <div class="mac-play-icon">
                       <i class="bi bi-rocket-takeoff-fill"></i>
@@ -1045,7 +1045,7 @@
               <div class="col-lg-6 col-md-6" data-aos="fade-up" data-aos-delay="400">
                 <div class="mac-blog-card">
                   <div class="mac-blog-thumbnail">
-                    <img src="assets/img/mavericks-coming-soon-banner.jpg" alt="Mavericks Battlegrounds Game Development Journey">
+                    <img src="assets/img/mavericks-coming-soon-banner.jpg" alt="Mavericks Battlegrounds Game Development Journey" loading="lazy" decoding="async">
                     <div class="mac-blog-overlay"></div>
                     <div class="mac-play-icon">
                       <i class="bi bi-play-fill"></i>
@@ -1183,19 +1183,19 @@
   </div>
 
   <!-- Vendor JS Files -->
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
-  <script src="assets/vendor/aos/aos.js"></script>
-  <script src="assets/vendor/typed.js/typed.umd.js"></script>
-  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
-  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
-  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
-  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js" defer></script>
+  <script src="assets/vendor/php-email-form/validate.js" defer></script>
+  <script src="assets/vendor/aos/aos.js" defer></script>
+  <script src="assets/vendor/typed.js/typed.umd.js" defer></script>
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js" defer></script>
+  <script src="assets/vendor/waypoints/noframework.waypoints.js" defer></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js" defer></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js" defer></script>
+  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js" defer></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js" defer></script>
 
   <!-- Main JS File -->
-  <script src="assets/js/main.js"></script>
+  <script src="assets/js/main.js" defer></script>
 
   <!-- AOS Initialization -->
   <script>
@@ -1205,7 +1205,7 @@
     });
   </script>
 
-  <script src="assets/js/dock-dropdowns.js"></script>
+  <script src="assets/js/dock-dropdowns.js" defer></script>
 
   <!-- Scroll Animation Engine -->
   <script>

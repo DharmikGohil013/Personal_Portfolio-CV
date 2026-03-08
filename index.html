@@ -469,27 +469,33 @@
   <meta name="apple-mobile-web-app-title" content="Dharmik Gohil">
   <meta name="application-name" content="Dharmik Gohil">
 
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com" rel="preconnect">
-  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;700&family=Press+Start+2P&display=swap"
-    rel="stylesheet">
+  <!-- Resource Hints -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+  <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
 
-  <!-- Vendor CSS Files -->
+  <!-- Critical CSS (render-blocking - needed for first paint) -->
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
-  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
-  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-  <link href="index.css" rel="stylesheet">
-
-  <!-- Dome Gallery CSS -->
-  <link href="assets/css/dome-gallery.css" rel="stylesheet">
-
-  <!-- Main CSS Files -->
   <link href="assets/css/main.css" rel="stylesheet">
   <link href="assets/css/navigation.css" rel="stylesheet">
+  <link href="index.css" rel="stylesheet">
   <link href="assets/css/responsive-global.css" rel="stylesheet">
+
+  <!-- Deferred CSS (non-critical - load after first paint) -->
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;700&family=Press+Start+2P&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;700&family=Press+Start+2P&display=swap" rel="stylesheet"></noscript>
+  <link rel="preload" href="assets/vendor/bootstrap-icons/bootstrap-icons.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet"></noscript>
+  <link rel="preload" href="assets/vendor/aos/aos.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link href="assets/vendor/aos/aos.css" rel="stylesheet"></noscript>
+  <link rel="preload" href="assets/vendor/swiper/swiper-bundle.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet"></noscript>
+  <link rel="preload" href="assets/vendor/glightbox/css/glightbox.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet"></noscript>
+  <link rel="preload" href="assets/css/dome-gallery.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link href="assets/css/dome-gallery.css" rel="stylesheet"></noscript>
 
   <!-- Additional Inline Styles -->
   <style>
@@ -4306,9 +4312,6 @@
       .scroll-particles { display: none !important; }
     }
   </style>
-  <link href="assets/css/main.css" rel="stylesheet">
-  <link href="assets/css/navigation.css" rel="stylesheet">
-
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://dharmikgohil.art/">
@@ -4676,7 +4679,7 @@
        CINEMATIC VIDEO INTRO - First Visit Only
        ============================================ -->
   <div id="cinematic-intro">
-    <video id="intro-video" muted loop playsinline preload="auto">
+    <video id="intro-video" muted loop playsinline preload="none">
       <source src="assets/bg-video.mp4" type="video/mp4">
     </video>
     <div id="intro-overlay"></div>
@@ -4706,7 +4709,7 @@
     <section id="hero" class="hero section">
 
       <!-- Video Background -->
-      <video id="hero-video-bg" autoplay muted loop playsinline preload="auto">
+      <video id="hero-video-bg" autoplay muted loop playsinline preload="metadata">
         <source src="assets/bg-video.mp4" type="video/mp4">
       </video>
       <div id="hero-video-overlay"></div>
@@ -4943,7 +4946,8 @@
               <div class="game-card">
               <span class="featured-badge"><i class="bi bi-star-fill me-1"></i>Featured</span>
               <img src="assets/img/portfolio/mavericks-battleground-thumbnail.jpg" class="img-fluid"
-                alt="Dharmik Gohil Mavericks Battlegrounds Multiplayer Game - Unity Networking Project">
+                alt="Dharmik Gohil Mavericks Battlegrounds Multiplayer Game - Unity Networking Project"
+                loading="lazy" decoding="async">
               <div class="img-overlay"></div>
               <div class="portfolio-info">
                 <div class="game-tags">
@@ -4971,7 +4975,8 @@
               <div class="game-card">
               <span class="vr-badge"><i class="bi bi-headset-vr me-1"></i>VR Only</span>
               <img src="assets/dharmik-gohil-vr-gaming-expertise-showcase.jpg" class="img-fluid"
-                alt="Dharmik Gohil Archviz Visualization - VR Home Visualization Technology">
+                alt="Dharmik Gohil Archviz Visualization - VR Home Visualization Technology"
+                loading="lazy" decoding="async">
               <div class="img-overlay"></div>
               <div class="portfolio-info">
                 <div class="game-tags">
@@ -4994,7 +4999,8 @@
             <div class="portfolio-item filter-arvr filter-app3d filter-appsingleplayer">
               <div class="game-card">
               <img src="assets/img/ar-explorer-thumbnail.jpg" class="img-fluid"
-                alt="Dharmik Gohil AR Explorer - Augmented Reality Development">
+                alt="Dharmik Gohil AR Explorer - Augmented Reality Development"
+                loading="lazy" decoding="async">
               <div class="img-overlay"></div>
               <div class="portfolio-info">
                 <div class="game-tags">
@@ -5018,7 +5024,8 @@
             <div class="portfolio-item filter-app filter-appsingleplayer filter-productpc">
               <div class="game-card">
               <img src="assets/img/flappy-bird-thumbnail.jpg" class="img-fluid"
-                alt="Dharmik Gohil Floppy Ball Mobile Game - Unity Game Development Project">
+                alt="Dharmik Gohil Floppy Ball Mobile Game - Unity Game Development Project"
+                loading="lazy" decoding="async">
               <div class="img-overlay"></div>
               <div class="portfolio-info">
                 <div class="game-tags">
@@ -5043,7 +5050,8 @@
             <div class="portfolio-item filter-app filter-productpc filter-appmobile filter-appsingleplayer">
               <div class="game-card">
               <img src="assets/img/masonry-portfolio/dharmik-gohil-mario-clone-game-project.png" class="img-fluid"
-                alt="Dharmik Gohil Mini Mario Clone Game - Unity Mobile and PC Game Development">
+                alt="Dharmik Gohil Mini Mario Clone Game - Unity Mobile and PC Game Development"
+                loading="lazy" decoding="async">
               <div class="img-overlay"></div>
               <div class="portfolio-info">
                 <div class="game-tags">
@@ -5070,7 +5078,8 @@
               <div class="game-card">
               <span class="featured-badge" style="background:linear-gradient(135deg,#a78bfa,#6366f1);color:#fff;box-shadow:0 0 20px rgba(99,102,241,0.6);"><i class="bi bi-globe me-1"></i>Global Game Jam</span>
               <img src="assets/img/facade/facade-cover.png" class="img-fluid"
-                alt="Dharmik Gohil Facade - Global Game Jam Unity Game Development">
+                alt="Dharmik Gohil Facade - Global Game Jam Unity Game Development"
+                loading="lazy" decoding="async">
               <div class="img-overlay"></div>
               <!-- Lightbox extras -->
               <a href="assets/img/facade/facade-ss1.png" data-gallery="portfolio-gallery-facade" class="glightbox d-none"></a>
@@ -5200,10 +5209,8 @@
                 id="aboutPhoto"
                 alt="Dharmik Gohil - India's #1 Leading Game Developer | Award-Winning Unity XR Virtuoso & Metaverse Architect | CHARUSAT University Technology Leader | Professional Portrait 2026 | VR AR Mobile Gaming Pioneer | Gujarat's Elite Developer | Top-Rated Freelance Game Creator with 100% Client Satisfaction"
                 title="Dharmik Gohil - Professional Game Developer & Unity XR Expert | India's Premier Metaverse Architect | Award-Winning VR/AR Specialist from CHARUSAT University, Gujarat | Elite Mobile Gaming Pioneer"
-                loading="eager" 
-                fetchpriority="high"
-                decoding="sync"
-                importance="high"
+                loading="lazy" 
+                decoding="async"
                 width="1200"
                 height="1200"
                 itemprop="contentUrl"
@@ -5524,7 +5531,8 @@
             <div class="swiper-slide">
               <div class="testimonial-item">
                 <img src="assets/img/testimonials/images (1).jpeg" class="testimonial-img"
-                  alt="images 1 portfolio image by dharmik gohil fun developer">
+                  alt="images 1 portfolio image by dharmik gohil fun developer"
+                  loading="lazy" decoding="async" width="80" height="80">
                 <h3>Magnus Carlsen</h3>
                 <h4>World Best Chess Player</h4>
                 <div class="stars">
@@ -5542,7 +5550,8 @@
             <div class="swiper-slide">
               <div class="testimonial-item">
                 <img src="assets/img/testimonials/Miyazaki-Hayao-2008.webp" class="testimonial-img"
-                  alt="Miyazaki Hayao 2008 portfolio image by dharmik gohil fun developer">
+                  alt="Miyazaki Hayao 2008 portfolio image by dharmik gohil fun developer"
+                  loading="lazy" decoding="async" width="80" height="80">
                 <h3>Hayao Miyazaki</h3>
                 <h4>Animation Designer</h4>
                 <div class="stars">
@@ -5560,7 +5569,8 @@
             <div class="swiper-slide">
               <div class="testimonial-item">
                 <img src="assets/img/testimonials/channels4_profile.jpg" class="testimonial-img"
-                  alt="channels4 profile portfolio image by dharmik gohil fun developer">
+                  alt="channels4 profile portfolio image by dharmik gohil fun developer"
+                  loading="lazy" decoding="async" width="80" height="80">
                 <h3>Nintendo</h3>
                 <h4>Game Company</h4>
                 <div class="stars">
@@ -5579,7 +5589,8 @@
             <div class="swiper-slide">
               <div class="testimonial-item">
                 <img src="assets/img/images.jpeg" class="testimonial-img"
-                  alt="project showcase image by gohil dharmik fun">
+                  alt="project showcase image by gohil dharmik fun"
+                  loading="lazy" decoding="async" width="80" height="80">
                 <h3>Steve Jobs</h3>
                 <h4>Best CEO</h4>
                 <div class="stars">
@@ -5597,7 +5608,8 @@
             <div class="swiper-slide">
               <div class="testimonial-item">
                 <img src="assets/img/aaaa.jpg" class="testimonial-img"
-                  alt="creative project design by dharmik gohil fun">
+                  alt="creative project design by dharmik gohil fun"
+                  loading="lazy" decoding="async" width="80" height="80">
                 <h3>Markus Persson</h3>
                 <h4>Minecraft Founder</h4>
                 <div class="stars">
@@ -5710,21 +5722,21 @@
   </div>
 
   <!-- Vendor JS Files -->
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
-  <script src="assets/vendor/aos/aos.js"></script>
-  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
-  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
-  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
-  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js" defer></script>
+  <script src="assets/vendor/php-email-form/validate.js" defer></script>
+  <script src="assets/vendor/aos/aos.js" defer></script>
+  <script src="assets/vendor/waypoints/noframework.waypoints.js" defer></script>
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js" defer></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js" defer></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js" defer></script>
+  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js" defer></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js" defer></script>
 
   <!-- Main JS File -->
-  <script src="assets/js/main.js"></script>
+  <script src="assets/js/main.js" defer></script>
 
   <!-- Hackathon Scroll JS -->
-  <script src="assets/js/hackathon-scroll.js"></script>
+  <script src="assets/js/hackathon-scroll.js" defer></script>
 
   <script>
     document.addEventListener("DOMContentLoaded", function () {
@@ -6272,10 +6284,11 @@
   </script>
 
   <!-- Add Devicon Library for Technology Icons -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+  <link rel="preload" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css"></noscript>
 
   <!-- Dome Gallery JavaScript -->
-  <script src="assets/js/dome-gallery.js"></script>
+  <script src="assets/js/dome-gallery.js" defer></script>
 
   <!-- Space Dodge Inline Game -->
   <script>
@@ -6630,7 +6643,23 @@
     if (hasSeenIntro || !intro) {
       // Skip intro entirely - remove overlay immediately
       if (intro) intro.remove();
+      // Load hero video lazily after page renders
+      if (heroVideo) {
+        heroVideo.preload = 'auto';
+        heroVideo.load();
+      }
       return;
+    }
+
+    // Start loading videos now that intro is needed
+    if (introVideo) {
+      introVideo.preload = 'auto';
+      introVideo.load();
+      introVideo.play().catch(function(){});
+    }
+    if (heroVideo) {
+      heroVideo.preload = 'auto';
+      heroVideo.load();
     }
 
     // Hide main content initially

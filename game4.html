@@ -66,10 +66,10 @@
 
   <!-- Vendor CSS Files -->
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
-  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
-  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link rel="preload" href="assets/vendor/bootstrap-icons/bootstrap-icons.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet"></noscript>
+  <link rel="preload" href="assets/vendor/aos/aos.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link href="assets/vendor/aos/aos.css" rel="stylesheet"></noscript>
+  <link rel="preload" href="assets/vendor/swiper/swiper-bundle.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet"></noscript>
+  <link rel="preload" href="assets/vendor/glightbox/css/glightbox.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet"></noscript>
 
   <!-- Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
@@ -265,22 +265,22 @@
               <div class="swiper-wrapper align-items-center">
                 <!-- Replace with actual screenshots -->
                 <div class="swiper-slide">
-                  <img src="assets/img/game1 (1).png" alt="floppy bird mobile game screenshot by dharmik gohil fun">
+                  <img loading="lazy" decoding="async" src="assets/img/game1 (1).png" alt="floppy bird mobile game screenshot by dharmik gohil fun">
                 </div>
                 <div class="swiper-slide">
-                  <img src="assets/img/game1 (6).png" alt="gohil dharmik mobile game development showcase">
+                  <img loading="lazy" decoding="async" src="assets/img/game1 (6).png" alt="gohil dharmik mobile game development showcase">
                 </div>
                 <div class="swiper-slide">
-                  <img src="assets/img/game1 (5).png" alt="floppy bird menu design by dharmik gohil developer">
+                  <img loading="lazy" decoding="async" src="assets/img/game1 (5).png" alt="floppy bird menu design by dharmik gohil developer">
                 </div>
                 <div class="swiper-slide">
-                  <img src="assets/img/game1 (2).png" alt="dharmik gohil floppy bird gameplay interface design">
+                  <img loading="lazy" decoding="async" src="assets/img/game1 (2).png" alt="dharmik gohil floppy bird gameplay interface design">
                 </div>
                 <div class="swiper-slide">
-                  <img src="assets/img/game1 (3).png" alt="mobile gaming project by gohil dharmik unity developer">
+                  <img loading="lazy" decoding="async" src="assets/img/game1 (3).png" alt="mobile gaming project by gohil dharmik unity developer">
                 </div>
                 <div class="swiper-slide">
-                  <img src="assets/img/game1 (4).png" alt="dharmik gohil fun game score screen interface">
+                  <img loading="lazy" decoding="async" src="assets/img/game1 (4).png" alt="dharmik gohil fun game score screen interface">
                 </div>
                 <!-- Add more as needed -->
               </div>
@@ -423,17 +423,17 @@
   </div>
 
   <!-- Vendor JS Files -->
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
-  <script src="assets/vendor/aos/aos.js"></script>
-  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
-  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
-  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
-  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js" defer></script>
+  <script src="assets/vendor/php-email-form/validate.js" defer></script>
+  <script src="assets/vendor/aos/aos.js" defer></script>
+  <script src="assets/vendor/waypoints/noframework.waypoints.js" defer></script>
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js" defer></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js" defer></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js" defer></script>
+  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js" defer></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js" defer></script>
   <!-- Main JS File -->
-  <script src="assets/js/main.js"></script>
+  <script src="assets/js/main.js" defer></script>
   <script>
     document.addEventListener("DOMContentLoaded", function () {
       AOS.init({ duration: 1000, once: true });
@@ -447,6 +447,6 @@
       }
     });
   </script>
-  <script src="assets/js/dock-dropdowns.js"></script>
+  <script src="assets/js/dock-dropdowns.js" defer></script>
 </body>
 </html>
