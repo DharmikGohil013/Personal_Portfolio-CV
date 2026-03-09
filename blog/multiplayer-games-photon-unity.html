@@ -1,49 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-KHJXN2DGEE"></script>
-  <script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'G-KHJXN2DGEE');</script>
-
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-KHJXN2DGEE');</script>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>Building Multiplayer Games with Photon Unity Networking | Dharmik Gohil</title>
-  <meta name="description" content="Dharmik Gohil's complete guide to building multiplayer games using Photon PUN2 in Unity. Learn lobby creation, room management, player synchronization, RPC calls, and real-time networking.">
-  <meta name="keywords" content="Photon Unity multiplayer, PUN2 tutorial, Unity multiplayer game, Photon networking, online game development, Dharmik Gohil, Mavericks Battlegrounds, multiplayer lobby system, Unity RPC, real-time game networking, Photon PUN guide 2026">
+  <title>Building Multiplayer Games with Photon & Unity: Complete Guide | Dharmik Gohil</title>
+  <meta name="description" content="Learn how to build real-time multiplayer games using Photon PUN2 and Unity. Dharmik Gohil shares his experience from building Mavericks Battlegrounds — covering lobby systems, room management, player synchronization, RPCs, and netcode best practices.">
+  <meta name="keywords" content="Photon Unity, multiplayer game development, PUN2 tutorial, real-time multiplayer, Unity networking, Dharmik Gohil, Mavericks Battlegrounds, game dev, lobby system, player sync">
   <meta name="author" content="Dharmik Gohil">
-  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <meta name="robots" content="index, follow, max-image-preview:large">
   <link rel="canonical" href="https://dharmikgohil.art/blog/multiplayer-games-photon-unity.html">
-
+  <link rel="icon" type="image/png" href="../assets/img/dlogo.png">
+  <link rel="apple-touch-icon" href="../assets/img/dlogo.png">
+  <meta name="theme-color" content="#0A84FF">
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://dharmikgohil.art/blog/multiplayer-games-photon-unity.html">
-  <meta property="og:title" content="Building Multiplayer Games with Photon Unity Networking | Dharmik Gohil">
-  <meta property="og:description" content="Complete Photon PUN2 multiplayer tutorial for Unity by Dharmik Gohil — from lobby systems to real-time synchronization.">
+  <meta property="og:title" content="Building Multiplayer Games with Photon & Unity | Dharmik Gohil">
+  <meta property="og:description" content="Complete guide to multiplayer game development using Photon PUN2 and Unity by Dharmik Gohil.">
   <meta property="og:image" content="https://images.unsplash.com/photo-1542751371-adc38448a05e?w=1200&h=630&fit=crop">
-  <meta property="og:site_name" content="Dharmik Gohil Portfolio">
   <meta property="article:author" content="Dharmik Gohil">
   <meta property="article:published_time" content="2026-02-15">
-  <meta property="twitter:card" content="summary_large_image">
-  <meta property="twitter:title" content="Building Multiplayer Games with Photon Unity | Dharmik Gohil">
-  <meta property="twitter:description" content="Dharmik Gohil's Photon PUN2 multiplayer tutorial for Unity developers.">
-  <meta property="twitter:image" content="https://images.unsplash.com/photo-1542751371-adc38448a05e?w=1200&h=630&fit=crop">
-
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:creator" content="@Dharmik086">
+  <meta name="twitter:title" content="Multiplayer Games with Photon & Unity | Dharmik Gohil">
+  <meta name="twitter:description" content="Build real-time multiplayer games using Photon PUN2 and Unity.">
+  <meta name="twitter:image" content="https://images.unsplash.com/photo-1542751371-adc38448a05e?w=1200&h=630&fit=crop">
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "BlogPosting",
-    "headline": "Building Multiplayer Games with Photon Unity Networking",
-    "description": "Complete guide to building multiplayer games using Photon PUN2 in Unity — lobby creation, room management, player synchronization, and real-time networking.",
-    "image": "https://images.unsplash.com/photo-1542751371-adc38448a05e?w=1200&h=630&fit=crop",
-    "author": {"@type": "Person", "name": "Dharmik Gohil", "url": "https://dharmikgohil.art"},
-    "publisher": {"@type": "Person", "name": "Dharmik Gohil"},
-    "datePublished": "2026-02-15",
-    "dateModified": "2026-02-15",
-    "mainEntityOfPage": {"@type": "WebPage", "@id": "https://dharmikgohil.art/blog/multiplayer-games-photon-unity.html"}
-  }
+  {"@context":"https://schema.org","@type":"BlogPosting","headline":"Building Multiplayer Games with Photon & Unity: Complete Guide","description":"Learn how to build real-time multiplayer games using Photon PUN2 and Unity — lobby systems, room management, player synchronization, RPCs, and netcode.","author":{"@type":"Person","name":"Dharmik Gohil","url":"https://dharmikgohil.art"},"publisher":{"@type":"Person","name":"Dharmik Gohil"},"datePublished":"2026-02-15","dateModified":"2026-02-15","mainEntityOfPage":"https://dharmikgohil.art/blog/multiplayer-games-photon-unity.html","image":"https://images.unsplash.com/photo-1542751371-adc38448a05e?w=1200&h=630&fit=crop","keywords":["Photon","Unity","Multiplayer","PUN2","Game Development","Networking"],"articleSection":"Game Development","wordCount":3800}
   </script>
-
-  <link href="../assets/img/dlogo.png" rel="icon">
-  <link href="../assets/img/dlogo.png" rel="apple-touch-icon">
   <link href="https://fonts.googleapis.com" rel="preconnect">
   <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
@@ -54,431 +39,382 @@
   <link href="../assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
   <link href="../assets/css/main.css" rel="stylesheet">
   <link href="../assets/css/navigation.css" rel="stylesheet">
-
   <style>
-    body{background:#09090F;color:rgba(255,255,255,0.88);font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;overflow-x:hidden;position:relative}body::before{content:'';position:fixed;inset:0;background:radial-gradient(ellipse 80% 50% at 15% 85%,rgba(245,180,97,0.06) 0%,transparent 55%),radial-gradient(ellipse 70% 60% at 85% 15%,rgba(10,132,255,0.06) 0%,transparent 55%),linear-gradient(160deg,#09090F 0%,#0e0e1a 40%,#111122 70%,#0d0d18 100%);z-index:-2;pointer-events:none}body::after{content:'';position:fixed;inset:0;background-image:radial-gradient(1.5px 1.5px at 12% 18%,rgba(255,255,255,0.5) 0%,transparent 100%),radial-gradient(1px 1px at 38% 8%,rgba(255,255,255,0.35) 0%,transparent 100%),radial-gradient(1px 1px at 72% 30%,rgba(255,255,255,0.4) 0%,transparent 100%),radial-gradient(1.5px 1.5px at 88% 65%,rgba(255,255,255,0.3) 0%,transparent 100%),radial-gradient(1px 1px at 25% 72%,rgba(255,255,255,0.35) 0%,transparent 100%),radial-gradient(1px 1px at 55% 55%,rgba(255,255,255,0.15) 0%,transparent 100%);pointer-events:none;z-index:-1;animation:starsTwinkle 6s ease-in-out infinite alternate}@keyframes starsTwinkle{0%{opacity:0.5}100%{opacity:1}}.container{position:relative;z-index:1}main{position:relative;z-index:1}.page-title{padding:100px 0 30px;background:transparent!important}.page-title .breadcrumbs ol{display:flex;gap:8px;list-style:none;padding:0;margin:0 0 16px;font-size:13px}.page-title .breadcrumbs ol li{color:rgba(255,255,255,0.4)}.page-title .breadcrumbs ol li a{color:#F5B461;text-decoration:none;transition:color 0.2s}.page-title .breadcrumbs ol li a:hover{color:#0A84FF}.page-title .breadcrumbs ol li+li::before{content:'/';margin-right:8px;color:rgba(255,255,255,0.25)}.page-title h1{font-family:'Inter',sans-serif;font-size:2.4rem;font-weight:800;color:#fff;letter-spacing:-0.5px;line-height:1.2;background:linear-gradient(135deg,#fff 0%,rgba(245,180,97,0.9) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}.blog-details{background:rgba(28,28,38,0.65);backdrop-filter:blur(40px) saturate(1.8);-webkit-backdrop-filter:blur(40px) saturate(1.8);border:1px solid rgba(255,255,255,0.08);border-radius:16px;padding:0;box-shadow:0 0 0 1px rgba(255,255,255,0.04),0 32px 80px rgba(0,0,0,0.5),0 0 60px rgba(245,180,97,0.04);overflow:hidden;margin-bottom:40px}.window-bar{background:rgba(255,255,255,0.04);border-bottom:1px solid rgba(255,255,255,0.07);padding:13px 18px;display:flex;align-items:center;gap:14px}.window-dots{display:flex;gap:8px}.window-dots span{width:13px;height:13px;border-radius:50%;display:inline-block}.dot-red{background:#FF5F56;box-shadow:0 0 8px rgba(255,95,86,0.5)}.dot-yellow{background:#FFBD2E;box-shadow:0 0 8px rgba(255,189,46,0.5)}.dot-green{background:#27C93F;box-shadow:0 0 8px rgba(39,201,63,0.5)}.window-bar-title{flex:1;text-align:center;font-size:13px;font-weight:500;color:rgba(255,255,255,0.4)}.article{padding:40px 48px;background:transparent;color:rgba(255,255,255,0.88)}.article h2.title{font-family:'Inter',sans-serif;font-size:2rem;font-weight:800;color:#fff;margin-bottom:24px;letter-spacing:-0.3px;line-height:1.3}.article h3{font-family:'Inter',sans-serif;font-size:1.5rem;font-weight:700;color:#F5B461;margin-top:48px;margin-bottom:18px;letter-spacing:-0.2px}.article h4{font-family:'Inter',sans-serif;font-size:1.2rem;font-weight:600;color:rgba(255,255,255,0.95);margin-top:32px;margin-bottom:12px}.article p{color:rgba(255,255,255,0.72);line-height:1.85;font-size:1.02rem;margin-bottom:18px}.article ul,.article ol{color:rgba(255,255,255,0.72);padding-left:20px}.article ul li,.article ol li{margin-bottom:12px;line-height:1.7}.article ul li strong,.article ol li strong{color:rgba(255,255,255,0.95)}.article strong{color:rgba(255,255,255,0.95)}.article a{color:#0A84FF;text-decoration:none;transition:color 0.2s}.article a:hover{color:#F5B461}blockquote{background:rgba(245,180,97,0.06);border-left:3px solid #F5B461;padding:24px 28px;margin:32px 0;border-radius:0 12px 12px 0}blockquote p{color:rgba(255,255,255,0.82)!important;font-style:italic;font-size:1.08rem;margin:0!important;line-height:1.7}.post-img{border-radius:14px;overflow:hidden;margin-bottom:32px;border:1px solid rgba(255,255,255,0.06)}.post-img img{width:100%;height:auto;display:block;transition:transform 0.4s ease}.post-img:hover img{transform:scale(1.03)}.meta-top{display:flex;align-items:center;gap:8px;flex-wrap:wrap;padding:14px 20px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.06);border-radius:12px;margin-bottom:32px}.meta-top ul{margin:0;padding:0;list-style:none;display:flex;flex-wrap:wrap;gap:24px}.meta-top ul li{color:rgba(255,255,255,0.5);font-size:0.88rem;display:flex;align-items:center;gap:6px}.meta-top ul li i{color:#F5B461;font-size:14px}.meta-top ul li a{color:#F5B461;text-decoration:none;font-weight:500}.meta-top ul li a:hover{color:#0A84FF}pre{background:rgba(0,0,0,0.4);border:1px solid rgba(255,255,255,0.08);border-radius:12px;padding:24px;margin:24px 0;overflow-x:auto}pre code{color:#e6e6e6;font-family:'JetBrains Mono',monospace;font-size:0.9rem;line-height:1.7}code{background:rgba(245,180,97,0.1);color:#F5B461;padding:2px 8px;border-radius:6px;font-family:'JetBrains Mono',monospace;font-size:0.88rem}pre code{background:none;padding:0}.tip-box{background:rgba(10,132,255,0.08);border:1px solid rgba(10,132,255,0.2);border-radius:12px;padding:20px 24px;margin:24px 0}.tip-box strong{color:#0A84FF}.warning-box{background:rgba(255,189,46,0.08);border:1px solid rgba(255,189,46,0.2);border-radius:12px;padding:20px 24px;margin:24px 0}.warning-box strong{color:#FFBD2E}.footer{background:rgba(28,28,38,0.65)!important;backdrop-filter:blur(20px);border-top:1px solid rgba(255,255,255,0.06)}.footer .sitename{color:#F5B461!important}.footer p,.footer .copyright span,.footer .credits{color:rgba(255,255,255,0.4)!important}.footer .social-links a{background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.08);color:rgba(255,255,255,0.5)}.footer .social-links a:hover{background:rgba(245,180,97,0.15);color:#F5B461;border-color:rgba(245,180,97,0.3)}@media(max-width:768px){.article{padding:28px 20px}.page-title h1{font-size:1.7rem}}
+    body{background:#09090F;color:rgba(255,255,255,0.88);font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;overflow-x:hidden;position:relative}
+    body::before{content:'';position:fixed;inset:0;background:radial-gradient(ellipse 80% 50% at 15% 85%,rgba(245,180,97,0.06) 0%,transparent 55%),radial-gradient(ellipse 70% 60% at 85% 15%,rgba(10,132,255,0.06) 0%,transparent 55%),linear-gradient(160deg,#09090F 0%,#0e0e1a 40%,#111122 70%,#0d0d18 100%);z-index:-2;pointer-events:none}
+    body::after{content:'';position:fixed;inset:0;background-image:radial-gradient(1.5px 1.5px at 12% 18%,rgba(255,255,255,0.5) 0%,transparent 100%),radial-gradient(1px 1px at 38% 8%,rgba(255,255,255,0.35) 0%,transparent 100%),radial-gradient(1px 1px at 72% 30%,rgba(255,255,255,0.4) 0%,transparent 100%),radial-gradient(1.5px 1.5px at 88% 65%,rgba(255,255,255,0.3) 0%,transparent 100%),radial-gradient(1px 1px at 25% 72%,rgba(255,255,255,0.35) 0%,transparent 100%);pointer-events:none;z-index:-1;animation:starsTwinkle 6s ease-in-out infinite alternate}
+    @keyframes starsTwinkle{0%{opacity:.5}100%{opacity:1}}
+    .page-title{padding:100px 0 30px;background:transparent!important}
+    .page-title .breadcrumbs ol{display:flex;gap:8px;list-style:none;padding:0;margin:0 0 16px;font-size:13px}
+    .page-title .breadcrumbs ol li{color:rgba(255,255,255,0.4)}
+    .page-title .breadcrumbs ol li a{color:#F5B461;text-decoration:none}
+    .page-title .breadcrumbs ol li a:hover{color:#0A84FF}
+    .page-title .breadcrumbs ol li+li::before{content:'/';margin-right:8px;color:rgba(255,255,255,0.25)}
+    .page-title h1{font-size:2.4rem;font-weight:800;color:#fff;letter-spacing:-0.5px;line-height:1.2;background:linear-gradient(135deg,#fff 0%,rgba(245,180,97,0.9) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+    .blog-details{background:rgba(28,28,38,0.65);backdrop-filter:blur(40px) saturate(1.8);-webkit-backdrop-filter:blur(40px) saturate(1.8);border:1px solid rgba(255,255,255,0.08);border-radius:16px;padding:0;box-shadow:0 0 0 1px rgba(255,255,255,0.04),0 32px 80px rgba(0,0,0,0.5);overflow:hidden;margin-bottom:40px}
+    .window-bar{background:rgba(255,255,255,0.04);border-bottom:1px solid rgba(255,255,255,0.07);padding:13px 18px;display:flex;align-items:center;gap:14px}
+    .window-dots{display:flex;gap:8px}
+    .window-dots span{width:13px;height:13px;border-radius:50%;display:inline-block}
+    .dot-red{background:#FF5F56;box-shadow:0 0 8px rgba(255,95,86,0.5)}
+    .dot-yellow{background:#FFBD2E;box-shadow:0 0 8px rgba(255,189,46,0.5)}
+    .dot-green{background:#27C93F;box-shadow:0 0 8px rgba(39,201,63,0.5)}
+    .window-bar-title{flex:1;text-align:center;font-size:13px;font-weight:500;color:rgba(255,255,255,0.4)}
+    .article{padding:40px 48px;color:rgba(255,255,255,0.88)}
+    .article h2.title{font-size:2rem;font-weight:800;color:#fff;margin-bottom:24px;letter-spacing:-0.3px;line-height:1.3}
+    .article h3{font-size:1.5rem;font-weight:700;color:#F5B461;margin-top:48px;margin-bottom:18px}
+    .article h4{font-size:1.2rem;font-weight:600;color:#0A84FF;margin-top:32px;margin-bottom:14px}
+    .article p{color:rgba(255,255,255,0.72);line-height:1.85;font-size:1.02rem;margin-bottom:18px}
+    .article ul,.article ol{color:rgba(255,255,255,0.72);padding-left:20px}
+    .article ul li,.article ol li{margin-bottom:12px;line-height:1.7}
+    .article strong{color:rgba(255,255,255,0.95)}
+    .article a{color:#0A84FF;text-decoration:none}
+    .article a:hover{color:#F5B461}
+    blockquote{background:rgba(245,180,97,0.06);border-left:3px solid #F5B461;padding:24px 28px;margin:32px 0;border-radius:0 12px 12px 0}
+    blockquote p{color:rgba(255,255,255,0.82)!important;font-style:italic;font-size:1.08rem;margin:0!important}
+    .post-img{border-radius:14px;overflow:hidden;margin-bottom:32px;border:1px solid rgba(255,255,255,0.06)}
+    .post-img img{width:100%;height:auto;display:block}
+    .meta-top{display:flex;align-items:center;gap:8px;flex-wrap:wrap;padding:14px 20px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.06);border-radius:12px;margin-bottom:32px}
+    .meta-top ul{margin:0;padding:0;list-style:none;display:flex;flex-wrap:wrap;gap:24px}
+    .meta-top ul li{color:rgba(255,255,255,0.5);font-size:.88rem;display:flex;align-items:center;gap:6px}
+    .meta-top ul li i{color:#F5B461;font-size:14px}
+    .meta-top ul li a{color:#F5B461;text-decoration:none;font-weight:500}
+    .code-block{background:rgba(0,0,0,0.4);border:1px solid rgba(255,255,255,0.08);border-radius:12px;padding:24px;margin:24px 0;font-family:'JetBrains Mono',monospace;font-size:0.9rem;color:#e0e0e0;overflow-x:auto;white-space:pre;line-height:1.6}
+    .code-label{display:inline-block;background:rgba(10,132,255,0.15);color:#0A84FF;font-family:'JetBrains Mono',monospace;font-size:0.75rem;padding:4px 10px;border-radius:6px;margin-bottom:8px;font-weight:600}
+    .tip-box{background:rgba(39,201,63,0.06);border:1px solid rgba(39,201,63,0.2);border-radius:12px;padding:20px 24px;margin:24px 0}
+    .tip-box strong{color:#27C93F}
+    .warning-box{background:rgba(255,189,46,0.06);border:1px solid rgba(255,189,46,0.2);border-radius:12px;padding:20px 24px;margin:24px 0}
+    .warning-box strong{color:#FFBD2E}
+    .nav-links{display:flex;justify-content:space-between;gap:16px;margin:40px 0}
+    .nav-links a{display:flex;align-items:center;gap:8px;padding:14px 24px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:12px;color:#F5B461;text-decoration:none;font-weight:500;transition:all 0.3s}
+    .nav-links a:hover{background:rgba(10,132,255,0.1);border-color:rgba(10,132,255,0.3)}
+    .footer{background:rgba(0,0,0,0.6)!important;backdrop-filter:blur(20px);border-top:1px solid rgba(255,255,255,0.06)}
+    @media(max-width:768px){.article{padding:24px 20px}.page-title h1{font-size:1.6rem}.article h2.title{font-size:1.5rem}.article h3{font-size:1.2rem}}
   </style>
 </head>
-
-<body class="blog-details-page">
+<body class="blog-post-page">
   <main class="main">
-    <div class="page-title">
+    <div class="page-title" data-aos="fade">
       <div class="container">
-        <nav class="breadcrumbs">
-          <ol>
-            <li><a href="../index.html">Home</a></li>
-            <li><a href="../blog.html">Blog</a></li>
-            <li>Multiplayer Games with Photon</li>
-          </ol>
-        </nav>
-        <h1>Building Multiplayer Games with Photon Unity</h1>
+        <nav class="breadcrumbs"><ol><li><a href="../index.html">Home</a></li><li><a href="../blog.html">Blog</a></li><li class="current">Multiplayer with Photon</li></ol></nav>
+        <h1>Building Multiplayer Games with Photon & Unity</h1>
       </div>
     </div>
 
     <div class="container">
       <div class="row justify-content-center">
-        <div class="col-xl-8">
-          <div class="blog-details">
+        <div class="col-lg-10 col-xl-8">
+          <section id="blog-details" class="blog-details section">
             <div class="window-bar">
               <div class="window-dots"><span class="dot-red"></span><span class="dot-yellow"></span><span class="dot-green"></span></div>
-              <div class="window-bar-title">photon-multiplayer-guide.md</div>
+              <span class="window-bar-title">multiplayer-photon-unity.md</span>
             </div>
-
-            <div class="article">
+            <article class="article">
               <div class="post-img">
-                <img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?w=1200&h=630&fit=crop" alt="Building Multiplayer Games with Photon Unity Networking by Dharmik Gohil" loading="lazy">
+                <img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?w=1200&h=630&fit=crop" alt="Building Multiplayer Games with Photon and Unity by Dharmik Gohil" class="img-fluid" loading="eager">
               </div>
+
+              <h2 class="title">Building Multiplayer Games with Photon & Unity: A Complete Guide</h2>
 
               <div class="meta-top">
                 <ul>
-                  <li><i class="bi bi-person"></i> <a href="../index.html">Dharmik Gohil</a></li>
-                  <li><i class="bi bi-calendar3"></i> Feb 15, 2026</li>
-                  <li><i class="bi bi-clock"></i> 12 min read</li>
-                  <li><i class="bi bi-tags"></i> Unity, Photon, Multiplayer</li>
+                  <li class="d-flex align-items-center"><i class="bi bi-person"></i> <a href="../about.html">Dharmik Gohil</a></li>
+                  <li class="d-flex align-items-center"><i class="bi bi-clock"></i> <time datetime="2026-02-15">Feb 15, 2026</time></li>
+                  <li class="d-flex align-items-center"><i class="bi bi-journal-text"></i> 12 min read</li>
                 </ul>
               </div>
 
-              <h2 class="title">Building Multiplayer Games with Photon Unity Networking: The Complete Guide</h2>
+              <div class="content">
+                <p>Hey there! I'm <strong>Dharmik Gohil</strong>, and multiplayer game development is where I found my true passion. When I built <strong>Mavericks Battlegrounds</strong> — a multiplayer third-person shooter that was selected for CHARUSAT Expo 3.0 — I spent months learning Photon PUN2 networking from scratch. In this comprehensive guide, I'll share everything I learned about building real-time multiplayer games with Unity and Photon.</p>
 
-              <p>What's up, developers! I'm <strong>Dharmik Gohil</strong>, and multiplayer game development is where my true passion lies. I built <strong>Mavericks Battlegrounds</strong> — a 20-player battle royale — using Photon PUN2 in Unity, and it was selected as the only IT department project at CHARUSAT Expo 3.0. In this comprehensive guide, I'll share everything I learned about building real-time multiplayer games with Photon.</p>
+                <blockquote>
+                  <p>"Multiplayer is the hardest thing you'll ever build in game development. But when you see two players interacting in real-time for the first time, the feeling is absolutely magical." — Dharmik Gohil</p>
+                </blockquote>
 
-              <blockquote>
-                <p>"The moment you see two players interacting in a world YOU built — that's when game development becomes truly magical." — Dharmik Gohil</p>
-              </blockquote>
+                <h3>Why Photon PUN2?</h3>
+                <p>There are several networking solutions for Unity — Netcode for GameObjects, Mirror, Fishnet, and Photon. Here's why I chose <strong>Photon PUN2</strong> (Photon Unity Networking 2):</p>
+                <ul>
+                  <li><strong>Cloud-hosted servers:</strong> No need to manage your own game servers. Photon's cloud handles matchmaking, room management, and relay</li>
+                  <li><strong>Free tier:</strong> 20 CCU (Concurrent Users) for free — perfect for indie devs and prototypes</li>
+                  <li><strong>Cross-platform:</strong> Works on PC, mobile, console, and WebGL out of the box</li>
+                  <li><strong>Battle-tested:</strong> Used in commercial games with millions of players</li>
+                  <li><strong>Excellent documentation:</strong> Photon's docs and community forums are top-notch</li>
+                </ul>
 
-              <h3>What is Photon PUN2?</h3>
+                <h3>Setting Up Photon PUN2</h3>
+                <ol>
+                  <li><strong>Create a Photon account</strong> at <a href="https://www.photonengine.com/" target="_blank" rel="noopener">photonengine.com</a></li>
+                  <li><strong>Create a new Photon PUN application</strong> in the dashboard — you'll get an <strong>App ID</strong></li>
+                  <li><strong>Import PUN2 into Unity</strong> — search "PUN 2" in the Asset Store or via Package Manager</li>
+                  <li><strong>Enter your App ID</strong> in the PUN Wizard that appears after import</li>
+                  <li><strong>Configure server region</strong> — choose the closest to your target audience (I used Asia for Indian players)</li>
+                </ol>
 
-              <p>Photon Unity Networking 2 (PUN2) is the industry-standard multiplayer networking solution for Unity. It handles the complex networking infrastructure so you can focus on gameplay:</p>
-
-              <ul>
-                <li><strong>Cloud Hosted:</strong> Photon provides servers worldwide — no need to manage your own infrastructure.</li>
-                <li><strong>20 Free CCU:</strong> The free tier supports 20 concurrent users — perfect for development and small indie games.</li>
-                <li><strong>Cross-Platform:</strong> Works across PC, Mac, Android, iOS, WebGL, and consoles.</li>
-                <li><strong>Room-Based:</strong> Players connect to rooms (lobbies) with custom properties.</li>
-                <li><strong>RPCs & Synchronization:</strong> Remote Procedure Calls and automatic state sync make networking intuitive.</li>
-              </ul>
-
-              <h3>Setting Up Photon PUN2</h3>
-
-              <h4>Step 1: Create a Photon Account</h4>
-
-              <ol>
-                <li>Go to <strong>photonengine.com</strong> and create a free account.</li>
-                <li>Create a new application — select <strong>"Photon PUN"</strong> as the type.</li>
-                <li>Copy your <strong>App ID</strong> — you'll need this in Unity.</li>
-              </ol>
-
-              <h4>Step 2: Install PUN2 in Unity</h4>
-
-              <ol>
-                <li>Open Unity and go to <strong>Window → Asset Store</strong>.</li>
-                <li>Search for <strong>"PUN 2 - FREE"</strong> by Exit Games.</li>
-                <li>Import the package into your project.</li>
-                <li>When the PUN Wizard opens, paste your App ID.</li>
-              </ol>
-
-              <h4>Step 3: Configure Photon Settings</h4>
-
-<pre><code>// PhotonServerSettings is auto-configured after entering your App ID
-// Find it at: Assets/Photon/PhotonUnityNetworking/Resources/PhotonServerSettings
-// Key settings:
-// - App Id PUN: your-app-id-here
-// - Fixed Region: leave empty for best server selection
-// - Protocol: UDP (recommended for games)
-</code></pre>
-
-              <h3>Core Architecture: How Multiplayer Networking Works</h3>
-
-              <p>Understanding the architecture is crucial before writing code. Here's how <strong>Dharmik Gohil</strong> explains the Photon networking model:</p>
-
-              <ul>
-                <li><strong>Client-Server Model:</strong> Photon servers relay messages between clients. There's no peer-to-peer — all data goes through Photon's cloud.</li>
-                <li><strong>Master Client:</strong> One player is designated the "Master Client" — they can manage room settings and game state.</li>
-                <li><strong>Rooms:</strong> Players join rooms. A room is a game session with max player limits and custom properties.</li>
-                <li><strong>Lobbies:</strong> The waiting area where players browse/join rooms.</li>
-                <li><strong>PhotonView:</strong> The component that marks a GameObject as networked — mandatory for any synchronized object.</li>
-              </ul>
-
-              <h3>Connecting to Photon — The Launcher Script</h3>
-
-<pre><code>using UnityEngine;
-using Photon.Pun;
+                <div class="code-label">C# — Connecting to Photon</div>
+                <div class="code-block">using Photon.Pun;
 using Photon.Realtime;
+using UnityEngine;
 
-public class GameLauncher : MonoBehaviourPunCallbacks
+public class NetworkManager : MonoBehaviourPunCallbacks
 {
-    [SerializeField] private byte maxPlayersPerRoom = 20;
-    private string gameVersion = "1.0";
-
     void Start()
     {
-        // Connect to Photon Cloud
+        // Connect to Photon cloud
         PhotonNetwork.ConnectUsingSettings();
-        PhotonNetwork.GameVersion = gameVersion;
         Debug.Log("Connecting to Photon...");
     }
 
     public override void OnConnectedToMaster()
     {
         Debug.Log("Connected to Master Server!");
-        // Join the default lobby to see available rooms
+        // Now we can join or create rooms
         PhotonNetwork.JoinLobby();
     }
 
     public override void OnJoinedLobby()
     {
-        Debug.Log("Joined Lobby! Ready to create or join rooms.");
+        Debug.Log("Joined Lobby. Ready to " 
+                 + "create/join rooms.");
     }
+}</div>
 
-    public void CreateRoom(string roomName)
-    {
-        RoomOptions options = new RoomOptions
-        {
-            MaxPlayers = maxPlayersPerRoom,
-            IsVisible = true,
-            IsOpen = true
-        };
-        PhotonNetwork.CreateRoom(roomName, options);
-    }
+                <h3>Room Management: Creating and Joining Games</h3>
+                <p>In Photon, a "Room" is a game session where players interact. Here is what I used in Mavericks Battlegrounds:</p>
 
-    public void JoinRoom(string roomName)
-    {
-        PhotonNetwork.JoinRoom(roomName);
-    }
-
-    public override void OnJoinedRoom()
-    {
-        Debug.Log($"Joined room: {PhotonNetwork.CurrentRoom.Name}");
-        Debug.Log($"Players in room: {PhotonNetwork.CurrentRoom.PlayerCount}");
-        // Load the game scene
-        if (PhotonNetwork.IsMasterClient)
-        {
-            PhotonNetwork.LoadLevel("GameScene");
-        }
-    }
-
-    public override void OnJoinRoomFailed(short returnCode, string message)
-    {
-        Debug.LogError($"Failed to join room: {message}");
-    }
-}
-</code></pre>
-
-              <div class="tip-box">
-                <strong>💡 Dharmik's Tip:</strong> Always inherit from <code>MonoBehaviourPunCallbacks</code> instead of <code>MonoBehaviour</code> for scripts that need Photon callbacks. It automatically registers and unregisters callbacks in OnEnable/OnDisable.
-              </div>
-
-              <h3>Player Spawning & Synchronization</h3>
-
-              <p>This is where things get exciting. When a player joins the room, you need to spawn their character and sync it across all clients:</p>
-
-<pre><code>using UnityEngine;
-using Photon.Pun;
-
-public class PlayerSpawner : MonoBehaviour
+                <div class="code-label">C# — Room Creation and Joining</div>
+                <div class="code-block">public void CreateRoom(string roomName, int maxPlayers)
 {
-    [SerializeField] private GameObject playerPrefab;
-    [SerializeField] private Transform[] spawnPoints;
-
-    void Start()
+    RoomOptions options = new RoomOptions
     {
-        // Only spawn if we're connected to a room
-        if (PhotonNetwork.IsConnectedAndReady)
+        MaxPlayers = (byte)maxPlayers,
+        IsVisible = true,
+        IsOpen = true,
+        // Custom properties for matchmaking
+        CustomRoomProperties = new ExitGames.Client
+            .Photon.Hashtable
         {
-            SpawnPlayer();
-        }
-    }
+            { "map", "Dustbowl" },
+            { "mode", "TeamDeathmatch" }
+        },
+        CustomRoomPropertiesForLobby = 
+            new string[] { "map", "mode" }
+    };
 
-    void SpawnPlayer()
-    {
-        // Pick a random spawn point
-        int index = Random.Range(0, spawnPoints.Length);
-        Vector3 spawnPos = spawnPoints[index].position;
-
-        // PhotonNetwork.Instantiate creates the object across ALL clients
-        GameObject player = PhotonNetwork.Instantiate(
-            playerPrefab.name,
-            spawnPos,
-            Quaternion.identity
-        );
-
-        Debug.Log($"Player spawned: {PhotonNetwork.LocalPlayer.NickName}");
-    }
+    PhotonNetwork.CreateRoom(roomName, options);
 }
-</code></pre>
 
-              <div class="warning-box">
-                <strong>⚠️ Important:</strong> The player prefab must be in a <code>Resources</code> folder for <code>PhotonNetwork.Instantiate()</code> to find it. Also, the prefab must have a <code>PhotonView</code> component attached.
-              </div>
-
-              <h3>Syncing Player Movement</h3>
-
-<pre><code>using UnityEngine;
-using Photon.Pun;
-
-public class PlayerMovement : MonoBehaviourPun, IPunObservable
+public void JoinRandomRoom()
 {
-    [SerializeField] private float moveSpeed = 5f;
+    PhotonNetwork.JoinRandomRoom();
+}
+
+public override void OnJoinRandomFailed(
+    short returnCode, string message)
+{
+    // No room found — create a new one
+    CreateRoom("Room_" + Random.Range(1000, 9999), 8);
+}
+
+public override void OnJoinedRoom()
+{
+    Debug.Log("Joined room: " 
+             + PhotonNetwork.CurrentRoom.Name);
+    // Load the game scene for all players
+    if (PhotonNetwork.IsMasterClient)
+    {
+        PhotonNetwork.LoadLevel("GameScene");
+    }
+}</div>
+
+                <h3>Player Synchronization</h3>
+                <p>This is the core of multiplayer — keeping all players in sync. Photon offers two main approaches:</p>
+
+                <h4>PhotonView & PhotonTransformView</h4>
+                <p>The simplest approach — add a <strong>PhotonView</strong> component to your player prefab, then add <strong>PhotonTransformView</strong> to sync position and rotation automatically.</p>
+
+                <h4>IPunObservable (Custom Serialization)</h4>
+                <p>For more control, implement the <strong>IPunObservable</strong> interface to send custom data:</p>
+
+                <div class="code-label">C# — Custom Player Sync</div>
+                <div class="code-block">public class PlayerSync : MonoBehaviourPun, 
+                           IPunObservable
+{
     private Vector3 networkPosition;
     private Quaternion networkRotation;
+    private float networkHealth;
+    public float lerpSpeed = 10f;
 
-    void Update()
-    {
-        if (photonView.IsMine)
-        {
-            // Only the owner controls this player
-            float h = Input.GetAxis("Horizontal");
-            float v = Input.GetAxis("Vertical");
-            Vector3 move = new Vector3(h, 0, v) * moveSpeed * Time.deltaTime;
-            transform.Translate(move);
-        }
-        else
-        {
-            // Smooth interpolation for remote players
-            transform.position = Vector3.Lerp(
-                transform.position, networkPosition, Time.deltaTime * 10f);
-            transform.rotation = Quaternion.Lerp(
-                transform.rotation, networkRotation, Time.deltaTime * 10f);
-        }
-    }
-
-    // This method automatically syncs data across the network
-    public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
+    public void OnPhotonSerializeView(
+        PhotonStream stream, PhotonMessageInfo info)
     {
         if (stream.IsWriting)
         {
-            // We own this player: send our data
+            // We own this player — send data
             stream.SendNext(transform.position);
             stream.SendNext(transform.rotation);
+            stream.SendNext(GetComponent&lt;PlayerHealth&gt;()
+                           .currentHealth);
         }
         else
         {
-            // Remote player: receive their data
+            // Network player — receive data
             networkPosition = (Vector3)stream.ReceiveNext();
-            networkRotation = (Quaternion)stream.ReceiveNext();
+            networkRotation = (Quaternion)stream
+                             .ReceiveNext();
+            networkHealth = (float)stream.ReceiveNext();
         }
     }
-}
-</code></pre>
 
-              <h3>Remote Procedure Calls (RPCs)</h3>
+    void Update()
+    {
+        if (!photonView.IsMine)
+        {
+            // Smoothly interpolate network player
+            transform.position = Vector3.Lerp(
+                transform.position, 
+                networkPosition, 
+                Time.deltaTime * lerpSpeed);
+            transform.rotation = Quaternion.Lerp(
+                transform.rotation, 
+                networkRotation, 
+                Time.deltaTime * lerpSpeed);
+        }
+    }
+}</div>
 
-              <p>RPCs let you call functions on remote players' machines. This is how <strong>Dharmik Gohil</strong> implemented the shooting system in Mavericks Battlegrounds:</p>
+                <h3>Remote Procedure Calls (RPCs)</h3>
+                <p>RPCs let you call functions on other players' machines. I used RPCs extensively in Mavericks Battlegrounds for shooting, damage, animations, and chat:</p>
 
-<pre><code>using UnityEngine;
-using Photon.Pun;
-
-public class PlayerCombat : MonoBehaviourPun
+                <div class="code-label">C# — RPC Examples</div>
+                <div class="code-block">// Call this when a player shoots
+public void Shoot()
 {
-    [SerializeField] private int maxHealth = 100;
-    private int currentHealth;
-
-    void Start()
-    {
-        currentHealth = maxHealth;
-    }
-
-    public void Shoot(Player targetPlayer)
-    {
-        if (photonView.IsMine)
-        {
-            // Call TakeDamage on the target player's machine
-            targetPlayer.photonView.RPC("TakeDamage", RpcTarget.All, 25);
-        }
-    }
-
-    [PunRPC]
-    public void TakeDamage(int damage)
-    {
-        currentHealth -= damage;
-        Debug.Log($"Health: {currentHealth}");
-
-        if (currentHealth &lt;= 0)
-        {
-            Die();
-        }
-    }
-
-    void Die()
-    {
-        if (photonView.IsMine)
-        {
-            Debug.Log("Player eliminated!");
-            PhotonNetwork.Destroy(gameObject);
-        }
-    }
+    // Execute locally first for responsiveness
+    SpawnBulletLocal();
+    
+    // Tell everyone else about the shot
+    photonView.RPC("RPC_Shoot", RpcTarget.Others, 
+        transform.position, transform.forward);
 }
-</code></pre>
 
-              <h3>Room Properties & Custom Data</h3>
-
-              <p>For a battle royale like Mavericks Battlegrounds, I needed custom room properties to track game state:</p>
-
-<pre><code>using Photon.Pun;
-using Photon.Realtime;
-using ExitGames.Client.Photon;
-
-public class RoomManager : MonoBehaviourPunCallbacks
+[PunRPC]
+void RPC_Shoot(Vector3 origin, Vector3 direction, 
+               PhotonMessageInfo info)
 {
-    public void SetGameState(string state)
-    {
-        Hashtable props = new Hashtable
-        {
-            { "GameState", state },
-            { "RoundNumber", 1 },
-            { "PlayersAlive", PhotonNetwork.CurrentRoom.PlayerCount }
-        };
-        PhotonNetwork.CurrentRoom.SetCustomProperties(props);
-    }
-
-    public override void OnRoomPropertiesUpdate(Hashtable propertiesThatChanged)
-    {
-        if (propertiesThatChanged.ContainsKey("GameState"))
-        {
-            string state = (string)propertiesThatChanged["GameState"];
-            Debug.Log($"Game state changed to: {state}");
-        }
-    }
+    // Calculate lag compensation
+    float lag = (float)(PhotonNetwork.Time 
+                       - info.SentServerTimestamp);
+    
+    // Spawn bullet with lag compensation
+    SpawnNetworkBullet(origin, direction, lag);
 }
-</code></pre>
 
-              <h3>Lessons from Building Mavericks Battlegrounds — By Dharmik Gohil</h3>
+// Damage notification
+[PunRPC]
+void RPC_TakeDamage(float damage, string attackerName)
+{
+    currentHealth -= damage;
+    ShowDamageIndicator(attackerName);
+    
+    if (currentHealth &lt;= 0)
+    {
+        photonView.RPC("RPC_PlayerDied", 
+                       RpcTarget.All, attackerName);
+    }
+}</div>
 
-              <p>Here are the key lessons I learned building a 20-player multiplayer game:</p>
+                <div class="tip-box">
+                  <strong>💡 Dharmik's Tip:</strong> Always process actions locally first for instant feedback, then sync via RPCs. This is called "client-side prediction" and it makes your game feel responsive even with 100ms+ latency. I learned this after players complained about input lag in the first version of Mavericks Battlegrounds.
+                </div>
 
-              <ul>
-                <li><strong>Minimize network traffic:</strong> Only sync what's absolutely necessary. Position and rotation — yes. Debug data — never.</li>
-                <li><strong>Use PhotonTransformView:</strong> For simple object sync, the built-in component is optimized and reliable.</li>
-                <li><strong>Handle disconnect gracefully:</strong> Players will disconnect. Always handle <code>OnPlayerLeftRoom</code> and clean up their objects.</li>
-                <li><strong>Test with simulated lag:</strong> Photon's dashboard lets you simulate latency. Your game must feel smooth at 200ms ping.</li>
-                <li><strong>Use object pooling:</strong> Instantiating and destroying objects over the network is expensive. Pool bullets, effects, and pickups.</li>
-                <li><strong>Master Client migration:</strong> If the Master Client leaves, Photon automatically promotes another player. Handle this in <code>OnMasterClientSwitched</code>.</li>
-                <li><strong>Room max players:</strong> For battle royale, I set max to 20. Photon's free tier supports this perfectly.</li>
-                <li><strong>Use Photon's matchmaking:</strong> <code>PhotonNetwork.JoinRandomRoom()</code> is great for quick play. Custom room lists are better for competitive modes.</li>
-              </ul>
+                <h3>Spawning Network Players</h3>
+                <p>Use <strong>PhotonNetwork.Instantiate</strong> instead of regular <code>Instantiate</code> for network objects:</p>
 
-              <div class="tip-box">
-                <strong>💡 Performance Tip from Dharmik:</strong> Set <code>PhotonNetwork.SendRate = 20</code> and <code>PhotonNetwork.SerializationRate = 10</code> for a good balance between smoothness and bandwidth. 60 sends/second is overkill for most games.
+                <div class="code-label">C# — Network Spawning</div>
+                <div class="code-block">public void SpawnPlayer()
+{
+    // Prefab MUST be in a "Resources" folder
+    Vector3 spawnPoint = GetRandomSpawnPoint();
+    
+    GameObject player = PhotonNetwork.Instantiate(
+        "PlayerPrefab",    // Prefab name in Resources
+        spawnPoint,
+        Quaternion.identity
+    );
+    
+    // Set up local player camera
+    if (player.GetComponent&lt;PhotonView&gt;().IsMine)
+    {
+        player.GetComponent&lt;PlayerSetup&gt;()
+              .InitializeLocalPlayer();
+    }
+}</div>
+
+                <h3>Handling Latency and Lag Compensation</h3>
+                <p>This is the hardest part of multiplayer development. Here are the techniques I used in Mavericks Battlegrounds:</p>
+                <ul>
+                  <li><strong>Client-Side Prediction:</strong> Process input immediately on the local client, then reconcile with server state</li>
+                  <li><strong>Interpolation:</strong> Smoothly move network players between received positions using <code>Vector3.Lerp</code></li>
+                  <li><strong>Lag Compensation:</strong> Use <code>PhotonMessageInfo.SentServerTimestamp</code> to account for network delay</li>
+                  <li><strong>Dead Reckoning:</strong> Predict where a player will be based on their last known velocity</li>
+                  <li><strong>Send Rate Optimization:</strong> Reduce serialization rate for distant objects (Photon default is 10 times/second)</li>
+                </ul>
+
+                <div class="warning-box">
+                  <strong>⚠️ Common Pitfall:</strong> Don't sync everything! Only sync what other players need to see. In Mavericks Battlegrounds, I initially synced every animation parameter and particle effect — the bandwidth usage was insane. Strip it down to position, rotation, and essential states only.
+                </div>
+
+                <h3>Building a Lobby System</h3>
+                <p>A good lobby system is crucial for player experience. Here's the architecture I built:</p>
+                <ol>
+                  <li><strong>Main Menu:</strong> Connect to Photon on launch, show loading indicator</li>
+                  <li><strong>Lobby Screen:</strong> Display available rooms with player count, map, and game mode</li>
+                  <li><strong>Room Screen:</strong> Show connected players, ready status, team selection</li>
+                  <li><strong>Countdown:</strong> When all players are ready, Master Client starts the countdown</li>
+                  <li><strong>Game Load:</strong> Master Client calls <code>PhotonNetwork.LoadLevel()</code> to synchronize scene loading</li>
+                </ol>
+
+                <h3>Lessons from Mavericks Battlegrounds</h3>
+                <p>Building <strong>Mavericks Battlegrounds</strong> — a multiplayer third-person shooter with team deathmatch — taught me invaluable lessons about netcode. Here are my biggest takeaways as <strong>Dharmik Gohil</strong>:</p>
+                <ul>
+                  <li><strong>Test with real latency:</strong> Use Photon's built-in network simulation to add artificial lag during development</li>
+                  <li><strong>Master Client authority:</strong> Let the Master Client handle game state decisions (score, round end, spawns) to prevent cheating</li>
+                  <li><strong>Graceful disconnection:</strong> Handle players leaving mid-game gracefully — clean up their objects, redistribute roles</li>
+                  <li><strong>Optimize bandwidth:</strong> Compress data, reduce send rates, use delta compression for state</li>
+                  <li><strong>Playtest early:</strong> Network bugs only appear with real players. I organized LAN testing sessions at CHARUSAT with my classmates</li>
+                </ul>
+
+                <blockquote>
+                  <p>"The first time I saw four players running around my game world simultaneously, I literally jumped out of my chair. Multiplayer is hard, but the payoff is incredible. Start simple — make a multiplayer chat, then pong, then work your way up." — Dharmik Gohil</p>
+                </blockquote>
+
+                <h3>Next Steps</h3>
+                <ul>
+                  <li>Explore <strong>Photon Fusion</strong> for tick-based networking (better for competitive games)</li>
+                  <li>Learn about <strong>dedicated servers</strong> vs relay servers for anti-cheat</li>
+                  <li>Implement <strong>matchmaking</strong> with Photon's custom properties and SQL filters</li>
+                  <li>Study <strong>Valve's networking model</strong> (Source Engine) for advanced lag compensation</li>
+                </ul>
+
+                <div class="nav-links">
+                  <a href="../blog.html"><i class="bi bi-arrow-left"></i> Back to Blog</a>
+                  <a href="game-physics-collision-systems.html">Game Physics Systems <i class="bi bi-arrow-right"></i></a>
+                </div>
               </div>
-
-              <h3>Common Pitfalls & How to Avoid Them</h3>
-
-              <ol>
-                <li><strong>Not checking <code>photonView.IsMine</code>:</strong> Always check ownership before processing input. Otherwise, every client will control every player.</li>
-                <li><strong>Scene loading issues:</strong> Use <code>PhotonNetwork.LoadLevel()</code> instead of <code>SceneManager.LoadScene()</code> for synchronized scene transitions.</li>
-                <li><strong>Prefab not in Resources:</strong> <code>PhotonNetwork.Instantiate()</code> only works with prefabs in a <code>Resources</code> folder.</li>
-                <li><strong>Not handling reconnection:</strong> Implement <code>OnDisconnected</code> and attempt reconnection with exponential backoff.</li>
-                <li><strong>Syncing too much data:</strong> Don't sync animations frame-by-frame. Sync trigger states and let each client play animations locally.</li>
-              </ol>
-
-              <h3>What to Build Next</h3>
-
-              <p>After mastering PUN2 basics, <strong>Dharmik Gohil</strong> recommends exploring:</p>
-
-              <ul>
-                <li><strong>Photon Fusion:</strong> The next-gen networking SDK with tick-based simulation — ideal for competitive games.</li>
-                <li><strong>Voice Chat:</strong> Photon Voice adds real-time voice communication.</li>
-                <li><strong>Chat System:</strong> Photon Chat for text messaging between players.</li>
-                <li><strong>Leaderboards:</strong> Use PlayFab or Firebase alongside Photon for persistent player data.</li>
-                <li><strong>Anti-Cheat:</strong> Server-authoritative logic — never trust the client for critical game state.</li>
-              </ul>
-
-              <h3>Conclusion</h3>
-
-              <p>Building multiplayer games is one of the most challenging and rewarding experiences in game development. If I, <strong>Dharmik Gohil</strong>, can build a 20-player battle royale during college, you can absolutely build your dream multiplayer game. Start with a simple 2-player prototype, learn the networking patterns, and scale up from there.</p>
-
-              <p>Check out <strong>Mavericks Battlegrounds</strong> on itch.io to see what's possible with Photon PUN2 and Unity. And if you need help, reach out — I love talking about multiplayer game dev! 🎮</p>
-
-              <blockquote>
-                <p>"Multiplayer isn't just a feature — it's a promise to your players that they'll never have to play alone." — Dharmik Gohil</p>
-              </blockquote>
-
-            </div>
-          </div>
+            </article>
+          </section>
         </div>
       </div>
     </div>
   </main>
 
-  <footer id="footer" class="footer dark-background">
+  <footer id="footer" class="footer">
     <div class="container">
-      <h3 class="sitename">DHARMIK GOHIL</h3>
-      <p>Game Developer | Unity Specialist | Multiplayer Networking Expert</p>
-      <div class="social-links d-flex justify-content-center">
-        <a href="https://x.com/Dharmik086" target="_blank" rel="noopener"><i class="bi bi-twitter-x"></i></a>
-        <a href="https://github.com/dharmikgohil013" target="_blank" rel="noopener"><i class="bi bi-github"></i></a>
-        <a href="https://www.instagram.com/dharmik.086" target="_blank" rel="noopener"><i class="bi bi-instagram"></i></a>
-        <a href="https://in.linkedin.com/in/dharmikgohil086" target="_blank" rel="noopener"><i class="bi bi-linkedin"></i></a>
-      </div>
-      <div class="container">
-        <div class="copyright"><span>Copyright</span> <strong class="px-1 sitename">DHARMIK GOHIL</strong> <span>All Rights Reserved</span></div>
-        <div class="credits">Designed by <a href="https://dharmikgohil.art/">Dharmik Gohil</a></div>
-      </div>
+      <div class="copyright"><span>Copyright</span> <strong class="px-1 sitename">DHARMIK GOHIL</strong> <span>All Rights Reserved</span></div>
+      <div class="credits">Designed by <a href="https://dharmikgohil.art/">Dharmik Gohil</a></div>
     </div>
   </footer>
 
   <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
-  <div id="preloader"><div class="cube-loader"><div class="cube-top"></div><div class="cube-wrapper"><span style="--i:0" class="cube-span"></span><span style="--i:1" class="cube-span"></span><span style="--i:2" class="cube-span"></span><span style="--i:3" class="cube-span"></span></div></div></div>
 
   <script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="../assets/vendor/aos/aos.js"></script>
