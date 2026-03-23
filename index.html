@@ -531,15 +531,31 @@
     }
 
     /* Video Background */
-    #hero-video-bg {
+    /* Animated Gradient Background - Replaces Video */
+    .hero-gradient-bg {
       position: absolute;
       inset: 0;
       width: 100%;
       height: 100%;
-      object-fit: cover;
-      opacity: 0.50;
       z-index: 0;
       pointer-events: none;
+      background: linear-gradient(
+        -45deg,
+        #0a0a0f 0%,
+        #1a1a2e 25%,
+        #16213e 50%,
+        #0f3460 75%,
+        #0a0a0f 100%
+      );
+      background-size: 400% 400%;
+      animation: gradientShift 15s ease infinite;
+      opacity: 0.9;
+    }
+
+    @keyframes gradientShift {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
     }
 
     /* Dark overlay on top of video */
@@ -4543,31 +4559,7 @@
 <body class="index-page">
   <div class="custom-cursor"></div>
 
-  <!-- ============================================
-       CINEMATIC VIDEO INTRO - First Visit Only
-       ============================================ -->
-  <div id="cinematic-intro">
-    <video id="intro-video" muted loop playsinline preload="none">
-      <source src="assets/bg-video.mp4" type="video/mp4">
-    </video>
-    <div id="intro-overlay"></div>
-    <div id="intro-content">
-      <div class="intro-line intro-line-1">Welcome to</div>
-      <div class="intro-line intro-line-2">DHARMIK GOHIL</div>
-      <div class="intro-line intro-line-3">Game Developer &bull; XR Virtuoso &bull; Metaverse Architect</div>
-      <div class="intro-logo-pulse">
-        <img src="assets/img/dlogo.png" alt="DG Logo" />
-      </div>
-    </div>
-    <div id="intro-vignette"></div>
-    <canvas id="intro-particles"></canvas>
-    <div id="intro-scroll-hint">
-      <div class="scroll-mouse">
-        <div class="scroll-wheel"></div>
-      </div>
-      <span>Scroll to explore</span>
-    </div>
-  </div>
+  <!-- Cinematic intro removed for better performance -->
 
   <!-- Mobile Nav Overlay -->
   <div class="mobile-nav-overlay"></div>
@@ -4576,10 +4568,8 @@
     <!-- Hero Section - macOS Inspired Design -->
     <section id="hero" class="hero section">
 
-      <!-- Video Background -->
-      <video id="hero-video-bg" autoplay muted loop playsinline preload="metadata">
-        <source src="assets/bg-video.mp4" type="video/mp4">
-      </video>
+      <!-- Animated Gradient Background (replaces video for better performance) -->
+      <div class="hero-gradient-bg"></div>
       <div id="hero-video-overlay"></div>
 
       <!-- macOS Menu Bar -->
@@ -6494,11 +6484,13 @@
   </script>
 
   <!-- ============================================
-       CINEMATIC VIDEO INTRO SCRIPT
+       CINEMATIC VIDEO INTRO SCRIPT - DISABLED (Video removed for performance)
        ============================================ -->
   <script>
   (function() {
     'use strict';
+    // Video intro disabled - using animated gradient instead
+    return;
 
     const intro = document.getElementById('cinematic-intro');
     const introVideo = document.getElementById('intro-video');
