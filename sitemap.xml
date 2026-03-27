@@ -15,7 +15,7 @@
   <!-- HOMEPAGE - MAXIMUM PRIORITY -->
   <url>
     <loc>https://dharmikgohil.art/</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-27</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
     <image:image>
@@ -48,7 +48,7 @@
   <!-- ABOUT PAGE - Target: Full Stack Developer Story, Web App Game Blockchain Expert -->
   <url>
     <loc>https://dharmikgohil.art/about.html</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.95</priority>
     <image:image>
