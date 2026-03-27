@@ -1,0 +1,511 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "ProfessionalService",
+      "@id": "https://dharmikgohil.art/#professionalservice",
+      "name": "Dharmik Gohil - Freelance Game & Web Development Services",
+      "description": "Professional game development, blockchain development, and full stack web development services by expert developer Dharmik Gohil. Available for hire on freelance and contract basis worldwide.",
+      "url": "https://dharmikgohil.art/services.html",
+      "image": "https://dharmikgohil.art/assets/img/dharmik-profile-photo-2026.jpg",
+      "priceRange": "$$",
+      "telephone": "+91-XXXXXXXXXX",
+      "email": "contact@dharmikgohil.art",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Surat",
+        "addressRegion": "Gujarat",
+        "addressCountry": "India"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "21.1702",
+        "longitude": "72.8311"
+      },
+      "areaServed": [
+        {
+          "@type": "Country",
+          "name": "India"
+        },
+        {
+          "@type": "Country",
+          "name": "United States"
+        },
+        {
+          "@type": "Country",
+          "name": "United Kingdom"
+        },
+        {
+          "@type": "Country",
+          "name": "Canada"
+        },
+        {
+          "@type": "Place",
+          "name": "Worldwide"
+        }
+      ],
+      "serviceType": [
+        "Game Development",
+        "Blockchain Development",
+        "Web Development",
+        "Mobile App Development",
+        "VR/AR Development",
+        "Smart Contract Development",
+        "Full Stack Development",
+        "Unity Development",
+        "Metaverse Development",
+        "Multiplayer Game Development"
+      ],
+      "provider": {
+        "@id": "https://dharmikgohil.art/#person"
+      },
+      "availableChannel": {
+        "@type": "ServiceChannel",
+        "serviceUrl": "https://dharmikgohil.art/contact.html",
+        "availableLanguage": ["English", "Hindi", "Gujarati"]
+      }
+    },
+    {
+      "@type": "Service",
+      "@id": "https://dharmikgohil.art/#gamedevservice",
+      "serviceType": "Game Development Services",
+      "name": "Unity Game Development - Hire Expert Game Developer",
+      "description": "Professional Unity 3D game development services including mobile games, multiplayer games, VR/AR experiences, and metaverse projects. Expert in Unity C#, Photon networking, and cross-platform development.",
+      "provider": {
+        "@id": "https://dharmikgohil.art/#person"
+      },
+      "offers": {
+        "@type": "Offer",
+        "description": "Hire experienced Unity game developer for custom game development projects",
+        "availability": "https://schema.org/InStock",
+        "availabilityStarts": "2024-01-01",
+        "priceSpecification": {
+          "@type": "PriceSpecification",
+          "priceCurrency": "USD",
+          "price": "Negotiable"
+        }
+      },
+      "additionalType": [
+        "Unity 3D Development",
+        "Mobile Game Development",
+        "Multiplayer Game Development",
+        "VR Game Development",
+        "AR Game Development",
+        "2D and 3D Game Development",
+        "Cross-platform Game Development"
+      ],
+      "category": "Game Development",
+      "areaServed": "Worldwide",
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Game Development Services",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Unity 3D Game Development",
+              "description": "Custom Unity game development for PC, mobile, and web platforms"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Mobile Game Development",
+              "description": "Android and iOS game development using Unity engine"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Multiplayer Game Development",
+              "description": "Real-time multiplayer games using Photon Unity Networking (PUN)"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "VR/AR Game Development",
+              "description": "Virtual reality and augmented reality game experiences with Unity XR"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Game Porting Services",
+              "description": "Port games to multiple platforms (PC, mobile, console, web)"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "@type": "Service",
+      "@id": "https://dharmikgohil.art/#blockchainservice",
+      "serviceType": "Blockchain Development Services",
+      "name": "Blockchain & Smart Contract Development - Hire Blockchain Expert",
+      "description": "Professional blockchain development services including smart contract development, dApp creation, Web3 integration, NFT platforms, and DeFi solutions. Expert in Solidity, Ethereum, Solana, and Web3.js.",
+      "provider": {
+        "@id": "https://dharmikgohil.art/#person"
+      },
+      "offers": {
+        "@type": "Offer",
+        "description": "Hire blockchain developer for smart contracts, dApps, and Web3 projects",
+        "availability": "https://schema.org/InStock",
+        "availabilityStarts": "2024-01-01"
+      },
+      "additionalType": [
+        "Smart Contract Development",
+        "dApp Development",
+        "NFT Development",
+        "DeFi Development",
+        "Web3 Development",
+        "Blockchain Integration"
+      ],
+      "category": "Blockchain Development",
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Blockchain Services",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Smart Contract Development",
+              "description": "Secure Solidity smart contracts for Ethereum and EVM-compatible chains"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "dApp Development",
+              "description": "Full-stack decentralized application development with Web3 integration"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "NFT Platform Development",
+              "description": "Complete NFT marketplace and minting platform development"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "DeFi Solutions",
+              "description": "Decentralized finance protocols and platforms"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "@type": "Service",
+      "@id": "https://dharmikgohil.art/#webdevservice",
+      "serviceType": "Full Stack Web Development Services",
+      "name": "Full Stack Web Development - Hire React & Node.js Developer",
+      "description": "Professional full stack web development services using modern technologies like React, Next.js, Node.js, Express, MongoDB, and PostgreSQL. Expert in responsive design, API development, and cloud deployment.",
+      "provider": {
+        "@id": "https://dharmikgohil.art/#person"
+      },
+      "offers": {
+        "@type": "Offer",
+        "description": "Hire full stack developer for web applications, APIs, and SaaS platforms",
+        "availability": "https://schema.org/InStock",
+        "availabilityStarts": "2024-01-01"
+      },
+      "additionalType": [
+        "React Development",
+        "Next.js Development",
+        "Node.js Development",
+        "API Development",
+        "Database Design",
+        "Responsive Web Design"
+      ],
+      "category": "Web Development",
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Web Development Services",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "React/Next.js Development",
+              "description": "Modern, fast, and SEO-friendly web applications using React and Next.js"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Backend API Development",
+              "description": "RESTful and GraphQL APIs using Node.js and Express.js"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "E-commerce Development",
+              "description": "Custom e-commerce platforms and online stores"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "SaaS Platform Development",
+              "description": "Complete SaaS applications with user management and subscriptions"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "@type": "Service",
+      "@id": "https://dharmikgohil.art/#mobileappservice",
+      "serviceType": "Mobile App Development Services",
+      "name": "Mobile App Development - Hire Android & iOS Developer",
+      "description": "Professional mobile app development for Android and iOS platforms using Unity, React Native, and native technologies. Expert in gaming apps, business apps, and cross-platform solutions.",
+      "provider": {
+        "@id": "https://dharmikgohil.art/#person"
+      },
+      "offers": {
+        "@type": "Offer",
+        "description": "Hire mobile app developer for iOS and Android application development",
+        "availability": "https://schema.org/InStock"
+      },
+      "category": "Mobile App Development"
+    },
+    {
+      "@type": "Person",
+      "@id": "https://dharmikgohil.art/#person",
+      "name": "Dharmik Gohil",
+      "givenName": "Dharmik",
+      "familyName": "Gohil",
+      "jobTitle": "Freelance Game Developer | Blockchain Developer | Full Stack Web Developer",
+      "description": "Expert game developer, blockchain specialist, and full stack web developer available for hire. Specializing in Unity 3D, smart contracts, React/Next.js, mobile apps, and VR/AR development. Open to freelance and contract work worldwide.",
+      "url": "https://dharmikgohil.art",
+      "image": "https://dharmikgohil.art/assets/img/dharmik-profile-photo-2026.jpg",
+      "email": "contact@dharmikgohil.art",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Surat",
+        "addressRegion": "Gujarat",
+        "postalCode": "395007",
+        "addressCountry": "India"
+      },
+      "alumniOf": {
+        "@type": "EducationalOrganization",
+        "name": "CHARUSAT University",
+        "department": "DEPSTAR - Devang Patel Institute of Advance Technology and Research",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Anand",
+          "addressRegion": "Gujarat",
+          "addressCountry": "India"
+        }
+      },
+      "knowsAbout": [
+        "Unity 3D Game Development",
+        "Blockchain Development",
+        "Smart Contract Development",
+        "Full Stack Web Development",
+        "Mobile App Development",
+        "VR/AR Development",
+        "Multiplayer Game Development",
+        "React.js",
+        "Next.js",
+        "Node.js",
+        "Solidity",
+        "C# Programming",
+        "JavaScript",
+        "TypeScript",
+        "Three.js",
+        "WebGL",
+        "Photon Unity Networking",
+        "MongoDB",
+        "PostgreSQL",
+        "Git/GitHub",
+        "Agile Development"
+      ],
+      "hasOccupation": {
+        "@type": "Occupation",
+        "name": "Freelance Software Developer",
+        "occupationalCategory": {
+          "@type": "CategoryCode",
+          "inCodeSet": {
+            "@type": "CategoryCodeSet",
+            "name": "O*NET-SOC",
+            "url": "https://www.onetonline.org/"
+          },
+          "codeValue": "15-1132.00",
+          "name": "Software Developers, Applications"
+        },
+        "skills": [
+          "Game Development",
+          "Unity 3D",
+          "Blockchain",
+          "Smart Contracts",
+          "Web Development",
+          "Mobile Development",
+          "VR/AR",
+          "C#",
+          "JavaScript",
+          "Solidity"
+        ],
+        "occupationLocation": [
+          {
+            "@type": "City",
+            "name": "Surat",
+            "containedInPlace": {
+              "@type": "State",
+              "name": "Gujarat"
+            }
+          },
+          {
+            "@type": "Country",
+            "name": "Remote (Worldwide)"
+          }
+        ]
+      },
+      "sameAs": [
+        "https://linkedin.com/in/dharmikgohil",
+        "https://github.com/dharmikgohil",
+        "https://twitter.com/dharmikgohil",
+        "https://instagram.com/dharmikgohil"
+      ],
+      "workExample": [
+        {
+          "@type": "CreativeWork",
+          "name": "Mavericks Battlegrounds",
+          "description": "Unity multiplayer battle royale game with Photon networking",
+          "url": "https://dharmikgohil.art/portfolio.html"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://dharmikgohil.art/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How can I hire Dharmik Gohil for game development?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "You can hire Dharmik Gohil for game development by contacting through the website contact form at https://dharmikgohil.art/contact.html or via email. Dharmik is available for freelance projects, contract work, and remote opportunities worldwide, specializing in Unity 3D game development."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What game development services does Dharmik Gohil offer?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Dharmik Gohil offers comprehensive game development services including Unity 3D game development, mobile game development (Android/iOS), multiplayer game development with Photon, VR/AR game experiences, 2D and 3D games, game porting, and custom game mechanics development."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is Dharmik Gohil available for blockchain development projects?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, Dharmik Gohil is an expert blockchain developer available for hire. Services include smart contract development using Solidity, dApp development, NFT platform creation, DeFi solutions, Web3 integration, and blockchain consulting for Ethereum, Solana, and other platforms."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the cost to hire Dharmik Gohil as a freelance developer?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The cost varies based on project scope, complexity, and duration. Dharmik offers competitive rates for game development, blockchain development, and web development services. Contact for a free consultation and custom quote based on your specific project requirements."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does Dharmik Gohil work on remote projects?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, Dharmik Gohil is available for remote work worldwide. Whether you're based in USA, UK, Canada, Europe, Asia, or anywhere else, Dharmik can work remotely on your game development, blockchain, or web development projects with flexible communication and collaboration."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What technologies does Dharmik Gohil specialize in?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Dharmik specializes in Unity 3D with C#, React.js, Next.js, Node.js, Express.js, Solidity for smart contracts, JavaScript/TypeScript, Three.js, WebGL, Photon Unity Networking, MongoDB, PostgreSQL, VR/AR (Unity XR), mobile development (Android/iOS), and blockchain technologies (Ethereum, Solana, Web3.js)."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can Dharmik Gohil build multiplayer games?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, Dharmik Gohil is an expert in multiplayer game development using Photon Unity Networking (PUN), Photon Fusion, and other networking solutions. He has experience building real-time multiplayer games, turn-based games, co-op experiences, and battle royale games."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Where is Dharmik Gohil located?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Dharmik Gohil is based in Surat, Gujarat, India, and is a student at CHARUSAT University (DEPSTAR College). However, he works remotely with clients worldwide and is available for both Indian and international projects in game development, blockchain, and web development."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://dharmikgohil.art/#website",
+      "url": "https://dharmikgohil.art",
+      "name": "Dharmik Gohil - Hire Game Developer | Blockchain Expert | Full Stack Developer",
+      "description": "Professional portfolio and services of Dharmik Gohil - freelance game developer, blockchain specialist, and full stack web developer available for hire worldwide",
+      "publisher": {
+        "@id": "https://dharmikgohil.art/#person"
+      },
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://dharmikgohil.art/search?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://dharmikgohil.art/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://dharmikgohil.art/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Services",
+          "item": "https://dharmikgohil.art/services.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Portfolio",
+          "item": "https://dharmikgohil.art/portfolio.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "Contact",
+          "item": "https://dharmikgohil.art/contact.html"
+        }
+      ]
+    }
+  ]
+}

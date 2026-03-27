@@ -1,12 +1,18 @@
 # =====================================================================
 # ULTRA-POWERFUL ROBOTS.TXT - DHARMIK GOHIL PORTFOLIO
-# MAXIMUM SEO CRAWLABILITY & INDEXING POWER
+# MAXIMUM SEO CRAWLABILITY & INDEXING POWER - CLIENT DISCOVERY OPTIMIZED
 # =====================================================================
-# PRIMARY IMAGE: dharmik-profile-photo-2026.jpg
-# TARGET KEYWORDS: dharmik, dharmikgohil, dharmik gohil, gohil dharmik
-# SPECIALTY: Full Stack Web Developer, Game Developer, App Developer, Blockchain Expert
-# INSTITUTION: CHARUSAT University, DEPSTAR College
-# EXPERTISE: Web Development, App Development, Game Development, Blockchain, VR/AR, React.js, Node.js, Unity, Solidity
+# DEVELOPER: Dharmik Gohil - AVAILABLE FOR HIRE (Freelance & Contract)
+# PRIMARY SERVICES: Game Development | Blockchain Development | Full Stack Web Development
+# TARGET CLIENT SEARCHES: hire game developer, hire unity developer, hire blockchain developer,
+#                        freelance game developer, game developer for hire, contract game developer,
+#                        unity expert hire, mobile game developer, vr ar developer, metaverse developer
+# SPECIALTY: Unity 3D Game Development, Blockchain Smart Contracts, Mobile App Development,
+#           Full Stack Web Development, VR/AR/XR Development, Metaverse Creation
+# INSTITUTION: CHARUSAT University, DEPSTAR College, Surat, Gujarat, India
+# EXPERTISE: Unity C#, React.js, Next.js, Node.js, Solidity, Three.js, Photon, WebGL,
+#           Mobile (Android/iOS), Blockchain (Ethereum/Solana), VR/AR, Multiplayer Games
+# AVAILABILITY: Open to remote work, contract projects, and freelance opportunities worldwide
 # =====================================================================
 
 User-agent: *
