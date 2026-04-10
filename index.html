@@ -517,7 +517,10 @@
        Sonoma/Sequoia Dark Mode Aesthetic
        ============================================ */
 
-    /* macOS Desktop Background */
+    /* ============================================
+       REDESIGNED HERO SECTION — Immersive & Modern
+       ============================================ */
+
     #hero {
       position: relative;
       min-height: 100vh;
@@ -526,12 +529,11 @@
       align-items: center;
       justify-content: center;
       overflow: hidden;
-      background: #09090F;
+      background: #050508;
       padding: 0;
     }
 
-    /* Video Background */
-    /* Animated Gradient Background - Replaces Video */
+    /* Animated Mesh Gradient Background */
     .hero-gradient-bg {
       position: absolute;
       inset: 0;
@@ -539,39 +541,66 @@
       height: 100%;
       z-index: 0;
       pointer-events: none;
-      background: linear-gradient(
-        -45deg,
-        #0a0a0f 0%,
-        #1a1a2e 25%,
-        #16213e 50%,
-        #0f3460 75%,
-        #0a0a0f 100%
-      );
-      background-size: 400% 400%;
-      animation: gradientShift 15s ease infinite;
-      opacity: 0.9;
+      overflow: hidden;
     }
 
-    @keyframes gradientShift {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
+    .hero-gradient-bg::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background:
+        conic-gradient(from 0deg at 30% 70%, #0f172a, #1e1b4b 25%, #0f172a 50%),
+        conic-gradient(from 180deg at 70% 30%, #0f172a, #164e63 25%, #0f172a 50%);
+      background-blend-mode: screen;
+      animation: heroMeshRotate 30s linear infinite;
+      opacity: 0.6;
     }
 
-    /* Dark overlay on top of video */
+    .hero-gradient-bg::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 50% 40% at 20% 80%, rgba(245,180,97,0.12) 0%, transparent 55%),
+        radial-gradient(ellipse 45% 50% at 80% 20%, rgba(99,102,241,0.15) 0%, transparent 55%),
+        radial-gradient(ellipse 60% 40% at 50% 50%, rgba(10,132,255,0.06) 0%, transparent 60%);
+      animation: heroPulse 8s ease-in-out infinite alternate;
+    }
+
+    @keyframes heroMeshRotate {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    @keyframes heroPulse {
+      0% { opacity: 0.6; }
+      100% { opacity: 1; }
+    }
+
+    /* Overlay with grain & depth */
     #hero-video-overlay {
       position: absolute;
       inset: 0;
       background:
-        radial-gradient(ellipse 80% 50% at 15% 85%, rgba(255,149,0,0.10) 0%, transparent 55%),
-        radial-gradient(ellipse 70% 60% at 85% 15%, rgba(191,90,242,0.12) 0%, transparent 55%),
-        radial-gradient(ellipse 60% 60% at 50% 50%, rgba(10,132,255,0.05) 0%, transparent 70%),
-        linear-gradient(160deg, rgba(9,9,15,0.72) 0%, rgba(17,16,32,0.68) 40%, rgba(12,12,26,0.72) 70%, rgba(16,12,24,0.75) 100%);
+        linear-gradient(180deg, rgba(5,5,8,0.4) 0%, rgba(5,5,8,0.1) 40%, rgba(5,5,8,0.5) 100%);
       z-index: 1;
       pointer-events: none;
     }
 
-    /* Subtle star field */
+    /* Floating particle canvas */
+    #hero-particles-canvas {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 2;
+      pointer-events: none;
+    }
+
+    /* Star field */
     #hero::before {
       content: '';
       position: absolute;
@@ -597,23 +626,63 @@
       100% { opacity: 1; }
     }
 
+    /* Ambient floating orbs */
+    .hero-orb {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(80px);
+      pointer-events: none;
+      z-index: 1;
+      opacity: 0;
+      animation: orbFloat 20s ease-in-out infinite, orbFadeIn 2s ease forwards;
+    }
+    .hero-orb-1 {
+      width: 400px; height: 400px;
+      background: rgba(245,180,97,0.15);
+      top: 10%; left: -5%;
+      animation-delay: 0s;
+    }
+    .hero-orb-2 {
+      width: 350px; height: 350px;
+      background: rgba(99,102,241,0.18);
+      bottom: 5%; right: -8%;
+      animation-delay: 5s;
+    }
+    .hero-orb-3 {
+      width: 250px; height: 250px;
+      background: rgba(10,132,255,0.12);
+      top: 50%; left: 40%;
+      animation-delay: 10s;
+    }
+
+    @keyframes orbFloat {
+      0%, 100% { transform: translate(0, 0) scale(1); }
+      25% { transform: translate(30px, -20px) scale(1.05); }
+      50% { transform: translate(-20px, 30px) scale(0.95); }
+      75% { transform: translate(15px, 15px) scale(1.02); }
+    }
+
+    @keyframes orbFadeIn {
+      to { opacity: 1; }
+    }
+
     /* macOS Menu Bar */
     .macos-menubar {
       position: fixed;
       top: 0;
       left: 0;
       right: 0;
-      height: 28px;
-      background: rgba(22,22,26,0.92);
-      backdrop-filter: blur(25px) saturate(2);
-      -webkit-backdrop-filter: blur(25px) saturate(2);
+      height: 32px;
+      background: rgba(8,8,12,0.88);
+      backdrop-filter: blur(30px) saturate(2);
+      -webkit-backdrop-filter: blur(30px) saturate(2);
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 0 18px;
+      padding: 0 20px;
       z-index: 9998;
-      border-bottom: 1px solid rgba(255,255,255,0.08);
-      box-shadow: 0 1px 0 rgba(0,0,0,0.15);
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      box-shadow: 0 1px 8px rgba(0,0,0,0.3);
       font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
     }
 
@@ -631,10 +700,10 @@
     .menubar-left span {
       font-size: 13px;
       font-weight: 500;
-      color: rgba(255,255,255,0.88);
+      color: rgba(255,255,255,0.7);
       cursor: default;
       user-select: none;
-      transition: color 0.15s ease;
+      transition: color 0.2s ease;
     }
 
     .menubar-left span:hover:not(.menubar-apple) {
@@ -651,13 +720,13 @@
       align-items: center;
       gap: 16px;
       font-size: 12px;
-      color: rgba(255,255,255,0.85);
+      color: rgba(255,255,255,0.7);
     }
 
     .menubar-right a {
       color: inherit;
       text-decoration: none;
-      transition: color 0.15s ease;
+      transition: color 0.2s ease;
       display: flex;
       align-items: center;
     }
@@ -668,7 +737,7 @@
 
     .menubar-right i {
       font-size: 14px;
-      transition: color 0.15s ease;
+      transition: color 0.2s ease;
     }
 
     .menubar-right i:hover {
@@ -679,13 +748,13 @@
       font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
       font-size: 12px;
       font-weight: 500;
-      color: rgba(255,255,255,0.9);
+      color: rgba(255,255,255,0.85);
       letter-spacing: 0.4px;
       min-width: 44px;
       text-align: right;
     }
 
-    /* macOS Desktop wrapper */
+    /* Desktop wrapper */
     .macos-desktop {
       position: relative;
       z-index: 10;
@@ -697,38 +766,53 @@
       padding: 60px 20px 110px;
     }
 
-    /* macOS Frosted Glass Window */
+    /* Frosted Glass Window */
     .macos-window {
       width: 100%;
-      max-width: 900px;
-      background: rgba(28,28,38,0.72);
+      max-width: 960px;
+      background:
+        radial-gradient(circle at 10% 20%, rgba(245,180,97,0.08), transparent 40%),
+        radial-gradient(circle at 90% 80%, rgba(99,102,241,0.10), transparent 35%),
+        linear-gradient(180deg, rgba(18,20,32,0.92), rgba(10,12,20,0.88));
       backdrop-filter: blur(40px) saturate(1.8);
       -webkit-backdrop-filter: blur(40px) saturate(1.8);
       border: 1px solid rgba(255,255,255,0.10);
-      border-radius: 16px;
+      border-radius: 24px;
       box-shadow:
         0 0 0 1px rgba(255,255,255,0.04),
-        0 32px 80px rgba(0,0,0,0.65),
-        0 0 60px rgba(191,90,242,0.07),
-        0 0 120px rgba(10,132,255,0.05);
+        0 40px 80px -20px rgba(0,0,0,0.7),
+        0 0 80px rgba(99,102,241,0.06),
+        0 0 160px rgba(245,180,97,0.04);
       overflow: hidden;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      transition: transform 0.4s cubic-bezier(.4,0,.2,1), box-shadow 0.4s ease;
+      animation: windowReveal 1s cubic-bezier(.16,1,.3,1) 0.3s both;
+    }
+
+    @keyframes windowReveal {
+      from {
+        opacity: 0;
+        transform: translateY(40px) scale(0.96);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
     }
 
     .macos-window:hover {
-      transform: translateY(-5px);
+      transform: translateY(-4px);
       box-shadow:
         0 0 0 1px rgba(255,255,255,0.08),
-        0 40px 100px rgba(0,0,0,0.75),
-        0 0 80px rgba(191,90,242,0.10),
-        0 0 160px rgba(10,132,255,0.07);
+        0 50px 100px -20px rgba(0,0,0,0.8),
+        0 0 100px rgba(99,102,241,0.10),
+        0 0 200px rgba(245,180,97,0.06);
     }
 
     /* Window Title Bar */
     .window-titlebar {
       background: rgba(255,255,255,0.04);
       border-bottom: 1px solid rgba(255,255,255,0.07);
-      padding: 13px 18px;
+      padding: 14px 22px;
       display: flex;
       align-items: center;
       gap: 14px;
@@ -765,19 +849,19 @@
       flex: 1;
       text-align: center;
       font-family: 'Inter', -apple-system, sans-serif;
-      font-size: 13px;
+      font-size: 12.5px;
       font-weight: 500;
-      color: rgba(255,255,255,0.5);
-      letter-spacing: 0.2px;
+      color: rgba(255,255,255,0.56);
+      letter-spacing: 0.35px;
     }
 
     /* Window Content - Two Column Layout */
     .window-content {
       display: flex;
       align-items: center;
-      min-height: 400px;
-      padding: 36px 44px;
-      gap: 36px;
+      min-height: 420px;
+      padding: 56px 46px 42px;
+      gap: 42px;
     }
 
     /* Left: Text Content */
@@ -786,42 +870,63 @@
       display: flex;
       flex-direction: column;
       justify-content: center;
-      gap: 16px;
+      gap: 14px;
       min-width: 0;
     }
 
     /* Right: Photo Area */
     .window-photo-area {
       flex-shrink: 0;
-      width: 260px;
+      width: 280px;
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 14px;
+      gap: 12px;
     }
 
     .hero-photo-frame {
-      width: 240px;
-      height: 300px;
-      border-radius: 50% 50% 50% 50% / 40% 40% 60% 60%;
+      width: 250px;
+      height: 312px;
+      border-radius: 30px;
       overflow: hidden;
-      border: 2.5px solid rgba(10,132,255,0.55);
+      border: 2px solid transparent;
+      background:
+        linear-gradient(180deg, rgba(18,20,32,1), rgba(10,12,20,1)) padding-box,
+        linear-gradient(135deg, rgba(245,180,97,0.5), rgba(99,102,241,0.5), rgba(10,132,255,0.5)) border-box;
       box-shadow:
-        0 0 0 6px rgba(10,132,255,0.10),
-        0 0 40px rgba(10,132,255,0.20),
-        0 0 80px rgba(191,90,242,0.12),
-        0 20px 50px rgba(0,0,0,0.55);
+        0 0 0 1px rgba(255,255,255,0.06),
+        0 20px 50px rgba(0,0,0,0.5),
+        0 0 60px rgba(245,180,97,0.12),
+        0 0 100px rgba(99,102,241,0.08);
       flex-shrink: 0;
-      transition: transform 0.35s ease, box-shadow 0.35s ease;
+      transition: transform 0.4s cubic-bezier(.4,0,.2,1), box-shadow 0.4s ease;
+      animation: photoFrameGlow 4s ease-in-out infinite alternate;
+    }
+
+    @keyframes photoFrameGlow {
+      0% {
+        box-shadow:
+          0 0 0 1px rgba(255,255,255,0.06),
+          0 20px 50px rgba(0,0,0,0.5),
+          0 0 40px rgba(245,180,97,0.10),
+          0 0 80px rgba(99,102,241,0.06);
+      }
+      100% {
+        box-shadow:
+          0 0 0 1px rgba(255,255,255,0.08),
+          0 20px 50px rgba(0,0,0,0.5),
+          0 0 80px rgba(245,180,97,0.20),
+          0 0 120px rgba(99,102,241,0.12);
+      }
     }
 
     .hero-photo-frame:hover {
-      transform: scale(1.04) translateY(-4px);
+      transform: scale(1.05) translateY(-6px);
       box-shadow:
-        0 0 0 8px rgba(10,132,255,0.14),
-        0 0 60px rgba(10,132,255,0.32),
-        0 0 100px rgba(191,90,242,0.18),
-        0 28px 65px rgba(0,0,0,0.65);
+        0 0 0 4px rgba(245,180,97,0.25),
+        0 0 60px rgba(245,180,97,0.35),
+        0 0 100px rgba(99,102,241,0.20),
+        0 30px 70px rgba(0,0,0,0.6);
     }
 
     .hero-photo {
@@ -841,15 +946,16 @@
       display: inline-flex;
       align-items: center;
       gap: 5px;
-      background: rgba(48,209,88,0.12);
-      border: 1px solid rgba(48,209,88,0.35);
-      color: #30D158;
+      background: rgba(48,209,88,0.10);
+      border: 1px solid rgba(48,209,88,0.28);
+      color: #78e08f;
       font-family: 'Inter', sans-serif;
       font-size: 11px;
       font-weight: 600;
-      padding: 4px 12px;
-      border-radius: 20px;
+      padding: 7px 13px;
+      border-radius: 999px;
       white-space: nowrap;
+      backdrop-filter: blur(12px);
     }
 
     .profile-badge i { font-size: 9px; }
@@ -886,7 +992,35 @@
     .window-main-header {
       display: flex;
       align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .hero-status-pill {
+      display: inline-flex;
+      align-items: center;
       gap: 8px;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(255,255,255,0.10);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.06);
+    }
+
+    .hero-meta-pill {
+      display: inline-flex;
+      align-items: center;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: rgba(10,132,255,0.10);
+      border: 1px solid rgba(10,132,255,0.16);
+      color: rgba(255,255,255,0.78);
+      font-family: 'Inter', sans-serif;
+      font-size: 11.5px;
+      font-weight: 600;
+      letter-spacing: 0.3px;
     }
 
     .status-dot {
@@ -908,29 +1042,48 @@
       font-family: 'Inter', sans-serif;
       font-size: 11.5px;
       font-weight: 600;
-      color: rgba(255,255,255,0.4);
+      color: rgba(255,255,255,0.68);
       text-transform: uppercase;
-      letter-spacing: 1px;
+      letter-spacing: 0.9px;
     }
 
     /* Override old h2 style for hero */
     .hero-name {
       font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif !important;
-      font-size: clamp(2rem, 4.5vw, 3.2rem) !important;
-      font-weight: 700 !important;
-      color: #fff !important;
-      letter-spacing: -0.8px !important;
+      font-size: clamp(2.2rem, 4.8vw, 3.75rem) !important;
+      font-weight: 800 !important;
+      background: linear-gradient(135deg, #ffffff 0%, #F5B461 50%, #6366F1 100%) !important;
+      background-size: 200% 200% !important;
+      -webkit-background-clip: text !important;
+      -webkit-text-fill-color: transparent !important;
+      background-clip: text !important;
+      animation: heroNameGradient 6s ease-in-out infinite !important;
+      letter-spacing: -1.5px !important;
       line-height: 1.08 !important;
       margin: 0 !important;
     }
 
+    @keyframes heroNameGradient {
+      0%, 100% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+    }
+
     .hero-role {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.95rem;
-      color: #BF5AF2;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      font-size: 0.98rem;
+      color: rgba(255,255,255,0.62);
       margin: 0;
       min-height: 1.5em;
-      letter-spacing: 0.5px;
+      letter-spacing: 0.2px;
+    }
+
+    .hero-intro {
+      margin: 0;
+      max-width: 560px;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      font-size: 0.98rem;
+      line-height: 1.75;
+      color: rgba(255,255,255,0.74);
     }
 
     .typing-cursor::after {
@@ -950,27 +1103,29 @@
     .skill-tags {
       display: flex;
       flex-wrap: wrap;
-      gap: 7px;
+      gap: 9px;
+      margin-top: 2px;
     }
 
     .skill-tag {
       display: inline-block;
-      padding: 5px 11px;
-      background: rgba(10,132,255,0.10);
-      border: 1px solid rgba(10,132,255,0.25);
-      border-radius: 7px;
+      padding: 8px 14px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.10);
+      border-radius: 999px;
       font-family: 'Inter', sans-serif;
       font-size: 11.5px;
-      font-weight: 500;
-      color: rgba(255,255,255,0.75);
+      font-weight: 600;
+      color: rgba(255,255,255,0.78);
       letter-spacing: 0.2px;
       transition: all 0.2s;
       cursor: default;
+      backdrop-filter: blur(10px);
     }
 
     .skill-tag:hover {
-      background: rgba(10,132,255,0.20);
-      border-color: rgba(10,132,255,0.5);
+      background: rgba(10,132,255,0.18);
+      border-color: rgba(10,132,255,0.30);
       color: #fff;
       transform: translateY(-1px);
     }
@@ -980,14 +1135,14 @@
       display: flex;
       gap: 10px;
       flex-wrap: wrap;
-      margin-top: 2px;
+      margin-top: 8px;
     }
 
     .mac-btn {
       display: inline-flex;
       align-items: center;
-      padding: 10px 22px;
-      border-radius: 10px;
+      padding: 11px 22px;
+      border-radius: 12px;
       font-family: 'Inter', -apple-system, sans-serif;
       font-size: 14px;
       font-weight: 600;
@@ -1000,28 +1155,28 @@
     }
 
     .mac-btn-primary {
-      background: #0A84FF;
-      color: #fff;
-      box-shadow: 0 4px 18px rgba(10,132,255,0.4);
+      background: linear-gradient(135deg, #F5B461, #e8953a);
+      color: #0a0e1a;
+      box-shadow: 0 8px 24px rgba(245,180,97,0.35), 0 0 40px rgba(245,180,97,0.10);
     }
 
     .mac-btn-primary:hover {
-      background: #1B90FF;
-      transform: translateY(-2px);
-      box-shadow: 0 8px 26px rgba(10,132,255,0.55);
-      color: #fff;
+      background: linear-gradient(135deg, #f7c47a, #F5B461);
+      transform: translateY(-3px);
+      box-shadow: 0 14px 32px rgba(245,180,97,0.5), 0 0 60px rgba(245,180,97,0.15);
+      color: #0a0e1a;
     }
 
     .mac-btn-secondary {
       background: rgba(255,255,255,0.09);
       border: 1px solid rgba(255,255,255,0.14);
-      color: rgba(255,255,255,0.88);
-      backdrop-filter: blur(10px);
+      color: rgba(255,255,255,0.9);
+      backdrop-filter: blur(12px);
     }
 
     .mac-btn-secondary:hover {
-      background: rgba(255,255,255,0.16);
-      border-color: rgba(255,255,255,0.28);
+      background: rgba(255,255,255,0.15);
+      border-color: rgba(255,255,255,0.22);
       transform: translateY(-2px);
       color: #fff;
       box-shadow: 0 4px 14px rgba(0,0,0,0.2);
@@ -1029,32 +1184,40 @@
 
     /* Stats Row */
     .hero-stats {
-      display: flex;
-      gap: 24px;
-      padding-top: 10px;
-      border-top: 1px solid rgba(255,255,255,0.07);
-      margin-top: 2px;
-      flex-wrap: wrap;
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 10px;
     }
 
     .hero-stats .stat {
       display: flex;
       flex-direction: column;
-      gap: 2px;
+      gap: 4px;
+      padding: 14px 16px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.10);
+      backdrop-filter: blur(12px);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.05);
     }
 
     .stat-num {
       font-family: 'Inter', sans-serif;
-      font-size: 1.5rem;
-      font-weight: 700;
-      color: #fff;
+      font-size: 1.7rem;
+      font-weight: 800;
+      background: linear-gradient(135deg, #F5B461, #fff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
       line-height: 1;
+      letter-spacing: -0.8px;
     }
 
     .stat-label {
       font-family: 'Inter', sans-serif;
       font-size: 10.5px;
-      color: rgba(255,255,255,0.38);
+      color: rgba(255,255,255,0.5);
       text-transform: uppercase;
       letter-spacing: 0.8px;
       font-weight: 500;
@@ -1244,42 +1407,55 @@
 
     /* ===== HERO RESPONSIVE ===== */
     @media (max-width: 900px) {
-      .window-content { padding: 28px 28px; gap: 24px; }
+      .window-content { padding: 38px 28px 28px; gap: 24px; }
       .window-photo-area { width: 220px; }
       .hero-photo-frame { width: 200px; height: 250px; }
       .hero-name { font-size: 2.2rem !important; }
     }
 
     @media (max-width: 768px) {
+      .macos-menubar { height: 28px; padding: 0 12px; }
+      .menubar-left span:not(.menubar-apple):not(.menubar-brand) { display: none; }
+      .menubar-right i.bi-wifi, .menubar-right i.bi-battery-full { display: none; }
       .window-content {
         flex-direction: column-reverse;
         align-items: center;
-        padding: 24px 22px;
+        padding: 28px 20px 24px;
         gap: 20px;
       }
       .window-photo-area { width: auto; flex-direction: row; gap: 16px; align-items: center; }
-      .hero-photo-frame { width: 110px; height: 138px; }
+      .hero-photo-frame { width: 110px; height: 138px; border-radius: 20px; }
       .window-main { gap: 12px; }
       .hero-name { font-size: 2rem !important; }
-      .hero-stats { gap: 14px; }
+      .hero-stats { gap: 10px; }
+      .hero-intro { font-size: 0.9rem; }
       .floating-icons { display: none; }
       .macos-desktop { padding: 44px 12px 60px; min-height: 100vh; }
+      .hero-orb { filter: blur(60px); }
+      .hero-orb-1 { width: 250px; height: 250px; }
+      .hero-orb-2 { width: 200px; height: 200px; }
+      .hero-orb-3 { display: none; }
     }
 
     @media (max-width: 575px) {
-      .window-content { padding: 18px 16px; gap: 16px; }
-      .window-titlebar { padding: 10px 13px; }
+      .window-content { padding: 20px 14px 16px; gap: 14px; }
+      .window-titlebar { padding: 10px 12px; }
       .hero-name { font-size: 1.65rem !important; }
       .hero-buttons { flex-direction: column; }
       .mac-btn { width: 100%; justify-content: center; }
-      .hero-stats { gap: 12px; }
-      .stat-num { font-size: 1.3rem; }
+      .hero-stats { grid-template-columns: repeat(3, 1fr); gap: 8px; }
+      .stat-num { font-size: 1.2rem; }
+      .stat-label { font-size: 9px; }
       .skill-tags { gap: 5px; }
-      .hero-photo-frame { width: 90px; height: 112px; }
+      .skill-tag { font-size: 10px; padding: 6px 10px; }
+      .hero-photo-frame { width: 85px; height: 106px; border-radius: 16px; }
+      .hero-intro { font-size: 0.85rem; }
+      .macos-window { border-radius: 18px; }
     }
 
     @media (max-width: 400px) {
-      .hero-name { font-size: 1.4rem !important; }
+      .hero-name { font-size: 1.35rem !important; }
+      .hero-status-pill, .hero-meta-pill { font-size: 10px; padding: 6px 10px; }
     }
 
     @media (max-height: 500px) and (orientation: landscape) {
@@ -1287,6 +1463,7 @@
       .window-content { flex-direction: row; padding: 20px 24px; }
       .hero-photo-frame { width: 120px; height: 150px; }
       .hero-name { font-size: 1.4rem !important; }
+      .hero-stats { display: none; }
     }
 
     @media (min-width: 1400px) {
@@ -4454,7 +4631,7 @@
     "name": "Dharmik Gohil - Web, Game & Blockchain Development Services",
     "image": "https://dharmikgohil.art/assets/img/dharmik-gohil-portfolio.jpg",
     "url": "https://dharmikgohil.art/services.html",
-    "telephone": "+91-XXX-XXX-XXXX",
+    "telephone": "+91-9624105887",
     "priceRange": "$$",
     "address": {
       "@type": "PostalAddress",
@@ -4568,9 +4745,17 @@
     <!-- Hero Section - macOS Inspired Design -->
     <section id="hero" class="hero section">
 
-      <!-- Animated Gradient Background (replaces video for better performance) -->
+      <!-- Animated Mesh Gradient Background -->
       <div class="hero-gradient-bg"></div>
       <div id="hero-video-overlay"></div>
+
+      <!-- Floating ambient orbs -->
+      <div class="hero-orb hero-orb-1"></div>
+      <div class="hero-orb hero-orb-2"></div>
+      <div class="hero-orb hero-orb-3"></div>
+
+      <!-- Interactive particle canvas -->
+      <canvas id="hero-particles-canvas"></canvas>
 
       <!-- macOS Menu Bar -->
       <div class="macos-menubar">
@@ -4583,10 +4768,10 @@
           <span>About</span>
         </div>
         <div class="menubar-right">
-          <a href="https://github.com/DharmikGohil013" target="_blank"><i class="bi bi-github"></i></a>
-          <a href="https://www.linkedin.com/in/dharmikgohil086/" target="_blank"><i class="bi bi-linkedin"></i></a>
-          <a href="https://www.instagram.com/dharmik.086/?next=%2F" target="_blank"><i class="bi bi-instagram"></i></a>
-          <a href="https://x.com/Dharmik086" target="_blank"><i class="bi bi-twitter"></i></a>
+          <a href="https://github.com/DharmikGohil013" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="bi bi-github"></i></a>
+          <a href="https://www.linkedin.com/in/dharmikgohil086/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+          <a href="https://www.instagram.com/dharmik.086/?next=%2F" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+          <a href="https://x.com/Dharmik086" target="_blank" rel="noopener noreferrer" aria-label="Twitter"><i class="bi bi-twitter"></i></a>
           <i class="bi bi-wifi"></i>
           <i class="bi bi-battery-full"></i>
           <span id="menubar-clock">--:--</span>
@@ -4617,42 +4802,44 @@
             <div class="window-main">
 
               <div class="window-main-header">
-                <div class="status-dot"></div>
-                <span class="status-label">Open to Work &amp; New Projects</span>
+                <span class="hero-status-pill"><span class="status-dot"></span><span class="status-label">Open to Work</span></span>
+                <span class="hero-meta-pill">New Projects Welcome</span>
               </div>
 
               <h1 class="hero-name">Dharmik Gohil</h1>
 
               <p class="hero-role"><span id="typing-text" class="typing-cursor"></span></p>
 
+              <p class="hero-intro">Crafting immersive games, decentralized apps &amp; full&#8209;stack web experiences — turning ideas into reality with code.</p>
+
               <div class="skill-tags">
-                <span class="skill-tag">Unity 3D</span>
-                <span class="skill-tag">XR / VR / AR</span>
+                <span class="skill-tag">Unity</span>
                 <span class="skill-tag">C#</span>
-                <span class="skill-tag">Multiplayer</span>
-                <span class="skill-tag">Mobile Games</span>
-                <span class="skill-tag">Game Design</span>
+                <span class="skill-tag">React</span>
+                <span class="skill-tag">Blockchain</span>
+                <span class="skill-tag">VR / AR</span>
+                <span class="skill-tag">Node.js</span>
               </div>
 
               <div class="hero-buttons">
                 <a href="#about"       class="mac-btn mac-btn-primary"><i class="bi bi-person-circle me-2"></i>About Me</a>
                 <a href="contact.html" class="mac-btn mac-btn-secondary"><i class="bi bi-envelope me-2"></i>Contact</a>
+                <a href="assets/img/Dharmik Gohil Resume.pdf" class="mac-btn mac-btn-secondary" download><i class="bi bi-download me-2"></i>Resume</a>
               </div>
 
               <div class="hero-stats">
                 <div class="stat">
-                  <span class="stat-num">10+</span>
-                  <span class="stat-label">Games Built</span>
+                  <span class="stat-num" data-count="15">0</span>
+                  <span class="stat-label">Projects</span>
                 </div>
                 <div class="stat">
-                  <span class="stat-num">3+</span>
-                  <span class="stat-label">Years Exp.</span>
+                  <span class="stat-num" data-count="6">0</span>
+                  <span class="stat-label">Games</span>
                 </div>
                 <div class="stat">
-                  <span class="stat-num">100%</span>
-                  <span class="stat-label">Satisfaction</span>
+                  <span class="stat-num" data-count="3">0</span>
+                  <span class="stat-label">Years Exp</span>
                 </div>
-                
               </div>
 
             </div><!-- end .window-main -->
@@ -4676,7 +4863,6 @@
                 <meta itemprop="height" content="1200">
                 <meta itemprop="representativeOfPage" content="true">
               </div>
-              <div class="profile-badge"><i class="bi bi-check-circle-fill"></i> Available for Work</div>
               <div class="sidebar-links">
                 <a href="https://github.com/DharmikGohil013"          target="_blank" title="GitHub"><i class="bi bi-github"></i></a>
                 <a href="https://www.linkedin.com/in/dharmikgohil086/" target="_blank" title="LinkedIn"><i class="bi bi-linkedin"></i></a>
@@ -4750,15 +4936,15 @@
                   <i class="bi bi-globe"></i>
                   <span>Learn Link</span>
                 </a>
-                <a href="http://gdgs.dharmikgohil.art/" target="_blank" class="game-dropdown-item">
+                <a href="https://gdgs.dharmikgohil.art/" target="_blank" rel="noopener noreferrer" class="game-dropdown-item">
                   <i class="bi bi-globe"></i>
                   <span>GDGS Games</span>
                 </a>
-                <a href="http://flipcart.dharmikgohil.art/" target="_blank" class="game-dropdown-item">
+                <a href="https://flipcart.dharmikgohil.art/" target="_blank" rel="noopener noreferrer" class="game-dropdown-item">
                   <i class="bi bi-globe"></i>
                   <span>Flipkart Clone</span>
                 </a>
-                <a href="http://krishna.dharmikgohil.art/" target="_blank" class="game-dropdown-item">
+                <a href="https://krishna.dharmikgohil.art/" target="_blank" rel="noopener noreferrer" class="game-dropdown-item">
                   <i class="bi bi-globe"></i>
                   <span>Krishna Construction</span>
                 </a>
@@ -5508,7 +5694,7 @@
             <div class="map-container mt-4">
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3719.159614682177!2d72.84219461488592!3d21.22623198588668!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be04f3b4e8e0c47%3A0x5e5c5e5e5e5e5e5e!2sKatargam%2C%20Surat%2C%20Gujarat%2C%20India!5e0!3m2!1sen!2sin!4v1698765432100!5m2!1sen!2sin"
-                width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy" title="Google Maps - Katargam, Surat, Gujarat, India"></iframe>
             </div>
           </div>
           <div class="col-lg-6">
@@ -5551,13 +5737,13 @@
         </p>
       </div>
       <div class="social-links d-flex" style="margin-top: 20px;">
-        <a href="https://github.com/DharmikGohil013" style="margin: 0 10px;"><i class="bi bi-github"></i></a>
-        <a href="https://www.linkedin.com/in/dharmikgohil086/" style="margin: 0 10px;"><i
+        <a href="https://github.com/DharmikGohil013" target="_blank" rel="noopener noreferrer" aria-label="GitHub" style="margin: 0 10px;"><i class="bi bi-github"></i></a>
+        <a href="https://www.linkedin.com/in/dharmikgohil086/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" style="margin: 0 10px;"><i
             class="bi bi-linkedin"></i></a>
-        <a href="https://www.instagram.com/dharmik.086/?next=%2F" style="margin: 0 10px;"><i
+        <a href="https://www.instagram.com/dharmik.086/?next=%2F" target="_blank" rel="noopener noreferrer" aria-label="Instagram" style="margin: 0 10px;"><i
             class="bi bi-instagram"></i></a>
-        <a href="https://x.com/Dharmik086" style="margin: 0 10px;"><i class="bi bi-twitter"></i></a>
-        <a href="https://play.google.com/store/apps/details?id=com.dharmikgohilfun.crossout" style="margin: 0 10px;"><i
+        <a href="https://x.com/Dharmik086" target="_blank" rel="noopener noreferrer" aria-label="Twitter" style="margin: 0 10px;"><i class="bi bi-twitter"></i></a>
+        <a href="https://play.google.com/store/apps/details?id=com.dharmikgohilfun.crossout" target="_blank" rel="noopener noreferrer" aria-label="Google Play" style="margin: 0 10px;"><i
             class="bi bi-google-play"></i></a>
       </div>
     </div>
@@ -5602,10 +5788,12 @@
       // Smooth scrolling for anchor links
       document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
-          e.preventDefault();
-          document.querySelector(this.getAttribute('href')).scrollIntoView({
-            behavior: 'smooth'
-          });
+          const target = this.getAttribute('href');
+          if (target && target !== '#') {
+            e.preventDefault();
+            const el = document.querySelector(target);
+            if (el) el.scrollIntoView({ behavior: 'smooth' });
+          }
         });
       });
 
@@ -5625,11 +5813,6 @@
           notification.classList.add("active");
         }, 1000);
       }
-
-      AOS.init({
-        duration: 1000,
-        once: true
-      });
 
       // Simple CSS Grid Filter (no Isotope)
       const filterButtons = document.querySelectorAll('.filter-btn');
@@ -5669,204 +5852,205 @@
     });
   </script>
 
-  <!-- Image Cache System for Offline/Network Issues -->
+  <!-- ============================================
+       SMART IMAGE LOADER — Skeleton Placeholder + Retry + Offline Cache
+       ============================================ -->
+  <style>
+    /* Skeleton placeholder for images */
+    .img-skeleton-wrap {
+      position: relative;
+      overflow: hidden;
+      background: linear-gradient(135deg, rgba(30,35,50,1) 0%, rgba(20,24,38,1) 100%);
+      border-radius: inherit;
+    }
+    .img-skeleton-wrap::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(90deg,
+        transparent 0%,
+        rgba(255,255,255,0.04) 40%,
+        rgba(255,255,255,0.08) 50%,
+        rgba(255,255,255,0.04) 60%,
+        transparent 100%);
+      background-size: 200% 100%;
+      animation: shimmer 1.8s ease-in-out infinite;
+      z-index: 1;
+      pointer-events: none;
+    }
+    .img-skeleton-wrap.loaded::before { display: none; }
+    .img-skeleton-wrap .skeleton-icon {
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      color: rgba(255,255,255,0.12);
+      font-size: 32px;
+      z-index: 1;
+      pointer-events: none;
+      transition: opacity 0.3s;
+    }
+    .img-skeleton-wrap.loaded .skeleton-icon { opacity: 0; }
+    .img-skeleton-wrap img {
+      opacity: 0;
+      transition: opacity 0.5s ease;
+    }
+    .img-skeleton-wrap.loaded img { opacity: 1; }
+
+    /* Error state */
+    .img-skeleton-wrap.error::before { display: none; }
+    .img-skeleton-wrap.error .skeleton-icon {
+      color: rgba(255,107,107,0.35);
+      font-size: 28px;
+      cursor: pointer;
+    }
+    .img-skeleton-wrap.error .skeleton-icon::after {
+      content: 'Tap to retry';
+      display: block;
+      font-family: 'Inter', sans-serif;
+      font-size: 10px;
+      margin-top: 6px;
+      color: rgba(255,255,255,0.25);
+      white-space: nowrap;
+    }
+
+    @keyframes shimmer {
+      0% { background-position: -200% 0; }
+      100% { background-position: 200% 0; }
+    }
+
+    /* Offline banner */
+    .network-status-bar {
+      position: fixed;
+      top: 32px;
+      left: 0; right: 0;
+      z-index: 9997;
+      text-align: center;
+      padding: 6px 16px;
+      font-family: 'Inter', sans-serif;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.3px;
+      transform: translateY(-100%);
+      transition: transform 0.4s cubic-bezier(.4,0,.2,1);
+    }
+    .network-status-bar.visible { transform: translateY(0); }
+    .network-status-bar.offline {
+      background: rgba(255,87,87,0.92);
+      backdrop-filter: blur(10px);
+      color: #fff;
+    }
+    .network-status-bar.online {
+      background: rgba(48,209,88,0.92);
+      backdrop-filter: blur(10px);
+      color: #fff;
+    }
+  </style>
+
   <script>
-    // Critical images to cache in localStorage
-    const criticalImages = [
-      'assets/img/dlogo.png',
-      'assets/img/dharmik-profile-photo-2026.jpg',
-      'assets/img/indian-developer-community-logo.png',
-      'assets/img/portfolio/mavericks-battleground-thumbnail.jpg',
-      'assets/img/masonry-portfolio/dharmik-gohil-unity-game-development-project.png',
-      'assets/img/masonry-portfolio/dharmik-gohil-mario-clone-game-project.png'
-    ];
+  (function() {
+    'use strict';
 
-    // Function to convert image to base64 and store in localStorage
-    function cacheImageToLocalStorage(imageSrc) {
-      // Check if already cached
-      const cachedImage = localStorage.getItem('img_cache_' + imageSrc);
-      if (cachedImage) {
-        return; // Already cached
-      }
+    // --- Network Status Banner ---
+    var statusBar = document.createElement('div');
+    statusBar.className = 'network-status-bar';
+    document.body.appendChild(statusBar);
 
-      // Create temporary image element
-      const img = new Image();
-      img.crossOrigin = 'Anonymous';
-
-      img.onload = function () {
-        try {
-          // Create canvas to convert image to base64
-          const canvas = document.createElement('canvas');
-          canvas.width = img.width;
-          canvas.height = img.height;
-
-          const ctx = canvas.getContext('2d');
-          ctx.drawImage(img, 0, 0);
-
-          // Convert to base64
-          const dataURL = canvas.toDataURL('image/png');
-
-          // Store in localStorage (with size check)
-          try {
-            localStorage.setItem('img_cache_' + imageSrc, dataURL);
-            console.log('? Cached:', imageSrc);
-          } catch (e) {
-            if (e.name === 'QuotaExceededError') {
-              console.warn('?? localStorage quota exceeded for:', imageSrc);
-              // Clear old cache if needed
-              clearOldImageCache();
-            }
-          }
-        } catch (e) {
-          console.warn('?? Could not cache:', imageSrc, e);
-        }
-      };
-
-      img.onerror = function () {
-        console.warn('? Failed to load:', imageSrc);
-      };
-
-      img.src = imageSrc;
+    function showNetworkStatus(isOnline) {
+      statusBar.className = 'network-status-bar visible ' + (isOnline ? 'online' : 'offline');
+      statusBar.textContent = isOnline ? '\u2713 Back online' : '\u26A0 You are offline \u2014 cached images shown';
+      setTimeout(function() { statusBar.classList.remove('visible'); }, isOnline ? 2500 : 5000);
     }
 
-    // Function to load cached images when offline
-    function loadCachedImages() {
-      document.querySelectorAll('img').forEach(img => {
-        const src = img.getAttribute('src');
-        if (src) {
-          const cachedImage = localStorage.getItem('img_cache_' + src);
-
-          // If cached version exists and original fails to load
-          img.onerror = function () {
-            if (cachedImage) {
-              console.log('?? Loading from cache:', src);
-              img.src = cachedImage;
-              img.style.opacity = '1';
-            } else {
-              // Show placeholder if no cache
-              img.style.opacity = '0.3';
-              img.alt = '?? ' + (img.alt || 'Image unavailable');
-            }
-          };
-
-          // Check if online, if not use cached immediately
-          if (!navigator.onLine && cachedImage) {
-            img.src = cachedImage;
-          }
-        }
+    window.addEventListener('offline', function() { showNetworkStatus(false); });
+    window.addEventListener('online', function() {
+      showNetworkStatus(true);
+      // Retry all error images when back online
+      document.querySelectorAll('.img-skeleton-wrap.error').forEach(function(wrap) {
+        var img = wrap.querySelector('img');
+        if (img) retryImage(img, wrap);
       });
-    }
-
-    // Clear old image cache (keep only critical images)
-    function clearOldImageCache() {
-      const keys = Object.keys(localStorage);
-      keys.forEach(key => {
-        if (key.startsWith('img_cache_')) {
-          const imagePath = key.replace('img_cache_', '');
-          if (!criticalImages.includes(imagePath)) {
-            localStorage.removeItem(key);
-            console.log('??? Cleared old cache:', imagePath);
-          }
-        }
-      });
-    }
-
-    // Initialize caching system
-    document.addEventListener('DOMContentLoaded', function () {
-      // Load cached images first (for instant display)
-      loadCachedImages();
-
-      // Cache critical images in background
-      setTimeout(() => {
-        criticalImages.forEach(imageSrc => {
-          cacheImageToLocalStorage(imageSrc);
-        });
-      }, 2000); // Wait 2 seconds after page load to avoid blocking
-
-      // Listen for online/offline events
-      window.addEventListener('offline', function () {
-        console.log('?? Network offline - using cached images');
-        loadCachedImages();
-
-        // Show notification
-        const notification = document.createElement('div');
-        notification.style.cssText = `
-        position: fixed;
-        top: 80px;
-        right: 20px;
-        background: rgba(255, 107, 107, 0.95);
-        color: white;
-        padding: 15px 20px;
-        border-radius: 10px;
-        box-shadow: 0 5px 20px rgba(0,0,0,0.3);
-        z-index: 10000;
-        font-family: 'JetBrains Mono', monospace;
-        animation: slideIn 0.5s ease-out;
-      `;
-        notification.innerHTML = '?? Offline Mode - Using Cached Images';
-        document.body.appendChild(notification);
-
-        setTimeout(() => {
-          notification.style.transition = 'opacity 0.5s';
-          notification.style.opacity = '0';
-          setTimeout(() => notification.remove(), 500);
-        }, 5000);
-      });
-
-      window.addEventListener('online', function () {
-        console.log('?? Network online - updating cache');
-
-        // Show notification
-        const notification = document.createElement('div');
-        notification.style.cssText = `
-        position: fixed;
-        top: 80px;
-        right: 20px;
-        background: rgba(81, 207, 102, 0.95);
-        color: white;
-        padding: 15px 20px;
-        border-radius: 10px;
-        box-shadow: 0 5px 20px rgba(0,0,0,0.3);
-        z-index: 10000;
-        font-family: 'JetBrains Mono', monospace;
-        animation: slideIn 0.5s ease-out;
-      `;
-        notification.innerHTML = '?? Back Online - Refreshing Content';
-        document.body.appendChild(notification);
-
-        setTimeout(() => {
-          notification.style.transition = 'opacity 0.5s';
-          notification.style.opacity = '0';
-          setTimeout(() => notification.remove(), 500);
-        }, 3000);
-
-        // Refresh cache
-        criticalImages.forEach(imageSrc => {
-          cacheImageToLocalStorage(imageSrc);
-        });
-      });
-
-      // Check network status on page load
-      if (!navigator.onLine) {
-        console.log('?? Starting in offline mode');
-      }
     });
 
-    // Add slide-in animation
-    const animStyle = document.createElement('style');
-    animStyle.textContent = `
-    @keyframes slideIn {
-      from {
-        transform: translateX(100%);
-        opacity: 0;
-      }
-      to {
-        transform: translateX(0);
-        opacity: 1;
-      }
+    // --- Critical images to pre-cache ---
+    var criticalImageList = [
+      'assets/img/dharmik-profile-photo-2026.jpg',
+      'assets/img/favicon.png',
+      'assets/img/portfolio/mavericks-battleground-thumbnail.jpg'
+    ];
+
+    // --- Wrap all images with skeleton loader ---
+    function wrapImagesWithSkeleton() {
+      document.querySelectorAll('img:not(.skeleton-processed)').forEach(function(img) {
+        img.classList.add('skeleton-processed');
+
+        // Skip tiny images / icons / already-loaded
+        if (img.complete && img.naturalWidth > 0) return;
+        // Skip images inside an existing wrapper
+        var parent = img.parentElement;
+        if (parent && parent.classList.contains('img-skeleton-wrap')) return;
+
+        var wrapper = document.createElement('div');
+        wrapper.className = 'img-skeleton-wrap';
+
+        var icon = document.createElement('i');
+        icon.className = 'bi bi-image skeleton-icon';
+        wrapper.appendChild(icon);
+
+        parent.insertBefore(wrapper, img);
+        wrapper.appendChild(img);
+
+        // On successful load
+        img.addEventListener('load', function onLoad() {
+          wrapper.classList.add('loaded');
+          wrapper.classList.remove('error');
+        });
+
+        // On error
+        img.addEventListener('error', function onError() {
+          wrapper.classList.add('error');
+          wrapper.classList.remove('loaded');
+          icon.className = 'bi bi-exclamation-triangle skeleton-icon';
+        });
+
+        // Retry on click when errored
+        wrapper.addEventListener('click', function() {
+          if (wrapper.classList.contains('error')) {
+            retryImage(img, wrapper);
+          }
+        });
+      });
     }
-  `;
-    document.head.appendChild(animStyle);
+
+    function retryImage(img, wrapper) {
+      wrapper.classList.remove('error');
+      wrapper.querySelector('.skeleton-icon').className = 'bi bi-image skeleton-icon';
+      var src = img.dataset.originalSrc || img.getAttribute('src');
+      if (!img.dataset.originalSrc) img.dataset.originalSrc = src;
+      img.removeAttribute('src');
+      img.src = src + (src.indexOf('?') > -1 ? '&' : '?') + '_r=' + Date.now();
+    }
+
+    // --- Init ---
+    document.addEventListener('DOMContentLoaded', function() {
+      wrapImagesWithSkeleton();
+
+      // Watch for dynamically added images
+      var bodyObserver = new MutationObserver(function(mutations) {
+        var hasNewImages = mutations.some(function(m) {
+          return Array.from(m.addedNodes).some(function(n) {
+            return n.nodeName === 'IMG' || (n.querySelectorAll && n.querySelectorAll('img').length > 0);
+          });
+        });
+        if (hasNewImages) wrapImagesWithSkeleton();
+      });
+      bodyObserver.observe(document.body, { childList: true, subtree: true });
+    });
+
+    // Show offline status on load if already offline
+    if (!navigator.onLine) {
+      document.addEventListener('DOMContentLoaded', function() { showNetworkStatus(false); });
+    }
+  })();
   </script>
 
   <!-- Logo Loop Technology Showcase -->
@@ -6140,6 +6324,125 @@
     }
 
     document.addEventListener('DOMContentLoaded', function() { setTimeout(typeRole, 700); });
+  </script>
+
+  <!-- Hero Particles Canvas -->
+  <script>
+  (function() {
+    'use strict';
+    const canvas = document.getElementById('hero-particles-canvas');
+    if (!canvas) return;
+    const ctx = canvas.getContext('2d');
+    let W, H, particles = [], mouse = { x: -999, y: -999 }, animId;
+
+    function resize() {
+      W = canvas.width = window.innerWidth;
+      H = canvas.height = window.innerHeight;
+    }
+
+    function createParticles() {
+      particles = [];
+      const count = Math.min(60, Math.floor(W / 25));
+      for (let i = 0; i < count; i++) {
+        particles.push({
+          x: Math.random() * W,
+          y: Math.random() * H,
+          vx: (Math.random() - 0.5) * 0.4,
+          vy: (Math.random() - 0.5) * 0.4,
+          size: Math.random() * 2 + 0.5,
+          opacity: Math.random() * 0.4 + 0.1,
+          color: ['rgba(245,180,97,', 'rgba(99,102,241,', 'rgba(10,132,255,', 'rgba(255,255,255,'][Math.floor(Math.random() * 4)]
+        });
+      }
+    }
+
+    function animate() {
+      ctx.clearRect(0, 0, W, H);
+      particles.forEach(p => {
+        // Mouse repulsion
+        const dx = p.x - mouse.x, dy = p.y - mouse.y;
+        const dist = Math.sqrt(dx * dx + dy * dy);
+        if (dist < 120) {
+          const force = (120 - dist) / 120 * 0.8;
+          p.vx += (dx / dist) * force;
+          p.vy += (dy / dist) * force;
+        }
+        p.vx *= 0.98; p.vy *= 0.98;
+        p.x += p.vx; p.y += p.vy;
+        if (p.x < 0) p.x = W; if (p.x > W) p.x = 0;
+        if (p.y < 0) p.y = H; if (p.y > H) p.y = 0;
+
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+        ctx.fillStyle = p.color + p.opacity + ')';
+        ctx.fill();
+      });
+
+      // Connection lines
+      for (let i = 0; i < particles.length; i++) {
+        for (let j = i + 1; j < particles.length; j++) {
+          const dx = particles[i].x - particles[j].x;
+          const dy = particles[i].y - particles[j].y;
+          const dist = Math.sqrt(dx * dx + dy * dy);
+          if (dist < 100) {
+            ctx.beginPath();
+            ctx.moveTo(particles[i].x, particles[i].y);
+            ctx.lineTo(particles[j].x, particles[j].y);
+            ctx.strokeStyle = 'rgba(245,180,97,' + (0.06 * (1 - dist / 100)) + ')';
+            ctx.lineWidth = 0.5;
+            ctx.stroke();
+          }
+        }
+      }
+      animId = requestAnimationFrame(animate);
+    }
+
+    // Only run when hero is visible
+    const heroEl = document.getElementById('hero');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) { if (!animId) animate(); }
+        else { cancelAnimationFrame(animId); animId = null; }
+      });
+    }, { threshold: 0.1 });
+    if (heroEl) observer.observe(heroEl);
+
+    canvas.addEventListener('mousemove', e => { mouse.x = e.clientX; mouse.y = e.clientY; });
+    canvas.addEventListener('mouseleave', () => { mouse.x = -999; mouse.y = -999; });
+    window.addEventListener('resize', () => { resize(); createParticles(); });
+
+    resize();
+    createParticles();
+  })();
+  </script>
+
+  <!-- Hero Stats Counter Animation -->
+  <script>
+  (function() {
+    'use strict';
+    function animateCounters() {
+      document.querySelectorAll('.hero-stats .stat-num[data-count]').forEach(el => {
+        const target = parseInt(el.dataset.count, 10);
+        const duration = 2000;
+        const start = performance.now();
+        function tick(now) {
+          const elapsed = now - start;
+          const progress = Math.min(elapsed / duration, 1);
+          const eased = 1 - Math.pow(1 - progress, 3);
+          el.textContent = Math.round(eased * target) + '+';
+          if (progress < 1) requestAnimationFrame(tick);
+        }
+        requestAnimationFrame(tick);
+      });
+    }
+    const heroStats = document.querySelector('.hero-stats');
+    if (heroStats) {
+      const obs = new IntersectionObserver(entries => {
+        entries.forEach(entry => { if (entry.isIntersecting) { animateCounters(); obs.disconnect(); } });
+      }, { threshold: 0.5 });
+      obs.observe(heroStats);
+    }
+  })();
   </script>
 
   <!-- Add Devicon Library for Technology Icons -->
