@@ -529,142 +529,33 @@
       align-items: center;
       justify-content: center;
       overflow: hidden;
-      background: #050508;
+      background: linear-gradient(160deg, #0a0e1a 0%, #111827 50%, #0a0e1a 100%);
       padding: 0;
     }
 
-    /* Animated Mesh Gradient Background */
+    /* Subtle static accent glow — no animation */
     .hero-gradient-bg {
       position: absolute;
       inset: 0;
-      width: 100%;
-      height: 100%;
       z-index: 0;
       pointer-events: none;
-      overflow: hidden;
-    }
-
-    .hero-gradient-bg::before {
-      content: '';
-      position: absolute;
-      top: -50%;
-      left: -50%;
-      width: 200%;
-      height: 200%;
       background:
-        conic-gradient(from 0deg at 30% 70%, #0f172a, #1e1b4b 25%, #0f172a 50%),
-        conic-gradient(from 180deg at 70% 30%, #0f172a, #164e63 25%, #0f172a 50%);
-      background-blend-mode: screen;
-      animation: heroMeshRotate 30s linear infinite;
-      opacity: 0.6;
+        radial-gradient(ellipse 60% 50% at 25% 75%, rgba(245,180,97,0.06) 0%, transparent 60%),
+        radial-gradient(ellipse 50% 45% at 80% 25%, rgba(245,180,97,0.04) 0%, transparent 55%);
     }
 
-    .hero-gradient-bg::after {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background:
-        radial-gradient(ellipse 50% 40% at 20% 80%, rgba(245,180,97,0.12) 0%, transparent 55%),
-        radial-gradient(ellipse 45% 50% at 80% 20%, rgba(99,102,241,0.15) 0%, transparent 55%),
-        radial-gradient(ellipse 60% 40% at 50% 50%, rgba(10,132,255,0.06) 0%, transparent 60%);
-      animation: heroPulse 8s ease-in-out infinite alternate;
-    }
-
-    @keyframes heroMeshRotate {
-      0% { transform: rotate(0deg); }
-      100% { transform: rotate(360deg); }
-    }
-
-    @keyframes heroPulse {
-      0% { opacity: 0.6; }
-      100% { opacity: 1; }
-    }
-
-    /* Overlay with grain & depth */
+    /* Overlay for depth */
     #hero-video-overlay {
       position: absolute;
       inset: 0;
-      background:
-        linear-gradient(180deg, rgba(5,5,8,0.4) 0%, rgba(5,5,8,0.1) 40%, rgba(5,5,8,0.5) 100%);
+      background: linear-gradient(180deg, rgba(10,14,26,0.3) 0%, transparent 40%, rgba(10,14,26,0.4) 100%);
       z-index: 1;
       pointer-events: none;
     }
 
-    /* Floating particle canvas */
-    #hero-particles-canvas {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      z-index: 2;
-      pointer-events: none;
-    }
-
-    /* Star field */
-    #hero::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background-image:
-        radial-gradient(1.5px 1.5px at 12% 18%, rgba(255,255,255,0.65) 0%, transparent 100%),
-        radial-gradient(1px 1px at 38% 8%, rgba(255,255,255,0.5) 0%, transparent 100%),
-        radial-gradient(1px 1px at 72% 30%, rgba(255,255,255,0.55) 0%, transparent 100%),
-        radial-gradient(1.5px 1.5px at 88% 65%, rgba(255,255,255,0.4) 0%, transparent 100%),
-        radial-gradient(1px 1px at 25% 72%, rgba(255,255,255,0.45) 0%, transparent 100%),
-        radial-gradient(2px 2px at 62% 88%, rgba(255,255,255,0.3) 0%, transparent 100%),
-        radial-gradient(1px 1px at 91% 12%, rgba(255,255,255,0.55) 0%, transparent 100%),
-        radial-gradient(1px 1px at 8% 90%, rgba(255,255,255,0.35) 0%, transparent 100%),
-        radial-gradient(1px 1px at 55% 55%, rgba(255,255,255,0.2) 0%, transparent 100%),
-        radial-gradient(1.5px 1.5px at 44% 40%, rgba(191,90,242,0.4) 0%, transparent 100%);
-      pointer-events: none;
-      z-index: 2;
-      animation: starsTwinkle 6s ease-in-out infinite alternate;
-    }
-
-    @keyframes starsTwinkle {
-      0% { opacity: 0.5; }
-      100% { opacity: 1; }
-    }
-
-    /* Ambient floating orbs */
-    .hero-orb {
-      position: absolute;
-      border-radius: 50%;
-      filter: blur(80px);
-      pointer-events: none;
-      z-index: 1;
-      opacity: 0;
-      animation: orbFloat 20s ease-in-out infinite, orbFadeIn 2s ease forwards;
-    }
-    .hero-orb-1 {
-      width: 400px; height: 400px;
-      background: rgba(245,180,97,0.15);
-      top: 10%; left: -5%;
-      animation-delay: 0s;
-    }
-    .hero-orb-2 {
-      width: 350px; height: 350px;
-      background: rgba(99,102,241,0.18);
-      bottom: 5%; right: -8%;
-      animation-delay: 5s;
-    }
-    .hero-orb-3 {
-      width: 250px; height: 250px;
-      background: rgba(10,132,255,0.12);
-      top: 50%; left: 40%;
-      animation-delay: 10s;
-    }
-
-    @keyframes orbFloat {
-      0%, 100% { transform: translate(0, 0) scale(1); }
-      25% { transform: translate(30px, -20px) scale(1.05); }
-      50% { transform: translate(-20px, 30px) scale(0.95); }
-      75% { transform: translate(15px, 15px) scale(1.02); }
-    }
-
-    @keyframes orbFadeIn {
-      to { opacity: 1; }
-    }
+    /* Hidden — no longer used */
+    #hero-particles-canvas { display: none; }
+    .hero-orb { display: none; }
 
     /* macOS Menu Bar */
     .macos-menubar {
@@ -763,26 +654,21 @@
       justify-content: center;
       width: 100%;
       min-height: 100vh;
-      padding: 60px 20px 110px;
+      padding: 42px 14px 80px;
     }
 
     /* Frosted Glass Window */
     .macos-window {
       width: 100%;
-      max-width: 960px;
-      background:
-        radial-gradient(circle at 10% 20%, rgba(245,180,97,0.08), transparent 40%),
-        radial-gradient(circle at 90% 80%, rgba(99,102,241,0.10), transparent 35%),
-        linear-gradient(180deg, rgba(18,20,32,0.92), rgba(10,12,20,0.88));
-      backdrop-filter: blur(40px) saturate(1.8);
-      -webkit-backdrop-filter: blur(40px) saturate(1.8);
-      border: 1px solid rgba(255,255,255,0.10);
+      max-width: 780px;
+      background: linear-gradient(180deg, rgba(17,19,30,0.95), rgba(10,12,20,0.92));
+      backdrop-filter: blur(40px) saturate(1.6);
+      -webkit-backdrop-filter: blur(40px) saturate(1.6);
+      border: 1px solid rgba(255,255,255,0.08);
       border-radius: 24px;
       box-shadow:
-        0 0 0 1px rgba(255,255,255,0.04),
-        0 40px 80px -20px rgba(0,0,0,0.7),
-        0 0 80px rgba(99,102,241,0.06),
-        0 0 160px rgba(245,180,97,0.04);
+        0 0 0 1px rgba(255,255,255,0.03),
+        0 30px 60px -15px rgba(0,0,0,0.6);
       overflow: hidden;
       transition: transform 0.4s cubic-bezier(.4,0,.2,1), box-shadow 0.4s ease;
       animation: windowReveal 1s cubic-bezier(.16,1,.3,1) 0.3s both;
@@ -800,36 +686,34 @@
     }
 
     .macos-window:hover {
-      transform: translateY(-4px);
+      transform: translateY(-3px);
       box-shadow:
-        0 0 0 1px rgba(255,255,255,0.08),
-        0 50px 100px -20px rgba(0,0,0,0.8),
-        0 0 100px rgba(99,102,241,0.10),
-        0 0 200px rgba(245,180,97,0.06);
+        0 0 0 1px rgba(255,255,255,0.06),
+        0 40px 80px -20px rgba(0,0,0,0.7);
     }
 
     /* Window Title Bar */
     .window-titlebar {
       background: rgba(255,255,255,0.04);
       border-bottom: 1px solid rgba(255,255,255,0.07);
-      padding: 14px 22px;
+      padding: 10px 16px;
       display: flex;
       align-items: center;
-      gap: 14px;
+      gap: 12px;
       user-select: none;
     }
 
     /* Traffic Light Buttons */
     .window-controls {
       display: flex;
-      gap: 8px;
+      gap: 6px;
       align-items: center;
       flex-shrink: 0;
     }
 
     .window-controls span {
-      width: 13px;
-      height: 13px;
+      width: 11px;
+      height: 11px;
       border-radius: 50%;
       display: inline-block;
       transition: filter 0.2s, transform 0.2s;
@@ -849,7 +733,7 @@
       flex: 1;
       text-align: center;
       font-family: 'Inter', -apple-system, sans-serif;
-      font-size: 12.5px;
+      font-size: 11.5px;
       font-weight: 500;
       color: rgba(255,255,255,0.56);
       letter-spacing: 0.35px;
@@ -859,9 +743,9 @@
     .window-content {
       display: flex;
       align-items: center;
-      min-height: 420px;
-      padding: 56px 46px 42px;
-      gap: 42px;
+      min-height: 320px;
+      padding: 30px 24px 24px;
+      gap: 22px;
     }
 
     /* Left: Text Content */
@@ -870,63 +754,34 @@
       display: flex;
       flex-direction: column;
       justify-content: center;
-      gap: 14px;
+      gap: 7px;
       min-width: 0;
     }
 
     /* Right: Photo Area */
     .window-photo-area {
       flex-shrink: 0;
-      width: 280px;
+      width: 188px;
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 12px;
+      gap: 7px;
     }
 
     .hero-photo-frame {
-      width: 250px;
-      height: 312px;
-      border-radius: 30px;
+      width: 168px;
+      height: 210px;
+      border-radius: 20px;
       overflow: hidden;
-      border: 2px solid transparent;
-      background:
-        linear-gradient(180deg, rgba(18,20,32,1), rgba(10,12,20,1)) padding-box,
-        linear-gradient(135deg, rgba(245,180,97,0.5), rgba(99,102,241,0.5), rgba(10,132,255,0.5)) border-box;
-      box-shadow:
-        0 0 0 1px rgba(255,255,255,0.06),
-        0 20px 50px rgba(0,0,0,0.5),
-        0 0 60px rgba(245,180,97,0.12),
-        0 0 100px rgba(99,102,241,0.08);
+      border: 2px solid rgba(245,180,97,0.25);
+      box-shadow: 0 10px 24px rgba(0,0,0,0.34);
       flex-shrink: 0;
       transition: transform 0.4s cubic-bezier(.4,0,.2,1), box-shadow 0.4s ease;
-      animation: photoFrameGlow 4s ease-in-out infinite alternate;
-    }
-
-    @keyframes photoFrameGlow {
-      0% {
-        box-shadow:
-          0 0 0 1px rgba(255,255,255,0.06),
-          0 20px 50px rgba(0,0,0,0.5),
-          0 0 40px rgba(245,180,97,0.10),
-          0 0 80px rgba(99,102,241,0.06);
-      }
-      100% {
-        box-shadow:
-          0 0 0 1px rgba(255,255,255,0.08),
-          0 20px 50px rgba(0,0,0,0.5),
-          0 0 80px rgba(245,180,97,0.20),
-          0 0 120px rgba(99,102,241,0.12);
-      }
     }
 
     .hero-photo-frame:hover {
-      transform: scale(1.05) translateY(-6px);
-      box-shadow:
-        0 0 0 4px rgba(245,180,97,0.25),
-        0 0 60px rgba(245,180,97,0.35),
-        0 0 100px rgba(99,102,241,0.20),
-        0 30px 70px rgba(0,0,0,0.6);
+      transform: scale(1.03) translateY(-4px);
+      box-shadow: 0 20px 50px rgba(0,0,0,0.5);
     }
 
     .hero-photo {
@@ -950,9 +805,9 @@
       border: 1px solid rgba(48,209,88,0.28);
       color: #78e08f;
       font-family: 'Inter', sans-serif;
-      font-size: 11px;
+      font-size: 9px;
       font-weight: 600;
-      padding: 7px 13px;
+      padding: 5px 10px;
       border-radius: 999px;
       white-space: nowrap;
       backdrop-filter: blur(12px);
@@ -968,39 +823,39 @@
     }
 
     .sidebar-links a {
-      width: 34px;
-      height: 34px;
+      width: 28px;
+      height: 28px;
       display: flex;
       align-items: center;
       justify-content: center;
       background: rgba(255,255,255,0.06);
       border: 1px solid rgba(255,255,255,0.09);
-      border-radius: 9px;
+      border-radius: 8px;
       color: rgba(255,255,255,0.65);
-      font-size: 14px;
+      font-size: 11px;
       transition: all 0.2s;
       text-decoration: none;
     }
 
     .sidebar-links a:hover {
-      background: rgba(10,132,255,0.18);
-      border-color: rgba(10,132,255,0.45);
-      color: #0A84FF;
+      background: rgba(245,180,97,0.15);
+      border-color: rgba(245,180,97,0.35);
+      color: #F5B461;
       transform: translateY(-2px);
     }
 
     .window-main-header {
       display: flex;
       align-items: center;
-      gap: 10px;
+      gap: 7px;
       flex-wrap: wrap;
     }
 
     .hero-status-pill {
       display: inline-flex;
       align-items: center;
-      gap: 8px;
-      padding: 8px 14px;
+      gap: 7px;
+      padding: 5px 10px;
       border-radius: 999px;
       background: rgba(255,255,255,0.07);
       border: 1px solid rgba(255,255,255,0.10);
@@ -1012,13 +867,13 @@
     .hero-meta-pill {
       display: inline-flex;
       align-items: center;
-      padding: 8px 14px;
+      padding: 5px 10px;
       border-radius: 999px;
-      background: rgba(10,132,255,0.10);
-      border: 1px solid rgba(10,132,255,0.16);
+      background: rgba(245,180,97,0.08);
+      border: 1px solid rgba(245,180,97,0.16);
       color: rgba(255,255,255,0.78);
       font-family: 'Inter', sans-serif;
-      font-size: 11.5px;
+      font-size: 9px;
       font-weight: 600;
       letter-spacing: 0.3px;
     }
@@ -1040,56 +895,47 @@
 
     .status-label {
       font-family: 'Inter', sans-serif;
-      font-size: 11.5px;
+      font-size: 9px;
       font-weight: 600;
       color: rgba(255,255,255,0.68);
       text-transform: uppercase;
-      letter-spacing: 0.9px;
+      letter-spacing: 0.7px;
     }
 
     /* Override old h2 style for hero */
     .hero-name {
       font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif !important;
-      font-size: clamp(2.2rem, 4.8vw, 3.75rem) !important;
+      font-size: clamp(1.52rem, 3vw, 2.45rem) !important;
       font-weight: 800 !important;
-      background: linear-gradient(135deg, #ffffff 0%, #F5B461 50%, #6366F1 100%) !important;
-      background-size: 200% 200% !important;
-      -webkit-background-clip: text !important;
-      -webkit-text-fill-color: transparent !important;
-      background-clip: text !important;
-      animation: heroNameGradient 6s ease-in-out infinite !important;
-      letter-spacing: -1.5px !important;
-      line-height: 1.08 !important;
+      color: #ffffff !important;
+      -webkit-text-fill-color: #ffffff !important;
+      letter-spacing: -1px !important;
+      line-height: 1.05 !important;
       margin: 0 !important;
-    }
-
-    @keyframes heroNameGradient {
-      0%, 100% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
     }
 
     .hero-role {
       font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-      font-size: 0.98rem;
-      color: rgba(255,255,255,0.62);
+      font-size: 0.75rem;
+      color: #F5B461;
       margin: 0;
-      min-height: 1.5em;
-      letter-spacing: 0.2px;
+      min-height: 1.25em;
+      letter-spacing: 0.15px;
     }
 
     .hero-intro {
       margin: 0;
-      max-width: 560px;
+      max-width: 405px;
       font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-      font-size: 0.98rem;
-      line-height: 1.75;
-      color: rgba(255,255,255,0.74);
+      font-size: 0.78rem;
+      line-height: 1.45;
+      color: rgba(255,255,255,0.8);
     }
 
     .typing-cursor::after {
       content: '|';
       animation: blink 0.75s step-end infinite;
-      color: #0A84FF;
+      color: #F5B461;
       margin-left: 2px;
       font-weight: 300;
     }
@@ -1103,18 +949,18 @@
     .skill-tags {
       display: flex;
       flex-wrap: wrap;
-      gap: 9px;
-      margin-top: 2px;
+      gap: 7px;
+      margin-top: 0;
     }
 
     .skill-tag {
       display: inline-block;
-      padding: 8px 14px;
+      padding: 5px 9px;
       background: rgba(255,255,255,0.06);
       border: 1px solid rgba(255,255,255,0.10);
       border-radius: 999px;
       font-family: 'Inter', sans-serif;
-      font-size: 11.5px;
+      font-size: 9px;
       font-weight: 600;
       color: rgba(255,255,255,0.78);
       letter-spacing: 0.2px;
@@ -1124,8 +970,8 @@
     }
 
     .skill-tag:hover {
-      background: rgba(10,132,255,0.18);
-      border-color: rgba(10,132,255,0.30);
+      background: rgba(245,180,97,0.12);
+      border-color: rgba(245,180,97,0.25);
       color: #fff;
       transform: translateY(-1px);
     }
@@ -1133,18 +979,18 @@
     /* macOS-style Buttons */
     .hero-buttons {
       display: flex;
-      gap: 10px;
+      gap: 7px;
       flex-wrap: wrap;
-      margin-top: 8px;
+      margin-top: 4px;
     }
 
     .mac-btn {
       display: inline-flex;
       align-items: center;
-      padding: 11px 22px;
-      border-radius: 12px;
+      padding: 8px 13px;
+      border-radius: 9px;
       font-family: 'Inter', -apple-system, sans-serif;
-      font-size: 14px;
+      font-size: 11px;
       font-weight: 600;
       text-decoration: none;
       transition: all 0.2s cubic-bezier(.4,0,.2,1);
@@ -1155,15 +1001,15 @@
     }
 
     .mac-btn-primary {
-      background: linear-gradient(135deg, #F5B461, #e8953a);
+      background: #F5B461;
       color: #0a0e1a;
-      box-shadow: 0 8px 24px rgba(245,180,97,0.35), 0 0 40px rgba(245,180,97,0.10);
+      box-shadow: 0 4px 16px rgba(245,180,97,0.25);
     }
 
     .mac-btn-primary:hover {
-      background: linear-gradient(135deg, #f7c47a, #F5B461);
-      transform: translateY(-3px);
-      box-shadow: 0 14px 32px rgba(245,180,97,0.5), 0 0 60px rgba(245,180,97,0.15);
+      background: #f7c47a;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(245,180,97,0.35);
       color: #0a0e1a;
     }
 
@@ -1186,16 +1032,16 @@
     .hero-stats {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 12px;
-      margin-top: 10px;
+      gap: 8px;
+      margin-top: 6px;
     }
 
     .hero-stats .stat {
       display: flex;
       flex-direction: column;
-      gap: 4px;
-      padding: 14px 16px;
-      border-radius: 18px;
+      gap: 3px;
+      padding: 8px 10px;
+      border-radius: 12px;
       background: rgba(255,255,255,0.06);
       border: 1px solid rgba(255,255,255,0.10);
       backdrop-filter: blur(12px);
@@ -1204,22 +1050,19 @@
 
     .stat-num {
       font-family: 'Inter', sans-serif;
-      font-size: 1.7rem;
+      font-size: 1.1rem;
       font-weight: 800;
-      background: linear-gradient(135deg, #F5B461, #fff);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
+      color: #F5B461;
       line-height: 1;
-      letter-spacing: -0.8px;
+      letter-spacing: -0.5px;
     }
 
     .stat-label {
       font-family: 'Inter', sans-serif;
-      font-size: 10.5px;
-      color: rgba(255,255,255,0.5);
+      font-size: 9px;
+      color: rgba(255,255,255,0.6);
       text-transform: uppercase;
-      letter-spacing: 0.8px;
+      letter-spacing: 0.55px;
       font-weight: 500;
     }
 
@@ -1407,10 +1250,10 @@
 
     /* ===== HERO RESPONSIVE ===== */
     @media (max-width: 900px) {
-      .window-content { padding: 38px 28px 28px; gap: 24px; }
-      .window-photo-area { width: 220px; }
-      .hero-photo-frame { width: 200px; height: 250px; }
-      .hero-name { font-size: 2.2rem !important; }
+      .window-content { padding: 30px 22px 22px; gap: 18px; }
+      .window-photo-area { width: 186px; }
+      .hero-photo-frame { width: 164px; height: 205px; }
+      .hero-name { font-size: 1.75rem !important; }
     }
 
     @media (max-width: 768px) {
@@ -1431,10 +1274,6 @@
       .hero-intro { font-size: 0.9rem; }
       .floating-icons { display: none; }
       .macos-desktop { padding: 44px 12px 60px; min-height: 100vh; }
-      .hero-orb { filter: blur(60px); }
-      .hero-orb-1 { width: 250px; height: 250px; }
-      .hero-orb-2 { width: 200px; height: 200px; }
-      .hero-orb-3 { display: none; }
     }
 
     @media (max-width: 575px) {
@@ -4810,8 +4649,6 @@
 
               <p class="hero-role"><span id="typing-text" class="typing-cursor"></span></p>
 
-              <p class="hero-intro">Crafting immersive games, decentralized apps &amp; full&#8209;stack web experiences — turning ideas into reality with code.</p>
-
               <div class="skill-tags">
                 <span class="skill-tag">Unity</span>
                 <span class="skill-tag">C#</span>
@@ -6324,96 +6161,6 @@
     }
 
     document.addEventListener('DOMContentLoaded', function() { setTimeout(typeRole, 700); });
-  </script>
-
-  <!-- Hero Particles Canvas -->
-  <script>
-  (function() {
-    'use strict';
-    const canvas = document.getElementById('hero-particles-canvas');
-    if (!canvas) return;
-    const ctx = canvas.getContext('2d');
-    let W, H, particles = [], mouse = { x: -999, y: -999 }, animId;
-
-    function resize() {
-      W = canvas.width = window.innerWidth;
-      H = canvas.height = window.innerHeight;
-    }
-
-    function createParticles() {
-      particles = [];
-      const count = Math.min(60, Math.floor(W / 25));
-      for (let i = 0; i < count; i++) {
-        particles.push({
-          x: Math.random() * W,
-          y: Math.random() * H,
-          vx: (Math.random() - 0.5) * 0.4,
-          vy: (Math.random() - 0.5) * 0.4,
-          size: Math.random() * 2 + 0.5,
-          opacity: Math.random() * 0.4 + 0.1,
-          color: ['rgba(245,180,97,', 'rgba(99,102,241,', 'rgba(10,132,255,', 'rgba(255,255,255,'][Math.floor(Math.random() * 4)]
-        });
-      }
-    }
-
-    function animate() {
-      ctx.clearRect(0, 0, W, H);
-      particles.forEach(p => {
-        // Mouse repulsion
-        const dx = p.x - mouse.x, dy = p.y - mouse.y;
-        const dist = Math.sqrt(dx * dx + dy * dy);
-        if (dist < 120) {
-          const force = (120 - dist) / 120 * 0.8;
-          p.vx += (dx / dist) * force;
-          p.vy += (dy / dist) * force;
-        }
-        p.vx *= 0.98; p.vy *= 0.98;
-        p.x += p.vx; p.y += p.vy;
-        if (p.x < 0) p.x = W; if (p.x > W) p.x = 0;
-        if (p.y < 0) p.y = H; if (p.y > H) p.y = 0;
-
-        ctx.beginPath();
-        ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
-        ctx.fillStyle = p.color + p.opacity + ')';
-        ctx.fill();
-      });
-
-      // Connection lines
-      for (let i = 0; i < particles.length; i++) {
-        for (let j = i + 1; j < particles.length; j++) {
-          const dx = particles[i].x - particles[j].x;
-          const dy = particles[i].y - particles[j].y;
-          const dist = Math.sqrt(dx * dx + dy * dy);
-          if (dist < 100) {
-            ctx.beginPath();
-            ctx.moveTo(particles[i].x, particles[i].y);
-            ctx.lineTo(particles[j].x, particles[j].y);
-            ctx.strokeStyle = 'rgba(245,180,97,' + (0.06 * (1 - dist / 100)) + ')';
-            ctx.lineWidth = 0.5;
-            ctx.stroke();
-          }
-        }
-      }
-      animId = requestAnimationFrame(animate);
-    }
-
-    // Only run when hero is visible
-    const heroEl = document.getElementById('hero');
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) { if (!animId) animate(); }
-        else { cancelAnimationFrame(animId); animId = null; }
-      });
-    }, { threshold: 0.1 });
-    if (heroEl) observer.observe(heroEl);
-
-    canvas.addEventListener('mousemove', e => { mouse.x = e.clientX; mouse.y = e.clientY; });
-    canvas.addEventListener('mouseleave', () => { mouse.x = -999; mouse.y = -999; });
-    window.addEventListener('resize', () => { resize(); createParticles(); });
-
-    resize();
-    createParticles();
-  })();
   </script>
 
   <!-- Hero Stats Counter Animation -->
