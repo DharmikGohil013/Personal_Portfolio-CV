@@ -4,8 +4,8 @@
     {
       "@type": "ProfessionalService",
       "@id": "https://dharmikgohil.art/#professionalservice",
-      "name": "Dharmik Gohil - Freelance Game & Web Development Services",
-      "description": "Professional game development, blockchain development, and full stack web development services by expert developer Dharmik Gohil. Available for hire on freelance and contract basis worldwide.",
+      "name": "Dharmik Gohil - Game Developer & Full Stack Developer Services",
+      "description": "Professional game development and full stack web development services by Dharmik Gohil. Expert in Unity game development, React/Node.js web applications, mobile apps, VR/AR experiences, and blockchain solutions.",
       "url": "https://dharmikgohil.art/services.html",
       "image": "https://dharmikgohil.art/assets/img/dharmik-profile-photo-2026.jpg",
       "priceRange": "$$",
@@ -46,15 +46,14 @@
       ],
       "serviceType": [
         "Game Development",
-        "Blockchain Development",
+        "Full Stack Web Development",
         "Web Development",
         "Mobile App Development",
         "VR/AR Development",
-        "Smart Contract Development",
-        "Full Stack Development",
         "Unity Development",
-        "Metaverse Development",
-        "Multiplayer Game Development"
+        "React.js Development",
+        "Node.js Development",
+        "Blockchain Development"
       ],
       "provider": {
         "@id": "https://dharmikgohil.art/#person"
@@ -291,8 +290,8 @@
       "name": "Dharmik Gohil",
       "givenName": "Dharmik",
       "familyName": "Gohil",
-      "jobTitle": "Freelance Game Developer | Blockchain Developer | Full Stack Web Developer",
-      "description": "Expert game developer, blockchain specialist, and full stack web developer available for hire. Specializing in Unity 3D, smart contracts, React/Next.js, mobile apps, and VR/AR development. Open to freelance and contract work worldwide.",
+      "jobTitle": "Game Developer & Full Stack Developer",
+      "description": "Dharmik Gohil is a Game Developer and Full Stack Developer specializing in Unity game development, React/Node.js web applications, mobile apps, VR/AR experiences, and blockchain solutions. Available for projects worldwide.",
       "url": "https://dharmikgohil.art",
       "image": "https://dharmikgohil.art/assets/img/dharmik-profile-photo-2026.jpg",
       "email": "contact@dharmikgohil.art",
@@ -339,7 +338,7 @@
       ],
       "hasOccupation": {
         "@type": "Occupation",
-        "name": "Freelance Software Developer",
+        "name": "Game Developer & Full Stack Developer",
         "occupationalCategory": {
           "@type": "CategoryCode",
           "inCodeSet": {
@@ -466,8 +465,8 @@
       "@type": "WebSite",
       "@id": "https://dharmikgohil.art/#website",
       "url": "https://dharmikgohil.art",
-      "name": "Dharmik Gohil - Hire Game Developer | Blockchain Expert | Full Stack Developer",
-      "description": "Professional portfolio and services of Dharmik Gohil - freelance game developer, blockchain specialist, and full stack web developer available for hire worldwide",
+      "name": "Dharmik Gohil - Game Developer & Full Stack Developer Portfolio",
+      "description": "Portfolio and services of Dharmik Gohil - Game Developer and Full Stack Developer. Expert in Unity game development, React/Node.js web applications, and modern technologies.",
       "publisher": {
         "@id": "https://dharmikgohil.art/#person"
       },

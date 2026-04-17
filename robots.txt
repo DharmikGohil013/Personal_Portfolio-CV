@@ -1,18 +1,18 @@
 # =====================================================================
-# ULTRA-POWERFUL ROBOTS.TXT - DHARMIK GOHIL PORTFOLIO
-# MAXIMUM SEO CRAWLABILITY & INDEXING POWER - CLIENT DISCOVERY OPTIMIZED
+# ROBOTS.TXT - DHARMIK GOHIL | GAME DEVELOPER & FULL STACK DEVELOPER
+# MAXIMUM SEO CRAWLABILITY & INDEXING - OPTIMIZED APRIL 2026
 # =====================================================================
-# DEVELOPER: Dharmik Gohil - AVAILABLE FOR HIRE (Freelance & Contract)
-# PRIMARY SERVICES: Game Development | Blockchain Development | Full Stack Web Development
-# TARGET CLIENT SEARCHES: hire game developer, hire unity developer, hire blockchain developer,
-#                        freelance game developer, game developer for hire, contract game developer,
-#                        unity expert hire, mobile game developer, vr ar developer, metaverse developer
-# SPECIALTY: Unity 3D Game Development, Blockchain Smart Contracts, Mobile App Development,
-#           Full Stack Web Development, VR/AR/XR Development, Metaverse Creation
+# DEVELOPER: Dharmik Gohil - Game Developer & Full Stack Developer
+# PRIMARY IDENTITY: Game Developer | Full Stack Developer | Unity Developer
+# TARGET SEARCHES: Dharmik Gohil, Dharmik Gohil game developer, Dharmik Gohil full stack developer,
+#                  game developer India, full stack developer Gujarat, hire game developer,
+#                  hire full stack developer, Unity developer, React Node.js developer
+# SPECIALTY: Unity Game Development, Full Stack Web Development (React/Node.js),
+#           Mobile App Development, VR/AR/XR Development, Blockchain Solutions
 # INSTITUTION: CHARUSAT University, DEPSTAR College, Surat, Gujarat, India
-# EXPERTISE: Unity C#, React.js, Next.js, Node.js, Solidity, Three.js, Photon, WebGL,
-#           Mobile (Android/iOS), Blockchain (Ethereum/Solana), VR/AR, Multiplayer Games
-# AVAILABILITY: Open to remote work, contract projects, and freelance opportunities worldwide
+# TECH STACK: Unity C#, React.js, Next.js, Node.js, Express.js, MongoDB, Three.js,
+#            Photon, WebGL, Mobile (Android/iOS), VR/AR, Multiplayer Games
+# WEBSITE: https://dharmikgohil.art
 # =====================================================================
 
 User-agent: *

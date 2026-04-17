@@ -8,30 +8,30 @@
          http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
   
   <!-- ULTRA-POWERFUL SEO SITEMAP - MAXIMUM SEARCH VISIBILITY -->
-  <!-- KEYWORDS: dharmik, dharmikgohil, dharmik gohil, gohil dharmik, full stack developer, web developer, game developer, app developer, blockchain developer, unity developer, react developer, node.js developer, solidity developer, XR developer, VR developer, AR developer -->
+  <!-- KEYWORDS: dharmik, dharmikgohil, dharmik gohil, gohil dharmik, game developer, full stack developer, web developer, unity developer, react developer, node.js developer, app developer, VR AR developer -->
   <!-- INSTITUTION: CHARUSAT University, DEPSTAR College, Charotar University -->
   <!-- LOCATION: Surat, Gujarat, India -->
   
   <!-- HOMEPAGE - MAXIMUM PRIORITY -->
   <url>
     <loc>https://dharmikgohil.art/</loc>
-    <lastmod>2026-03-27</lastmod>
+    <lastmod>2026-04-17</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
     <image:image>
       <image:loc>https://dharmikgohil.art/assets/img/dharmik-profile-photo-2026.jpg</image:loc>
       <image:title>Dharmik Gohil Professional Photo 2026</image:title>
-      <image:caption>Dharmik Gohil - Full Stack Web Developer, Game Developer, App Developer and Blockchain Expert from CHARUSAT University, Surat Gujarat India</image:caption>
+      <image:caption>Dharmik Gohil - Game Developer and Full Stack Developer from CHARUSAT University, Surat Gujarat India</image:caption>
     </image:image>
     <image:image>
       <image:loc>https://dharmikgohil.art/assets/img/dharmik-gohil-casual-photo-2026.jpg</image:loc>
       <image:title>Dharmik Gohil Casual Photo 2026</image:title>
-      <image:caption>Dharmik Gohil - Young Full Stack Developer and Game Developer from CHARUSAT University, Surat Gujarat</image:caption>
+      <image:caption>Dharmik Gohil - Game Developer and Full Stack Developer from CHARUSAT University, Surat Gujarat</image:caption>
     </image:image>
     <image:image>
       <image:loc>https://dharmikgohil.art/assets/img/dharmik-gohil-latest-photo-february-2026.jpeg</image:loc>
       <image:title>Dharmik Gohil Latest Photo 2026</image:title>
-      <image:caption>Dharmik Gohil Latest Photo February 2026 - Full Stack Developer, Game Developer and Blockchain Expert India</image:caption>
+      <image:caption>Dharmik Gohil Latest Photo February 2026 - Game Developer and Full Stack Developer India</image:caption>
     </image:image>
     <image:image>
       <image:loc>https://dharmikgohil.art/assets/dharmik-gohil-portfolio-photo.webp</image:loc>
@@ -41,77 +41,77 @@
     <image:image>
       <image:loc>https://dharmikgohil.art/assets/img/dharmik-gohil-professional-headshot-photo.png</image:loc>
       <image:title>Dharmik Gohil Professional Headshot</image:title>
-      <image:caption>Dharmik Gohil - Expert Full Stack Developer, Game Developer and Blockchain Developer Professional Headshot Photo</image:caption>
+      <image:caption>Dharmik Gohil - Expert Game Developer and Full Stack Developer Professional Headshot Photo</image:caption>
     </image:image>
   </url>
   
   <!-- ABOUT PAGE - Target: Full Stack Developer Story, Web App Game Blockchain Expert -->
   <url>
     <loc>https://dharmikgohil.art/about.html</loc>
-    <lastmod>2026-03-27</lastmod>
+    <lastmod>2026-04-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.95</priority>
     <image:image>
       <image:loc>https://dharmikgohil.art/assets/img/dharmik-profile-photo-2026.jpg</image:loc>
       <image:title>Dharmik Gohil - About Page Professional Photo</image:title>
-      <image:caption>Dharmik Gohil - Full Stack Web Developer, Game Developer and Blockchain Expert from CHARUSAT University, Surat Gujarat India</image:caption>
+      <image:caption>Dharmik Gohil - Game Developer and Full Stack Developer from CHARUSAT University, Surat Gujarat India</image:caption>
     </image:image>
     <image:image>
       <image:loc>https://dharmikgohil.art/assets/img/dharmik-gohil-casual-photo-2026.jpg</image:loc>
       <image:title>Dharmik Gohil Casual Photo 2026</image:title>
-      <image:caption>Dharmik Gohil - Young Full Stack Developer, Game Developer and App Developer from Surat, Gujarat, CHARUSAT University Student</image:caption>
+      <image:caption>Dharmik Gohil - Game Developer and Full Stack Developer from Surat, Gujarat, CHARUSAT University Student</image:caption>
     </image:image>
     <image:image>
       <image:loc>https://dharmikgohil.art/assets/dharmik-gohil-portfolio-photo.webp</image:loc>
       <image:title>Dharmik Gohil Portfolio Photo</image:title>
-      <image:caption>Dharmik Gohil Portfolio Profile Picture - Full Stack Developer, Game Developer, App Developer and Blockchain Expert</image:caption>
+      <image:caption>Dharmik Gohil Portfolio Profile Picture - Game Developer and Full Stack Developer</image:caption>
     </image:image>
   </url>
   
-  <!-- PORTFOLIO PAGE - Target: Web Apps, Games, Mobile Apps, Blockchain Projects -->
+  <!-- PORTFOLIO PAGE - Target: Games, Web Apps, Mobile Apps, Full Stack Projects -->
   <url>
     <loc>https://dharmikgohil.art/portfolio.html</loc>
-    <lastmod>2026-01-22</lastmod>
+    <lastmod>2026-04-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.95</priority>
   </url>
   
-  <!-- SERVICES PAGE - Target: Hire Full Stack Developer, Web App Game Blockchain Services -->
+  <!-- SERVICES PAGE - Target: Hire Game Developer, Full Stack Developer Services -->
   <url>
     <loc>https://dharmikgohil.art/services.html</loc>
-    <lastmod>2026-01-22</lastmod>
+    <lastmod>2026-04-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   
-  <!-- RESUME PAGE - Target: Full Stack Developer CV, Web App Game Blockchain Expert Resume -->
+  <!-- RESUME PAGE - Target: Game Developer & Full Stack Developer CV Resume -->
   <url>
     <loc>https://dharmikgohil.art/resume.html</loc>
-    <lastmod>2026-01-22</lastmod>
+    <lastmod>2026-04-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   
-  <!-- CONTACT PAGE - Target: Hire Web Developer, Game Developer, App and Blockchain Expert -->
+  <!-- CONTACT PAGE - Target: Hire Game Developer & Full Stack Developer -->
   <url>
     <loc>https://dharmikgohil.art/contact.html</loc>
-    <lastmod>2026-01-22</lastmod>
+    <lastmod>2026-04-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
   
-  <!-- ACHIEVEMENTS PAGE - Target: Award-Winning Full Stack and Game Developer, Hackathon Champion -->
+  <!-- ACHIEVEMENTS PAGE - Target: Award-Winning Game Developer & Full Stack Developer -->
   <url>
     <loc>https://dharmikgohil.art/Achivemtn.html</loc>
-    <lastmod>2026-01-22</lastmod>
+    <lastmod>2026-04-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
   
-  <!-- BLOG PAGE - Target: Web Development, Game Dev, App Dev, Blockchain Tutorials -->
+  <!-- BLOG PAGE - Target: Game Development, Full Stack Development Tutorials -->
   <url>
     <loc>https://dharmikgohil.art/blog.html</loc>
-    <lastmod>2026-01-22</lastmod>
+    <lastmod>2026-04-17</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.85</priority>
   </url>
