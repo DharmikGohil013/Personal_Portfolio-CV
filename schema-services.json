@@ -9,10 +9,10 @@
       "givenName": "Dharmik",
       "familyName": "Gohil",
       "alternateName": ["dharmikgohil", "gohil dharmik", "Dharmik Gohil Developer", "Dharmik Gohil Game Developer", "Dharmik Gohil Unity Developer"],
-      "description": "Freelance Unity game developer and XR expert available for hire in India. Specialising in multiplayer game development (Photon PUN), AR/VR/XR experiences, full-stack web applications, and blockchain solutions. Final-year B.Tech IT student at CHARUSAT University, Surat, Gujarat.",
+      "description": "Unity game developer and XR expert available for hire in India. Specialising in multiplayer game development (Photon PUN), AR/VR/XR experiences, full-stack web applications, and blockchain solutions. Final-year B.Tech IT student at CHARUSAT University, Surat, Gujarat.",
       "url": "https://dharmikgohil.art",
       "image": "https://dharmikgohil.art/assets/img/dharmik-profile-photo-2026.jpg",
-      "jobTitle": "Freelance Game Developer & Unity Expert",
+      "jobTitle": "Game Developer & Unity Expert",
       "knowsAbout": [
         "Unity 3D Game Development", "Unity 2D Game Development", "C# Programming",
         "Photon PUN Multiplayer", "AR/VR/XR Development", "AR Foundation",
@@ -22,7 +22,7 @@
       ],
       "hasOccupation": {
         "@type": "Occupation",
-        "name": "Freelance Game Developer & Unity Expert",
+        "name": "Game Developer & Unity Expert",
         "skills": "Unity 3D, Unity 2D, C#, Photon PUN, AR Foundation, VR/XR, React.js, Node.js, MongoDB, Blockchain, Solidity, Game Design",
         "occupationLocation": {
           "@type": "Country",
@@ -74,8 +74,8 @@
     {
       "@type": "ProfessionalService",
       "@id": "https://dharmikgohil.art/#service",
-      "name": "Dharmik Gohil — Freelance Game Developer",
-      "description": "Professional freelance game development and full-stack web development services by Dharmik Gohil. Specialising in Unity 3D/2D, multiplayer games with Photon PUN, AR/VR/XR experiences, and modern web applications.",
+      "name": "Dharmik Gohil — Game Developer",
+      "description": "Professional game development and full-stack web development services by Dharmik Gohil. Specialising in Unity 3D/2D, multiplayer games with Photon PUN, AR/VR/XR experiences, and modern web applications.",
       "url": "https://dharmikgohil.art/services.html",
       "image": "https://dharmikgohil.art/assets/img/dharmik-profile-photo-2026.jpg",
       "provider": {"@id": "https://dharmikgohil.art/#person"},
@@ -187,7 +187,7 @@
           "name": "How to hire a Unity game developer in India?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "You can hire Dharmik Gohil, a freelance Unity game developer based in Surat, Gujarat, India, by visiting dharmikgohil.art/contact.html or emailing dharmikgohil395003@gmail.com. He offers Unity 3D/2D game development, multiplayer systems (Photon PUN), AR/VR/XR experiences, and full-stack web development for clients in India and worldwide."
+            "text": "You can hire Dharmik Gohil, a Unity game developer based in Surat, Gujarat, India, by visiting dharmikgohil.art/contact.html or emailing dharmikgohil395003@gmail.com. He offers Unity 3D/2D game development, multiplayer systems (Photon PUN), AR/VR/XR experiences, and full-stack web development for clients in India and worldwide."
           }
         },
         {
@@ -195,15 +195,15 @@
           "name": "What is the cost of Unity game development in India?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Unity game development costs in India vary based on complexity, platform, and features. A simple 2D mobile game may cost ₹25,000–₹1,00,000, while a full-featured multiplayer 3D game can range from ₹1,50,000–₹5,00,000+. Dharmik Gohil offers competitive freelance rates with transparent milestone-based pricing."
+            "text": "Unity game development costs in India vary based on complexity, platform, and features. A simple 2D mobile game may cost ₹25,000–₹1,00,000, while a full-featured multiplayer 3D game can range from ₹1,50,000–₹5,00,000+. Dharmik Gohil offers competitive rates with transparent milestone-based pricing."
           }
         },
         {
           "@type": "Question",
-          "name": "Can I hire a freelance game developer for a short project?",
+          "name": "Can I hire a game developer for a short project?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Yes. Dharmik Gohil accepts both short-term and long-term freelance contracts. Whether you need a quick game prototype, a single feature implementation, or a complete game build, he can tailor the engagement to your timeline and budget."
+            "text": "Yes. Dharmik Gohil accepts both short-term and long-term contracts. Whether you need a quick game prototype, a single feature implementation, or a complete game build, he can tailor the engagement to your timeline and budget."
           }
         },
         {
@@ -252,8 +252,8 @@
       "@type": "WebSite",
       "@id": "https://dharmikgohil.art/#website",
       "url": "https://dharmikgohil.art",
-      "name": "Dharmik Gohil — Hire Freelance Game Developer India | Unity & XR Expert",
-      "description": "Portfolio and services of Dharmik Gohil, freelance Unity game developer and XR expert available for hire in India. Multiplayer games, AR/VR/XR, full-stack web development.",
+      "name": "Dharmik Gohil — Hire Game Developer India | Unity & XR Expert",
+      "description": "Portfolio and services of Dharmik Gohil, Unity game developer and XR expert available for hire in India. Multiplayer games, AR/VR/XR, full-stack web development.",
       "publisher": {"@id": "https://dharmikgohil.art/#person"},
       "potentialAction": {
         "@type": "SearchAction",
