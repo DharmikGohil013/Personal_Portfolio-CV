@@ -1,150 +1,26 @@
 # =====================================================================
-# ROBOTS.TXT - DHARMIK GOHIL | GAME DEVELOPER & FULL STACK DEVELOPER
-# MAXIMUM SEO CRAWLABILITY & INDEXING - OPTIMIZED APRIL 2026
-# =====================================================================
-# DEVELOPER: Dharmik Gohil - Game Developer & Full Stack Developer
-# PRIMARY IDENTITY: Game Developer | Full Stack Developer | Unity Developer
-# TARGET SEARCHES: Dharmik Gohil, Dharmik Gohil game developer, Dharmik Gohil full stack developer,
-#                  game developer India, full stack developer Gujarat, hire game developer,
-#                  hire full stack developer, Unity developer, React Node.js developer
-# SPECIALTY: Unity Game Development, Full Stack Web Development (React/Node.js),
-#           Mobile App Development, VR/AR/XR Development, Blockchain Solutions
-# INSTITUTION: CHARUSAT University, DEPSTAR College, Surat, Gujarat, India
-# TECH STACK: Unity C#, React.js, Next.js, Node.js, Express.js, MongoDB, Three.js,
-#            Photon, WebGL, Mobile (Android/iOS), VR/AR, Multiplayer Games
+# ROBOTS.TXT — DHARMIK GOHIL | FREELANCE GAME DEVELOPER & UNITY EXPERT
 # WEBSITE: https://dharmikgohil.art
+# OPTIMISED: April 2026
 # =====================================================================
 
 User-agent: *
 Allow: /
-Allow: /assets/img/dharmik-profile-photo-2026.jpg
-Crawl-delay: 0
-
-# AGGRESSIVE GOOGLE INDEXING - MAXIMUM VISIBILITY
-User-agent: Googlebot
-Allow: /
-Allow: /*.html
-Allow: /*.css
-Allow: /*.js
-Allow: /*.png
-Allow: /*.jpg
-Allow: /*.jpeg
-Allow: /*.webp
-Allow: /*.gif
-Allow: /assets/
-Allow: /assets/img/dharmik-profile-photo-2026.jpg
-Allow: /blog/
-Crawl-delay: 0
-
-# GOOGLE IMAGE BOT - FULL IMAGE INDEXING (PRIORITY: DHARMIK GOHIL PHOTOS)
-User-agent: Googlebot-Image
-Allow: /
-Allow: /assets/img/
-Allow: /assets/img/dharmik-profile-photo-2026.jpg
-Allow: /assets/img/dharmik-gohil-casual-photo-2026.jpg
-Allow: /assets/img/dharmik-gohil-latest-photo-february-2026.jpeg
-Allow: /assets/dharmik-gohil-portfolio-photo.webp
-Allow: /assets/img/dharmik-gohil-professional-headshot-photo.png
-Allow: /assets/img/blog/hackron/team-2.jpg
-Allow: /assets/img/blog/hackron/team-3.jpg
-Allow: /assets/img/blog/hackron/hackathon-7.jpg
-Allow: /assets/img/blog/hackron/cover.jpg
-Allow: /assets/img/blog/charusat-expo/expo-3.jpg
-Allow: /assets/img/blog/charusat-expo/expo-5.jpg
-Allow: /assets/img/blog/charusat-expo/expo-6.jpg
-Allow: /assets/img/blog/charusat-expo/cover.jpg
-Allow: /assets/img/blog/
-Allow: /*.png
-Allow: /*.jpg
-Allow: /*.jpeg
-Allow: /*.webp
-Crawl-delay: 0
-
-# BING MAXIMUM INDEXING
-User-agent: Bingbot  
-Allow: /
-Allow: /assets/img/dharmik-profile-photo-2026.jpg
-Crawl-delay: 0
-
-# YAHOO CRAWLER
-User-agent: Slurp
-Allow: /
-Crawl-delay: 0
-
-# DUCKDUCKGO INDEXING
-User-agent: DuckDuckBot
-Allow: /
-Crawl-delay: 0
-
-# BAIDU CHINESE SEARCH
-User-agent: Baiduspider
-Allow: /
-Crawl-delay: 0
-
-# YANDEX RUSSIAN SEARCH
-User-agent: YandexBot
-Allow: /
-Crawl-delay: 0
-
-# SOCIAL MEDIA BOTS - MAXIMUM SHARING POTENTIAL
-User-agent: facebookexternalhit
-Allow: /
-
-User-agent: Twitterbot
-Allow: /
-
-User-agent: LinkedInBot
-Allow: /
-
-User-agent: WhatsApp
-Allow: /
-
-User-agent: TelegramBot
-Allow: /
-
-User-agent: PinterestBot
-Allow: /
-
-User-agent: Discordbot
-Allow: /
-
-# PRIORITY PAGES - MAXIMUM SEO POWER
-Allow: /index.html
-Allow: /about.html
-Allow: /portfolio.html
-Allow: /resume.html
-Allow: /contact.html
-Allow: /services.html
-Allow: /Achivemtn.html
-Allow: /blog.html
-Allow: /blog/
-Allow: /vr.html
-Allow: /logo.html
-Allow: /game1.html
-Allow: /game2.html
-Allow: /game3.html
-Allow: /game4.html
-Allow: /game5.html
-
-# Disallow certain file types and directories
 Disallow: /assets/vendor/
 Disallow: /forms/
 Disallow: *.py
 Disallow: *.md
 Disallow: /loader-test.html
 Disallow: /premium-loader-template.html
+Disallow: /dome-gallery-demo.html
+Disallow: /dome-gallery-diagnostic.html
+Disallow: /sitemap-backup.xml
 
-# Allow important assets for SEO
+# Allow important assets
 Allow: /assets/img/
 Allow: /assets/css/
 Allow: /assets/js/
 
-# Sitemap location for maximum discoverability
+# Sitemaps
 Sitemap: https://dharmikgohil.art/sitemap.xml
 Sitemap: https://dharmikgohil.art/image-sitemap.xml
-
-# SEO-optimized crawl delay for better indexing
-Crawl-delay: 1
-
-# HTML Sitemap for users
-Sitemap: https://dharmikgohil.art/sitemap-page.html

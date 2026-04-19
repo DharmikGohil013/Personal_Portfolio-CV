@@ -1,0 +1,283 @@
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": "https://dharmikgohil.art/#person",
+      "name": "Dharmik Gohil",
+      "givenName": "Dharmik",
+      "familyName": "Gohil",
+      "alternateName": ["dharmikgohil", "gohil dharmik", "Dharmik Gohil Developer", "Dharmik Gohil Game Developer", "Dharmik Gohil Unity Developer"],
+      "description": "Freelance Unity game developer and XR expert available for hire in India. Specialising in multiplayer game development (Photon PUN), AR/VR/XR experiences, full-stack web applications, and blockchain solutions. Final-year B.Tech IT student at CHARUSAT University, Surat, Gujarat.",
+      "url": "https://dharmikgohil.art",
+      "image": "https://dharmikgohil.art/assets/img/dharmik-profile-photo-2026.jpg",
+      "jobTitle": "Freelance Game Developer & Unity Expert",
+      "knowsAbout": [
+        "Unity 3D Game Development", "Unity 2D Game Development", "C# Programming",
+        "Photon PUN Multiplayer", "AR/VR/XR Development", "AR Foundation",
+        "Full Stack Web Development", "React.js", "Node.js", "Express.js", "MongoDB",
+        "Blockchain Development", "Solidity", "Smart Contracts",
+        "Mobile Game Development", "UI/UX Design", "Game Design"
+      ],
+      "hasOccupation": {
+        "@type": "Occupation",
+        "name": "Freelance Game Developer & Unity Expert",
+        "skills": "Unity 3D, Unity 2D, C#, Photon PUN, AR Foundation, VR/XR, React.js, Node.js, MongoDB, Blockchain, Solidity, Game Design",
+        "occupationLocation": {
+          "@type": "Country",
+          "name": "India"
+        }
+      },
+      "alumniOf": [
+        {
+          "@type": "CollegeOrUniversity",
+          "name": "CHARUSAT University",
+          "alternateName": "Charotar University of Science and Technology",
+          "department": "DEPSTAR College",
+          "sameAs": "https://www.charusat.ac.in"
+        }
+      ],
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "7, Dharmanandan Bungalows, Katargam",
+        "addressLocality": "Surat",
+        "addressRegion": "Gujarat",
+        "postalCode": "395004",
+        "addressCountry": "IN"
+      },
+      "email": "dharmikgohil395003@gmail.com",
+      "telephone": "+919624105887",
+      "sameAs": [
+        "https://github.com/DharmikGohil013",
+        "https://www.linkedin.com/in/dharmikgohil086/",
+        "https://x.com/Dharmik086",
+        "https://dharmikgohil.itch.io",
+        "https://dharmikgohil.art"
+      ],
+      "award": [
+        "IIT Bombay Techfest 2025 Winner",
+        "Global Game Jam 2026 Participant",
+        "Hack-A-Vation Winner",
+        "Code Raider Clash Champion",
+        "NPTEL DSA Excellence",
+        "HackerRank Elite Certifications"
+      ],
+      "memberOf": [
+        {
+          "@type": "Organization",
+          "name": "Indian Developer Community (IDC)",
+          "roleName": "Co-Founder"
+        }
+      ]
+    },
+    {
+      "@type": "ProfessionalService",
+      "@id": "https://dharmikgohil.art/#service",
+      "name": "Dharmik Gohil — Freelance Game Developer",
+      "description": "Professional freelance game development and full-stack web development services by Dharmik Gohil. Specialising in Unity 3D/2D, multiplayer games with Photon PUN, AR/VR/XR experiences, and modern web applications.",
+      "url": "https://dharmikgohil.art/services.html",
+      "image": "https://dharmikgohil.art/assets/img/dharmik-profile-photo-2026.jpg",
+      "provider": {"@id": "https://dharmikgohil.art/#person"},
+      "areaServed": [
+        {"@type": "City", "name": "Surat"},
+        {"@type": "State", "name": "Gujarat"},
+        {"@type": "Country", "name": "India"},
+        {"@type": "Place", "name": "Worldwide"}
+      ],
+      "priceRange": "₹5,000 - ₹5,00,000",
+      "telephone": "+919624105887",
+      "email": "dharmikgohil395003@gmail.com",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "7, Dharmanandan Bungalows, Katargam",
+        "addressLocality": "Surat",
+        "addressRegion": "Gujarat",
+        "postalCode": "395004",
+        "addressCountry": "IN"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 21.1702,
+        "longitude": 72.8311
+      },
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Game & Web Development Services",
+        "itemListElement": [
+          {
+            "@type": "OfferCatalog",
+            "name": "Unity Game Development Services",
+            "itemListElement": [
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Unity 3D/2D Game Development",
+                  "description": "Custom Unity game development for mobile, PC, and console platforms. From concept and prototyping to polished, store-ready builds. Expertise in C# scripting, physics, animation, and shader programming."
+                }
+              }
+            ]
+          },
+          {
+            "@type": "OfferCatalog",
+            "name": "Multiplayer Game Development",
+            "itemListElement": [
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Multiplayer Game Development (Photon PUN)",
+                  "description": "Real-time multiplayer game development using Photon PUN and Photon Fusion. Lobby systems, matchmaking, room management, player synchronisation, and competitive/cooperative gameplay for mobile and PC."
+                }
+              }
+            ]
+          },
+          {
+            "@type": "OfferCatalog",
+            "name": "AR/VR/XR Development",
+            "itemListElement": [
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "AR/VR/XR Experience Development",
+                  "description": "Immersive augmented reality, virtual reality, and mixed reality experiences using Unity XR, AR Foundation, and Oculus SDK. Training simulations, interactive showcases, and spatial computing applications."
+                }
+              }
+            ]
+          },
+          {
+            "@type": "OfferCatalog",
+            "name": "Full-Stack Web Development",
+            "itemListElement": [
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Full-Stack Web Development",
+                  "description": "Modern web applications using React.js, Next.js, Node.js, Express.js, and MongoDB (MERN stack). REST APIs, real-time features, responsive design, and cloud deployment."
+                }
+              }
+            ]
+          },
+          {
+            "@type": "OfferCatalog",
+            "name": "UI/UX Design & Prototyping",
+            "itemListElement": [
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "UI/UX Design & Prototyping",
+                  "description": "User interface and user experience design for games, web applications, and mobile apps. Wireframing, interactive prototyping, user research, and accessibility-focused design systems."
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://dharmikgohil.art/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How to hire a Unity game developer in India?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "You can hire Dharmik Gohil, a freelance Unity game developer based in Surat, Gujarat, India, by visiting dharmikgohil.art/contact.html or emailing dharmikgohil395003@gmail.com. He offers Unity 3D/2D game development, multiplayer systems (Photon PUN), AR/VR/XR experiences, and full-stack web development for clients in India and worldwide."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the cost of Unity game development in India?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Unity game development costs in India vary based on complexity, platform, and features. A simple 2D mobile game may cost ₹25,000–₹1,00,000, while a full-featured multiplayer 3D game can range from ₹1,50,000–₹5,00,000+. Dharmik Gohil offers competitive freelance rates with transparent milestone-based pricing."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I hire a freelance game developer for a short project?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Dharmik Gohil accepts both short-term and long-term freelance contracts. Whether you need a quick game prototype, a single feature implementation, or a complete game build, he can tailor the engagement to your timeline and budget."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What multiplayer technologies does Dharmik Gohil use?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Dharmik specialises in Photon PUN (Photon Unity Networking) and Photon Fusion for real-time multiplayer. He has built Mavericks Battlegrounds, a 10-player real-time multiplayer game, and has experience with lobby systems, matchmaking, player synchronisation, and competitive gameplay."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does Dharmik Gohil offer AR/VR development services?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Dharmik develops AR, VR, and XR experiences using Unity XR Interaction Toolkit and AR Foundation. He can build training simulations, product visualisations, interactive showcases, and spatial computing applications for Oculus, Meta Quest, and mobile AR platforms."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is Dharmik Gohil available for internship or full-time roles?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. As a final-year B.Tech IT student at CHARUSAT University, Dharmik is actively seeking Unity game developer internships and entry-level positions. He is open to remote roles, on-site positions in Surat/Gujarat, and relocation within India."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What game development achievements does Dharmik Gohil have?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Dharmik's notable achievements include winning at IIT Bombay Techfest 2025, participating in Global Game Jam 2026, winning the Hack-A-Vation hackathon, showcasing Mavericks Battlegrounds at CHARUSAT Expo 3.0 to 5000+ visitors, and co-founding the Indian Developer Community (IDC)."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How can I contact Dharmik Gohil for game development work?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "You can reach Dharmik Gohil via email at dharmikgohil395003@gmail.com, phone at +91 9624105887, or through the contact form at dharmikgohil.art/contact.html. He typically responds within 24 hours and offers free initial consultations for new projects."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://dharmikgohil.art/#website",
+      "url": "https://dharmikgohil.art",
+      "name": "Dharmik Gohil — Hire Freelance Game Developer India | Unity & XR Expert",
+      "description": "Portfolio and services of Dharmik Gohil, freelance Unity game developer and XR expert available for hire in India. Multiplayer games, AR/VR/XR, full-stack web development.",
+      "publisher": {"@id": "https://dharmikgohil.art/#person"},
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": {
+          "@type": "EntryPoint",
+          "urlTemplate": "https://dharmikgohil.art/?s={search_term_string}"
+        },
+        "query-input": "required name=search_term_string"
+      },
+      "inLanguage": "en"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://dharmikgohil.art/#breadcrumb",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://dharmikgohil.art/"},
+        {"@type": "ListItem", "position": 2, "name": "About", "item": "https://dharmikgohil.art/about.html"},
+        {"@type": "ListItem", "position": 3, "name": "Portfolio", "item": "https://dharmikgohil.art/portfolio.html"},
+        {"@type": "ListItem", "position": 4, "name": "Services", "item": "https://dharmikgohil.art/services.html"},
+        {"@type": "ListItem", "position": 5, "name": "Blog", "item": "https://dharmikgohil.art/blog.html"},
+        {"@type": "ListItem", "position": 6, "name": "Contact", "item": "https://dharmikgohil.art/contact.html"},
+        {"@type": "ListItem", "position": 7, "name": "Resume", "item": "https://dharmikgohil.art/resume.html"}
+      ]
+    }
+  ]
+}
+</script>
