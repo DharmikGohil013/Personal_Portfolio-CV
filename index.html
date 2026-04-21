@@ -529,7 +529,7 @@
       align-items: center;
       justify-content: center;
       overflow: hidden;
-      background: linear-gradient(160deg, #0a0e1a 0%, #111827 50%, #0a0e1a 100%);
+      background: #0a0e1a;
       padding: 0;
     }
 
@@ -539,16 +539,13 @@
       inset: 0;
       z-index: 0;
       pointer-events: none;
-      background:
-        radial-gradient(ellipse 60% 50% at 25% 75%, rgba(245,180,97,0.06) 0%, transparent 60%),
-        radial-gradient(ellipse 50% 45% at 80% 25%, rgba(245,180,97,0.04) 0%, transparent 55%);
     }
 
     /* Overlay for depth */
     #hero-video-overlay {
       position: absolute;
       inset: 0;
-      background: linear-gradient(180deg, rgba(10,14,26,0.3) 0%, transparent 40%, rgba(10,14,26,0.4) 100%);
+      background: rgba(10,14,26,0.3);
       z-index: 1;
       pointer-events: none;
     }
@@ -955,7 +952,6 @@
     .mac-btn-primary {
       background: #F5B461;
       color: #0a0e1a;
-      box-shadow: 0 4px 16px rgba(245,180,97,0.25);
     }
 
     .mac-btn-secondary {
@@ -4510,15 +4506,15 @@
 
               <div class="hero-stats">
                 <div class="stat">
-                  <span class="stat-num" data-count="15">0</span>
+                  <span class="stat-num">15+</span>
                   <span class="stat-label">Projects</span>
                 </div>
                 <div class="stat">
-                  <span class="stat-num" data-count="6">0</span>
+                  <span class="stat-num">6+</span>
                   <span class="stat-label">Games</span>
                 </div>
                 <div class="stat">
-                  <span class="stat-num" data-count="3">0</span>
+                  <span class="stat-num">3+</span>
                   <span class="stat-label">Years Exp</span>
                 </div>
               </div>
@@ -6038,7 +6034,7 @@
       setTimeout(updateMenubarClock, 15000);
     })();
 
-    // ? Typing Animation ?
+    // ? Typing Animation ? Removed for performance
     var roles = [
       'Game Developer',
       'Blockchain Developer',
@@ -6047,62 +6043,11 @@
       'Mobile App Developer',
       'Smart Contract Developer'
     ];
-    var roleIndex = 0, charIndex = 0, isDeleting = false;
-    var typingEl = null;
 
-    function typeRole() {
-      if (!typingEl) typingEl = document.getElementById('typing-text');
-      if (!typingEl) return;
-      var current = roles[roleIndex];
-      if (!isDeleting) {
-        typingEl.textContent = current.slice(0, charIndex + 1);
-        charIndex++;
-        if (charIndex === current.length) {
-          isDeleting = true;
-          setTimeout(typeRole, 2200);
-          return;
-        }
-      } else {
-        typingEl.textContent = current.slice(0, charIndex - 1);
-        charIndex--;
-        if (charIndex === 0) {
-          isDeleting = false;
-          roleIndex = (roleIndex + 1) % roles.length;
-        }
-      }
-      setTimeout(typeRole, isDeleting ? 48 : 90);
-    }
-
-    document.addEventListener('DOMContentLoaded', function() { setTimeout(typeRole, 700); });
-  </script>
-
-  <!-- Hero Stats Counter Animation -->
-  <script>
-  (function() {
-    'use strict';
-    function animateCounters() {
-      document.querySelectorAll('.hero-stats .stat-num[data-count]').forEach(el => {
-        const target = parseInt(el.dataset.count, 10);
-        const duration = 2000;
-        const start = performance.now();
-        function tick(now) {
-          const elapsed = now - start;
-          const progress = Math.min(elapsed / duration, 1);
-          const eased = 1 - Math.pow(1 - progress, 3);
-          el.textContent = Math.round(eased * target) + '+';
-          if (progress < 1) requestAnimationFrame(tick);
-        }
-        requestAnimationFrame(tick);
-      });
-    }
-    const heroStats = document.querySelector('.hero-stats');
-    if (heroStats) {
-      const obs = new IntersectionObserver(entries => {
-        entries.forEach(entry => { if (entry.isIntersecting) { animateCounters(); obs.disconnect(); } });
-      }, { threshold: 0.5 });
-      obs.observe(heroStats);
-    }
-  })();
+    document.addEventListener('DOMContentLoaded', function() {
+      var typingEl = document.getElementById('typing-text');
+      if (typingEl) typingEl.textContent = roles[0];
+    });
   </script>
 
   <!-- Add Devicon Library for Technology Icons -->
