@@ -2,14 +2,17 @@
 <html lang="en">
 
 <head>
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-GE7F8SZSJ9"></script>
+  <!-- Google Analytics DISABLED for performance -->
+  <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-GE7F8SZSJ9"></script> -->
   <script>
+    // Google Analytics disabled for performance optimization
+    
     window.dataLayer = window.dataLayer || [];
     function gtag() { dataLayer.push(arguments); }
     gtag('js', new Date());
 
     gtag('config', 'G-GE7F8SZSJ9');
+    
   </script>
 
   <meta charset="utf-8">
@@ -476,8 +479,9 @@
   <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;700&family=Press+Start+2P&display=swap" rel="stylesheet"></noscript>
   <link rel="preload" href="assets/vendor/bootstrap-icons/bootstrap-icons.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet"></noscript>
-  <link rel="preload" href="assets/vendor/aos/aos.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link href="assets/vendor/aos/aos.css" rel="stylesheet"></noscript>
+  <!-- AOS CSS DISABLED for performance -->
+  <!-- <link rel="preload" href="assets/vendor/aos/aos.css" as="style" onload="this.onload=null;this.rel='stylesheet'"> -->
+  <!-- <noscript><link href="assets/vendor/aos/aos.css" rel="stylesheet"></noscript> -->
   <link rel="preload" href="assets/vendor/swiper/swiper-bundle.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet"></noscript>
   <link rel="preload" href="assets/vendor/glightbox/css/glightbox.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
@@ -3998,11 +4002,10 @@
 
     /* --- Glow Pulse on Reveal --- */
     .scroll-glow.revealed {
-      animation: glowPulseReveal 1.5s ease-out forwards;
+      animation: none;
     }
     @keyframes glowPulseReveal {
       0%   { box-shadow: 0 0 0 rgba(99, 102, 241, 0); }
-      40%  { box-shadow: 0 0 40px rgba(99, 102, 241, 0.25), 0 0 80px rgba(99, 102, 241, 0.1); }
       100% { box-shadow: 0 0 0 rgba(99, 102, 241, 0); }
     }
 
@@ -4115,10 +4118,8 @@
     .scroll-particle:nth-child(4) { background: rgba(99, 102, 241, 0.3); animation-delay: 2.4s; left: 75%; }
     .scroll-particle:nth-child(5) { background: rgba(168, 85, 247, 0.25); animation-delay: 3.2s; left: 90%; }
     @keyframes floatParticle {
-      0%   { transform: translateY(100vh) scale(0); opacity: 0; }
-      20%  { opacity: 1; }
-      80%  { opacity: 0.6; }
-      100% { transform: translateY(-20vh) scale(1.5); opacity: 0; }
+      0%   { transform: none; opacity: 0; }
+      100% { transform: none; opacity: 0; }
     }
 
     /* --- Reduce motion for accessibility --- */
