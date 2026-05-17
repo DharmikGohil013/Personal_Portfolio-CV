@@ -24,7 +24,7 @@ Expert freelance game developer, blockchain specialist, and full stack web devel
 ```
 Phone: +91-XXXXXXXXXX (Add real number)
 Website: https://dharmikgohil.art
-Email: contact@dharmikgohil.art
+Email: dharmikgohil.work@gmail.com
 
 Address:
 DEPSTAR, CHARUSAT University
@@ -351,7 +351,7 @@ I'm currently away but will respond to your inquiry within 24 hours.
 
 In the meantime, check out my portfolio: dharmikgohil.art
 
-For urgent matters, email: contact@dharmikgohil.art
+For urgent matters, email: dharmikgohil.work@gmail.com
 
 Best,
 Dharmik
@@ -549,7 +549,7 @@ Expert freelance game developer, blockchain specialist, and full stack web devel
 
 ### Template 2 (Hire-Focused)
 ```
-HIRE DHARMIK GOHIL - Expert Freelance Game & Web Developer. Available for immediate contract work and freelance projects worldwide. Specializing in: Unity 3D Game Development | Blockchain Smart Contracts | Full Stack Web Development | Mobile Apps | VR/AR. 5+ successful projects delivered. Fast delivery, competitive rates. Unity multiplayer expert with Photon networking. React/Next.js web developer. Solidity blockchain developer. CHARUSAT University student developer. Serving clients in India, USA, UK, Canada & worldwide. Remote work specialist. FREE consultation for new projects. Services: Game Development, dApp Development, Website Development, Mobile Development, Metaverse Projects. Contact today: contact@dharmikgohil.art or dharmikgohil.art
+HIRE DHARMIK GOHIL - Expert Freelance Game & Web Developer. Available for immediate contract work and freelance projects worldwide. Specializing in: Unity 3D Game Development | Blockchain Smart Contracts | Full Stack Web Development | Mobile Apps | VR/AR. 5+ successful projects delivered. Fast delivery, competitive rates. Unity multiplayer expert with Photon networking. React/Next.js web developer. Solidity blockchain developer. CHARUSAT University student developer. Serving clients in India, USA, UK, Canada & worldwide. Remote work specialist. FREE consultation for new projects. Services: Game Development, dApp Development, Website Development, Mobile Development, Metaverse Projects. Contact today: dharmikgohil.work@gmail.com or dharmikgohil.art
 ```
 
 ### Template 3 (Service-Focused)

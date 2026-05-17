@@ -6,7 +6,7 @@
 Dharmik Gohil — Freelance Game Developer
 7, Dharmanandan Bungalows, Katargam, Surat, Gujarat 395004, India
 +91 96241 05887
-dharmikgohil395003@gmail.com
+dharmikgohil.work@gmail.com
 https://dharmikgohil.art
 ```
 
@@ -64,7 +64,7 @@ Dharmik Gohil is a freelance Unity game developer and XR expert based in Surat, 
 ### 8. FAQ Entries (Q&A Section)
 
 **Q1**: How can I hire Dharmik Gohil for game development?
-**A1**: Visit https://dharmikgohil.art/contact.html or email dharmikgohil395003@gmail.com. Free consultation. Typically responds within 24 hours.
+**A1**: Visit https://dharmikgohil.art/contact.html or email dharmikgohil.work@gmail.com. Free consultation. Typically responds within 24 hours.
 
 **Q2**: What game engines does Dharmik Gohil use?
 **A2**: Primarily Unity (3D and 2D) with C# scripting. Experience with Photon PUN for multiplayer, AR Foundation for AR, and WebGL for browser games.

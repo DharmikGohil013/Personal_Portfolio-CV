@@ -1057,7 +1057,7 @@ gtag('event', 'external_link_click', {
 ## 📞 SUPPORT & CONSULTATION
 
 For questions or assistance with implementation:
-- Email: dharmikgohil086@gmail.com
+- Email: dharmikgohil.work@gmail.com
 - Phone: +91-9510301331
 - LinkedIn: https://linkedin.com/in/dharmikgohil086
 
