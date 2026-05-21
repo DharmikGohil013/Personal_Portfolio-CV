@@ -3898,6 +3898,319 @@
       }
     }
 
+    /* ========================================
+       BRANDING SECTION (LOWXENA PLAYABLE AD)
+       ======================================== */
+    .branding.section {
+      background: linear-gradient(180deg, rgba(26, 31, 46, 0.98) 0%, rgba(10, 15, 30, 1) 100%);
+      padding: 100px 0;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .branding.section::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(255, 0, 127, 0.08) 0%, rgba(255, 223, 0, 0.05) 50%, transparent 100%);
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .branding-container {
+      position: relative;
+      z-index: 2;
+      max-width: 1040px;
+      margin: 0 auto;
+    }
+
+    /* Premium Playable Ad Cabinet */
+    .ad-cabinet {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 24px;
+      overflow: hidden;
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      box-shadow: 
+        0 30px 70px rgba(0, 0, 0, 0.5),
+        0 0 50px rgba(255, 0, 127, 0.15),
+        0 0 2px rgba(255, 223, 0, 0.3) inset;
+      transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.4s ease;
+    }
+
+    .ad-cabinet:hover {
+      box-shadow: 
+        0 40px 90px rgba(0, 0, 0, 0.6),
+        0 0 60px rgba(255, 0, 127, 0.22),
+        0 0 4px rgba(255, 223, 0, 0.5) inset;
+    }
+
+    /* Cabinet Header */
+    .cabinet-header {
+      background: rgba(0, 0, 0, 0.4);
+      padding: 16px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .cabinet-dots {
+      display: flex;
+      gap: 8px;
+    }
+
+    .cabinet-dots span {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+    }
+    .cabinet-dots .dot-1 { background: #ff5f56; }
+    .cabinet-dots .dot-2 { background: #ffbd2e; }
+    .cabinet-dots .dot-3 { background: #27c93f; }
+
+    .cabinet-title {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: rgba(255, 255, 255, 0.8);
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .cabinet-title i {
+      color: #ff007f;
+      text-shadow: 0 0 10px rgba(255, 0, 127, 0.6);
+    }
+
+    .cabinet-badge {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(48, 209, 88, 0.15);
+      border: 1px solid rgba(48, 209, 88, 0.3);
+      padding: 4px 12px;
+      border-radius: 50px;
+    }
+
+    .badge-pulse {
+      width: 6px;
+      height: 6px;
+      background: #30d158;
+      border-radius: 50%;
+      box-shadow: 0 0 8px #30d158;
+      animation: statusPulse 1.6s infinite alternate;
+    }
+
+    .badge-text {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.7rem;
+      font-weight: 700;
+      color: #30d158;
+      letter-spacing: 0.5px;
+    }
+
+    @keyframes statusPulse {
+      0% { opacity: 0.3; transform: scale(0.9); }
+      100% { opacity: 1; transform: scale(1.15); }
+    }
+
+    /* Cabinet Screen Viewport */
+    .cabinet-screen {
+      position: relative;
+      background: #060913;
+      width: 100%;
+      height: 560px; /* Golden standard height */
+      overflow: hidden;
+    }
+
+    .cabinet-iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+      background: #060913;
+      z-index: 1;
+      position: relative;
+    }
+
+    /* Input blocker / activator overlay */
+    .screen-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(6, 9, 19, 0.85);
+      backdrop-filter: blur(8px);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      z-index: 10;
+      transition: all 0.4s ease;
+      padding: 24px;
+      text-align: center;
+    }
+
+    .screen-overlay.active {
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .overlay-glow-icon {
+      font-size: 3.5rem;
+      background: linear-gradient(135deg, #ffdf00 0%, #ff007f 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 16px;
+      animation: floatOverlay 3s ease-in-out infinite;
+    }
+
+    @keyframes floatOverlay {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
+    .screen-overlay h4 {
+      font-family: 'JetBrains Mono', monospace;
+      color: #fff;
+      font-size: 1.4rem;
+      margin-bottom: 8px;
+      font-weight: 800;
+    }
+
+    .screen-overlay p {
+      color: rgba(255, 255, 255, 0.6);
+      font-size: 0.9rem;
+      max-width: 440px;
+      margin-bottom: 24px;
+      line-height: 1.6;
+    }
+
+    .overlay-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 14px 30px;
+      background: linear-gradient(135deg, #ffdf00 0%, #ff007f 100%);
+      color: #0a0f1f;
+      font-weight: 700;
+      font-size: 0.95rem;
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+      box-shadow: 0 10px 30px rgba(255, 0, 127, 0.4);
+      transition: all 0.3s ease;
+    }
+
+    .overlay-btn:hover {
+      transform: translateY(-2px) scale(1.02);
+      box-shadow: 0 15px 40px rgba(255, 0, 127, 0.6);
+      color: #0a0f1f;
+    }
+
+    /* Cabinet Footer (Playable Ad UI) */
+    .cabinet-footer {
+      background: rgba(0, 0, 0, 0.3);
+      padding: 24px 32px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 20px;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .footer-info h4 {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: #fff;
+      margin: 0 0 6px;
+    }
+
+    .footer-info p {
+      color: rgba(255, 255, 255, 0.55);
+      font-size: 0.85rem;
+      margin: 0;
+    }
+
+    .footer-actions {
+      display: flex;
+      gap: 12px;
+    }
+
+    .btn-cabinet-play {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 24px;
+      background: linear-gradient(135deg, #ffdf00 0%, #ff007f 100%);
+      color: #0a0f1f;
+      font-weight: 700;
+      font-size: 0.9rem;
+      border-radius: 50px;
+      text-decoration: none;
+      box-shadow: 0 4px 15px rgba(255, 0, 127, 0.3);
+      transition: all 0.3s ease;
+    }
+
+    .btn-cabinet-play:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(255, 0, 127, 0.5);
+      color: #0a0f1f;
+    }
+
+    .btn-cabinet-insights {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 24px;
+      background: rgba(255, 255, 255, 0.05);
+      color: #fff;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      font-weight: 600;
+      font-size: 0.9rem;
+      border-radius: 50px;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    .btn-cabinet-insights:hover {
+      background: rgba(255, 255, 255, 0.1);
+      border-color: rgba(255, 255, 255, 0.2);
+      transform: translateY(-2px);
+      color: #fff;
+    }
+
+    /* Responsive heights */
+    @media (max-width: 991px) {
+      .cabinet-screen { height: 480px; }
+      .cabinet-footer { padding: 20px 24px; }
+    }
+
+    @media (max-width: 768px) {
+      .branding.section { padding: 60px 0; }
+      .cabinet-screen { height: 380px; }
+      .cabinet-footer { flex-direction: column; align-items: flex-start; text-align: left; }
+      .footer-actions { width: 100%; }
+      .btn-cabinet-play, .btn-cabinet-insights { flex: 1; justify-content: center; }
+    }
+
+    @media (max-width: 576px) {
+      .cabinet-screen { height: 320px; }
+      .cabinet-header { padding: 12px 16px; }
+      .cabinet-title { font-size: 0.75rem; }
+      .overlay-btn { padding: 10px 22px; font-size: 0.85rem; }
+      .screen-overlay h4 { font-size: 1.1rem; }
+      .screen-overlay p { font-size: 0.8rem; }
+    }
+
     /* ============================================
        EXCLUSIVE SMOOTH SCROLL ANIMATIONS
        Premium reveal effects on scroll
@@ -4962,6 +5275,78 @@
               <i class="bi bi-github"></i><span>GitHub</span>
             </a>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- LowXena Branding Section (Playable Multiplayer Ad) -->
+    <section id="branding" class="branding section scroll-reveal">
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Exclusive Game Branding</h2>
+        <p>Interactive Multiplayer Cabinet — LowXena Card Game</p>
+      </div>
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <div class="branding-container">
+          
+          <!-- Arcade Cabinet Display -->
+          <div class="ad-cabinet">
+            
+            <!-- Cabinet Header Bar -->
+            <div class="cabinet-header">
+              <div class="cabinet-dots">
+                <span class="dot-1"></span>
+                <span class="dot-2"></span>
+                <span class="dot-3"></span>
+              </div>
+              <div class="cabinet-title">
+                <i class="bi bi-controller"></i> Play LowXena Now
+              </div>
+              <div class="cabinet-badge">
+                <span class="badge-pulse"></span>
+                <span class="badge-text">LIVE MULTIPLAYER</span>
+              </div>
+            </div>
+
+            <!-- Interactive Gameplay Area -->
+            <div class="cabinet-screen">
+              
+              <!-- Interaction Blocker Overlay -->
+              <div class="screen-overlay" id="cabinetOverlay">
+                <i class="bi bi-play-circle overlay-glow-icon"></i>
+                <h4>LOWXENA PREMIUM CARD ARENA</h4>
+                <p>Play the hilarious browser card game where the lowest score wins! Supports real-time WebSocket lobbies and local gameplay.</p>
+                <button class="overlay-btn" id="activateCabinetBtn">
+                  <i class="bi bi-joystick"></i> Initialize Controller
+                </button>
+              </div>
+
+              <!-- Live Game Embed Frame -->
+              <iframe src="https://lowxena.dharmikgohil.art/" 
+                      class="cabinet-iframe" 
+                      title="LowXena Live Gameplay Embed"
+                      allow="autoplay; fullscreen; clipboard-write" 
+                      loading="lazy"></iframe>
+            </div>
+
+            <!-- Ad / Cabinet Footer Panel -->
+            <div class="cabinet-footer">
+              <div class="footer-info">
+                <h4>LowXena: Engineered by Dharmik Gohil</h4>
+                <p>15-Min Quick Sessions • Local Matchups &amp; Live Lobby Synchronizations</p>
+              </div>
+              <div class="footer-actions">
+                <a href="https://lowxena.dharmikgohil.art/" target="_blank" class="btn-cabinet-play">
+                  <i class="bi bi-arrows-angle-expand"></i> Fullscreen Mode
+                </a>
+                <a href="blog/lowxena-game-development-insights.html" class="btn-cabinet-insights">
+                  <i class="bi bi-terminal"></i> Technical Stack
+                </a>
+              </div>
+            </div>
+
+          </div>
+
         </div>
       </div>
     </section>
@@ -6732,6 +7117,19 @@
       heroObserver.observe(heroSection);
     }
   })();
+  </script>
+
+  <!-- LowXena Cabinet Interactive Controller Activator -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const activateBtn = document.getElementById('activateCabinetBtn');
+      const overlay = document.getElementById('cabinetOverlay');
+      if (activateBtn && overlay) {
+        activateBtn.addEventListener('click', function() {
+          overlay.classList.add('active');
+        });
+      }
+    });
   </script>
 
 </body>
