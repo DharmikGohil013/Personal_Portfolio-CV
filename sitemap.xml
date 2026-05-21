@@ -119,6 +119,17 @@
 
   <!-- BLOG ARTICLES -->
   <url>
+    <loc>https://dharmikgohil.art/blog/lowxena-game-development-insights.html</loc>
+    <lastmod>2026-05-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://dharmikgohil.art/assets/img/blog/lowxena/cover.jpg</image:loc>
+      <image:title>LOWXENA: Engineering a 3D Multiplayer Card Universe by Dharmik Gohil</image:title>
+      <image:caption>LowXena - Premium online multi-player card gaming universe where the lowest score wins everything.</image:caption>
+    </image:image>
+  </url>
+  <url>
     <loc>https://dharmikgohil.art/blog/getting-started-unity-xr.html</loc>
     <lastmod>2026-01-22</lastmod>
     <changefreq>monthly</changefreq>
@@ -345,6 +356,17 @@
   </url>
   
   <!-- BLOG ARTICLES - Web Development, Game Dev, App Dev and Blockchain Tutorials -->
+  <url>
+    <loc>https://dharmikgohil.art/blog/lowxena-game-development-insights.html</loc>
+    <lastmod>2026-05-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://dharmikgohil.art/assets/img/blog/lowxena/cover.jpg</image:loc>
+      <image:title>LOWXENA Card Gaming Universe by Dharmik Gohil</image:title>
+      <image:caption>LowXena - Premium online multi-player card gaming universe engineered by Lead Architect Dharmik Gohil.</image:caption>
+    </image:image>
+  </url>
   <url>
     <loc>https://dharmikgohil.art/blog/getting-started-unity-xr.html</loc>
     <lastmod>2026-01-22</lastmod>

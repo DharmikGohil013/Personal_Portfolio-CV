@@ -125,6 +125,16 @@
   
   <!-- Blog Posts -->
   <url>
+    <loc>https://dharmikgohil.art/blog/lowxena-game-development-insights.html</loc>
+    <lastmod>2026-05-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.88</priority>
+    <image:image>
+      <image:loc>https://dharmikgohil.art/assets/img/blog/lowxena/cover.jpg</image:loc>
+      <image:title>LOWXENA: Engineering a 3D Multiplayer Card Universe by Dharmik Gohil</image:title>
+    </image:image>
+  </url>
+  <url>
     <loc>https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html</loc>
     <lastmod>2026-01-05</lastmod>
     <changefreq>monthly</changefreq>

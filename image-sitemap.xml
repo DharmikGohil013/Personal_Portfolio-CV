@@ -108,6 +108,18 @@
     </image:image>
   </url>
 
+  <!-- LOWXENA GAME DEVELOPMENT BLOG - Custom Art assets -->
+  <url>
+    <loc>https://dharmikgohil.art/blog/lowxena-game-development-insights.html</loc>
+    <image:image>
+      <image:loc>https://dharmikgohil.art/assets/img/blog/lowxena/cover.jpg</image:loc>
+      <image:caption>LOWXENA Card Gaming Universe Cover - Premium online multi-player card gaming universe engineered by Lead Architect &amp; Game Developer Dharmik Gohil</image:caption>
+      <image:title>LowXena Card Gaming Universe by Dharmik Gohil</image:title>
+      <image:geo_location>Surat, Gujarat, India</image:geo_location>
+      <image:license>https://dharmikgohil.art/contact.html</image:license>
+    </image:image>
+  </url>
+
   <!-- CHARUSAT EXPO BLOG - Dharmik Gohil Exhibition Photos -->
   <url>
     <loc>https://dharmikgohil.art/blog/charusat-expo-3-mavericks-battlegrounds-showcase.html</loc>
