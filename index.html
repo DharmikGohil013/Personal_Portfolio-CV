@@ -4742,7 +4742,7 @@
     <section id="hero" class="hero section">
 
       <!-- Animated Mesh Gradient Background -->
-      <div class="hero-gradient-bg"></div>
+      <div id="letter-glitch" class="hero-gradient-bg"></div>
       <div id="hero-video-overlay"></div>
 
       <!-- Floating ambient orbs -->
@@ -5947,6 +5947,9 @@
   <!-- Hackathon Scroll JS -->
   <script src="assets/js/hackathon-scroll.js" defer></script>
 
+  <!-- Letter Glitch JS -->
+  <script src="assets/js/LetterGlitch.js" defer></script>
+
   <script>
     document.addEventListener("DOMContentLoaded", function () {
       // Smooth scrolling for anchor links
@@ -5965,6 +5968,18 @@
         duration: 1000,
         once: true
       });
+
+      // Initialize LetterGlitch Background Effect
+      if (document.getElementById('letter-glitch') && window.LetterGlitch) {
+        new LetterGlitch('#letter-glitch', {
+          glitchSpeed: 50,
+          centerVignette: true,
+          outerVignette: false,
+          smooth: true,
+          colors: ["#2b4539", "#61dca3", "#61b3dc"],
+          backgroundColor: '#0a0e1a'
+        });
+      }
     });
   </script>
   <script>
