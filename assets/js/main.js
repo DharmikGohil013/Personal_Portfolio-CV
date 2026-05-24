@@ -252,4 +252,49 @@
 
   });
 
+  /**
+   * Dynamic Accessibility Enhancements for Lighthouse
+   * Automatically sets aria-labels for macOS dock items and footer social links
+   */
+  function applyAccessibilityEnhancements() {
+    // 1. macOS Dock Items
+    document.querySelectorAll('[data-tooltip]').forEach(el => {
+      if (!el.getAttribute('aria-label')) {
+        const tooltip = el.getAttribute('data-tooltip');
+        if (tooltip) {
+          el.setAttribute('aria-label', tooltip);
+        }
+      }
+    });
+
+    // 2. Footer Social Links
+    document.querySelectorAll('.social-links a').forEach(link => {
+      if (!link.getAttribute('aria-label')) {
+        const icon = link.querySelector('i');
+        if (icon) {
+          const classes = icon.className;
+          if (classes.includes('bi-github')) {
+            link.setAttribute('aria-label', 'GitHub Profile');
+          } else if (classes.includes('bi-linkedin')) {
+            link.setAttribute('aria-label', 'LinkedIn Profile');
+          } else if (classes.includes('bi-instagram')) {
+            link.setAttribute('aria-label', 'Instagram Profile');
+          } else if (classes.includes('bi-twitter') || classes.includes('bi-twitter-x') || classes.includes('bi-x')) {
+            link.setAttribute('aria-label', 'Twitter Profile');
+          } else if (classes.includes('bi-google-play')) {
+            link.setAttribute('aria-label', 'Google Play Developer Profile');
+          }
+        }
+      }
+    });
+  }
+
+  // Run on DOMContentLoaded and Load to guarantee execution
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', applyAccessibilityEnhancements);
+  } else {
+    applyAccessibilityEnhancements();
+  }
+  window.addEventListener('load', applyAccessibilityEnhancements);
+
 })();
