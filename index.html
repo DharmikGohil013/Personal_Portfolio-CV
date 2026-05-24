@@ -472,11 +472,17 @@
   <!-- Critical CSS (render-blocking - needed for first paint) -->
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="assets/css/main.css" rel="stylesheet">
-  <link href="assets/css/navigation.css" rel="stylesheet">
-  <link href="index.css" rel="stylesheet">
-  <link href="assets/css/responsive-global.css" rel="stylesheet">
 
   <!-- Deferred CSS (non-critical - load after first paint) -->
+  <link rel="preload" href="assets/css/navigation.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link href="assets/css/navigation.css" rel="stylesheet"></noscript>
+  
+  <link rel="preload" href="index.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link href="index.css" rel="stylesheet"></noscript>
+  
+  <link rel="preload" href="assets/css/responsive-global.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link href="assets/css/responsive-global.css" rel="stylesheet"></noscript>
+
   <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;700&family=Press+Start+2P&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;700&family=Press+Start+2P&display=swap" rel="stylesheet"></noscript>
   <link rel="preload" href="assets/vendor/bootstrap-icons/bootstrap-icons.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
@@ -4534,11 +4540,6 @@
 
   <!-- LinkedIn Badge Script -->
   <script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
-
-  <!-- Performance Optimization -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preconnect" href="https://www.google-analytics.com">
 
   <!-- Website Schema -->
   <script type="application/ld+json">
