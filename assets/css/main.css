@@ -1,4 +1,4 @@
-﻿/**
+/**
 * Template Name: Kelly
 * Template URL: https://bootstrapmade.com/kelly-free-bootstrap-cv-resume-html-template/
 * Updated: Aug 07 2024 with Bootstrap v5.3.3
@@ -604,13 +604,13 @@ body {
   background: #1A1F2E;
   color: #fff;
   overflow-x: hidden;
-  cursor: url('assets/img/cursor-default.png'), auto;
+  cursor: url('../img/cursor-default.png'), auto;
   /* background: #1A1F2E; */
   /* color: #fff; */
   font-family: 'JetBrains Mono', monospace;
   overflow-x: hidden;
   position: relative;
-  cursor: url('assets/img/cursor-default.png'), auto;
+  cursor: url('../img/cursor-default.png'), auto;
 }
 
 
