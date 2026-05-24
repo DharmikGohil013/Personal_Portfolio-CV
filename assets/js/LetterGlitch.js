@@ -257,4 +257,5 @@ class LetterGlitch {
 if (typeof window !== 'undefined') {
   window.LetterGlitch = LetterGlitch;
 }
-export default LetterGlitch;
+// Removed ES module 'export default' to prevent 'Unexpected token export' in standard non-module script tags.
+

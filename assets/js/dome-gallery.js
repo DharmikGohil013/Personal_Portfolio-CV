@@ -658,16 +658,15 @@ class DomeGallery {
 
 // Initialize the gallery when DOM is ready
 document.addEventListener('DOMContentLoaded', function() {
-  console.log('🎨 Dome Gallery: DOM loaded, initializing...');
-  
   const galleryContainer = document.getElementById('domeGallery');
   
   if (!galleryContainer) {
-    console.error('❌ Dome Gallery: Container #domeGallery not found!');
-    return;
+    return; // Return silently if the gallery container is not on this page
   }
   
+  console.log('🎨 Dome Gallery: DOM loaded, initializing...');
   console.log('✅ Dome Gallery: Container found, creating gallery...');
+
   console.log(`📸 Dome Gallery: Loading ${DEFAULT_IMAGES.length} images`);
   
   try {
