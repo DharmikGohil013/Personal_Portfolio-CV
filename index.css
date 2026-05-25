@@ -84,12 +84,18 @@ p, span, li, a, td, th, label, strong, em, i, input, textarea, .stat-lbl, .revie
 }
 
 /* Masthead Navigation color balances */
-.masthead-nav-bar .nav-links a,
-.social-links-minimal a {
+.masthead-nav-bar .nav-links a {
   color: rgba(13, 13, 11, 0.5) !important;
 }
 .masthead-nav-bar .nav-links a:hover,
-.masthead-nav-bar .nav-links a.active,
+.masthead-nav-bar .nav-links a.active {
+  color: var(--ink) !important;
+}
+
+.social-links-minimal a {
+  color: rgba(13, 13, 11, 0.5) !important;
+  transition: color 0.3s ease, transform 0.2s ease !important;
+}
 .social-links-minimal a:hover {
   color: var(--ink) !important;
 }
@@ -319,21 +325,31 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .social-links-minimal {
-  font-family: var(--font-mono);
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
+  display: flex;
+  gap: 1.25rem;
+  align-items: center;
 }
 
 .social-links-minimal a {
   color: rgba(13, 13, 11, 0.5);
   text-decoration: none;
-  transition: color 0.3s ease;
+  font-size: 1.25rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.3s ease, transform 0.2s ease;
 }
 
 .social-links-minimal a:hover {
   color: var(--ink);
+  transform: translateY(-2px);
+}
+
+.social-links-minimal a i,
+.social-links-minimal a svg,
+.drawer-social-links a i,
+.drawer-social-links a svg {
+  color: inherit !important;
 }
 
 /* --- Hero Section & Editorial Columns --- */
@@ -1620,10 +1636,9 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .drawer-social-links {
-  font-family: var(--font-mono);
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: 0.05em;
+  display: flex;
+  gap: 1.25rem;
+  align-items: center;
   margin-bottom: 0.75rem;
 }
 
@@ -1631,11 +1646,17 @@ h1, h2, h3, h4, h5, h6 {
   color: var(--ink);
   text-decoration: none;
   opacity: 0.6;
+  font-size: 1.25rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.2s ease, transform 0.2s ease, color 0.2s ease;
 }
 
 .drawer-social-links a:hover {
   opacity: 1;
-  color: var(--crimson);
+  color: var(--crimson) !important;
+  transform: translateY(-2px);
 }
 
 .drawer-edition {
