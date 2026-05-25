@@ -99,197 +99,188 @@
   <link href="assets/css/navigation.css" rel="stylesheet">
 
   <style>
-    /* ============================================
-       macOS-INSPIRED BLOG PAGE
-       Sonoma/Sequoia Dark Mode Aesthetic
-       ============================================ */
+    /* ==========================================================================
+       BRUTALIST EDITORIAL DESIGN SYSTEM (v1.0)
+       Light · Daring · Unapologetic by design.
+       ========================================================================== */
 
-    body {
-      background: #09090F !important;
+    :root {
+      --ink: #0d0d0b;
+      --paper: #f2f0eb;
+      --red: #c8001a;
+      --red-dim: #8a0012;
+      --rule: rgba(13, 13, 11, 0.15);
+      --rule-heavy: rgba(13, 13, 11, 0.90);
+    }
+
+    /* Base resets */
+    html, body {
+      background-color: var(--paper) !important;
+      color: var(--ink) !important;
+      font-family: 'IBM Plex Mono', monospace;
       margin: 0;
       padding: 0;
-      overflow-x: hidden;
-    }
-
-    /* Page Background */
-    .blog-page-macos {
-      position: relative;
       min-height: 100vh;
-      background: linear-gradient(180deg, #0f1420 0%, #0a0e18 50%, #0f1420 100%);
-      padding: 40px 0 120px;
+      box-sizing: border-box;
     }
 
-    /* Subtle ambient glow */
-    .blog-page-macos::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background:
-        radial-gradient(ellipse 60% 40% at 20% 15%, rgba(10,132,255,0.06) 0%, transparent 60%),
-        radial-gradient(ellipse 50% 50% at 80% 60%, rgba(191,90,242,0.05) 0%, transparent 60%),
-        radial-gradient(ellipse 40% 30% at 50% 90%, rgba(48,209,88,0.04) 0%, transparent 50%);
-      pointer-events: none;
-      z-index: 0;
-    }
-
-    .blog-page-macos > .container {
+    body {
+      border: 4px solid var(--ink) !important;
+      padding: 24px;
       position: relative;
-      z-index: 1;
     }
 
-    /* ---- Page Header ---- */
+    /* Hide stars, particles, custom cursors, preloader, macos-menubar */
+    body::before, 
+    #hero-video-overlay, 
+    .hero-orb, 
+    .macos-menubar, 
+    .macos-desktop, 
+    .macos-dock, 
+    #preloader,
+    .custom-cursor,
+    .scroll-progress-glow,
+    .scroll-particles {
+      display: none !important;
+    }
+
+    /* Page Container */
+    .blog-page-macos {
+      background: transparent !important;
+      padding: 2rem 0 !important;
+      position: relative;
+    }
+
+    .blog-page-macos::before {
+      display: none !important;
+    }
+
+    /* Page Header */
     .page-header {
-      text-align: center;
-      padding: 30px 0 50px;
+      text-align: left !important;
+      padding: 0 0 2rem 0 !important;
+      border-bottom: 2px solid var(--ink) !important;
+      margin-bottom: 3rem !important;
     }
 
     .page-header-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      background: rgba(10,132,255,0.1);
-      border: 1px solid rgba(10,132,255,0.25);
-      color: #0A84FF;
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 11px;
-      font-weight: 600;
-      padding: 5px 14px;
-      border-radius: 20px;
-      margin-bottom: 16px;
-      letter-spacing: 0.5px;
+      display: inline-block !important;
+      background: var(--ink) !important;
+      color: var(--paper) !important;
+      font-family: 'IBM Plex Mono', monospace !important;
+      font-size: 11px !important;
+      font-weight: bold !important;
+      text-transform: uppercase !important;
+      padding: 4px 10px !important;
+      border-radius: 0 !important;
+      margin-bottom: 1rem !important;
+      letter-spacing: 0.15em !important;
+      border: none !important;
     }
 
     .page-header h1 {
-      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-      font-size: clamp(2rem, 4vw, 3rem);
-      font-weight: 700;
-      color: #fff;
-      letter-spacing: -0.8px;
-      margin: 0 0 10px;
-      line-height: 1.1;
+      font-family: 'Bebas Neue', sans-serif !important;
+      font-size: clamp(3.5rem, 8vw, 5.5rem) !important;
+      font-weight: 900 !important;
+      text-transform: uppercase !important;
+      color: var(--ink) !important;
+      letter-spacing: 0.02em !important;
+      margin: 0 0 0.5rem 0 !important;
+      line-height: 0.85 !important;
     }
 
     .page-header p {
-      font-family: 'Inter', -apple-system, sans-serif;
-      color: rgba(255,255,255,0.4);
-      font-size: 0.95rem;
-      max-width: 500px;
-      margin: 0 auto;
+      font-family: 'IBM Plex Mono', monospace !important;
+      color: var(--ink) !important;
+      font-size: 13px !important;
+      text-transform: uppercase !important;
+      letter-spacing: 0.1em !important;
+      opacity: 0.7 !important;
+      max-width: 100% !important;
+      margin: 0 !important;
     }
 
-    /* ---- macOS Blog Window ---- */
+    /* macOS Blog Window remapped to Brutalist Grid Container */
     .mac-blog-window {
-      background: rgba(28,28,38,0.55);
-      backdrop-filter: blur(40px) saturate(1.8);
-      -webkit-backdrop-filter: blur(40px) saturate(1.8);
-      border: 1px solid rgba(255,255,255,0.08);
-      border-radius: 16px;
-      box-shadow:
-        0 8px 32px rgba(0,0,0,0.4),
-        inset 0 1px 0 rgba(255,255,255,0.06);
-      overflow: hidden;
-      margin-bottom: 36px;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      position: relative;
+      background: transparent !important;
+      backdrop-filter: none !important;
+      -webkit-backdrop-filter: none !important;
+      border: none !important;
+      border-radius: 0 !important;
+      box-shadow: none !important;
+      overflow: visible !important;
+      margin-bottom: 0 !important;
+      transition: none !important;
     }
 
     .mac-blog-window:hover {
-      transform: translateY(-3px);
-      box-shadow:
-        0 16px 48px rgba(0,0,0,0.5),
-        0 0 40px rgba(10,132,255,0.06),
-        inset 0 1px 0 rgba(255,255,255,0.08);
+      transform: none !important;
+      box-shadow: none !important;
     }
 
-    /* Window Titlebar */
+    .mac-window-body {
+      padding: 0 !important;
+    }
+
+    /* Broadside Newspaper Section Dividers & Headers */
     .mac-window-titlebar {
-      background: rgba(255,255,255,0.04);
-      border-bottom: 1px solid rgba(255,255,255,0.07);
-      padding: 13px 18px;
-      display: flex;
-      align-items: center;
-      gap: 14px;
+      display: block !important;
+      background: transparent !important;
+      border: none !important;
+      border-bottom: 2px solid var(--ink) !important; /* Broadside heavy rule */
+      padding: 0 0 10px 0 !important;
+      margin-bottom: 24px !important;
+      margin-top: 48px !important; /* Space between content sections */
       user-select: none;
     }
 
+    /* Hide legacy window dots */
     .mac-window-dots {
-      display: flex;
-      gap: 8px;
-      align-items: center;
-      flex-shrink: 0;
+      display: none !important;
     }
 
-    .mac-window-dots span {
-      width: 13px;
-      height: 13px;
-      border-radius: 50%;
-      display: inline-block;
-      transition: filter 0.2s, transform 0.2s;
-      cursor: default;
-    }
-
-    .mac-window-dots span:hover {
-      filter: brightness(1.25);
-      transform: scale(1.1);
-    }
-
-    .mac-dot-red { background: #FF5F56; box-shadow: 0 0 8px rgba(255,95,86,0.5); }
-    .mac-dot-yellow { background: #FFBD2E; box-shadow: 0 0 8px rgba(255,189,46,0.5); }
-    .mac-dot-green { background: #27C93F; box-shadow: 0 0 8px rgba(39,201,63,0.5); }
-
+    /* Broadside typographic label */
     .mac-window-label {
-      flex: 1;
-      text-align: center;
-      font-family: 'Inter', -apple-system, sans-serif;
-      font-size: 13px;
-      font-weight: 500;
-      color: rgba(255,255,255,0.5);
-      letter-spacing: 0.2px;
+      font-family: 'Bebas Neue', sans-serif !important;
+      font-size: 2.2rem !important;
+      text-transform: uppercase !important;
+      letter-spacing: 0.03em !important;
+      color: var(--ink) !important;
+      font-weight: 900 !important;
+      display: flex !important;
+      align-items: center !important;
+      gap: 10px !important;
+      text-align: left !important;
     }
 
     .mac-window-label i {
-      margin-right: 6px;
-      font-size: 12px;
+      color: var(--red) !important;
+      font-size: 1.8rem !important;
+      margin-right: 0 !important;
     }
 
-    /* Window Content */
-    .mac-window-body {
-      padding: 28px 28px 32px;
-    }
-
-    /* ---- Blog Card (glass) ---- */
+    /* Blog Card to Brutalist Card */
     .mac-blog-card {
-      background: rgba(255,255,255,0.03);
-      border: 1px solid rgba(255,255,255,0.06);
-      border-radius: 14px;
-      overflow: hidden;
-      transition: all 0.3s cubic-bezier(.4,0,.2,1);
-      position: relative;
+      background: var(--paper) !important;
+      border: 2px solid var(--ink) !important;
+      border-radius: 0 !important;
+      box-shadow: 6px 6px 0px var(--ink) !important;
+      transition: transform 0.2s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.2s cubic-bezier(0.25, 0.8, 0.25, 1) !important;
       height: 100%;
       display: flex;
       flex-direction: column;
+      position: relative;
     }
 
     .mac-blog-card::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(ellipse 80% 80% at 50% 0%, rgba(10,132,255,0.04) 0%, transparent 60%);
-      opacity: 0;
-      transition: opacity 0.3s ease;
-      pointer-events: none;
-      z-index: 0;
+      display: none !important;
     }
 
     .mac-blog-card:hover {
-      background: rgba(255,255,255,0.06);
-      border-color: rgba(10,132,255,0.25);
-      transform: translateY(-6px);
-      box-shadow: 0 12px 36px rgba(0,0,0,0.3), 0 0 20px rgba(10,132,255,0.08);
-    }
-
-    .mac-blog-card:hover::before {
-      opacity: 1;
+      background: var(--paper) !important;
+      border-color: var(--ink) !important;
+      transform: translate(-4px, -4px) !important;
+      box-shadow: 10px 10px 0px var(--red) !important;
     }
 
     /* Blog Thumbnail */
@@ -298,7 +289,9 @@
       width: 100%;
       padding-top: 56.25%;
       overflow: hidden;
-      background: linear-gradient(135deg, rgba(10,132,255,0.08) 0%, rgba(191,90,242,0.08) 100%);
+      background: var(--paper) !important;
+      border-radius: 0 !important;
+      border-bottom: 2px solid var(--ink) !important;
     }
 
     .mac-blog-thumbnail img {
@@ -308,207 +301,150 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
-      transition: transform 0.4s ease, opacity 0.3s ease;
-      z-index: 1;
+      transition: transform 0.4s ease, filter 0.3s ease !important;
+      filter: grayscale(1) contrast(1.1) !important; /* Authentic newspaper print styling */
     }
 
     .mac-blog-card:hover .mac-blog-thumbnail img {
-      transform: scale(1.08);
+      transform: scale(1.05) !important;
+      filter: grayscale(0) contrast(1) !important; /* Pops into color on hover */
     }
 
     .mac-blog-overlay {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(180deg, transparent 40%, rgba(9,9,15,0.7) 100%);
-      z-index: 2;
-      pointer-events: none;
-    }
-
-    .mac-play-icon {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: 56px;
-      height: 56px;
-      background: rgba(10,132,255,0.85);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: all 0.3s ease;
-      z-index: 10;
-      box-shadow: 0 4px 20px rgba(10,132,255,0.4);
-    }
-
-    .mac-blog-card:hover .mac-play-icon {
-      background: rgba(10,132,255,1);
-      transform: translate(-50%, -50%) scale(1.12);
-      box-shadow: 0 6px 30px rgba(10,132,255,0.6);
-    }
-
-    .mac-play-icon i {
-      color: #fff;
-      font-size: 22px;
+      display: none !important;
     }
 
     .mac-duration-badge {
       position: absolute;
-      bottom: 10px;
-      right: 10px;
-      background: rgba(0,0,0,0.75);
-      backdrop-filter: blur(8px);
-      color: rgba(255,255,255,0.9);
-      padding: 3px 10px;
-      border-radius: 6px;
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 11px;
-      font-weight: 600;
+      bottom: 12px;
+      right: 12px;
+      background: var(--paper) !important;
+      border: 2px solid var(--ink) !important;
+      color: var(--ink) !important;
+      padding: 3px 8px;
+      border-radius: 0 !important;
+      font-family: 'IBM Plex Mono', monospace !important;
+      font-size: 10px !important;
+      font-weight: bold !important;
       z-index: 10;
-      border: 1px solid rgba(255,255,255,0.06);
+      text-transform: uppercase !important;
     }
 
-    /* Blog Content */
+    /* Blog Card Body */
     .mac-blog-body {
-      padding: 22px 20px 24px;
+      padding: 24px !important;
       flex-grow: 1;
       display: flex;
       flex-direction: column;
-      position: relative;
-      z-index: 1;
     }
 
     .mac-blog-meta {
       display: flex;
       align-items: center;
-      gap: 14px;
+      gap: 16px;
       margin-bottom: 12px;
-      font-family: 'Inter', -apple-system, sans-serif;
-      font-size: 12px;
-      color: rgba(255,255,255,0.35);
+      font-family: 'IBM Plex Mono', monospace !important;
+      font-size: 11px !important;
+      color: var(--ink) !important;
+      opacity: 0.7 !important;
     }
 
     .mac-blog-meta i {
-      color: #0A84FF;
+      color: var(--red) !important;
       font-size: 11px;
     }
 
-    .mac-blog-meta span {
-      display: flex;
-      align-items: center;
-      gap: 5px;
-    }
-
     .mac-blog-title {
-      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-      font-size: 1.05rem;
-      font-weight: 700;
-      color: #fff;
-      margin: 0 0 10px;
-      line-height: 1.4;
-      letter-spacing: -0.2px;
-      display: -webkit-box;
-      -webkit-line-clamp: 2;
-      -webkit-box-orient: vertical;
-      overflow: hidden;
+      font-family: 'Playfair Display', serif !important;
+      font-weight: 900 !important;
+      font-size: clamp(1.3rem, 3vw, 1.6rem) !important;
+      line-height: 1.15 !important;
+      color: var(--ink) !important;
+      margin: 0 0 16px 0 !important;
+      letter-spacing: -0.01em !important;
+      text-transform: none !important;
     }
 
     .mac-blog-title a {
-      color: inherit;
-      text-decoration: none;
-      transition: color 0.2s ease;
+      color: var(--ink) !important;
+      text-decoration: none !important;
+      transition: color 0.15s ease !important;
     }
 
     .mac-blog-title a:hover {
-      color: #0A84FF;
+      color: var(--red) !important;
     }
 
+    /* Tags */
     .mac-blog-tags {
       display: flex;
       flex-wrap: wrap;
       gap: 6px;
-      margin-bottom: 12px;
+      margin-bottom: 16px;
     }
 
     .mac-blog-tag {
       display: inline-block;
-      padding: 3px 10px;
-      background: rgba(10,132,255,0.08);
-      border: 1px solid rgba(10,132,255,0.18);
-      border-radius: 7px;
-      font-family: 'Inter', sans-serif;
-      font-size: 10.5px;
-      font-weight: 500;
-      color: rgba(255,255,255,0.55);
-      letter-spacing: 0.2px;
-      transition: all 0.2s;
+      padding: 3px 8px !important;
+      background: var(--paper) !important;
+      border: 1px solid var(--ink) !important;
+      border-radius: 0 !important;
+      font-family: 'IBM Plex Mono', monospace !important;
+      font-size: 10px !important;
+      font-weight: bold !important;
+      color: var(--ink) !important;
+      text-transform: uppercase !important;
+      letter-spacing: 0.05em;
+      transition: all 0.15s ease !important;
     }
 
-    .mac-blog-tag:hover {
-      background: rgba(10,132,255,0.18);
-      border-color: rgba(10,132,255,0.4);
-      color: #fff;
-    }
-
-    .mac-blog-tag.purple {
-      background: rgba(191,90,242,0.08);
-      border-color: rgba(191,90,242,0.18);
-    }
-    .mac-blog-tag.purple:hover {
-      background: rgba(191,90,242,0.18);
-      border-color: rgba(191,90,242,0.4);
-    }
-
-    .mac-blog-tag.green {
-      background: rgba(48,209,88,0.08);
-      border-color: rgba(48,209,88,0.18);
-    }
-    .mac-blog-tag.green:hover {
-      background: rgba(48,209,88,0.18);
-      border-color: rgba(48,209,88,0.4);
-    }
-
-    .mac-blog-tag.orange {
-      background: rgba(255,159,10,0.08);
-      border-color: rgba(255,159,10,0.18);
-    }
+    .mac-blog-tag:hover,
+    .mac-blog-tag.purple:hover,
+    .mac-blog-tag.green:hover,
     .mac-blog-tag.orange:hover {
-      background: rgba(255,159,10,0.18);
-      border-color: rgba(255,159,10,0.4);
+      background: var(--ink) !important;
+      color: var(--paper) !important;
     }
 
+    .mac-blog-tag.purple,
+    .mac-blog-tag.green,
+    .mac-blog-tag.orange {
+      background: var(--paper) !important;
+      border-color: var(--ink) !important;
+      color: var(--ink) !important;
+    }
+
+    /* Excerpt */
     .mac-blog-excerpt {
-      font-family: 'Inter', -apple-system, sans-serif;
-      color: rgba(255,255,255,0.4);
-      font-size: 0.82rem;
-      line-height: 1.6;
-      margin-bottom: 16px;
-      display: -webkit-box;
-      -webkit-line-clamp: 3;
-      -webkit-box-orient: vertical;
-      overflow: hidden;
+      font-family: 'IBM Plex Mono', monospace !important;
+      color: var(--ink) !important;
+      opacity: 0.75 !important;
+      font-size: 12.5px !important;
+      line-height: 1.6 !important;
+      margin-bottom: 20px !important;
       flex-grow: 1;
     }
 
+    /* Read More */
     .mac-read-more {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      font-family: 'Inter', -apple-system, sans-serif;
-      font-size: 0.82rem;
-      font-weight: 600;
-      color: #0A84FF;
-      text-decoration: none;
-      transition: all 0.2s ease;
+      display: inline-flex !important;
+      align-items: center !important;
+      gap: 6px !important;
+      font-family: 'IBM Plex Mono', monospace !important;
+      font-size: 12px !important;
+      font-weight: bold !important;
+      text-transform: uppercase !important;
+      color: var(--red) !important;
+      text-decoration: none !important;
+      transition: all 0.2s ease !important;
       margin-top: auto;
+      border-bottom: 2px solid transparent !important;
+      width: fit-content !important;
     }
 
     .mac-read-more:hover {
-      color: #1B90FF;
-      gap: 10px;
+      color: var(--ink) !important;
+      gap: 10px !important;
     }
 
     .mac-read-more i {
@@ -517,395 +453,105 @@
     }
 
     .mac-read-more:hover i {
-      transform: translateX(3px);
+      transform: translateX(4px);
     }
 
-    /* ---- macOS Menu Bar ---- */
-    .macos-menubar {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 28px;
-      background: rgba(22,22,26,0.92);
-      backdrop-filter: blur(25px) saturate(2);
-      -webkit-backdrop-filter: blur(25px) saturate(2);
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 0 18px;
-      z-index: 9998;
-      border-bottom: 1px solid rgba(255,255,255,0.08);
-      box-shadow: 0 1px 0 rgba(0,0,0,0.15);
-      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-    }
-
-    .menubar-left {
-      display: flex;
-      align-items: center;
-      gap: 20px;
-    }
-
-    .menubar-apple {
-      font-size: 16px;
-      color: rgba(255,255,255,0.95);
-    }
-
-    .menubar-left span {
-      font-size: 13px;
-      font-weight: 500;
-      color: rgba(255,255,255,0.88);
-      cursor: default;
-      user-select: none;
-      transition: color 0.15s ease;
-    }
-
-    .menubar-left span:hover:not(.menubar-apple) {
-      color: rgba(255,255,255,1);
-    }
-
-    .menubar-left span.menubar-brand {
-      font-weight: 700;
-      color: rgba(255,255,255,0.95);
-    }
-
-    .menubar-right {
-      display: flex;
-      align-items: center;
-      gap: 16px;
-      font-size: 12px;
-      color: rgba(255,255,255,0.85);
-    }
-
-    .menubar-right a {
-      color: inherit;
-      text-decoration: none;
-      transition: color 0.15s ease;
-      display: flex;
-      align-items: center;
-    }
-
-    .menubar-right a:hover {
-      color: rgba(255,255,255,1);
-    }
-
-    .menubar-right i {
-      font-size: 14px;
-      transition: color 0.15s ease;
-    }
-
-    .menubar-right i:hover {
-      color: rgba(255,255,255,1);
-    }
-
-    #menubar-clock {
-      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-      font-size: 12px;
-      font-weight: 500;
-      color: rgba(255,255,255,0.9);
-      letter-spacing: 0.4px;
-      min-width: 44px;
-      text-align: right;
-    }
-
-    @media (max-width: 768px) {
-      .macos-menubar {
-        height: 36px;
-        padding: 0 12px;
-      }
-      .menubar-left {
-        gap: 10px;
-        overflow: hidden;
-      }
-      .menubar-left span {
-        font-size: 12px;
-      }
-      .menubar-left span.menubar-brand {
-        font-size: 12px;
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        max-width: 110px;
-      }
-      .menubar-left span:not(.menubar-apple):not(.menubar-brand) {
-        display: none;
-      }
-      .menubar-right {
-        gap: 10px;
-      }
-      .menubar-right i {
-        font-size: 13px;
-      }
-      #menubar-clock {
-        font-size: 11px;
-        min-width: 38px;
-      }
-      .menubar-right > i.bi-wifi,
-      .menubar-right > i.bi-battery-full {
-        display: none;
-      }
-    }
-
-    @media (max-width: 575px) {
-      .macos-menubar {
-        height: 34px;
-        padding: 0 10px;
-      }
-      .menubar-left {
-        gap: 8px;
-      }
-      .menubar-apple i {
-        font-size: 14px;
-      }
-      .menubar-left span.menubar-brand {
-        max-width: 90px;
-        font-size: 11px;
-      }
-      .menubar-right {
-        gap: 8px;
-      }
-      .menubar-right a i {
-        font-size: 12px;
-      }
-      #menubar-clock {
-        font-size: 10px;
-        min-width: 34px;
-      }
-    }
-
-    @media (max-width: 380px) {
-      .menubar-left span.menubar-brand {
-        max-width: 70px;
-        font-size: 10px;
-      }
-      .menubar-right {
-        gap: 6px;
-      }
-      .menubar-right a:nth-child(3),
-      .menubar-right a:nth-child(4) {
-        display: none;
-      }
-    }
-
-    /* ---- Footer ---- */
+    /* Footer styled for Broadsheet */
     .footer {
-      background: #0a0e18 !important;
-      border-top: 1px solid rgba(255,255,255,0.06) !important;
-      padding: 30px 0 80px 0 !important;
+      background: transparent !important;
+      border-top: 4px solid var(--ink) !important;
+      padding: 3rem 0 !important;
+      margin-top: 5rem !important;
       position: relative;
       z-index: 1;
     }
 
     .footer .container {
       display: flex;
-      flex-direction: column;
-      align-items: flex-end;
+      flex-direction: row !important;
+      justify-content: space-between !important;
+      align-items: center !important;
     }
 
     .footer .copyright {
-      text-align: right !important;
+      text-align: left !important;
     }
 
     .footer .copyright p {
-      font-family: 'Inter', -apple-system, sans-serif !important;
-      color: rgba(255,255,255,0.4) !important;
-      font-size: 0.85rem;
+      font-family: 'IBM Plex Mono', monospace !important;
+      color: var(--ink) !important;
+      font-size: 12px !important;
+      margin: 0 !important;
+      text-transform: uppercase !important;
+      letter-spacing: 0.1em;
     }
 
     .footer .social-links {
-      justify-content: flex-end !important;
+      display: flex !important;
+      gap: 10px !important;
     }
 
     .footer .social-links a {
-      width: 36px;
-      height: 36px;
+      width: 38px;
+      height: 38px;
       display: inline-flex !important;
       align-items: center;
       justify-content: center;
-      background: rgba(255,255,255,0.06);
-      border: 1px solid rgba(255,255,255,0.08);
-      border-radius: 10px;
-      color: rgba(255,255,255,0.5) !important;
-      font-size: 1rem;
-      transition: all 0.2s ease;
-      margin: 0 5px !important;
+      background: var(--paper) !important;
+      border: 2px solid var(--ink) !important;
+      border-radius: 0 !important;
+      color: var(--ink) !important;
+      font-size: 1.1rem;
+      transition: transform 0.2s, box-shadow 0.2s !important;
+      margin: 0 !important;
+      box-shadow: 4px 4px 0px var(--ink) !important;
     }
 
     .footer .social-links a:hover {
-      background: rgba(10,132,255,0.15) !important;
-      border-color: rgba(10,132,255,0.4) !important;
-      color: #0A84FF !important;
-      transform: translateY(-3px);
+      background: var(--red) !important;
+      color: var(--paper) !important;
+      transform: translate(-3px, -3px) !important;
+      box-shadow: 7px 7px 0px var(--ink) !important;
     }
 
-    /* ============================================
-       SCROLL ANIMATIONS
-       ============================================ */
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    .scroll-reveal {
-      opacity: 0;
-      transform: translateY(60px);
-      filter: blur(6px);
-      transition: all 0.9s cubic-bezier(0.22, 1, 0.36, 1);
-      will-change: opacity, transform, filter;
-    }
-    .scroll-reveal.revealed {
-      opacity: 1;
-      transform: translateY(0);
-      filter: blur(0);
-    }
-
-    .scroll-reveal-left {
-      opacity: 0;
-      transform: translateX(-80px);
-      filter: blur(5px);
-      transition: all 1s cubic-bezier(0.22, 1, 0.36, 1);
-      will-change: opacity, transform, filter;
-    }
-    .scroll-reveal-left.revealed {
-      opacity: 1;
-      transform: translateX(0);
-      filter: blur(0);
-    }
-
-    .scroll-glow.revealed {
-      animation: glowPulseReveal 1.5s ease-out forwards;
-    }
-    @keyframes glowPulseReveal {
-      0%   { box-shadow: 0 0 0 rgba(10, 132, 255, 0); }
-      40%  { box-shadow: 0 0 40px rgba(10, 132, 255, 0.2), 0 0 80px rgba(191, 90, 242, 0.1); }
-      100% { box-shadow: 0 0 0 rgba(10, 132, 255, 0); }
-    }
-
-    /* Stagger blog cards inside window */
-    .mac-window-body .row > div {
-      opacity: 0;
-      transform: translateY(30px) scale(0.95);
-      filter: blur(3px);
-      transition: all 0.6s cubic-bezier(0.22, 1, 0.36, 1);
-      will-change: opacity, transform, filter;
-    }
-    .mac-blog-window.revealed .mac-window-body .row > div {
-      opacity: 1;
-      transform: translateY(0) scale(1);
-      filter: blur(0);
-    }
-    .mac-blog-window.revealed .mac-window-body .row > div:nth-child(1) { transition-delay: 0.08s; }
-    .mac-blog-window.revealed .mac-window-body .row > div:nth-child(2) { transition-delay: 0.16s; }
-    .mac-blog-window.revealed .mac-window-body .row > div:nth-child(3) { transition-delay: 0.24s; }
-    .mac-blog-window.revealed .mac-window-body .row > div:nth-child(4) { transition-delay: 0.32s; }
-    .mac-blog-window.revealed .mac-window-body .row > div:nth-child(5) { transition-delay: 0.40s; }
-    .mac-blog-window.revealed .mac-window-body .row > div:nth-child(6) { transition-delay: 0.48s; }
-
-    /* Window glow separator */
-    .mac-blog-window::after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 10%;
-      width: 80%;
-      height: 1px;
-      background: linear-gradient(90deg, transparent, rgba(10, 132, 255, 0.2), transparent);
-      opacity: 0;
-      transition: opacity 0.8s ease 0.5s;
-      pointer-events: none;
-    }
-    .mac-blog-window.revealed::after {
-      opacity: 1;
-    }
-
-    /* Scroll progress glow bar */
-    .scroll-progress-glow {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 3px;
-      z-index: 9999;
-      background: linear-gradient(90deg, #0A84FF, #BF5AF2, #FF375F, #0A84FF);
-      background-size: 300% 100%;
-      transform: scaleX(0);
-      transform-origin: left;
-      transition: transform 0.15s ease-out;
-      animation: progressGradient 3s linear infinite;
-      pointer-events: none;
-    }
-    @keyframes progressGradient {
-      0%   { background-position: 0% 50%; }
-      100% { background-position: 300% 50%; }
-    }
-
-    /* Floating particles */
-    .scroll-particles {
-      position: fixed;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      pointer-events: none;
-      z-index: 9997;
-      overflow: hidden;
-    }
-    .scroll-particle {
-      position: absolute;
-      width: 4px; height: 4px;
-      border-radius: 50%;
-      background: rgba(10, 132, 255, 0.4);
-      opacity: 0;
-      animation: floatParticle 4s ease-in-out infinite;
-    }
-    .scroll-particle:nth-child(2) { background: rgba(191, 90, 242, 0.35); animation-delay: 0.8s; left: 20%; }
-    .scroll-particle:nth-child(3) { background: rgba(255, 55, 95, 0.3); animation-delay: 1.6s; left: 50%; }
-    .scroll-particle:nth-child(4) { background: rgba(10, 132, 255, 0.3); animation-delay: 2.4s; left: 75%; }
-    .scroll-particle:nth-child(5) { background: rgba(48, 209, 88, 0.25); animation-delay: 3.2s; left: 90%; }
-    @keyframes floatParticle {
-      0%   { transform: translateY(100vh) scale(0); opacity: 0; }
-      20%  { opacity: 1; }
-      80%  { opacity: 0.6; }
-      100% { transform: translateY(-20vh) scale(1.5); opacity: 0; }
-    }
-
-    /* ---- Responsive ---- */
-    @media (max-width: 768px) {
-      .blog-page-macos { padding: 44px 0 60px; }
-      .page-header { padding: 20px 0 30px; }
-      .page-header h1 { font-size: 1.8rem; }
-      .mac-window-body { padding: 20px 16px 24px; }
-      .mac-blog-body { padding: 18px 16px 20px; }
-    }
-
-    @media (max-width: 575px) {
-      .blog-page-macos { padding: 40px 0 56px; }
-      .mac-window-titlebar { padding: 10px 13px; }
-      .mac-window-body { padding: 16px 12px 20px; }
-      .page-header h1 { font-size: 1.5rem; }
-    }
-
-    @media (max-width: 380px) {
-      .blog-page-macos { padding: 38px 0 50px; }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      .scroll-reveal,
-      .scroll-reveal-left,
-      .mac-window-body .row > div {
-        transition: none !important;
-        opacity: 1 !important;
-        transform: none !important;
-        filter: none !important;
+    /* Responsive adjustments */
+    @media (max-width: 991px) {
+      body {
+        padding: 16px;
       }
-      .scroll-progress-glow,
-      .scroll-particles { display: none !important; }
+      .footer .container {
+        flex-direction: column !important;
+        gap: 20px !important;
+        text-align: center !important;
+      }
+      .footer .copyright {
+        text-align: center !important;
+      }
+    }
+
+    @media (max-width: 768px) {
+      body {
+        border-width: 3px !important;
+        padding: 12px;
+      }
+    }
+
+    /* Restore normal opacity for divs under standard flow */
+    .mac-window-body .row > div {
+      opacity: 1 !important;
+      transform: none !important;
+      filter: none !important;
+      transition: none !important;
     }
   </style>
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=IBM+Plex+Mono:ital,wght@0,400;0,500;0,700;1,400&family=Playfair+Display:ital,wght@0,900;1,900&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=IBM+Plex+Mono:ital,wght@0,400;0,500;0,700;1,400&family=Playfair+Display:ital,wght@0,900;1,900&display=swap" rel="stylesheet"></noscript>
+  <link rel="preload" href="index.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link href="index.css" rel="stylesheet"></noscript>
 </head>
 
 <body class="index-page">
-  <div class="custom-cursor"></div>
-
-  <!-- Preloader -->
+<!-- Preloader -->
   <div id="preloader">
     <div class="cube-loader">
       <div class="cube-top"></div>
@@ -918,26 +564,65 @@
     </div>
   </div>
 
-  <!-- macOS Menu Bar -->
-  <div class="macos-menubar">
-    <div class="menubar-left">
-      <span class="menubar-apple"><a href="index.html" style="color:inherit;text-decoration:none;"><i class="bi bi-house-fill"></i></a></span>
-      <span class="menubar-brand">Dharmik Gohil</span>
-      <span>Blog</span>
-      <span><a href="services.html" style="color:inherit;text-decoration:none;">Abilities</a></span>
-    </div>
-    <div class="menubar-right">
-      <a href="https://github.com/DharmikGohil013" target="_blank" rel="noopener noreferrer"><i class="bi bi-github"></i></a>
-      <a href="https://www.linkedin.com/in/dharmikgohil086/" target="_blank" rel="noopener noreferrer"><i class="bi bi-linkedin"></i></a>
-      <a href="https://www.instagram.com/dharmik.086/?next=%2F" target="_blank" rel="noopener noreferrer"><i class="bi bi-instagram"></i></a>
-      <a href="https://x.com/Dharmik086" target="_blank" rel="noopener noreferrer"><i class="bi bi-twitter"></i></a>
-      <i class="bi bi-wifi"></i>
-      <i class="bi bi-battery-full"></i>
-      <span id="menubar-clock">--:--</span>
-    </div>
-  </div>
-
   <main class="main">
+    <!-- Broadsheet Masthead (Header) -->
+    <!-- Broadsheet Masthead (Header) -->
+    <!-- Broadsheet Masthead (Header) -->
+    <!-- Broadsheet Masthead (Header) -->
+    <header class="masthead container">
+      <div class="masthead-top">
+        <div>EST. 2006 · SURAT, GUJARAT, INDIA</div>
+        <div class="accent-text">★ CURRENTLY AVAILABLE FOR WORK ★</div>
+        <div class="text-end">VOL. 1.0 · THE DHARMIK GOHIL CHRONICLE</div>
+      </div>
+      <div class="masthead-main">
+        <h1>Dh<span class="accent-text">a</span>rmik Gohil</h1>
+      </div>
+      <div class="masthead-nav-bar">
+        <nav class="nav-links">
+          <a href="index.html">HOME</a> · 
+          <a href="services.html">ABILITIES</a> · 
+          
+          <div class="nav-dropdown">
+            <span class="dropdown-trigger">MY GAMES <span class="arrow-down">▼</span></span>
+            <div class="dropdown-content">
+              <a href="https://dharmikgohil.itch.io/mavericks-battlegrounds" target="_blank">MAVERICKS BATTLEGROUND</a>
+              <a href="https://dharmik086.itch.io/floppy-bird-860" target="_blank">FLOPPY BIRD</a>
+              <a href="https://dharmikgohil.itch.io/facade" target="_blank">FACADE</a>
+              <a href="https://dharmikgohil.itch.io/go-galaxy" target="_blank">GO GALAXY</a>
+              <a href="https://dharmikgohil.itch.io/drone-training" target="_blank">DRONE TRAINING</a>
+              <a href="https://dharmikgohil.itch.io/hook-shot" target="_blank">HOOK SHOT</a>
+              <a href="https://lowxena.dharmikgohil.art/" target="_blank">LOWXENA</a>
+            </div>
+          </div> · 
+          
+          <div class="nav-dropdown">
+            <span class="dropdown-trigger">LIVE PROJECTS <span class="arrow-down">▼</span></span>
+            <div class="dropdown-content">
+              <a href="assets/Fit Sync.apk" download>FITSYNC APP (APK)</a>
+              <a href="https://actify.dharmikgohil.art/" target="_blank">ACTIFY</a>
+              <a href="https://learnlink.dharmikgohil.art" target="_blank">LEARN LINK</a>
+              <a href="http://gdgs.dharmikgohil.art/" target="_blank">GDGS GAMES</a>
+              <a href="http://flipcart.dharmikgohil.art/" target="_blank">FLIPKART CLONE</a>
+              <a href="http://krishna.dharmikgohil.art/" target="_blank">KRISHNA CONSTRUCTION</a>
+              <a href="https://fkm.vercel.app/" target="_blank">WIFI SERVICE</a>
+            </div>
+          </div> · 
+          
+          <a href="Achivemtn.html">ACHIEVEMENTS</a> · 
+          <a href="blog.html" class="active">BLOG</a> · 
+          <a href="contact.html">CONTACT</a> · 
+          <a href="assets/img/Dharmik Gohil Resume.pdf" target="_blank">RESUME</a>
+        </nav>
+        <div class="social-links-minimal">
+          <a href="https://github.com/DharmikGohil013" target="_blank">GITHUB</a> · 
+          <a href="https://www.linkedin.com/in/dharmikgohil086/" target="_blank">LINKEDIN</a> · 
+          <a href="https://x.com/Dharmik086" target="_blank">TWITTER</a> · 
+          <a href="https://dharmikgohil.itch.io/" target="_blank">ITCH.IO</a>
+        </div>
+      </div>
+    </header>
+
     <div class="blog-page-macos">
       <div class="container">
 
@@ -3047,98 +2732,7 @@
   <!-- Scroll Top -->
   <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
-  <!-- macOS Dock Navigation -->
-  <div class="macos-dock">
-    <div class="dock-items">
-      <a href="index.html" class="dock-item" data-tooltip="Home"><i class="bi bi-house-fill"></i></a>
-      <a href="services.html" class="dock-item" data-tooltip="Abilities"><i class="bi bi-lightning-charge-fill"></i></a>
-      <div class="dock-separator"></div>
-      <div class="dock-item games-menu-trigger" data-tooltip="My Games">
-        <i class="bi bi-controller"></i>
-        <div class="games-dropdown-menu" id="gamesDropdown">
-          <div class="games-dropdown-header">
-            <i class="bi bi-controller me-2"></i>My Games
-          </div>
-          <div class="games-dropdown-list">
-            <a href="https://dharmikgohil.itch.io/mavericks-battlegrounds" target="_blank" class="game-dropdown-item">
-              <i class="bi bi-play-circle-fill"></i>
-              <span>Mavericks Battleground</span>
-            </a>
-            <a href="https://dharmik086.itch.io/floppy-bird-860" target="_blank" class="game-dropdown-item">
-              <i class="bi bi-play-circle-fill"></i>
-              <span>Floppy Bird</span>
-            </a>
-            <a href="https://dharmikgohil.itch.io/facade" target="_blank" class="game-dropdown-item">
-              <i class="bi bi-play-circle-fill"></i>
-              <span>Facade</span>
-            </a>
-            <a href="https://dharmikgohil.itch.io/go-galaxy" target="_blank" class="game-dropdown-item">
-              <i class="bi bi-play-circle-fill"></i>
-              <span>Go Galaxy</span>
-            </a>
-            <a href="https://dharmikgohil.itch.io/drone-training" target="_blank" class="game-dropdown-item">
-              <i class="bi bi-play-circle-fill"></i>
-              <span>Drone Training</span>
-            </a>
-            <a href="https://dharmikgohil.itch.io/hook-shot" target="_blank" class="game-dropdown-item">
-              <i class="bi bi-phone-fill"></i>
-              <span>Hook Shot</span>
-            </a>
-            <a href="https://lowxena.dharmikgohil.art/" target="_blank" class="game-dropdown-item">
-              <i class="bi bi-play-circle-fill"></i>
-              <span>Lowxena</span>
-            </a>
-            <a href="https://just-divide-rho.vercel.app/" target="_blank" class="game-dropdown-item">
-              <i class="bi bi-calculator-fill"></i>
-              <span>Just Divide</span>
-            </a>
-          </div>
-        </div>
-      </div>
-      <a href="Achivemtn.html" class="dock-item" data-tooltip="Achievements"><i class="bi bi-trophy-fill"></i></a>
-      <div class="dock-item apps-menu-trigger" data-tooltip="Live Apps & Websites">
-        <i class="bi bi-briefcase-fill"></i>
-        <div class="games-dropdown-menu" id="appsDropdown">
-          <div class="games-dropdown-header">
-            <i class="bi bi-briefcase-fill me-2"></i>Live Projects
-          </div>
-          <div class="games-dropdown-list">
-            <a href="assets/Fit Sync.apk" download class="game-dropdown-item">
-              <i class="bi bi-download"></i>
-              <span>FitSync App (APK)</span>
-            </a>
-            <a href="https://actify.dharmikgohil.art/" target="_blank" class="game-dropdown-item">
-              <i class="bi bi-globe"></i>
-              <span>Actify</span>
-            </a>
-            <a href="https://learnlink.dharmikgohil.art" target="_blank" class="game-dropdown-item">
-              <i class="bi bi-globe"></i>
-              <span>Learn Link</span>
-            </a>
-            <a href="http://gdgs.dharmikgohil.art/" target="_blank" class="game-dropdown-item">
-              <i class="bi bi-globe"></i>
-              <span>GDGS Games</span>
-            </a>
-            <a href="http://flipcart.dharmikgohil.art/" target="_blank" class="game-dropdown-item">
-              <i class="bi bi-globe"></i>
-              <span>Flipkart Clone</span>
-            </a>
-            <a href="http://krishna.dharmikgohil.art/" target="_blank" class="game-dropdown-item">
-              <i class="bi bi-globe"></i>
-              <span>Krishna Construction</span>
-            </a>
-            <a href="https://fkm.vercel.app/" target="_blank" class="game-dropdown-item">
-              <i class="bi bi-globe"></i>
-              <span>WiFi Service</span>
-            </a>
-          </div>
-        </div>
-      </div>
-      <div class="dock-separator"></div>
-      <a href="contact.html" class="dock-item" data-tooltip="Contact"><i class="bi bi-envelope-fill"></i></a>
-      <a href="assets/img/Dharmik Gohil Resume.pdf" class="dock-item" data-tooltip="Resume" download><i class="bi bi-file-earmark-person"></i></a>
-    </div>
-  </div>
+  
 
   <!-- Vendor JS Files -->
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js" defer></script>
@@ -3163,7 +2757,7 @@
     });
   </script>
 
-  <script src="assets/js/dock-dropdowns.js" defer></script>
+  
 
   <!-- Scroll Animation Engine -->
   <script>

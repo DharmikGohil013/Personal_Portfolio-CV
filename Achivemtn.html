@@ -286,846 +286,20 @@
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com" rel="preconnect">
   <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-  <link rel="preload" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Poppins:wght@300;400;600&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="preload" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Poppins:wght@300;400;600&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet"></noscript></noscript>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Playfair+Display:ital,wght@0,900;1,900&family=IBM+Plex+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <!-- Vendor CSS Files -->
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="preload" href="assets/vendor/bootstrap-icons/bootstrap-icons.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="preload" href="assets/vendor/bootstrap-icons/bootstrap-icons.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet"></noscript></noscript>
-  <link rel="preload" href="assets/vendor/aos/aos.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="preload" href="assets/vendor/aos/aos.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link href="assets/vendor/aos/aos.css" rel="stylesheet"></noscript></noscript>
-  <link rel="preload" href="assets/vendor/swiper/swiper-bundle.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="preload" href="assets/vendor/swiper/swiper-bundle.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet"></noscript></noscript>
-  <link rel="preload" href="assets/vendor/glightbox/css/glightbox.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="preload" href="assets/vendor/glightbox/css/glightbox.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet"></noscript></noscript>
+  <link rel="preload" href="assets/vendor/bootstrap-icons/bootstrap-icons.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet"></noscript>
+  <link rel="preload" href="assets/vendor/aos/aos.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link href="assets/vendor/aos/aos.css" rel="stylesheet"></noscript>
+  <link rel="preload" href="assets/vendor/swiper/swiper-bundle.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet"></noscript>
+  <link rel="preload" href="assets/vendor/glightbox/css/glightbox.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet"></noscript>
 
   <!-- Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
   <link href="assets/css/navigation.css" rel="stylesheet">
   <link href="assets/css/responsive-global.css" rel="stylesheet">
 
-  <style>
-    /* ============================================
-       macOS-INSPIRED ACHIEVEMENTS PAGE
-       Sonoma/Sequoia Dark Mode Aesthetic
-       ============================================ */
-
-    body {
-      background: #09090F !important;
-      margin: 0;
-      padding: 0;
-      overflow-x: hidden;
-    }
-
-    .achievements-page {
-      position: relative;
-      min-height: 100vh;
-      background: linear-gradient(180deg, #0f1420 0%, #0a0e18 50%, #0f1420 100%);
-      padding: 40px 0 120px;
-    }
-
-    .achievements-page::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background:
-        radial-gradient(ellipse 60% 40% at 15% 20%, rgba(191,90,242,0.06) 0%, transparent 60%),
-        radial-gradient(ellipse 50% 50% at 85% 60%, rgba(10,132,255,0.05) 0%, transparent 60%),
-        radial-gradient(ellipse 40% 30% at 50% 90%, rgba(255,159,10,0.04) 0%, transparent 50%);
-      pointer-events: none;
-      z-index: 0;
-    }
-
-    .achievements-page > .container {
-      position: relative;
-      z-index: 1;
-    }
-
-    /* ---- Page Header ---- */
-    .page-header {
-      text-align: center;
-      padding: 30px 0 50px;
-    }
-
-    .page-header-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      background: rgba(191,90,242,0.1);
-      border: 1px solid rgba(191,90,242,0.25);
-      color: #BF5AF2;
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 11px;
-      font-weight: 600;
-      padding: 5px 14px;
-      border-radius: 20px;
-      margin-bottom: 16px;
-      letter-spacing: 0.5px;
-    }
-
-    .page-header h1 {
-      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-      font-size: clamp(2rem, 4vw, 3rem);
-      font-weight: 700;
-      color: #fff;
-      letter-spacing: -0.8px;
-      margin: 0 0 10px;
-      line-height: 1.1;
-    }
-
-    .page-header p {
-      font-family: 'Inter', -apple-system, sans-serif;
-      color: rgba(255,255,255,0.4);
-      font-size: 0.95rem;
-      max-width: 550px;
-      margin: 0 auto;
-    }
-
-    /* ---- macOS Category Window ---- */
-    .mac-category-window {
-      background: rgba(28,28,38,0.55);
-      backdrop-filter: blur(40px) saturate(1.8);
-      -webkit-backdrop-filter: blur(40px) saturate(1.8);
-      border: 1px solid rgba(255,255,255,0.08);
-      border-radius: 16px;
-      box-shadow:
-        0 8px 32px rgba(0,0,0,0.4),
-        inset 0 1px 0 rgba(255,255,255,0.06);
-      overflow: hidden;
-      margin-bottom: 36px;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .mac-category-window:hover {
-      transform: translateY(-3px);
-      box-shadow:
-        0 16px 48px rgba(0,0,0,0.5),
-        0 0 40px rgba(10,132,255,0.06),
-        inset 0 1px 0 rgba(255,255,255,0.08);
-    }
-
-    /* Window Titlebar */
-    .mac-window-titlebar {
-      background: rgba(255,255,255,0.04);
-      border-bottom: 1px solid rgba(255,255,255,0.07);
-      padding: 13px 18px;
-      display: flex;
-      align-items: center;
-      gap: 14px;
-      user-select: none;
-    }
-
-    .mac-window-dots {
-      display: flex;
-      gap: 8px;
-      align-items: center;
-      flex-shrink: 0;
-    }
-
-    .mac-window-dots span {
-      width: 13px;
-      height: 13px;
-      border-radius: 50%;
-      display: inline-block;
-      transition: filter 0.2s, transform 0.2s;
-      cursor: default;
-    }
-
-    .mac-window-dots span:hover {
-      filter: brightness(1.25);
-      transform: scale(1.1);
-    }
-
-    .mac-dot-red { background: #FF5F56; box-shadow: 0 0 8px rgba(255,95,86,0.5); }
-    .mac-dot-yellow { background: #FFBD2E; box-shadow: 0 0 8px rgba(255,189,46,0.5); }
-    .mac-dot-green { background: #27C93F; box-shadow: 0 0 8px rgba(39,201,63,0.5); }
-
-    .mac-window-label {
-      flex: 1;
-      text-align: center;
-      font-family: 'Inter', -apple-system, sans-serif;
-      font-size: 13px;
-      font-weight: 500;
-      color: rgba(255,255,255,0.5);
-      letter-spacing: 0.2px;
-    }
-
-    .mac-window-label i {
-      margin-right: 6px;
-      font-size: 12px;
-    }
-
-    .mac-window-body {
-      padding: 28px 28px 32px;
-    }
-
-    /* ---- Certificate Card ---- */
-    .mac-cert-card {
-      background: rgba(255,255,255,0.03);
-      border: 1px solid rgba(255,255,255,0.06);
-      border-radius: 14px;
-      overflow: hidden;
-      transition: all 0.3s cubic-bezier(.4,0,.2,1);
-      height: 100%;
-      display: flex;
-      flex-direction: column;
-    }
-
-    .mac-cert-card:hover {
-      background: rgba(255,255,255,0.06);
-      border-color: rgba(10,132,255,0.25);
-      transform: translateY(-6px);
-      box-shadow: 0 12px 36px rgba(0,0,0,0.3), 0 0 20px rgba(10,132,255,0.08);
-    }
-
-    /* Thumbnail */
-    .mac-cert-thumb {
-      position: relative;
-      width: 100%;
-      padding-top: 56.25%;
-      overflow: hidden;
-      background: rgba(255,255,255,0.02);
-    }
-
-    .mac-cert-thumb img {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform 0.4s cubic-bezier(.4,0,.2,1);
-    }
-
-    .mac-cert-card:hover .mac-cert-thumb img {
-      transform: scale(1.06);
-    }
-
-    /* Type Badge */
-    .mac-type-badge {
-      position: absolute;
-      top: 10px;
-      right: 10px;
-      padding: 4px 12px;
-      border-radius: 8px;
-      font-family: 'Inter', -apple-system, sans-serif;
-      font-size: 10px;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.8px;
-      backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
-    }
-
-    .mac-type-badge.achievement {
-      background: rgba(191,90,242,0.85);
-      color: #fff;
-      box-shadow: 0 2px 10px rgba(191,90,242,0.4);
-    }
-
-    .mac-type-badge.learning {
-      background: rgba(10,132,255,0.85);
-      color: #fff;
-      box-shadow: 0 2px 10px rgba(10,132,255,0.4);
-    }
-
-    .mac-type-badge.participate {
-      background: rgba(48,209,88,0.85);
-      color: #fff;
-      box-shadow: 0 2px 10px rgba(48,209,88,0.4);
-    }
-
-    .mac-type-badge.hackathon {
-      background: rgba(255,159,10,0.85);
-      color: #fff;
-      box-shadow: 0 2px 10px rgba(255,159,10,0.4);
-    }
-
-    .mac-type-badge.gamejam {
-      background: rgba(255,55,95,0.85);
-      color: #fff;
-      box-shadow: 0 2px 10px rgba(255,55,95,0.4);
-    }
-
-    .mac-type-badge.extra {
-      background: rgba(100,210,255,0.85);
-      color: #fff;
-      box-shadow: 0 2px 10px rgba(100,210,255,0.4);
-    }
-
-    /* Duration Pill */
-    .mac-duration-pill {
-      position: absolute;
-      bottom: 10px;
-      right: 10px;
-      background: rgba(0,0,0,0.75);
-      backdrop-filter: blur(8px);
-      color: rgba(255,255,255,0.9);
-      padding: 3px 10px;
-      border-radius: 6px;
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 11px;
-      font-weight: 600;
-      border: 1px solid rgba(255,255,255,0.1);
-    }
-
-    /* Hover Icon Overlay */
-    .mac-hover-icon {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%) scale(0.8);
-      width: 52px;
-      height: 52px;
-      background: rgba(10,132,255,0.85);
-      backdrop-filter: blur(10px);
-      border-radius: 14px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      opacity: 0;
-      transition: all 0.3s cubic-bezier(.4,0,.2,1);
-      pointer-events: none;
-      box-shadow: 0 8px 24px rgba(10,132,255,0.4);
-    }
-
-    .mac-cert-card:hover .mac-hover-icon {
-      opacity: 1;
-      transform: translate(-50%, -50%) scale(1);
-    }
-
-    .mac-hover-icon i {
-      color: #fff;
-      font-size: 20px;
-    }
-
-    /* Card Content */
-    .mac-cert-content {
-      padding: 18px 18px 20px;
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-    }
-
-    .mac-cert-title {
-      font-family: 'Inter', -apple-system, sans-serif;
-      font-size: 0.95rem;
-      font-weight: 700;
-      color: #fff;
-      margin: 0 0 6px;
-      line-height: 1.4;
-      letter-spacing: -0.2px;
-      display: flex;
-      align-items: center;
-      gap: 6px;
-    }
-
-    .mac-verified {
-      width: 16px;
-      height: 16px;
-      border-radius: 50%;
-      background: #0A84FF;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-    }
-
-    .mac-verified i {
-      color: #fff;
-      font-size: 8px;
-    }
-
-    .mac-cert-meta {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      font-family: 'Inter', -apple-system, sans-serif;
-      color: rgba(255,255,255,0.35);
-      font-size: 0.78rem;
-      margin-bottom: 10px;
-    }
-
-    .mac-cert-meta i {
-      color: #0A84FF;
-      font-size: 0.7rem;
-    }
-
-    .mac-cert-desc {
-      font-family: 'Inter', -apple-system, sans-serif;
-      color: rgba(255,255,255,0.45);
-      font-size: 0.82rem;
-      line-height: 1.55;
-      margin: 0 0 16px;
-      flex: 1;
-      display: -webkit-box;
-      -webkit-line-clamp: 3;
-      -webkit-box-orient: vertical;
-      overflow: hidden;
-    }
-
-    /* Action Buttons */
-    .mac-cert-actions {
-      display: flex;
-      gap: 8px;
-      flex-wrap: wrap;
-      margin-top: auto;
-    }
-
-    .mac-view-btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 5px;
-      background: #0A84FF;
-      color: #fff;
-      padding: 7px 14px;
-      border-radius: 8px;
-      text-decoration: none;
-      font-family: 'Inter', -apple-system, sans-serif;
-      font-size: 0.75rem;
-      font-weight: 600;
-      transition: all 0.2s ease;
-      box-shadow: 0 2px 10px rgba(10,132,255,0.3);
-      letter-spacing: 0.2px;
-    }
-
-    .mac-view-btn:hover {
-      background: #1B90FF;
-      transform: translateY(-2px);
-      box-shadow: 0 6px 18px rgba(10,132,255,0.45);
-      color: #fff;
-    }
-
-    .mac-view-btn.secondary {
-      background: rgba(255,255,255,0.06);
-      border: 1px solid rgba(255,255,255,0.1);
-      color: rgba(255,255,255,0.7);
-      box-shadow: none;
-    }
-
-    .mac-view-btn.secondary:hover {
-      background: rgba(255,255,255,0.12);
-      border-color: rgba(255,255,255,0.2);
-      color: #fff;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-    }
-
-    .mac-view-btn i {
-      font-size: 12px;
-    }
-
-    /* ---- Footer ---- */
-    .footer {
-      background: #0a0e18 !important;
-      border-top: 1px solid rgba(255,255,255,0.06) !important;
-      padding: 30px 0 80px 0 !important;
-      position: relative;
-      z-index: 1;
-    }
-
-    .footer .container {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-end;
-    }
-
-    .footer .copyright {
-      text-align: right !important;
-    }
-
-    .footer .copyright p {
-      font-family: 'Inter', -apple-system, sans-serif !important;
-      color: rgba(255,255,255,0.4) !important;
-      font-size: 0.85rem;
-    }
-
-    .footer .social-links {
-      justify-content: flex-end !important;
-    }
-
-    .footer .social-links a {
-      width: 36px;
-      height: 36px;
-      display: inline-flex !important;
-      align-items: center;
-      justify-content: center;
-      background: rgba(255,255,255,0.06);
-      border: 1px solid rgba(255,255,255,0.08);
-      border-radius: 10px;
-      color: rgba(255,255,255,0.5) !important;
-      font-size: 1rem;
-      transition: all 0.2s ease;
-      margin: 0 5px !important;
-    }
-
-    .footer .social-links a:hover {
-      background: rgba(10,132,255,0.15) !important;
-      border-color: rgba(10,132,255,0.4) !important;
-      color: #0A84FF !important;
-      transform: translateY(-3px);
-    }
-
-    /* ---- Responsive ---- */
-    @media (max-width: 768px) {
-      .achievements-page { padding: 44px 0 60px; }
-      .page-header { padding: 20px 0 30px; }
-      .page-header h1 { font-size: 1.8rem; }
-      .mac-window-body { padding: 20px 16px 24px; }
-      .mac-cert-content { padding: 14px 14px 16px; }
-    }
-
-    @media (max-width: 575px) {
-      .achievements-page { padding: 40px 0 56px; }
-      .mac-window-titlebar { padding: 10px 13px; }
-      .mac-window-body { padding: 16px 12px 20px; }
-      .page-header h1 { font-size: 1.5rem; }
-    }
-
-    @media (max-width: 380px) {
-      .achievements-page { padding: 38px 0 50px; }
-    }
-
-    /* ====== PREMIUM SCROLL ANIMATIONS ====== */
-    .scroll-progress-glow {
-      position: fixed;
-      top: 0;
-      left: 0;
-      height: 3px;
-      width: 0%;
-      background: linear-gradient(90deg, #0A84FF, #BF5AF2, #FF375F, #FF9F0A);
-      z-index: 99999;
-      transition: width 0.1s linear;
-      box-shadow: 0 0 15px rgba(10, 132, 255, 0.5), 0 0 30px rgba(191, 90, 242, 0.3);
-    }
-
-    .scroll-reveal {
-      opacity: 0;
-      transform: translateY(60px);
-      transition: all 0.9s cubic-bezier(0.22, 1, 0.36, 1);
-      will-change: transform, opacity;
-    }
-    .scroll-reveal.revealed {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    .scroll-reveal-left {
-      opacity: 0;
-      transform: translateX(-80px);
-      transition: all 0.9s cubic-bezier(0.22, 1, 0.36, 1);
-      will-change: transform, opacity;
-    }
-    .scroll-reveal-left.revealed {
-      opacity: 1;
-      transform: translateX(0);
-    }
-
-    .scroll-reveal-right {
-      opacity: 0;
-      transform: translateX(80px);
-      transition: all 0.9s cubic-bezier(0.22, 1, 0.36, 1);
-      will-change: transform, opacity;
-    }
-    .scroll-reveal-right.revealed {
-      opacity: 1;
-      transform: translateX(0);
-    }
-
-    .scroll-reveal-scale {
-      opacity: 0;
-      transform: scale(0.85);
-      transition: all 0.9s cubic-bezier(0.22, 1, 0.36, 1);
-      will-change: transform, opacity;
-    }
-    .scroll-reveal-scale.revealed {
-      opacity: 1;
-      transform: scale(1);
-    }
-
-    .scroll-reveal-rotate {
-      opacity: 0;
-      transform: perspective(800px) rotateY(15deg) translateX(40px);
-      transition: all 1s cubic-bezier(0.22, 1, 0.36, 1);
-      will-change: transform, opacity;
-    }
-    .scroll-reveal-rotate.revealed {
-      opacity: 1;
-      transform: perspective(800px) rotateY(0deg) translateX(0);
-    }
-
-    .scroll-glow {
-      transition: box-shadow 0.6s ease;
-    }
-    .scroll-glow.revealed {
-      box-shadow: 0 0 30px rgba(191, 90, 242, 0.15), 0 8px 32px rgba(0, 0, 0, 0.3);
-    }
-
-    .scroll-particle {
-      position: fixed;
-      width: 4px;
-      height: 4px;
-      border-radius: 50%;
-      pointer-events: none;
-      z-index: 99998;
-      opacity: 0;
-      transition: opacity 0.3s ease;
-    }
-
-    .mac-cert-card {
-      opacity: 0;
-      transform: translateY(30px);
-      transition: all 0.6s cubic-bezier(0.22, 1, 0.36, 1);
-    }
-    .revealed .mac-cert-card {
-      opacity: 1;
-      transform: translateY(0);
-    }
-    .revealed .col-md-6:nth-child(1) .mac-cert-card,
-    .revealed .col-lg-4:nth-child(1) .mac-cert-card { transition-delay: 0.05s; }
-    .revealed .col-md-6:nth-child(2) .mac-cert-card,
-    .revealed .col-lg-4:nth-child(2) .mac-cert-card { transition-delay: 0.12s; }
-    .revealed .col-md-6:nth-child(3) .mac-cert-card,
-    .revealed .col-lg-4:nth-child(3) .mac-cert-card { transition-delay: 0.19s; }
-    .revealed .col-md-6:nth-child(4) .mac-cert-card,
-    .revealed .col-lg-4:nth-child(4) .mac-cert-card { transition-delay: 0.26s; }
-    .revealed .col-md-6:nth-child(5) .mac-cert-card,
-    .revealed .col-lg-4:nth-child(5) .mac-cert-card { transition-delay: 0.33s; }
-    .revealed .col-md-6:nth-child(6) .mac-cert-card,
-    .revealed .col-lg-4:nth-child(6) .mac-cert-card { transition-delay: 0.40s; }
-    .revealed .col-md-6:nth-child(7) .mac-cert-card,
-    .revealed .col-lg-4:nth-child(7) .mac-cert-card { transition-delay: 0.47s; }
-    .revealed .col-md-6:nth-child(8) .mac-cert-card,
-    .revealed .col-lg-4:nth-child(8) .mac-cert-card { transition-delay: 0.54s; }
-
-    .page-header .page-header-badge,
-    .page-header h1,
-    .page-header p {
-      transition: transform 0.3s ease-out;
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      .scroll-reveal, .scroll-reveal-left, .scroll-reveal-right,
-      .scroll-reveal-scale, .scroll-reveal-rotate {
-        opacity: 1 !important;
-        transform: none !important;
-        transition: none !important;
-      }
-      .mac-cert-card {
-        opacity: 1 !important;
-        transform: none !important;
-        transition: none !important;
-      }
-      .scroll-progress-glow { display: none; }
-    }
-
-    /* ---- macOS Menu Bar ---- */
-    .macos-menubar {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 28px;
-      background: rgba(22,22,26,0.92);
-      backdrop-filter: blur(25px) saturate(2);
-      -webkit-backdrop-filter: blur(25px) saturate(2);
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 0 18px;
-      z-index: 9998;
-      border-bottom: 1px solid rgba(255,255,255,0.08);
-      box-shadow: 0 1px 0 rgba(0,0,0,0.15);
-      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-    }
-
-    .menubar-left {
-      display: flex;
-      align-items: center;
-      gap: 20px;
-    }
-
-    .menubar-apple {
-      font-size: 16px;
-      color: rgba(255,255,255,0.95);
-    }
-
-    .menubar-left span {
-      font-size: 13px;
-      font-weight: 500;
-      color: rgba(255,255,255,0.88);
-      cursor: default;
-      user-select: none;
-      transition: color 0.15s ease;
-    }
-
-    .menubar-left span:hover:not(.menubar-apple) {
-      color: rgba(255,255,255,1);
-    }
-
-    .menubar-left span.menubar-brand {
-      font-weight: 700;
-      color: rgba(255,255,255,0.95);
-    }
-
-    .menubar-right {
-      display: flex;
-      align-items: center;
-      gap: 16px;
-      font-size: 12px;
-      color: rgba(255,255,255,0.85);
-    }
-
-    .menubar-right a {
-      color: inherit;
-      text-decoration: none;
-      transition: color 0.15s ease;
-      display: flex;
-      align-items: center;
-    }
-
-    .menubar-right a:hover {
-      color: rgba(255,255,255,1);
-    }
-
-    .menubar-right i {
-      font-size: 14px;
-      transition: color 0.15s ease;
-    }
-
-    .menubar-right i:hover {
-      color: rgba(255,255,255,1);
-    }
-
-    #menubar-clock {
-      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-      font-size: 12px;
-      font-weight: 500;
-      color: rgba(255,255,255,0.9);
-      letter-spacing: 0.4px;
-      min-width: 44px;
-      text-align: right;
-    }
-
-    @media (max-width: 768px) {
-      .macos-menubar {
-        height: 36px;
-        padding: 0 12px;
-      }
-      .menubar-left {
-        gap: 10px;
-        overflow: hidden;
-      }
-      .menubar-left span {
-        font-size: 12px;
-      }
-      .menubar-left span.menubar-brand {
-        font-size: 12px;
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        max-width: 110px;
-      }
-      .menubar-left span:not(.menubar-apple):not(.menubar-brand) {
-        display: none;
-      }
-      .menubar-right {
-        gap: 10px;
-      }
-      .menubar-right i {
-        font-size: 13px;
-      }
-      #menubar-clock {
-        font-size: 11px;
-        min-width: 38px;
-      }
-      .menubar-right > i.bi-wifi,
-      .menubar-right > i.bi-battery-full {
-        display: none;
-      }
-    }
-
-    @media (max-width: 575px) {
-      .macos-menubar {
-        height: 34px;
-        padding: 0 10px;
-      }
-      .menubar-left {
-        gap: 8px;
-      }
-      .menubar-apple i {
-        font-size: 14px;
-      }
-      .menubar-left span.menubar-brand {
-        max-width: 90px;
-        font-size: 11px;
-      }
-      .menubar-right {
-        gap: 8px;
-      }
-      .menubar-right a i {
-        font-size: 12px;
-      }
-      #menubar-clock {
-        font-size: 10px;
-        min-width: 34px;
-      }
-    }
-
-    @media (max-width: 380px) {
-      .menubar-left span.menubar-brand {
-        max-width: 70px;
-        font-size: 10px;
-      }
-      .menubar-right {
-        gap: 6px;
-      }
-      .menubar-right a:nth-child(3),
-      .menubar-right a:nth-child(4) {
-        display: none;
-      }
-    }
-  </style>
-
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4658801537271443"
-    crossorigin="anonymous"></script>
-
-  <!-- Open Graph / Facebook -->
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://dharmikgohil.art/Achivemtn.html">
-  <meta property="og:title" content="Achievements & Milestones - Dharmik Gohil Game Developer Success Stories">
-  <meta property="og:description"
-    content="Discover Dharmik Gohil's achievements, milestones, certifications, and recognition in game development, programming competitions, and educational accomplishments.">
-  <meta property="og:image" content="https://dharmikgohil.art/assets/img/dharmik-profile-photo-2026.jpg">
-
-  <!-- Twitter -->
-  <meta property="twitter:card" content="summary_large_image">
-  <meta property="twitter:url" content="https://dharmikgohil.art/Achivemtn.html">
-  <meta property="twitter:title" content="Achievements & Milestones - Dharmik Gohil Game Developer Success Stories">
-  <meta property="twitter:description"
-    content="Discover Dharmik Gohil's achievements, milestones, certifications, and recognition in game development, programming competitions, and educational accomplishments.">
-  <meta property="twitter:image" content="https://dharmikgohil.art/assets/img/dharmik-profile-photo-2026.jpg">
-
-  <!-- Additional SEO Meta Tags -->
-  <meta name="robots" content="index, follow">
-  <link rel="canonical" href="https://dharmikgohil.art/Achivemtn.html">
-  <meta name="creator" content="Dharmik Gohil">
-  <meta name="publisher" content="Dharmik Gohil">
-  <!-- Open Graph / Facebook -->
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://dharmikgohil.art/Achivemtn.html">
-  <meta property="og:title"
-    content="Dharmik Gohil Achievements | Game Developer Awards | Unity Projects | CHARUSAT Success">
-  <meta property="og:description"
-    content="Discover Dharmik Gohil's achievements in game development. Unity project successes, mobile game accomplishments, VR/AR milestones, and recognition from CHARUSAT University and industry.">
-  <meta property="og:image" content="https://dharmikgohil.art/assets/img/dharmik-profile-photo-2026.jpg">
-  <meta property="og:locale" content="en_US">
-  <meta property="og:site_name" content="Dharmik Gohil Portfolio">
-
-  <!-- Twitter -->
-  <meta property="twitter:card" content="summary_large_image">
-  <meta property="twitter:url" content="https://dharmikgohil.art/Achivemtn.html">
-  <meta property="twitter:title"
-    content="Dharmik Gohil Achievements | Game Developer Awards | Unity Projects | CHARUSAT Success">
-  <meta property="twitter:description"
-    content="Discover Dharmik Gohil's achievements in game development. Unity project successes, mobile game accomplishments, VR/AR milestones, and recognition from CHARUSAT University and industry.">
-  <meta property="twitter:image" content="https://dharmikgohil.art/assets/img/dharmik-profile-photo-2026.jpg">
-  <meta property="twitter:creator" content="@dharmikgohil">
   <!-- Favicons - Dharmik Gohil Logo -->
   <link rel="icon" type="image/png" sizes="32x32" href="assets/img/dlogo.png">
   <link rel="icon" type="image/png" sizes="16x16" href="assets/img/dlogo.png">
@@ -1145,27 +319,425 @@
   <meta name="apple-mobile-web-app-title" content="Dharmik Gohil">
   <meta name="application-name" content="Dharmik Gohil">
 
-<body class="index-page">
+  <style>
+    /* ==========================================================================
+       BRUTALIST EDITORIAL DESIGN SYSTEM (v1.0)
+       Light · Daring · Unapologetic by design.
+       ========================================================================== */
 
-  <!-- macOS Menu Bar -->
-  <div class="macos-menubar">
-    <div class="menubar-left">
-      <span class="menubar-apple"><a href="index.html" style="color:inherit;text-decoration:none;"><i class="bi bi-house-fill"></i></a></span>
-      <span class="menubar-brand">Dharmik Gohil</span>
-      <span><a href="blog.html" style="color:inherit;text-decoration:none;display:flex;align-items:center;gap:4px;"><i class="bi bi-rss"></i> Blog</a></span>
-      <span>Achievements</span>
-      <span>Certifications</span>
-    </div>
-    <div class="menubar-right">
-      <a href="https://github.com/DharmikGohil013" target="_blank" rel="noopener noreferrer"><i class="bi bi-github"></i></a>
-      <a href="https://www.linkedin.com/in/dharmikgohil086/" target="_blank" rel="noopener noreferrer"><i class="bi bi-linkedin"></i></a>
-      <a href="https://www.instagram.com/dharmik.086/?next=%2F" target="_blank" rel="noopener noreferrer"><i class="bi bi-instagram"></i></a>
-      <a href="https://x.com/Dharmik086" target="_blank" rel="noopener noreferrer"><i class="bi bi-twitter"></i></a>
-      <i class="bi bi-wifi"></i>
-      <i class="bi bi-battery-full"></i>
-      <span id="menubar-clock">--:--</span>
-    </div>
-  </div>
+    :root {
+      --ink: #0d0d0b;
+      --paper: #f2f0eb;
+      --red: #c8001a;
+      --red-dim: #8a0012;
+      --rule: rgba(13, 13, 11, 0.15);
+      --rule-heavy: rgba(13, 13, 11, 0.90);
+    }
+
+    /* Base resets & structural outer border */
+    html, body {
+      background-color: var(--paper) !important;
+      color: var(--ink) !important;
+      font-family: 'IBM Plex Mono', monospace;
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+      box-sizing: border-box;
+    }
+
+    body {
+      border: 4px solid var(--ink) !important;
+      padding: 24px;
+      position: relative;
+    }
+
+    /* Override main.css section backgrounds and padding */
+    section, .section, .editorial-category-block {
+      background-color: transparent !important;
+      padding: 0 !important;
+      overflow: visible !important;
+      scroll-margin-top: 100px;
+    }
+
+    /* Staggered page load fade-up animation */
+    @keyframes brutalistFadeUp {
+      0% {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .animate-fade-up {
+      opacity: 0;
+      animation: brutalistFadeUp 0.5s ease forwards;
+    }
+
+    .stagger-1 { animation-delay: 0.04s; }
+    .stagger-2 { animation-delay: 0.08s; }
+    .stagger-3 { animation-delay: 0.12s; }
+    .stagger-4 { animation-delay: 0.16s; }
+    .stagger-5 { animation-delay: 0.20s; }
+    .stagger-6 { animation-delay: 0.24s; }
+
+    /* typography rules */
+    h1, h2, h3, h4, h5, h6, .display-font {
+      font-family: 'Bebas Neue', sans-serif !important;
+      text-transform: uppercase;
+      margin: 0;
+      letter-spacing: 0.05em;
+    }
+
+    .mono-label {
+      font-family: 'IBM Plex Mono', monospace !important;
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+    }
+
+    .mono-body {
+      font-family: 'IBM Plex Mono', monospace !important;
+      font-size: 14px;
+      line-height: 1.6;
+      opacity: 0.6; /* Mono body at 60% opacity */
+    }
+
+    .emotional-headline {
+      font-family: 'Playfair Display', serif !important;
+      font-weight: 900;
+      font-style: italic; /* Vulnerability. Italic pulling quote */
+      font-size: clamp(2rem, 5vw, 3.8rem);
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      color: var(--ink);
+      margin: 16px 0;
+    }
+
+    /* Masthead styling */
+    .editorial-masthead {
+      display: flex;
+      flex-direction: column;
+      border-bottom: 4px solid var(--ink);
+      padding-bottom: 8px;
+      margin-bottom: 32px;
+    }
+
+    .masthead-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      border-bottom: 1px solid var(--ink);
+      padding-bottom: 6px;
+    }
+
+    .masthead-meta-left, .masthead-meta-right {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+    }
+
+    .masthead-title {
+      font-family: 'Bebas Neue', sans-serif !important;
+      font-size: clamp(3rem, 10vw, 7.5rem);
+      line-height: 0.85;
+      font-weight: bold;
+      text-align: center;
+      color: var(--ink);
+      letter-spacing: 0.02em;
+    }
+
+    .masthead-mid {
+      display: flex;
+      justify-content: center;
+      border-bottom: 1px solid var(--ink);
+      padding: 6px 0;
+    }
+
+    .masthead-overline {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.35em;
+    }
+
+    .masthead-nav {
+      display: flex;
+      justify-content: center;
+      gap: 24px;
+      padding: 12px 0 4px 0;
+      flex-wrap: wrap;
+    }
+
+    .masthead-nav .nav-link {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 18px;
+      color: rgba(13, 13, 11, 0.4);
+      text-decoration: none;
+      transition: color 0.3s ease;
+      letter-spacing: 0.1em;
+    }
+
+    .masthead-nav .nav-link:hover {
+      color: var(--ink);
+    }
+
+    .masthead-nav .nav-link.active {
+      color: var(--ink);
+      border-bottom: 2.5px solid var(--red); /* active navigation has simple red indicator */
+    }
+
+    /* Category panel styling */
+    .editorial-category-block {
+      margin-top: 48px;
+    }
+
+    .category-header {
+      border-top: 2px solid var(--ink);
+      border-bottom: 2px solid var(--ink);
+      padding: 12px 0;
+      margin-bottom: 24px;
+    }
+
+    .category-title {
+      font-family: 'Bebas Neue', sans-serif !important;
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      line-height: 0.9;
+      letter-spacing: 0.02em;
+      color: var(--ink);
+    }
+
+    /* Card Redesign */
+    .brutalist-cert-card {
+      background-color: var(--paper);
+      border: 1px solid var(--ink);
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      box-sizing: border-box;
+      border-radius: 0 !important;
+    }
+
+    .brutalist-cert-thumb {
+      position: relative;
+      width: 100%;
+      padding-top: 56.25%;
+      overflow: hidden;
+      border-bottom: 1px solid var(--ink);
+      background-color: var(--ink);
+      border-radius: 0 !important;
+    }
+
+    .brutalist-cert-thumb img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: grayscale(1) contrast(1.1);
+      transition: filter 0.3s ease;
+      border-radius: 0 !important;
+    }
+
+    .brutalist-cert-card:hover .brutalist-cert-thumb img {
+      filter: grayscale(0) contrast(1);
+    }
+
+    /* Sharp Badges */
+    .sharp-badge {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      padding: 4px 8px;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 9px;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      background-color: var(--ink);
+      color: var(--paper);
+      border: 1px solid var(--ink);
+      border-radius: 0 !important;
+      z-index: 10;
+    }
+
+    .sharp-duration-pill {
+      position: absolute;
+      bottom: 10px;
+      right: 10px;
+      background-color: var(--paper);
+      color: var(--ink);
+      padding: 4px 8px;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 9px;
+      font-weight: bold;
+      border: 1px solid var(--ink);
+      border-radius: 0 !important;
+      z-index: 10;
+    }
+
+    /* Verified square checkmark */
+    .verified-sq {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 14px;
+      font-weight: bold;
+      color: var(--red);
+      margin-left: 4px;
+    }
+
+    /* Card Content */
+    .brutalist-cert-content {
+      padding: 16px;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .brutalist-cert-title {
+      font-family: 'IBM Plex Mono', monospace !important;
+      font-size: 14px;
+      font-weight: bold;
+      color: var(--ink);
+      margin: 0 0 6px 0;
+      line-height: 1.4;
+      text-transform: uppercase;
+    }
+
+    .brutalist-cert-meta {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 11px;
+      color: var(--ink);
+      opacity: 0.6;
+      margin-bottom: 12px;
+    }
+
+    .brutalist-cert-desc {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 12px;
+      color: var(--ink);
+      opacity: 0.6;
+      line-height: 1.6;
+      margin: 0 0 16px 0;
+      flex-grow: 1;
+    }
+
+    /* Action buttons */
+    .brutalist-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: auto;
+    }
+
+    .brutalist-btn {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 14px;
+      letter-spacing: 0.1em;
+      padding: 6px 12px;
+      text-transform: uppercase;
+      cursor: pointer;
+      text-decoration: none;
+      box-sizing: border-box;
+      border-radius: 0 !important;
+    }
+
+    .brutalist-btn.primary {
+      background-color: var(--ink);
+      color: var(--paper);
+      border: 1px solid var(--ink);
+      border-bottom: 2.5px solid var(--red); /* CTA underline only */
+    }
+
+    .brutalist-btn.primary:hover {
+      background-color: var(--paper);
+      color: var(--ink);
+    }
+
+    .brutalist-btn.secondary {
+      background-color: transparent;
+      color: var(--ink);
+      border: 1px solid var(--ink);
+    }
+
+    .brutalist-btn.secondary:hover {
+      background-color: var(--ink);
+      color: var(--paper);
+    }
+
+    /* Footer Colophon */
+    .editorial-footer {
+      border-top: 2px solid var(--ink);
+      padding: 24px 0 40px 0;
+      margin-top: 60px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .colophon-text {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 10px;
+      letter-spacing: 0.1em;
+      opacity: 0.6;
+    }
+
+    .colophon-signature {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 10px;
+      font-weight: bold;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--red);
+    }
+
+    /* Preloader */
+    #preloader {
+      background-color: var(--paper) !important;
+    }
+    .cube-loader, .cube-span, .cube-top {
+      border-radius: 0 !important;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 991px) {
+      body {
+        padding: 16px;
+      }
+      .masthead-title {
+        font-size: 4.5rem;
+      }
+    }
+
+    @media (max-width: 768px) {
+      body {
+        border-width: 3px !important;
+        padding: 12px;
+      }
+      .editorial-footer {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+
+    /* Spacious side margin override for achievements broadside */
+    body .main {
+      padding: 0 clamp(1.8rem, 6vw, 4.5rem) !important;
+    }
+  </style>
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=IBM+Plex+Mono:ital,wght@0,400;0,500;0,700;1,400&family=Playfair+Display:ital,wght@0,900;1,900&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=IBM+Plex+Mono:ital,wght@0,400;0,500;0,700;1,400&family=Playfair+Display:ital,wght@0,900;1,900&display=swap" rel="stylesheet"></noscript>
+  <link rel="preload" href="index.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link href="index.css" rel="stylesheet"></noscript>
+</head>
+
+<body class="index-page">
 
   <!-- Preloader -->
   <div id="preloader">
@@ -1180,741 +752,639 @@
     </div>
   </div>
 
-  <main>
-    <div class="achievements-page">
-      <div class="container">
-
-        <!-- Page Header -->
-        <div class="page-header scroll-reveal" data-aos="fade-down" data-aos-delay="100">
-          <div class="page-header-badge"><i class="bi bi-trophy-fill"></i> Portfolio</div>
-          <h1>Achievements &amp; Certifications</h1>
-          <p>A curated collection of milestones, certifications, hackathons, and learning journeys.</p>
-        </div>
-
-        <!-- ===================== ACHIEVEMENTS ===================== -->
-        <div class="mac-category-window scroll-reveal-left scroll-glow" data-aos="fade-up" data-aos-delay="150">
-          <div class="mac-window-titlebar">
-            <div class="mac-window-dots">
-              <span class="mac-dot-red"></span>
-              <span class="mac-dot-yellow"></span>
-              <span class="mac-dot-green"></span>
-            </div>
-            <div class="mac-window-label"><i class="bi bi-award-fill"></i> Achievements</div>
-          </div>
-          <div class="mac-window-body">
-            <div class="row g-4">
-
-              <!-- NPTEL DSA -->
-              <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="200">
-                <div class="mac-cert-card">
-                  <div class="mac-cert-thumb">
-                    <img src="assets/img/Cer/1.jpg" alt="NPTEL DSA with Java Certificate" loading="lazy" decoding="async">
-                    <span class="mac-type-badge achievement">Achievement</span>
-                    <span class="mac-duration-pill">Certified</span>
-                    <div class="mac-hover-icon"><i class="bi bi-award-fill"></i></div>
-                  </div>
-                  <div class="mac-cert-content">
-                    <h3 class="mac-cert-title">
-                      NPTEL DSA with Java
-                      <span class="mac-verified"><i class="bi bi-check2"></i></span>
-                    </h3>
-                    <div class="mac-cert-meta"><i class="bi bi-calendar-event"></i> Completed 2024</div>
-                    <p class="mac-cert-desc">Comprehensive certification showcasing proficiency in core data structures and advanced algorithms implemented in Java through NPTEL.</p>
-                    <div class="mac-cert-actions">
-                      <a href="https://drive.google.com/file/d/10fyM4RjQnd6qBhr-30kK-eW3GnWvYLf4/view?usp=drive_link" class="mac-view-btn" target="_blank" rel="noopener noreferrer"><i class="bi bi-eye"></i> View Certificate</a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Code Raider Clash -->
-              <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="250">
-                <div class="mac-cert-card">
-                  <div class="mac-cert-thumb">
-                    <img src="assets/img/Cer/2.jpg" alt="Code Raider Clash 1st Rank" loading="lazy" decoding="async">
-                    <span class="mac-type-badge achievement">Achievement</span>
-                    <span class="mac-duration-pill">1st Rank</span>
-                    <div class="mac-hover-icon"><i class="bi bi-trophy-fill"></i></div>
-                  </div>
-                  <div class="mac-cert-content">
-                    <h3 class="mac-cert-title">
-                      Code Raider Clash – 1st Rank
-                      <span class="mac-verified"><i class="bi bi-check2"></i></span>
-                    </h3>
-                    <div class="mac-cert-meta"><i class="bi bi-award"></i> Competition Winner</div>
-                    <p class="mac-cert-desc">Secured 1st rank in the "Code Raider Clash" competitive programming competition hosted by DEPSTAR College at CHARUSAT University.</p>
-                    <div class="mac-cert-actions">
-                      <a href="https://drive.google.com/file/d/1HAT6VD7gDQ5_xn15_eVMGcsMDQg6-Ebk/view?usp=drive_link" class="mac-view-btn" target="_blank" rel="noopener noreferrer"><i class="bi bi-eye"></i> View Certificate</a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <!-- HackerRank C# -->
-              <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="300">
-                <div class="mac-cert-card">
-                  <div class="mac-cert-thumb">
-                    <img src="assets/img/Cer/11.jpg" alt="HackerRank C# Basic Certificate" loading="lazy" decoding="async">
-                    <span class="mac-type-badge achievement">Achievement</span>
-                    <span class="mac-duration-pill">Certified</span>
-                    <div class="mac-hover-icon"><i class="bi bi-code-slash"></i></div>
-                  </div>
-                  <div class="mac-cert-content">
-                    <h3 class="mac-cert-title">
-                      HackerRank C# Basic
-                      <span class="mac-verified"><i class="bi bi-check2"></i></span>
-                    </h3>
-                    <div class="mac-cert-meta"><i class="bi bi-file-earmark-code"></i> HackerRank Certified</div>
-                    <p class="mac-cert-desc">Earned HackerRank C# Certification, validating skills in C# programming and problem-solving.</p>
-                    <div class="mac-cert-actions">
-                      <a href="https://www.hackerrank.com/certificates/iframe/f0ec81cd0589" class="mac-view-btn" target="_blank" rel="noopener noreferrer"><i class="bi bi-eye"></i> View Certificate</a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Web 3.0 Internship -->
-              <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="350">
-                <div class="mac-cert-card">
-                  <div class="mac-cert-thumb">
-                    <img src="assets/img/Cer/12.jpg" alt="Web 3.0 Project at Technook Pro" loading="lazy" decoding="async">
-                    <span class="mac-type-badge achievement">Achievement</span>
-                    <span class="mac-duration-pill">Internship</span>
-                    <div class="mac-hover-icon"><i class="bi bi-briefcase-fill"></i></div>
-                  </div>
-                  <div class="mac-cert-content">
-                    <h3 class="mac-cert-title">
-                      Web 3.0 Project at Technook Pro
-                      <span class="mac-verified"><i class="bi bi-check2"></i></span>
-                    </h3>
-                    <div class="mac-cert-meta"><i class="bi bi-building"></i> Professional Experience</div>
-                    <p class="mac-cert-desc">Completed Web 3.0 development internship focusing on blockchain technology, dApps, smart contracts, and Web3 development practices.</p>
-                    <div class="mac-cert-actions">
-                      <a href="https://drive.google.com/file/d/1QpViYnj7yfiFMvlsdorI4lIuISOcx2FO/view?usp=drive_link" class="mac-view-btn" target="_blank" rel="noopener noreferrer"><i class="bi bi-eye"></i> Internship Cert</a>
-                      <a href="https://drive.google.com/file/d/1wecLs0kkqwPDM5_wiVb-QeJcV4AbO4SK/view?usp=drive_link" class="mac-view-btn secondary" target="_blank" rel="noopener noreferrer"><i class="bi bi-file-text"></i> Offer Letter</a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Google Cloud -->
-              <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="400">
-                <div class="mac-cert-card">
-                  <div class="mac-cert-thumb">
-                    <img src="assets/img/Cer/13.jpg" alt="Google Cloud Impact Hackathon" loading="lazy" decoding="async">
-                    <span class="mac-type-badge achievement">Achievement</span>
-                    <span class="mac-duration-pill">Hackathon</span>
-                    <div class="mac-hover-icon"><i class="bi bi-cloud-fill"></i></div>
-                  </div>
-                  <div class="mac-cert-content">
-                    <h3 class="mac-cert-title">
-                      Google Cloud Impact Hackathon
-                      <span class="mac-verified"><i class="bi bi-check2"></i></span>
-                    </h3>
-                    <div class="mac-cert-meta"><i class="bi bi-google"></i> Google Cloud</div>
-                    <p class="mac-cert-desc">Developed a Web 3.0 project during an internship, gaining experience in blockchain and decentralized tech.</p>
-                    <div class="mac-cert-actions">
-                      <a href="https://drive.google.com/file/d/1841zh602nc0RXIuiryb3wgKrdohY5gzV/view?usp=drive_link" class="mac-view-btn" target="_blank" rel="noopener noreferrer"><i class="bi bi-eye"></i> View Certificate</a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-            </div>
-          </div>
-        </div>
-
-        <!-- ===================== LEARNING ===================== -->
-        <div class="mac-category-window scroll-reveal-right scroll-glow" data-aos="fade-up" data-aos-delay="150">
-          <div class="mac-window-titlebar">
-            <div class="mac-window-dots">
-              <span class="mac-dot-red"></span>
-              <span class="mac-dot-yellow"></span>
-              <span class="mac-dot-green"></span>
-            </div>
-            <div class="mac-window-label"><i class="bi bi-book-fill"></i> Learning</div>
-          </div>
-          <div class="mac-window-body">
-            <div class="row g-4">
-
-              <!-- Java Course -->
-              <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="200">
-                <div class="mac-cert-card">
-                  <div class="mac-cert-thumb">
-                    <img src="assets/img/Cer/8.jpg" alt="Java from Beginner to Master Course" loading="lazy" decoding="async">
-                    <span class="mac-type-badge learning">Learning</span>
-                    <span class="mac-duration-pill">Course</span>
-                    <div class="mac-hover-icon"><i class="bi bi-book-fill"></i></div>
-                  </div>
-                  <div class="mac-cert-content">
-                    <h3 class="mac-cert-title">
-                      Java from Beginner to Master
-                      <span class="mac-verified"><i class="bi bi-check2"></i></span>
-                    </h3>
-                    <div class="mac-cert-meta"><i class="bi bi-mortarboard"></i> Udemy Course</div>
-                    <p class="mac-cert-desc">Completed a comprehensive Java course on Udemy, building a strong foundation in Java programming.</p>
-                    <div class="mac-cert-actions">
-                      <a href="https://drive.google.com/file/d/1rWywyan2-RrT5_aUG4aHIYd3-ruvRY8g/view?usp=drive_link" class="mac-view-btn" target="_blank" rel="noopener noreferrer"><i class="bi bi-eye"></i> View Certificate</a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <!-- C & C++ -->
-              <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="250">
-                <div class="mac-cert-card">
-                  <div class="mac-cert-thumb">
-                    <img src="assets/img/Cer/2.jpg" alt="C & C++ Programming Course" loading="lazy" decoding="async">
-                    <span class="mac-type-badge learning">Learning</span>
-                    <span class="mac-duration-pill">A+ Grade</span>
-                    <div class="mac-hover-icon"><i class="bi bi-file-earmark-code"></i></div>
-                  </div>
-                  <div class="mac-cert-content">
-                    <h3 class="mac-cert-title">
-                      C &amp; C++ Programming
-                      <span class="mac-verified"><i class="bi bi-check2"></i></span>
-                    </h3>
-                    <div class="mac-cert-meta"><i class="bi bi-building"></i> CDMI Institute</div>
-                    <p class="mac-cert-desc">Earned an A+ grade in a C & C++ course at Creative Design & Multimedia Institute.</p>
-                    <div class="mac-cert-actions">
-                      <a href="https://drive.google.com/file/d/1N7b0S4DX6pHi2xFKjocrusdcfwZ6FNxj/view?usp=drive_link" class="mac-view-btn" target="_blank" rel="noopener noreferrer"><i class="bi bi-eye"></i> View Certificate</a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-            </div>
-          </div>
-        </div>
-
-        <!-- ===================== PARTICIPATE ===================== -->
-        <div class="mac-category-window scroll-reveal-scale scroll-glow" data-aos="fade-up" data-aos-delay="150">
-          <div class="mac-window-titlebar">
-            <div class="mac-window-dots">
-              <span class="mac-dot-red"></span>
-              <span class="mac-dot-yellow"></span>
-              <span class="mac-dot-green"></span>
-            </div>
-            <div class="mac-window-label"><i class="bi bi-people-fill"></i> Participate</div>
-          </div>
-          <div class="mac-window-body">
-            <div class="row g-4">
-
-              <!-- AWS Community Day -->
-              <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="200">
-                <div class="mac-cert-card">
-                  <div class="mac-cert-thumb">
-                    <img src="assets/img/Cer/13.jpg" alt="AWS Students Community Day" loading="lazy" decoding="async">
-                    <span class="mac-type-badge participate">Participate</span>
-                    <span class="mac-duration-pill">AWS Event</span>
-                    <div class="mac-hover-icon"><i class="bi bi-cloud-check"></i></div>
-                  </div>
-                  <div class="mac-cert-content">
-                    <h3 class="mac-cert-title">
-                      AWS Students Community Day
-                      <span class="mac-verified"><i class="bi bi-check2"></i></span>
-                    </h3>
-                    <div class="mac-cert-meta"><i class="bi bi-calendar-event"></i> September 27, 2024</div>
-                    <p class="mac-cert-desc">Participated in AWS Students Community Day at CHARUSAT on September 27, 2024.</p>
-                    <div class="mac-cert-actions">
-                      <a href="https://drive.google.com/file/d/1E_MtTjt7yAivM7P8JWSsIEaCi5EVxTJd/view?usp=drive_link" class="mac-view-btn" target="_blank" rel="noopener noreferrer"><i class="bi bi-eye"></i> View Certificate</a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Bharat Blockchain -->
-              <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="250">
-                <div class="mac-cert-card">
-                  <div class="mac-cert-thumb">
-                    <img src="assets/img/Cer/6.jpg" alt="Bharat Blockchain Yatra" loading="lazy" decoding="async">
-                    <span class="mac-type-badge participate">Participate</span>
-                    <span class="mac-duration-pill">Blockchain</span>
-                    <div class="mac-hover-icon"><i class="bi bi-diagram-3"></i></div>
-                  </div>
-                  <div class="mac-cert-content">
-                    <h3 class="mac-cert-title">
-                      Bharat Blockchain Yatra
-                      <span class="mac-verified"><i class="bi bi-check2"></i></span>
-                    </h3>
-                    <div class="mac-cert-meta"><i class="bi bi-calendar-event"></i> March 5, 2024</div>
-                    <p class="mac-cert-desc">Recognized for participation in Bharat Blockchain Yatra on March 5, 2024.</p>
-                    <div class="mac-cert-actions">
-                      <a href="https://drive.google.com/file/d/1SJ7wHyweiakqu03csNXPHOgG5_65d_0s/view?usp=drive_link" class="mac-view-btn" target="_blank" rel="noopener noreferrer"><i class="bi bi-eye"></i> View Certificate</a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Fashion Show -->
-              <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="300">
-                <div class="mac-cert-card">
-                  <div class="mac-cert-thumb">
-                    <img src="assets/img/Cer/images.jpg" alt="Fashion Show at CHARUSAT" loading="lazy" decoding="async">
-                    <span class="mac-type-badge participate">Participate</span>
-                    <span class="mac-duration-pill">Event</span>
-                    <div class="mac-hover-icon"><i class="bi bi-stars"></i></div>
-                  </div>
-                  <div class="mac-cert-content">
-                    <h3 class="mac-cert-title">
-                      Fashion Show at CHARUSAT
-                      <span class="mac-verified"><i class="bi bi-check2"></i></span>
-                    </h3>
-                    <div class="mac-cert-meta"><i class="bi bi-calendar-event"></i> January 2024</div>
-                    <p class="mac-cert-desc">Participated in the Fashion Show at CHARUSAT from January 2024 to January 31, 2024.</p>
-                    <div class="mac-cert-actions">
-                      <a href="https://drive.google.com/file/d/1IRuyOF6duBgI-eoogG8NFqtXFABg8gwL/view?usp=drive_link" class="mac-view-btn" target="_blank" rel="noopener noreferrer"><i class="bi bi-eye"></i> View Certificate</a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-            </div>
-          </div>
-        </div>
-
-        <!-- ===================== HACKATHONS & WORKSHOPS ===================== -->
-        <div class="mac-category-window scroll-reveal-rotate scroll-glow" data-aos="fade-up" data-aos-delay="150">
-          <div class="mac-window-titlebar">
-            <div class="mac-window-dots">
-              <span class="mac-dot-red"></span>
-              <span class="mac-dot-yellow"></span>
-              <span class="mac-dot-green"></span>
-            </div>
-            <div class="mac-window-label"><i class="bi bi-lightning-fill"></i> Hackathons &amp; Workshops</div>
-          </div>
-          <div class="mac-window-body">
-            <div class="row g-4">
-
-              <!-- HackConclave'24 -->
-              <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="200">
-                <div class="mac-cert-card">
-                  <div class="mac-cert-thumb">
-                    <img src="assets/img/Cer/9.jpg" alt="HackConclave'24 at IIT Guwahati" loading="lazy" decoding="async">
-                    <span class="mac-type-badge hackathon">Hackathon</span>
-                    <span class="mac-duration-pill">IIT Guwahati</span>
-                    <div class="mac-hover-icon"><i class="bi bi-lightning-fill"></i></div>
-                  </div>
-                  <div class="mac-cert-content">
-                    <h3 class="mac-cert-title">
-                      HackConclave'24
-                      <span class="mac-verified"><i class="bi bi-check2"></i></span>
-                    </h3>
-                    <div class="mac-cert-meta"><i class="bi bi-mortarboard-fill"></i> IIT Guwahati</div>
-                    <p class="mac-cert-desc">Participated in HackConclave'24 at IIT Guwahati under Research & Industrial Conclave.</p>
-                    <div class="mac-cert-actions">
-                      <a href="https://drive.google.com/file/d/1hQlBOnd_6l6sxh_WfEebbOSisrFK-vbj/view?usp=drive_link" class="mac-view-btn" target="_blank" rel="noopener noreferrer"><i class="bi bi-eye"></i> View Certificate</a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Game Dev Workshop IIT Bombay 2k24 -->
-              <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="250">
-                <div class="mac-cert-card">
-                  <div class="mac-cert-thumb">
-                    <img src="assets/img/Cer/3.jpg" alt="Game Dev Workshop by IIT Bombay" loading="lazy" decoding="async">
-                    <span class="mac-type-badge hackathon">Workshop</span>
-                    <span class="mac-duration-pill">IIT Bombay</span>
-                    <div class="mac-hover-icon"><i class="bi bi-controller"></i></div>
-                  </div>
-                  <div class="mac-cert-content">
-                    <h3 class="mac-cert-title">
-                      Game Dev Workshop IIT Bombay 2k24
-                      <span class="mac-verified"><i class="bi bi-check2"></i></span>
-                    </h3>
-                    <div class="mac-cert-meta"><i class="bi bi-mortarboard-fill"></i> Techfest IIT Bombay</div>
-                    <p class="mac-cert-desc">Completed a Game Development workshop by Techfest, IIT Bombay.</p>
-                    <div class="mac-cert-actions">
-                      <a href="https://drive.google.com/file/d/1PjZ4lNQndANnHXuRkUS_TX4LJZbVidDn/view?usp=sharing" class="mac-view-btn" target="_blank" rel="noopener noreferrer"><i class="bi bi-eye"></i> View Certificate</a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Game Dev Workshop IIT Bombay 2k25 -->
-              <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="300">
-                <div class="mac-cert-card">
-                  <div class="mac-cert-thumb">
-                    <img src="assets/img/Cer/3.jpg" alt="Game Dev Workshop by IIT Bombay 2k25" loading="lazy" decoding="async">
-                    <span class="mac-type-badge hackathon">Workshop</span>
-                    <span class="mac-duration-pill">IIT Bombay</span>
-                    <div class="mac-hover-icon"><i class="bi bi-controller"></i></div>
-                  </div>
-                  <div class="mac-cert-content">
-                    <h3 class="mac-cert-title">
-                      Game Dev Workshop IIT Bombay 2k25
-                      <span class="mac-verified"><i class="bi bi-check2"></i></span>
-                    </h3>
-                    <div class="mac-cert-meta"><i class="bi bi-mortarboard-fill"></i> Techfest IIT Bombay</div>
-                    <p class="mac-cert-desc">Completed a Game Development workshop by Techfest, IIT Bombay.</p>
-                    <div class="mac-cert-actions">
-                      <a href="https://drive.google.com/file/d/1TtLgU6UvrrdXN5o-Z8B2bIZNIb2FEwgs/view?usp=sharing" class="mac-view-btn" target="_blank" rel="noopener noreferrer"><i class="bi bi-eye"></i> View Certificate</a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Frolic Code-A-Thon -->
-              <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="350">
-                <div class="mac-cert-card">
-                  <div class="mac-cert-thumb">
-                    <img src="assets/img/Cer/7.jpg" alt="Frolic 2024 Code-A-Thon" loading="lazy" decoding="async">
-                    <span class="mac-type-badge hackathon">Hackathon</span>
-                    <span class="mac-duration-pill">Code-A-Thon</span>
-                    <div class="mac-hover-icon"><i class="bi bi-code-slash"></i></div>
-                  </div>
-                  <div class="mac-cert-content">
-                    <h3 class="mac-cert-title">
-                      Frolic 2024 Code-A-Thon
-                      <span class="mac-verified"><i class="bi bi-check2"></i></span>
-                    </h3>
-                    <div class="mac-cert-meta"><i class="bi bi-building"></i> Darshan University</div>
-                    <p class="mac-cert-desc">Participated in the Code-A-Thon at Frolic 2024, Darshan University.</p>
-                    <div class="mac-cert-actions">
-                      <a href="https://drive.google.com/file/d/1-8-FclZrcfDBBsgiGnSmgvbdIRDRSyYj/view?usp=drive_link" class="mac-view-btn" target="_blank" rel="noopener noreferrer"><i class="bi bi-eye"></i> View Certificate</a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Odoo x CHARUSAT -->
-              <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="400">
-                <div class="mac-cert-card">
-                  <div class="mac-cert-thumb">
-                    <img src="assets/img/Cer/odoo-logo.png" alt="Odoo x CHARUSAT Hackathon '25" loading="lazy" decoding="async">
-                    <span class="mac-type-badge hackathon">Hackathon</span>
-                    <span class="mac-duration-pill">24 Hours</span>
-                    <div class="mac-hover-icon"><i class="bi bi-lightning-fill"></i></div>
-                  </div>
-                  <div class="mac-cert-content">
-                    <h3 class="mac-cert-title">
-                      Odoo x CHARUSAT Hackathon '25
-                      <span class="mac-verified"><i class="bi bi-check2"></i></span>
-                    </h3>
-                    <div class="mac-cert-meta"><i class="bi bi-calendar-event"></i> 02 March 2025</div>
-                    <p class="mac-cert-desc">Participated in 24 hours hackathon organized by Odoo and CHARUSAT University. Collaborated on innovative solutions using Odoo ERP platform.</p>
-                    <div class="mac-cert-actions">
-                      <a href="https://drive.google.com/file/d/12fys1NzUmmp_FV90M4Q1UICbLymCuxpB/view?usp=sharing" class="mac-view-btn" target="_blank" rel="noopener noreferrer"><i class="bi bi-eye"></i> View Certificate</a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Hackron TEKRON 2025 -->
-              <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="450">
-                <div class="mac-cert-card">
-                  <div class="mac-cert-thumb">
-                    <img src="assets/img/Cer/blinkit-logo.jpeg" alt="Hackron - TEKRON 2025" loading="lazy" decoding="async">
-                    <span class="mac-type-badge hackathon">Hackathon</span>
-                    <span class="mac-duration-pill">TEKRON 2025</span>
-                    <div class="mac-hover-icon"><i class="bi bi-lightning-fill"></i></div>
-                  </div>
-                  <div class="mac-cert-content">
-                    <h3 class="mac-cert-title">
-                      Hackron – TEKRON 2025
-                      <span class="mac-verified"><i class="bi bi-check2"></i></span>
-                    </h3>
-                    <div class="mac-cert-meta"><i class="bi bi-calendar-event"></i> 5-6 March 2025</div>
-                    <p class="mac-cert-desc">Participated in 24-hour Hackron hackathon at Newton School of Technology, ADYPU, Pune. Presented by Ajeenkya DY Patil University with Blinkit.</p>
-                    <div class="mac-cert-actions">
-                      <a href="https://drive.google.com/file/d/1FwSXx26Y0FBstvT0_QDVmKSaNcPj4_dK/view?usp=sharing" class="mac-view-btn" target="_blank" rel="noopener noreferrer"><i class="bi bi-eye"></i> View Certificate</a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <!-- CodeArena 1.0 -->
-              <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="500">
-                <div class="mac-cert-card">
-                  <div class="mac-cert-thumb">
-                    <img src="assets/img/Cer/darshan-logo.webp" alt="CodeArena 1.0 Hackathon" loading="lazy" decoding="async">
-                    <span class="mac-type-badge hackathon">Hackathon</span>
-                    <span class="mac-duration-pill">24 Hours</span>
-                    <div class="mac-hover-icon"><i class="bi bi-code-slash"></i></div>
-                  </div>
-                  <div class="mac-cert-content">
-                    <h3 class="mac-cert-title">
-                      CodeArena 1.0
-                      <span class="mac-verified"><i class="bi bi-check2"></i></span>
-                    </h3>
-                    <div class="mac-cert-meta"><i class="bi bi-calendar-event"></i> 19-20 July 2025</div>
-                    <p class="mac-cert-desc">Participated in 24-hour CodeArena 1.0 hackathon at Department of CSE, Darshan University, Rajkot.</p>
-                    <div class="mac-cert-actions">
-                      <a href="https://drive.google.com/file/d/16yRoF11VewDCZTzrboE3j6QtOm1P9YZ2/view?usp=sharing" class="mac-view-btn" target="_blank" rel="noopener noreferrer"><i class="bi bi-eye"></i> View Certificate</a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <!-- HACKHAZARDS '25 -->
-              <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="550">
-                <div class="mac-cert-card">
-                  <div class="mac-cert-thumb">
-                    <img src="assets/img/Cer/namespace-logo.png" alt="HACKHAZARDS '25" loading="lazy" decoding="async">
-                    <span class="mac-type-badge hackathon">Hackathon</span>
-                    <span class="mac-duration-pill">Online - Global</span>
-                    <div class="mac-hover-icon"><i class="bi bi-globe"></i></div>
-                  </div>
-                  <div class="mac-cert-content">
-                    <h3 class="mac-cert-title">
-                      HACKHAZARDS '25
-                      <span class="mac-verified"><i class="bi bi-check2"></i></span>
-                    </h3>
-                    <div class="mac-cert-meta"><i class="bi bi-calendar-event"></i> 11-27 April 2025</div>
-                    <p class="mac-cert-desc">World's largest independent community-run hackathon by The NAMESPACE Community. 17,000+ hackers across 25+ countries. Team: BUG BUSTER.</p>
-                    <div class="mac-cert-actions">
-                      <a href="https://drive.google.com/file/d/1Xg8-frN80p4Tkt7gfA1Q_pHKq0-CtnMe/view?usp=sharing" class="mac-view-btn" target="_blank" rel="noopener noreferrer"><i class="bi bi-eye"></i> View Certificate</a>
-                      <a href="https://verification.givemycertificate.com/v/943311c9-5253-44b2-b3b4-ac970fbf0e24" class="mac-view-btn secondary" target="_blank" rel="noopener noreferrer"><i class="bi bi-shield-check"></i> Verify</a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <!-- DATAQUEST 2025 -->
-              <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="600">
-                <div class="mac-cert-card">
-                  <div class="mac-cert-thumb">
-                    <img src="assets/img/Cer/msbc-logo.png" alt="DATAQUEST HACKATHON 2025" loading="lazy" decoding="async">
-                    <span class="mac-type-badge hackathon">Hackathon</span>
-                    <span class="mac-duration-pill">Data Science</span>
-                    <div class="mac-hover-icon"><i class="bi bi-graph-up"></i></div>
-                  </div>
-                  <div class="mac-cert-content">
-                    <h3 class="mac-cert-title">
-                      DATAQUEST HACKATHON 2025
-                      <span class="mac-verified"><i class="bi bi-check2"></i></span>
-                    </h3>
-                    <div class="mac-cert-meta"><i class="bi bi-calendar-event"></i> 20 September 2025</div>
-                    <p class="mac-cert-desc">Participated in DATAQUEST organized by MSBC Group and CHARUSAT University. Data science and ML challenges. Team: Bug Busters.</p>
-                    <div class="mac-cert-actions">
-                      <a href="https://drive.google.com/file/d/1CZaBgfBQyZ2sm3V--lHwVT8a0bQaksxZ/view?usp=sharing" class="mac-view-btn" target="_blank" rel="noopener noreferrer"><i class="bi bi-eye"></i> View Certificate</a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-            </div>
-          </div>
-        </div>
-
-        <!-- ===================== GAME JAM ===================== -->
-        <div class="mac-category-window scroll-reveal-left scroll-glow" data-aos="fade-up" data-aos-delay="150">
-          <div class="mac-window-titlebar">
-            <div class="mac-window-dots">
-              <span class="mac-dot-red"></span>
-              <span class="mac-dot-yellow"></span>
-              <span class="mac-dot-green"></span>
-            </div>
-            <div class="mac-window-label"><i class="bi bi-controller"></i> Game Jam</div>
-          </div>
-          <div class="mac-window-body">
-            <div class="row g-4">
-
-              <!-- Global Game Jam 2026 -->
-              <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="200">
-                <div class="mac-cert-card">
-                  <div class="mac-cert-thumb">
-                    <img src="assets/img/Cer/game-jam-logo.jpg" alt="Global Game Jam 2026 Certificate" loading="lazy" decoding="async">
-                    <span class="mac-type-badge gamejam">Game Jam</span>
-                    <span class="mac-duration-pill">48 Hours</span>
-                    <div class="mac-hover-icon"><i class="bi bi-controller"></i></div>
-                  </div>
-                  <div class="mac-cert-content">
-                    <h3 class="mac-cert-title">
-                      Global Game Jam 2026
-                      <span class="mac-verified"><i class="bi bi-check2"></i></span>
-                    </h3>
-                    <div class="mac-cert-meta"><i class="bi bi-calendar-event"></i> January 2026</div>
-                    <p class="mac-cert-desc">Participated in the world's largest game creation event, developing an innovative game prototype within 48 hours alongside developers worldwide.</p>
-                    <div class="mac-cert-actions">
-                      <a href="https://drive.google.com/file/d/1XBBhHxxZfTfY78IHJhOuH5v1uZJfGhJf/view?usp=sharing" class="mac-view-btn" target="_blank" rel="noopener noreferrer"><i class="bi bi-eye"></i> View Certificate</a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-            </div>
-          </div>
-        </div>
-
-        <!-- ===================== EXTRA ACTIVITY ===================== -->
-        <div class="mac-category-window scroll-reveal-right scroll-glow" data-aos="fade-up" data-aos-delay="150">
-          <div class="mac-window-titlebar">
-            <div class="mac-window-dots">
-              <span class="mac-dot-red"></span>
-              <span class="mac-dot-yellow"></span>
-              <span class="mac-dot-green"></span>
-            </div>
-            <div class="mac-window-label"><i class="bi bi-star-fill"></i> Extra Activity</div>
-          </div>
-          <div class="mac-window-body">
-            <div class="row g-4">
-
-              <!-- Sardar Patel College Event -->
-              <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="200">
-                <div class="mac-cert-card">
-                  <div class="mac-cert-thumb">
-                    <img src="assets/img/Cer/images.png" alt="Sardar Patel College Event" loading="lazy" decoding="async">
-                    <span class="mac-type-badge extra">Extra Activity</span>
-                    <span class="mac-duration-pill">Event</span>
-                    <div class="mac-hover-icon"><i class="bi bi-star-fill"></i></div>
-                  </div>
-                  <div class="mac-cert-content">
-                    <h3 class="mac-cert-title">
-                      Sardar Patel College Event
-                      <span class="mac-verified"><i class="bi bi-check2"></i></span>
-                    </h3>
-                    <div class="mac-cert-meta"><i class="bi bi-calendar-event"></i> February 7-8, 2024</div>
-                    <p class="mac-cert-desc">Participated in an event at Sardar Patel College of Engineering on February 7-8, 2024.</p>
-                    <div class="mac-cert-actions">
-                      <a href="https://drive.google.com/file/d/1hzybXykrM3v1E1owfTEkHFGqo9baY6YP/view?usp=drive_link" class="mac-view-btn" target="_blank" rel="noopener noreferrer"><i class="bi bi-eye"></i> View Certificate</a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Box Soccer -->
-              <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="250">
-                <div class="mac-cert-card">
-                  <div class="mac-cert-thumb">
-                    <img src="assets/img/Cer/111.jpg" alt="Box Soccer at CHARUSAT" loading="lazy" decoding="async">
-                    <span class="mac-type-badge extra">Extra Activity</span>
-                    <span class="mac-duration-pill">Sports</span>
-                    <div class="mac-hover-icon"><i class="bi bi-trophy"></i></div>
-                  </div>
-                  <div class="mac-cert-content">
-                    <h3 class="mac-cert-title">
-                      Box Soccer at CHARUSAT
-                      <span class="mac-verified"><i class="bi bi-check2"></i></span>
-                    </h3>
-                    <div class="mac-cert-meta"><i class="bi bi-calendar-event"></i> January 18-19, 2024</div>
-                    <p class="mac-cert-desc">Participated in Box Soccer during Cognizance'24 at CHARUSAT on January 18-19, 2024.</p>
-                    <div class="mac-cert-actions">
-                      <a href="https://drive.google.com/file/d/1Iju-iIfXOetg38L4LPhM5TVhgSau1fhN/view?usp=drive_link" class="mac-view-btn" target="_blank" rel="noopener noreferrer"><i class="bi bi-eye"></i> View Certificate</a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-            </div>
-          </div>
-        </div>
-
+  <main class="main animate-fade-up stagger-1">
+    <!-- Editorial Masthead -->
+    <!-- Broadsheet Masthead (Header) -->
+    <!-- Broadsheet Masthead (Header) -->
+    <!-- Broadsheet Masthead (Header) -->
+    <!-- Broadsheet Masthead (Header) -->
+    <header class="masthead container">
+      <div class="masthead-top">
+        <div>EST. 2006 · SURAT, GUJARAT, INDIA</div>
+        <div class="accent-text">★ CURRENTLY AVAILABLE FOR WORK ★</div>
+        <div class="text-end">VOL. 1.0 · THE DHARMIK GOHIL CHRONICLE</div>
       </div>
+      <div class="masthead-main">
+        <h1>Dh<span class="accent-text">a</span>rmik Gohil</h1>
+      </div>
+      <div class="masthead-nav-bar">
+        <nav class="nav-links">
+          <a href="index.html">HOME</a> · 
+          <a href="services.html">ABILITIES</a> · 
+          
+          <div class="nav-dropdown">
+            <span class="dropdown-trigger">MY GAMES <span class="arrow-down">▼</span></span>
+            <div class="dropdown-content">
+              <a href="https://dharmikgohil.itch.io/mavericks-battlegrounds" target="_blank">MAVERICKS BATTLEGROUND</a>
+              <a href="https://dharmik086.itch.io/floppy-bird-860" target="_blank">FLOPPY BIRD</a>
+              <a href="https://dharmikgohil.itch.io/facade" target="_blank">FACADE</a>
+              <a href="https://dharmikgohil.itch.io/go-galaxy" target="_blank">GO GALAXY</a>
+              <a href="https://dharmikgohil.itch.io/drone-training" target="_blank">DRONE TRAINING</a>
+              <a href="https://dharmikgohil.itch.io/hook-shot" target="_blank">HOOK SHOT</a>
+              <a href="https://lowxena.dharmikgohil.art/" target="_blank">LOWXENA</a>
+            </div>
+          </div> · 
+          
+          <div class="nav-dropdown">
+            <span class="dropdown-trigger">LIVE PROJECTS <span class="arrow-down">▼</span></span>
+            <div class="dropdown-content">
+              <a href="assets/Fit Sync.apk" download>FITSYNC APP (APK)</a>
+              <a href="https://actify.dharmikgohil.art/" target="_blank">ACTIFY</a>
+              <a href="https://learnlink.dharmikgohil.art" target="_blank">LEARN LINK</a>
+              <a href="http://gdgs.dharmikgohil.art/" target="_blank">GDGS GAMES</a>
+              <a href="http://flipcart.dharmikgohil.art/" target="_blank">FLIPKART CLONE</a>
+              <a href="http://krishna.dharmikgohil.art/" target="_blank">KRISHNA CONSTRUCTION</a>
+              <a href="https://fkm.vercel.app/" target="_blank">WIFI SERVICE</a>
+            </div>
+          </div> · 
+          
+          <a href="Achivemtn.html" class="active">ACHIEVEMENTS</a> · 
+          <a href="blog.html">BLOG</a> · 
+          <a href="contact.html">CONTACT</a> · 
+          <a href="assets/img/Dharmik Gohil Resume.pdf" target="_blank">RESUME</a>
+        </nav>
+        <div class="social-links-minimal">
+          <a href="https://github.com/DharmikGohil013" target="_blank">GITHUB</a> · 
+          <a href="https://www.linkedin.com/in/dharmikgohil086/" target="_blank">LINKEDIN</a> · 
+          <a href="https://x.com/Dharmik086" target="_blank">TWITTER</a> · 
+          <a href="https://dharmikgohil.itch.io/" target="_blank">ITCH.IO</a>
+        </div>
+      </div>
+    </header>
+
+    <div class="container">
+      <!-- Section Header -->
+      <div class="animate-fade-up stagger-2" style="margin-bottom: 32px;">
+        <div class="mono-label" style="color: var(--red);">[ CURRICULUM VITAE MILICIAE ]</div>
+        <h1 class="emotional-headline">Strive for excellence, validate with proof.</h1>
+        <p class="mono-body" style="font-size: 16px; max-width: 700px;">
+          A record of execution, shipped titles, competitive coding achievements, hackathon iterations, and ongoing academic research.
+        </p>
+      </div>
+
+      <!-- ===================== CATEGORY 1: ACHIEVEMENTS ===================== -->
+      <section class="editorial-category-block animate-fade-up stagger-3">
+        <div class="category-header">
+          <h2 class="category-title">01 / RECOGNITIONS</h2>
+        </div>
+        <div class="row g-4">
+          
+          <!-- NPTEL DSA -->
+          <div class="col-md-6 col-lg-4">
+            <div class="brutalist-cert-card">
+              <div class="brutalist-cert-thumb">
+                <img src="assets/img/Cer/1.jpg" alt="NPTEL DSA with Java Certificate" loading="lazy" decoding="async">
+                <span class="sharp-badge">Achievement</span>
+                <span class="sharp-duration-pill">Certified</span>
+              </div>
+              <div class="brutalist-cert-content">
+                <h3 class="brutalist-cert-title">
+                  NPTEL DSA with Java
+                  <span class="verified-sq">[✓]</span>
+                </h3>
+                <div class="brutalist-cert-meta">Completed 2024</div>
+                <p class="brutalist-cert-desc">Comprehensive certification showcasing proficiency in core data structures and advanced algorithms implemented in Java through NPTEL.</p>
+                <div class="brutalist-actions">
+                  <a href="https://drive.google.com/file/d/10fyM4RjQnd6qBhr-30kK-eW3GnWvYLf4/view?usp=drive_link" class="brutalist-btn primary" target="_blank" rel="noopener noreferrer">View Certificate</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Code Raider Clash -->
+          <div class="col-md-6 col-lg-4">
+            <div class="brutalist-cert-card">
+              <div class="brutalist-cert-thumb">
+                <img src="assets/img/Cer/2.jpg" alt="Code Raider Clash 1st Rank" loading="lazy" decoding="async">
+                <span class="sharp-badge">Achievement</span>
+                <span class="sharp-duration-pill">1st Rank</span>
+              </div>
+              <div class="brutalist-cert-content">
+                <h3 class="brutalist-cert-title">
+                  Code Raider Clash – 1st Rank
+                  <span class="verified-sq">[✓]</span>
+                </h3>
+                <div class="brutalist-cert-meta">Competition Winner</div>
+                <p class="brutalist-cert-desc">Secured 1st rank in the "Code Raider Clash" competitive programming competition hosted by DEPSTAR College at CHARUSAT University.</p>
+                <div class="brutalist-actions">
+                  <a href="https://drive.google.com/file/d/1HAT6VD7gDQ5_xn15_eVMGcsMDQg6-Ebk/view?usp=drive_link" class="brutalist-btn primary" target="_blank" rel="noopener noreferrer">View Certificate</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- HackerRank C# -->
+          <div class="col-md-6 col-lg-4">
+            <div class="brutalist-cert-card">
+              <div class="brutalist-cert-thumb">
+                <img src="assets/img/Cer/11.jpg" alt="HackerRank C# Basic Certificate" loading="lazy" decoding="async">
+                <span class="sharp-badge">Achievement</span>
+                <span class="sharp-duration-pill">Certified</span>
+              </div>
+              <div class="brutalist-cert-content">
+                <h3 class="brutalist-cert-title">
+                  HackerRank C# Basic
+                  <span class="verified-sq">[✓]</span>
+                </h3>
+                <div class="brutalist-cert-meta">HackerRank Certified</div>
+                <p class="brutalist-cert-desc">Earned HackerRank C# Certification, validating skills in C# programming and problem-solving.</p>
+                <div class="brutalist-actions">
+                  <a href="https://www.hackerrank.com/certificates/iframe/f0ec81cd0589" class="brutalist-btn primary" target="_blank" rel="noopener noreferrer">View Certificate</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Web 3.0 Internship -->
+          <div class="col-md-6 col-lg-4">
+            <div class="brutalist-cert-card">
+              <div class="brutalist-cert-thumb">
+                <img src="assets/img/Cer/12.jpg" alt="Web 3.0 Project at Technook Pro" loading="lazy" decoding="async">
+                <span class="sharp-badge">Achievement</span>
+                <span class="sharp-duration-pill">Internship</span>
+              </div>
+              <div class="brutalist-cert-content">
+                <h3 class="brutalist-cert-title">
+                  Web 3.0 Project at Technook Pro
+                  <span class="verified-sq">[✓]</span>
+                </h3>
+                <div class="brutalist-cert-meta">Professional Experience</div>
+                <p class="brutalist-cert-desc">Completed Web 3.0 development internship focusing on blockchain technology, dApps, smart contracts, and Web3 development practices.</p>
+                <div class="brutalist-actions">
+                  <a href="https://drive.google.com/file/d/1QpViYnj7yfiFMvlsdorI4lIuISOcx2FO/view?usp=drive_link" class="brutalist-btn primary" target="_blank" rel="noopener noreferrer">Internship Cert</a>
+                  <a href="https://drive.google.com/file/d/1wecLs0kkqwPDM5_wiVb-QeJcV4AbO4SK/view?usp=drive_link" class="brutalist-btn secondary" target="_blank" rel="noopener noreferrer">Offer Letter</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Google Cloud -->
+          <div class="col-md-6 col-lg-4">
+            <div class="brutalist-cert-card">
+              <div class="brutalist-cert-thumb">
+                <img src="assets/img/Cer/13.jpg" alt="Google Cloud Impact Hackathon" loading="lazy" decoding="async">
+                <span class="sharp-badge">Achievement</span>
+                <span class="sharp-duration-pill">Hackathon</span>
+              </div>
+              <div class="brutalist-cert-content">
+                <h3 class="brutalist-cert-title">
+                  Google Cloud Impact Hackathon
+                  <span class="verified-sq">[✓]</span>
+                </h3>
+                <div class="brutalist-cert-meta">Google Cloud</div>
+                <p class="brutalist-cert-desc">Developed a Web 3.0 project during an internship, gaining experience in blockchain and decentralized tech.</p>
+                <div class="brutalist-actions">
+                  <a href="https://drive.google.com/file/d/1841zh602nc0RXIuiryb3wgKrdohY5gzV/view?usp=drive_link" class="brutalist-btn primary" target="_blank" rel="noopener noreferrer">View Certificate</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ===================== CATEGORY 2: LEARNING ===================== -->
+      <section class="editorial-category-block animate-fade-up stagger-4">
+        <div class="category-header">
+          <h2 class="category-title">02 / KNOWLEDGE BASE</h2>
+        </div>
+        <div class="row g-4">
+
+          <!-- Java Course -->
+          <div class="col-md-6 col-lg-4">
+            <div class="brutalist-cert-card">
+              <div class="brutalist-cert-thumb">
+                <img src="assets/img/Cer/8.jpg" alt="Java from Beginner to Master Course" loading="lazy" decoding="async">
+                <span class="sharp-badge">Learning</span>
+                <span class="sharp-duration-pill">Course</span>
+              </div>
+              <div class="brutalist-cert-content">
+                <h3 class="brutalist-cert-title">
+                  Java from Beginner to Master
+                  <span class="verified-sq">[✓]</span>
+                </h3>
+                <div class="brutalist-cert-meta">Udemy Course</div>
+                <p class="brutalist-cert-desc">Completed a comprehensive Java course on Udemy, building a strong foundation in Java programming.</p>
+                <div class="brutalist-actions">
+                  <a href="https://drive.google.com/file/d/1rWywyan2-RrT5_aUG4aHIYd3-ruvRY8g/view?usp=drive_link" class="brutalist-btn primary" target="_blank" rel="noopener noreferrer">View Certificate</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- C & C++ -->
+          <div class="col-md-6 col-lg-4">
+            <div class="brutalist-cert-card">
+              <div class="brutalist-cert-thumb">
+                <img src="assets/img/Cer/2.jpg" alt="C & C++ Programming Course" loading="lazy" decoding="async">
+                <span class="sharp-badge">Learning</span>
+                <span class="sharp-duration-pill">A+ Grade</span>
+              </div>
+              <div class="brutalist-cert-content">
+                <h3 class="brutalist-cert-title">
+                  C &amp; C++ Programming
+                  <span class="verified-sq">[✓]</span>
+                </h3>
+                <div class="brutalist-cert-meta">CDMI Institute</div>
+                <p class="brutalist-cert-desc">Earned an A+ grade in a C & C++ course at Creative Design & Multimedia Institute.</p>
+                <div class="brutalist-actions">
+                  <a href="https://drive.google.com/file/d/1N7b0S4DX6pHi2xFKjocrusdcfwZ6FNxj/view?usp=drive_link" class="brutalist-btn primary" target="_blank" rel="noopener noreferrer">View Certificate</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ===================== CATEGORY 3: PARTICIPATE ===================== -->
+      <section class="editorial-category-block animate-fade-up stagger-5">
+        <div class="category-header">
+          <h2 class="category-title">03 / COLLABORATIVE EXERCISES</h2>
+        </div>
+        <div class="row g-4">
+
+          <!-- AWS Community Day -->
+          <div class="col-md-6 col-lg-4">
+            <div class="brutalist-cert-card">
+              <div class="brutalist-cert-thumb">
+                <img src="assets/img/Cer/13.jpg" alt="AWS Students Community Day" loading="lazy" decoding="async">
+                <span class="sharp-badge">Participate</span>
+                <span class="sharp-duration-pill">AWS Event</span>
+              </div>
+              <div class="brutalist-cert-content">
+                <h3 class="brutalist-cert-title">
+                  AWS Students Community Day
+                  <span class="verified-sq">[✓]</span>
+                </h3>
+                <div class="brutalist-cert-meta">September 27, 2024</div>
+                <p class="brutalist-cert-desc">Participated in AWS Students Community Day at CHARUSAT on September 27, 2024.</p>
+                <div class="brutalist-actions">
+                  <a href="https://drive.google.com/file/d/1E_MtTjt7yAivM7P8JWSsIEaCi5EVxTJd/view?usp=drive_link" class="brutalist-btn primary" target="_blank" rel="noopener noreferrer">View Certificate</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Bharat Blockchain -->
+          <div class="col-md-6 col-lg-4">
+            <div class="brutalist-cert-card">
+              <div class="brutalist-cert-thumb">
+                <img src="assets/img/Cer/6.jpg" alt="Bharat Blockchain Yatra" loading="lazy" decoding="async">
+                <span class="sharp-badge">Participate</span>
+                <span class="sharp-duration-pill">Blockchain</span>
+              </div>
+              <div class="brutalist-cert-content">
+                <h3 class="brutalist-cert-title">
+                  Bharat Blockchain Yatra
+                  <span class="verified-sq">[✓]</span>
+                </h3>
+                <div class="brutalist-cert-meta">March 5, 2024</div>
+                <p class="brutalist-cert-desc">Recognized for participation in Bharat Blockchain Yatra on March 5, 2024.</p>
+                <div class="brutalist-actions">
+                  <a href="https://drive.google.com/file/d/1SJ7wHyweiakqu03csNXPHOgG5_65d_0s/view?usp=drive_link" class="brutalist-btn primary" target="_blank" rel="noopener noreferrer">View Certificate</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Fashion Show -->
+          <div class="col-md-6 col-lg-4">
+            <div class="brutalist-cert-card">
+              <div class="brutalist-cert-thumb">
+                <img src="assets/img/Cer/images.jpg" alt="Fashion Show at CHARUSAT" loading="lazy" decoding="async">
+                <span class="sharp-badge">Participate</span>
+                <span class="sharp-duration-pill">Event</span>
+              </div>
+              <div class="brutalist-cert-content">
+                <h3 class="brutalist-cert-title">
+                  Fashion Show at CHARUSAT
+                  <span class="verified-sq">[✓]</span>
+                </h3>
+                <div class="brutalist-cert-meta">January 2024</div>
+                <p class="brutalist-cert-desc">Participated in the Fashion Show at CHARUSAT from January 2024 to January 31, 2024.</p>
+                <div class="brutalist-actions">
+                  <a href="https://drive.google.com/file/d/1IRuyOF6duBgI-eoogG8NFqtXFABg8gwL/view?usp=drive_link" class="brutalist-btn primary" target="_blank" rel="noopener noreferrer">View Certificate</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ===================== CATEGORY 4: HACKATHONS ===================== -->
+      <section class="editorial-category-block animate-fade-up stagger-6">
+        <div class="category-header">
+          <h2 class="category-title">04 / HACKATHONS &amp; WORKSHOPS</h2>
+        </div>
+        <div class="row g-4">
+
+          <!-- HackConclave'24 -->
+          <div class="col-md-6 col-lg-4">
+            <div class="brutalist-cert-card">
+              <div class="brutalist-cert-thumb">
+                <img src="assets/img/Cer/9.jpg" alt="HackConclave'24 at IIT Guwahati" loading="lazy" decoding="async">
+                <span class="sharp-badge">Hackathon</span>
+                <span class="sharp-duration-pill">IIT Guwahati</span>
+              </div>
+              <div class="brutalist-cert-content">
+                <h3 class="brutalist-cert-title">
+                  HackConclave'24
+                  <span class="verified-sq">[✓]</span>
+                </h3>
+                <div class="brutalist-cert-meta">IIT Guwahati</div>
+                <p class="brutalist-cert-desc">Participated in HackConclave'24 at IIT Guwahati under Research & Industrial Conclave.</p>
+                <div class="brutalist-actions">
+                  <a href="https://drive.google.com/file/d/1hQlBOnd_6l6sxh_WfEebbOSisrFK-vbj/view?usp=drive_link" class="brutalist-btn primary" target="_blank" rel="noopener noreferrer">View Certificate</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Game Dev Workshop IIT Bombay 2k24 -->
+          <div class="col-md-6 col-lg-4">
+            <div class="brutalist-cert-card">
+              <div class="brutalist-cert-thumb">
+                <img src="assets/img/Cer/3.jpg" alt="Game Dev Workshop by IIT Bombay" loading="lazy" decoding="async">
+                <span class="sharp-badge">Workshop</span>
+                <span class="sharp-duration-pill">IIT Bombay</span>
+              </div>
+              <div class="brutalist-cert-content">
+                <h3 class="brutalist-cert-title">
+                  Game Dev Workshop IIT Bombay 2k24
+                  <span class="verified-sq">[✓]</span>
+                </h3>
+                <div class="brutalist-cert-meta">Techfest IIT Bombay</div>
+                <p class="brutalist-cert-desc">Completed a Game Development workshop by Techfest, IIT Bombay.</p>
+                <div class="brutalist-actions">
+                  <a href="https://drive.google.com/file/d/1PjZ4lNQndANnHXuRkUS_TX4LJZbVidDn/view?usp=sharing" class="brutalist-btn primary" target="_blank" rel="noopener noreferrer">View Certificate</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Game Dev Workshop IIT Bombay 2k25 -->
+          <div class="col-md-6 col-lg-4">
+            <div class="brutalist-cert-card">
+              <div class="brutalist-cert-thumb">
+                <img src="assets/img/Cer/3.jpg" alt="Game Dev Workshop by IIT Bombay 2k25" loading="lazy" decoding="async">
+                <span class="sharp-badge">Workshop</span>
+                <span class="sharp-duration-pill">IIT Bombay</span>
+              </div>
+              <div class="brutalist-cert-content">
+                <h3 class="brutalist-cert-title">
+                  Game Dev Workshop IIT Bombay 2k25
+                  <span class="verified-sq">[✓]</span>
+                </h3>
+                <div class="brutalist-cert-meta">Techfest IIT Bombay</div>
+                <p class="brutalist-cert-desc">Completed a Game Development workshop by Techfest, IIT Bombay.</p>
+                <div class="brutalist-actions">
+                  <a href="https://drive.google.com/file/d/1TtLgU6UvrrdXN5o-Z8B2bIZNIb2FEwgs/view?usp=sharing" class="brutalist-btn primary" target="_blank" rel="noopener noreferrer">View Certificate</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Frolic Code-A-Thon -->
+          <div class="col-md-6 col-lg-4">
+            <div class="brutalist-cert-card">
+              <div class="brutalist-cert-thumb">
+                <img src="assets/img/Cer/7.jpg" alt="Frolic 2024 Code-A-Thon" loading="lazy" decoding="async">
+                <span class="sharp-badge">Hackathon</span>
+                <span class="sharp-duration-pill">Code-A-Thon</span>
+              </div>
+              <div class="brutalist-cert-content">
+                <h3 class="brutalist-cert-title">
+                  Frolic 2024 Code-A-Thon
+                  <span class="verified-sq">[✓]</span>
+                </h3>
+                <div class="brutalist-cert-meta">Darshan University</div>
+                <p class="brutalist-cert-desc">Participated in the Code-A-Thon at Frolic 2024, Darshan University.</p>
+                <div class="brutalist-actions">
+                  <a href="https://drive.google.com/file/d/1-8-FclZrcfDBBsgiGnSmgvbdIRDRSyYj/view?usp=drive_link" class="brutalist-btn primary" target="_blank" rel="noopener noreferrer">View Certificate</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Odoo x CHARUSAT -->
+          <div class="col-md-6 col-lg-4">
+            <div class="brutalist-cert-card">
+              <div class="brutalist-cert-thumb">
+                <img src="assets/img/Cer/odoo-logo.png" alt="Odoo x CHARUSAT Hackathon '25" loading="lazy" decoding="async">
+                <span class="sharp-badge">Hackathon</span>
+                <span class="sharp-duration-pill">24 Hours</span>
+              </div>
+              <div class="brutalist-cert-content">
+                <h3 class="brutalist-cert-title">
+                  Odoo x CHARUSAT Hackathon '25
+                  <span class="verified-sq">[✓]</span>
+                </h3>
+                <div class="brutalist-cert-meta">02 March 2025</div>
+                <p class="brutalist-cert-desc">Participated in 24 hours hackathon organized by Odoo and CHARUSAT University. Collaborated on innovative solutions using Odoo ERP platform.</p>
+                <div class="brutalist-actions">
+                  <a href="https://drive.google.com/file/d/12fys1NzUmmp_FV90M4Q1UICbLymCuxpB/view?usp=sharing" class="brutalist-btn primary" target="_blank" rel="noopener noreferrer">View Certificate</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Hackron TEKRON 2025 -->
+          <div class="col-md-6 col-lg-4">
+            <div class="brutalist-cert-card">
+              <div class="brutalist-cert-thumb">
+                <img src="assets/img/Cer/blinkit-logo.jpeg" alt="Hackron - TEKRON 2025" loading="lazy" decoding="async">
+                <span class="sharp-badge">Hackathon</span>
+                <span class="sharp-duration-pill">TEKRON 2025</span>
+              </div>
+              <div class="brutalist-cert-content">
+                <h3 class="brutalist-cert-title">
+                  Hackron – TEKRON 2025
+                  <span class="verified-sq">[✓]</span>
+                </h3>
+                <div class="brutalist-cert-meta">5-6 March 2025</div>
+                <p class="brutalist-cert-desc">Participated in 24-hour Hackron hackathon at Newton School of Technology, ADYPU, Pune. Presented by Ajeenkya DY Patil University with Blinkit.</p>
+                <div class="brutalist-actions">
+                  <a href="https://drive.google.com/file/d/1FwSXx26Y0FBstvT0_QDVmKSaNcPj4_dK/view?usp=sharing" class="brutalist-btn primary" target="_blank" rel="noopener noreferrer">View Certificate</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- CodeArena 1.0 -->
+          <div class="col-md-6 col-lg-4">
+            <div class="brutalist-cert-card">
+              <div class="brutalist-cert-thumb">
+                <img src="assets/img/Cer/darshan-logo.webp" alt="CodeArena 1.0 Hackathon" loading="lazy" decoding="async">
+                <span class="sharp-badge">Hackathon</span>
+                <span class="sharp-duration-pill">24 Hours</span>
+              </div>
+              <div class="brutalist-cert-content">
+                <h3 class="brutalist-cert-title">
+                  CodeArena 1.0
+                  <span class="verified-sq">[✓]</span>
+                </h3>
+                <div class="brutalist-cert-meta">19-20 July 2025</div>
+                <p class="brutalist-cert-desc">Participated in 24-hour CodeArena 1.0 hackathon at Department of CSE, Darshan University, Rajkot.</p>
+                <div class="brutalist-actions">
+                  <a href="https://drive.google.com/file/d/16yRoF11VewDCZTzrboE3j6QtOm1P9YZ2/view?usp=sharing" class="brutalist-btn primary" target="_blank" rel="noopener noreferrer">View Certificate</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- HACKHAZARDS '25 -->
+          <div class="col-md-6 col-lg-4">
+            <div class="brutalist-cert-card">
+              <div class="brutalist-cert-thumb">
+                <img src="assets/img/Cer/namespace-logo.png" alt="HACKHAZARDS '25" loading="lazy" decoding="async">
+                <span class="sharp-badge">Hackathon</span>
+                <span class="sharp-duration-pill">Online - Global</span>
+              </div>
+              <div class="brutalist-cert-content">
+                <h3 class="brutalist-cert-title">
+                  HACKHAZARDS '25
+                  <span class="verified-sq">[✓]</span>
+                </h3>
+                <div class="brutalist-cert-meta">11-27 April 2025</div>
+                <p class="brutalist-cert-desc">World's largest independent community-run hackathon by The NAMESPACE Community. 17,000+ hackers across 25+ countries. Team: BUG BUSTER.</p>
+                <div class="brutalist-actions">
+                  <a href="https://drive.google.com/file/d/1Xg8-frN80p4Tkt7gfA1Q_pHKq0-CtnMe/view?usp=sharing" class="brutalist-btn primary" target="_blank" rel="noopener noreferrer">View Certificate</a>
+                  <a href="https://verification.givemycertificate.com/v/943311c9-5253-44b2-b3b4-ac970fbf0e24" class="brutalist-btn secondary" target="_blank" rel="noopener noreferrer">Verify</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- DATAQUEST 2025 -->
+          <div class="col-md-6 col-lg-4">
+            <div class="brutalist-cert-card">
+              <div class="brutalist-cert-thumb">
+                <img src="assets/img/Cer/msbc-logo.png" alt="DATAQUEST HACKATHON 2025" loading="lazy" decoding="async">
+                <span class="sharp-badge">Hackathon</span>
+                <span class="sharp-duration-pill">Data Science</span>
+              </div>
+              <div class="brutalist-cert-content">
+                <h3 class="brutalist-cert-title">
+                  DATAQUEST HACKATHON 2025
+                  <span class="verified-sq">[✓]</span>
+                </h3>
+                <div class="brutalist-cert-meta">20 September 2025</div>
+                <p class="brutalist-cert-desc">Participated in DATAQUEST organized by MSBC Group and CHARUSAT University. Data science and ML challenges. Team: Bug Busters.</p>
+                <div class="brutalist-actions">
+                  <a href="https://drive.google.com/file/d/1CZaBgfBQyZ2sm3V--lHwVT8a0bQaksxZ/view?usp=sharing" class="brutalist-btn primary" target="_blank" rel="noopener noreferrer">View Certificate</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ===================== CATEGORY 5: GAME JAM ===================== -->
+      <section class="editorial-category-block animate-fade-up stagger-5">
+        <div class="category-header">
+          <h2 class="category-title">05 / RAPID SYSTEM DESIGN</h2>
+        </div>
+        <div class="row g-4">
+
+          <!-- Global Game Jam 2026 -->
+          <div class="col-md-6 col-lg-4">
+            <div class="brutalist-cert-card">
+              <div class="brutalist-cert-thumb">
+                <img src="assets/img/Cer/game-jam-logo.jpg" alt="Global Game Jam 2026 Certificate" loading="lazy" decoding="async">
+                <span class="sharp-badge">Game Jam</span>
+                <span class="sharp-duration-pill">48 Hours</span>
+              </div>
+              <div class="brutalist-cert-content">
+                <h3 class="brutalist-cert-title">
+                  Global Game Jam 2026
+                  <span class="verified-sq">[✓]</span>
+                </h3>
+                <div class="brutalist-cert-meta">January 2026</div>
+                <p class="brutalist-cert-desc">Participated in the world's largest game creation event, developing an innovative game prototype within 48 hours alongside developers worldwide.</p>
+                <div class="brutalist-actions">
+                  <a href="https://drive.google.com/file/d/1XBBhHxxZfTfY78IHJhOuH5v1uZJfGhJf/view?usp=sharing" class="brutalist-btn primary" target="_blank" rel="noopener noreferrer">View Certificate</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ===================== CATEGORY 6: EXTRA ACTIVITY ===================== -->
+      <section class="editorial-category-block animate-fade-up stagger-6">
+        <div class="category-header">
+          <h2 class="category-title">06 / EXTRA ACTIVITY</h2>
+        </div>
+        <div class="row g-4">
+
+          <!-- Sardar Patel College Event -->
+          <div class="col-md-6 col-lg-4">
+            <div class="brutalist-cert-card">
+              <div class="brutalist-cert-thumb">
+                <img src="assets/img/Cer/images.png" alt="Sardar Patel College Event" loading="lazy" decoding="async">
+                <span class="sharp-badge">Extra Activity</span>
+                <span class="sharp-duration-pill">Event</span>
+              </div>
+              <div class="brutalist-cert-content">
+                <h3 class="brutalist-cert-title">
+                  Sardar Patel College Event
+                  <span class="verified-sq">[✓]</span>
+                </h3>
+                <div class="brutalist-cert-meta">February 7-8, 2024</div>
+                <p class="brutalist-cert-desc">Participated in an event at Sardar Patel College of Engineering on February 7-8, 2024.</p>
+                <div class="brutalist-actions">
+                  <a href="https://drive.google.com/file/d/1hzybXykrM3v1E1owfTEkHFGqo9baY6YP/view?usp=drive_link" class="brutalist-btn primary" target="_blank" rel="noopener noreferrer">View Certificate</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Box Soccer -->
+          <div class="col-md-6 col-lg-4">
+            <div class="brutalist-cert-card">
+              <div class="brutalist-cert-thumb">
+                <img src="assets/img/Cer/111.jpg" alt="Box Soccer at CHARUSAT" loading="lazy" decoding="async">
+                <span class="sharp-badge">Extra Activity</span>
+                <span class="sharp-duration-pill">Sports</span>
+              </div>
+              <div class="brutalist-cert-content">
+                <h3 class="brutalist-cert-title">
+                  Box Soccer at CHARUSAT
+                  <span class="verified-sq">[✓]</span>
+                </h3>
+                <div class="brutalist-cert-meta">January 18-19, 2024</div>
+                <p class="brutalist-cert-desc">Participated in Box Soccer during Cognizance'24 at CHARUSAT on January 18-19, 2024.</p>
+                <div class="brutalist-actions">
+                  <a href="https://drive.google.com/file/d/1Iju-iIfXOetg38L4LPhM5TVhgSau1fhN/view?usp=drive_link" class="brutalist-btn primary" target="_blank" rel="noopener noreferrer">View Certificate</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
     </div>
   </main>
 
-  <footer id="footer" class="footer">
-    <div class="container">
-      <div class="copyright text-center">
-        <p>&copy; <span>Copyright</span> <strong class="px-1 sitename"><a href="https://www.linkedin.com/in/dharmikgohil086/">Dharmik Gohil</a></strong> <span>All Rights Reserved</span></p>
+  <!-- Editorial Colophon -->
+  <footer class="container animate-fade-up stagger-6">
+    <div class="editorial-footer">
+      <div class="colophon-text">
+        &copy; 2026 DHARMIK GOHIL. ALL RIGHTS RESERVED.
       </div>
-      <div class="social-links d-flex justify-content-center">
-        <a href="https://github.com/DharmikGohil013"><i class="bi bi-github"></i></a>
-        <a href="https://www.linkedin.com/in/dharmikgohil086/"><i class="bi bi-linkedin"></i></a>
-        <a href="https://www.instagram.com/dharmik.086/?next=%2F"><i class="bi bi-instagram"></i></a>
-        <a href="https://x.com/Dharmik086"><i class="bi bi-twitter"></i></a>
+      <div class="colophon-signature">
+        UNAPOLOGETICALLY CRAFTED
       </div>
     </div>
   </footer>
 
-  <!-- Scroll Top -->
-  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i
-      class="bi bi-arrow-up-short"></i></a>
-
-  <!-- macOS Dock Navigation -->
-  <div class="macos-dock">
-    <div class="dock-items">
-      <a href="index.html" class="dock-item" data-tooltip="Home"><i class="bi bi-house-fill"></i></a>
-      <a href="services.html" class="dock-item" data-tooltip="Abilities"><i class="bi bi-lightning-charge-fill"></i></a>
-      <div class="dock-separator"></div>
-      <div class="dock-item games-menu-trigger" data-tooltip="My Games">
-        <i class="bi bi-controller"></i>
-        <div class="games-dropdown-menu" id="gamesDropdown">
-          <div class="games-dropdown-header">
-            <i class="bi bi-controller me-2"></i>My Games
-          </div>
-          <div class="games-dropdown-list">
-            <a href="https://dharmikgohil.itch.io/mavericks-battlegrounds" target="_blank" class="game-dropdown-item">
-              <i class="bi bi-play-circle-fill"></i>
-              <span>Mavericks Battleground</span>
-            </a>
-            <a href="https://dharmik086.itch.io/floppy-bird-860" target="_blank" class="game-dropdown-item">
-              <i class="bi bi-play-circle-fill"></i>
-              <span>Floppy Bird</span>
-            </a>
-            <a href="https://dharmikgohil.itch.io/facade" target="_blank" class="game-dropdown-item">
-              <i class="bi bi-play-circle-fill"></i>
-              <span>Facade</span>
-            </a>
-            <a href="https://dharmikgohil.itch.io/go-galaxy" target="_blank" class="game-dropdown-item">
-              <i class="bi bi-play-circle-fill"></i>
-              <span>Go Galaxy</span>
-            </a>
-            <a href="https://dharmikgohil.itch.io/drone-training" target="_blank" class="game-dropdown-item">
-              <i class="bi bi-play-circle-fill"></i>
-              <span>Drone Training</span>
-            </a>
-            <a href="https://dharmikgohil.itch.io/hook-shot" target="_blank" class="game-dropdown-item">
-              <i class="bi bi-phone-fill"></i>
-              <span>Hook Shot</span>
-            </a>
-            <a href="https://lowxena.dharmikgohil.art/" target="_blank" class="game-dropdown-item">
-              <i class="bi bi-play-circle-fill"></i>
-              <span>Lowxena</span>
-            </a>
-            <a href="https://just-divide-rho.vercel.app/" target="_blank" class="game-dropdown-item">
-              <i class="bi bi-calculator-fill"></i>
-              <span>Just Divide</span>
-            </a>
-          </div>
-        </div>
-      </div>
-      <a href="Achivemtn.html" class="dock-item active" data-tooltip="Achievements"><i class="bi bi-trophy-fill"></i></a>
-      <div class="dock-item apps-menu-trigger" data-tooltip="Live Apps & Websites">
-        <i class="bi bi-briefcase-fill"></i>
-        <div class="games-dropdown-menu" id="appsDropdown">
-          <div class="games-dropdown-header">
-            <i class="bi bi-briefcase-fill me-2"></i>Live Projects
-          </div>
-          <div class="games-dropdown-list">
-            <a href="assets/Fit Sync.apk" download class="game-dropdown-item">
-              <i class="bi bi-download"></i>
-              <span>FitSync App (APK)</span>
-            </a>
-            <a href="https://actify.dharmikgohil.art/" target="_blank" class="game-dropdown-item">
-              <i class="bi bi-globe"></i>
-              <span>Actify</span>
-            </a>
-            <a href="https://learnlink.dharmikgohil.art" target="_blank" class="game-dropdown-item">
-              <i class="bi bi-globe"></i>
-              <span>Learn Link</span>
-            </a>
-            <a href="http://gdgs.dharmikgohil.art/" target="_blank" class="game-dropdown-item">
-              <i class="bi bi-globe"></i>
-              <span>GDGS Games</span>
-            </a>
-            <a href="http://flipcart.dharmikgohil.art/" target="_blank" class="game-dropdown-item">
-              <i class="bi bi-globe"></i>
-              <span>Flipkart Clone</span>
-            </a>
-            <a href="http://krishna.dharmikgohil.art/" target="_blank" class="game-dropdown-item">
-              <i class="bi bi-globe"></i>
-              <span>Krishna Construction</span>
-            </a>
-            <a href="https://fkm.vercel.app/" target="_blank" class="game-dropdown-item">
-              <i class="bi bi-globe"></i>
-              <span>WiFi Service</span>
-            </a>
-          </div>
-        </div>
-      </div>
-      <div class="dock-separator"></div>
-      <a href="contact.html" class="dock-item" data-tooltip="Contact"><i class="bi bi-envelope-fill"></i></a>
-      <a href="assets/img/Dharmik Gohil Resume.pdf" class="dock-item" data-tooltip="Resume" download><i class="bi bi-file-earmark-person"></i></a>
-    </div>
-  </div>
+  <!-- Scroll Top (Minimalist Brutalist) -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center" style="border-radius:0; border:2px solid var(--ink); background:var(--paper); color:var(--ink);"><i class="bi bi-arrow-up-short"></i></a>
 
   <!-- Vendor JS Files -->
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js" defer></script>
@@ -1929,100 +1399,6 @@
 
   <!-- Main JS File -->
   <script src="assets/js/main.js" defer></script>
-  <script src="assets/js/dock-dropdowns.js" defer></script>
-
-  <!-- Premium Scroll Animation Engine -->
-  <script>
-  (function() {
-    'use strict';
-    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-
-    /* Scroll Progress Bar */
-    const progressBar = document.createElement('div');
-    progressBar.className = 'scroll-progress-glow';
-    document.body.prepend(progressBar);
-
-    /* Floating Particles */
-    const particleColors = ['#0A84FF','#BF5AF2','#FF375F','#30D158','#FF9F0A'];
-    const particles = [];
-    for (let i = 0; i < 6; i++) {
-      const p = document.createElement('div');
-      p.className = 'scroll-particle';
-      p.style.background = particleColors[i % particleColors.length];
-      p.style.width = (3 + Math.random() * 4) + 'px';
-      p.style.height = p.style.width;
-      p.style.left = (Math.random() * 100) + 'vw';
-      p.style.top = (Math.random() * 100) + 'vh';
-      p.style.filter = 'blur(' + (1 + Math.random() * 2) + 'px)';
-      document.body.appendChild(p);
-      particles.push({ el: p, speed: 0.3 + Math.random() * 0.7, x: Math.random() * 100, baseY: Math.random() * 100 });
-    }
-
-    let ticking = false;
-    let lastScroll = 0;
-    window.addEventListener('scroll', function() {
-      lastScroll = window.scrollY;
-      if (!ticking) {
-        requestAnimationFrame(function() {
-          const docH = document.documentElement.scrollHeight - window.innerHeight;
-          const pct = docH > 0 ? (lastScroll / docH) * 100 : 0;
-          progressBar.style.width = pct + '%';
-
-          /* Parallax on page title */
-          const header = document.querySelector('.page-header');
-          if (header) {
-            const depth = lastScroll * 0.15;
-            const badge = header.querySelector('.page-header-badge');
-            const h1 = header.querySelector('h1');
-            const para = header.querySelector('p');
-            if (badge) badge.style.transform = 'translateY(' + (depth * 0.3) + 'px)';
-            if (h1) h1.style.transform = 'translateY(' + (depth * 0.5) + 'px)';
-            if (para) para.style.transform = 'translateY(' + (depth * 0.7) + 'px)';
-          }
-
-          /* Floating particles movement */
-          particles.forEach(function(pt) {
-            const offsetY = Math.sin(lastScroll * 0.003 * pt.speed + pt.x) * 30;
-            pt.el.style.transform = 'translateY(' + offsetY + 'px)';
-            pt.el.style.opacity = (pct > 2 && pct < 98) ? '0.5' : '0';
-          });
-
-          ticking = false;
-        });
-        ticking = true;
-      }
-    }, { passive: true });
-
-    /* Intersection Observer for scroll reveals */
-    const revealClasses = ['scroll-reveal','scroll-reveal-left','scroll-reveal-right','scroll-reveal-scale','scroll-reveal-rotate'];
-    const targets = document.querySelectorAll(revealClasses.map(function(c){return '.'+c;}).join(','));
-
-    const observer = new IntersectionObserver(function(entries) {
-      entries.forEach(function(entry) {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('revealed');
-          observer.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
-
-    targets.forEach(function(el) { observer.observe(el); });
-  })();
-  </script>
-
-  <!-- macOS Menubar Clock -->
-  <script>
-    (function updateMenubarClock() {
-      var el = document.getElementById('menubar-clock');
-      if (!el) return;
-      var now = new Date();
-      var h = now.getHours().toString().padStart(2,'0');
-      var m = now.getMinutes().toString().padStart(2,'0');
-      el.textContent = h + ':' + m;
-      setTimeout(updateMenubarClock, 15000);
-    })();
-  </script>
-
 </body>
 
 </html>

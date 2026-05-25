@@ -77,11 +77,72 @@
     "description": "Game development blog post by Dharmik Gohil covering Unity, XR, and game development topics."
   }
   </script>
-  </head>
+  
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=IBM+Plex+Mono:ital,wght@0,400;0,500;0,700;1,400&family=Playfair+Display:ital,wght@0,900;1,900&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=IBM+Plex+Mono:ital,wght@0,400;0,500;0,700;1,400&family=Playfair+Display:ital,wght@0,900;1,900&display=swap" rel="stylesheet"></noscript>
+  <link rel="preload" href="../index.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link href="../index.css" rel="stylesheet"></noscript>
+</head>
 
 <body class="blog-post-page">
 
   <main class="main">
+
+    <!-- Broadsheet Masthead (Header) -->
+    <header class="masthead container">
+      <div class="masthead-top">
+        <div>EST. 2006 · SURAT, GUJARAT, INDIA</div>
+        <div class="accent-text">★ CURRENTLY AVAILABLE FOR WORK ★</div>
+        <div class="text-end">VOL. 1.0 · THE DHARMIK GOHIL CHRONICLE</div>
+      </div>
+      <div class="masthead-main">
+        <h1>Dh<span class="accent-text">a</span>rmik Gohil</h1>
+      </div>
+      <div class="masthead-nav-bar">
+        <nav class="nav-links">
+          <a href="../index.html">HOME</a> · 
+          <a href="../services.html">ABILITIES</a> · 
+          
+          <div class="nav-dropdown">
+            <span class="dropdown-trigger">MY GAMES <span class="arrow-down">▼</span></span>
+            <div class="dropdown-content">
+              <a href="https://dharmikgohil.itch.io/mavericks-battlegrounds" target="_blank">MAVERICKS BATTLEGROUND</a>
+              <a href="https://dharmik086.itch.io/floppy-bird-860" target="_blank">FLOPPY BIRD</a>
+              <a href="https://dharmikgohil.itch.io/facade" target="_blank">FACADE</a>
+              <a href="https://dharmikgohil.itch.io/go-galaxy" target="_blank">GO GALAXY</a>
+              <a href="https://dharmikgohil.itch.io/drone-training" target="_blank">DRONE TRAINING</a>
+              <a href="https://dharmikgohil.itch.io/hook-shot" target="_blank">HOOK SHOT</a>
+              <a href="https://lowxena.dharmikgohil.art/" target="_blank">LOWXENA</a>
+            </div>
+          </div> · 
+          
+          <div class="nav-dropdown">
+            <span class="dropdown-trigger">LIVE PROJECTS <span class="arrow-down">▼</span></span>
+            <div class="dropdown-content">
+              <a href="../assets/Fit Sync.apk" download>FITSYNC APP (APK)</a>
+              <a href="https://actify.dharmikgohil.art/" target="_blank">ACTIFY</a>
+              <a href="https://learnlink.dharmikgohil.art" target="_blank">LEARN LINK</a>
+              <a href="http://gdgs.dharmikgohil.art/" target="_blank">GDGS GAMES</a>
+              <a href="http://flipcart.dharmikgohil.art/" target="_blank">FLIPKART CLONE</a>
+              <a href="http://krishna.dharmikgohil.art/" target="_blank">KRISHNA CONSTRUCTION</a>
+              <a href="https://fkm.vercel.app/" target="_blank">WIFI SERVICE</a>
+            </div>
+          </div> · 
+          
+          <a href="../Achivemtn.html">ACHIEVEMENTS</a> · 
+          <a href="../blog.html" class="active">BLOG</a> · 
+          <a href="../contact.html">CONTACT</a> · 
+          <a href="../assets/img/Dharmik Gohil Resume.pdf" target="_blank">RESUME</a>
+        </nav>
+        <div class="social-links-minimal">
+          <a href="https://github.com/DharmikGohil013" target="_blank">GITHUB</a> · 
+          <a href="https://www.linkedin.com/in/dharmikgohil086/" target="_blank">LINKEDIN</a> · 
+          <a href="https://x.com/Dharmik086" target="_blank">TWITTER</a> · 
+          <a href="https://dharmikgohil.itch.io/" target="_blank">ITCH.IO</a>
+        </div>
+      </div>
+    </header>
+
 
     <!-- Page Title -->
     <div class="page-title" data-aos="fade">
@@ -341,98 +402,7 @@
     </div>
   </div>
 
-  <!-- macOS Dock Navigation -->
-  <div class="macos-dock">
-    <div class="dock-items">
-      <a href="../index.html" class="dock-item" data-tooltip="Home"><i class="bi bi-house-fill"></i></a>
-      <a href="../services.html" class="dock-item" data-tooltip="Abilities"><i class="bi bi-lightning-charge-fill"></i></a>
-      <div class="dock-separator"></div>
-      <div class="dock-item games-menu-trigger" data-tooltip="My Games">
-        <i class="bi bi-controller"></i>
-        <div class="games-dropdown-menu" id="gamesDropdown">
-          <div class="games-dropdown-header">
-            <i class="bi bi-controller me-2"></i>My Games
-          </div>
-          <div class="games-dropdown-list">
-            <a href="https://dharmikgohil.itch.io/mavericks-battlegrounds" target="_blank" class="game-dropdown-item">
-              <i class="bi bi-play-circle-fill"></i>
-              <span>Mavericks Battleground</span>
-            </a>
-            <a href="https://dharmik086.itch.io/floppy-bird-860" target="_blank" class="game-dropdown-item">
-              <i class="bi bi-play-circle-fill"></i>
-              <span>Floppy Bird</span>
-            </a>
-            <a href="https://dharmikgohil.itch.io/facade" target="_blank" class="game-dropdown-item">
-              <i class="bi bi-play-circle-fill"></i>
-              <span>Facade</span>
-            </a>
-            <a href="https://dharmikgohil.itch.io/go-galaxy" target="_blank" class="game-dropdown-item">
-              <i class="bi bi-play-circle-fill"></i>
-              <span>Go Galaxy</span>
-            </a>
-            <a href="https://dharmikgohil.itch.io/drone-training" target="_blank" class="game-dropdown-item">
-              <i class="bi bi-play-circle-fill"></i>
-              <span>Drone Training</span>
-            </a>
-            <a href="https://dharmikgohil.itch.io/hook-shot" target="_blank" class="game-dropdown-item">
-              <i class="bi bi-phone-fill"></i>
-              <span>Hook Shot</span>
-            </a>
-            <a href="https://lowxena.dharmikgohil.art/" target="_blank" class="game-dropdown-item">
-              <i class="bi bi-play-circle-fill"></i>
-              <span>Lowxena</span>
-            </a>
-            <a href="https://just-divide-rho.vercel.app/" target="_blank" class="game-dropdown-item">
-              <i class="bi bi-calculator-fill"></i>
-              <span>Just Divide</span>
-            </a>
-          </div>
-        </div>
-      </div>
-      <a href="../Achivemtn.html" class="dock-item" data-tooltip="Achievements"><i class="bi bi-trophy-fill"></i></a>
-      <div class="dock-item apps-menu-trigger" data-tooltip="Live Apps &amp; Websites">
-        <i class="bi bi-briefcase-fill"></i>
-        <div class="games-dropdown-menu" id="appsDropdown">
-          <div class="games-dropdown-header">
-            <i class="bi bi-briefcase-fill me-2"></i>Live Projects
-          </div>
-          <div class="games-dropdown-list">
-            <a href="../assets/Fit Sync.apk" download class="game-dropdown-item">
-              <i class="bi bi-download"></i>
-              <span>FitSync App (APK)</span>
-            </a>
-            <a href="https://actify.dharmikgohil.art/" target="_blank" class="game-dropdown-item">
-              <i class="bi bi-globe"></i>
-              <span>Actify</span>
-            </a>
-            <a href="https://learnlink.dharmikgohil.art" target="_blank" class="game-dropdown-item">
-              <i class="bi bi-globe"></i>
-              <span>Learn Link</span>
-            </a>
-            <a href="http://gdgs.dharmikgohil.art/" target="_blank" class="game-dropdown-item">
-              <i class="bi bi-globe"></i>
-              <span>GDGS Games</span>
-            </a>
-            <a href="http://flipcart.dharmikgohil.art/" target="_blank" class="game-dropdown-item">
-              <i class="bi bi-globe"></i>
-              <span>Flipkart Clone</span>
-            </a>
-            <a href="http://krishna.dharmikgohil.art/" target="_blank" class="game-dropdown-item">
-              <i class="bi bi-globe"></i>
-              <span>Krishna Construction</span>
-            </a>
-            <a href="https://fkm.vercel.app/" target="_blank" class="game-dropdown-item">
-              <i class="bi bi-globe"></i>
-              <span>WiFi Service</span>
-            </a>
-          </div>
-        </div>
-      </div>
-      <div class="dock-separator"></div>
-      <a href="../contact.html" class="dock-item" data-tooltip="Contact"><i class="bi bi-envelope-fill"></i></a>
-      <a href="../assets/img/Dharmik Gohil Resume.pdf" class="dock-item" data-tooltip="Resume" download><i class="bi bi-file-earmark-person"></i></a>
-    </div>
-  </div>
+  
 
   <!-- Vendor JS Files -->
   <script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -447,7 +417,7 @@
 
   <!-- Main JS File -->
   <script src="../assets/js/main.js"></script>
-  <script src="../assets/js/dock-dropdowns.js"></script>
+  
 
 </body>
 

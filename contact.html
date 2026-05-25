@@ -46,7 +46,6 @@
   <meta name="specialization" content="Web Development, Game Development, Blockchain, Mobile Apps">
   <meta name="expertise" content="React, Node.js, Unity, Solidity, VR/AR, Mobile Development">
   
-  <!-- Canonical URL -->
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://dharmikgohil.art/contact.html">
@@ -93,778 +92,25 @@
       }
     }
   }
-  </script><!-- Fonts -->
+  </script>
+
+  <!-- Fonts -->
   <link href="https://fonts.googleapis.com" rel="preconnect">
   <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-  <link rel="preload" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Press+Start+2P&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="preload" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Press+Start+2P&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Press+Start+2P&display=swap" rel="stylesheet"></noscript></noscript>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Playfair+Display:ital,wght@0,900;1,900&family=IBM+Plex+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <!-- Vendor CSS Files -->
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="preload" href="assets/vendor/bootstrap-icons/bootstrap-icons.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="preload" href="assets/vendor/bootstrap-icons/bootstrap-icons.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet"></noscript></noscript>
-  <link rel="preload" href="assets/vendor/aos/aos.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="preload" href="assets/vendor/aos/aos.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link href="assets/vendor/aos/aos.css" rel="stylesheet"></noscript></noscript>
-  <link rel="preload" href="assets/vendor/swiper/swiper-bundle.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="preload" href="assets/vendor/swiper/swiper-bundle.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet"></noscript></noscript>
-  <link rel="preload" href="assets/vendor/glightbox/css/glightbox.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="preload" href="assets/vendor/glightbox/css/glightbox.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet"></noscript></noscript>
+  <link rel="preload" href="assets/vendor/bootstrap-icons/bootstrap-icons.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet"></noscript>
+  <link rel="preload" href="assets/vendor/aos/aos.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link href="assets/vendor/aos/aos.css" rel="stylesheet"></noscript>
+  <link rel="preload" href="assets/vendor/swiper/swiper-bundle.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet"></noscript>
+  <link rel="preload" href="assets/vendor/glightbox/css/glightbox.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet"></noscript>
 
   <!-- Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
   <link href="assets/css/navigation.css" rel="stylesheet">
-
   <link href="assets/css/responsive-global.css" rel="stylesheet">
 
-  <style>
-    /* ============================================
-       macOS-INSPIRED CONTACT PAGE
-       Sonoma/Sequoia Dark Mode Aesthetic
-       ============================================ */
-
-    body {
-      background: #09090F !important;
-      margin: 0;
-      padding: 0;
-      overflow-x: hidden;
-    }
-
-    .contact-page {
-      position: relative;
-      min-height: 100vh;
-      background: linear-gradient(180deg, #0f1420 0%, #0a0e18 50%, #0f1420 100%);
-      padding: 40px 0 120px;
-    }
-
-    .contact-page::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background:
-        radial-gradient(ellipse 60% 40% at 20% 30%, rgba(10,132,255,0.06) 0%, transparent 60%),
-        radial-gradient(ellipse 50% 50% at 80% 60%, rgba(48,209,88,0.05) 0%, transparent 60%),
-        radial-gradient(ellipse 40% 30% at 50% 90%, rgba(191,90,242,0.04) 0%, transparent 50%);
-      pointer-events: none;
-      z-index: 0;
-    }
-
-    .contact-page > .container {
-      position: relative;
-      z-index: 1;
-    }
-
-    /* ---- Page Header ---- */
-    .page-header {
-      text-align: center;
-      padding: 30px 0 50px;
-    }
-
-    .page-header-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      background: rgba(10,132,255,0.1);
-      border: 1px solid rgba(10,132,255,0.25);
-      color: #0A84FF;
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 11px;
-      font-weight: 600;
-      padding: 5px 14px;
-      border-radius: 20px;
-      margin-bottom: 16px;
-      letter-spacing: 0.5px;
-    }
-
-    .page-header h1 {
-      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-      font-size: clamp(2rem, 4vw, 3rem);
-      font-weight: 700;
-      color: #fff;
-      letter-spacing: -0.8px;
-      margin: 0 0 10px;
-      line-height: 1.1;
-    }
-
-    .page-header p {
-      font-family: 'Inter', -apple-system, sans-serif;
-      color: rgba(255,255,255,0.4);
-      font-size: 0.95rem;
-      max-width: 550px;
-      margin: 0 auto;
-    }
-
-    /* ---- macOS Window ---- */
-    .mac-window {
-      background: rgba(28,28,38,0.55);
-      backdrop-filter: blur(40px) saturate(1.8);
-      -webkit-backdrop-filter: blur(40px) saturate(1.8);
-      border: 1px solid rgba(255,255,255,0.08);
-      border-radius: 16px;
-      box-shadow:
-        0 8px 32px rgba(0,0,0,0.4),
-        inset 0 1px 0 rgba(255,255,255,0.06);
-      overflow: hidden;
-      margin-bottom: 36px;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .mac-window:hover {
-      transform: translateY(-3px);
-      box-shadow:
-        0 16px 48px rgba(0,0,0,0.5),
-        0 0 40px rgba(10,132,255,0.06),
-        inset 0 1px 0 rgba(255,255,255,0.08);
-    }
-
-    .mac-window-titlebar {
-      background: rgba(255,255,255,0.04);
-      border-bottom: 1px solid rgba(255,255,255,0.07);
-      padding: 13px 18px;
-      display: flex;
-      align-items: center;
-      gap: 14px;
-      user-select: none;
-    }
-
-    .mac-window-dots {
-      display: flex;
-      gap: 8px;
-      align-items: center;
-      flex-shrink: 0;
-    }
-
-    .mac-window-dots span {
-      width: 13px;
-      height: 13px;
-      border-radius: 50%;
-      display: inline-block;
-      transition: filter 0.2s, transform 0.2s;
-      cursor: default;
-    }
-
-    .mac-window-dots span:hover {
-      filter: brightness(1.25);
-      transform: scale(1.1);
-    }
-
-    .mac-dot-red { background: #FF5F56; box-shadow: 0 0 8px rgba(255,95,86,0.5); }
-    .mac-dot-yellow { background: #FFBD2E; box-shadow: 0 0 8px rgba(255,189,46,0.5); }
-    .mac-dot-green { background: #27C93F; box-shadow: 0 0 8px rgba(39,201,63,0.5); }
-
-    .mac-window-label {
-      flex: 1;
-      text-align: center;
-      font-family: 'Inter', -apple-system, sans-serif;
-      font-size: 13px;
-      font-weight: 500;
-      color: rgba(255,255,255,0.5);
-      letter-spacing: 0.2px;
-    }
-
-    .mac-window-label i {
-      margin-right: 6px;
-      font-size: 12px;
-    }
-
-    .mac-window-body {
-      padding: 28px 28px 32px;
-    }
-
-    /* ---- Contact Info Cards ---- */
-    .mac-contact-card {
-      background: rgba(255,255,255,0.03);
-      border: 1px solid rgba(255,255,255,0.06);
-      border-radius: 14px;
-      padding: 22px 20px;
-      display: flex;
-      align-items: center;
-      gap: 16px;
-      transition: all 0.3s cubic-bezier(.4,0,.2,1);
-      margin-bottom: 16px;
-    }
-
-    .mac-contact-card:hover {
-      background: rgba(255,255,255,0.06);
-      border-color: rgba(10,132,255,0.25);
-      transform: translateY(-3px);
-      box-shadow: 0 8px 24px rgba(0,0,0,0.25), 0 0 16px rgba(10,132,255,0.08);
-    }
-
-    .mac-contact-icon {
-      width: 48px;
-      height: 48px;
-      border-radius: 14px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-      font-size: 1.2rem;
-    }
-
-    .mac-contact-icon.blue {
-      background: rgba(10,132,255,0.15);
-      color: #0A84FF;
-      box-shadow: 0 0 15px rgba(10,132,255,0.15);
-    }
-
-    .mac-contact-icon.green {
-      background: rgba(48,209,88,0.15);
-      color: #30D158;
-      box-shadow: 0 0 15px rgba(48,209,88,0.15);
-    }
-
-    .mac-contact-icon.purple {
-      background: rgba(191,90,242,0.15);
-      color: #BF5AF2;
-      box-shadow: 0 0 15px rgba(191,90,242,0.15);
-    }
-
-    .mac-contact-icon.orange {
-      background: rgba(255,159,10,0.15);
-      color: #FF9F0A;
-      box-shadow: 0 0 15px rgba(255,159,10,0.15);
-    }
-
-    .mac-contact-detail h4 {
-      font-family: 'Inter', -apple-system, sans-serif;
-      font-size: 0.82rem;
-      font-weight: 500;
-      color: rgba(255,255,255,0.4);
-      margin: 0 0 4px;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-    }
-
-    .mac-contact-detail p,
-    .mac-contact-detail a {
-      font-family: 'Inter', -apple-system, sans-serif;
-      font-size: 0.95rem;
-      font-weight: 600;
-      color: #fff;
-      margin: 0;
-      text-decoration: none;
-      transition: color 0.2s;
-    }
-
-    .mac-contact-detail a:hover {
-      color: #0A84FF;
-    }
-
-    /* ---- Map Container ---- */
-    .mac-map-wrap {
-      border-radius: 12px;
-      overflow: hidden;
-      border: 1px solid rgba(255,255,255,0.06);
-      margin-top: 8px;
-    }
-
-    .mac-map-wrap iframe {
-      display: block;
-      width: 100%;
-      height: 220px;
-      filter: saturate(0.7) brightness(0.7) contrast(1.1);
-      transition: filter 0.3s;
-    }
-
-    .mac-map-wrap:hover iframe {
-      filter: saturate(1) brightness(0.85) contrast(1);
-    }
-
-    /* ---- Form Styles ---- */
-    .mac-form-group {
-      margin-bottom: 18px;
-    }
-
-    .mac-form-label {
-      display: block;
-      font-family: 'Inter', -apple-system, sans-serif;
-      font-size: 0.8rem;
-      font-weight: 500;
-      color: rgba(255,255,255,0.45);
-      margin-bottom: 7px;
-      letter-spacing: 0.3px;
-    }
-
-    .mac-input,
-    .mac-textarea {
-      width: 100%;
-      background: rgba(255,255,255,0.04);
-      border: 1px solid rgba(255,255,255,0.1);
-      border-radius: 10px;
-      padding: 12px 16px;
-      font-family: 'Inter', -apple-system, sans-serif;
-      font-size: 0.92rem;
-      color: #fff;
-      transition: all 0.2s ease;
-      outline: none;
-      box-sizing: border-box;
-    }
-
-    .mac-input::placeholder,
-    .mac-textarea::placeholder {
-      color: rgba(255,255,255,0.2);
-    }
-
-    .mac-input:focus,
-    .mac-textarea:focus {
-      border-color: rgba(10,132,255,0.5);
-      background: rgba(10,132,255,0.05);
-      box-shadow: 0 0 0 3px rgba(10,132,255,0.12), 0 4px 16px rgba(0,0,0,0.15);
-    }
-
-    .mac-textarea {
-      resize: vertical;
-      min-height: 120px;
-    }
-
-    .mac-submit-btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      background: #0A84FF;
-      color: #fff;
-      border: none;
-      padding: 12px 32px;
-      border-radius: 10px;
-      font-family: 'Inter', -apple-system, sans-serif;
-      font-size: 0.9rem;
-      font-weight: 600;
-      cursor: pointer;
-      transition: all 0.25s ease;
-      box-shadow: 0 4px 16px rgba(10,132,255,0.35);
-      letter-spacing: 0.2px;
-      width: 100%;
-    }
-
-    .mac-submit-btn:hover {
-      background: #1B90FF;
-      transform: translateY(-2px);
-      box-shadow: 0 8px 24px rgba(10,132,255,0.45);
-    }
-
-    .mac-submit-btn:active {
-      transform: translateY(0);
-    }
-
-    .mac-submit-btn:disabled {
-      opacity: 0.6;
-      cursor: not-allowed;
-      transform: none;
-    }
-
-    .mac-submit-btn .spinner {
-      display: none;
-      width: 16px;
-      height: 16px;
-      border: 2px solid rgba(255,255,255,0.3);
-      border-top-color: #fff;
-      border-radius: 50%;
-      animation: spin 0.6s linear infinite;
-    }
-
-    .mac-submit-btn.loading .spinner {
-      display: inline-block;
-    }
-
-    .mac-submit-btn.loading span:first-child {
-      display: none;
-    }
-
-    @keyframes spin {
-      to { transform: rotate(360deg); }
-    }
-
-    /* ---- Social Connect ---- */
-    .mac-social-grid {
-      display: flex;
-      gap: 12px;
-      flex-wrap: wrap;
-      margin-top: 10px;
-    }
-
-    .mac-social-btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background: rgba(255,255,255,0.04);
-      border: 1px solid rgba(255,255,255,0.08);
-      border-radius: 10px;
-      padding: 10px 18px;
-      color: rgba(255,255,255,0.7);
-      text-decoration: none;
-      font-family: 'Inter', -apple-system, sans-serif;
-      font-size: 0.82rem;
-      font-weight: 500;
-      transition: all 0.2s ease;
-    }
-
-    .mac-social-btn:hover {
-      background: rgba(255,255,255,0.08);
-      border-color: rgba(255,255,255,0.15);
-      color: #fff;
-      transform: translateY(-2px);
-      box-shadow: 0 4px 16px rgba(0,0,0,0.2);
-    }
-
-    .mac-social-btn i {
-      font-size: 1.05rem;
-    }
-
-    .mac-social-btn.github:hover { border-color: rgba(255,255,255,0.3); color: #fff; }
-    .mac-social-btn.linkedin:hover { border-color: rgba(10,132,255,0.4); color: #0A84FF; }
-    .mac-social-btn.instagram:hover { border-color: rgba(255,55,95,0.4); color: #FF375F; }
-    .mac-social-btn.twitter:hover { border-color: rgba(100,210,255,0.4); color: #64D2FF; }
-    .mac-social-btn.playstore:hover { border-color: rgba(48,209,88,0.4); color: #30D158; }
-
-    /* ---- Footer ---- */
-    .footer {
-      background: #0a0e18 !important;
-      border-top: 1px solid rgba(255,255,255,0.06) !important;
-      padding: 30px 0 80px 0 !important;
-      position: relative;
-      z-index: 1;
-    }
-
-    .footer .container {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-end;
-    }
-
-    .footer .copyright {
-      text-align: right !important;
-    }
-
-    .footer .copyright p {
-      font-family: 'Inter', -apple-system, sans-serif !important;
-      color: rgba(255,255,255,0.4) !important;
-      font-size: 0.85rem;
-    }
-
-    .footer .social-links {
-      justify-content: flex-end !important;
-    }
-
-    .footer .social-links a {
-      width: 36px;
-      height: 36px;
-      display: inline-flex !important;
-      align-items: center;
-      justify-content: center;
-      background: rgba(255,255,255,0.06);
-      border: 1px solid rgba(255,255,255,0.08);
-      border-radius: 10px;
-      color: rgba(255,255,255,0.5) !important;
-      font-size: 1rem;
-      transition: all 0.2s ease;
-      margin: 0 5px !important;
-    }
-
-    .footer .social-links a:hover {
-      background: rgba(10,132,255,0.15) !important;
-      border-color: rgba(10,132,255,0.4) !important;
-      color: #0A84FF !important;
-      transform: translateY(-3px);
-    }
-
-    /* ---- Responsive ---- */
-
-    /* Tablet landscape & small desktops */
-    @media (max-width: 991px) {
-      .contact-page { padding: 30px 0 120px; }
-      .page-header { padding: 24px 0 36px; }
-      .mac-window-body { padding: 22px 20px 26px; }
-
-      /* Stack columns on tablets */
-      .row.g-4 > .col-lg-5,
-      .row.g-4 > .col-lg-7 {
-        flex: 0 0 100%;
-        max-width: 100%;
-        width: 100%;
-      }
-    }
-
-    /* Tablet portrait */
-    @media (max-width: 768px) {
-      .contact-page { padding: 44px 0 60px; }
-      .page-header { padding: 20px 0 28px; }
-      .page-header h1 { font-size: 1.8rem; }
-      .page-header p { font-size: 0.88rem; }
-      .mac-window { border-radius: 14px; margin-bottom: 24px; }
-      .mac-window-body { padding: 20px 16px 24px; }
-      .mac-contact-card { padding: 16px 15px; gap: 12px; }
-      .mac-contact-icon { width: 42px; height: 42px; font-size: 1rem; border-radius: 12px; }
-      .mac-contact-detail h4 { font-size: 0.75rem; }
-      .mac-contact-detail p,
-      .mac-contact-detail a { font-size: 0.88rem; word-break: break-word; }
-      .mac-map-wrap iframe { height: 180px; }
-      .mac-form-group { margin-bottom: 14px; }
-      .mac-input, .mac-textarea { padding: 11px 14px; font-size: 0.88rem; }
-      .mac-textarea { min-height: 100px; }
-      .mac-submit-btn { padding: 11px 24px; font-size: 0.88rem; }
-      .mac-social-grid { gap: 10px; }
-      .mac-social-btn { padding: 9px 16px; font-size: 0.8rem; }
-
-      /* Footer mobile */
-      .footer { padding: 24px 0 60px 0 !important; }
-      .footer .container { align-items: center; }
-      .footer .copyright { text-align: center !important; }
-      .footer .social-links { justify-content: center !important; }
-    }
-
-    /* Mobile phones */
-    @media (max-width: 575px) {
-      .contact-page { padding: 40px 0 56px; }
-      .page-header { padding: 14px 0 22px; }
-      .page-header h1 { font-size: 1.4rem; letter-spacing: -0.5px; }
-      .page-header p { font-size: 0.82rem; padding: 0 8px; }
-      .page-header-badge { font-size: 10px; padding: 4px 11px; }
-      .mac-window { border-radius: 12px; margin-bottom: 18px; }
-      .mac-window-titlebar { padding: 10px 13px; }
-      .mac-window-label { font-size: 12px; }
-      .mac-window-dots span { width: 11px; height: 11px; }
-      .mac-window-body { padding: 14px 12px 18px; }
-      .mac-contact-card { padding: 14px 12px; gap: 10px; flex-direction: row; border-radius: 12px; margin-bottom: 12px; }
-      .mac-contact-icon { width: 38px; height: 38px; font-size: 0.95rem; border-radius: 10px; }
-      .mac-contact-detail h4 { font-size: 0.7rem; margin-bottom: 2px; }
-      .mac-contact-detail p,
-      .mac-contact-detail a { font-size: 0.82rem; word-break: break-all; overflow-wrap: anywhere; }
-      .mac-map-wrap iframe { height: 160px; }
-      .mac-form-label { font-size: 0.75rem; margin-bottom: 5px; }
-      .mac-input, .mac-textarea { padding: 10px 12px; font-size: 0.85rem; border-radius: 8px; }
-      .mac-textarea { min-height: 90px; }
-      .mac-submit-btn { padding: 11px 20px; font-size: 0.85rem; border-radius: 8px; }
-      .mac-social-grid { gap: 8px; justify-content: center; }
-      .mac-social-btn { padding: 8px 12px; font-size: 0.75rem; border-radius: 8px; flex: 1 1 auto; min-width: 0; justify-content: center; }
-      .mac-social-btn i { font-size: 0.95rem; }
-
-      /* Footer small mobile */
-      .footer { padding: 20px 0 56px 0 !important; }
-      .footer .copyright p { font-size: 0.78rem; }
-      .footer .social-links a { width: 32px; height: 32px; font-size: 0.9rem; border-radius: 8px; }
-    }
-
-    /* Very small screens */
-    @media (max-width: 380px) {
-      .contact-page { padding: 38px 0 50px; }
-      .page-header h1 { font-size: 1.2rem; }
-      .page-header p { font-size: 0.78rem; }
-      .mac-window-body { padding: 12px 10px 14px; }
-      .mac-contact-card { padding: 12px 10px; gap: 8px; }
-      .mac-contact-icon { width: 34px; height: 34px; font-size: 0.85rem; }
-      .mac-contact-detail p,
-      .mac-contact-detail a { font-size: 0.78rem; }
-      .mac-social-grid { flex-direction: column; gap: 6px; }
-      .mac-social-btn { width: 100%; justify-content: center; flex: unset; }
-      .mac-input, .mac-textarea { padding: 9px 10px; font-size: 0.82rem; }
-      .mac-submit-btn { padding: 10px 16px; font-size: 0.82rem; }
-    }
-
-    /* ---- macOS Menu Bar ---- */
-    .macos-menubar {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 28px;
-      background: rgba(22,22,26,0.92);
-      backdrop-filter: blur(25px) saturate(2);
-      -webkit-backdrop-filter: blur(25px) saturate(2);
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 0 18px;
-      z-index: 9998;
-      border-bottom: 1px solid rgba(255,255,255,0.08);
-      box-shadow: 0 1px 0 rgba(0,0,0,0.15);
-      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-    }
-
-    .menubar-left {
-      display: flex;
-      align-items: center;
-      gap: 20px;
-    }
-
-    .menubar-apple {
-      font-size: 16px;
-      color: rgba(255,255,255,0.95);
-    }
-
-    .menubar-left span {
-      font-size: 13px;
-      font-weight: 500;
-      color: rgba(255,255,255,0.88);
-      cursor: default;
-      user-select: none;
-      transition: color 0.15s ease;
-    }
-
-    .menubar-left span:hover:not(.menubar-apple) {
-      color: rgba(255,255,255,1);
-    }
-
-    .menubar-left span.menubar-brand {
-      font-weight: 700;
-      color: rgba(255,255,255,0.95);
-    }
-
-    .menubar-right {
-      display: flex;
-      align-items: center;
-      gap: 16px;
-      font-size: 12px;
-      color: rgba(255,255,255,0.85);
-    }
-
-    .menubar-right a {
-      color: inherit;
-      text-decoration: none;
-      transition: color 0.15s ease;
-      display: flex;
-      align-items: center;
-    }
-
-    .menubar-right a:hover {
-      color: rgba(255,255,255,1);
-    }
-
-    .menubar-right i {
-      font-size: 14px;
-      transition: color 0.15s ease;
-    }
-
-    .menubar-right i:hover {
-      color: rgba(255,255,255,1);
-    }
-
-    #menubar-clock {
-      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-      font-size: 12px;
-      font-weight: 500;
-      color: rgba(255,255,255,0.9);
-      letter-spacing: 0.4px;
-      min-width: 44px;
-      text-align: right;
-    }
-
-    @media (max-width: 768px) {
-      .macos-menubar {
-        height: 36px;
-        padding: 0 12px;
-      }
-      .menubar-left {
-        gap: 10px;
-        overflow: hidden;
-      }
-      .menubar-left span {
-        font-size: 12px;
-      }
-      .menubar-left span.menubar-brand {
-        font-size: 12px;
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        max-width: 110px;
-      }
-      /* Hide extra menu text items on mobile, keep home & brand */
-      .menubar-left span:not(.menubar-apple):not(.menubar-brand) {
-        display: none;
-      }
-      .menubar-right {
-        gap: 10px;
-      }
-      .menubar-right i {
-        font-size: 13px;
-      }
-      #menubar-clock {
-        font-size: 11px;
-        min-width: 38px;
-      }
-      /* Hide wifi/battery icons on mobile */
-      .menubar-right > i.bi-wifi,
-      .menubar-right > i.bi-battery-full {
-        display: none;
-      }
-      .contact-page {
-        padding-top: 44px;
-      }
-    }
-
-    @media (max-width: 575px) {
-      .macos-menubar {
-        height: 34px;
-        padding: 0 10px;
-      }
-      .menubar-left {
-        gap: 8px;
-      }
-      .menubar-apple i {
-        font-size: 14px;
-      }
-      .menubar-left span.menubar-brand {
-        max-width: 90px;
-        font-size: 11px;
-      }
-      .menubar-right {
-        gap: 8px;
-      }
-      .menubar-right a i {
-        font-size: 12px;
-      }
-      #menubar-clock {
-        font-size: 10px;
-        min-width: 34px;
-      }
-    }
-
-    @media (max-width: 380px) {
-      .menubar-left span.menubar-brand {
-        max-width: 70px;
-        font-size: 10px;
-      }
-      .menubar-right {
-        gap: 6px;
-      }
-      /* Hide some social icons on very small screens to save space */
-      .menubar-right a:nth-child(3),
-      .menubar-right a:nth-child(4) {
-        display: none;
-      }
-    }
-  </style>
-
-  <!-- Open Graph / Facebook -->
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://dharmikgohil.art/contact.html">
-  <meta property="og:title" content="Contact Dharmik Gohil - Game Developer | Get in Touch for Projects">
-  <meta property="og:description" content="Contact Dharmik Gohil for game development projects, collaborations, and inquiries. Based in Surat, Gujarat. Available for work and exciting opportunities.">
-  <meta property="og:image" content="https://dharmikgohil.art/assets/img/dharmik-profile-photo-2026.jpg">
-
-  <!-- Twitter -->
-  <meta property="twitter:card" content="summary_large_image">
-  <meta property="twitter:url" content="https://dharmikgohil.art/contact.html">
-  <meta property="twitter:title" content="Contact Dharmik Gohil - Game Developer | Get in Touch for Projects">
-  <meta property="twitter:description" content="Contact Dharmik Gohil for game development projects, collaborations, and inquiries. Based in Surat, Gujarat. Available for work and exciting opportunities.">
-  <meta property="twitter:image" content="https://dharmikgohil.art/assets/img/dharmik-profile-photo-2026.jpg">
-
-  <!-- Additional SEO Meta Tags -->
-  <meta name="robots" content="index, follow">
-  <link rel="canonical" href="https://dharmikgohil.art/contact.html">
-  <meta name="creator" content="Dharmik Gohil">
-  <meta name="publisher" content="Dharmik Gohil">
-  <!-- Open Graph / Facebook -->
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://dharmikgohil.art/contact.html">
-  <meta property="og:title" content="Contact Dharmik Gohil | Hire Game Developer | Unity XR Developer Services">
-  <meta property="og:description" content="Contact Dharmik Gohil for professional game development services. Unity XR developer available for mobile games, VR/AR projects, and custom game development. Get in touch for game development consultation.">
-  <meta property="og:image" content="https://dharmikgohil.art/assets/img/dharmik-profile-photo-2026.jpg">
-  <meta property="og:locale" content="en_US">
-  <meta property="og:site_name" content="Dharmik Gohil Portfolio">
-  
-  <!-- Twitter -->
-  <meta property="twitter:card" content="summary_large_image">
-  <meta property="twitter:url" content="https://dharmikgohil.art/contact.html">
-  <meta property="twitter:title" content="Contact Dharmik Gohil | Hire Game Developer | Unity XR Developer Services">
-  <meta property="twitter:description" content="Contact Dharmik Gohil for professional game development services. Unity XR developer available for mobile games, VR/AR projects, and custom game development. Get in touch for game development consultation.">
-  <meta property="twitter:image" content="https://dharmikgohil.art/assets/img/dharmik-profile-photo-2026.jpg">
-  <meta property="twitter:creator" content="@dharmikgohil">
   <!-- Favicons - Dharmik Gohil Logo -->
   <link rel="icon" type="image/png" sizes="32x32" href="assets/img/dlogo.png">
   <link rel="icon" type="image/png" sizes="16x16" href="assets/img/dlogo.png">
@@ -884,27 +130,496 @@
   <meta name="apple-mobile-web-app-title" content="Dharmik Gohil">
   <meta name="application-name" content="Dharmik Gohil">
 
-<body class="index-page">
+  <style>
+    /* ==========================================================================
+       BRUTALIST EDITORIAL DESIGN SYSTEM (v1.0)
+       Light · Daring · Unapologetic by design.
+       ========================================================================== */
 
-  <!-- macOS Menu Bar -->
-  <div class="macos-menubar">
-    <div class="menubar-left">
-      <span class="menubar-apple"><a href="index.html" style="color:inherit;text-decoration:none;"><i class="bi bi-house-fill"></i></a></span>
-      <span class="menubar-brand">Dharmik Gohil</span>
-      <span><a href="blog.html" style="color:inherit;text-decoration:none;display:flex;align-items:center;gap:4px;"><i class="bi bi-rss"></i> Blog</a></span>
-      <span>Contact</span>
-      <span>Connect</span>
-    </div>
-    <div class="menubar-right">
-      <a href="https://github.com/DharmikGohil013" target="_blank" rel="noopener noreferrer"><i class="bi bi-github"></i></a>
-      <a href="https://www.linkedin.com/in/dharmikgohil086/" target="_blank" rel="noopener noreferrer"><i class="bi bi-linkedin"></i></a>
-      <a href="https://www.instagram.com/dharmik.086/?next=%2F" target="_blank" rel="noopener noreferrer"><i class="bi bi-instagram"></i></a>
-      <a href="https://x.com/Dharmik086" target="_blank" rel="noopener noreferrer"><i class="bi bi-twitter"></i></a>
-      <i class="bi bi-wifi"></i>
-      <i class="bi bi-battery-full"></i>
-      <span id="menubar-clock">--:--</span>
-    </div>
-  </div>
+    :root {
+      --ink: #0d0d0b;
+      --paper: #f2f0eb;
+      --red: #c8001a;
+      --red-dim: #8a0012;
+      --rule: rgba(13, 13, 11, 0.15);
+      --rule-heavy: rgba(13, 13, 11, 0.90);
+    }
+
+    /* Base resets & structural outer border */
+    html, body {
+      background-color: var(--paper) !important;
+      color: var(--ink) !important;
+      font-family: 'IBM Plex Mono', monospace;
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+      box-sizing: border-box;
+    }
+
+    body {
+      border: 4px solid var(--ink) !important;
+      padding: 24px;
+      position: relative;
+    }
+
+    /* Staggered page load fade-up animation */
+    @keyframes brutalistFadeUp {
+      0% {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .animate-fade-up {
+      opacity: 0;
+      animation: brutalistFadeUp 0.5s ease forwards;
+    }
+
+    .stagger-1 { animation-delay: 0.04s; }
+    .stagger-2 { animation-delay: 0.08s; }
+    .stagger-3 { animation-delay: 0.12s; }
+    .stagger-4 { animation-delay: 0.16s; }
+    .stagger-5 { animation-delay: 0.20s; }
+    .stagger-6 { animation-delay: 0.24s; }
+
+    /* typography rules */
+    h1, h2, h3, h4, h5, h6, .display-font {
+      font-family: 'Bebas Neue', sans-serif !important;
+      text-transform: uppercase;
+      margin: 0;
+      letter-spacing: 0.05em;
+    }
+
+    .mono-label {
+      font-family: 'IBM Plex Mono', monospace !important;
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+    }
+
+    .mono-body {
+      font-family: 'IBM Plex Mono', monospace !important;
+      font-size: 14px;
+      line-height: 1.6;
+      opacity: 0.6; /* Mono body at 60% opacity */
+    }
+
+    .emotional-headline {
+      font-family: 'Playfair Display', serif !important;
+      font-weight: 900;
+      font-style: italic; /* Vulnerability. Italic pulling quote */
+      font-size: clamp(2rem, 5vw, 3.8rem);
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      color: var(--ink);
+      margin: 16px 0;
+    }
+
+    /* Masthead styling */
+    .editorial-masthead {
+      display: flex;
+      flex-direction: column;
+      border-bottom: 4px solid var(--ink);
+      padding-bottom: 8px;
+      margin-bottom: 32px;
+    }
+
+    .masthead-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      border-bottom: 1px solid var(--ink);
+      padding-bottom: 6px;
+    }
+
+    .masthead-meta-left, .masthead-meta-right {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+    }
+
+    .masthead-title {
+      font-family: 'Bebas Neue', sans-serif !important;
+      font-size: clamp(3rem, 10vw, 7.5rem);
+      line-height: 0.85;
+      font-weight: bold;
+      text-align: center;
+      color: var(--ink);
+      letter-spacing: 0.02em;
+    }
+
+    .masthead-mid {
+      display: flex;
+      justify-content: center;
+      border-bottom: 1px solid var(--ink);
+      padding: 6px 0;
+    }
+
+    .masthead-overline {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.35em;
+    }
+
+    .masthead-nav {
+      display: flex;
+      justify-content: center;
+      gap: 24px;
+      padding: 12px 0 4px 0;
+      flex-wrap: wrap;
+    }
+
+    .masthead-nav .nav-link {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 18px;
+      color: rgba(13, 13, 11, 0.4);
+      text-decoration: none;
+      transition: color 0.3s ease;
+      letter-spacing: 0.1em;
+    }
+
+    .masthead-nav .nav-link:hover {
+      color: var(--ink);
+    }
+
+    .masthead-nav .nav-link.active {
+      color: var(--ink);
+      border-bottom: 2.5px solid var(--red); /* active navigation has simple red indicator */
+    }
+
+    /* Layout section headers */
+    .section-divider {
+      border-top: 2px solid var(--ink);
+      margin-top: 32px;
+      padding-top: 12px;
+    }
+
+    .section-title {
+      font-size: 28px;
+      color: var(--ink);
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    /* Contact Info Rows */
+    .brutalist-row {
+      display: flex;
+      align-items: center;
+      border-bottom: 1px solid var(--rule);
+      padding: 16px 0;
+      transition: background-color 0.15s ease;
+    }
+
+    .brutalist-row:hover {
+      background-color: rgba(200, 0, 26, 0.04); /* Work row hover rule */
+    }
+
+    .row-num {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 24px;
+      color: var(--ink);
+      width: 40px;
+      flex-shrink: 0;
+    }
+
+    .row-content {
+      flex-grow: 1;
+    }
+
+    .row-label {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 9px;
+      letter-spacing: 0.3em;
+      color: var(--red); /* Overlines/accent label gets red */
+      text-transform: uppercase;
+      margin-bottom: 2px;
+    }
+
+    .row-value, .row-value a {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 14px;
+      font-weight: bold;
+      color: var(--ink);
+      text-decoration: none;
+      word-break: break-word;
+    }
+
+    .row-value a:hover {
+      border-bottom: 1.5px solid var(--red); /* CTA underlines only */
+    }
+
+    .row-arrow {
+      font-size: 20px;
+      color: var(--red);
+      opacity: 0;
+      transition: transform 0.25s ease, opacity 0.15s ease;
+      transform: translateX(-10px);
+    }
+
+    .brutalist-row:hover .row-arrow {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    /* Interactive Map */
+    .map-box {
+      margin-top: 24px;
+      border: 1px solid var(--ink);
+      height: 240px;
+    }
+
+    .map-box iframe {
+      width: 100%;
+      height: 100%;
+      display: block;
+      filter: grayscale(1) contrast(1.1);
+      transition: filter 0.3s ease;
+    }
+
+    .map-box:hover iframe {
+      filter: grayscale(0) contrast(1);
+    }
+
+    /* Skill pills for Socials */
+    .social-pills-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 16px;
+    }
+
+    .pill {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 10px;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      padding: 8px 16px;
+      text-decoration: none;
+      cursor: pointer;
+      box-sizing: border-box;
+      border-radius: 0;
+    }
+
+    /* Primary style: solid black fill with high-specificity override */
+    .social-pills-container .pill.solid {
+      background-color: var(--ink) !important;
+      color: var(--paper) !important;
+      border: 1px solid var(--ink) !important;
+    }
+
+    .social-pills-container .pill.solid:hover {
+      background-color: var(--paper) !important;
+      color: var(--ink) !important;
+    }
+
+    /* Secondary style: hollow outline with high-specificity override */
+    .social-pills-container .pill.hollow {
+      background-color: transparent !important;
+      color: var(--ink) !important;
+      border: 1px solid var(--ink) !important;
+    }
+
+    .social-pills-container .pill.hollow:hover {
+      background-color: var(--ink) !important;
+      color: var(--paper) !important;
+    }
+
+    /* Accent style: red border with high-specificity override */
+    .social-pills-container .pill.accent {
+      background-color: transparent !important;
+      color: var(--ink) !important;
+      border: 1px solid var(--red) !important;
+    }
+
+    .social-pills-container .pill.accent:hover {
+      background-color: var(--red) !important;
+      color: var(--paper) !important;
+      border-color: var(--red) !important;
+    }
+
+    /* Form Styling */
+    .brutalist-form-group {
+      margin-bottom: 24px;
+    }
+
+    .brutalist-form-label {
+      display: block;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 10px;
+      letter-spacing: 0.25em;
+      color: var(--ink);
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+
+    .brutalist-input, .brutalist-textarea {
+      width: 100%;
+      background-color: var(--paper);
+      border: 1px solid var(--ink);
+      padding: 12px;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 14px;
+      color: var(--ink);
+      box-sizing: border-box;
+      outline: none;
+      border-radius: 0 !important;
+      transition: border-width 0.1s ease;
+    }
+
+    .brutalist-input:focus, .brutalist-textarea:focus {
+      border: 2px solid var(--ink);
+    }
+
+    .brutalist-input::placeholder, .brutalist-textarea::placeholder {
+      color: var(--ink);
+      opacity: 0.4;
+    }
+
+    .brutalist-textarea {
+      resize: vertical;
+      min-height: 150px;
+    }
+
+    /* Submit Button - High-specificity to prevent span text color overrides */
+    button.brutalist-submit-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      background-color: var(--ink) !important;
+      border: 1px solid var(--ink) !important;
+      border-bottom: 2.5px solid var(--red) !important; /* CTA underlines only */
+      padding: 14px 28px;
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 18px;
+      letter-spacing: 0.1em;
+      cursor: pointer;
+      width: 100%;
+      box-sizing: border-box;
+      text-transform: uppercase;
+      border-radius: 0;
+    }
+
+    button.brutalist-submit-btn span {
+      color: var(--paper) !important;
+      transition: color 0.2s ease;
+    }
+
+    button.brutalist-submit-btn:hover {
+      background-color: var(--paper) !important;
+      border-color: var(--ink) !important;
+    }
+
+    button.brutalist-submit-btn:hover span {
+      color: var(--ink) !important;
+    }
+
+    .brutalist-submit-btn:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+
+    .brutalist-submit-btn .spinner {
+      display: none;
+      width: 16px;
+      height: 16px;
+      border: 2px solid var(--paper);
+      border-top-color: var(--red);
+      border-radius: 50%;
+      animation: spin 0.6s linear infinite;
+    }
+
+    .brutalist-submit-btn.loading .spinner {
+      display: inline-block;
+    }
+
+    .brutalist-submit-btn.loading span {
+      display: none;
+    }
+
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+
+    /* Footer Colophon */
+    .editorial-footer {
+      border-top: 2px solid var(--ink);
+      padding: 24px 0 40px 0;
+      margin-top: 60px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .colophon-text {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 10px;
+      letter-spacing: 0.1em;
+      opacity: 0.6;
+    }
+
+    .colophon-signature {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 10px;
+      font-weight: bold;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--red); /* Sign-off earns red */
+    }
+
+    /* Brutalist Preloader */
+    #preloader {
+      background-color: var(--paper) !important;
+    }
+    .cube-loader, .cube-span, .cube-top {
+      border-radius: 0 !important;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 991px) {
+      body {
+        padding: 16px;
+      }
+      .masthead-title {
+        font-size: 4.5rem;
+      }
+    }
+
+    @media (max-width: 768px) {
+      body {
+        border-width: 3px !important;
+        padding: 12px;
+      }
+      .editorial-footer {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+
+    /* Spacious side margin override for contact broadside */
+    .main {
+      padding: 0 clamp(2rem, 8vw, 6rem) !important;
+    }
+  </style>
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=IBM+Plex+Mono:ital,wght@0,400;0,500;0,700;1,400&family=Playfair+Display:ital,wght@0,900;1,900&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=IBM+Plex+Mono:ital,wght@0,400;0,500;0,700;1,400&family=Playfair+Display:ital,wght@0,900;1,900&display=swap" rel="stylesheet"></noscript>
+  <link rel="preload" href="index.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link href="index.css" rel="stylesheet"></noscript>
+</head>
+
+<body class="index-page">
 
   <!-- Preloader -->
   <div id="preloader">
@@ -919,237 +634,174 @@
     </div>
   </div>
 
-  <main>
-    <div class="contact-page">
-      <div class="container">
+  <main class="main animate-fade-up stagger-1">
+    <!-- Editorial Masthead -->
+    <!-- Broadsheet Masthead (Header) -->
+    <!-- Broadsheet Masthead (Header) -->
+    <!-- Broadsheet Masthead (Header) -->
+    <!-- Broadsheet Masthead (Header) -->
+    <header class="masthead container">
+      <div class="masthead-top">
+        <div>EST. 2006 · SURAT, GUJARAT, INDIA</div>
+        <div class="accent-text">★ CURRENTLY AVAILABLE FOR WORK ★</div>
+        <div class="text-end">VOL. 1.0 · THE DHARMIK GOHIL CHRONICLE</div>
+      </div>
+      <div class="masthead-main">
+        <h1>Dh<span class="accent-text">a</span>rmik Gohil</h1>
+      </div>
+      <div class="masthead-nav-bar">
+        <nav class="nav-links">
+          <a href="index.html">HOME</a> · 
+          <a href="services.html">ABILITIES</a> · 
+          
+          <div class="nav-dropdown">
+            <span class="dropdown-trigger">MY GAMES <span class="arrow-down">▼</span></span>
+            <div class="dropdown-content">
+              <a href="https://dharmikgohil.itch.io/mavericks-battlegrounds" target="_blank">MAVERICKS BATTLEGROUND</a>
+              <a href="https://dharmik086.itch.io/floppy-bird-860" target="_blank">FLOPPY BIRD</a>
+              <a href="https://dharmikgohil.itch.io/facade" target="_blank">FACADE</a>
+              <a href="https://dharmikgohil.itch.io/go-galaxy" target="_blank">GO GALAXY</a>
+              <a href="https://dharmikgohil.itch.io/drone-training" target="_blank">DRONE TRAINING</a>
+              <a href="https://dharmikgohil.itch.io/hook-shot" target="_blank">HOOK SHOT</a>
+              <a href="https://lowxena.dharmikgohil.art/" target="_blank">LOWXENA</a>
+            </div>
+          </div> · 
+          
+          <div class="nav-dropdown">
+            <span class="dropdown-trigger">LIVE PROJECTS <span class="arrow-down">▼</span></span>
+            <div class="dropdown-content">
+              <a href="assets/Fit Sync.apk" download>FITSYNC APP (APK)</a>
+              <a href="https://actify.dharmikgohil.art/" target="_blank">ACTIFY</a>
+              <a href="https://learnlink.dharmikgohil.art" target="_blank">LEARN LINK</a>
+              <a href="http://gdgs.dharmikgohil.art/" target="_blank">GDGS GAMES</a>
+              <a href="http://flipcart.dharmikgohil.art/" target="_blank">FLIPKART CLONE</a>
+              <a href="http://krishna.dharmikgohil.art/" target="_blank">KRISHNA CONSTRUCTION</a>
+              <a href="https://fkm.vercel.app/" target="_blank">WIFI SERVICE</a>
+            </div>
+          </div> · 
+          
+          <a href="Achivemtn.html">ACHIEVEMENTS</a> · 
+          <a href="blog.html">BLOG</a> · 
+          <a href="contact.html" class="active">CONTACT</a> · 
+          <a href="assets/img/Dharmik Gohil Resume.pdf" target="_blank">RESUME</a>
+        </nav>
+        <div class="social-links-minimal">
+          <a href="https://github.com/DharmikGohil013" target="_blank">GITHUB</a> · 
+          <a href="https://www.linkedin.com/in/dharmikgohil086/" target="_blank">LINKEDIN</a> · 
+          <a href="https://x.com/Dharmik086" target="_blank">TWITTER</a> · 
+          <a href="https://dharmikgohil.itch.io/" target="_blank">ITCH.IO</a>
+        </div>
+      </div>
+    </header>
 
-        <!-- Page Header -->
-        <div class="page-header" data-aos="fade-down" data-aos-delay="100">
-          <div class="page-header-badge"><i class="bi bi-envelope-fill"></i> Contact</div>
-          <h1>Get in Touch</h1>
-          <p>Ready to collaborate on your next project? Let's connect and make something amazing.</p>
+    <div class="container">
+      <!-- Section Header -->
+      <div class="animate-fade-up stagger-2" style="margin-bottom: 32px;">
+        <div class="mono-label" style="color: var(--red);">[ CURRENTLY AVAILABLE FOR WORK ]</div>
+        <h1 class="emotional-headline">Let's build something they can't ignore.</h1>
+        <p class="mono-body" style="font-size: 16px; max-width: 700px;">
+          Final-year B.Tech student at CHARUSAT. Focused on real-time multiplayer systems, XR environments, and full-stack web applications. 10+ shipped titles.
+        </p>
+      </div>
+
+      <div class="row g-4">
+        <!-- ====== LEFT COLUMN: Contact & Connect ====== -->
+        <div class="col-lg-5 animate-fade-up stagger-3">
+          <div class="section-divider">
+            <h2 class="section-title">01 / RECONNAISSANCE</h2>
+          </div>
+
+          <!-- Contact Row 1: Location -->
+          <div class="brutalist-row">
+            <div class="row-num">01</div>
+            <div class="row-content">
+              <div class="row-label">LOCATION</div>
+              <div class="row-value">7, Dharmanandan Bungalows, Katargam, Surat</div>
+            </div>
+            <div class="row-arrow">→</div>
+          </div>
+
+          <!-- Contact Row 2: Phone -->
+          <div class="brutalist-row">
+            <div class="row-num">02</div>
+            <div class="row-content">
+              <div class="row-label">DIRECT LINE</div>
+              <div class="row-value"><a href="tel:+919624105887">+91 9624105887</a></div>
+            </div>
+            <div class="row-arrow">→</div>
+          </div>
+
+          <!-- Contact Row 3: Email -->
+          <div class="brutalist-row">
+            <div class="row-num">03</div>
+            <div class="row-content">
+              <div class="row-label">SECURE EMAIL</div>
+              <div class="row-value"><a href="mailto:dharmikgohil.work@gmail.com">dharmikgohil.work@gmail.com</a></div>
+            </div>
+            <div class="row-arrow">→</div>
+          </div>
+
+          <!-- Interactive Map -->
+          <div class="map-box">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3719.159614682177!2d72.84219461488592!3d21.22623198588668!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be04f3b4e8e0c47%3A0x5e5c5e5e5e5e5e5e!2sKatargam%2C%20Surat%2C%20Gujarat%2C%20India!5e0!3m2!1sen!2sin!4v1698765432100!5m2!1sen!2sin" allowfullscreen="" loading="lazy"></iframe>
+          </div>
+
+          <!-- Connect Section -->
+          <div class="section-divider" style="margin-top: 40px;">
+            <h2 class="section-title">02 / NETWORKS</h2>
+          </div>
+          <div class="social-pills-container">
+            <a href="https://github.com/DharmikGohil013" target="_blank" rel="noopener noreferrer" class="pill solid">GitHub</a>
+            <a href="https://www.linkedin.com/in/dharmikgohil086/" target="_blank" rel="noopener noreferrer" class="pill solid">LinkedIn</a>
+            <a href="https://www.instagram.com/dharmik.086/?next=%2F" target="_blank" rel="noopener noreferrer" class="pill hollow">Instagram</a>
+            <a href="https://x.com/Dharmik086" target="_blank" rel="noopener noreferrer" class="pill hollow">Twitter</a>
+            <a href="https://play.google.com/store/apps/details?id=com.dharmikgohilfun.crossout" target="_blank" rel="noopener noreferrer" class="pill accent">Play Store</a>
+          </div>
         </div>
 
-        <div class="row g-4">
-
-          <!-- ====== LEFT: Contact Info + Map ====== -->
-          <div class="col-lg-5">
-
-            <!-- Contact Info Window -->
-            <div class="mac-window" data-aos="fade-up" data-aos-delay="150">
-              <div class="mac-window-titlebar">
-                <div class="mac-window-dots">
-                  <span class="mac-dot-red"></span>
-                  <span class="mac-dot-yellow"></span>
-                  <span class="mac-dot-green"></span>
-                </div>
-                <div class="mac-window-label"><i class="bi bi-person-lines-fill"></i> Contact Info</div>
-              </div>
-              <div class="mac-window-body">
-
-                <div class="mac-contact-card">
-                  <div class="mac-contact-icon blue"><i class="bi bi-geo-alt-fill"></i></div>
-                  <div class="mac-contact-detail">
-                    <h4>Location</h4>
-                    <p>7, Dharmanandan Bungalows, Katargam, Surat</p>
-                  </div>
-                </div>
-
-                <div class="mac-contact-card">
-                  <div class="mac-contact-icon green"><i class="bi bi-telephone-fill"></i></div>
-                  <div class="mac-contact-detail">
-                    <h4>Phone</h4>
-                    <a href="tel:+919624105887">+91 9624105887</a>
-                  </div>
-                </div>
-
-                <div class="mac-contact-card">
-                  <div class="mac-contact-icon purple"><i class="bi bi-envelope-fill"></i></div>
-                  <div class="mac-contact-detail">
-                    <h4>Email</h4>
-                    <a href="mailto:dharmikgohil.work@gmail.com">dharmikgohil.work@gmail.com</a>
-                  </div>
-                </div>
-
-                <!-- Map -->
-                <div class="mac-map-wrap">
-                  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3719.159614682177!2d72.84219461488592!3d21.22623198588668!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be04f3b4e8e0c47%3A0x5e5c5e5e5e5e5e5e!2sKatargam%2C%20Surat%2C%20Gujarat%2C%20India!5e0!3m2!1sen!2sin!4v1698765432100!5m2!1sen!2sin" allowfullscreen="" loading="lazy"></iframe>
-                </div>
-
-              </div>
-            </div>
-
-            <!-- Social Connect Window -->
-            <div class="mac-window" data-aos="fade-up" data-aos-delay="200">
-              <div class="mac-window-titlebar">
-                <div class="mac-window-dots">
-                  <span class="mac-dot-red"></span>
-                  <span class="mac-dot-yellow"></span>
-                  <span class="mac-dot-green"></span>
-                </div>
-                <div class="mac-window-label"><i class="bi bi-share-fill"></i> Connect</div>
-              </div>
-              <div class="mac-window-body">
-                <div class="mac-social-grid">
-                  <a href="https://github.com/DharmikGohil013" target="_blank" class="mac-social-btn github"><i class="bi bi-github"></i> GitHub</a>
-                  <a href="https://www.linkedin.com/in/dharmikgohil086/" target="_blank" class="mac-social-btn linkedin"><i class="bi bi-linkedin"></i> LinkedIn</a>
-                  <a href="https://www.instagram.com/dharmik.086/?next=%2F" target="_blank" class="mac-social-btn instagram"><i class="bi bi-instagram"></i> Instagram</a>
-                  <a href="https://x.com/Dharmik086" target="_blank" class="mac-social-btn twitter"><i class="bi bi-twitter"></i> Twitter</a>
-                  <a href="https://play.google.com/store/apps/details?id=com.dharmikgohilfun.crossout" target="_blank" class="mac-social-btn playstore"><i class="bi bi-google-play"></i> Play Store</a>
-                </div>
-              </div>
-            </div>
-
+        <!-- ====== RIGHT COLUMN: Message Form ====== -->
+        <div class="col-lg-7 animate-fade-up stagger-4">
+          <div class="section-divider">
+            <h2 class="section-title">03 / DISPATCH</h2>
           </div>
 
-          <!-- ====== RIGHT: Message Form ====== -->
-          <div class="col-lg-7">
-            <div class="mac-window" data-aos="fade-up" data-aos-delay="200">
-              <div class="mac-window-titlebar">
-                <div class="mac-window-dots">
-                  <span class="mac-dot-red"></span>
-                  <span class="mac-dot-yellow"></span>
-                  <span class="mac-dot-green"></span>
-                </div>
-                <div class="mac-window-label"><i class="bi bi-chat-dots-fill"></i> Send a Message</div>
-              </div>
-              <div class="mac-window-body">
-                <form id="contactForm">
-                  <div class="mac-form-group">
-                    <label class="mac-form-label" for="name">Your Name</label>
-                    <input type="text" class="mac-input" id="name" name="name" placeholder="e.g. John Doe" required>
-                  </div>
-                  <div class="mac-form-group">
-                    <label class="mac-form-label" for="email">Email Address</label>
-                    <input type="email" class="mac-input" id="email" name="email" placeholder="e.g. john@example.com" required>
-                  </div>
-                  <div class="mac-form-group">
-                    <label class="mac-form-label" for="message">Message</label>
-                    <textarea class="mac-textarea" id="message" name="message" rows="6" placeholder="Tell me about your project or idea..." required></textarea>
-                  </div>
-                  <button type="submit" class="mac-submit-btn">
-                    <span><i class="bi bi-send-fill"></i> Send Message</span>
-                    <span class="spinner"></span>
-                  </button>
-                </form>
-              </div>
+          <form id="contactForm" style="margin-top: 16px;">
+            <div class="brutalist-form-group">
+              <label class="brutalist-form-label" for="name">Your Name</label>
+              <input type="text" class="brutalist-input" id="name" name="name" placeholder="e.g. John Doe" required>
             </div>
-          </div>
-
+            <div class="brutalist-form-group">
+              <label class="brutalist-form-label" for="email">Email Address</label>
+              <input type="email" class="brutalist-input" id="email" name="email" placeholder="e.g. john@example.com" required>
+            </div>
+            <div class="brutalist-form-group">
+              <label class="brutalist-form-label" for="message">Message</label>
+              <textarea class="brutalist-textarea" id="message" name="message" rows="6" placeholder="Tell me about your project or idea..." required></textarea>
+            </div>
+            <button type="submit" class="brutalist-submit-btn">
+              <span>Send Message</span>
+              <span class="spinner"></span>
+            </button>
+          </form>
         </div>
       </div>
     </div>
   </main>
 
-  <footer id="footer" class="footer">
-    <div class="container">
-      <div class="copyright text-center">
-        <p>&copy; <span>Copyright</span> <strong class="px-1 sitename"><a href="https://www.linkedin.com/in/dharmikgohil086/">Dharmik Gohil</a></strong> <span>All Rights Reserved</span></p>
+  <!-- Editorial Colophon -->
+  <footer class="container animate-fade-up stagger-5">
+    <div class="editorial-footer">
+      <div class="colophon-text">
+        &copy; 2026 DHARMIK GOHIL. ALL RIGHTS RESERVED.
       </div>
-      <div class="social-links d-flex justify-content-center">
-        <a href="https://github.com/DharmikGohil013"><i class="bi bi-github"></i></a>
-        <a href="https://www.linkedin.com/in/dharmikgohil086/"><i class="bi bi-linkedin"></i></a>
-        <a href="https://www.instagram.com/dharmik.086/?next=%2F"><i class="bi bi-instagram"></i></a>
-        <a href="https://x.com/Dharmik086"><i class="bi bi-twitter"></i></a>
+      <div class="colophon-signature">
+        UNAPOLOGETICALLY CRAFTED
       </div>
     </div>
   </footer>
 
-  <!-- Scroll Top -->
-  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
-
-  <!-- macOS Dock Navigation -->
-  <div class="macos-dock">
-    <div class="dock-items">
-      <a href="index.html" class="dock-item" data-tooltip="Home"><i class="bi bi-house-fill"></i></a>
-      <a href="services.html" class="dock-item" data-tooltip="Abilities"><i class="bi bi-lightning-charge-fill"></i></a>
-      <div class="dock-separator"></div>
-      <div class="dock-item games-menu-trigger" data-tooltip="My Games">
-        <i class="bi bi-controller"></i>
-        <div class="games-dropdown-menu" id="gamesDropdown">
-          <div class="games-dropdown-header">
-            <i class="bi bi-controller me-2"></i>My Games
-          </div>
-          <div class="games-dropdown-list">
-            <a href="https://dharmikgohil.itch.io/mavericks-battlegrounds" target="_blank" class="game-dropdown-item">
-              <i class="bi bi-play-circle-fill"></i>
-              <span>Mavericks Battleground</span>
-            </a>
-            <a href="https://dharmik086.itch.io/floppy-bird-860" target="_blank" class="game-dropdown-item">
-              <i class="bi bi-play-circle-fill"></i>
-              <span>Floppy Bird</span>
-            </a>
-            <a href="https://dharmikgohil.itch.io/facade" target="_blank" class="game-dropdown-item">
-              <i class="bi bi-play-circle-fill"></i>
-              <span>Facade</span>
-            </a>
-            <a href="https://dharmikgohil.itch.io/go-galaxy" target="_blank" class="game-dropdown-item">
-              <i class="bi bi-play-circle-fill"></i>
-              <span>Go Galaxy</span>
-            </a>
-            <a href="https://dharmikgohil.itch.io/drone-training" target="_blank" class="game-dropdown-item">
-              <i class="bi bi-play-circle-fill"></i>
-              <span>Drone Training</span>
-            </a>
-            <a href="https://dharmikgohil.itch.io/hook-shot" target="_blank" class="game-dropdown-item">
-              <i class="bi bi-phone-fill"></i>
-              <span>Hook Shot</span>
-            </a>
-            <a href="https://lowxena.dharmikgohil.art/" target="_blank" class="game-dropdown-item">
-              <i class="bi bi-play-circle-fill"></i>
-              <span>Lowxena</span>
-            </a>
-            <a href="https://just-divide-rho.vercel.app/" target="_blank" class="game-dropdown-item">
-              <i class="bi bi-calculator-fill"></i>
-              <span>Just Divide</span>
-            </a>
-          </div>
-        </div>
-      </div>
-      <a href="Achivemtn.html" class="dock-item" data-tooltip="Achievements"><i class="bi bi-trophy-fill"></i></a>
-      <div class="dock-item apps-menu-trigger" data-tooltip="Live Apps & Websites">
-        <i class="bi bi-briefcase-fill"></i>
-        <div class="games-dropdown-menu" id="appsDropdown">
-          <div class="games-dropdown-header">
-            <i class="bi bi-briefcase-fill me-2"></i>Live Projects
-          </div>
-          <div class="games-dropdown-list">
-            <a href="assets/Fit Sync.apk" download class="game-dropdown-item">
-              <i class="bi bi-download"></i>
-              <span>FitSync App (APK)</span>
-            </a>
-            <a href="https://actify.dharmikgohil.art/" target="_blank" class="game-dropdown-item">
-              <i class="bi bi-globe"></i>
-              <span>Actify</span>
-            </a>
-            <a href="https://learnlink.dharmikgohil.art" target="_blank" class="game-dropdown-item">
-              <i class="bi bi-globe"></i>
-              <span>Learn Link</span>
-            </a>
-            <a href="http://gdgs.dharmikgohil.art/" target="_blank" class="game-dropdown-item">
-              <i class="bi bi-globe"></i>
-              <span>GDGS Games</span>
-            </a>
-            <a href="http://flipcart.dharmikgohil.art/" target="_blank" class="game-dropdown-item">
-              <i class="bi bi-globe"></i>
-              <span>Flipkart Clone</span>
-            </a>
-            <a href="http://krishna.dharmikgohil.art/" target="_blank" class="game-dropdown-item">
-              <i class="bi bi-globe"></i>
-              <span>Krishna Construction</span>
-            </a>
-            <a href="https://fkm.vercel.app/" target="_blank" class="game-dropdown-item">
-              <i class="bi bi-globe"></i>
-              <span>WiFi Service</span>
-            </a>
-          </div>
-        </div>
-      </div>
-      <div class="dock-separator"></div>
-      <a href="contact.html" class="dock-item active" data-tooltip="Contact"><i class="bi bi-envelope-fill"></i></a>
-      <a href="assets/img/Dharmik Gohil Resume.pdf" class="dock-item" data-tooltip="Resume" download><i class="bi bi-file-earmark-person"></i></a>
-    </div>
-  </div>
+  <!-- Scroll Top (Minimalist Brutalist) -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center" style="border-radius:0; border:2px solid var(--ink); background:var(--paper); color:var(--ink);"><i class="bi bi-arrow-up-short"></i></a>
 
   <!-- Vendor JS Files -->
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js" defer></script>
@@ -1173,7 +825,7 @@
 
       // Form Submission
       const form = document.getElementById('contactForm');
-      const submitBtn = form.querySelector('.mac-submit-btn');
+      const submitBtn = form.querySelector('.brutalist-submit-btn');
 
       form.addEventListener('submit', async function (e) {
         e.preventDefault();
@@ -1219,8 +871,6 @@
       });
     });
   </script>
-  <script src="assets/js/dock-dropdowns.js" defer></script>
-  <script src="assets/js/menubar-clock.js" defer></script>
 </body>
 
 </html>
