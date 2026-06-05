@@ -2877,6 +2877,55 @@
       }, { threshold: 0.3 });
       heroObserver.observe(heroSection);
     }
+
+    /* --- 12. Contact Form Submission (to SheetDB) --- */
+    const contactForm = document.getElementById('contactForm');
+    if (contactForm) {
+      contactForm.addEventListener('submit', async function(e) {
+        e.preventDefault();
+        
+        const submitBtn = contactForm.querySelector('.btn-editorial-submit');
+        const originalText = submitBtn.innerHTML;
+        
+        // Show loader/loading state
+        submitBtn.innerHTML = 'SENDING TRANSMISSION...';
+        submitBtn.disabled = true;
+        
+        const nameVal = document.getElementById('name').value;
+        const emailVal = document.getElementById('email').value;
+        const messageVal = document.getElementById('message').value;
+        
+        const data = {
+          name: nameVal,
+          email: emailVal,
+          message: messageVal,
+          timestamp: new Date().toISOString()
+        };
+        
+        try {
+          const response = await fetch('https://sheetdb.io/api/v1/w3gl81d8t5uld', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ data: [data] })
+          });
+          
+          if (response.ok) {
+            alert('Message sent successfully! I’ll get back to you soon.');
+            contactForm.reset();
+          } else {
+            alert('Oops! Something went wrong. Please try again.');
+          }
+        } catch (error) {
+          console.error('Error:', error);
+          alert('Error sending message. Please try again later.');
+        } finally {
+          submitBtn.innerHTML = originalText;
+          submitBtn.disabled = false;
+        }
+      });
+    }
   })();
   </script>
 
