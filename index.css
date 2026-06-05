@@ -1599,19 +1599,7 @@ h1, h2, h3, h4, h5, h6 {
   }
 
   .masthead-top {
-    justify-content: center;
-    text-align: center;
-    gap: 0.25rem;
-    padding-bottom: 0.4rem;
-  }
-  
-  .masthead-top div:nth-child(1),
-  .masthead-top div:nth-child(3) {
-    display: none; /* Hide date and volume fluff on small screen topbar */
-  }
-  
-  .masthead-top .accent-text {
-    font-size: 9px;
+    display: none !important;
   }
   
   .hero-editorial-headline {
