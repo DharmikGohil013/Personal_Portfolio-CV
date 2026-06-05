@@ -17,9 +17,9 @@
     crossorigin="anonymous"></script>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>Memory Master | Brain Training Game by Dharmik Gohil | Game Developer Portfolio</title>
-  <meta name="description" content="Memory Master - A brain training game built with Unity by Dharmik Gohil, Game Developer and Full Stack Developer. Scientifically designed cognitive challenges to improve memory and focus.">
-  <meta name="keywords" content="Memory Master game, epic brain training, Dharmik Gohil cognitive game, memory enhancement app, brain power game, Unity brain game, cognitive improvement game, memory challenge champion, brain fitness game, mental agility game, recall training game, memory skills game, brain development game, cognitive exercise app, mind improvement game, concentration game, focus training game, memory workout">
+  <title>Memory Master - Unity Brain Training Game | Dharmik Gohil</title>
+  <meta name="description" content="Play Memory Master, a scientifically designed brain training game developed by Dharmik Gohil using Unity. Enhance your memory, cognitive focus, and mental agility.">
+  <meta name="keywords" content="Memory Master game, brain training game, cognitive improvement game, memory challenge champion, brain fitness game, mental agility game">
   <!-- Advanced SEO Meta Tags -->
   <link rel="canonical" href="https://dharmikgohil.art/game3.html">
   <meta name="creator" content="Dharmik Gohil">
@@ -46,144 +46,6 @@
   <meta name="specialization" content="Unity XR Developer">
   <meta name="expertise" content="Mobile Game Development, VR/AR, Backend Development">
   
-  <!-- Canonical URL -->
-  <!-- Open Graph / Facebook -->
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://dharmikgohil.art/game3.html">
-  <meta property="og:title" content="Memory Game by Dharmik Gohil | Unity Brain Game | Cognitive Mobile Game">
-  <meta property="og:description" content="Challenge your memory with this innovative memory game by Dharmik Gohil. Developed using Unity, featuring advanced cognitive gameplay and brain training mechanics.">
-  <meta property="og:image" content="https://dharmikgohil.art/assets/img/dharmik-profile-photo-2026.jpg">
-  <meta property="og:locale" content="en_US">
-  <meta property="og:site_name" content="Dharmik Gohil Portfolio">
-  
-  <!-- Twitter -->
-  <meta property="twitter:card" content="summary_large_image">
-  <meta property="twitter:url" content="https://dharmikgohil.art/game3.html">
-  <meta property="twitter:title" content="Memory Game by Dharmik Gohil | Unity Brain Game | Cognitive Mobile Game">
-  <meta property="twitter:description" content="Challenge your memory with this innovative memory game by Dharmik Gohil. Developed using Unity, featuring advanced cognitive gameplay and brain training mechanics.">
-  <meta property="twitter:image" content="https://dharmikgohil.art/assets/img/dharmik-profile-photo-2026.jpg">
-  <meta property="twitter:creator" content="@dharmikgohil"><!-- Fonts -->
-  <link href="https://fonts.googleapis.com" rel="preconnect">
-  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Press+Start+2P&display=swap" rel="stylesheet">
-
-  <!-- Vendor CSS Files -->
-  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="preload" href="assets/vendor/bootstrap-icons/bootstrap-icons.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet"></noscript>
-  <link rel="preload" href="assets/vendor/aos/aos.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link href="assets/vendor/aos/aos.css" rel="stylesheet"></noscript>
-  <link rel="preload" href="assets/vendor/swiper/swiper-bundle.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet"></noscript>
-  <link rel="preload" href="assets/vendor/glightbox/css/glightbox.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet"></noscript>
-
-  <!-- Main CSS File -->
-  <link href="assets/css/main.css" rel="stylesheet">
-  <link href="assets/css/navigation.css" rel="stylesheet">
-
-  <!-- Custom Styles -->
-  <style>
-    /* Global Styles */
-    body {
-      background: #0a0f1f;
-      color: #fff;
-      font-family: 'JetBrains Mono', monospace;
-      overflow-x: hidden;
-      position: relative;
-      cursor: url('assets/img/cursor-default.png'), auto;
-    }
-
-    /* Header */
-    .header {
-      background: #1a1e34;
-      border-bottom: 1px solid rgba(0, 234, 255, 0.2);
-      padding: 10px 0;
-      transition: all 0.5s;
-      z-index: 997;
-    }
-
-    .header .logo img {
-      max-width: 40px;
-      height: auto;
-    }
-
-    .header h1 {
-      font-family: 'Press Start 2P', cursive;
-      font-size: clamp(1.5rem, 4vw, 2rem);
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      color: #00eaff;
-      text-shadow: 0 0 10px #00eaff;
-      animation: neonGlow 1.5s ease-in-out infinite alternate;
-    }
-
-    @keyframes neonGlow {
-      from { text-shadow: 0 0 5px #00eaff, 0 0 10px #00eaff; }
-      to { text-shadow: 0 0 15px #00eaff, 0 0 25px #00eaff; }
-    }
-
-    .header .header-social-links a {
-      color: #00eaff;
-      font-size: 1.2rem;
-      margin: 0 5px;
-      transition: all 0.3s ease;
-    }
-
-    .header .header-social-links a:hover {
-      color: #15ff00;
-      text-shadow: 0 0 15px #15ff00;
-    }
-
-    /* Play Button */
-    .play-button {
-      display: inline-block;
-      padding: 12px 24px;
-      background-color: #00eaff;
-      color: #0a0f1f;
-      font-family: 'Press Start 2P', cursive;
-      font-size: clamp(0.8rem, 2vw, 1rem);
-      font-weight: bold;
-      text-transform: uppercase;
-      border-radius: 8px;
-      text-decoration: none;
-      transition: all 0.3s ease;
-      border: 2px solid #15ff00;
-      box-shadow: 0 0 15px rgba(0, 234, 255, 0.5);
-      margin-top: 20px;
-    }
-
-    .play-button:hover {
-      background-color: #15ff00;
-      color: #0a0f1f;
-      transform: scale(1.05);
-      box-shadow: 0 0 25px rgba(21, 255, 0, 0.8);
-    }
-
-    .play-button i {
-      margin-right: 8px;
-      font-size: 1.2rem;
-    }
-
-    /* Rest of your existing styles... */
-    /* [Previous CSS styles remain unchanged] */
-  </style>
-
-  <!-- Open Graph / Facebook -->
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://dharmikgohil.art/game3.html">
-  <meta property="og:title" content="Mini Mario Game - Platform Adventure by Dharmik Gohil">
-  <meta property="og:description" content="Play Mini Mario, a classic platformer game developed by Dharmik Gohil. Features traditional Mario-style gameplay with modern Unity engine.">
-  <meta property="og:image" content="https://dharmikgohil.art/assets/img/dharmik-profile-photo-2026.jpg">
-
-  <!-- Twitter -->
-  <meta property="twitter:card" content="summary_large_image">
-  <meta property="twitter:url" content="https://dharmikgohil.art/game3.html">
-  <meta property="twitter:title" content="Mini Mario Game - Platform Adventure by Dharmik Gohil">
-  <meta property="twitter:description" content="Play Mini Mario, a classic platformer game developed by Dharmik Gohil. Features traditional Mario-style gameplay with modern Unity engine.">
-  <meta property="twitter:image" content="https://dharmikgohil.art/assets/img/dharmik-profile-photo-2026.jpg">
-
-  <!-- Additional SEO Meta Tags -->
-  <meta name="robots" content="index, follow">
-  <link rel="canonical" href="https://dharmikgohil.art/game3.html">
-  <meta name="creator" content="Dharmik Gohil">
-  <meta name="publisher" content="Dharmik Gohil">
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://dharmikgohil.art/game3.html">
@@ -200,6 +62,7 @@
   <meta property="twitter:description" content="Challenge your memory with this innovative memory game by Dharmik Gohil. Developed using Unity, featuring advanced cognitive gameplay and brain training mechanics.">
   <meta property="twitter:image" content="https://dharmikgohil.art/assets/img/dharmik-profile-photo-2026.jpg">
   <meta property="twitter:creator" content="@dharmikgohil">
+
   <!-- Favicons - Dharmik Gohil Logo -->
   <link rel="icon" type="image/png" sizes="32x32" href="assets/img/dlogo.png">
   <link rel="icon" type="image/png" sizes="16x16" href="assets/img/dlogo.png">
@@ -219,11 +82,243 @@
   <meta name="apple-mobile-web-app-title" content="Dharmik Gohil">
   <meta name="application-name" content="Dharmik Gohil">
 
+  <!-- Resource Hints -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
+  <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+  <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
 
-  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=IBM+Plex+Mono:ital,wght@0,400;0,500;0,700;1,400&family=Playfair+Display:ital,wght@0,900;1,900&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=IBM+Plex+Mono:ital,wght@0,400;0,500;0,700;1,400&family=Playfair+Display:ital,wght@0,900;1,900&display=swap" rel="stylesheet"></noscript>
-  <link rel="preload" href="index.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link href="index.css" rel="stylesheet"></noscript>
+  <!-- Critical CSS (render-blocking - needed for first paint) -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/css/main.css" rel="stylesheet">
+
+  <!-- Consolidated Stylesheets (Synchronized for Robust Offline & Local Protocol compatibility) -->
+  <link href="index.css" rel="stylesheet">
+  <link href="assets/css/responsive-global.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=IBM+Plex+Mono:ital,wght@0,400;0,500;0,700;1,400&family=Playfair+Display:ital,wght@0,900;1,900&display=swap" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+
+  <!-- Custom Styles (Brutalist Swiper & Details overrides) -->
+  <style>
+    /* Clean overrides to integrate Swiper and details elements with Broadsheet Editorial design */
+    .portfolio-details {
+      padding: 3rem 0 !important;
+      position: relative;
+      background: transparent !important;
+    }
+    
+    .portfolio-details-slider {
+      border: 4px solid var(--ink) !important;
+      box-shadow: 8px 8px 0px var(--ink) !important;
+      background: var(--ink) !important;
+      margin-bottom: 2rem;
+    }
+
+    /* Restore standard Swiper horizontal sliding layout on details pages (overriding index.css list styling) */
+    .portfolio-details-slider.swiper {
+      overflow: hidden !important;
+      display: block !important;
+    }
+    
+    .portfolio-details-slider .swiper-wrapper {
+      display: flex !important;
+      flex-direction: row !important;
+      overflow: visible !important;
+    }
+    
+    .portfolio-details-slider .swiper-slide {
+      width: 100% !important;
+      flex-shrink: 0 !important;
+      margin-bottom: 0 !important;
+    }
+
+    /* Pagination flex logic defined below */
+
+    .portfolio-details-slider .swiper-button-prev,
+    .portfolio-details-slider .swiper-button-next {
+      display: flex !important;
+    }
+
+    .portfolio-details-slider img {
+      width: 100% !important;
+      height: auto !important;
+      object-fit: cover !important;
+      filter: grayscale(0.2) contrast(1.1) !important;
+      transition: filter 0.3s ease !important;
+      border-radius: 0 !important;
+    }
+
+    .portfolio-details-slider img:hover {
+      filter: grayscale(0) contrast(1) !important;
+    }
+
+    .portfolio-details-slider .swiper-pagination {
+      display: flex !important;
+      justify-content: center !important;
+      align-items: center !important;
+      gap: 10px !important;
+      position: relative !important;
+      margin: 1.5rem auto 0 auto !important;
+      bottom: 0 !important;
+      height: 24px !important;
+      width: 100% !important;
+      overflow: visible !important;
+      z-index: 10 !important;
+    }
+
+    .portfolio-details-slider .swiper-pagination-bullet {
+      background: var(--ink) !important;
+      opacity: 0.35 !important;
+      width: 12px !important;
+      height: 12px !important;
+      border-radius: 0 !important; /* Brutalist sharp blocks */
+      transition: all 0.2s ease !important;
+      margin: 0 !important; /* Reset default Swiper bullet margins for flex gap */
+      cursor: pointer !important;
+      display: inline-block !important;
+    }
+
+    .portfolio-details-slider .swiper-pagination-bullet-active {
+      background: var(--crimson) !important;
+      opacity: 1 !important;
+      box-shadow: 2px 2px 0px var(--ink) !important;
+      transform: translate(-1px, -1px) !important;
+    }
+
+    .portfolio-info {
+      border: 2px solid var(--ink) !important;
+      box-shadow: 6px 6px 0px var(--ink) !important;
+      padding: 1.5rem !important;
+      background: var(--paper) !important;
+      margin-bottom: 2rem;
+    }
+
+    .portfolio-info h3 {
+      font-family: var(--font-display) !important;
+      font-size: 1.8rem !important;
+      text-transform: uppercase !important;
+      letter-spacing: 0.05em !important;
+      border-bottom: 2px solid var(--ink) !important;
+      padding-bottom: 0.5rem !important;
+      margin-bottom: 1rem !important;
+    }
+
+    .portfolio-info ul {
+      list-style: none !important;
+      padding: 0 !important;
+      margin: 0 !important;
+    }
+
+    .portfolio-info ul li {
+      padding: 0.5rem 0 !important;
+      border-bottom: 1px solid var(--rule) !important;
+      font-family: var(--font-mono) !important;
+      font-size: 13px !important;
+    }
+
+    .portfolio-info ul li:last-child {
+      border-bottom: none !important;
+    }
+
+    .portfolio-info ul li strong {
+      color: var(--crimson) !important;
+      text-transform: uppercase !important;
+      font-size: 11px !important;
+      letter-spacing: 0.05em !important;
+      display: inline-block;
+      width: 120px;
+    }
+
+    .portfolio-info ul li a {
+      color: var(--ink) !important;
+      text-decoration: none !important;
+      border-bottom: 1px dashed var(--crimson) !important;
+      font-weight: bold !important;
+    }
+
+    .portfolio-info ul li a:hover {
+      color: var(--crimson) !important;
+      border-bottom-style: solid !important;
+    }
+
+    .portfolio-description h2 {
+      font-family: var(--font-display) !important;
+      font-size: 2.2rem !important;
+      text-transform: uppercase !important;
+      margin-bottom: 1rem !important;
+      border-bottom: 2px solid var(--ink) !important;
+      padding-bottom: 0.25rem !important;
+    }
+
+    .portfolio-description p {
+      font-family: var(--font-mono) !important;
+      font-size: 13.5px !important;
+      opacity: 0.75 !important;
+      line-height: 1.7 !important;
+      margin-bottom: 1.5rem !important;
+    }
+
+    .technical-details-card {
+      border: 2px solid var(--ink) !important;
+      box-shadow: 6px 6px 0px var(--ink) !important;
+      padding: 1.5rem !important;
+      background: var(--paper) !important;
+      margin-top: 2rem;
+    }
+
+    .technical-details-card h3 {
+      font-family: var(--font-display) !important;
+      font-size: 1.8rem !important;
+      text-transform: uppercase !important;
+      border-bottom: 2px solid var(--ink) !important;
+      padding-bottom: 0.5rem !important;
+      margin-bottom: 1rem !important;
+    }
+
+    .editorial-pull-quote {
+      font-family: var(--font-editorial) !important;
+      font-style: italic !important;
+      font-weight: 900 !important;
+      font-size: 1.35rem !important;
+      line-height: 1.4 !important;
+      color: var(--ink) !important;
+      border-left: 4px solid var(--crimson) !important;
+      padding-left: 1rem !important;
+      margin: 1.5rem 0 !important;
+    }
+
+    .btn-brutalist-play {
+      font-family: var(--font-mono) !important;
+      font-size: 11px !important;
+      font-weight: 700 !important;
+      text-transform: uppercase !important;
+      letter-spacing: 0.15em !important;
+      color: var(--paper) !important;
+      background-color: var(--ink) !important;
+      border: 2px solid var(--ink) !important;
+      box-shadow: 4px 4px 0px var(--crimson) !important;
+      padding: 0.8rem 1.5rem !important;
+      display: inline-flex !important;
+      align-items: center !important;
+      gap: 0.5rem !important;
+      text-decoration: none !important;
+      transition: transform 0.2s ease, box-shadow 0.2s ease !important;
+    }
+
+    .btn-brutalist-play:hover {
+      transform: translate(-2px, -2px) !important;
+      box-shadow: 6px 6px 0px var(--crimson) !important;
+      color: var(--paper) !important;
+      background-color: var(--ink) !important;
+    }
+
+    .btn-brutalist-play i {
+      color: var(--paper) !important;
+    }
+  </style>
 </head>
 <body class="index-page">
   <div class="custom-cursor"></div>

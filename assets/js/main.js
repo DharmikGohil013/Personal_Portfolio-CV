@@ -297,8 +297,8 @@
   }
   window.addEventListener('load', applyAccessibilityEnhancements);
 
-  // Register Service Worker for elite performance and offline caching
-  if ('serviceWorker' in navigator) {
+  // Register Service Worker for elite performance and offline caching (only over http/https protocols)
+  if ('serviceWorker' in navigator && window.location.protocol.startsWith('http')) {
     window.addEventListener('load', () => {
       navigator.serviceWorker.register('./service-worker.js')
         .then(reg => {

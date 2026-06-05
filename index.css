@@ -511,7 +511,8 @@ h1, h2, h3, h4, h5, h6 {
   background-color: var(--ink);
 }
 
-.work-card-image img {
+.work-card-image img,
+.work-card-image video {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -520,7 +521,8 @@ h1, h2, h3, h4, h5, h6 {
   display: block;
 }
 
-.work-card:hover .work-card-image img {
+.work-card:hover .work-card-image img,
+.work-card:hover .work-card-image video {
   filter: grayscale(0) contrast(1);
   transform: scale(1.03);
 }
