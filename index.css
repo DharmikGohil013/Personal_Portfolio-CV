@@ -1163,87 +1163,6 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
-/* --- Chrome Extension & Playable Cabinet Components --- */
-.xpulse-card {
-  border: 2px solid var(--ink);
-  padding: 2rem;
-  background-color: rgba(13, 13, 11, 0.02);
-  margin-top: 1rem;
-}
-.xpulse-title {
-  font-family: var(--font-editorial);
-  font-weight: 900;
-  font-size: 1.8rem;
-  margin-bottom: 0.5rem;
-}
-.xpulse-sub {
-  font-family: var(--font-mono);
-  font-size: 13px;
-  opacity: 0.6;
-  margin-bottom: 2rem;
-}
-.xpulse-features {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 1.5rem;
-  margin-bottom: 2rem;
-  border-top: 1px solid var(--rule);
-  border-bottom: 1px solid var(--rule);
-  padding: 1.5rem 0;
-}
-.xpulse-feature {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-}
-.xpulse-feature i {
-  color: var(--crimson);
-  font-size: 1.5rem;
-}
-.xpulse-feature h4 {
-  font-family: var(--font-display) !important;
-  font-size: 1.25rem !important;
-  text-transform: uppercase;
-  margin: 0;
-}
-.xpulse-feature p {
-  font-size: 12px;
-  opacity: 0.6;
-}
-.xpulse-buttons {
-  display: flex;
-  gap: 1rem;
-}
-.btn-add-chrome,
-.btn-learn-more {
-  background-color: var(--ink);
-  color: var(--paper) !important;
-  border: none;
-  font-family: var(--font-mono);
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  padding: 0.6rem 1.2rem;
-  text-decoration: none !important;
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  transition: background-color 0.2s ease;
-}
-.btn-learn-more {
-  background-color: transparent;
-  color: var(--ink) !important;
-  border: 1px solid var(--ink);
-}
-.btn-add-chrome:hover {
-  background-color: var(--crimson);
-}
-.btn-learn-more:hover {
-  background-color: var(--ink);
-  color: var(--paper) !important;
-}
-
 
 
 /* Tech logo loop */
@@ -1271,13 +1190,13 @@ h1, h2, h3, h4, h5, h6 {
   display: flex;
   align-items: center;
   justify-content: center;
-  filter: grayscale(1);
-  opacity: 0.5;
-  transition: opacity 0.2s, filter 0.2s;
+  filter: grayscale(0);
+  opacity: 0.95;
+  transition: opacity 0.2s, transform 0.2s;
 }
 .logoloop__item:hover {
-  filter: grayscale(0);
   opacity: 1;
+  transform: scale(1.12);
 }
 
 /* Brutalist Button & Badge Overrides (Fixes invisible text on Achievements page) */
@@ -1655,25 +1574,7 @@ h1, h2, h3, h4, h5, h6 {
     justify-content: space-between;
     padding-bottom: 4px;
   }
-  
-  .xpulse-card {
-    padding: 1.25rem;
-  }
-  
-  .xpulse-title {
-    font-size: 1.4rem;
-  }
-  
-  .xpulse-buttons {
-    flex-direction: column;
-    width: 100%;
-  }
-  
-  .btn-add-chrome,
-  .btn-learn-more {
-    width: 100%;
-    justify-content: center;
-  }
+
   
   .cabinet-screen {
     height: 300px; /* Shorter screen height for mobile screens */

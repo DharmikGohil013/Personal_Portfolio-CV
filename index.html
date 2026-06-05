@@ -1154,47 +1154,6 @@
         </div>
       </div>
     </section>
-    <section id="chrome-extension" class="chrome-extension section">
-      <div class="container section-title" data-aos="fade-up">
-        <h2>Chrome Extension</h2>
-        <p>Transform your browsing into a productivity game</p>
-      </div>
-
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
-        <div class="xpulse-card">
-          <h3 class="xpulse-title">XPulse — Gamified Productivity Tracker</h3>
-          <p class="xpulse-sub">Earn XP, level up, maintain streaks &amp; unlock achievements — all while browsing.</p>
-
-          <div class="xpulse-features">
-            <div class="xpulse-feature">
-              <i class="bi bi-lightning-charge-fill"></i>
-              <h4>XP System</h4>
-              <p>+10 XP/min on productive sites</p>
-            </div>
-            <div class="xpulse-feature">
-              <i class="bi bi-trophy-fill"></i>
-              <h4>25+ Achievements</h4>
-              <p>Beginner to Elite ranks</p>
-            </div>
-            <div class="xpulse-feature">
-              <i class="bi bi-fire"></i>
-              <h4>Daily Streaks</h4>
-              <p>Build consistent habits</p>
-            </div>
-          </div>
-
-          <div class="xpulse-buttons">
-            <a href="https://github.com/DharmikGohil013/XPulse---Plugin" target="_blank" rel="noopener noreferrer" class="btn-add-chrome" id="addToChromeBtn">
-              <i class="bi bi-download"></i><span>Add to Chrome</span>
-            </a>
-            <a href="https://github.com/DharmikGohil013/XPulse---Plugin" target="_blank" class="btn-learn-more">
-              <i class="bi bi-github"></i><span>GitHub</span>
-            </a>
-          </div>
-        </div>
-      </div>
-    </section>
-
 
 
     <!-- Explore Section - Technology Logo Loop -->
@@ -1924,7 +1883,7 @@
              rel="noopener noreferrer"
              title="${logo.name}"
              aria-label="${logo.name}">
-            <i class="${logo.icon}"></i>
+            <i class="${logo.icon} colored"></i>
           </a>
         `;
         };
@@ -1932,142 +1891,6 @@
         // Double the logos for seamless infinite loop
         const logosHTML = techLogos.map(createLogoItem).join('');
         logoLoopTrack.innerHTML = logosHTML + logosHTML;
-      }
-    });
-  </script>
-
-  <!-- Chrome Extension Installation Script -->
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      const addToChromeBtn = document.getElementById('addToChromeBtn');
-      
-      if (addToChromeBtn) {
-        addToChromeBtn.addEventListener('click', function(e) {
-          e.preventDefault();
-          
-          // Check if running on Chrome
-          const isChrome = /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor);
-          
-          if (!isChrome) {
-            alert('?? XPulse is designed for Google Chrome. Please use Chrome browser to install this extension.');
-            return;
-          }
-          
-          // Show installation instructions
-          const modal = document.createElement('div');
-          modal.style.cssText = `
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(13, 13, 11, 0.85);
-            backdrop-filter: blur(10px);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            z-index: 10000;
-            animation: fadeIn 0.3s ease;
-          `;
-          
-          modal.innerHTML = `
-            <div style="
-              background-color: #f2f0eb;
-              border: 4px solid #0d0d0b;
-              padding: 40px;
-              max-width: 600px;
-              width: 90%;
-              box-shadow: 8px 8px 0px rgba(13,13,11,0.15);
-              position: relative;
-            ">
-              <button id="closeModal" style="
-                position: absolute;
-                top: 0;
-                right: 0;
-                background: #0d0d0b;
-                border: none;
-                color: #f2f0eb;
-                font-family: 'IBM Plex Mono', monospace;
-                font-size: 16px;
-                font-weight: 700;
-                width: 40px;
-                height: 40px;
-                cursor: pointer;
-                transition: background-color 0.2s ease;
-              ">X</button>
-              
-              <h2 style="
-                color: #0d0d0b;
-                font-family: 'Bebas Neue', sans-serif;
-                font-size: 2.5rem;
-                margin-bottom: 20px;
-                border-bottom: 2px solid #0d0d0b;
-                padding-bottom: 10px;
-                text-transform: uppercase;
-              ">Install XPulse Extension</h2>
-              
-              <p style="color: #0d0d0b; opacity: 0.8; margin-bottom: 25px; line-height: 1.6; font-family: 'IBM Plex Mono', monospace; font-size: 13px;">
-                Follow these simple steps to install XPulse Chrome Extension:
-              </p>
-              
-              <ol style="color: #0d0d0b; line-height: 1.8; padding-left: 20px; margin-bottom: 30px; font-family: 'IBM Plex Mono', monospace; font-size: 13px;">
-                <li><strong style="color: #c8001a;">Download</strong> the XPulse extension folder from the repository</li>
-                <li>Open Chrome and go to <code style="background: rgba(13,13,11,0.06); padding: 2px 8px; border: 1px solid rgba(13,13,11,0.15); font-family: 'IBM Plex Mono', monospace; font-size: 12px;">chrome://extensions/</code></li>
-                <li>Enable <strong style="color: #c8001a;">Developer mode</strong> in the top right corner</li>
-                <li>Click <strong style="color: #c8001a;">"Load unpacked"</strong> and select the XPulse folder</li>
-                <li>Pin the extension to your toolbar and start earning XP!</li>
-              </ol>
-              
-              <div style="display: flex; gap: 15px; flex-wrap: wrap;">
-                <a href="https://github.com/DharmikGohil013/XPulse---Plugin" target="_blank" style="
-                  display: inline-flex;
-                  align-items: center;
-                  gap: 10px;
-                  padding: 10px 20px;
-                  background-color: #0d0d0b;
-                  color: #f2f0eb;
-                  text-decoration: none;
-                  font-family: 'IBM Plex Mono', monospace;
-                  font-size: 11px;
-                  font-weight: 700;
-                  letter-spacing: 0.1em;
-                  text-transform: uppercase;
-                  transition: background-color 0.2s ease;
-                ">
-                  <i class="bi bi-github" style="color: #f2f0eb !important;"></i>
-                  <span style="color: #f2f0eb !important;">Download from GitHub</span>
-                </a>
-
-              </div>
-            </div>
-          `;
-          
-          document.body.appendChild(modal);
-          
-          // Close modal handlers
-          const closeBtn = document.getElementById('closeModal');
-          closeBtn.addEventListener('click', () => modal.remove());
-          closeBtn.addEventListener('mouseenter', function() {
-            this.style.background = '#c8001a';
-          });
-          closeBtn.addEventListener('mouseleave', function() {
-            this.style.background = '#0d0d0b';
-          });
-          
-          modal.addEventListener('click', (e) => {
-            if (e.target === modal) modal.remove();
-          });
-          
-          // Add fade-in animation
-          const style = document.createElement('style');
-          style.textContent = `
-            @keyframes fadeIn {
-              from { opacity: 0; }
-              to { opacity: 1; }
-            }
-          `;
-          document.head.appendChild(style);
-        });
       }
     });
   </script>
