@@ -1196,74 +1196,7 @@
       </div>
     </section>
 
-    <!-- LowXena Branding Section (Playable Multiplayer Ad) -->
-    <section id="branding" class="branding section scroll-reveal">
-      <div class="container section-title" data-aos="fade-up">
-        <h2>Exclusive Game Branding</h2>
-        <p>Interactive Multiplayer Cabinet — LowXena Card Game</p>
-      </div>
 
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
-        <div class="branding-container">
-          
-          <!-- Arcade Cabinet Display -->
-          <div class="ad-cabinet">
-            
-            <!-- Cabinet Header Bar -->
-            <div class="cabinet-header">
-              <div class="cabinet-dots">
-                <span class="dot-1"></span>
-                <span class="dot-2"></span>
-                <span class="dot-3"></span>
-              </div>
-              <div class="cabinet-title">
-                <i class="bi bi-controller"></i> Play LowXena Now
-              </div>
-              <div class="cabinet-badge">
-                <span class="badge-pulse"></span>
-                <span class="badge-text">LIVE MULTIPLAYER</span>
-              </div>
-            </div>
-
-            <!-- Interactive Gameplay Area -->
-            <div class="cabinet-screen">
-              
-              <!-- Interaction Blocker Overlay -->
-              <div class="screen-overlay" id="cabinetOverlay">
-                <i class="bi bi-play-circle overlay-glow-icon"></i>
-                <h4>LOWXENA PREMIUM CARD ARENA</h4>
-                <p>Play the hilarious browser card game where the lowest score wins! Supports real-time WebSocket lobbies and local gameplay.</p>
-                <button class="overlay-btn" id="activateCabinetBtn">
-                  <i class="bi bi-joystick"></i> Initialize Controller
-                </button>
-              </div>
-
-              <!-- Live Game Embed Frame -->
-              <iframe src="https://lowxena.dharmikgohil.art/" 
-                      class="cabinet-iframe" 
-                      title="LowXena Live Gameplay Embed"
-                      allow="autoplay; fullscreen; clipboard-write" 
-                      loading="lazy"></iframe>
-            </div>
-
-            <!-- Ad / Cabinet Footer Panel -->
-            <div class="cabinet-footer">
-              <div class="footer-info">
-                <h4>LowXena: Engineered by Dharmik Gohil</h4>
-                <p>15-Min Quick Sessions • Local Matchups &amp; Live Lobby Synchronizations</p>
-              </div>
-              <div class="footer-actions">
-                <a href="https://lowxena.dharmikgohil.art/" target="_blank" class="btn-cabinet-play">
-                  <i class="bi bi-arrows-angle-expand"></i> Fullscreen Mode
-                </a>
-              </div>
-            </div>
-
-          </div>
-
-        </div>
-      </div>
-    </section>
 
     <!-- Explore Section - Technology Logo Loop -->
     <section id="explore" class="explore section scroll-reveal-scale">
@@ -2929,18 +2862,7 @@
   })();
   </script>
 
-  <!-- LowXena Cabinet Interactive Controller Activator -->
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      const activateBtn = document.getElementById('activateCabinetBtn');
-      const overlay = document.getElementById('cabinetOverlay');
-      if (activateBtn && overlay) {
-        activateBtn.addEventListener('click', function() {
-          overlay.classList.add('active');
-        });
-      }
-    });
-  </script>
+
 
 </body>
 
