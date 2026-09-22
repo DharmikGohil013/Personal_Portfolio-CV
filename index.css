@@ -1635,3 +1635,225 @@ h1, h2, h3, h4, h5, h6 {
 .logoloop__item i {
   font-size: 2.2rem;
 }
+
+/* ==========================================================================
+   SCROLL ENGAGEMENT SYSTEM (v2.0)
+   Powers the IntersectionObserver + scroll-handler JS already wired up in
+   index.html. Brings .scroll-reveal*, .revealed, .scroll-progress-glow,
+   .scroll-particles, .counter-pop, .skills-animated, .stagger-children,
+   and .parallax-layer to life with the brutalist/editorial motion language.
+   ========================================================================== */
+
+/* --- 1. Scroll Progress Glow Bar (fixed top of viewport) --- */
+.scroll-progress-glow {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, var(--crimson) 0%, #ff4d6a 50%, var(--crimson) 100%);
+  transform: scaleX(0);
+  transform-origin: 0 50%;
+  z-index: 10010;
+  box-shadow: 0 0 12px rgba(200, 0, 26, 0.65), 0 0 2px rgba(200, 0, 26, 0.9);
+  will-change: transform;
+  pointer-events: none;
+}
+
+/* --- 2. Floating Scroll Particles --- */
+.scroll-particles {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 5;
+  overflow: hidden;
+}
+
+.scroll-particle {
+  position: absolute;
+  top: -10px;
+  width: 4px;
+  height: 4px;
+  background-color: var(--crimson);
+  opacity: 0.55;
+  animation: particleFall 5.5s linear infinite;
+}
+
+.scroll-particle:nth-child(1) { animation-duration: 6.2s; animation-delay: 0s; }
+.scroll-particle:nth-child(2) { animation-duration: 4.8s; animation-delay: 0.6s; }
+.scroll-particle:nth-child(3) { animation-duration: 7.1s; animation-delay: 1.2s; }
+.scroll-particle:nth-child(4) { animation-duration: 5.4s; animation-delay: 1.8s; }
+.scroll-particle:nth-child(5) { animation-duration: 6.6s; animation-delay: 0.3s; }
+
+@keyframes particleFall {
+  0% {
+    transform: translateY(0) translateX(0) rotate(0deg);
+    opacity: 0;
+  }
+  10% { opacity: 0.6; }
+  90% { opacity: 0.4; }
+  100% {
+    transform: translateY(100vh) translateX(20px) rotate(180deg);
+    opacity: 0;
+  }
+}
+
+/* --- 3. Scroll Reveal Base States (pre-reveal / hidden) --- */
+.scroll-reveal,
+.scroll-reveal-left,
+.scroll-reveal-right,
+.scroll-reveal-scale,
+.scroll-reveal-rotate {
+  opacity: 0;
+  transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.9s cubic-bezier(0.16, 1, 0.3, 1),
+              filter 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.scroll-reveal {
+  transform: translateY(48px);
+  filter: blur(2px);
+}
+
+.scroll-reveal-left {
+  transform: translateX(-64px);
+  filter: blur(2px);
+}
+
+.scroll-reveal-right {
+  transform: translateX(64px);
+  filter: blur(2px);
+}
+
+.scroll-reveal-scale {
+  transform: scale(0.92) translateY(24px);
+  filter: blur(3px);
+}
+
+.scroll-reveal-rotate {
+  transform: rotate(-3deg) translateY(36px) scale(0.97);
+  filter: blur(2px);
+}
+
+/* --- Revealed State: fires when IntersectionObserver adds .revealed --- */
+.scroll-reveal.revealed,
+.scroll-reveal-left.revealed,
+.scroll-reveal-right.revealed,
+.scroll-reveal-scale.revealed,
+.scroll-reveal-rotate.revealed {
+  opacity: 1;
+  transform: translate(0, 0) scale(1) rotate(0deg);
+  filter: blur(0);
+}
+
+/* --- 4. Staggered Children (games grid, testimonials, skill rows) --- */
+.stagger-children {
+  opacity: 1; /* container itself is visible; children stagger in */
+}
+
+.stagger-children > * {
+  opacity: 0;
+  transform: translateY(32px) scale(0.96);
+  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.stagger-children.revealed > * {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+.stagger-children.revealed > *:nth-child(1) { transition-delay: 0.03s; }
+.stagger-children.revealed > *:nth-child(2) { transition-delay: 0.09s; }
+.stagger-children.revealed > *:nth-child(3) { transition-delay: 0.15s; }
+.stagger-children.revealed > *:nth-child(4) { transition-delay: 0.21s; }
+.stagger-children.revealed > *:nth-child(5) { transition-delay: 0.27s; }
+.stagger-children.revealed > *:nth-child(6) { transition-delay: 0.33s; }
+.stagger-children.revealed > *:nth-child(7) { transition-delay: 0.39s; }
+.stagger-children.revealed > *:nth-child(8) { transition-delay: 0.45s; }
+.stagger-children.revealed > *:nth-child(n+9) { transition-delay: 0.5s; }
+
+/* --- 5. Skills Progress Bars: fill animation once revealed --- */
+.skills .progress-bar {
+  width: 0 !important;
+  transition: width 1.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.skills.skills-animated .progress-bar {
+  transition: width 1.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* --- 6. Stats Counter Pop --- */
+.stat-block {
+  transform: scale(1);
+  transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.stat-block.counter-pop {
+  animation: counterPop 0.55s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.stat-val {
+  display: inline-block;
+}
+
+@keyframes counterPop {
+  0% { transform: scale(0.85); }
+  55% { transform: scale(1.08); }
+  100% { transform: scale(1); }
+}
+
+/* --- 7. Parallax Layers (transform applied via inline style by JS;
+       this just ensures smooth GPU-accelerated motion) --- */
+.parallax-layer {
+  will-change: transform;
+  transition: transform 0.05s linear;
+}
+
+/* --- 8. Section Title Depth Parallax smoothing --- */
+.section-title h2 {
+  will-change: transform;
+  transition: transform 0.05s linear;
+}
+
+/* --- 9. Hover Micro-interactions for revealed cards (portfolio, games, testimonials) --- */
+.portfolio-item,
+.work-card,
+.review-clip {
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.portfolio-item:hover,
+.work-card:hover,
+.review-clip:hover {
+  transform: translateY(-6px);
+  box-shadow: 8px 8px 0px var(--ink);
+}
+
+/* --- 10. Reduced Motion: respect user/OS preference --- */
+@media (prefers-reduced-motion: reduce) {
+  .scroll-reveal,
+  .scroll-reveal-left,
+  .scroll-reveal-right,
+  .scroll-reveal-scale,
+  .scroll-reveal-rotate,
+  .stagger-children > * {
+    opacity: 1 !important;
+    transform: none !important;
+    filter: none !important;
+    transition: none !important;
+    animation: none !important;
+  }
+
+  .scroll-particle,
+  .scroll-progress-glow {
+    display: none !important;
+  }
+
+  .parallax-layer,
+  .section-title h2 {
+    transform: none !important;
+  }
+}
