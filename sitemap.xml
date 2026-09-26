@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml"
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
         xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
@@ -8,9 +9,35 @@
   <!-- HOMEPAGE -->
   <url>
     <loc>https://dharmikgohil.art/</loc>
-    <lastmod>2026-04-19</lastmod>
+    <lastmod>2026-09-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://dharmikgohil.art/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://dharmikgohil.art/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://dharmikgohil.art/?lang=es"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://dharmikgohil.art/?lang=fr"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://dharmikgohil.art/?lang=de"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://dharmikgohil.art/?lang=ja"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://dharmikgohil.art/?lang=zh-CN"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://dharmikgohil.art/?lang=hi"/>
+    <xhtml:link rel="alternate" hreflang="gu" href="https://dharmikgohil.art/?lang=gu"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://dharmikgohil.art/?lang=ar"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://dharmikgohil.art/?lang=pt"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://dharmikgohil.art/?lang=ru"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://dharmikgohil.art/?lang=it"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://dharmikgohil.art/?lang=ko"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://dharmikgohil.art/?lang=nl"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://dharmikgohil.art/?lang=tr"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://dharmikgohil.art/?lang=vi"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://dharmikgohil.art/?lang=id"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://dharmikgohil.art/?lang=pl"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://dharmikgohil.art/?lang=sv"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://dharmikgohil.art/?lang=uk"/>
+    <xhtml:link rel="alternate" hreflang="bn" href="https://dharmikgohil.art/?lang=bn"/>
+    <xhtml:link rel="alternate" hreflang="pa" href="https://dharmikgohil.art/?lang=pa"/>
+    <xhtml:link rel="alternate" hreflang="mr" href="https://dharmikgohil.art/?lang=mr"/>
+    <xhtml:link rel="alternate" hreflang="ta" href="https://dharmikgohil.art/?lang=ta"/>
+    <xhtml:link rel="alternate" hreflang="te" href="https://dharmikgohil.art/?lang=te"/>
     <image:image>
       <image:loc>https://dharmikgohil.art/assets/img/dharmik-profile-photo-2026.jpg</image:loc>
       <image:title>Dharmik Gohil — Freelance Unity Game Developer India</image:title>
@@ -21,7 +48,7 @@
   <!-- ABOUT PAGE -->
   <url>
     <loc>https://dharmikgohil.art/about.html</loc>
-    <lastmod>2026-04-19</lastmod>
+    <lastmod>2026-09-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <image:image>
@@ -34,7 +61,7 @@
   <!-- PORTFOLIO PAGE -->
   <url>
     <loc>https://dharmikgohil.art/portfolio.html</loc>
-    <lastmod>2026-04-19</lastmod>
+    <lastmod>2026-09-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -42,7 +69,7 @@
   <!-- SERVICES PAGE -->
   <url>
     <loc>https://dharmikgohil.art/services.html</loc>
-    <lastmod>2026-04-19</lastmod>
+    <lastmod>2026-09-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -50,7 +77,7 @@
   <!-- CONTACT PAGE -->
   <url>
     <loc>https://dharmikgohil.art/contact.html</loc>
-    <lastmod>2026-04-19</lastmod>
+    <lastmod>2026-09-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
@@ -58,7 +85,7 @@
   <!-- BLOG PAGE -->
   <url>
     <loc>https://dharmikgohil.art/blog.html</loc>
-    <lastmod>2026-04-19</lastmod>
+    <lastmod>2026-09-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.85</priority>
   </url>
@@ -66,7 +93,7 @@
   <!-- RESUME PAGE -->
   <url>
     <loc>https://dharmikgohil.art/resume.html</loc>
-    <lastmod>2026-04-19</lastmod>
+    <lastmod>2026-09-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
@@ -74,7 +101,7 @@
   <!-- ACHIEVEMENTS PAGE -->
   <url>
     <loc>https://dharmikgohil.art/Achivemtn.html</loc>
-    <lastmod>2026-04-19</lastmod>
+    <lastmod>2026-09-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -82,37 +109,37 @@
   <!-- GAME PAGES -->
   <url>
     <loc>https://dharmikgohil.art/game1.html</loc>
-    <lastmod>2026-04-19</lastmod>
+    <lastmod>2026-09-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://dharmikgohil.art/game2.html</loc>
-    <lastmod>2026-04-19</lastmod>
+    <lastmod>2026-09-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://dharmikgohil.art/game3.html</loc>
-    <lastmod>2026-04-19</lastmod>
+    <lastmod>2026-09-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://dharmikgohil.art/game4.html</loc>
-    <lastmod>2026-04-19</lastmod>
+    <lastmod>2026-09-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://dharmikgohil.art/game5.html</loc>
-    <lastmod>2026-04-19</lastmod>
+    <lastmod>2026-09-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://dharmikgohil.art/game6.html</loc>
-    <lastmod>2026-04-19</lastmod>
+    <lastmod>2026-09-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -120,7 +147,7 @@
   <!-- BLOG ARTICLES -->
   <url>
     <loc>https://dharmikgohil.art/blog/lowxena-game-development-insights.html</loc>
-    <lastmod>2026-05-21</lastmod>
+    <lastmod>2026-09-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -131,37 +158,37 @@
   </url>
   <url>
     <loc>https://dharmikgohil.art/blog/getting-started-unity-xr.html</loc>
-    <lastmod>2026-01-22</lastmod>
+    <lastmod>2026-09-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://dharmikgohil.art/blog/vr-ar-future-gaming.html</loc>
-    <lastmod>2026-01-22</lastmod>
+    <lastmod>2026-09-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://dharmikgohil.art/blog/unity-game-development-tips.html</loc>
-    <lastmod>2026-01-22</lastmod>
+    <lastmod>2026-09-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://dharmikgohil.art/blog/mobile-game-optimization.html</loc>
-    <lastmod>2026-01-22</lastmod>
+    <lastmod>2026-09-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://dharmikgohil.art/blog/game-developer-career-guide.html</loc>
-    <lastmod>2026-01-22</lastmod>
+    <lastmod>2026-09-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://dharmikgohil.art/blog/hackron-hackathon-2025-blinkit-experience.html</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-09-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
     <image:image>
@@ -172,25 +199,25 @@
   </url>
   <url>
     <loc>https://dharmikgohil.art/blog/iit-bombay-techfest-2024-experience.html</loc>
-    <lastmod>2026-01-22</lastmod>
+    <lastmod>2026-09-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://dharmikgohil.art/blog/charusat-university-experience.html</loc>
-    <lastmod>2026-01-22</lastmod>
+    <lastmod>2026-09-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html</loc>
-    <lastmod>2026-01-22</lastmod>
+    <lastmod>2026-09-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://dharmikgohil.art/blog/charusat-expo-3-mavericks-battlegrounds-showcase.html</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-09-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
     <image:image>
@@ -218,7 +245,7 @@
   <!-- HOMEPAGE - MAXIMUM PRIORITY -->
   <url>
     <loc>https://dharmikgohil.art/</loc>
-    <lastmod>2026-04-17</lastmod>
+    <lastmod>2026-09-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
     <image:image>
@@ -251,7 +278,7 @@
   <!-- ABOUT PAGE - Target: Full Stack Developer Story, Web App Game Blockchain Expert -->
   <url>
     <loc>https://dharmikgohil.art/about.html</loc>
-    <lastmod>2026-04-17</lastmod>
+    <lastmod>2026-09-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.95</priority>
     <image:image>
@@ -274,7 +301,7 @@
   <!-- PORTFOLIO PAGE - Target: Games, Web Apps, Mobile Apps, Full Stack Projects -->
   <url>
     <loc>https://dharmikgohil.art/portfolio.html</loc>
-    <lastmod>2026-04-17</lastmod>
+    <lastmod>2026-09-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.95</priority>
   </url>
@@ -282,7 +309,7 @@
   <!-- SERVICES PAGE - Target: Hire Game Developer, Full Stack Developer Services -->
   <url>
     <loc>https://dharmikgohil.art/services.html</loc>
-    <lastmod>2026-04-17</lastmod>
+    <lastmod>2026-09-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -290,7 +317,7 @@
   <!-- RESUME PAGE - Target: Game Developer & Full Stack Developer CV Resume -->
   <url>
     <loc>https://dharmikgohil.art/resume.html</loc>
-    <lastmod>2026-04-17</lastmod>
+    <lastmod>2026-09-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -298,7 +325,7 @@
   <!-- CONTACT PAGE - Target: Hire Game Developer & Full Stack Developer -->
   <url>
     <loc>https://dharmikgohil.art/contact.html</loc>
-    <lastmod>2026-04-17</lastmod>
+    <lastmod>2026-09-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
@@ -306,7 +333,7 @@
   <!-- ACHIEVEMENTS PAGE - Target: Award-Winning Game Developer & Full Stack Developer -->
   <url>
     <loc>https://dharmikgohil.art/Achivemtn.html</loc>
-    <lastmod>2026-04-17</lastmod>
+    <lastmod>2026-09-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
@@ -314,7 +341,7 @@
   <!-- BLOG PAGE - Target: Game Development, Full Stack Development Tutorials -->
   <url>
     <loc>https://dharmikgohil.art/blog.html</loc>
-    <lastmod>2026-04-17</lastmod>
+    <lastmod>2026-09-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.85</priority>
   </url>
@@ -322,35 +349,35 @@
   <!-- GAME PAGES - Unity Game Development Showcase -->
   <url>
     <loc>https://dharmikgohil.art/game1.html</loc>
-    <lastmod>2026-01-22</lastmod>
+    <lastmod>2026-09-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   
   <url>
     <loc>https://dharmikgohil.art/game2.html</loc>
-    <lastmod>2026-01-22</lastmod>
+    <lastmod>2026-09-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   
   <url>
     <loc>https://dharmikgohil.art/game3.html</loc>
-    <lastmod>2026-01-22</lastmod>
+    <lastmod>2026-09-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   
   <url>
     <loc>https://dharmikgohil.art/game4.html</loc>
-    <lastmod>2026-01-22</lastmod>
+    <lastmod>2026-09-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   
   <url>
     <loc>https://dharmikgohil.art/game5.html</loc>
-    <lastmod>2026-01-22</lastmod>
+    <lastmod>2026-09-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -358,7 +385,7 @@
   <!-- BLOG ARTICLES - Web Development, Game Dev, App Dev and Blockchain Tutorials -->
   <url>
     <loc>https://dharmikgohil.art/blog/lowxena-game-development-insights.html</loc>
-    <lastmod>2026-05-21</lastmod>
+    <lastmod>2026-09-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
     <image:image>
@@ -369,42 +396,42 @@
   </url>
   <url>
     <loc>https://dharmikgohil.art/blog/getting-started-unity-xr.html</loc>
-    <lastmod>2026-01-22</lastmod>
+    <lastmod>2026-09-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   
   <url>
     <loc>https://dharmikgohil.art/blog/vr-ar-future-gaming.html</loc>
-    <lastmod>2026-01-22</lastmod>
+    <lastmod>2026-09-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   
   <url>
     <loc>https://dharmikgohil.art/blog/unity-game-development-tips.html</loc>
-    <lastmod>2026-01-22</lastmod>
+    <lastmod>2026-09-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   
   <url>
     <loc>https://dharmikgohil.art/blog/mobile-game-optimization.html</loc>
-    <lastmod>2026-01-22</lastmod>
+    <lastmod>2026-09-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   
   <url>
     <loc>https://dharmikgohil.art/blog/game-developer-career-guide.html</loc>
-    <lastmod>2026-01-22</lastmod>
+    <lastmod>2026-09-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   
   <url>
     <loc>https://dharmikgohil.art/blog/hackron-hackathon-2025-blinkit-experience.html</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-09-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
     <image:image>
@@ -426,28 +453,28 @@
   
   <url>
     <loc>https://dharmikgohil.art/blog/iit-bombay-techfest-2024-experience.html</loc>
-    <lastmod>2026-01-22</lastmod>
+    <lastmod>2026-09-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   
   <url>
     <loc>https://dharmikgohil.art/blog/charusat-university-experience.html</loc>
-    <lastmod>2026-01-22</lastmod>
+    <lastmod>2026-09-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   
   <url>
     <loc>https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html</loc>
-    <lastmod>2026-01-22</lastmod>
+    <lastmod>2026-09-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   
   <url>
     <loc>https://dharmikgohil.art/blog/charusat-expo-3-mavericks-battlegrounds-showcase.html</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-09-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
     <image:image>
