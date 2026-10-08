@@ -94,12 +94,24 @@
     closeLanguageModal();
   }
 
+  var GLOBE_SVG = '<svg class="lang-globe" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3.2 3 14.8 0 18M12 3c-3 3.2-3 14.8 0 18"/></svg>';
+
+  function currentLangCode() {
+    var p = new URLSearchParams(window.location.search).get('lang');
+    return p || localStorage.getItem('portfolio_target_lang') || 'en';
+  }
+
   function updateActiveButtonDisplay(langCode) {
-    var found = ALL_LANGUAGES.find(function(l) { return l.code === langCode; });
-    var currentBadge = document.getElementById('currentLangBadge');
-    if (currentBadge && found) {
-      currentBadge.textContent = found.code.toUpperCase();
-    }
+    var found = ALL_LANGUAGES.find(function (l) { return l.code === langCode; });
+    var label = (found ? found.code : langCode).toUpperCase();
+    document.querySelectorAll('.lang-current').forEach(function (el) { el.textContent = label; });
+    document.querySelectorAll('.global-lang-item').forEach(function (item) {
+      var on = item.getAttribute('data-code') === langCode;
+      item.classList.toggle('active', on);
+      if (on) item.setAttribute('aria-current', 'true'); else item.removeAttribute('aria-current');
+    });
+    var reset = document.getElementById('globalLangResetBtn');
+    if (reset) reset.hidden = langCode === 'en';
   }
 
   function checkAndApplyInitialLanguage() {
@@ -125,131 +137,117 @@
     }
   }
 
+  var MAIN_REGIONAL = { 'zh-CN': 1, 'zh-TW': 1 };
+  function isMainLanguage(l) { return l.code.indexOf('-') === -1 || MAIN_REGIONAL[l.code]; }
+  function esc(s) { return String(s).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); }
+
   function initLanguageUI() {
+    var current = currentLangCode();
+
     if (!document.getElementById('globalLangFloatingBtn')) {
       var floatBtn = document.createElement('button');
       floatBtn.id = 'globalLangFloatingBtn';
+      floatBtn.type = 'button';
       floatBtn.className = 'global-lang-floating-btn';
-      floatBtn.setAttribute('aria-label', 'Change Language (200+ Available)');
-      floatBtn.setAttribute('title', 'Select from 200+ World Languages');
-      floatBtn.innerHTML = '<span class="lang-btn-globe">🌐</span> <span id="currentLangBadge">EN</span> <span class="lang-btn-badge">200+</span>';
+      floatBtn.setAttribute('aria-label', 'Change language');
+      floatBtn.setAttribute('aria-haspopup', 'dialog');
+      floatBtn.innerHTML = GLOBE_SVG + '<span class="lang-current">EN</span>';
       floatBtn.onclick = openLanguageModal;
       document.body.appendChild(floatBtn);
     }
 
-    document.querySelectorAll('.masthead-lang-trigger').forEach(function(el) {
+    document.querySelectorAll('.masthead-lang-trigger').forEach(function (el) {
+      el.innerHTML = GLOBE_SVG + '<span>Language</span><span class="lang-current">EN</span>';
+      el.setAttribute('aria-haspopup', 'dialog');
       el.onclick = openLanguageModal;
     });
 
     if (!document.getElementById('globalLangModalOverlay')) {
-      var modalOverlay = document.createElement('div');
-      modalOverlay.id = 'globalLangModalOverlay';
-      modalOverlay.className = 'global-lang-modal-overlay';
-      modalOverlay.onclick = function(e) {
-        if (e.target === modalOverlay) closeLanguageModal();
-      };
+      var overlay = document.createElement('div');
+      overlay.id = 'globalLangModalOverlay';
+      overlay.className = 'global-lang-modal-overlay';
+      overlay.onclick = function (e) { if (e.target === overlay) closeLanguageModal(); };
 
-      var quickPillsHtml = TOP_LANG_CODES.map(function(code) {
-        var found = ALL_LANGUAGES.find(function(l) { return l.code === code; });
-        if (!found) return '';
-        return '<button type="button" class="quick-lang-tag" data-code="' + found.code + '">' + found.flag + ' ' + found.name + '</button>';
+      var mainCount = ALL_LANGUAGES.filter(isMainLanguage).length;
+      var quick = TOP_LANG_CODES.map(function (code) {
+        var f = ALL_LANGUAGES.find(function (l) { return l.code === code; });
+        return f ? '<button type="button" class="quick-lang-tag" data-code="' + esc(f.code) + '">' + esc(f.name) + '</button>' : '';
+      }).join('');
+      var items = ALL_LANGUAGES.map(function (l) {
+        var isMain = isMainLanguage(l);
+        var native = l.native && l.native !== l.name ? '<small class="global-lang-native">' + esc(l.native) + '</small>' : '';
+        return '<button type="button" class="global-lang-item' + (isMain ? '' : ' is-variant') + '" data-code="' + esc(l.code) + '" data-name="' + esc(l.name.toLowerCase()) + '" data-native="' + esc(l.native.toLowerCase()) + '"' + (isMain ? '' : ' hidden') + '>' +
+          '<span class="global-lang-name">' + esc(l.name) + native + '</span>' +
+          '<span class="global-lang-code">' + esc(l.code) + '</span></button>';
       }).join('');
 
-      var langItemsHtml = ALL_LANGUAGES.map(function(lang) {
-        return '<div class="global-lang-item" data-code="' + lang.code + '" data-name="' + lang.name.toLowerCase() + '" data-native="' + lang.native.toLowerCase() + '">' +
-          '<div class="global-lang-item-left">' +
-            '<span class="global-lang-flag">' + lang.flag + '</span>' +
-            '<div>' +
-              '<div class="global-lang-name">' + lang.name + '</div>' +
-              '<small class="global-lang-native">' + lang.native + '</small>' +
-            '</div>' +
-          '</div>' +
-          '<span class="global-lang-code">' + lang.code + '</span>' +
-        '</div>';
-      }).join('');
-
-      modalOverlay.innerHTML = 
+      overlay.innerHTML =
         '<div class="global-lang-modal" role="dialog" aria-modal="true" aria-labelledby="globalLangTitle">' +
           '<div class="global-lang-modal-header">' +
-            '<h3 class="global-lang-modal-title" id="globalLangTitle">' +
-              '<span>🌐 Select Language</span>' +
-              '<span class="badge-200">' + ALL_LANGUAGES.length + ' Languages</span>' +
-            '</h3>' +
-            '<button type="button" class="global-lang-close-btn" id="globalLangCloseBtn" aria-label="Close">&times;</button>' +
+            '<h2 class="global-lang-modal-title" id="globalLangTitle">Choose language</h2>' +
+            '<button type="button" class="global-lang-close-btn" id="globalLangCloseBtn">Close ✕</button>' +
           '</div>' +
           '<div class="global-lang-search-wrapper">' +
-            '<input type="text" class="global-lang-search-input" id="globalLangSearchInput" placeholder="Search language by name, script, or country code (e.g., Spanish, 日本語, Hindi, ar)..." autocomplete="off">' +
+            '<input type="search" class="global-lang-search-input" id="globalLangSearchInput" placeholder="Search: Spanish, हिन्दी, fr…" autocomplete="off" aria-label="Search languages">' +
           '</div>' +
-          '<div class="global-lang-quick-bar">' +
-            '<span style="color:#777;font-size:11px;font-family:IBM Plex Mono, monospace;">POPULAR:</span>' +
-            quickPillsHtml +
-          '</div>' +
-          '<div class="global-lang-grid" id="globalLangGrid">' +
-            langItemsHtml +
-          '</div>' +
+          '<div class="global-lang-quick-bar" role="group" aria-label="Popular languages">' + quick + '</div>' +
+          '<div class="global-lang-grid" id="globalLangGrid">' + items + '<p class="global-lang-empty" id="globalLangEmpty" hidden>No language found. Try another name.</p></div>' +
           '<div class="global-lang-modal-footer">' +
-            '<span>🌍 Serving Clients Across 100+ Countries Globally</span>' +
-            '<button type="button" class="global-lang-reset-btn" id="globalLangResetBtn">Reset to English (Default)</button>' +
+            '<span>' + mainCount + ' languages · translated by Google</span>' +
+            '<button type="button" class="global-lang-reset-btn" id="globalLangResetBtn">Back to English</button>' +
           '</div>' +
         '</div>';
-
-      document.body.appendChild(modalOverlay);
+      document.body.appendChild(overlay);
 
       document.getElementById('globalLangCloseBtn').onclick = closeLanguageModal;
-      document.getElementById('globalLangResetBtn').onclick = function() {
-        setLanguage('en');
-      };
+      document.getElementById('globalLangResetBtn').onclick = function () { setLanguage('en'); };
 
-      var searchInput = document.getElementById('globalLangSearchInput');
-      searchInput.oninput = function() {
+      var input = document.getElementById('globalLangSearchInput');
+      input.oninput = function () {
         var q = this.value.trim().toLowerCase();
-        var items = document.querySelectorAll('.global-lang-item');
-        items.forEach(function(item) {
-          var code = item.getAttribute('data-code').toLowerCase();
-          var name = item.getAttribute('data-name');
-          var native = item.getAttribute('data-native');
-          if (!q || code.indexOf(q) !== -1 || name.indexOf(q) !== -1 || native.indexOf(q) !== -1) {
-            item.style.display = 'flex';
-          } else {
-            item.style.display = 'none';
-          }
+        var shown = 0;
+        document.querySelectorAll('.global-lang-item').forEach(function (item) {
+          var hit = q
+            ? (item.getAttribute('data-code').toLowerCase().indexOf(q) !== -1 || item.getAttribute('data-name').indexOf(q) !== -1 || item.getAttribute('data-native').indexOf(q) !== -1)
+            : !item.classList.contains('is-variant');
+          item.hidden = !hit;
+          if (hit) shown++;
         });
+        document.getElementById('globalLangEmpty').hidden = shown > 0;
       };
 
-      document.getElementById('globalLangGrid').onclick = function(e) {
-        var target = e.target.closest('.global-lang-item');
-        if (target) {
-          var code = target.getAttribute('data-code');
-          setLanguage(code);
-        }
+      document.getElementById('globalLangGrid').onclick = function (e) {
+        var t = e.target.closest('.global-lang-item');
+        if (t) setLanguage(t.getAttribute('data-code'));
       };
-
-      modalOverlay.querySelector('.global-lang-quick-bar').onclick = function(e) {
-        var target = e.target.closest('.quick-lang-tag');
-        if (target) {
-          var code = target.getAttribute('data-code');
-          setLanguage(code);
-        }
+      overlay.querySelector('.global-lang-quick-bar').onclick = function (e) {
+        var t = e.target.closest('.quick-lang-tag');
+        if (t) setLanguage(t.getAttribute('data-code'));
       };
     }
+    updateActiveButtonDisplay(current);
   }
 
+  var lastFocus = null;
   function openLanguageModal() {
     var overlay = document.getElementById('globalLangModalOverlay');
-    if (overlay) {
-      overlay.classList.add('active');
-      var searchInput = document.getElementById('globalLangSearchInput');
-      if (searchInput) {
-        searchInput.value = '';
-        searchInput.focus();
-        document.querySelectorAll('.global-lang-item').forEach(function(i) { i.style.display = 'flex'; });
-      }
-    }
+    if (!overlay) return;
+    lastFocus = document.activeElement;
+    overlay.classList.add('active');
+    document.body.style.overflow = 'hidden';
+    var input = document.getElementById('globalLangSearchInput');
+    if (input) { input.value = ''; input.oninput.call(input); input.focus(); }
+    var active = overlay.querySelector('.global-lang-item.active');
+    if (active) active.scrollIntoView({ block: 'center' });
   }
 
   function closeLanguageModal() {
     var overlay = document.getElementById('globalLangModalOverlay');
-    if (overlay) overlay.classList.remove('active');
+    if (overlay && overlay.classList.contains('active')) {
+      overlay.classList.remove('active');
+      document.body.style.overflow = '';
+      if (lastFocus && lastFocus.focus) lastFocus.focus();
+    }
   }
 
   document.addEventListener('keydown', function(e) {
