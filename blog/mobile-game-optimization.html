@@ -1,1400 +1,157 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>(function(d){if(!matchMedia('(prefers-reduced-motion: reduce)').matches){d.classList.add('motion-ok');setTimeout(function(){if(!window.__motionReady)d.classList.remove('motion-ok')},4500)}})(document.documentElement)</script>
+  <noscript><style>[data-reveal],[data-kinetic]{opacity:1!important;transform:none!important;clip-path:none!important}.post-cover{clip-path:none!important;animation:none!important}</style></noscript>
+  <title>Unity Mobile Game Optimization Techniques | Dharmik Gohil</title>
+  <meta name="description" content="Make Unity games run smoothly on phones: understand hardware limits, reduce draw calls, compress textures, manage memory and profile on real devices.">
+  <link rel="canonical" href="https://dharmikgohil.art/blog/mobile-game-optimization.html">
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+  <meta name="author" content="Dharmik Gohil">
+  <meta name="theme-color" content="#f2f0eb">
+  <meta name="geo.region" content="IN-GJ"><meta name="geo.placename" content="Surat, Gujarat, India"><meta name="geo.position" content="21.1702;72.8311"><meta name="ICBM" content="21.1702, 72.8311">
+  <link rel="alternate" hreflang="en" href="https://dharmikgohil.art/blog/mobile-game-optimization.html"><link rel="alternate" hreflang="x-default" href="https://dharmikgohil.art/blog/mobile-game-optimization.html">
+  <link rel="author" href="https://www.linkedin.com/in/dharmikgohil086/">
+  <meta property="og:site_name" content="Dharmik Gohil – Unity Game Developer"><meta property="og:locale" content="en_US">
+  <meta property="og:type" content="article"><meta property="og:url" content="https://dharmikgohil.art/blog/mobile-game-optimization.html">
+  <meta property="og:title" content="Unity Mobile Game Optimization Techniques | Dharmik Gohil"><meta property="og:description" content="Make Unity games run smoothly on phones: understand hardware limits, reduce draw calls, compress textures, manage memory and profile on real devices.">
+  <meta property="og:image" content="https://dharmikgohil.art/assets/img/floopy.webp"><meta property="og:image:alt" content="Unity Mobile Game Optimization Techniques | Dharmik Gohil">
+  <meta name="twitter:card" content="summary_large_image"><meta name="twitter:site" content="@Dharmik086"><meta name="twitter:creator" content="@Dharmik086">
+  <meta name="twitter:title" content="Unity Mobile Game Optimization Techniques | Dharmik Gohil"><meta name="twitter:description" content="Make Unity games run smoothly on phones: understand hardware limits, reduce draw calls, compress textures, manage memory and profile on real devices."><meta name="twitter:image" content="https://dharmikgohil.art/assets/img/floopy.webp">
+  <meta property="article:published_time" content="2025-08-18T00:00:00+05:30"><meta property="article:modified_time" content="2026-10-08T00:00:00+05:30"><meta property="article:author" content="https://www.linkedin.com/in/dharmikgohil086/"><meta property="article:section" content="Unity Game Development"><meta property="article:tag" content="Mobile Games"><meta property="article:tag" content="Optimization"><meta property="article:tag" content="Unity Profiler"><meta property="article:tag" content="Performance"><meta name="keywords" content="Mobile Games, Optimization, Unity Profiler, Performance, Unity Game Development, Dharmik Gohil"><link rel="preload" as="image" href="../assets/img/floopy.webp" fetchpriority="high">
+  <link rel="icon" type="image/png" href="../assets/img/dlogo.png"><link rel="apple-touch-icon" href="../assets/img/dlogo.png">
+  <link rel="alternate" type="application/rss+xml" title="Dharmik Gohil – Blog" href="https://dharmikgohil.art/feed.xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=IBM+Plex+Mono:ital,wght@0,400;0,500;0,700;1,400&family=Lora:ital,wght@0,400;0,600;0,700;1,400&family=Playfair+Display:ital,wght@0,900;1,900&display=swap">
+  <link rel="stylesheet" href="../assets/vendor/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../assets/css/main.css">
+  <link rel="stylesheet" href="../index.css">
+  <link rel="stylesheet" href="../assets/css/responsive-global.css">
+  <link rel="stylesheet" href="../assets/vendor/bootstrap-icons/bootstrap-icons.css">
+  <link rel="stylesheet" href="../assets/vendor/glightbox/css/glightbox.min.css">
+  <link rel="stylesheet" href="../assets/css/global-multilingual.css">
+  <link rel="stylesheet" href="../assets/css/blog-post.css">
+  <link rel="stylesheet" href="../assets/css/motion.css">
   <meta name="google-adsense-account" content="ca-pub-4658801537271443">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4658801537271443" crossorigin="anonymous"></script>
-  <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-GE7F8SZSJ9"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'G-GE7F8SZSJ9');
-  </script>
-
-  <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>Mobile Game Optimization Masterclass | Expert Techniques by Dharmik Gohil | 10x Performance Guide</title>
-  <meta name="description" content="⚡ SUPERCHARGE Your Mobile Game Performance with India's #1 Optimization Expert! DHARMIK GOHIL's complete masterclass on Unity mobile optimization. 10x performance guaranteed!">
-  <meta name="keywords" content="Mobile game optimization masterclass, Unity performance optimization, game performance 10x, Dharmik Gohil optimization secrets, mobile game FPS boost, memory optimization mobile, battery optimization games, texture optimization Unity, mesh optimization techniques, draw call reduction, batching optimization, LOD optimization, audio optimization mobile, shader optimization mobile, garbage collection optimization, object pooling Unity, asset bundle optimization, build size optimization, APK size reduction, iOS optimization Unity">
-
-  <!-- Favicons -->
-  <link href="../assets/img/dlogo.png" rel="icon">
-  <link href="../assets/img/dlogo.png" rel="apple-touch-icon">
-
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com" rel="preconnect">
-  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-
-  <!-- Vendor CSS Files -->
-  <link href="../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="../assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="../assets/vendor/aos/aos.css" rel="stylesheet">
-  <link href="../assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-  <link href="../assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
-
-  <!-- Main CSS File -->
-  <link href="../assets/css/main.css" rel="stylesheet">
-
-  <!-- Performance Optimization -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preconnect" href="https://www.google-analytics.com">
-  
-  <!-- Article Schema -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "BlogPosting",
-    "headline": "Mobile Game Optimization Techniques - Dharmik Gohil Blog",
-    "image": "https://dharmikgohil.art/assets/img/blog/mobile-game-optimization.jpg",
-    "author": {
-      "@type": "Person",
-      "name": "Dharmik Gohil",
-      "url": "https://dharmikgohil.art",
-      "sameAs": [
-        "https://github.com/DharmikGohil013",
-        "https://www.linkedin.com/in/dharmikgohil086/"
-      ]
-    },
-    "publisher": {
-      "@type": "Organization",
-      "name": "Dharmik Gohil",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "https://dharmikgohil.art/assets/img/logo.png"
-      }
-    },
-    "datePublished": "2026-01-05",
-    "dateModified": "2026-01-05",
-    "mainEntityOfPage": {
-      "@type": "WebPage",
-      "@id": "https://dharmikgohil.art/blog/mobile-game-optimization.html"
-    },
-    "description": "Game development blog post by Dharmik Gohil covering Unity, XR, and game development topics."
-  }
-  </script>
-  
-  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=IBM+Plex+Mono:ital,wght@0,400;0,500;0,700;1,400&family=Playfair+Display:ital,wght@0,900;1,900&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=IBM+Plex+Mono:ital,wght@0,400;0,500;0,700;1,400&family=Playfair+Display:ital,wght@0,900;1,900&display=swap" rel="stylesheet"></noscript>
-  <link rel="preload" href="../index.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link href="../index.css" rel="stylesheet"></noscript>
-
-  <!-- ======================================================= -->
-  <!-- 200+ INTERNATIONAL WORLD LANGUAGES HREFLANG ANNOTATIONS  -->
-  <!-- ======================================================= -->
-  <link rel="alternate" hreflang="x-default" href="https://dharmikgohil.art/blog/mobile-game-optimization.html">
-  <link rel="alternate" hreflang="en" href="https://dharmikgohil.art/blog/mobile-game-optimization.html">
-  <link rel="alternate" hreflang="en-US" href="https://dharmikgohil.art/blog/mobile-game-optimization.html?lang=en-US">
-  <link rel="alternate" hreflang="en-GB" href="https://dharmikgohil.art/blog/mobile-game-optimization.html?lang=en-GB">
-  <link rel="alternate" hreflang="en-CA" href="https://dharmikgohil.art/blog/mobile-game-optimization.html?lang=en-CA">
-  <link rel="alternate" hreflang="en-AU" href="https://dharmikgohil.art/blog/mobile-game-optimization.html?lang=en-AU">
-  <link rel="alternate" hreflang="en-IN" href="https://dharmikgohil.art/blog/mobile-game-optimization.html?lang=en-IN">
-  <link rel="alternate" hreflang="en-NZ" href="https://dharmikgohil.art/blog/mobile-game-optimization.html?lang=en-NZ">
-  <link rel="alternate" hreflang="en-IE" href="https://dharmikgohil.art/blog/mobile-game-optimization.html?lang=en-IE">
-  <link rel="alternate" hreflang="en-SG" href="https://dharmikgohil.art/blog/mobile-game-optimization.html?lang=en-SG">
-  <link rel="alternate" hreflang="en-ZA" href="https://dharmikgohil.art/blog/mobile-game-optimization.html?lang=en-ZA">
-  <link rel="alternate" hreflang="en-AE" href="https://dharmikgohil.art/blog/mobile-game-optimization.html?lang=en-AE">
-  <link rel="alternate" hreflang="es" href="https://dharmikgohil.art/blog/mobile-game-optimization.html?lang=es">
-  <link rel="alternate" hreflang="es-ES" href="https://dharmikgohil.art/blog/mobile-game-optimization.html?lang=es-ES">
-  <link rel="alternate" hreflang="es-MX" href="https://dharmikgohil.art/blog/mobile-game-optimization.html?lang=es-MX">
-  <link rel="alternate" hreflang="es-AR" href="https://dharmikgohil.art/blog/mobile-game-optimization.html?lang=es-AR">
-  <link rel="alternate" hreflang="es-CO" href="https://dharmikgohil.art/blog/mobile-game-optimization.html?lang=es-CO">
-  <link rel="alternate" hreflang="es-CL" href="https://dharmikgohil.art/blog/mobile-game-optimization.html?lang=es-CL">
-  <link rel="alternate" hreflang="es-PE" href="https://dharmikgohil.art/blog/mobile-game-optimization.html?lang=es-PE">
-  <link rel="alternate" hreflang="es-VE" href="https://dharmikgohil.art/blog/mobile-game-optimization.html?lang=es-VE">
-  <link rel="alternate" hreflang="fr" href="https://dharmikgohil.art/blog/mobile-game-optimization.html?lang=fr">
-  <link rel="alternate" hreflang="fr-FR" href="https://dharmikgohil.art/blog/mobile-game-optimization.html?lang=fr-FR">
-  <link rel="alternate" hreflang="fr-CA" href="https://dharmikgohil.art/blog/mobile-game-optimization.html?lang=fr-CA">
-  <link rel="alternate" hreflang="fr-BE" href="https://dharmikgohil.art/blog/mobile-game-optimization.html?lang=fr-BE">
-  <link rel="alternate" hreflang="fr-CH" href="https://dharmikgohil.art/blog/mobile-game-optimization.html?lang=fr-CH">
-  <link rel="alternate" hreflang="de" href="https://dharmikgohil.art/blog/mobile-game-optimization.html?lang=de">
-  <link rel="alternate" hreflang="de-DE" href="https://dharmikgohil.art/blog/mobile-game-optimization.html?lang=de-DE">
-  <link rel="alternate" hreflang="de-AT" href="https://dharmikgohil.art/blog/mobile-game-optimization.html?lang=de-AT">
-  <link rel="alternate" hreflang="de-CH" href="https://dharmikgohil.art/blog/mobile-game-optimization.html?lang=de-CH">
-  <link rel="alternate" hreflang="it" href="https://dharmikgohil.art/blog/mobile-game-optimization.html?lang=it">
-  <link rel="alternate" hreflang="it-IT" href="https://dharmikgohil.art/blog/mobile-game-optimization.html?lang=it-IT">
-  <link rel="alternate" hreflang="it-CH" href="https://dharmikgohil.art/blog/mobile-game-optimization.html?lang=it-CH">
-  <link rel="alternate" hreflang="pt" href="https://dharmikgohil.art/blog/mobile-game-optimization.html?lang=pt">
-  <link rel="alternate" hreflang="pt-BR" href="https://dharmikgohil.art/blog/mobile-game-optimization.html?lang=pt-BR">
-  <link rel="alternate" hreflang="pt-PT" href="https://dharmikgohil.art/blog/mobile-game-optimization.html?lang=pt-PT">
-  <link rel="alternate" hreflang="ru" href="https://dharmikgohil.art/blog/mobile-game-optimization.html?lang=ru">
-  <link rel="alternate" hreflang="ru-RU" href="https://dharmikgohil.art/blog/mobile-game-optimization.html?lang=ru-RU">
-  <link rel="alternate" hreflang="ja" href="https://dharmikgohil.art/blog/mobile-game-optimization.html?lang=ja">
-  <link rel="alternate" hreflang="ja-JP" href="https://dharmikgohil.art/blog/mobile-game-optimization.html?lang=ja-JP">
-  <link rel="alternate" hreflang="zh" href="https://dharmikgohil.art/blog/mobile-game-optimization.html?lang=zh">
-  <link rel="alternate" hreflang="zh-CN" href="https://dharmikgohil.art/blog/mobile-game-optimization.html?lang=zh-CN">
-  <link rel="alternate" hreflang="zh-TW" href="https://dharmikgohil.art/blog/mobile-game-optimization.html?lang=zh-TW">
-  <link rel="alternate" hreflang="zh-HK" href="https://dharmikgohil.art/blog/mobile-game-optimization.html?lang=zh-HK">
-  <link rel="alternate" hreflang="zh-SG" href="https://dharmikgohil.art/blog/mobile-game-optimization.html?lang=zh-SG">
-  <link rel="alternate" hreflang="zh-Hans" href="https://dharmikgohil.art/blog/mobile-game-optimization.html?lang=zh-Hans">
-  <link rel="alternate" hreflang="zh-Hant" href="https://dharmikgohil.art/blog/mobile-game-optimization.html?lang=zh-Hant">
-  <link rel="alternate" hreflang="ko" href="https://dharmikgohil.art/blog/mobile-game-optimization.html?lang=ko">
-  <link rel="alternate" hreflang="ko-KR" href="https://dharmikgohil.art/blog/mobile-game-optimization.html?lang=ko-KR">
-  <link rel="alternate" hreflang="ar" href="https://dharmikgohil.art/blog/mobile-game-optimization.html?lang=ar">
-  <link rel="alternate" hreflang="ar-SA" href="https://dharmikgohil.art/blog/mobile-game-optimization.html?lang=ar-SA">
-  <link rel="alternate" hreflang="ar-AE" href="https://dharmikgohil.art/blog/mobile-game-optimization.html?lang=ar-AE">
-  <link rel="alternate" hreflang="ar-EG" href="https://dharmikgohil.art/blog/mobile-game-optimization.html?lang=ar-EG">
-  <link rel="alternate" hreflang="ar-QA" href="https://dharmikgohil.art/blog/mobile-game-optimization.html?lang=ar-QA">
-  <link rel="alternate" hreflang="ar-KW" href="https://dharmikgohil.art/blog/mobile-game-optimization.html?lang=ar-KW">
-  <link rel="alternate" hreflang="hi" href="https://dharmikgohil.art/blog/mobile-game-optimization.html?lang=hi">
-  <link rel="alternate" hreflang="hi-IN" href="https://dharmikgohil.art/blog/mobile-game-optimization.html?lang=hi-IN">
-  <link rel="alternate" hreflang="gu" href="https://dharmikgohil.art/blog/mobile-game-optimization.html?lang=gu">
-  <link rel="alternate" hreflang="gu-IN" href="https://dharmikgohil.art/blog/mobile-game-optimization.html?lang=gu-IN">
-  <link rel="alternate" hreflang="bn" href="https://dharmikgohil.art/blog/mobile-game-optimization.html?lang=bn">
-  <link rel="alternate" hreflang="bn-BD" href="https://dharmikgohil.art/blog/mobile-game-optimization.html?lang=bn-BD">
-  <link rel="alternate" hreflang="bn-IN" href="https://dharmikgohil.art/blog/mobile-game-optimization.html?lang=bn-IN">
-  <link rel="alternate" hreflang="pa" href="https://dharmikgohil.art/blog/mobile-game-optimization.html?lang=pa">
-  <link rel="alternate" hreflang="pa-IN" href="https://dharmikgohil.art/blog/mobile-game-optimization.html?lang=pa-IN">
-  <link rel="alternate" hreflang="pa-PK" href="https://dharmikgohil.art/blog/mobile-game-optimization.html?lang=pa-PK">
-  <link rel="alternate" hreflang="mr" href="https://dharmikgohil.art/blog/mobile-game-optimization.html?lang=mr">
-  <link rel="alternate" hreflang="mr-IN" href="https://dharmikgohil.art/blog/mobile-game-optimization.html?lang=mr-IN">
-  <link rel="alternate" hreflang="te" href="https://dharmikgohil.art/blog/mobile-game-optimization.html?lang=te">
-  <link rel="alternate" hreflang="te-IN" href="https://dharmikgohil.art/blog/mobile-game-optimization.html?lang=te-IN">
-  <link rel="alternate" hreflang="ta" href="https://dharmikgohil.art/blog/mobile-game-optimization.html?lang=ta">
-  <link rel="alternate" hreflang="ta-IN" href="https://dharmikgohil.art/blog/mobile-game-optimization.html?lang=ta-IN">
-  <link rel="alternate" hreflang="ta-LK" href="https://dharmikgohil.art/blog/mobile-game-optimization.html?lang=ta-LK">
-  <link rel="alternate" hreflang="ta-SG" href="https://dharmikgohil.art/blog/mobile-game-optimization.html?lang=ta-SG">
-  <link rel="alternate" hreflang="ur" href="https://dharmikgohil.art/blog/mobile-game-optimization.html?lang=ur">
-  <link rel="alternate" hreflang="ur-PK" href="https://dharmikgohil.art/blog/mobile-game-optimization.html?lang=ur-PK">
-  <link rel="alternate" hreflang="ur-IN" href="https://dharmikgohil.art/blog/mobile-game-optimization.html?lang=ur-IN">
-  <link rel="alternate" hreflang="kn" href="https://dharmikgohil.art/blog/mobile-game-optimization.html?lang=kn">
-  <link rel="alternate" hreflang="kn-IN" href="https://dharmikgohil.art/blog/mobile-game-optimization.html?lang=kn-IN">
-  <link rel="alternate" hreflang="ml" href="https://dharmikgohil.art/blog/mobile-game-optimization.html?lang=ml">
-  <link rel="alternate" hreflang="ml-IN" href="https://dharmikgohil.art/blog/mobile-game-optimization.html?lang=ml-IN">
-  <link rel="alternate" hreflang="or" href="https://dharmikgohil.art/blog/mobile-game-optimization.html?lang=or">
-  <link rel="alternate" hreflang="as" href="https://dharmikgohil.art/blog/mobile-game-optimization.html?lang=as">
-  <link rel="alternate" hreflang="ne" href="https://dharmikgohil.art/blog/mobile-game-optimization.html?lang=ne">
-  <link rel="alternate" hreflang="ne-NP" href="https://dharmikgohil.art/blog/mobile-game-optimization.html?lang=ne-NP">
-  <link rel="alternate" hreflang="si" href="https://dharmikgohil.art/blog/mobile-game-optimization.html?lang=si">
-  <link rel="alternate" hreflang="si-LK" href="https://dharmikgohil.art/blog/mobile-game-optimization.html?lang=si-LK">
-  <link rel="alternate" hreflang="tr" href="https://dharmikgohil.art/blog/mobile-game-optimization.html?lang=tr">
-  <link rel="alternate" hreflang="tr-TR" href="https://dharmikgohil.art/blog/mobile-game-optimization.html?lang=tr-TR">
-  <link rel="alternate" hreflang="vi" href="https://dharmikgohil.art/blog/mobile-game-optimization.html?lang=vi">
-  <link rel="alternate" hreflang="vi-VN" href="https://dharmikgohil.art/blog/mobile-game-optimization.html?lang=vi-VN">
-  <link rel="alternate" hreflang="th" href="https://dharmikgohil.art/blog/mobile-game-optimization.html?lang=th">
-  <link rel="alternate" hreflang="th-TH" href="https://dharmikgohil.art/blog/mobile-game-optimization.html?lang=th-TH">
-  <link rel="alternate" hreflang="id" href="https://dharmikgohil.art/blog/mobile-game-optimization.html?lang=id">
-  <link rel="alternate" hreflang="id-ID" href="https://dharmikgohil.art/blog/mobile-game-optimization.html?lang=id-ID">
-  <link rel="alternate" hreflang="ms" href="https://dharmikgohil.art/blog/mobile-game-optimization.html?lang=ms">
-  <link rel="alternate" hreflang="ms-MY" href="https://dharmikgohil.art/blog/mobile-game-optimization.html?lang=ms-MY">
-  <link rel="alternate" hreflang="tl" href="https://dharmikgohil.art/blog/mobile-game-optimization.html?lang=tl">
-  <link rel="alternate" hreflang="fil" href="https://dharmikgohil.art/blog/mobile-game-optimization.html?lang=fil">
-  <link rel="alternate" hreflang="my" href="https://dharmikgohil.art/blog/mobile-game-optimization.html?lang=my">
-  <link rel="alternate" hreflang="km" href="https://dharmikgohil.art/blog/mobile-game-optimization.html?lang=km">
-  <link rel="alternate" hreflang="lo" href="https://dharmikgohil.art/blog/mobile-game-optimization.html?lang=lo">
-  <link rel="alternate" hreflang="jv" href="https://dharmikgohil.art/blog/mobile-game-optimization.html?lang=jv">
-  <link rel="alternate" hreflang="su" href="https://dharmikgohil.art/blog/mobile-game-optimization.html?lang=su">
-  <link rel="alternate" hreflang="nl" href="https://dharmikgohil.art/blog/mobile-game-optimization.html?lang=nl">
-  <link rel="alternate" hreflang="nl-NL" href="https://dharmikgohil.art/blog/mobile-game-optimization.html?lang=nl-NL">
-  <link rel="alternate" hreflang="nl-BE" href="https://dharmikgohil.art/blog/mobile-game-optimization.html?lang=nl-BE">
-  <link rel="alternate" hreflang="pl" href="https://dharmikgohil.art/blog/mobile-game-optimization.html?lang=pl">
-  <link rel="alternate" hreflang="pl-PL" href="https://dharmikgohil.art/blog/mobile-game-optimization.html?lang=pl-PL">
-  <link rel="alternate" hreflang="uk" href="https://dharmikgohil.art/blog/mobile-game-optimization.html?lang=uk">
-  <link rel="alternate" hreflang="uk-UA" href="https://dharmikgohil.art/blog/mobile-game-optimization.html?lang=uk-UA">
-  <link rel="alternate" hreflang="fa" href="https://dharmikgohil.art/blog/mobile-game-optimization.html?lang=fa">
-  <link rel="alternate" hreflang="fa-IR" href="https://dharmikgohil.art/blog/mobile-game-optimization.html?lang=fa-IR">
-  <link rel="alternate" hreflang="he" href="https://dharmikgohil.art/blog/mobile-game-optimization.html?lang=he">
-  <link rel="alternate" hreflang="he-IL" href="https://dharmikgohil.art/blog/mobile-game-optimization.html?lang=he-IL">
-  <link rel="alternate" hreflang="el" href="https://dharmikgohil.art/blog/mobile-game-optimization.html?lang=el">
-  <link rel="alternate" hreflang="el-GR" href="https://dharmikgohil.art/blog/mobile-game-optimization.html?lang=el-GR">
-  <link rel="alternate" hreflang="sv" href="https://dharmikgohil.art/blog/mobile-game-optimization.html?lang=sv">
-  <link rel="alternate" hreflang="sv-SE" href="https://dharmikgohil.art/blog/mobile-game-optimization.html?lang=sv-SE">
-  <link rel="alternate" hreflang="no" href="https://dharmikgohil.art/blog/mobile-game-optimization.html?lang=no">
-  <link rel="alternate" hreflang="nb" href="https://dharmikgohil.art/blog/mobile-game-optimization.html?lang=nb">
-  <link rel="alternate" hreflang="nn" href="https://dharmikgohil.art/blog/mobile-game-optimization.html?lang=nn">
-  <link rel="alternate" hreflang="da" href="https://dharmikgohil.art/blog/mobile-game-optimization.html?lang=da">
-  <link rel="alternate" hreflang="da-DK" href="https://dharmikgohil.art/blog/mobile-game-optimization.html?lang=da-DK">
-  <link rel="alternate" hreflang="fi" href="https://dharmikgohil.art/blog/mobile-game-optimization.html?lang=fi">
-  <link rel="alternate" hreflang="fi-FI" href="https://dharmikgohil.art/blog/mobile-game-optimization.html?lang=fi-FI">
-  <link rel="alternate" hreflang="cs" href="https://dharmikgohil.art/blog/mobile-game-optimization.html?lang=cs">
-  <link rel="alternate" hreflang="cs-CZ" href="https://dharmikgohil.art/blog/mobile-game-optimization.html?lang=cs-CZ">
-  <link rel="alternate" hreflang="ro" href="https://dharmikgohil.art/blog/mobile-game-optimization.html?lang=ro">
-  <link rel="alternate" hreflang="ro-RO" href="https://dharmikgohil.art/blog/mobile-game-optimization.html?lang=ro-RO">
-  <link rel="alternate" hreflang="hu" href="https://dharmikgohil.art/blog/mobile-game-optimization.html?lang=hu">
-  <link rel="alternate" hreflang="hu-HU" href="https://dharmikgohil.art/blog/mobile-game-optimization.html?lang=hu-HU">
-  <link rel="alternate" hreflang="sk" href="https://dharmikgohil.art/blog/mobile-game-optimization.html?lang=sk">
-  <link rel="alternate" hreflang="sk-SK" href="https://dharmikgohil.art/blog/mobile-game-optimization.html?lang=sk-SK">
-  <link rel="alternate" hreflang="bg" href="https://dharmikgohil.art/blog/mobile-game-optimization.html?lang=bg">
-  <link rel="alternate" hreflang="bg-BG" href="https://dharmikgohil.art/blog/mobile-game-optimization.html?lang=bg-BG">
-  <link rel="alternate" hreflang="sr" href="https://dharmikgohil.art/blog/mobile-game-optimization.html?lang=sr">
-  <link rel="alternate" hreflang="sr-RS" href="https://dharmikgohil.art/blog/mobile-game-optimization.html?lang=sr-RS">
-  <link rel="alternate" hreflang="hr" href="https://dharmikgohil.art/blog/mobile-game-optimization.html?lang=hr">
-  <link rel="alternate" hreflang="hr-HR" href="https://dharmikgohil.art/blog/mobile-game-optimization.html?lang=hr-HR">
-  <link rel="alternate" hreflang="lt" href="https://dharmikgohil.art/blog/mobile-game-optimization.html?lang=lt">
-  <link rel="alternate" hreflang="lt-LT" href="https://dharmikgohil.art/blog/mobile-game-optimization.html?lang=lt-LT">
-  <link rel="alternate" hreflang="lv" href="https://dharmikgohil.art/blog/mobile-game-optimization.html?lang=lv">
-  <link rel="alternate" hreflang="lv-LV" href="https://dharmikgohil.art/blog/mobile-game-optimization.html?lang=lv-LV">
-  <link rel="alternate" hreflang="et" href="https://dharmikgohil.art/blog/mobile-game-optimization.html?lang=et">
-  <link rel="alternate" hreflang="et-EE" href="https://dharmikgohil.art/blog/mobile-game-optimization.html?lang=et-EE">
-  <link rel="alternate" hreflang="sl" href="https://dharmikgohil.art/blog/mobile-game-optimization.html?lang=sl">
-  <link rel="alternate" hreflang="sl-SI" href="https://dharmikgohil.art/blog/mobile-game-optimization.html?lang=sl-SI">
-  <link rel="alternate" hreflang="ga" href="https://dharmikgohil.art/blog/mobile-game-optimization.html?lang=ga">
-  <link rel="alternate" hreflang="ga-IE" href="https://dharmikgohil.art/blog/mobile-game-optimization.html?lang=ga-IE">
-  <link rel="alternate" hreflang="cy" href="https://dharmikgohil.art/blog/mobile-game-optimization.html?lang=cy">
-  <link rel="alternate" hreflang="cy-GB" href="https://dharmikgohil.art/blog/mobile-game-optimization.html?lang=cy-GB">
-  <link rel="alternate" hreflang="is" href="https://dharmikgohil.art/blog/mobile-game-optimization.html?lang=is">
-  <link rel="alternate" hreflang="is-IS" href="https://dharmikgohil.art/blog/mobile-game-optimization.html?lang=is-IS">
-  <link rel="alternate" hreflang="mt" href="https://dharmikgohil.art/blog/mobile-game-optimization.html?lang=mt">
-  <link rel="alternate" hreflang="sq" href="https://dharmikgohil.art/blog/mobile-game-optimization.html?lang=sq">
-  <link rel="alternate" hreflang="mk" href="https://dharmikgohil.art/blog/mobile-game-optimization.html?lang=mk">
-  <link rel="alternate" hreflang="bs" href="https://dharmikgohil.art/blog/mobile-game-optimization.html?lang=bs">
-  <link rel="alternate" hreflang="az" href="https://dharmikgohil.art/blog/mobile-game-optimization.html?lang=az">
-  <link rel="alternate" hreflang="ka" href="https://dharmikgohil.art/blog/mobile-game-optimization.html?lang=ka">
-  <link rel="alternate" hreflang="hy" href="https://dharmikgohil.art/blog/mobile-game-optimization.html?lang=hy">
-  <link rel="alternate" hreflang="kk" href="https://dharmikgohil.art/blog/mobile-game-optimization.html?lang=kk">
-  <link rel="alternate" hreflang="uz" href="https://dharmikgohil.art/blog/mobile-game-optimization.html?lang=uz">
-  <link rel="alternate" hreflang="mn" href="https://dharmikgohil.art/blog/mobile-game-optimization.html?lang=mn">
-  <link rel="alternate" hreflang="sw" href="https://dharmikgohil.art/blog/mobile-game-optimization.html?lang=sw">
-  <link rel="alternate" hreflang="sw-KE" href="https://dharmikgohil.art/blog/mobile-game-optimization.html?lang=sw-KE">
-  <link rel="alternate" hreflang="sw-TZ" href="https://dharmikgohil.art/blog/mobile-game-optimization.html?lang=sw-TZ">
-  <link rel="alternate" hreflang="af" href="https://dharmikgohil.art/blog/mobile-game-optimization.html?lang=af">
-  <link rel="alternate" hreflang="am" href="https://dharmikgohil.art/blog/mobile-game-optimization.html?lang=am">
-  <link rel="alternate" hreflang="ha" href="https://dharmikgohil.art/blog/mobile-game-optimization.html?lang=ha">
-  <link rel="alternate" hreflang="yo" href="https://dharmikgohil.art/blog/mobile-game-optimization.html?lang=yo">
-  <link rel="alternate" hreflang="ig" href="https://dharmikgohil.art/blog/mobile-game-optimization.html?lang=ig">
-  <link rel="alternate" hreflang="zu" href="https://dharmikgohil.art/blog/mobile-game-optimization.html?lang=zu">
-  <link rel="alternate" hreflang="xh" href="https://dharmikgohil.art/blog/mobile-game-optimization.html?lang=xh">
-  <link rel="alternate" hreflang="so" href="https://dharmikgohil.art/blog/mobile-game-optimization.html?lang=so">
-  <link rel="alternate" hreflang="rw" href="https://dharmikgohil.art/blog/mobile-game-optimization.html?lang=rw">
-  <link rel="alternate" hreflang="mg" href="https://dharmikgohil.art/blog/mobile-game-optimization.html?lang=mg">
-  <link rel="alternate" hreflang="sn" href="https://dharmikgohil.art/blog/mobile-game-optimization.html?lang=sn">
-  <link rel="alternate" hreflang="ny" href="https://dharmikgohil.art/blog/mobile-game-optimization.html?lang=ny">
-  <link rel="alternate" hreflang="st" href="https://dharmikgohil.art/blog/mobile-game-optimization.html?lang=st">
-  <link rel="alternate" hreflang="tn" href="https://dharmikgohil.art/blog/mobile-game-optimization.html?lang=tn">
-  <link rel="alternate" hreflang="ts" href="https://dharmikgohil.art/blog/mobile-game-optimization.html?lang=ts">
-  <link rel="alternate" hreflang="ss" href="https://dharmikgohil.art/blog/mobile-game-optimization.html?lang=ss">
-  <link rel="alternate" hreflang="ve" href="https://dharmikgohil.art/blog/mobile-game-optimization.html?lang=ve">
-  <link rel="alternate" hreflang="nr" href="https://dharmikgohil.art/blog/mobile-game-optimization.html?lang=nr">
-  <link rel="alternate" hreflang="om" href="https://dharmikgohil.art/blog/mobile-game-optimization.html?lang=om">
-  <link rel="alternate" hreflang="ti" href="https://dharmikgohil.art/blog/mobile-game-optimization.html?lang=ti">
-  <link rel="alternate" hreflang="tg" href="https://dharmikgohil.art/blog/mobile-game-optimization.html?lang=tg">
-  <link rel="alternate" hreflang="tk" href="https://dharmikgohil.art/blog/mobile-game-optimization.html?lang=tk">
-  <link rel="alternate" hreflang="ky" href="https://dharmikgohil.art/blog/mobile-game-optimization.html?lang=ky">
-  <link rel="alternate" hreflang="ps" href="https://dharmikgohil.art/blog/mobile-game-optimization.html?lang=ps">
-  <link rel="alternate" hreflang="ku" href="https://dharmikgohil.art/blog/mobile-game-optimization.html?lang=ku">
-  <link rel="alternate" hreflang="sd" href="https://dharmikgohil.art/blog/mobile-game-optimization.html?lang=sd">
-  <link rel="alternate" hreflang="ug" href="https://dharmikgohil.art/blog/mobile-game-optimization.html?lang=ug">
-  <link rel="alternate" hreflang="be" href="https://dharmikgohil.art/blog/mobile-game-optimization.html?lang=be">
-  <link rel="alternate" hreflang="ca" href="https://dharmikgohil.art/blog/mobile-game-optimization.html?lang=ca">
-  <link rel="alternate" hreflang="gl" href="https://dharmikgohil.art/blog/mobile-game-optimization.html?lang=gl">
-  <link rel="alternate" hreflang="eu" href="https://dharmikgohil.art/blog/mobile-game-optimization.html?lang=eu">
-  <link rel="alternate" hreflang="lb" href="https://dharmikgohil.art/blog/mobile-game-optimization.html?lang=lb">
-  <link rel="alternate" hreflang="fo" href="https://dharmikgohil.art/blog/mobile-game-optimization.html?lang=fo">
-  <link rel="alternate" hreflang="gd" href="https://dharmikgohil.art/blog/mobile-game-optimization.html?lang=gd">
-  <link rel="alternate" hreflang="co" href="https://dharmikgohil.art/blog/mobile-game-optimization.html?lang=co">
-  <link rel="alternate" hreflang="eo" href="https://dharmikgohil.art/blog/mobile-game-optimization.html?lang=eo">
-  <link rel="alternate" hreflang="la" href="https://dharmikgohil.art/blog/mobile-game-optimization.html?lang=la">
-  <link rel="alternate" hreflang="yi" href="https://dharmikgohil.art/blog/mobile-game-optimization.html?lang=yi">
-  <link rel="alternate" hreflang="ht" href="https://dharmikgohil.art/blog/mobile-game-optimization.html?lang=ht">
-  <link rel="alternate" hreflang="sm" href="https://dharmikgohil.art/blog/mobile-game-optimization.html?lang=sm">
-  <link rel="alternate" hreflang="to" href="https://dharmikgohil.art/blog/mobile-game-optimization.html?lang=to">
-  <link rel="alternate" hreflang="fj" href="https://dharmikgohil.art/blog/mobile-game-optimization.html?lang=fj">
-  <link rel="alternate" hreflang="mi" href="https://dharmikgohil.art/blog/mobile-game-optimization.html?lang=mi">
-  <link rel="alternate" hreflang="haw" href="https://dharmikgohil.art/blog/mobile-game-optimization.html?lang=haw">
-  <link rel="alternate" hreflang="ceb" href="https://dharmikgohil.art/blog/mobile-game-optimization.html?lang=ceb">
-  <link rel="alternate" hreflang="sa" href="https://dharmikgohil.art/blog/mobile-game-optimization.html?lang=sa">
-  <link rel="alternate" hreflang="bho" href="https://dharmikgohil.art/blog/mobile-game-optimization.html?lang=bho">
-  <link rel="alternate" hreflang="mai" href="https://dharmikgohil.art/blog/mobile-game-optimization.html?lang=mai">
-  <link rel="alternate" hreflang="kok" href="https://dharmikgohil.art/blog/mobile-game-optimization.html?lang=kok">
-  <link rel="alternate" hreflang="mni" href="https://dharmikgohil.art/blog/mobile-game-optimization.html?lang=mni">
-  <link rel="alternate" hreflang="sat" href="https://dharmikgohil.art/blog/mobile-game-optimization.html?lang=sat">
-  <link rel="alternate" hreflang="brx" href="https://dharmikgohil.art/blog/mobile-game-optimization.html?lang=brx">
-  <link rel="alternate" hreflang="doi" href="https://dharmikgohil.art/blog/mobile-game-optimization.html?lang=doi">
-  <link rel="alternate" hreflang="lus" href="https://dharmikgohil.art/blog/mobile-game-optimization.html?lang=lus">
-  <link rel="alternate" hreflang="kha" href="https://dharmikgohil.art/blog/mobile-game-optimization.html?lang=kha">
-  <link rel="alternate" hreflang="gar" href="https://dharmikgohil.art/blog/mobile-game-optimization.html?lang=gar">
-  <link rel="alternate" hreflang="tt" href="https://dharmikgohil.art/blog/mobile-game-optimization.html?lang=tt">
-  <link rel="alternate" hreflang="ba" href="https://dharmikgohil.art/blog/mobile-game-optimization.html?lang=ba">
-  <link rel="alternate" hreflang="cv" href="https://dharmikgohil.art/blog/mobile-game-optimization.html?lang=cv">
-  <link rel="alternate" hreflang="sah" href="https://dharmikgohil.art/blog/mobile-game-optimization.html?lang=sah">
-  <link rel="alternate" hreflang="qu" href="https://dharmikgohil.art/blog/mobile-game-optimization.html?lang=qu">
-  <link rel="alternate" hreflang="ay" href="https://dharmikgohil.art/blog/mobile-game-optimization.html?lang=ay">
-  <link rel="alternate" hreflang="gn" href="https://dharmikgohil.art/blog/mobile-game-optimization.html?lang=gn">
-  <link rel="alternate" hreflang="wo" href="https://dharmikgohil.art/blog/mobile-game-optimization.html?lang=wo">
-  <link rel="alternate" hreflang="ff" href="https://dharmikgohil.art/blog/mobile-game-optimization.html?lang=ff">
-  <link rel="alternate" hreflang="bm" href="https://dharmikgohil.art/blog/mobile-game-optimization.html?lang=bm">
-  <link rel="alternate" hreflang="ee" href="https://dharmikgohil.art/blog/mobile-game-optimization.html?lang=ee">
-  <link rel="alternate" hreflang="ak" href="https://dharmikgohil.art/blog/mobile-game-optimization.html?lang=ak">
-  <link rel="alternate" hreflang="lg" href="https://dharmikgohil.art/blog/mobile-game-optimization.html?lang=lg">
-  <link rel="alternate" hreflang="ln" href="https://dharmikgohil.art/blog/mobile-game-optimization.html?lang=ln">
-  <link rel="alternate" hreflang="ki" href="https://dharmikgohil.art/blog/mobile-game-optimization.html?lang=ki">
-  <link rel="alternate" hreflang="fy" href="https://dharmikgohil.art/blog/mobile-game-optimization.html?lang=fy">
-  <link rel="alternate" hreflang="kl" href="https://dharmikgohil.art/blog/mobile-game-optimization.html?lang=kl">
-  <link rel="alternate" hreflang="iu" href="https://dharmikgohil.art/blog/mobile-game-optimization.html?lang=iu">
-  <link rel="alternate" hreflang="chr" href="https://dharmikgohil.art/blog/mobile-game-optimization.html?lang=chr">
-  <link rel="alternate" hreflang="nav" href="https://dharmikgohil.art/blog/mobile-game-optimization.html?lang=nav">
-  <link rel="alternate" hreflang="dv" href="https://dharmikgohil.art/blog/mobile-game-optimization.html?lang=dv">
-  <link rel="alternate" hreflang="dz" href="https://dharmikgohil.art/blog/mobile-game-optimization.html?lang=dz">
-  <link rel="alternate" hreflang="bo" href="https://dharmikgohil.art/blog/mobile-game-optimization.html?lang=bo">
-  <link rel="alternate" hreflang="hmn" href="https://dharmikgohil.art/blog/mobile-game-optimization.html?lang=hmn">
-  <link rel="alternate" hreflang="ilo" href="https://dharmikgohil.art/blog/mobile-game-optimization.html?lang=ilo">
-  <link rel="alternate" hreflang="war" href="https://dharmikgohil.art/blog/mobile-game-optimization.html?lang=war">
-  <link rel="alternate" hreflang="hil" href="https://dharmikgohil.art/blog/mobile-game-optimization.html?lang=hil">
-  <link rel="alternate" hreflang="pam" href="https://dharmikgohil.art/blog/mobile-game-optimization.html?lang=pam">
-  <link rel="alternate" hreflang="bik" href="https://dharmikgohil.art/blog/mobile-game-optimization.html?lang=bik">
-  <link rel="alternate" hreflang="pag" href="https://dharmikgohil.art/blog/mobile-game-optimization.html?lang=pag">
-  <link rel="alternate" hreflang="jw" href="https://dharmikgohil.art/blog/mobile-game-optimization.html?lang=jw">
-  <link rel="alternate" hreflang="sc" href="https://dharmikgohil.art/blog/mobile-game-optimization.html?lang=sc">
-  <link rel="alternate" hreflang="rm" href="https://dharmikgohil.art/blog/mobile-game-optimization.html?lang=rm">
-  <link rel="alternate" hreflang="fur" href="https://dharmikgohil.art/blog/mobile-game-optimization.html?lang=fur">
-  <link rel="alternate" hreflang="vec" href="https://dharmikgohil.art/blog/mobile-game-optimization.html?lang=vec">
-  <link rel="alternate" hreflang="lmo" href="https://dharmikgohil.art/blog/mobile-game-optimization.html?lang=lmo">
-  <link rel="alternate" hreflang="lij" href="https://dharmikgohil.art/blog/mobile-game-optimization.html?lang=lij">
-  <link rel="alternate" hreflang="nap" href="https://dharmikgohil.art/blog/mobile-game-optimization.html?lang=nap">
-  <link rel="alternate" hreflang="scn" href="https://dharmikgohil.art/blog/mobile-game-optimization.html?lang=scn">
-  <link rel="alternate" hreflang="ast" href="https://dharmikgohil.art/blog/mobile-game-optimization.html?lang=ast">
-  <link rel="alternate" hreflang="an" href="https://dharmikgohil.art/blog/mobile-game-optimization.html?lang=an">
-  <link rel="alternate" hreflang="oc" href="https://dharmikgohil.art/blog/mobile-game-optimization.html?lang=oc">
-  <link rel="alternate" hreflang="br" href="https://dharmikgohil.art/blog/mobile-game-optimization.html?lang=br">
-  <link rel="alternate" hreflang="kw" href="https://dharmikgohil.art/blog/mobile-game-optimization.html?lang=kw">
-  <link rel="alternate" hreflang="gv" href="https://dharmikgohil.art/blog/mobile-game-optimization.html?lang=gv">
-  <link rel="alternate" hreflang="se" href="https://dharmikgohil.art/blog/mobile-game-optimization.html?lang=se">
-  <link rel="alternate" hreflang="tyv" href="https://dharmikgohil.art/blog/mobile-game-optimization.html?lang=tyv">
-  <link rel="alternate" hreflang="os" href="https://dharmikgohil.art/blog/mobile-game-optimization.html?lang=os">
-  <link rel="alternate" hreflang="ab" href="https://dharmikgohil.art/blog/mobile-game-optimization.html?lang=ab">
-  <link rel="alternate" hreflang="av" href="https://dharmikgohil.art/blog/mobile-game-optimization.html?lang=av">
-  <link rel="alternate" hreflang="ce" href="https://dharmikgohil.art/blog/mobile-game-optimization.html?lang=ce">
-  <link rel="alternate" hreflang="inh" href="https://dharmikgohil.art/blog/mobile-game-optimization.html?lang=inh">
-  <link rel="alternate" hreflang="lez" href="https://dharmikgohil.art/blog/mobile-game-optimization.html?lang=lez">
-  <link rel="alternate" hreflang="ch" href="https://dharmikgohil.art/blog/mobile-game-optimization.html?lang=ch">
-  <link rel="alternate" hreflang="sg" href="https://dharmikgohil.art/blog/mobile-game-optimization.html?lang=sg">
-  <link rel="alternate" hreflang="rn" href="https://dharmikgohil.art/blog/mobile-game-optimization.html?lang=rn">
-  <link rel="alternate" hreflang="kg" href="https://dharmikgohil.art/blog/mobile-game-optimization.html?lang=kg">
-  <link rel="alternate" hreflang="lu" href="https://dharmikgohil.art/blog/mobile-game-optimization.html?lang=lu">
-  <link rel="alternate" hreflang="tw" href="https://dharmikgohil.art/blog/mobile-game-optimization.html?lang=tw">
-  <link rel="alternate" hreflang="aa" href="https://dharmikgohil.art/blog/mobile-game-optimization.html?lang=aa">
-
-  <!-- ======================================================= -->
-  <!-- GLOBAL GEOGRAPHIC & MULTI-REGION SEO (WORLDWIDE REACH)     -->
-  <!-- ======================================================= -->
-  <meta name="geo.region" content="IN-GJ">
-  <meta name="geo.placename" content="Surat, Gujarat, India; Global Remote Service">
-  <meta name="geo.position" content="21.1702;72.8311">
-  <meta name="ICBM" content="21.1702, 72.8311">
-  <meta name="coverage" content="Worldwide">
-  <meta name="distribution" content="Global">
-  <meta name="target" content="all">
-  <meta name="audience" content="all">
-  <meta name="rating" content="general">
-  <meta name="country" content="GLOBAL">
-  <meta name="geography" content="Global, Worldwide, Remote">
-  <meta name="target_country" content="US, GB, CA, AU, DE, FR, JP, IN, AE, SG, NL, CH, SE, BR, KR, SA, ES, IT, NZ, IE, Global">
-  <meta name="DC.coverage" content="Worldwide">
-  <meta name="DC.Language" content="en, hi, gu, es, fr, de, ja, zh, ru, ar, pt, it, ko, nl, tr, id, vi, pl, sv, uk">
-  <meta name="DC.publisher" content="Dharmik Gohil">
-  <meta name="DC.creator" content="Dharmik Gohil">
-  <meta name="DC.format" content="text/html">
-  <meta name="DC.type" content="InteractiveResource">
-
-  <!-- ======================================================= -->
-  <!-- MULTILINGUAL OPEN GRAPH ALTERNATE LOCALES                -->
-  <!-- ======================================================= -->
-  <meta property="og:locale:alternate" content="en_GB">
-  <meta property="og:locale:alternate" content="en_CA">
-  <meta property="og:locale:alternate" content="en_AU">
-  <meta property="og:locale:alternate" content="en_IN">
-  <meta property="og:locale:alternate" content="en_NZ">
-  <meta property="og:locale:alternate" content="en_ZA">
-  <meta property="og:locale:alternate" content="es_ES">
-  <meta property="og:locale:alternate" content="es_LA">
-  <meta property="og:locale:alternate" content="es_MX">
-  <meta property="og:locale:alternate" content="fr_FR">
-  <meta property="og:locale:alternate" content="fr_CA">
-  <meta property="og:locale:alternate" content="de_DE">
-  <meta property="og:locale:alternate" content="de_AT">
-  <meta property="og:locale:alternate" content="de_CH">
-  <meta property="og:locale:alternate" content="it_IT">
-  <meta property="og:locale:alternate" content="pt_BR">
-  <meta property="og:locale:alternate" content="pt_PT">
-  <meta property="og:locale:alternate" content="ru_RU">
-  <meta property="og:locale:alternate" content="ja_JP">
-  <meta property="og:locale:alternate" content="zh_CN">
-  <meta property="og:locale:alternate" content="zh_TW">
-  <meta property="og:locale:alternate" content="zh_HK">
-  <meta property="og:locale:alternate" content="ko_KR">
-  <meta property="og:locale:alternate" content="ar_AR">
-  <meta property="og:locale:alternate" content="hi_IN">
-  <meta property="og:locale:alternate" content="gu_IN">
-  <meta property="og:locale:alternate" content="bn_IN">
-  <meta property="og:locale:alternate" content="pa_IN">
-  <meta property="og:locale:alternate" content="mr_IN">
-  <meta property="og:locale:alternate" content="ta_IN">
-  <meta property="og:locale:alternate" content="te_IN">
-  <meta property="og:locale:alternate" content="ur_PK">
-  <meta property="og:locale:alternate" content="tr_TR">
-  <meta property="og:locale:alternate" content="vi_VN">
-  <meta property="og:locale:alternate" content="th_TH">
-  <meta property="og:locale:alternate" content="id_ID">
-  <meta property="og:locale:alternate" content="ms_MY">
-  <meta property="og:locale:alternate" content="nl_NL">
-  <meta property="og:locale:alternate" content="pl_PL">
-  <meta property="og:locale:alternate" content="sv_SE">
-  <meta property="og:locale:alternate" content="da_DK">
-  <meta property="og:locale:alternate" content="fi_FI">
-  <meta property="og:locale:alternate" content="nb_NO">
-  <meta property="og:locale:alternate" content="el_GR">
-  <meta property="og:locale:alternate" content="he_IL">
-  <meta property="og:locale:alternate" content="cs_CZ">
-  <meta property="og:locale:alternate" content="hu_HU">
-  <meta property="og:locale:alternate" content="ro_RO">
-  <meta property="og:locale:alternate" content="uk_UA">
-
-  <!-- ======================================================= -->
-  <!-- MULTILINGUAL KEYWORDS FOR GLOBAL ORGANIC DISCOVERY          -->
-  <!-- ======================================================= -->
-  <meta name="keywords:multilingual" content="hire game developer india, unity developer, XR developer, contratar desarrollador videojuegos, développeur jeux vidéo unity, Unity Spieleentwickler, ゲーム開発者 依頼, 聘请游戏开发者, गेम डेवलपर, ગેમ ડેવલપર, توظيف مطور ألعاب, desenvolvedor de jogos, unity разработчик, sviluppatore videogiochi, 게임 개발자, Unity ontwikelaar, gry developer, oyun geliştirici, pengembang game">
-
-  <!-- ======================================================= -->
-  <!-- SCHEMA.ORG 200+ LANGUAGES & WORLDWIDE GEO TARGETING         -->
-  <!-- ======================================================= -->
-  <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "ProfessionalService",
-  "@id": "https://dharmikgohil.art/blog/mobile-game-optimization.html#globalservice",
-  "name": "Dharmik Gohil — Global Unity Game Developer & XR Specialist",
-  "url": "https://dharmikgohil.art/blog/mobile-game-optimization.html",
-  "image": "https://dharmikgohil.art/assets/img/dharmik-profile-photo-2026.jpg",
-  "description": "Worldwide game development and XR engineering services by Dharmik Gohil. Shipped 10+ titles, IIT Bombay Techfest winner, available globally for Unity 3D, multiplayer (Photon PUN), AR/VR, and full-stack solutions.",
-  "currenciesAccepted": "USD, EUR, GBP, INR, AED, CAD, AUD, JPY, SGD",
-  "paymentAccepted": "Credit Card, Wire Transfer, Wise, PayPal, Cryptocurrency, UPI",
-  "priceRange": "$$",
-  "areaServed": [
-    {
-      "@type": "Place",
-      "name": "Worldwide"
-    },
-    {
-      "@type": "Continent",
-      "name": "North America"
-    },
-    {
-      "@type": "Continent",
-      "name": "Europe"
-    },
-    {
-      "@type": "Continent",
-      "name": "Asia"
-    },
-    {
-      "@type": "Continent",
-      "name": "Oceania"
-    },
-    {
-      "@type": "Continent",
-      "name": "South America"
-    },
-    {
-      "@type": "Continent",
-      "name": "Africa"
-    },
-    {
-      "@type": "Country",
-      "name": "United States",
-      "identifier": "US"
-    },
-    {
-      "@type": "Country",
-      "name": "United Kingdom",
-      "identifier": "GB"
-    },
-    {
-      "@type": "Country",
-      "name": "India",
-      "identifier": "IN"
-    },
-    {
-      "@type": "Country",
-      "name": "Canada",
-      "identifier": "CA"
-    },
-    {
-      "@type": "Country",
-      "name": "Australia",
-      "identifier": "AU"
-    },
-    {
-      "@type": "Country",
-      "name": "Germany",
-      "identifier": "DE"
-    },
-    {
-      "@type": "Country",
-      "name": "France",
-      "identifier": "FR"
-    },
-    {
-      "@type": "Country",
-      "name": "Japan",
-      "identifier": "JP"
-    },
-    {
-      "@type": "Country",
-      "name": "United Arab Emirates",
-      "identifier": "AE"
-    },
-    {
-      "@type": "Country",
-      "name": "Singapore",
-      "identifier": "SG"
-    },
-    {
-      "@type": "Country",
-      "name": "Switzerland",
-      "identifier": "CH"
-    },
-    {
-      "@type": "Country",
-      "name": "Netherlands",
-      "identifier": "NL"
-    },
-    {
-      "@type": "Country",
-      "name": "Sweden",
-      "identifier": "SE"
-    },
-    {
-      "@type": "Country",
-      "name": "Saudi Arabia",
-      "identifier": "SA"
-    },
-    {
-      "@type": "Country",
-      "name": "Brazil",
-      "identifier": "BR"
-    },
-    {
-      "@type": "Country",
-      "name": "South Korea",
-      "identifier": "KR"
-    },
-    {
-      "@type": "Country",
-      "name": "New Zealand",
-      "identifier": "NZ"
-    },
-    {
-      "@type": "Country",
-      "name": "Ireland",
-      "identifier": "IE"
-    },
-    {
-      "@type": "Country",
-      "name": "Spain",
-      "identifier": "ES"
-    },
-    {
-      "@type": "Country",
-      "name": "Italy",
-      "identifier": "IT"
-    },
-    {
-      "@type": "Country",
-      "name": "Norway",
-      "identifier": "NO"
-    },
-    {
-      "@type": "Country",
-      "name": "Denmark",
-      "identifier": "DK"
-    },
-    {
-      "@type": "Country",
-      "name": "Finland",
-      "identifier": "FI"
-    },
-    {
-      "@type": "Country",
-      "name": "Poland",
-      "identifier": "PL"
-    },
-    {
-      "@type": "Country",
-      "name": "Mexico",
-      "identifier": "MX"
-    },
-    {
-      "@type": "Country",
-      "name": "Indonesia",
-      "identifier": "ID"
-    }
-  ],
-  "availableLanguage": [
-    "English (en)",
-    "English (US) (en-US)",
-    "English (UK) (en-GB)",
-    "English (Canada) (en-CA)",
-    "English (Australia) (en-AU)",
-    "English (India) (en-IN)",
-    "English (New Zealand) (en-NZ)",
-    "English (Ireland) (en-IE)",
-    "English (Singapore) (en-SG)",
-    "English (South Africa) (en-ZA)",
-    "English (UAE) (en-AE)",
-    "Spanish (es)",
-    "Spanish (Spain) (es-ES)",
-    "Spanish (Mexico) (es-MX)",
-    "Spanish (Argentina) (es-AR)",
-    "Spanish (Colombia) (es-CO)",
-    "Spanish (Chile) (es-CL)",
-    "Spanish (Peru) (es-PE)",
-    "Spanish (Venezuela) (es-VE)",
-    "French (fr)",
-    "French (France) (fr-FR)",
-    "French (Canada) (fr-CA)",
-    "French (Belgium) (fr-BE)",
-    "French (Switzerland) (fr-CH)",
-    "German (de)",
-    "German (Germany) (de-DE)",
-    "German (Austria) (de-AT)",
-    "German (Switzerland) (de-CH)",
-    "Italian (it)",
-    "Italian (Italy) (it-IT)",
-    "Italian (Switzerland) (it-CH)",
-    "Portuguese (pt)",
-    "Portuguese (Brazil) (pt-BR)",
-    "Portuguese (Portugal) (pt-PT)",
-    "Russian (ru)",
-    "Russian (Russia) (ru-RU)",
-    "Japanese (ja)",
-    "Japanese (Japan) (ja-JP)",
-    "Chinese (zh)",
-    "Chinese (Simplified) (zh-CN)",
-    "Chinese (Traditional) (zh-TW)",
-    "Chinese (Hong Kong) (zh-HK)",
-    "Chinese (Singapore) (zh-SG)",
-    "Chinese (Simplified script) (zh-Hans)",
-    "Chinese (Traditional script) (zh-Hant)",
-    "Korean (ko)",
-    "Korean (South Korea) (ko-KR)",
-    "Arabic (ar)",
-    "Arabic (Saudi Arabia) (ar-SA)",
-    "Arabic (UAE) (ar-AE)",
-    "Arabic (Egypt) (ar-EG)",
-    "Arabic (Qatar) (ar-QA)",
-    "Arabic (Kuwait) (ar-KW)",
-    "Hindi (hi)",
-    "Hindi (India) (hi-IN)",
-    "Gujarati (gu)",
-    "Gujarati (India) (gu-IN)",
-    "Bengali (bn)",
-    "Bengali (Bangladesh) (bn-BD)",
-    "Bengali (India) (bn-IN)",
-    "Punjabi (pa)",
-    "Punjabi (India) (pa-IN)",
-    "Punjabi (Pakistan) (pa-PK)",
-    "Marathi (mr)",
-    "Marathi (India) (mr-IN)",
-    "Telugu (te)",
-    "Telugu (India) (te-IN)",
-    "Tamil (ta)",
-    "Tamil (India) (ta-IN)",
-    "Tamil (Sri Lanka) (ta-LK)",
-    "Tamil (Singapore) (ta-SG)",
-    "Urdu (ur)",
-    "Urdu (Pakistan) (ur-PK)",
-    "Urdu (India) (ur-IN)",
-    "Kannada (kn)",
-    "Kannada (India) (kn-IN)",
-    "Malayalam (ml)",
-    "Malayalam (India) (ml-IN)",
-    "Odia (or)",
-    "Assamese (as)",
-    "Nepali (ne)",
-    "Nepali (Nepal) (ne-NP)",
-    "Sinhala (si)",
-    "Sinhala (Sri Lanka) (si-LK)",
-    "Turkish (tr)",
-    "Turkish (Turkey) (tr-TR)",
-    "Vietnamese (vi)",
-    "Vietnamese (Vietnam) (vi-VN)",
-    "Thai (th)",
-    "Thai (Thailand) (th-TH)",
-    "Indonesian (id)",
-    "Indonesian (Indonesia) (id-ID)",
-    "Malay (ms)",
-    "Malay (Malaysia) (ms-MY)",
-    "Tagalog (tl)",
-    "Filipino (fil)",
-    "Burmese (my)",
-    "Khmer (km)",
-    "Lao (lo)",
-    "Javanese (jv)",
-    "Sundanese (su)",
-    "Dutch (nl)",
-    "Dutch (Netherlands) (nl-NL)",
-    "Dutch (Belgium) (nl-BE)",
-    "Polish (pl)",
-    "Polish (Poland) (pl-PL)",
-    "Ukrainian (uk)",
-    "Ukrainian (Ukraine) (uk-UA)",
-    "Persian (fa)",
-    "Persian (Iran) (fa-IR)",
-    "Hebrew (he)",
-    "Hebrew (Israel) (he-IL)",
-    "Greek (el)",
-    "Greek (Greece) (el-GR)",
-    "Swedish (sv)",
-    "Swedish (Sweden) (sv-SE)",
-    "Norwegian (no)",
-    "Norwegian Bokmål (nb)",
-    "Norwegian Nynorsk (nn)",
-    "Danish (da)",
-    "Danish (Denmark) (da-DK)",
-    "Finnish (fi)",
-    "Finnish (Finland) (fi-FI)",
-    "Czech (cs)",
-    "Czech (Czechia) (cs-CZ)",
-    "Romanian (ro)",
-    "Romanian (Romania) (ro-RO)",
-    "Hungarian (hu)",
-    "Hungarian (Hungary) (hu-HU)",
-    "Slovak (sk)",
-    "Slovak (Slovakia) (sk-SK)",
-    "Bulgarian (bg)",
-    "Bulgarian (Bulgaria) (bg-BG)",
-    "Serbian (sr)",
-    "Serbian (Serbia) (sr-RS)",
-    "Croatian (hr)",
-    "Croatian (Croatia) (hr-HR)",
-    "Lithuanian (lt)",
-    "Lithuanian (Lithuania) (lt-LT)",
-    "Latvian (lv)",
-    "Latvian (Latvia) (lv-LV)",
-    "Estonian (et)",
-    "Estonian (Estonia) (et-EE)",
-    "Slovenian (sl)",
-    "Slovenian (Slovenia) (sl-SI)",
-    "Irish (ga)",
-    "Irish (Ireland) (ga-IE)",
-    "Welsh (cy)",
-    "Welsh (UK) (cy-GB)",
-    "Icelandic (is)",
-    "Icelandic (Iceland) (is-IS)",
-    "Maltese (mt)",
-    "Albanian (sq)",
-    "Macedonian (mk)",
-    "Bosnian (bs)",
-    "Azerbaijani (az)",
-    "Georgian (ka)",
-    "Armenian (hy)",
-    "Kazakh (kk)",
-    "Uzbek (uz)",
-    "Mongolian (mn)",
-    "Swahili (sw)",
-    "Swahili (Kenya) (sw-KE)",
-    "Swahili (Tanzania) (sw-TZ)",
-    "Afrikaans (af)",
-    "Amharic (am)",
-    "Hausa (ha)",
-    "Yoruba (yo)",
-    "Igbo (ig)",
-    "Zulu (zu)",
-    "Xhosa (xh)",
-    "Somali (so)",
-    "Kinyarwanda (rw)",
-    "Malagasy (mg)",
-    "Shona (sn)",
-    "Chichewa (ny)",
-    "Sesotho (st)",
-    "Tswana (tn)",
-    "Tsonga (ts)",
-    "Swati (ss)",
-    "Venda (ve)",
-    "South Ndebele (nr)",
-    "Oromo (om)",
-    "Tigrinya (ti)",
-    "Tajik (tg)",
-    "Turkmen (tk)",
-    "Kyrgyz (ky)",
-    "Pashto (ps)",
-    "Kurdish (ku)",
-    "Sindhi (sd)",
-    "Uyghur (ug)",
-    "Belarusian (be)",
-    "Catalan (ca)",
-    "Galician (gl)",
-    "Basque (eu)",
-    "Luxembourgish (lb)",
-    "Faroese (fo)",
-    "Scottish Gaelic (gd)",
-    "Corsican (co)",
-    "Esperanto (eo)",
-    "Latin (la)",
-    "Yiddish (yi)",
-    "Haitian Creole (ht)",
-    "Samoan (sm)",
-    "Tongan (to)",
-    "Fijian (fj)",
-    "Maori (mi)",
-    "Hawaiian (haw)",
-    "Cebuano (ceb)",
-    "Sanskrit (sa)",
-    "Bhojpuri (bho)",
-    "Maithili (mai)",
-    "Konkani (kok)",
-    "Manipuri (mni)",
-    "Santali (sat)",
-    "Bodo (brx)",
-    "Dogri (doi)",
-    "Mizo (lus)",
-    "Khasi (kha)",
-    "Garo (gar)",
-    "Tatar (tt)",
-    "Bashkir (ba)",
-    "Chuvash (cv)",
-    "Sakha (Yakut) (sah)",
-    "Quechua (qu)",
-    "Aymara (ay)",
-    "Guarani (gn)",
-    "Wolof (wo)",
-    "Fulah (ff)",
-    "Bambara (bm)",
-    "Ewe (ee)",
-    "Akan (ak)",
-    "Ganda (Luganda) (lg)",
-    "Lingala (ln)",
-    "Kikuyu (ki)",
-    "Western Frisian (fy)",
-    "Greenlandic (kl)",
-    "Inuktitut (iu)",
-    "Cherokee (chr)",
-    "Navajo (nav)",
-    "Divehi (dv)",
-    "Dzongkha (dz)",
-    "Tibetan (bo)",
-    "Hmong (hmn)",
-    "Ilocano (ilo)",
-    "Waray (war)",
-    "Hiligaynon (hil)",
-    "Kapampangan (pam)",
-    "Bikol (bik)",
-    "Pangasinan (pag)",
-    "Javanese (jw)",
-    "Sardinian (sc)",
-    "Romansh (rm)",
-    "Friulian (fur)",
-    "Venetian (vec)",
-    "Lombard (lmo)",
-    "Ligurian (lij)",
-    "Neapolitan (nap)",
-    "Sicilian (scn)",
-    "Asturian (ast)",
-    "Aragonese (an)",
-    "Occitan (oc)",
-    "Breton (br)",
-    "Cornish (kw)",
-    "Manx (gv)",
-    "Northern Sami (se)",
-    "Tuvan (tyv)",
-    "Ossetian (os)",
-    "Abkhaz (ab)",
-    "Avar (av)",
-    "Chechen (ce)",
-    "Ingush (inh)",
-    "Lezgian (lez)",
-    "Chamorro (ch)",
-    "Sango (sg)",
-    "Rundi (rn)",
-    "Kongo (kg)",
-    "Luba-Katanga (lu)",
-    "Twi (tw)",
-    "Afar (aa)"
-  ],
-  "hasOfferCatalog": {
-    "@type": "OfferCatalog",
-    "name": "Global Game Development & XR Engineering Services",
-    "itemListElement": [
-      {
-        "@type": "Offer",
-        "name": "Unity 3D/2D Game Development",
-        "category": "Game Development"
-      },
-      {
-        "@type": "Offer",
-        "name": "Photon PUN Multiplayer Game Networking",
-        "category": "Multiplayer Games"
-      },
-      {
-        "@type": "Offer",
-        "name": "AR/VR/XR Spatial Computing Experiences",
-        "category": "XR Development"
-      },
-      {
-        "@type": "Offer",
-        "name": "Full Stack Web & Web3 Development",
-        "category": "Web Applications"
-      }
-    ]
-  },
-  "contactPoint": {
-    "@type": "ContactPoint",
-    "contactType": "Worldwide Client Inquiries & Bookings",
-    "email": "dharmikgohil.work@gmail.com",
-    "url": "https://dharmikgohil.art/contact.html",
-    "areaServed": "Worldwide",
-    "availableLanguage": [
-      "English (en)",
-      "English (US) (en-US)",
-      "English (UK) (en-GB)",
-      "English (Canada) (en-CA)",
-      "English (Australia) (en-AU)",
-      "English (India) (en-IN)",
-      "English (New Zealand) (en-NZ)",
-      "English (Ireland) (en-IE)",
-      "English (Singapore) (en-SG)",
-      "English (South Africa) (en-ZA)",
-      "English (UAE) (en-AE)",
-      "Spanish (es)",
-      "Spanish (Spain) (es-ES)",
-      "Spanish (Mexico) (es-MX)",
-      "Spanish (Argentina) (es-AR)",
-      "Spanish (Colombia) (es-CO)",
-      "Spanish (Chile) (es-CL)",
-      "Spanish (Peru) (es-PE)",
-      "Spanish (Venezuela) (es-VE)",
-      "French (fr)",
-      "French (France) (fr-FR)",
-      "French (Canada) (fr-CA)",
-      "French (Belgium) (fr-BE)",
-      "French (Switzerland) (fr-CH)",
-      "German (de)",
-      "German (Germany) (de-DE)",
-      "German (Austria) (de-AT)",
-      "German (Switzerland) (de-CH)",
-      "Italian (it)",
-      "Italian (Italy) (it-IT)",
-      "Italian (Switzerland) (it-CH)",
-      "Portuguese (pt)",
-      "Portuguese (Brazil) (pt-BR)",
-      "Portuguese (Portugal) (pt-PT)",
-      "Russian (ru)",
-      "Russian (Russia) (ru-RU)",
-      "Japanese (ja)",
-      "Japanese (Japan) (ja-JP)",
-      "Chinese (zh)",
-      "Chinese (Simplified) (zh-CN)",
-      "Chinese (Traditional) (zh-TW)",
-      "Chinese (Hong Kong) (zh-HK)",
-      "Chinese (Singapore) (zh-SG)",
-      "Chinese (Simplified script) (zh-Hans)",
-      "Chinese (Traditional script) (zh-Hant)",
-      "Korean (ko)",
-      "Korean (South Korea) (ko-KR)",
-      "Arabic (ar)",
-      "Arabic (Saudi Arabia) (ar-SA)",
-      "Arabic (UAE) (ar-AE)",
-      "Arabic (Egypt) (ar-EG)",
-      "Arabic (Qatar) (ar-QA)",
-      "Arabic (Kuwait) (ar-KW)",
-      "Hindi (hi)",
-      "Hindi (India) (hi-IN)",
-      "Gujarati (gu)",
-      "Gujarati (India) (gu-IN)",
-      "Bengali (bn)",
-      "Bengali (Bangladesh) (bn-BD)",
-      "Bengali (India) (bn-IN)",
-      "Punjabi (pa)",
-      "Punjabi (India) (pa-IN)",
-      "Punjabi (Pakistan) (pa-PK)",
-      "Marathi (mr)",
-      "Marathi (India) (mr-IN)",
-      "Telugu (te)",
-      "Telugu (India) (te-IN)",
-      "Tamil (ta)",
-      "Tamil (India) (ta-IN)",
-      "Tamil (Sri Lanka) (ta-LK)",
-      "Tamil (Singapore) (ta-SG)",
-      "Urdu (ur)",
-      "Urdu (Pakistan) (ur-PK)",
-      "Urdu (India) (ur-IN)",
-      "Kannada (kn)",
-      "Kannada (India) (kn-IN)",
-      "Malayalam (ml)",
-      "Malayalam (India) (ml-IN)",
-      "Odia (or)",
-      "Assamese (as)",
-      "Nepali (ne)",
-      "Nepali (Nepal) (ne-NP)",
-      "Sinhala (si)",
-      "Sinhala (Sri Lanka) (si-LK)",
-      "Turkish (tr)",
-      "Turkish (Turkey) (tr-TR)",
-      "Vietnamese (vi)",
-      "Vietnamese (Vietnam) (vi-VN)",
-      "Thai (th)",
-      "Thai (Thailand) (th-TH)",
-      "Indonesian (id)",
-      "Indonesian (Indonesia) (id-ID)",
-      "Malay (ms)",
-      "Malay (Malaysia) (ms-MY)",
-      "Tagalog (tl)",
-      "Filipino (fil)",
-      "Burmese (my)",
-      "Khmer (km)",
-      "Lao (lo)",
-      "Javanese (jv)",
-      "Sundanese (su)",
-      "Dutch (nl)",
-      "Dutch (Netherlands) (nl-NL)",
-      "Dutch (Belgium) (nl-BE)",
-      "Polish (pl)",
-      "Polish (Poland) (pl-PL)",
-      "Ukrainian (uk)",
-      "Ukrainian (Ukraine) (uk-UA)",
-      "Persian (fa)",
-      "Persian (Iran) (fa-IR)",
-      "Hebrew (he)",
-      "Hebrew (Israel) (he-IL)",
-      "Greek (el)",
-      "Greek (Greece) (el-GR)",
-      "Swedish (sv)",
-      "Swedish (Sweden) (sv-SE)",
-      "Norwegian (no)",
-      "Norwegian Bokmål (nb)",
-      "Norwegian Nynorsk (nn)",
-      "Danish (da)",
-      "Danish (Denmark) (da-DK)",
-      "Finnish (fi)",
-      "Finnish (Finland) (fi-FI)",
-      "Czech (cs)",
-      "Czech (Czechia) (cs-CZ)",
-      "Romanian (ro)",
-      "Romanian (Romania) (ro-RO)",
-      "Hungarian (hu)",
-      "Hungarian (Hungary) (hu-HU)",
-      "Slovak (sk)",
-      "Slovak (Slovakia) (sk-SK)",
-      "Bulgarian (bg)",
-      "Bulgarian (Bulgaria) (bg-BG)",
-      "Serbian (sr)",
-      "Serbian (Serbia) (sr-RS)",
-      "Croatian (hr)",
-      "Croatian (Croatia) (hr-HR)",
-      "Lithuanian (lt)",
-      "Lithuanian (Lithuania) (lt-LT)",
-      "Latvian (lv)",
-      "Latvian (Latvia) (lv-LV)",
-      "Estonian (et)",
-      "Estonian (Estonia) (et-EE)",
-      "Slovenian (sl)",
-      "Slovenian (Slovenia) (sl-SI)",
-      "Irish (ga)",
-      "Irish (Ireland) (ga-IE)",
-      "Welsh (cy)",
-      "Welsh (UK) (cy-GB)",
-      "Icelandic (is)",
-      "Icelandic (Iceland) (is-IS)",
-      "Maltese (mt)",
-      "Albanian (sq)",
-      "Macedonian (mk)",
-      "Bosnian (bs)",
-      "Azerbaijani (az)",
-      "Georgian (ka)",
-      "Armenian (hy)",
-      "Kazakh (kk)",
-      "Uzbek (uz)",
-      "Mongolian (mn)",
-      "Swahili (sw)",
-      "Swahili (Kenya) (sw-KE)",
-      "Swahili (Tanzania) (sw-TZ)",
-      "Afrikaans (af)",
-      "Amharic (am)",
-      "Hausa (ha)",
-      "Yoruba (yo)",
-      "Igbo (ig)",
-      "Zulu (zu)",
-      "Xhosa (xh)",
-      "Somali (so)",
-      "Kinyarwanda (rw)",
-      "Malagasy (mg)",
-      "Shona (sn)",
-      "Chichewa (ny)",
-      "Sesotho (st)",
-      "Tswana (tn)",
-      "Tsonga (ts)",
-      "Swati (ss)",
-      "Venda (ve)",
-      "South Ndebele (nr)",
-      "Oromo (om)",
-      "Tigrinya (ti)",
-      "Tajik (tg)",
-      "Turkmen (tk)",
-      "Kyrgyz (ky)",
-      "Pashto (ps)",
-      "Kurdish (ku)",
-      "Sindhi (sd)",
-      "Uyghur (ug)",
-      "Belarusian (be)",
-      "Catalan (ca)",
-      "Galician (gl)",
-      "Basque (eu)",
-      "Luxembourgish (lb)",
-      "Faroese (fo)",
-      "Scottish Gaelic (gd)",
-      "Corsican (co)",
-      "Esperanto (eo)",
-      "Latin (la)",
-      "Yiddish (yi)",
-      "Haitian Creole (ht)",
-      "Samoan (sm)",
-      "Tongan (to)",
-      "Fijian (fj)",
-      "Maori (mi)",
-      "Hawaiian (haw)",
-      "Cebuano (ceb)",
-      "Sanskrit (sa)",
-      "Bhojpuri (bho)",
-      "Maithili (mai)",
-      "Konkani (kok)",
-      "Manipuri (mni)",
-      "Santali (sat)",
-      "Bodo (brx)",
-      "Dogri (doi)",
-      "Mizo (lus)",
-      "Khasi (kha)",
-      "Garo (gar)",
-      "Tatar (tt)",
-      "Bashkir (ba)",
-      "Chuvash (cv)",
-      "Sakha (Yakut) (sah)",
-      "Quechua (qu)",
-      "Aymara (ay)",
-      "Guarani (gn)",
-      "Wolof (wo)",
-      "Fulah (ff)",
-      "Bambara (bm)",
-      "Ewe (ee)",
-      "Akan (ak)",
-      "Ganda (Luganda) (lg)",
-      "Lingala (ln)",
-      "Kikuyu (ki)",
-      "Western Frisian (fy)",
-      "Greenlandic (kl)",
-      "Inuktitut (iu)",
-      "Cherokee (chr)",
-      "Navajo (nav)",
-      "Divehi (dv)",
-      "Dzongkha (dz)",
-      "Tibetan (bo)",
-      "Hmong (hmn)",
-      "Ilocano (ilo)",
-      "Waray (war)",
-      "Hiligaynon (hil)",
-      "Kapampangan (pam)",
-      "Bikol (bik)",
-      "Pangasinan (pag)",
-      "Javanese (jw)",
-      "Sardinian (sc)",
-      "Romansh (rm)",
-      "Friulian (fur)",
-      "Venetian (vec)",
-      "Lombard (lmo)",
-      "Ligurian (lij)",
-      "Neapolitan (nap)",
-      "Sicilian (scn)",
-      "Asturian (ast)",
-      "Aragonese (an)",
-      "Occitan (oc)",
-      "Breton (br)",
-      "Cornish (kw)",
-      "Manx (gv)",
-      "Northern Sami (se)",
-      "Tuvan (tyv)",
-      "Ossetian (os)",
-      "Abkhaz (ab)",
-      "Avar (av)",
-      "Chechen (ce)",
-      "Ingush (inh)",
-      "Lezgian (lez)",
-      "Chamorro (ch)",
-      "Sango (sg)",
-      "Rundi (rn)",
-      "Kongo (kg)",
-      "Luba-Katanga (lu)",
-      "Twi (tw)",
-      "Afar (aa)"
-    ]
-  }
-}
-  </script>
-
-  <link rel="stylesheet" href="../assets/css/global-multilingual.css">
-
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-GE7F8SZSJ9');</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"BlogPosting","@id":"https://dharmikgohil.art/blog/mobile-game-optimization.html#article","headline":"Essential Mobile Game Optimization Techniques for Unity Developers","description":"Make Unity games run smoothly on phones: understand hardware limits, reduce draw calls, compress textures, manage memory and profile on real devices.","image":["https://dharmikgohil.art/assets/img/floopy.webp"],"datePublished":"2025-08-18","dateModified":"2026-10-08","inLanguage":"en","author":{"@type":"Person","@id":"https://dharmikgohil.art/#person","name":"Dharmik Gohil","url":"https://dharmikgohil.art/","jobTitle":"Unity Game Developer & XR Engineer","sameAs":["https://github.com/DharmikGohil013","https://www.linkedin.com/in/dharmikgohil086/","https://x.com/Dharmik086","https://dharmikgohil.itch.io/"]},"publisher":{"@type":"Organization","name":"Dharmik Gohil","url":"https://dharmikgohil.art/","logo":{"@type":"ImageObject","url":"https://dharmikgohil.art/assets/img/logo.png"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://dharmikgohil.art/blog/mobile-game-optimization.html"},"isPartOf":{"@type":"Blog","@id":"https://dharmikgohil.art/blog.html#blog","name":"Dharmik Gohil Blog","url":"https://dharmikgohil.art/blog.html"},"articleSection":"Unity Game Development","keywords":"Mobile Games, Optimization, Unity Profiler, Performance","wordCount":960,"timeRequired":"PT5M","about":[{"@type":"Thing","name":"Mobile Games"},{"@type":"Thing","name":"Optimization"},{"@type":"Thing","name":"Unity Profiler"},{"@type":"Thing","name":"Performance"}]},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://dharmikgohil.art/"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://dharmikgohil.art/blog.html"},{"@type":"ListItem","position":3,"name":"Unity Game Development","item":"https://dharmikgohil.art/blog/topics/unity-game-development.html"},{"@type":"ListItem","position":4,"name":"Essential Mobile Game Optimization Techniques for Unity Developers","item":"https://dharmikgohil.art/blog/mobile-game-optimization.html"}]},{"@type":"FAQPage","@id":"https://dharmikgohil.art/blog/mobile-game-optimization.html#faq","mainEntity":[{"@type":"Question","name":"How do I improve Unity performance on mobile?","acceptedAnswer":{"@type":"Answer","text":"Reduce draw calls with batching and atlases, compress textures, limit real-time lights and overdraw, pool objects, and profile on actual devices."}},{"@type":"Question","name":"What frame rate should a mobile game target?","acceptedAnswer":{"@type":"Answer","text":"Most mobile games target 30 or 60 FPS. Pick one early and design your budget around it, since consistency matters more than a high peak."}},{"@type":"Question","name":"Why does my game run fine in the editor but lag on phones?","acceptedAnswer":{"@type":"Answer","text":"Phones have far weaker GPUs, less memory and thermal throttling. Editor results ignore those limits, so always test builds on target hardware."}}]}]}</script>
 </head>
+<body class="blog-post-page index-page">
+  <div class="read-progress" aria-hidden="true"><i></i></div>
 
-<body class="blog-post-page">
-
+  <div class="masthead-mobile-drawer" id="mobileDrawer">
+    <div class="drawer-header"><div class="drawer-title">THE DHARMIK GOHIL CHRONICLE</div><button class="drawer-close-btn" id="closeDrawerBtn">✕ CLOSE</button></div>
+    <div class="drawer-body">
+      <nav class="drawer-nav-links" aria-label="Mobile">
+        <a href="../index.html">HOME</a><a href="../services.html">ABILITIES</a>
+        <div class="drawer-accordion"><button class="drawer-accordion-trigger">MY GAMES <span class="accordion-arrow">▼</span></button><div class="drawer-accordion-content"><a href="https://dharmikgohil.itch.io/mavericks-battlegrounds" target="_blank" rel="noopener">MAVERICKS BATTLEGROUND</a><a href="https://dharmik086.itch.io/floppy-bird-860" target="_blank" rel="noopener">FLOPPY BIRD</a><a href="https://dharmikgohil.itch.io/facade" target="_blank" rel="noopener">FACADE</a><a href="https://dharmikgohil.itch.io/go-galaxy" target="_blank" rel="noopener">GO GALAXY</a><a href="https://dharmikgohil.itch.io/drone-training" target="_blank" rel="noopener">DRONE TRAINING</a><a href="https://dharmikgohil.itch.io/hook-shot" target="_blank" rel="noopener">HOOK SHOT</a><a href="https://lowxena.dharmikgohil.art/" target="_blank" rel="noopener">LOWXENA</a></div></div>
+        <div class="drawer-accordion"><button class="drawer-accordion-trigger">LIVE PROJECTS <span class="accordion-arrow">▼</span></button><div class="drawer-accordion-content"><a href="../assets/Fit Sync.apk" download>FITSYNC APP (APK)</a><a href="https://actify.dharmikgohil.art/" target="_blank" rel="noopener">ACTIFY</a><a href="https://learnlink.dharmikgohil.art" target="_blank" rel="noopener">LEARN LINK</a><a href="http://gdgs.dharmikgohil.art/" target="_blank" rel="noopener">GDGS GAMES</a><a href="http://flipcart.dharmikgohil.art/" target="_blank" rel="noopener">FLIPKART CLONE</a><a href="http://krishna.dharmikgohil.art/" target="_blank" rel="noopener">KRISHNA CONSTRUCTION</a><a href="https://fkm.vercel.app/" target="_blank" rel="noopener">WIFI SERVICE</a></div></div>
+        <a href="../Achivemtn.html">ACHIEVEMENTS</a><a href="../blog.html" class="active">BLOG</a><a href="../contact.html">CONTACT</a><a href="../assets/img/Dharmik Gohil Game Desginer.pdf" target="_blank" rel="noopener">RESUME</a>
+      </nav>
+      <div class="drawer-footer"><div class="drawer-social-links"><a href="https://github.com/DharmikGohil013" target="_blank" rel="noopener" aria-label="GitHub"><i class="bi bi-github"></i></a><a href="https://www.linkedin.com/in/dharmikgohil086/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a><a href="https://x.com/Dharmik086" target="_blank" rel="noopener" aria-label="Twitter / X"><i class="bi bi-twitter-x"></i></a><a href="https://dharmikgohil.itch.io/" target="_blank" rel="noopener" aria-label="Itch.io"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 24 24" style="vertical-align: -0.125em; display: inline-block;"><path d="M10.387 1.414c-1.34.02-2.887.235-4.238.653C2.863 3.085.922 5.378.13 8.358c-.378 1.423-.197 2.766.453 3.961.503.926 1.34 1.636 2.378 1.996.126.044.254.088.384.133L5 18h14l1.656-3.553c.13-.044.258-.088.385-.133 1.037-.36 1.874-1.07 2.377-1.996.65-1.195.83-2.538.453-3.961-.793-2.98-2.734-5.273-6.02-6.29-1.35-.42-2.898-.633-4.238-.653h-.626zm1.096 4.707c1.789 0 3.24 1.45 3.24 3.24 0 1.79-1.45 3.24-3.24 3.24-1.789 0-3.24-1.45-3.24-3.24 0-1.79 1.451-3.24 3.24-3.24zm-6.48 1.08c1.789 0 3.24 1.45 3.24 3.24 0 1.79-1.45 3.24-3.24 3.24-1.79 0-3.24-1.45-3.24-3.24 0-1.79 1.45-3.24 3.24-3.24z"/></svg></a></div><div class="drawer-edition">SURAT, INDIA · EST. 2006</div></div>
+    </div>
+  </div>
+  <div class="masthead-drawer-overlay" id="drawerOverlay"></div>
   <main class="main">
-
-    <!-- Broadsheet Masthead (Header) -->
     <header class="masthead container">
       <div class="masthead-top">
         <div>EST. 2006 · SURAT, GUJARAT, INDIA · 🌐 GLOBAL REMOTE <button type="button" class="masthead-lang-trigger" aria-label="Choose from 200+ Languages">🌐 200+ LANGUAGES</button></div>
         <div class="text-end">VOL. 1.0 · THE DHARMIK GOHIL CHRONICLE</div>
       </div>
-      <div class="masthead-main">
-        <h1>Dh<span class="accent-text">a</span>rmik Gohil</h1>
-      </div>
+      <div class="masthead-main"><a href="../index.html" class="masthead-home" aria-label="Dharmik Gohil – home"><span class="masthead-wordmark">Dh<span class="accent-text">a</span>rmik Gohil</span></a></div>
       <div class="masthead-nav-bar">
-        <nav class="nav-links">
-          <a href="../index.html">HOME</a> · 
-          <a href="../services.html">ABILITIES</a> · 
-          
-          <div class="nav-dropdown">
-            <span class="dropdown-trigger">MY GAMES <span class="arrow-down">▼</span></span>
-            <div class="dropdown-content">
-              <a href="https://dharmikgohil.itch.io/mavericks-battlegrounds" target="_blank">MAVERICKS BATTLEGROUND</a>
-              <a href="https://dharmik086.itch.io/floppy-bird-860" target="_blank">FLOPPY BIRD</a>
-              <a href="https://dharmikgohil.itch.io/facade" target="_blank">FACADE</a>
-              <a href="https://dharmikgohil.itch.io/go-galaxy" target="_blank">GO GALAXY</a>
-              <a href="https://dharmikgohil.itch.io/drone-training" target="_blank">DRONE TRAINING</a>
-              <a href="https://dharmikgohil.itch.io/hook-shot" target="_blank">HOOK SHOT</a>
-              <a href="https://lowxena.dharmikgohil.art/" target="_blank">LOWXENA</a>
-            </div>
-          </div> · 
-          
-          <div class="nav-dropdown">
-            <span class="dropdown-trigger">LIVE PROJECTS <span class="arrow-down">▼</span></span>
-            <div class="dropdown-content">
-              <a href="../assets/Fit Sync.apk" download>FITSYNC APP (APK)</a>
-              <a href="https://actify.dharmikgohil.art/" target="_blank">ACTIFY</a>
-              <a href="https://learnlink.dharmikgohil.art" target="_blank">LEARN LINK</a>
-              <a href="http://gdgs.dharmikgohil.art/" target="_blank">GDGS GAMES</a>
-              <a href="http://flipcart.dharmikgohil.art/" target="_blank">FLIPKART CLONE</a>
-              <a href="http://krishna.dharmikgohil.art/" target="_blank">KRISHNA CONSTRUCTION</a>
-              <a href="https://fkm.vercel.app/" target="_blank">WIFI SERVICE</a>
-            </div>
-          </div> · 
-          
-          <a href="../Achivemtn.html">ACHIEVEMENTS</a> · 
-          <a href="../blog.html" class="active">BLOG</a> · 
-          <a href="../contact.html">CONTACT</a> · 
-          <a href="../assets/img/Dharmik Gohil Game Desginer.pdf" target="_blank">RESUME</a>
+        <button class="mobile-menu-toggle-brutalist" id="menuToggleBtn" aria-label="Toggle Navigation">MENU ☰</button>
+        <nav class="nav-links" aria-label="Primary">
+          <a href="../index.html">HOME</a> · <a href="../services.html">ABILITIES</a> ·
+          <div class="nav-dropdown"><span class="dropdown-trigger">MY GAMES <span class="arrow-down">▼</span></span><div class="dropdown-content"><a href="https://dharmikgohil.itch.io/mavericks-battlegrounds" target="_blank" rel="noopener">MAVERICKS BATTLEGROUND</a><a href="https://dharmik086.itch.io/floppy-bird-860" target="_blank" rel="noopener">FLOPPY BIRD</a><a href="https://dharmikgohil.itch.io/facade" target="_blank" rel="noopener">FACADE</a><a href="https://dharmikgohil.itch.io/go-galaxy" target="_blank" rel="noopener">GO GALAXY</a><a href="https://dharmikgohil.itch.io/drone-training" target="_blank" rel="noopener">DRONE TRAINING</a><a href="https://dharmikgohil.itch.io/hook-shot" target="_blank" rel="noopener">HOOK SHOT</a><a href="https://lowxena.dharmikgohil.art/" target="_blank" rel="noopener">LOWXENA</a></div></div> ·
+          <div class="nav-dropdown"><span class="dropdown-trigger">LIVE PROJECTS <span class="arrow-down">▼</span></span><div class="dropdown-content"><a href="../assets/Fit Sync.apk" download>FITSYNC APP (APK)</a><a href="https://actify.dharmikgohil.art/" target="_blank" rel="noopener">ACTIFY</a><a href="https://learnlink.dharmikgohil.art" target="_blank" rel="noopener">LEARN LINK</a><a href="http://gdgs.dharmikgohil.art/" target="_blank" rel="noopener">GDGS GAMES</a><a href="http://flipcart.dharmikgohil.art/" target="_blank" rel="noopener">FLIPKART CLONE</a><a href="http://krishna.dharmikgohil.art/" target="_blank" rel="noopener">KRISHNA CONSTRUCTION</a><a href="https://fkm.vercel.app/" target="_blank" rel="noopener">WIFI SERVICE</a></div></div> ·
+          <a href="../Achivemtn.html">ACHIEVEMENTS</a> · <a href="../blog.html" class="active">BLOG</a> · <a href="../contact.html">CONTACT</a> · <a href="../assets/img/Dharmik Gohil Game Desginer.pdf" target="_blank" rel="noopener">RESUME</a>
         </nav>
-        <div class="social-links-minimal">
-
-          <a href="https://github.com/DharmikGohil013" target="_blank" aria-label="GitHub"><i class="bi bi-github"></i></a>
-          <a href="https://www.linkedin.com/in/dharmikgohil086/" target="_blank" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
-          <a href="https://x.com/Dharmik086" target="_blank" aria-label="Twitter / X"><i class="bi bi-twitter-x"></i></a>
-          <a href="https://dharmikgohil.itch.io/" target="_blank" aria-label="Itch.io"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 24 24" style="vertical-align: -0.125em; display: inline-block;"><path d="M10.387 1.414c-1.34.02-2.887.235-4.238.653C2.863 3.085.922 5.378.13 8.358c-.378 1.423-.197 2.766.453 3.961.503.926 1.34 1.636 2.378 1.996.126.044.254.088.384.133L5 18h14l1.656-3.553c.13-.044.258-.088.385-.133 1.037-.36 1.874-1.07 2.377-1.996.65-1.195.83-2.538.453-3.961-.793-2.98-2.734-5.273-6.02-6.29-1.35-.42-2.898-.633-4.238-.653h-.626zm1.096 4.707c1.789 0 3.24 1.45 3.24 3.24 0 1.79-1.45 3.24-3.24 3.24-1.789 0-3.24-1.45-3.24-3.24 0-1.79 1.451-3.24 3.24-3.24zm-6.48 1.08c1.789 0 3.24 1.45 3.24 3.24 0 1.79-1.45 3.24-3.24 3.24-1.79 0-3.24-1.45-3.24-3.24 0-1.79 1.45-3.24 3.24-3.24z"/></svg></a>
-        </div>
+        <div class="social-links-minimal"><a href="https://github.com/DharmikGohil013" target="_blank" rel="noopener" aria-label="GitHub"><i class="bi bi-github"></i></a><a href="https://www.linkedin.com/in/dharmikgohil086/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a><a href="https://x.com/Dharmik086" target="_blank" rel="noopener" aria-label="Twitter / X"><i class="bi bi-twitter-x"></i></a><a href="https://dharmikgohil.itch.io/" target="_blank" rel="noopener" aria-label="Itch.io"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 24 24" style="vertical-align: -0.125em; display: inline-block;"><path d="M10.387 1.414c-1.34.02-2.887.235-4.238.653C2.863 3.085.922 5.378.13 8.358c-.378 1.423-.197 2.766.453 3.961.503.926 1.34 1.636 2.378 1.996.126.044.254.088.384.133L5 18h14l1.656-3.553c.13-.044.258-.088.385-.133 1.037-.36 1.874-1.07 2.377-1.996.65-1.195.83-2.538.453-3.961-.793-2.98-2.734-5.273-6.02-6.29-1.35-.42-2.898-.633-4.238-.653h-.626zm1.096 4.707c1.789 0 3.24 1.45 3.24 3.24 0 1.79-1.45 3.24-3.24 3.24-1.789 0-3.24-1.45-3.24-3.24 0-1.79 1.451-3.24 3.24-3.24zm-6.48 1.08c1.789 0 3.24 1.45 3.24 3.24 0 1.79-1.45 3.24-3.24 3.24-1.79 0-3.24-1.45-3.24-3.24 0-1.79 1.45-3.24 3.24-3.24z"/></svg></a></div>
       </div>
     </header>
-
-
-    <!-- Page Title -->
-    <div class="page-title" data-aos="fade">
-      <div class="container">
-        <nav class="breadcrumbs">
-          <ol>
-            <li><a href="../index.html">Home</a></li>
-            <li><a href="#">Blog</a></li>
-            <li class="current">Mobile Game Optimization Techniques</li>
-          </ol>
-        </nav>
-        <h1>Mobile Game Optimization Techniques</h1>
-      </div>
-    </div><!-- End Page Title -->
-
-    <div class="container">
-      <div class="row">
-
-        <div class="col-lg-8">
-
-          <!-- Blog Details Section -->
-          <section id="blog-details" class="blog-details section">
-            <div class="container">
-
-              <article class="article">
-
-                <div class="post-img">
-                  <img loading="lazy" decoding="async" src="../assets/img/floopy.webp" alt="Mobile Game Optimization by Dharmik Gohil" class="img-fluid">
-                </div>
-
-                <h2 class="title">Essential Mobile Game Optimization Techniques for Unity Developers</h2>
-
-                <div class="meta-top">
-                  <ul>
-                    <li class="d-flex align-items-center"><i class="bi bi-person"></i> <a href="../about.html">Dharmik Gohil</a></li>
-                    <li class="d-flex align-items-center"><i class="bi bi-clock"></i> <time datetime="2025-08-18">Aug 18, 2025</time></li>
-                    <li class="d-flex align-items-center"><i class="bi bi-chat-dots"></i> <a href="#comments">15 Comments</a></li>
-                  </ul>
-                </div><!-- End meta top -->
-
-                <div class="content">
-                  <p>
-                    Mobile game optimization is crucial for creating successful games that run smoothly on a wide range of devices. As a Unity developer who has worked on various mobile games, including Floppy Ball and other mobile projects, I've learned that optimization should be considered from the very beginning of development, not as an afterthought.
+    <div class="post-shell">
+      <nav aria-label="Breadcrumb"><ol class="crumbs"><li><a href="../index.html">Home</a></li><li><a href="../blog.html">Blog</a></li><li><a href="topics/unity-game-development.html">Unity Game Development</a></li><li><span aria-current="page">Essential Mobile Game Optimization Techniques for…</span></li></ol></nav>
+      <div class="post-grid">
+        <article class="post-main" itemscope itemtype="https://schema.org/BlogPosting">
+          <header class="post-head">
+            <a class="post-kicker" href="topics/unity-game-development.html"><i class="bi bi-controller"></i> Unity Game Development</a>
+            <h1 class="post-title" data-kinetic itemprop="headline">Essential Mobile Game Optimization Techniques for Unity Developers</h1>
+            <p class="post-deck">Make Unity games run smoothly on phones: understand hardware limits, reduce draw calls, compress textures, manage memory and profile on real devices.</p>
+            <ul class="post-meta">
+              <li><i class="bi bi-person"></i><a href="../about.html" rel="author">Dharmik Gohil</a></li>
+              <li><i class="bi bi-calendar3"></i><time datetime="2025-08-18" itemprop="datePublished">Aug 18, 2025</time></li>
+              <li><i class="bi bi-arrow-repeat"></i>Updated <time datetime="2026-10-08" itemprop="dateModified">Oct 8, 2026</time></li>
+              <li><i class="bi bi-clock"></i>5 min read</li>
+            </ul>
+          </header>
+          <figure class="post-cover"><img src="../assets/img/floopy.webp" alt="Mobile Game Optimization by Dharmik Gohil" width="1200" height="675" fetchpriority="high" decoding="async"></figure>
+          <div class="takeaways"><ul><li>Mobile GPUs and thermal limits are the real constraint, so design for them from the start.</li><li>Texture atlases and compression cut draw calls and memory.</li><li>Profile on real devices; editor performance is not representative.</li><li>Fix the biggest bottleneck first rather than micro-optimizing everything.</li></ul></div>
+          <div class="toc-mobile"><nav class="toc" aria-label="Table of contents"><p class="toc-title">On this page</p><ol><li><a href="#understanding-mobile-hardware-limitations">Understanding Mobile Hardware Limitations</a></li><li><a href="#graphics-and-rendering-optimization">Graphics and Rendering Optimization</a></li><li><a href="#performance-optimization-strategies">Performance Optimization Strategies</a></li><li><a href="#unity-specific-mobile-optimizations">Unity-Specific Mobile Optimizations</a></li><li><a href="#platform-specific-considerations">Platform-Specific Considerations</a></li><li><a href="#testing-and-profiling">Testing and Profiling</a></li><li><a href="#real-world-example-optimizing-floppy-ball">Real-World Example: Optimizing Floppy Ball</a></li><li><a href="#common-optimization-mistakes-to-avoid">Common Optimization Mistakes to Avoid</a></li><li><a href="#conclusion">Conclusion</a></li></ol></nav></div>
+          <div class="article-body" itemprop="articleBody">
+<p>
+                    Mobile game <a href="unity-game-development-tips.html" title="Essential Unity Game Development Tips for Aspiring Developers">optimization</a> is crucial for creating successful games that run smoothly on a wide range of devices. As a <a href="getting-started-unity-game-development.html" title="Getting Started with Unity Game Development: A Beginner's Complete Guide">Unity</a> developer who has worked on various mobile games, including Floppy Ball and other mobile projects, I've learned that optimization should be considered from the very beginning of development, not as an afterthought.
                   </p>
-
-                  <p>
+<p>
                     In this comprehensive guide, I'll share the optimization techniques that have helped me create smooth, performant mobile games that players love. These strategies have been tested across various devices and platforms throughout my development journey.
                   </p>
-
-                  <blockquote>
-                    <p>
+<blockquote>
+<p>
                       "Great mobile games aren't just fun to play—they're optimized to run smoothly on every device in your target audience's hands." - Dharmik Gohil
                     </p>
-                  </blockquote>
-
-                  <h3>Understanding Mobile Hardware Limitations</h3>
-                  <p>
+</blockquote>
+<h2 id="understanding-mobile-hardware-limitations">Understanding Mobile Hardware Limitations</h2>
+<p>
                     Before diving into optimization techniques, it's essential to understand the constraints of mobile devices:
                   </p>
-                  <ul>
-                    <li><strong>Limited Processing Power:</strong> Mobile CPUs and GPUs are less powerful than desktop counterparts</li>
-                    <li><strong>Memory Constraints:</strong> Limited RAM requires careful memory management</li>
-                    <li><strong>Battery Life:</strong> Optimization directly impacts battery consumption</li>
-                    <li><strong>Thermal Throttling:</strong> Devices slow down when they overheat</li>
-                    <li><strong>Touch Input:</strong> Different interaction paradigms require specific optimizations</li>
-                  </ul>
-
-                  <h3>Graphics and Rendering Optimization</h3>
-                  
-                  <h4>1. Texture Optimization</h4>
-                  <p>
+<ul>
+<li><strong>Limited Processing Power:</strong> Mobile CPUs and GPUs are less powerful than desktop counterparts</li>
+<li><strong>Memory Constraints:</strong> Limited RAM requires careful memory management</li>
+<li><strong>Battery Life:</strong> Optimization directly impacts battery consumption</li>
+<li><strong>Thermal Throttling:</strong> Devices slow down when they overheat</li>
+<li><strong>Touch Input:</strong> Different interaction paradigms require specific optimizations</li>
+</ul>
+<h2 id="graphics-and-rendering-optimization">Graphics and Rendering Optimization</h2>
+<h3>1. Texture Optimization</h3>
+<p>
                     Proper texture management is crucial for mobile performance:
                   </p>
-                  <ul>
-                    <li><strong>Use Appropriate Compression:</strong> ETC2 for Android, PVRTC for iOS</li>
-                    <li><strong>Reduce Texture Sizes:</strong> Use the smallest resolution that maintains quality</li>
-                    <li><strong>Texture Atlasing:</strong> Combine multiple textures into single atlas to reduce draw calls</li>
-                    <li><strong>Mipmaps:</strong> Enable mipmaps for distant objects to improve performance</li>
-                  </ul>
-
-                  <h4>2. Mesh and Polygon Optimization</h4>
-                  <p>
+<ul>
+<li><strong>Use Appropriate Compression:</strong> ETC2 for Android, PVRTC for iOS</li>
+<li><strong>Reduce Texture Sizes:</strong> Use the smallest resolution that maintains quality</li>
+<li><strong>Texture Atlasing:</strong> Combine multiple textures into single atlas to reduce draw calls</li>
+<li><strong>Mipmaps:</strong> Enable mipmaps for distant objects to improve performance</li>
+</ul>
+<h3>2. Mesh and Polygon Optimization</h3>
+<p>
                     Optimize your 3D models for mobile performance:
                   </p>
-                  <ul>
-                    <li>Keep polygon counts low (aim for under 1000 triangles for main characters)</li>
-                    <li>Use LOD (Level of Detail) systems for distant objects</li>
-                    <li>Remove unnecessary vertices and faces</li>
-                    <li>Use occlusion culling to hide objects behind other objects</li>
-                  </ul>
-
-                  <h4>3. Lighting and Shaders</h4>
-                  <p>
+<ul>
+<li>Keep polygon counts low (aim for under 1000 triangles for main characters)</li>
+<li>Use LOD (Level of Detail) systems for distant objects</li>
+<li>Remove unnecessary vertices and faces</li>
+<li>Use occlusion culling to hide objects behind other objects</li>
+</ul>
+<h3>3. Lighting and Shaders</h3>
+<p>
                     Lighting can heavily impact mobile performance:
                   </p>
-                  <ul>
-                    <li>Use baked lighting instead of real-time lighting when possible</li>
-                    <li>Limit the number of dynamic lights (max 4-8 per scene)</li>
-                    <li>Use Unity's mobile-optimized shaders</li>
-                    <li>Avoid complex shader operations like multiple texture samples</li>
-                  </ul>
-
-                  <h3>Performance Optimization Strategies</h3>
-                  
-                  <h4>1. Object Pooling</h4>
-                  <p>
+<ul>
+<li>Use baked lighting instead of real-time lighting when possible</li>
+<li>Limit the number of dynamic lights (max 4-8 per scene)</li>
+<li>Use Unity's mobile-optimized shaders</li>
+<li>Avoid complex shader operations like multiple texture samples</li>
+</ul>
+<h2 id="performance-optimization-strategies">Performance Optimization Strategies</h2>
+<h3>1. Object Pooling</h3>
+<p>
                     One of the most effective optimization techniques for mobile games:
                   </p>
-                  <pre><code>// Example object pooling implementation
+<pre><code>// Example object pooling implementation
 public class ObjectPool : MonoBehaviour 
 {
     [SerializeField] private GameObject prefab;
@@ -1429,292 +186,177 @@ public class ObjectPool : MonoBehaviour
         pool.Enqueue(obj);
     }
 }</code></pre>
-
-                  <h4>2. Frame Rate Management</h4>
-                  <p>
+<h3>2. Frame Rate Management</h3>
+<p>
                     Consistent frame rate is more important than high frame rate on mobile:
                   </p>
-                  <ul>
-                    <li>Target 30 FPS for most mobile games (60 FPS for competitive games)</li>
-                    <li>Use Application.targetFrameRate to cap frame rate</li>
-                    <li>Implement dynamic quality scaling based on performance</li>
-                    <li>Monitor frame time consistency, not just average FPS</li>
-                  </ul>
-
-                  <h4>3. Memory Management</h4>
-                  <p>
+<ul>
+<li>Target 30 FPS for most mobile games (60 FPS for competitive games)</li>
+<li>Use Application.targetFrameRate to cap frame rate</li>
+<li>Implement dynamic quality scaling based on performance</li>
+<li>Monitor frame time consistency, not just average FPS</li>
+</ul>
+<h3>3. Memory Management</h3>
+<p>
                     Efficient memory usage prevents crashes and stuttering:
                   </p>
-                  <ul>
-                    <li>Preload frequently used assets</li>
-                    <li>Unload unused assets using Resources.UnloadUnusedAssets()</li>
-                    <li>Use Addressables for better memory management</li>
-                    <li>Avoid memory allocations in Update() loops</li>
-                    <li>Use StringBuilder instead of string concatenation</li>
-                  </ul>
-
-                  <h3>Unity-Specific Mobile Optimizations</h3>
-                  
-                  <h4>1. Build Settings</h4>
-                  <p>
+<ul>
+<li>Preload frequently used assets</li>
+<li>Unload unused assets using Resources.UnloadUnusedAssets()</li>
+<li>Use Addressables for better memory management</li>
+<li>Avoid memory allocations in Update() loops</li>
+<li>Use StringBuilder instead of string concatenation</li>
+</ul>
+<h2 id="unity-specific-mobile-optimizations">Unity-Specific Mobile Optimizations</h2>
+<h3>1. Build Settings</h3>
+<p>
                     Optimize your Unity build settings for mobile:
                   </p>
-                  <ul>
-                    <li><strong>Scripting Backend:</strong> Use IL2CPP for better performance</li>
-                    <li><strong>API Compatibility Level:</strong> Use .NET Standard 2.1</li>
-                    <li><strong>Target Architecture:</strong> ARM64 for better performance on modern devices</li>
-                    <li><strong>Compression:</strong> Enable LZ4 compression for faster loading</li>
-                  </ul>
-
-                  <h4>2. Audio Optimization</h4>
-                  <p>
+<ul>
+<li><strong>Scripting Backend:</strong> Use IL2CPP for better performance</li>
+<li><strong>API Compatibility Level:</strong> Use .NET Standard 2.1</li>
+<li><strong>Target Architecture:</strong> ARM64 for better performance on modern devices</li>
+<li><strong>Compression:</strong> Enable LZ4 compression for faster loading</li>
+</ul>
+<h3>2. Audio Optimization</h3>
+<p>
                     Audio can consume significant resources on mobile:
                   </p>
-                  <ul>
-                    <li>Use compressed audio formats (Vorbis for music, ADPCM for SFX)</li>
-                    <li>Lower audio quality for background music (44.1kHz to 22kHz)</li>
-                    <li>Use audio compression settings appropriate for content type</li>
-                    <li>Implement audio pooling for frequently played sounds</li>
-                  </ul>
-
-                  <h4>3. UI Optimization</h4>
-                  <p>
+<ul>
+<li>Use compressed audio formats (Vorbis for music, ADPCM for SFX)</li>
+<li>Lower audio quality for background music (44.1kHz to 22kHz)</li>
+<li>Use audio compression settings appropriate for content type</li>
+<li>Implement audio pooling for frequently played sounds</li>
+</ul>
+<h3>3. UI Optimization</h3>
+<p>
                     User interface optimization is crucial for mobile games:
                   </p>
-                  <ul>
-                    <li>Use Canvas.worldCamera instead of overlay mode when possible</li>
-                    <li>Separate static and dynamic UI elements into different canvases</li>
-                    <li>Disable raycast target on non-interactive UI elements</li>
-                    <li>Use UI atlases to reduce draw calls</li>
-                    <li>Implement UI object pooling for dynamic elements</li>
-                  </ul>
-
-                  <h3>Platform-Specific Considerations</h3>
-                  
-                  <h4>Android Optimization</h4>
-                  <ul>
-                    <li>Test on various Android devices with different specifications</li>
-                    <li>Use Vulkan API for supported devices (Android 7.0+)</li>
-                    <li>Implement adaptive performance for supported Samsung devices</li>
-                    <li>Consider Android App Bundle for smaller download sizes</li>
-                  </ul>
-
-                  <h4>iOS Optimization</h4>
-                  <ul>
-                    <li>Use Metal rendering API for better performance</li>
-                    <li>Optimize for different iOS device generations</li>
-                    <li>Implement proper memory warnings handling</li>
-                    <li>Use Xcode Instruments for detailed performance analysis</li>
-                  </ul>
-
-                  <h3>Testing and Profiling</h3>
-                  <p>
+<ul>
+<li>Use Canvas.worldCamera instead of overlay mode when possible</li>
+<li>Separate static and dynamic UI elements into different canvases</li>
+<li>Disable raycast target on non-interactive UI elements</li>
+<li>Use UI atlases to reduce draw calls</li>
+<li>Implement UI object pooling for dynamic elements</li>
+</ul>
+<h2 id="platform-specific-considerations">Platform-Specific Considerations</h2>
+<h3>Android Optimization</h3>
+<ul>
+<li>Test on various Android devices with different specifications</li>
+<li>Use Vulkan API for supported devices (Android 7.0+)</li>
+<li>Implement adaptive performance for supported Samsung devices</li>
+<li>Consider Android App Bundle for smaller download sizes</li>
+</ul>
+<h3>iOS Optimization</h3>
+<ul>
+<li>Use Metal rendering API for better performance</li>
+<li>Optimize for different iOS device generations</li>
+<li>Implement proper memory warnings handling</li>
+<li>Use Xcode Instruments for detailed performance analysis</li>
+</ul>
+<h2 id="testing-and-profiling">Testing and Profiling</h2>
+<p>
                     Regular testing and profiling are essential for maintaining optimal performance:
                   </p>
-                  <ul>
-                    <li><strong>Unity Profiler:</strong> Monitor CPU, GPU, and memory usage</li>
-                    <li><strong>Device Testing:</strong> Test on actual target devices, not just the editor</li>
-                    <li><strong>Performance Targets:</strong> Set specific performance goals and test regularly</li>
-                    <li><strong>Battery Testing:</strong> Monitor battery consumption during extended play sessions</li>
-                  </ul>
-
-                  <h3>Real-World Example: Optimizing Floppy Ball</h3>
-                  <p>
+<ul>
+<li><strong>Unity Profiler:</strong> Monitor CPU, GPU, and memory usage</li>
+<li><strong>Device Testing:</strong> Test on actual target devices, not just the editor</li>
+<li><strong>Performance Targets:</strong> Set specific performance goals and test regularly</li>
+<li><strong>Battery Testing:</strong> Monitor battery consumption during extended play sessions</li>
+</ul>
+<h2 id="real-world-example-optimizing-floppy-ball">Real-World Example: Optimizing Floppy Ball</h2>
+<p>
                     In my mobile game Floppy Ball, I applied several of these optimization techniques:
                   </p>
-                  <ul>
-                    <li>Used object pooling for obstacles and collectibles</li>
-                    <li>Implemented texture atlasing for UI elements</li>
-                    <li>Optimized audio compression settings</li>
-                    <li>Limited particle effects for older devices</li>
-                    <li>Used simple, mobile-optimized shaders</li>
-                  </ul>
-                  <p>
+<ul>
+<li>Used object pooling for obstacles and collectibles</li>
+<li>Implemented texture atlasing for UI elements</li>
+<li>Optimized audio compression settings</li>
+<li>Limited particle effects for older devices</li>
+<li>Used simple, mobile-optimized shaders</li>
+</ul>
+<p>
                     These optimizations resulted in smooth gameplay across a wide range of Android and iOS devices, from budget phones to flagship models.
                   </p>
-
-                  <h3>Common Optimization Mistakes to Avoid</h3>
-                  <ul>
-                    <li>Over-optimizing early in development</li>
-                    <li>Ignoring garbage collection and memory spikes</li>
-                    <li>Using desktop-quality assets without mobile optimization</li>
-                    <li>Not testing on low-end devices</li>
-                    <li>Forgetting to optimize for different screen resolutions</li>
-                  </ul>
-
-                  <h3>Conclusion</h3>
-                  <p>
+<h2 id="common-optimization-mistakes-to-avoid">Common Optimization Mistakes to Avoid</h2>
+<ul>
+<li>Over-optimizing early in development</li>
+<li>Ignoring garbage collection and memory spikes</li>
+<li>Using desktop-quality assets without mobile optimization</li>
+<li>Not testing on low-end devices</li>
+<li>Forgetting to optimize for different screen resolutions</li>
+</ul>
+<h2 id="conclusion">Conclusion</h2>
+<p>
                     Mobile game optimization is an ongoing process that requires careful planning, regular testing, and continuous refinement. The techniques I've shared in this guide have helped me create mobile games that perform well across various devices and provide smooth, enjoyable experiences for players.
                   </p>
-
-                  <p>
+<p>
                     Remember that optimization is not just about technical performance—it's about ensuring that your game is accessible to as many players as possible, regardless of their device specifications. Start optimizing early, test frequently, and always keep your target audience's devices in mind.
                   </p>
-
-                  <p>
+<p>
                     With proper optimization techniques, you can create mobile games that not only look great but also run smoothly, consume less battery, and provide an excellent user experience on a wide range of devices.
                   </p>
 
-                </div><!-- End post content -->
-
-                <div class="meta-bottom">
-                  <i class="bi bi-folder"></i>
-                  <ul class="cats">
-                    <li><a href="#">Mobile Development</a></li>
-                    <li><a href="#">Unity</a></li>
-                    <li><a href="#">Performance</a></li>
-                    <li><a href="#">Optimization</a></li>
-                  </ul>
-
-                  <i class="bi bi-tags"></i>
-                  <ul class="tags">
-                    <li><a href="#">Mobile Games</a></li>
-                    <li><a href="#">Unity Mobile</a></li>
-                    <li><a href="#">Performance Optimization</a></li>
-                    <li><a href="#">Game Development</a></li>
-                    <li><a href="#">Mobile Performance</a></li>
-                  </ul>
-                </div><!-- End meta bottom -->
-
-              </article>
-
-            </div>
-          </section><!-- /Blog Details Section -->
-
-        </div>
-
-        <div class="col-lg-4 sidebar">
-
-          <div class="widgets-container">
-
-            <!-- Blog Author Widget -->
-            <div class="blog-author-widget widget-item">
-
-              <div class="d-flex flex-column align-items-center">
-                <img loading="lazy" decoding="async" src="../assets/img/dharmik-gohil-professional-headshot-photo.png" class="rounded-circle flex-shrink-0" alt="Dharmik Gohil Professional Photo">
-                <h4>Dharmik Gohil</h4>
-                <div class="social-links">
-                  <a href="https://github.com/DharmikGohil013" target="_blank"><i class="bi bi-github"></i></a>
-                  <a href="https://www.linkedin.com/in/dharmikgohil086/" target="_blank"><i class="bi bi-linkedin"></i></a>
-                </div>
-
-                <p>
-                  Professional Game Developer and Unity Expert from CHARUSAT University. Specializing in mobile game development and performance optimization.
-                </p>
-
-              </div>
-
-            </div><!--/Blog Author Widget -->
-
-            <!-- Recent Posts Widget -->
-            <div class="recent-posts-widget widget-item">
-
-              <h3 class="widget-title">Recent Posts</h3>
-
-              <div class="post-item">
-                <img loading="lazy" decoding="async" src="../assets/img/Unity.webp" alt="Unity Game Development Tips" class="flex-shrink-0">
-                <div>
-                  <h4><a href="unity-game-development-tips.html">Unity Game Development Tips</a></h4>
-                  <time datetime="2025-08-21">Aug 21, 2025</time>
-                </div>
-              </div><!-- End recent post item-->
-
-              <div class="post-item">
-                <img loading="lazy" decoding="async" src="../assets/dharmik-gohil-vr-gaming-expertise-showcase.jpg" alt="VR AR Future Gaming" class="flex-shrink-0">
-                <div>
-                  <h4><a href="vr-ar-future-gaming.html">VR/AR: The Future of Gaming</a></h4>
-                  <time datetime="2025-08-20">Aug 20, 2025</time>
-                </div>
-              </div><!-- End recent post item-->
-
-              <div class="post-item">
-                <img loading="lazy" decoding="async" src="../assets/img/Subject-Game-Development.webp" alt="CHARUSAT University Experience" class="flex-shrink-0">
-                <div>
-                  <h4><a href="charusat-university-experience.html">My Journey at CHARUSAT University</a></h4>
-                  <time datetime="2025-08-15">Aug 15, 2025</time>
-                </div>
-              </div><!-- End recent post item-->
-
-            </div><!--/Recent Posts Widget -->
-
-            <!-- Tags Widget -->
-            <div class="tags-widget widget-item">
-
-              <h3 class="widget-title">Tags</h3>
-              <ul>
-                <li><a href="#">Mobile Games</a></li>
-                <li><a href="#">Unity Mobile</a></li>
-                <li><a href="#">Performance</a></li>
-                <li><a href="#">Optimization</a></li>
-                <li><a href="#">Game Development</a></li>
-                <li><a href="#">CHARUSAT</a></li>
-                <li><a href="#">Unity</a></li>
-                <li><a href="#">Mobile Development</a></li>
-                <li><a href="#">Programming</a></li>
-              </ul>
-
-            </div><!--/Tags Widget -->
-
           </div>
-
-        </div>
-
+          <div class="tech-stack" style="margin-top:2rem"><span class="tech-badge">Mobile Games</span><span class="tech-badge">Optimization</span><span class="tech-badge">Unity Profiler</span><span class="tech-badge">Performance</span></div>
+          <div class="share-row"><span>Share</span>
+            <a href="https://x.com/intent/tweet?url=https://dharmikgohil.art/blog/mobile-game-optimization.html&amp;text=Essential Mobile Game Optimization Techniques for Unity Developers" target="_blank" rel="noopener"><i class="bi bi-twitter-x"></i> Post</a>
+            <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://dharmikgohil.art/blog/mobile-game-optimization.html" target="_blank" rel="noopener"><i class="bi bi-linkedin"></i> LinkedIn</a>
+            <button type="button" data-copy="https://dharmikgohil.art/blog/mobile-game-optimization.html"><i class="bi bi-link-45deg"></i> <span>Copy link</span></button>
+          </div>
+          <section class="faq" aria-labelledby="faq-h"><h2 class="block-label" id="faq-h">Questions, answered</h2><details><summary>How do I improve Unity performance on mobile?</summary><div class="answer"><p>Reduce draw calls with batching and atlases, compress textures, limit real-time lights and overdraw, pool objects, and profile on actual devices.</p></div></details><details><summary>What frame rate should a mobile game target?</summary><div class="answer"><p>Most mobile games target 30 or 60 FPS. Pick one early and design your budget around it, since consistency matters more than a high peak.</p></div></details><details><summary>Why does my game run fine in the editor but lag on phones?</summary><div class="answer"><p>Phones have far weaker GPUs, less memory and thermal throttling. Editor results ignore those limits, so always test builds on target hardware.</p></div></details></section>
+          <div class="byline-box">
+            <img src="../assets/img/dharmik-gohil-professional-headshot-photo.png" alt="Dharmik Gohil, Unity game developer" width="84" height="84" loading="lazy">
+            <div><h3>Dharmik Gohil</h3><p>Unity game developer and XR / full-stack engineer from Surat, India. I ship multiplayer games, AR/VR experiences and web apps, and write about what works.</p>
+              <div class="links"><a href="../about.html">About</a><a href="../services.html">Services</a><a href="../portfolio.html">Portfolio</a><a href="../contact.html">Hire me</a></div></div>
+          </div>
+          <nav class="post-nav" aria-label="More in Unity Game Development">
+            <a class="prev" href="unity-game-development-tips.html" rel="prev"><small>← Previous in Unity</small><strong>Essential Unity Game Development Tips for Aspiring Developers</strong></a>
+            <a class="next" href="game-developer-career-guide.html" rel="next"><small>Next in Unity →</small><strong>Your Complete Guide to Starting a Career in Game Development</strong></a>
+          </nav>
+        </article>
+        <aside class="post-aside" aria-label="Article sidebar">
+          <div class="aside-card" data-toc-desktop><h2>On this page</h2><nav class="toc" aria-label="Table of contents"><p class="toc-title">On this page</p><ol><li><a href="#understanding-mobile-hardware-limitations">Understanding Mobile Hardware Limitations</a></li><li><a href="#graphics-and-rendering-optimization">Graphics and Rendering Optimization</a></li><li><a href="#performance-optimization-strategies">Performance Optimization Strategies</a></li><li><a href="#unity-specific-mobile-optimizations">Unity-Specific Mobile Optimizations</a></li><li><a href="#platform-specific-considerations">Platform-Specific Considerations</a></li><li><a href="#testing-and-profiling">Testing and Profiling</a></li><li><a href="#real-world-example-optimizing-floppy-ball">Real-World Example: Optimizing Floppy Ball</a></li><li><a href="#common-optimization-mistakes-to-avoid">Common Optimization Mistakes to Avoid</a></li><li><a href="#conclusion">Conclusion</a></li></ol></nav></div>
+          <div class="aside-card"><h2>More in Unity</h2><ul class="aside-list"><li><a href="getting-started-unity-game-development.html">Getting Started with Unity Game Development: A Beginner&#x27;s Complete…<small>Feb 20, 2026</small></a></li><li><a href="unity-game-development-tips.html">Essential Unity Game Development Tips for Aspiring Developers<small>Aug 21, 2025</small></a></li><li><a href="game-developer-career-guide.html">Your Complete Guide to Starting a Career in Game Development<small>Aug 10, 2025</small></a></li><li><a href="topics/unity-game-development.html">All Unity Game Development articles →</a></li></ul></div>
+          <div class="aside-cta"><h3>Need this built?</h3><p>I take on Unity, XR, multiplayer and full-stack projects. Free consultation, reply within 24 hours.</p><a href="../contact.html">Start a project →</a></div>
+        </aside>
       </div>
+      <section class="related" aria-labelledby="rel-h"><h2 class="block-label" id="rel-h">Keep reading</h2>
+        <div class="card-grid"><a class="post-card" href="../blog/unity-game-development-tips.html">
+      <div class="thumb"><img src="../assets/img/Unity.webp" alt="Unity Game Development Tips by Dharmik Gohil" loading="lazy" decoding="async" width="640" height="360"></div>
+      <div class="body"><span class="tag">Unity</span><h3>Essential Unity Game Development Tips for Aspiring Developers</h3><p>Five Unity habits that save projects: master the fundamentals, optimize early, organize assets, write clean C# and…</p>
+      <span class="foot">Aug 21, 2025 · 3 min read</span></div></a><a class="post-card" href="../blog/getting-started-unity-game-development.html">
+      <div class="thumb"><img src="https://images.unsplash.com/photo-1556438064-2d7646166914?w=1200&amp;h=630&amp;fit=crop" alt="Getting Started with Unity Game Development - Beginner Guide by Dharmik Gohil" loading="lazy" decoding="async" width="640" height="360"></div>
+      <div class="body"><span class="tag">Unity</span><h3>Getting Started with Unity Game Development: A Beginner&#x27;s Complete Guide</h3><p>Learn Unity step by step: install the editor, understand GameObjects and components, write your first C# script, add…</p>
+      <span class="foot">Feb 20, 2026 · 8 min read</span></div></a><a class="post-card" href="../blog/getting-started-unity-xr.html">
+      <div class="thumb"><img src="../assets/dharmik-gohil-vr-ar-technology-showcase-1.png" alt="Unity XR Development Guide by Dharmik Gohil" loading="lazy" decoding="async" width="640" height="360"></div>
+      <div class="body"><span class="tag">XR</span><h3>Getting Started with Unity XR: A Complete Guide to VR and AR Development</h3><p>Build your first VR and AR apps in Unity: set up the XR environment, learn VR basics, use AR Foundation and apply…</p>
+      <span class="foot">Aug 5, 2025 · 5 min read</span></div></a><a class="post-card" href="../blog/game-developer-career-guide.html">
+      <div class="thumb"><img src="../assets/img/Subject-Game-Development.webp" alt="Game Developer Career Guide by Dharmik Gohil" loading="lazy" decoding="async" width="640" height="360"></div>
+      <div class="body"><span class="tag">Unity</span><h3>Your Complete Guide to Starting a Career in Game Development</h3><p>How to start a game development career: roles, essential skills, learning path, portfolio advice, finding a first job…</p>
+      <span class="foot">Aug 10, 2025 · 4 min read</span></div></a></div></section>
+      
+  <aside class="link-hub" aria-label="Site directory">
+    <div class="link-hub-grid">
+      <div><h2>Explore</h2><ul><li><a href="../index.html">Home</a></li><li><a href="../about.html">About Dharmik</a></li><li><a href="../services.html">Services & pricing</a></li><li><a href="../portfolio.html">Portfolio</a></li><li><a href="../Achivemtn.html">Achievements</a></li><li><a href="../blog.html">Blog</a></li><li><a href="../contact.html">Contact & hire</a></li><li><a href="../sitemap-page.html">HTML sitemap</a></li></ul></div>
+      <div><h2>Blog topics</h2><ul><li><a href="../blog/topics/unity-game-development.html">Unity Game Development</a></li><li><a href="../blog/topics/xr-vr-ar-development.html">AR, VR &amp; XR Development</a></li><li><a href="../blog/topics/multiplayer-game-development.html">Multiplayer Game Development</a></li><li><a href="../blog/topics/web-development.html">Web &amp; Full-Stack Development</a></li><li><a href="../blog/topics/hackathons-and-events.html">Hackathons &amp; Tech Events</a></li><li><a href="../blog/topics/career-and-learning.html">Career &amp; Learning</a></li></ul></div>
+      <div><h2>Latest articles</h2><ul><li><a href="../blog/lowxena-game-development-insights.html">LOWXENA: Designing and Engineering a 3D…</a></li><li><a href="../blog/getting-started-unity-game-development.html">Getting Started with Unity Game Development: A…</a></li><li><a href="../blog/react-vs-nextjs-which-to-choose.html">React vs Next.js: Which Framework Should You…</a></li><li><a href="../blog/multiplayer-games-photon-unity.html">Building Multiplayer Games with Photon &amp; Unity: A…</a></li><li><a href="../blog/git-github-essential-commands.html">Git &amp; GitHub Essential Commands: The Complete…</a></li><li><a href="../blog/daiict-hackathon-ai-meeting-monitor.html">DAIICT Hackathon: Building an AI-Powered Meeting…</a></li></ul></div>
+      <div><h2>Elsewhere</h2><ul><li><a href="https://dharmikgohil.itch.io/" target="_blank" rel="noopener">Games on itch.io</a></li><li><a href="https://lowxena.dharmikgohil.art/" target="_blank" rel="noopener">LowXena card game</a></li><li><a href="https://github.com/DharmikGohil013" target="_blank" rel="noopener">GitHub</a></li><li><a href="https://www.linkedin.com/in/dharmikgohil086/" target="_blank" rel="noopener">LinkedIn</a></li><li><a href="https://x.com/Dharmik086" target="_blank" rel="noopener">X / Twitter</a></li></ul></div>
     </div>
-
+    <p class="link-hub-note">Dharmik Gohil is a Unity game developer and XR / full-stack engineer based in Surat, Gujarat, India, working remotely with studios and founders worldwide. <a href="../services.html">See services</a> or <a href="../contact.html">get in touch</a> for a free consultation.</p>
+  </aside>
+    </div>
   </main>
-
-  <footer id="footer" class="footer accent-background">
-
-    <div class="container">
-      <div class="copyright text-center ">
-        <p>© <span>Copyright</span> <strong class="px-1 sitename">Dharmik Gohil</strong> <span>All Rights Reserved</span></p>
-      </div>
-      <div class="social-links d-flex justify-content-center">
-        <a href="https://github.com/DharmikGohil013" target="_blank"><i class="bi bi-github"></i></a>
-        <a href="https://www.linkedin.com/in/dharmikgohil086/" target="_blank"><i class="bi bi-linkedin"></i></a>
-      </div>
-      <div class="credits">
-        Designed by <a href="https://dharmikgohil.art/">Dharmik Gohil</a>
-      </div>
+  <footer class="container">
+    <div class="colophon-footer">
+      <div class="colophon-sig">THE DHARMIK GOHIL CHRONICLE · <span>DESIGNED WITH INK &amp; PAPER</span></div>
+      <div class="colophon-sig text-end">© 2026 DHARMIK GOHIL. ALL RIGHTS RESERVED.</div>
     </div>
-
   </footer>
 
-  <!-- Scroll Top -->
-  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
-
-  <!-- Preloader -->
-  <div id="preloader">
-    <div class="cube-loader">
-      <div class="cube-top"></div>
-      <div class="cube-wrapper">
-        <span style="--i:0" class="cube-span"></span>
-        <span style="--i:1" class="cube-span"></span>
-        <span style="--i:2" class="cube-span"></span>
-        <span style="--i:3" class="cube-span"></span>
-      </div>
-    </div>
-  </div>
-
-  
-
-  <!-- Vendor JS Files -->
-  <script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="../assets/vendor/php-email-form/validate.js"></script>
-  <script src="../assets/vendor/aos/aos.js"></script>
-  <script src="../assets/vendor/waypoints/noframework.waypoints.js"></script>
-  <script src="../assets/vendor/purecounter/purecounter_vanilla.js"></script>
-  <script src="../assets/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="../assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
-  <script src="../assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-  <script src="../assets/vendor/swiper/swiper-bundle.min.js"></script>
-
-  <!-- Main JS File -->
-  <script src="../assets/js/main.js"></script>
-  
-
+  <script src="../assets/vendor/glightbox/js/glightbox.min.js" defer></script>
+  <script src="../assets/js/blog-post.js" defer></script>
+  <script src="../assets/js/motion.js" defer></script>
   <script src="../assets/js/global-multilingual.js" defer></script>
 </body>
-
 </html>

@@ -1,0 +1,318 @@
+<p>Hi! I'm <strong>Dharmik Gohil</strong>, and Git is the backbone of every project I work on — from my game <strong>Mavericks Battlegrounds</strong> to my portfolio website <strong>dharmikgohil.art</strong>. After years of using Git daily, I've compiled this comprehensive cheatsheet with every command you'll ever need.</p>
+<blockquote>
+<p>"If you're not using Git, you're living dangerously. Version control isn't optional — it's the foundation of professional software development." — Dharmik Gohil</p>
+</blockquote>
+<h2>Initial Setup</h2>
+<p>Before your first commit, configure your identity:</p>
+<div class="code-label">Terminal — Git Configuration</div>
+<div class="code-block"># Set your name and email (used in commits)
+git config --global user.name "Dharmik Gohil"
+git config --global user.email "dharmik@example.com"
+
+# Set default branch name to 'main'
+git config --global init.defaultBranch main
+
+# Set VS Code as default editor
+git config --global core.editor "code --wait"
+
+# Enable colored output
+git config --global color.ui auto
+
+# View all configurations
+git config --list</div>
+<h2>Repository Basics</h2>
+<div class="code-label">Terminal — Creating &amp; Cloning Repos</div>
+<div class="code-block"># Initialize a new repository
+git init
+
+# Clone an existing repository
+git clone https://github.com/username/repo.git
+
+# Clone a specific branch
+git clone -b develop https://github.com/username/repo.git
+
+# Clone with shallow history (faster)
+git clone --depth 1 https://github.com/username/repo.git</div>
+<h2>Staging &amp; Committing</h2>
+<p>The fundamental Git workflow: modify → stage → commit.</p>
+<div class="code-label">Terminal — Stage &amp; Commit</div>
+<div class="code-block"># Check status of working directory
+git status
+
+# Stage a specific file
+git add filename.txt
+
+# Stage all modified files
+git add .
+
+# Stage specific file types
+git add *.js
+
+# Interactive staging (choose hunks)
+git add -p
+
+# Commit staged changes
+git commit -m "Add player movement system"
+
+# Stage and commit in one step (tracked files only)
+git commit -am "Fix camera jitter on respawn"
+
+# Amend the last commit (add forgotten changes)
+git add forgotten-file.txt
+git commit --amend --no-edit
+
+# Amend commit message
+git commit --amend -m "Better commit message"</div>
+<div class="tip-box">
+<strong>💡 Dharmik's Tip:</strong> Write meaningful commit messages! I follow the convention: type(scope): description. Example: "feat(player): add double jump mechanic" or "fix(ui): resolve health bar overflow on mobile". This makes your Git log readable and searchable.
+                </div>
+<h2>Branching</h2>
+<p>Branches are Git's superpower. I create a new branch for every feature in my projects:</p>
+<div class="code-label">Terminal — Branch Management</div>
+<div class="code-block"># List all local branches
+git branch
+
+# List all branches (local + remote)
+git branch -a
+
+# Create a new branch
+git branch feature/player-dash
+
+# Create and switch to a new branch
+git checkout -b feature/player-dash
+# Or (modern syntax):
+git switch -c feature/player-dash
+
+# Switch to an existing branch
+git checkout main
+# Or: 
+git switch main
+
+# Rename a branch
+git branch -m old-name new-name
+
+# Delete a merged branch
+git branch -d feature/player-dash
+
+# Force delete an unmerged branch
+git branch -D experimental-feature</div>
+<h2>Merging &amp; Rebasing</h2>
+<div class="code-label">Terminal — Merge &amp; Rebase</div>
+<div class="code-block"># Merge a branch into current branch
+git merge feature/player-dash
+
+# Merge with a commit message
+git merge feature/player-dash -m "Merge player dash feature"
+
+# Abort a merge with conflicts
+git merge --abort
+
+# Rebase current branch onto main
+git rebase main
+
+# Interactive rebase (squash, reorder, edit commits)
+git rebase -i HEAD~5
+
+# Abort a rebase
+git rebase --abort
+
+# Continue rebase after resolving conflicts
+git rebase --continue</div>
+<h3>Merge vs Rebase — When to Use Which</h3>
+<ul>
+<li><strong>Merge:</strong> Use for combining feature branches into main. Creates a merge commit that preserves branch history</li>
+<li><strong>Rebase:</strong> Use for updating your feature branch with latest main changes. Creates linear history</li>
+<li><strong>Never rebase</strong> commits that have been pushed and shared with others!</li>
+</ul>
+<h2>Working with Remotes</h2>
+<div class="code-label">Terminal — Remote Operations</div>
+<div class="code-block"># Add a remote
+git remote add origin https://github.com/dharmik/repo.git
+
+# View remotes
+git remote -v
+
+# Fetch changes (download without merging)
+git fetch origin
+
+# Pull changes (fetch + merge)
+git pull origin main
+
+# Pull with rebase (cleaner history)
+git pull --rebase origin main
+
+# Push changes
+git push origin main
+
+# Push a new branch and set upstream
+git push -u origin feature/new-weapon
+
+# Push all branches
+git push --all origin
+
+# Delete a remote branch
+git push origin --delete feature/old-branch</div>
+<h2>Stashing</h2>
+<p>Stashing saves your uncommitted changes temporarily — perfect for switching contexts:</p>
+<div class="code-label">Terminal — Git Stash</div>
+<div class="code-block"># Stash current changes
+git stash
+
+# Stash with a description
+git stash save "WIP: enemy AI pathfinding"
+
+# List all stashes
+git stash list
+
+# Apply the most recent stash (keep in stash list)
+git stash apply
+
+# Apply and remove from stash list
+git stash pop
+
+# Apply a specific stash
+git stash apply stash@{2}
+
+# Drop a specific stash
+git stash drop stash@{0}
+
+# Clear all stashes
+git stash clear</div>
+<h2>Viewing History</h2>
+<div class="code-label">Terminal — Git Log &amp; Diff</div>
+<div class="code-block"># View commit history
+git log
+
+# Compact one-line log
+git log --oneline
+
+# Graph view with branches
+git log --oneline --graph --all --decorate
+
+# View changes in a commit
+git show abc1234
+
+# View unstaged changes
+git diff
+
+# View staged changes
+git diff --staged
+
+# Compare two branches
+git diff main..feature/player-dash
+
+# View file history
+git log --follow -p filename.js
+
+# Search commit messages
+git log --grep="player"
+
+# Find who changed a line (blame)
+git blame filename.js</div>
+<h2>Undoing Changes</h2>
+<div class="code-label">Terminal — Undo &amp; Reset</div>
+<div class="code-block"># Discard changes in working directory
+git checkout -- filename.txt
+# Or (modern):
+git restore filename.txt
+
+# Unstage a file (keep changes)
+git reset HEAD filename.txt
+# Or:
+git restore --staged filename.txt
+
+# Soft reset (undo commit, keep changes staged)
+git reset --soft HEAD~1
+
+# Mixed reset (undo commit, keep changes unstaged)
+git reset HEAD~1
+
+# Hard reset (undo commit, DISCARD changes)
+git reset --hard HEAD~1
+
+# Revert a commit (create new undo commit)
+git revert abc1234
+
+# Reset to remote state
+git fetch origin
+git reset --hard origin/main</div>
+<div class="warning-box">
+<strong>⚠️ Danger Zone:</strong> <code>git reset --hard</code> permanently destroys uncommitted changes. Always double-check with <code>git status</code> before running hard reset. I once lost 3 hours of work on Mavericks Battlegrounds because of a careless hard reset!
+                </div>
+<h2>GitHub-Specific Workflows</h2>
+<h3>Setting Up SSH Keys</h3>
+<div class="code-block"># Generate SSH key
+ssh-keygen -t ed25519 -C "dharmik@example.com"
+
+# Start SSH agent
+eval "$(ssh-agent -s)"
+
+# Add key to agent
+ssh-add ~/.ssh/id_ed25519
+
+# Copy public key (add to GitHub Settings → SSH Keys)
+cat ~/.ssh/id_ed25519.pub
+
+# Test connection
+ssh -T git@github.com</div>
+<h3>Pull Request Workflow</h3>
+<ol>
+<li>Create a feature branch: <code>git switch -c feature/awesome-thing</code></li>
+<li>Make your changes and commit</li>
+<li>Push: <code>git push -u origin feature/awesome-thing</code></li>
+<li>Open a Pull Request on GitHub</li>
+<li>Get code review, make changes if needed</li>
+<li>Merge the PR (squash and merge for clean history)</li>
+<li>Delete branch: <code>git branch -d feature/awesome-thing</code></li>
+</ol>
+<h3>Forking Workflow</h3>
+<div class="code-block"># Fork the repo on GitHub, then clone YOUR fork
+git clone https://github.com/YOUR-USERNAME/repo.git
+
+# Add original repo as upstream
+git remote add upstream https://github.com/ORIGINAL/repo.git
+
+# Sync your fork with upstream
+git fetch upstream
+git checkout main
+git merge upstream/main
+git push origin main</div>
+<h2>Git Aliases (Speed Up Your Workflow)</h2>
+<p>These are the aliases I use daily:</p>
+<div class="code-block"># Add these to your global git config
+git config --global alias.co checkout
+git config --global alias.br branch
+git config --global alias.ci commit
+git config --global alias.st status
+git config --global alias.lg "log --oneline --graph --all"
+git config --global alias.last "log -1 HEAD"
+git config --global alias.unstage "reset HEAD --"</div>
+<h2>.gitignore Essentials</h2>
+<p>A good <code>.gitignore</code> keeps your repo clean. Here's what I use for Unity projects:</p>
+<div class="code-block"># Unity
+[Ll]ibrary/
+[Tt]emp/
+[Oo]bj/
+[Bb]uild/
+*.csproj
+*.sln
+*.user
+*.pidb
+*.booproj
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+
+# Environment
+.env
+node_modules/</div>
+<blockquote>
+<p>"Git isn't just a tool — it's a safety net. Every command you learn makes you more confident to experiment, refactor, and take risks with your code. Master Git, and you'll never fear breaking things again." — Dharmik Gohil</p>
+</blockquote>
+

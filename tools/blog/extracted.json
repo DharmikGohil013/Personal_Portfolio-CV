@@ -1,0 +1,82 @@
+{
+  "charusat-expo-3-mavericks-battlegrounds-showcase": {
+    "title": "A Proud Moment: Showcasing Mavericks Battlegrounds at CHARUSAT Expo 3.0",
+    "cover": "../assets/img/blog/charusat-expo/cover.jpg",
+    "cover_alt": "Dharmik Gohil at CHARUSAT Expo 3.0 - Mavericks Battlegrounds Game Exhibition at DEPSTAR College"
+  },
+  "charusat-university-experience": {
+    "title": "My Educational Journey at CHARUSAT University DEPSTAR College",
+    "cover": "../assets/img/Subject-Game-Development.webp",
+    "cover_alt": "CHARUSAT University Journey by Dharmik Gohil"
+  },
+  "daiict-hackathon-ai-meeting-monitor": {
+    "title": "DAIICT Hackathon: Building an AI-Powered Meeting Monitor Application",
+    "cover": "../assets/img/blog/daiict-hackathon/cover.jpg",
+    "cover_alt": "DAIICT Hackathon - AI Meeting Monitor App Cover"
+  },
+  "game-developer-career-guide": {
+    "title": "Your Complete Guide to Starting a Career in Game Development",
+    "cover": "../assets/img/Subject-Game-Development.webp",
+    "cover_alt": "Game Developer Career Guide by Dharmik Gohil"
+  },
+  "getting-started-unity-game-development": {
+    "title": "Getting Started with Unity Game Development: A Beginner's Complete Guide",
+    "cover": "https://images.unsplash.com/photo-1556438064-2d7646166914?w=1200&h=630&fit=crop",
+    "cover_alt": "Getting Started with Unity Game Development - Beginner Guide by Dharmik Gohil"
+  },
+  "getting-started-unity-xr": {
+    "title": "Getting Started with Unity XR: A Complete Guide to VR and AR Development",
+    "cover": "../assets/img/dharmik-gohil-vr-ar-technology-showcase-1.png",
+    "cover_alt": "Unity XR Development Guide by Dharmik Gohil"
+  },
+  "git-github-essential-commands": {
+    "title": "Git & GitHub Essential Commands: The Complete Developer Cheatsheet",
+    "cover": "https://images.unsplash.com/photo-1618401471353-b98afee0b2eb?w=1200&h=630&fit=crop",
+    "cover_alt": "Git and GitHub Essential Commands Cheatsheet by Dharmik Gohil"
+  },
+  "hackron-hackathon-2025-blinkit-experience": {
+    "title": "Hackron Hackathon 2025: Our 24-Hour Journey Building SafaiNova for Blinkit",
+    "cover": "../assets/img/blog/hackron/cover.jpg",
+    "cover_alt": "Dharmik Gohil at Hackron Hackathon 2025 - Team Bug Busters at DY Patil University"
+  },
+  "iit-bombay-techfest-2024-experience": {
+    "title": "My Unforgettable Journey at IIT Bombay TechFest'24",
+    "cover": "../assets/img/blog/techfest-main.jpg",
+    "cover_alt": "IIT Bombay TechFest 2024 - Ignite Your Imagination, Embrace the Virtual Revolution"
+  },
+  "lowxena-game-development-insights": {
+    "title": "LOWXENA: Designing and Engineering a 3D Multiplayer Card Universe Where the Lowest Score Wins Everything",
+    "cover": "../assets/img/blog/lowxena/cover.jpg",
+    "cover_alt": "LowXena Premium Interactive Card Gaming Universe - Engineered by Lead Architect Dharmik Gohil"
+  },
+  "mavericks-battlegrounds-game-development-journey": {
+    "title": "Mavericks Battlegrounds: The Best Multiplayer Battle Arena Game of 2025 by Award-Winning Developer Dharmik Gohil",
+    "cover": "../assets/img/mavericks-battlegrounds-logo.png",
+    "cover_alt": "Mavericks Battlegrounds Logo - Best Multiplayer Battle Arena Game 2025 by Game Developer Dharmik Gohil"
+  },
+  "mobile-game-optimization": {
+    "title": "Essential Mobile Game Optimization Techniques for Unity Developers",
+    "cover": "../assets/img/floopy.webp",
+    "cover_alt": "Mobile Game Optimization by Dharmik Gohil"
+  },
+  "multiplayer-games-photon-unity": {
+    "title": "Building Multiplayer Games with Photon & Unity: A Complete Guide",
+    "cover": "https://images.unsplash.com/photo-1542751371-adc38448a05e?w=1200&h=630&fit=crop",
+    "cover_alt": "Building Multiplayer Games with Photon and Unity by Dharmik Gohil"
+  },
+  "react-vs-nextjs-which-to-choose": {
+    "title": "React vs Next.js: Which Framework Should You Choose in 2026?",
+    "cover": "https://images.unsplash.com/photo-1633356122544-f134324a6cee?w=1200&h=630&fit=crop",
+    "cover_alt": "React vs Next.js Framework Comparison by Dharmik Gohil"
+  },
+  "unity-game-development-tips": {
+    "title": "Essential Unity Game Development Tips for Aspiring Developers",
+    "cover": "../assets/img/Unity.webp",
+    "cover_alt": "Unity Game Development Tips by Dharmik Gohil"
+  },
+  "vr-ar-future-gaming": {
+    "title": "VR/AR: Revolutionizing the Gaming Industry",
+    "cover": "../assets/dharmik-gohil-vr-gaming-expertise-showcase.jpg",
+    "cover_alt": "VR AR Future of Gaming by Dharmik Gohil"
+  }
+}

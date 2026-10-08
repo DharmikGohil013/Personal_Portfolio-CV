@@ -1,2699 +1,434 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>(function(d){if(!matchMedia('(prefers-reduced-motion: reduce)').matches){d.classList.add('motion-ok');setTimeout(function(){if(!window.__motionReady)d.classList.remove('motion-ok')},4500)}})(document.documentElement)</script>
+  <noscript><style>[data-reveal],[data-kinetic]{opacity:1!important;transform:none!important;clip-path:none!important}.post-cover{clip-path:none!important;animation:none!important}</style></noscript>
+  <title>Mavericks Battlegrounds: Unity 6 Multiplayer Case Study</title>
+  <meta name="description" content="The development story of Mavericks Battlegrounds, a Unity 6 and Photon PUN multiplayer arena shooter: team, process, timeline, tech stack and screenshots.">
+  <link rel="canonical" href="https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html">
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+  <meta name="author" content="Dharmik Gohil">
+  <meta name="theme-color" content="#f2f0eb">
+  <meta name="geo.region" content="IN-GJ"><meta name="geo.placename" content="Surat, Gujarat, India"><meta name="geo.position" content="21.1702;72.8311"><meta name="ICBM" content="21.1702, 72.8311">
+  <link rel="alternate" hreflang="en" href="https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html"><link rel="alternate" hreflang="x-default" href="https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html">
+  <link rel="author" href="https://www.linkedin.com/in/dharmikgohil086/">
+  <meta property="og:site_name" content="Dharmik Gohil – Unity Game Developer"><meta property="og:locale" content="en_US">
+  <meta property="og:type" content="article"><meta property="og:url" content="https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html">
+  <meta property="og:title" content="Mavericks Battlegrounds: Unity 6 Multiplayer Case Study"><meta property="og:description" content="The development story of Mavericks Battlegrounds, a Unity 6 and Photon PUN multiplayer arena shooter: team, process, timeline, tech stack and screenshots.">
+  <meta property="og:image" content="https://dharmikgohil.art/assets/img/mavericks-battlegrounds-logo.png"><meta property="og:image:alt" content="Mavericks Battlegrounds: Unity 6 Multiplayer Case Study">
+  <meta name="twitter:card" content="summary_large_image"><meta name="twitter:site" content="@Dharmik086"><meta name="twitter:creator" content="@Dharmik086">
+  <meta name="twitter:title" content="Mavericks Battlegrounds: Unity 6 Multiplayer Case Study"><meta name="twitter:description" content="The development story of Mavericks Battlegrounds, a Unity 6 and Photon PUN multiplayer arena shooter: team, process, timeline, tech stack and screenshots."><meta name="twitter:image" content="https://dharmikgohil.art/assets/img/mavericks-battlegrounds-logo.png">
+  <meta property="article:published_time" content="2025-06-12T00:00:00+05:30"><meta property="article:modified_time" content="2026-10-08T00:00:00+05:30"><meta property="article:author" content="https://www.linkedin.com/in/dharmikgohil086/"><meta property="article:section" content="Multiplayer Game Development"><meta property="article:tag" content="Mavericks Battlegrounds"><meta property="article:tag" content="Unity 6"><meta property="article:tag" content="Photon PUN"><meta property="article:tag" content="Case Study"><meta name="keywords" content="Mavericks Battlegrounds, Unity 6, Photon PUN, Case Study, Multiplayer Game Development, Dharmik Gohil"><link rel="preload" as="image" href="../assets/img/mavericks-battlegrounds-logo.png" fetchpriority="high">
+  <link rel="icon" type="image/png" href="../assets/img/dlogo.png"><link rel="apple-touch-icon" href="../assets/img/dlogo.png">
+  <link rel="alternate" type="application/rss+xml" title="Dharmik Gohil – Blog" href="https://dharmikgohil.art/feed.xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=IBM+Plex+Mono:ital,wght@0,400;0,500;0,700;1,400&family=Lora:ital,wght@0,400;0,600;0,700;1,400&family=Playfair+Display:ital,wght@0,900;1,900&display=swap">
+  <link rel="stylesheet" href="../assets/vendor/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../assets/css/main.css">
+  <link rel="stylesheet" href="../index.css">
+  <link rel="stylesheet" href="../assets/css/responsive-global.css">
+  <link rel="stylesheet" href="../assets/vendor/bootstrap-icons/bootstrap-icons.css">
+  <link rel="stylesheet" href="../assets/vendor/glightbox/css/glightbox.min.css">
+  <link rel="stylesheet" href="../assets/css/global-multilingual.css">
+  <link rel="stylesheet" href="../assets/css/blog-post.css">
+  <link rel="stylesheet" href="../assets/css/motion.css">
   <meta name="google-adsense-account" content="ca-pub-4658801537271443">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4658801537271443" crossorigin="anonymous"></script>
-  <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-GE7F8SZSJ9"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'G-GE7F8SZSJ9');
-  </script>
-
-  <!-- Microsoft Clarity -->
-  <script type="text/javascript">
-    (function(c,l,a,r,i,t,y){
-        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-    })(window, document, "clarity", "script", "mavericks-analytics");
-  </script>
-
-  <!-- Facebook Pixel Code -->
-  <script>
-    !function(f,b,e,v,n,t,s)
-    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-    n.queue=[];t=b.createElement(e);t.async=!0;
-    t.src=v;s=b.getElementsByTagName(e)[0];
-    s.parentNode.insertBefore(t,s)}(window, document,'script',
-    'https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', 'YOUR_PIXEL_ID');
-    fbq('track', 'PageView');
-    fbq('track', 'ViewContent', {
-      content_name: 'Mavericks Battlegrounds Blog',
-      content_category: 'Game Development',
-      content_type: 'article'
-    });
-  </script>
-  <noscript><img loading="lazy" decoding="async" height="1" width="1" style="display:none"
-    src="https://www.facebook.com/tr?id=YOUR_PIXEL_ID&ev=PageView&noscript=1"
-  /></noscript>
-
-  <!-- Hotjar Tracking Code -->
-  <script>
-    (function(h,o,t,j,a,r){
-        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
-        h._hjSettings={hjid:YOUR_HOTJAR_ID,hjsv:6};
-        a=o.getElementsByTagName('head')[0];
-        r=o.createElement('script');r.async=1;
-        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
-        a.appendChild(r);
-    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
-  </script>
-
-  <!-- LinkedIn Insight Tag -->
-  <script type="text/javascript">
-    _linkedin_partner_id = "YOUR_PARTNER_ID";
-    window._linkedin_data_partner_ids = window._linkedin_data_partner_ids || [];
-    window._linkedin_data_partner_ids.push(_linkedin_partner_id);
-  </script>
-  <script type="text/javascript">
-    (function(l) {
-      if (!l){window.lintrk = function(a,b){window.lintrk.q.push([a,b])};
-      window.lintrk.q=[]}
-      var s = document.getElementsByTagName("script")[0];
-      var b = document.createElement("script");
-      b.type = "text/javascript";b.async = true;
-      b.src = "https://snap.licdn.com/li.lms-analytics/insight.min.js";
-      s.parentNode.insertBefore(b, s);
-    })(window.lintrk);
-  </script>
-  <noscript>
-    <img loading="lazy" decoding="async" height="1" width="1" style="display:none;" alt="" src="https://px.ads.linkedin.com/collect/?pid=YOUR_PARTNER_ID&fmt=gif" />
-  </noscript>
-
-  <!-- Custom Event Tracking for Mavericks Blog -->
-  <script>
-    // Track page engagement
-    window.addEventListener('load', function() {
-      // Track time on page
-      var startTime = new Date().getTime();
-      
-      window.addEventListener('beforeunload', function() {
-        var timeSpent = Math.round((new Date().getTime() - startTime) / 1000);
-        if (typeof gtag !== 'undefined') {
-          gtag('event', 'time_on_page', {
-            'event_category': 'engagement',
-            'event_label': 'Mavericks Blog',
-            'value': timeSpent
-          });
-        }
-      });
-
-      // Track scroll depth
-      var maxScroll = 0;
-      window.addEventListener('scroll', function() {
-        var scrollPercent = Math.round((window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100);
-        if (scrollPercent > maxScroll) {
-          maxScroll = scrollPercent;
-          if (maxScroll >= 25 && maxScroll < 50) {
-            if (typeof gtag !== 'undefined') {
-              gtag('event', 'scroll_depth', {
-                'event_category': 'engagement',
-                'event_label': '25%',
-                'value': 25
-              });
-            }
-          } else if (maxScroll >= 50 && maxScroll < 75) {
-            if (typeof gtag !== 'undefined') {
-              gtag('event', 'scroll_depth', {
-                'event_category': 'engagement',
-                'event_label': '50%',
-                'value': 50
-              });
-            }
-          } else if (maxScroll >= 75 && maxScroll < 100) {
-            if (typeof gtag !== 'undefined') {
-              gtag('event', 'scroll_depth', {
-                'event_category': 'engagement',
-                'event_label': '75%',
-                'value': 75
-              });
-            }
-          } else if (maxScroll >= 100) {
-            if (typeof gtag !== 'undefined') {
-              gtag('event', 'scroll_depth', {
-                'event_category': 'engagement',
-                'event_label': '100%',
-                'value': 100
-              });
-            }
-          }
-        }
-      });
-    });
-
-    // Track video plays
-    function trackVideoPlay() {
-      if (typeof gtag !== 'undefined') {
-        gtag('event', 'video_play', {
-          'event_category': 'video',
-          'event_label': 'Mavericks Trailer',
-          'value': 1
-        });
-      }
-      if (typeof fbq !== 'undefined') {
-        fbq('track', 'ViewVideo', {
-          content_name: 'Mavericks Battlegrounds Trailer'
-        });
-      }
-    }
-
-    // Track game download clicks
-    function trackGameDownload() {
-      if (typeof gtag !== 'undefined') {
-        gtag('event', 'click', {
-          'event_category': 'game_download',
-          'event_label': 'Play Now Button',
-          'value': 1
-        });
-      }
-      if (typeof fbq !== 'undefined') {
-        fbq('track', 'InitiateCheckout', {
-          content_name: 'Mavericks Battlegrounds',
-          content_category: 'Game'
-        });
-      }
-    }
-
-    // Track social media clicks
-    function trackSocialClick(platform) {
-      if (typeof gtag !== 'undefined') {
-        gtag('event', 'social_click', {
-          'event_category': 'social_media',
-          'event_label': platform,
-          'value': 1
-        });
-      }
-    }
-
-    // Track image views
-    function trackImageView(imageName) {
-      if (typeof gtag !== 'undefined') {
-        gtag('event', 'image_view', {
-          'event_category': 'content',
-          'event_label': imageName,
-          'value': 1
-        });
-      }
-    }
-  </script>
-
-  <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>Mavericks Battlegrounds: Best Multiplayer Game 2025 | Unity Game Developer Dharmik Gohil</title>
-  <meta name="description" content="Discover Mavericks Battlegrounds - The best multiplayer battle arena game of 2025 by top game developer Dharmik Gohil. Experience epic gameplay, stunning graphics, and intense PvP action in this award-winning Unity 6 masterpiece.">
-  <meta name="keywords" content="Mavericks, Mavericks Battlegrounds, mavericks battle ground, best game, best multiplayer game, best game 2025, best developer, game developer, Dharmik Gohil, dharmik gohil game developer, best game developer, Unity game developer, professional game developer, top game developer, Unity 6, Unity multiplayer, Photon networking, battle arena, PvP game, multiplayer shooter, CHARUSAT University, DEPSTAR College, Indian game developer, Vadodara game developer, IDGC 2024, best indie game, award winning game, epic multiplayer game">
-  <meta name="author" content="Dharmik Gohil">
-  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
-  <meta name="googlebot" content="index, follow">
-  <link rel="canonical" href="https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html">
-
-  <!-- Favicons -->
-  <link href="../assets/img/dlogo.png" rel="icon">
-  <link href="../assets/img/dlogo.png" rel="apple-touch-icon">
-
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com" rel="preconnect">
-  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-
-  <!-- Vendor CSS Files -->
-  <link href="../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="../assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="../assets/vendor/aos/aos.css" rel="stylesheet">
-  <link href="../assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
-  <link href="../assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-
-  <!-- Main CSS File -->
-  <link href="../assets/css/main.css" rel="stylesheet">
-  <link href="../assets/css/navigation.css" rel="stylesheet">
-
-  <!-- Particles.js -->
-  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-
-  <!-- Custom CSS for Blog Page -->
-  <style>
-    /* Particle Background */
-    #particles-js {
-      position: fixed;
-      width: 100%;
-      height: 100%;
-      top: 0;
-      left: 0;
-      z-index: -1;
-      background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #16213e 100%);
-    }
-
-    body {
-      position: relative;
-      background: transparent !important;
-    }
-
-    /* Fix Recent Posts Widget Title Color */
-    .recent-posts-widget .widget-title {
-      color: #000000 !important;
-      font-weight: 600;
-      margin-bottom: 20px;
-      text-shadow: none;
-    }
-
-    /* Recent Posts Widget Styling */
-    .recent-posts-widget .post-item h4 a {
-      color: #00d4ff !important;
-      transition: all 0.3s ease;
-    }
-
-    .recent-posts-widget .post-item h4 a:hover {
-      color: #00ffff !important;
-      text-shadow: 0 0 10px rgba(0, 212, 255, 0.5);
-    }
-
-    .recent-posts-widget .post-item time {
-      color: #666666 !important;
-      font-size: 13px;
-    }
-
-    /* Widget Styling */
-    .widget-item {
-      background: rgba(255, 255, 255, 0.95);
-      backdrop-filter: blur(10px);
-      border-radius: 10px;
-      padding: 25px;
-      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
-    }
-
-    /* Blog Author Widget */
-    .blog-author-widget h4 {
-      color: #00d4ff !important;
-      font-weight: 600;
-      margin-top: 15px;
-    }
-
-    /* Blog Author Description Text */
-    .blog-author-widget p {
-      color: #000000 !important;
-      line-height: 1.6;
-    }
-
-    /* Profile Image Sizing */
-    .blog-author-widget img.rounded-circle {
-      width: 220px !important;
-      height: 220px !important;
-      object-fit: cover;
-      border: 4px solid #00d4ff;
-      box-shadow: 0 5px 15px rgba(0, 212, 255, 0.3);
-      margin-bottom: 15px;
-    }
-
-    /* Content Area */
-    .container {
-      position: relative;
-      z-index: 1;
-    }
-
-    /* Main Content Background */
-    main {
-      position: relative;
-      z-index: 1;
-    }
-
-    .blog-details {
-      background: rgba(255, 255, 255, 0.98);
-      backdrop-filter: blur(10px);
-      border-radius: 15px;
-      padding: 30px;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-    }
-  </style>
-
-  <!-- Open Graph / Facebook -->
-  <meta property="og:type" content="article">
-  <meta property="og:site_name" content="Dharmik Gohil - Game Developer Portfolio">
-  <meta property="og:url" content="https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html">
-  <meta property="og:title" content="Mavericks Battlegrounds: Best Multiplayer Game 2025 by Top Developer Dharmik Gohil">
-  <meta property="og:description" content="Discover Mavericks Battlegrounds - The best multiplayer battle arena game of 2025. Created by award-winning game developer Dharmik Gohil using Unity 6. Experience epic PvP action, stunning graphics, and competitive gameplay.">
-  <meta property="og:image" content="https://dharmikgohil.art/assets/img/mavericks-battlegrounds-logo.png">
-  <meta property="og:image:alt" content="Mavericks Battlegrounds - Best Multiplayer Game 2025 by Dharmik Gohil">
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">
-  <meta property="article:author" content="Dharmik Gohil">
-  <meta property="article:published_time" content="2025-06-12T00:00:00+00:00">
-  <meta property="article:modified_time" content="2026-01-05T09:55:15.934966">
-  <meta property="article:section" content="Game Development">
-  <meta property="article:tag" content="Mavericks">
-  <meta property="article:tag" content="Mavericks Battlegrounds">
-  <meta property="article:tag" content="Best Game">
-  <meta property="article:tag" content="Game Developer">
-  <meta property="article:tag" content="Dharmik Gohil">
-
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:site" content="@DharmikGohil">
-  <meta name="twitter:creator" content="@DharmikGohil">
-  <meta name="twitter:url" content="https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html">
-  <meta name="twitter:title" content="Mavericks Battlegrounds: Best Multiplayer Game 2025 | Dharmik Gohil">
-  <meta name="twitter:description" content="Experience the best multiplayer battle arena game of 2025. Epic PvP action, stunning graphics by award-winning developer Dharmik Gohil.">
-  <meta name="twitter:image" content="https://dharmikgohil.art/assets/img/mavericks-battlegrounds-logo.png">
-  <meta name="twitter:image:alt" content="Mavericks Battlegrounds - Best Multiplayer Game by Dharmik Gohil">
-
-  <!-- JSON-LD Structured Data -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "BlogPosting",
-    "headline": "Mavericks Battlegrounds: Best Multiplayer Game 2025 by Top Game Developer Dharmik Gohil",
-    "alternativeHeadline": "Complete Development Journey of Award-Winning Battle Arena Game",
-    "description": "Discover Mavericks Battlegrounds - The best multiplayer battle arena game of 2025 developed by award-winning game developer Dharmik Gohil. Epic PvP action, stunning Unity 6 graphics, and competitive gameplay.",
-    "image": [
-      "https://dharmikgohil.art/assets/img/mavericks-battlegrounds-logo.png",
-      "https://dharmikgohil.art/assets/img/mavericks-cinematic-logo.png",
-      "https://dharmikgohil.art/assets/img/mavericks-gameplay-1.png"
-    ],
-    "author": {
-      "@type": "Person",
-      "name": "Dharmik Gohil",
-      "url": "https://dharmikgohil.art",
-      "jobTitle": "Professional Game Developer & Unity XR Specialist",
-      "description": "Award-winning game developer specializing in Unity 6, multiplayer games, and XR experiences",
-      "alumniOf": {
-        "@type": "CollegeOrUniversity",
-        "name": "CHARUSAT University - DEPSTAR College"
-      },
-      "sameAs": [
-        "https://github.com/dharmikgohil013",
-        "https://in.linkedin.com/in/dharmikgohil086",
-        "https://www.youtube.com/@DharmikGohil086"
-      ]
-    },
-    "publisher": {
-      "@type": "Person",
-      "name": "Dharmik Gohil",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "https://dharmikgohil.art/assets/img/dlogo.png",
-        "width": 512,
-        "height": 512
-      }
-    },
-    "datePublished": "2025-06-12T00:00:00+00:00",
-    "dateModified": "2025-11-01T00:00:00+00:00",
-    "mainEntityOfPage": {
-      "@type": "WebPage",
-      "@id": "https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html"
-    },
-    "keywords": [
-      "Mavericks",
-      "Mavericks Battlegrounds",
-      "best game",
-      "best multiplayer game",
-      "best developer",
-      "game developer",
-      "Dharmik Gohil",
-      "professional game developer",
-      "Unity game developer",
-      "Unity 6",
-      "battle arena",
-      "PvP game"
-    ],
-    "articleSection": "Game Development",
-    "wordCount": 3500,
-    "inLanguage": "en-US",
-    "copyrightYear": 2025,
-    "copyrightHolder": {
-      "@type": "Person",
-      "name": "Dharmik Gohil"
-    },
-    "about": {
-      "@type": "Thing",
-      "name": "Game Development",
-      "description": "Professional multiplayer game development with Unity 6"
-    }
-  }
-  </script>
-
-  <!-- BreadcrumbList Schema -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": [
-      {
-        "@type": "ListItem",
-        "position": 1,
-        "name": "Home",
-        "item": "https://dharmikgohil.art"
-      },
-      {
-        "@type": "ListItem",
-        "position": 2,
-        "name": "Blog",
-        "item": "https://dharmikgohil.art/blog.html"
-      },
-      {
-        "@type": "ListItem",
-        "position": 3,
-        "name": "Mavericks Battlegrounds: Best Game 2025",
-        "item": "https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html"
-      }
-    ]
-  }
-  </script>
-
-  <!-- Person Schema for Dharmik Gohil -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Person",
-    "name": "Dharmik Gohil",
-    "alternateName": "Dharmik Ghanshyambhai Gohil",
-    "url": "https://dharmikgohil.art",
-    "image": "https://dharmikgohil.art/assets/img/dharmik-gohil-profile.jpg",
-    "jobTitle": "Professional Game Developer & Unity XR Specialist",
-    "description": "Award-winning game developer and creator of Mavericks Battlegrounds, specializing in Unity 6, multiplayer games, and immersive XR experiences",
-    "alumniOf": {
-      "@type": "CollegeOrUniversity",
-      "name": "CHARUSAT University - DEPSTAR College"
-    },
-    "knowsAbout": [
-      "Game Development",
-      "Unity 6",
-      "Unity XR",
-      "Multiplayer Gaming",
-      "Photon Networking",
-      "C# Programming",
-      "3D Graphics",
-      "Battle Arena Games"
-    ],
-    "sameAs": [
-      "https://github.com/dharmikgohil013",
-      "https://in.linkedin.com/in/dharmikgohil086",
-      "https://www.youtube.com/@DharmikGohil086",
-      "https://dharmikgohil.itch.io"
-    ]
-  }
-  </script>
-
-  <!-- ImageObject Schema for Dharmik Gohil Profile Photo -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "ImageObject",
-    "contentUrl": "https://dharmikgohil.art/assets/img/dharmik-gohil-profile.jpg",
-    "url": "https://dharmikgohil.art/assets/img/dharmik-gohil-profile.jpg",
-    "name": "Dharmik Gohil - Professional Game Developer Portrait",
-    "description": "Professional portrait photo of Dharmik Gohil, expert game developer specializing in Unity XR development, multiplayer gaming, and creator of Mavericks Battlegrounds - the best game of 2025",
-    "caption": "Dharmik Gohil - Professional Game Developer & Unity XR Specialist",
-    "creator": {
-      "@type": "Person",
-      "name": "Dharmik Gohil"
-    },
-    "copyrightHolder": {
-      "@type": "Person",
-      "name": "Dharmik Gohil"
-    },
-    "creditText": "Dharmik Gohil - Game Developer Portfolio",
-    "license": "https://dharmikgohil.art",
-    "acquireLicensePage": "https://dharmikgohil.art/contact.html",
-    "representativeOfPage": true,
-    "keywords": [
-      "Dharmik Gohil",
-      "Game Developer",
-      "Unity Developer",
-      "Professional Game Developer",
-      "Unity XR Specialist",
-      "Mavericks Battlegrounds Creator",
-      "Best Game Developer",
-      "Gaming Industry Professional"
-    ],
-    "width": "220px",
-    "height": "220px",
-    "uploadDate": "2025-06-12",
-    "thumbnail": {
-      "@type": "ImageObject",
-      "contentUrl": "https://dharmikgohil.art/assets/img/dharmik-gohil-profile.jpg"
-    },
-    "encodingFormat": "image/jpeg",
-    "author": {
-      "@type": "Person",
-      "name": "Dharmik Gohil",
-      "jobTitle": "Professional Game Developer",
-      "url": "https://dharmikgohil.art"
-    }
-  }
-  </script>
-
-  <!-- VideoObject Schema for YouTube Video -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "VideoObject",
-    "name": "Mavericks Battlegrounds - Official Gameplay Trailer | Best Multiplayer Game 2025",
-    "description": "Official gameplay trailer of Mavericks Battlegrounds - The best epic multiplayer battle arena game of 2025 created by award-winning game developer Dharmik Gohil. Experience stunning graphics, intense PvP action, and competitive gameplay.",
-    "thumbnailUrl": [
-      "https://dharmikgohil.art/assets/img/mavericks-battlegrounds-logo.png",
-      "https://dharmikgohil.art/assets/img/mavericks-cinematic-logo.png"
-    ],
-    "uploadDate": "2025-06-12T00:00:00+00:00",
-    "duration": "PT2M30S",
-    "contentUrl": "https://youtu.be/RefphkY5gCw",
-    "embedUrl": "https://www.youtube.com/embed/RefphkY5gCw",
-    "interactionStatistic": {
-      "@type": "InteractionCounter",
-      "interactionType": "http://schema.org/WatchAction",
-      "userInteractionCount": 5000
-    },
-    "publisher": {
-      "@type": "Person",
-      "name": "Dharmik Gohil",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "https://dharmikgohil.art/assets/img/dlogo.png"
-      }
-    }
-  }
-  </script>
-
-  <!-- Game Schema -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "VideoGame",
-    "name": "Mavericks Battlegrounds",
-    "alternateName": "Mavericks Battle Ground",
-    "description": "Epic multiplayer battle arena game - The best PvP game of 2025. Only the strong endure. Created by professional game developer Dharmik Gohil using Unity 6 and Photon networking.",
-    "genre": ["Action", "Multiplayer", "Battle Arena", "Shooter", "PvP", "Competitive"],
-    "gamePlatform": ["PC", "Web Browser", "itch.io", "Windows"],
-    "operatingSystem": "Windows, Web Browser",
-    "applicationCategory": "Game",
-    "offers": {
-      "@type": "Offer",
-      "price": "0",
-      "priceCurrency": "USD",
-      "availability": "https://schema.org/InStock"
-    },
-    "author": {
-      "@type": "Person",
-      "name": "Dharmik Gohil",
-      "description": "Professional Game Developer & Best Unity Developer"
-    },
-    "creator": {
-      "@type": "Person",
-      "name": "Dharmik Gohil"
-    },
-    "publisher": {
-      "@type": "Person",
-      "name": "Dharmik Gohil"
-    },
-    "datePublished": "2025-06-12T00:00:00+00:00",
-    "url": "https://dharmikgohil.itch.io/mavericks-battlegrounds",
-    "gameTip": "Master tactical positioning, coordinate with your team, and dominate the battlefield",
-    "aggregateRating": {
-      "@type": "AggregateRating",
-      "ratingValue": "4.8",
-      "ratingCount": "150",
-      "bestRating": "5",
-      "worstRating": "1"
-    },
-    "trailer": {
-      "@type": "VideoObject",
-      "name": "Mavericks Battlegrounds Official Trailer",
-      "description": "Best multiplayer game 2025 gameplay trailer",
-      "url": "https://youtu.be/RefphkY5gCw",
-      "thumbnailUrl": "https://dharmikgohil.art/assets/img/mavericks-battlegrounds-logo.png"
-    },
-    "screenshot": [
-      "https://dharmikgohil.art/assets/img/mavericks-gameplay-1.png",
-      "https://dharmikgohil.art/assets/img/mavericks-gameplay-2.png",
-      "https://dharmikgohil.art/assets/img/mavericks-gameplay-3.png"
-    ]
-  }
-  </script>
-
-  <!-- SoftwareApplication Schema -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "SoftwareApplication",
-    "name": "Mavericks Battlegrounds",
-    "applicationCategory": "GameApplication",
-    "operatingSystem": "Windows, Web Browser",
-    "offers": {
-      "@type": "Offer",
-      "price": "0",
-      "priceCurrency": "USD"
-    },
-    "aggregateRating": {
-      "@type": "AggregateRating",
-      "ratingValue": "4.8",
-      "ratingCount": "150"
-    },
-    "creator": {
-      "@type": "Person",
-      "name": "Dharmik Gohil",
-      "description": "Best Game Developer - Unity Specialist"
-    }
-  }
-  </script>
-
-  <!-- FAQPage Schema -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "What is Mavericks Battlegrounds?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Mavericks Battlegrounds is the best multiplayer battle arena game of 2025, developed by professional game developer Dharmik Gohil using Unity 6 and Photon networking. It features intense PvP action, stunning graphics, and competitive gameplay."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Who developed Mavericks Battlegrounds?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Mavericks Battlegrounds was developed by award-winning game developer Dharmik Gohil and his team from CHARUSAT University DEPSTAR College. Dharmik Gohil is a professional Unity XR specialist and the best game developer known for creating immersive multiplayer experiences."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Is Mavericks Battlegrounds the best multiplayer game?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Yes, Mavericks Battlegrounds is considered one of the best multiplayer games of 2025, featuring cutting-edge Unity 6 graphics, Photon networking for seamless online gameplay, and innovative battle arena mechanics created by top game developer Dharmik Gohil."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Where can I play Mavericks Battlegrounds?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "You can play Mavericks Battlegrounds on itch.io at https://dharmikgohil.itch.io/mavericks-battlegrounds. The best game is available for PC and web browsers."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "What makes Dharmik Gohil the best game developer?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Dharmik Gohil is recognized as one of the best game developers for creating award-winning games like Mavericks Battlegrounds. He specializes in Unity 6, multiplayer systems, XR development, and has demonstrated exceptional skills in creating the best gaming experiences."
-        }
-      }
-    ]
-  }
-  </script>
-
-  <!-- Performance Optimization -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preconnect" href="https://www.google-analytics.com">
-  
-  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=IBM+Plex+Mono:ital,wght@0,400;0,500;0,700;1,400&family=Playfair+Display:ital,wght@0,900;1,900&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=IBM+Plex+Mono:ital,wght@0,400;0,500;0,700;1,400&family=Playfair+Display:ital,wght@0,900;1,900&display=swap" rel="stylesheet"></noscript>
-  <link rel="preload" href="../index.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link href="../index.css" rel="stylesheet"></noscript>
-
-  <!-- ======================================================= -->
-  <!-- 200+ INTERNATIONAL WORLD LANGUAGES HREFLANG ANNOTATIONS  -->
-  <!-- ======================================================= -->
-  <link rel="alternate" hreflang="x-default" href="https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html">
-  <link rel="alternate" hreflang="en" href="https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html">
-  <link rel="alternate" hreflang="en-US" href="https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html?lang=en-US">
-  <link rel="alternate" hreflang="en-GB" href="https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html?lang=en-GB">
-  <link rel="alternate" hreflang="en-CA" href="https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html?lang=en-CA">
-  <link rel="alternate" hreflang="en-AU" href="https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html?lang=en-AU">
-  <link rel="alternate" hreflang="en-IN" href="https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html?lang=en-IN">
-  <link rel="alternate" hreflang="en-NZ" href="https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html?lang=en-NZ">
-  <link rel="alternate" hreflang="en-IE" href="https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html?lang=en-IE">
-  <link rel="alternate" hreflang="en-SG" href="https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html?lang=en-SG">
-  <link rel="alternate" hreflang="en-ZA" href="https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html?lang=en-ZA">
-  <link rel="alternate" hreflang="en-AE" href="https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html?lang=en-AE">
-  <link rel="alternate" hreflang="es" href="https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html?lang=es">
-  <link rel="alternate" hreflang="es-ES" href="https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html?lang=es-ES">
-  <link rel="alternate" hreflang="es-MX" href="https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html?lang=es-MX">
-  <link rel="alternate" hreflang="es-AR" href="https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html?lang=es-AR">
-  <link rel="alternate" hreflang="es-CO" href="https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html?lang=es-CO">
-  <link rel="alternate" hreflang="es-CL" href="https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html?lang=es-CL">
-  <link rel="alternate" hreflang="es-PE" href="https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html?lang=es-PE">
-  <link rel="alternate" hreflang="es-VE" href="https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html?lang=es-VE">
-  <link rel="alternate" hreflang="fr" href="https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html?lang=fr">
-  <link rel="alternate" hreflang="fr-FR" href="https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html?lang=fr-FR">
-  <link rel="alternate" hreflang="fr-CA" href="https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html?lang=fr-CA">
-  <link rel="alternate" hreflang="fr-BE" href="https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html?lang=fr-BE">
-  <link rel="alternate" hreflang="fr-CH" href="https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html?lang=fr-CH">
-  <link rel="alternate" hreflang="de" href="https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html?lang=de">
-  <link rel="alternate" hreflang="de-DE" href="https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html?lang=de-DE">
-  <link rel="alternate" hreflang="de-AT" href="https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html?lang=de-AT">
-  <link rel="alternate" hreflang="de-CH" href="https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html?lang=de-CH">
-  <link rel="alternate" hreflang="it" href="https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html?lang=it">
-  <link rel="alternate" hreflang="it-IT" href="https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html?lang=it-IT">
-  <link rel="alternate" hreflang="it-CH" href="https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html?lang=it-CH">
-  <link rel="alternate" hreflang="pt" href="https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html?lang=pt">
-  <link rel="alternate" hreflang="pt-BR" href="https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html?lang=pt-BR">
-  <link rel="alternate" hreflang="pt-PT" href="https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html?lang=pt-PT">
-  <link rel="alternate" hreflang="ru" href="https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html?lang=ru">
-  <link rel="alternate" hreflang="ru-RU" href="https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html?lang=ru-RU">
-  <link rel="alternate" hreflang="ja" href="https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html?lang=ja">
-  <link rel="alternate" hreflang="ja-JP" href="https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html?lang=ja-JP">
-  <link rel="alternate" hreflang="zh" href="https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html?lang=zh">
-  <link rel="alternate" hreflang="zh-CN" href="https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html?lang=zh-CN">
-  <link rel="alternate" hreflang="zh-TW" href="https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html?lang=zh-TW">
-  <link rel="alternate" hreflang="zh-HK" href="https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html?lang=zh-HK">
-  <link rel="alternate" hreflang="zh-SG" href="https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html?lang=zh-SG">
-  <link rel="alternate" hreflang="zh-Hans" href="https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html?lang=zh-Hans">
-  <link rel="alternate" hreflang="zh-Hant" href="https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html?lang=zh-Hant">
-  <link rel="alternate" hreflang="ko" href="https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html?lang=ko">
-  <link rel="alternate" hreflang="ko-KR" href="https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html?lang=ko-KR">
-  <link rel="alternate" hreflang="ar" href="https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html?lang=ar">
-  <link rel="alternate" hreflang="ar-SA" href="https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html?lang=ar-SA">
-  <link rel="alternate" hreflang="ar-AE" href="https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html?lang=ar-AE">
-  <link rel="alternate" hreflang="ar-EG" href="https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html?lang=ar-EG">
-  <link rel="alternate" hreflang="ar-QA" href="https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html?lang=ar-QA">
-  <link rel="alternate" hreflang="ar-KW" href="https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html?lang=ar-KW">
-  <link rel="alternate" hreflang="hi" href="https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html?lang=hi">
-  <link rel="alternate" hreflang="hi-IN" href="https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html?lang=hi-IN">
-  <link rel="alternate" hreflang="gu" href="https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html?lang=gu">
-  <link rel="alternate" hreflang="gu-IN" href="https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html?lang=gu-IN">
-  <link rel="alternate" hreflang="bn" href="https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html?lang=bn">
-  <link rel="alternate" hreflang="bn-BD" href="https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html?lang=bn-BD">
-  <link rel="alternate" hreflang="bn-IN" href="https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html?lang=bn-IN">
-  <link rel="alternate" hreflang="pa" href="https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html?lang=pa">
-  <link rel="alternate" hreflang="pa-IN" href="https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html?lang=pa-IN">
-  <link rel="alternate" hreflang="pa-PK" href="https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html?lang=pa-PK">
-  <link rel="alternate" hreflang="mr" href="https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html?lang=mr">
-  <link rel="alternate" hreflang="mr-IN" href="https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html?lang=mr-IN">
-  <link rel="alternate" hreflang="te" href="https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html?lang=te">
-  <link rel="alternate" hreflang="te-IN" href="https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html?lang=te-IN">
-  <link rel="alternate" hreflang="ta" href="https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html?lang=ta">
-  <link rel="alternate" hreflang="ta-IN" href="https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html?lang=ta-IN">
-  <link rel="alternate" hreflang="ta-LK" href="https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html?lang=ta-LK">
-  <link rel="alternate" hreflang="ta-SG" href="https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html?lang=ta-SG">
-  <link rel="alternate" hreflang="ur" href="https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html?lang=ur">
-  <link rel="alternate" hreflang="ur-PK" href="https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html?lang=ur-PK">
-  <link rel="alternate" hreflang="ur-IN" href="https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html?lang=ur-IN">
-  <link rel="alternate" hreflang="kn" href="https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html?lang=kn">
-  <link rel="alternate" hreflang="kn-IN" href="https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html?lang=kn-IN">
-  <link rel="alternate" hreflang="ml" href="https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html?lang=ml">
-  <link rel="alternate" hreflang="ml-IN" href="https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html?lang=ml-IN">
-  <link rel="alternate" hreflang="or" href="https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html?lang=or">
-  <link rel="alternate" hreflang="as" href="https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html?lang=as">
-  <link rel="alternate" hreflang="ne" href="https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html?lang=ne">
-  <link rel="alternate" hreflang="ne-NP" href="https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html?lang=ne-NP">
-  <link rel="alternate" hreflang="si" href="https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html?lang=si">
-  <link rel="alternate" hreflang="si-LK" href="https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html?lang=si-LK">
-  <link rel="alternate" hreflang="tr" href="https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html?lang=tr">
-  <link rel="alternate" hreflang="tr-TR" href="https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html?lang=tr-TR">
-  <link rel="alternate" hreflang="vi" href="https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html?lang=vi">
-  <link rel="alternate" hreflang="vi-VN" href="https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html?lang=vi-VN">
-  <link rel="alternate" hreflang="th" href="https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html?lang=th">
-  <link rel="alternate" hreflang="th-TH" href="https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html?lang=th-TH">
-  <link rel="alternate" hreflang="id" href="https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html?lang=id">
-  <link rel="alternate" hreflang="id-ID" href="https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html?lang=id-ID">
-  <link rel="alternate" hreflang="ms" href="https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html?lang=ms">
-  <link rel="alternate" hreflang="ms-MY" href="https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html?lang=ms-MY">
-  <link rel="alternate" hreflang="tl" href="https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html?lang=tl">
-  <link rel="alternate" hreflang="fil" href="https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html?lang=fil">
-  <link rel="alternate" hreflang="my" href="https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html?lang=my">
-  <link rel="alternate" hreflang="km" href="https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html?lang=km">
-  <link rel="alternate" hreflang="lo" href="https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html?lang=lo">
-  <link rel="alternate" hreflang="jv" href="https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html?lang=jv">
-  <link rel="alternate" hreflang="su" href="https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html?lang=su">
-  <link rel="alternate" hreflang="nl" href="https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html?lang=nl">
-  <link rel="alternate" hreflang="nl-NL" href="https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html?lang=nl-NL">
-  <link rel="alternate" hreflang="nl-BE" href="https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html?lang=nl-BE">
-  <link rel="alternate" hreflang="pl" href="https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html?lang=pl">
-  <link rel="alternate" hreflang="pl-PL" href="https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html?lang=pl-PL">
-  <link rel="alternate" hreflang="uk" href="https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html?lang=uk">
-  <link rel="alternate" hreflang="uk-UA" href="https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html?lang=uk-UA">
-  <link rel="alternate" hreflang="fa" href="https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html?lang=fa">
-  <link rel="alternate" hreflang="fa-IR" href="https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html?lang=fa-IR">
-  <link rel="alternate" hreflang="he" href="https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html?lang=he">
-  <link rel="alternate" hreflang="he-IL" href="https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html?lang=he-IL">
-  <link rel="alternate" hreflang="el" href="https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html?lang=el">
-  <link rel="alternate" hreflang="el-GR" href="https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html?lang=el-GR">
-  <link rel="alternate" hreflang="sv" href="https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html?lang=sv">
-  <link rel="alternate" hreflang="sv-SE" href="https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html?lang=sv-SE">
-  <link rel="alternate" hreflang="no" href="https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html?lang=no">
-  <link rel="alternate" hreflang="nb" href="https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html?lang=nb">
-  <link rel="alternate" hreflang="nn" href="https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html?lang=nn">
-  <link rel="alternate" hreflang="da" href="https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html?lang=da">
-  <link rel="alternate" hreflang="da-DK" href="https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html?lang=da-DK">
-  <link rel="alternate" hreflang="fi" href="https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html?lang=fi">
-  <link rel="alternate" hreflang="fi-FI" href="https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html?lang=fi-FI">
-  <link rel="alternate" hreflang="cs" href="https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html?lang=cs">
-  <link rel="alternate" hreflang="cs-CZ" href="https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html?lang=cs-CZ">
-  <link rel="alternate" hreflang="ro" href="https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html?lang=ro">
-  <link rel="alternate" hreflang="ro-RO" href="https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html?lang=ro-RO">
-  <link rel="alternate" hreflang="hu" href="https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html?lang=hu">
-  <link rel="alternate" hreflang="hu-HU" href="https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html?lang=hu-HU">
-  <link rel="alternate" hreflang="sk" href="https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html?lang=sk">
-  <link rel="alternate" hreflang="sk-SK" href="https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html?lang=sk-SK">
-  <link rel="alternate" hreflang="bg" href="https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html?lang=bg">
-  <link rel="alternate" hreflang="bg-BG" href="https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html?lang=bg-BG">
-  <link rel="alternate" hreflang="sr" href="https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html?lang=sr">
-  <link rel="alternate" hreflang="sr-RS" href="https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html?lang=sr-RS">
-  <link rel="alternate" hreflang="hr" href="https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html?lang=hr">
-  <link rel="alternate" hreflang="hr-HR" href="https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html?lang=hr-HR">
-  <link rel="alternate" hreflang="lt" href="https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html?lang=lt">
-  <link rel="alternate" hreflang="lt-LT" href="https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html?lang=lt-LT">
-  <link rel="alternate" hreflang="lv" href="https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html?lang=lv">
-  <link rel="alternate" hreflang="lv-LV" href="https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html?lang=lv-LV">
-  <link rel="alternate" hreflang="et" href="https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html?lang=et">
-  <link rel="alternate" hreflang="et-EE" href="https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html?lang=et-EE">
-  <link rel="alternate" hreflang="sl" href="https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html?lang=sl">
-  <link rel="alternate" hreflang="sl-SI" href="https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html?lang=sl-SI">
-  <link rel="alternate" hreflang="ga" href="https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html?lang=ga">
-  <link rel="alternate" hreflang="ga-IE" href="https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html?lang=ga-IE">
-  <link rel="alternate" hreflang="cy" href="https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html?lang=cy">
-  <link rel="alternate" hreflang="cy-GB" href="https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html?lang=cy-GB">
-  <link rel="alternate" hreflang="is" href="https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html?lang=is">
-  <link rel="alternate" hreflang="is-IS" href="https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html?lang=is-IS">
-  <link rel="alternate" hreflang="mt" href="https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html?lang=mt">
-  <link rel="alternate" hreflang="sq" href="https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html?lang=sq">
-  <link rel="alternate" hreflang="mk" href="https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html?lang=mk">
-  <link rel="alternate" hreflang="bs" href="https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html?lang=bs">
-  <link rel="alternate" hreflang="az" href="https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html?lang=az">
-  <link rel="alternate" hreflang="ka" href="https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html?lang=ka">
-  <link rel="alternate" hreflang="hy" href="https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html?lang=hy">
-  <link rel="alternate" hreflang="kk" href="https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html?lang=kk">
-  <link rel="alternate" hreflang="uz" href="https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html?lang=uz">
-  <link rel="alternate" hreflang="mn" href="https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html?lang=mn">
-  <link rel="alternate" hreflang="sw" href="https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html?lang=sw">
-  <link rel="alternate" hreflang="sw-KE" href="https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html?lang=sw-KE">
-  <link rel="alternate" hreflang="sw-TZ" href="https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html?lang=sw-TZ">
-  <link rel="alternate" hreflang="af" href="https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html?lang=af">
-  <link rel="alternate" hreflang="am" href="https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html?lang=am">
-  <link rel="alternate" hreflang="ha" href="https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html?lang=ha">
-  <link rel="alternate" hreflang="yo" href="https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html?lang=yo">
-  <link rel="alternate" hreflang="ig" href="https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html?lang=ig">
-  <link rel="alternate" hreflang="zu" href="https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html?lang=zu">
-  <link rel="alternate" hreflang="xh" href="https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html?lang=xh">
-  <link rel="alternate" hreflang="so" href="https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html?lang=so">
-  <link rel="alternate" hreflang="rw" href="https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html?lang=rw">
-  <link rel="alternate" hreflang="mg" href="https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html?lang=mg">
-  <link rel="alternate" hreflang="sn" href="https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html?lang=sn">
-  <link rel="alternate" hreflang="ny" href="https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html?lang=ny">
-  <link rel="alternate" hreflang="st" href="https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html?lang=st">
-  <link rel="alternate" hreflang="tn" href="https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html?lang=tn">
-  <link rel="alternate" hreflang="ts" href="https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html?lang=ts">
-  <link rel="alternate" hreflang="ss" href="https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html?lang=ss">
-  <link rel="alternate" hreflang="ve" href="https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html?lang=ve">
-  <link rel="alternate" hreflang="nr" href="https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html?lang=nr">
-  <link rel="alternate" hreflang="om" href="https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html?lang=om">
-  <link rel="alternate" hreflang="ti" href="https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html?lang=ti">
-  <link rel="alternate" hreflang="tg" href="https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html?lang=tg">
-  <link rel="alternate" hreflang="tk" href="https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html?lang=tk">
-  <link rel="alternate" hreflang="ky" href="https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html?lang=ky">
-  <link rel="alternate" hreflang="ps" href="https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html?lang=ps">
-  <link rel="alternate" hreflang="ku" href="https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html?lang=ku">
-  <link rel="alternate" hreflang="sd" href="https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html?lang=sd">
-  <link rel="alternate" hreflang="ug" href="https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html?lang=ug">
-  <link rel="alternate" hreflang="be" href="https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html?lang=be">
-  <link rel="alternate" hreflang="ca" href="https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html?lang=ca">
-  <link rel="alternate" hreflang="gl" href="https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html?lang=gl">
-  <link rel="alternate" hreflang="eu" href="https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html?lang=eu">
-  <link rel="alternate" hreflang="lb" href="https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html?lang=lb">
-  <link rel="alternate" hreflang="fo" href="https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html?lang=fo">
-  <link rel="alternate" hreflang="gd" href="https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html?lang=gd">
-  <link rel="alternate" hreflang="co" href="https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html?lang=co">
-  <link rel="alternate" hreflang="eo" href="https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html?lang=eo">
-  <link rel="alternate" hreflang="la" href="https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html?lang=la">
-  <link rel="alternate" hreflang="yi" href="https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html?lang=yi">
-  <link rel="alternate" hreflang="ht" href="https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html?lang=ht">
-  <link rel="alternate" hreflang="sm" href="https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html?lang=sm">
-  <link rel="alternate" hreflang="to" href="https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html?lang=to">
-  <link rel="alternate" hreflang="fj" href="https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html?lang=fj">
-  <link rel="alternate" hreflang="mi" href="https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html?lang=mi">
-  <link rel="alternate" hreflang="haw" href="https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html?lang=haw">
-  <link rel="alternate" hreflang="ceb" href="https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html?lang=ceb">
-  <link rel="alternate" hreflang="sa" href="https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html?lang=sa">
-  <link rel="alternate" hreflang="bho" href="https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html?lang=bho">
-  <link rel="alternate" hreflang="mai" href="https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html?lang=mai">
-  <link rel="alternate" hreflang="kok" href="https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html?lang=kok">
-  <link rel="alternate" hreflang="mni" href="https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html?lang=mni">
-  <link rel="alternate" hreflang="sat" href="https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html?lang=sat">
-  <link rel="alternate" hreflang="brx" href="https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html?lang=brx">
-  <link rel="alternate" hreflang="doi" href="https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html?lang=doi">
-  <link rel="alternate" hreflang="lus" href="https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html?lang=lus">
-  <link rel="alternate" hreflang="kha" href="https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html?lang=kha">
-  <link rel="alternate" hreflang="gar" href="https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html?lang=gar">
-  <link rel="alternate" hreflang="tt" href="https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html?lang=tt">
-  <link rel="alternate" hreflang="ba" href="https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html?lang=ba">
-  <link rel="alternate" hreflang="cv" href="https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html?lang=cv">
-  <link rel="alternate" hreflang="sah" href="https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html?lang=sah">
-  <link rel="alternate" hreflang="qu" href="https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html?lang=qu">
-  <link rel="alternate" hreflang="ay" href="https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html?lang=ay">
-  <link rel="alternate" hreflang="gn" href="https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html?lang=gn">
-  <link rel="alternate" hreflang="wo" href="https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html?lang=wo">
-  <link rel="alternate" hreflang="ff" href="https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html?lang=ff">
-  <link rel="alternate" hreflang="bm" href="https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html?lang=bm">
-  <link rel="alternate" hreflang="ee" href="https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html?lang=ee">
-  <link rel="alternate" hreflang="ak" href="https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html?lang=ak">
-  <link rel="alternate" hreflang="lg" href="https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html?lang=lg">
-  <link rel="alternate" hreflang="ln" href="https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html?lang=ln">
-  <link rel="alternate" hreflang="ki" href="https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html?lang=ki">
-  <link rel="alternate" hreflang="fy" href="https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html?lang=fy">
-  <link rel="alternate" hreflang="kl" href="https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html?lang=kl">
-  <link rel="alternate" hreflang="iu" href="https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html?lang=iu">
-  <link rel="alternate" hreflang="chr" href="https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html?lang=chr">
-  <link rel="alternate" hreflang="nav" href="https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html?lang=nav">
-  <link rel="alternate" hreflang="dv" href="https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html?lang=dv">
-  <link rel="alternate" hreflang="dz" href="https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html?lang=dz">
-  <link rel="alternate" hreflang="bo" href="https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html?lang=bo">
-  <link rel="alternate" hreflang="hmn" href="https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html?lang=hmn">
-  <link rel="alternate" hreflang="ilo" href="https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html?lang=ilo">
-  <link rel="alternate" hreflang="war" href="https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html?lang=war">
-  <link rel="alternate" hreflang="hil" href="https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html?lang=hil">
-  <link rel="alternate" hreflang="pam" href="https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html?lang=pam">
-  <link rel="alternate" hreflang="bik" href="https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html?lang=bik">
-  <link rel="alternate" hreflang="pag" href="https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html?lang=pag">
-  <link rel="alternate" hreflang="jw" href="https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html?lang=jw">
-  <link rel="alternate" hreflang="sc" href="https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html?lang=sc">
-  <link rel="alternate" hreflang="rm" href="https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html?lang=rm">
-  <link rel="alternate" hreflang="fur" href="https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html?lang=fur">
-  <link rel="alternate" hreflang="vec" href="https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html?lang=vec">
-  <link rel="alternate" hreflang="lmo" href="https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html?lang=lmo">
-  <link rel="alternate" hreflang="lij" href="https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html?lang=lij">
-  <link rel="alternate" hreflang="nap" href="https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html?lang=nap">
-  <link rel="alternate" hreflang="scn" href="https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html?lang=scn">
-  <link rel="alternate" hreflang="ast" href="https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html?lang=ast">
-  <link rel="alternate" hreflang="an" href="https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html?lang=an">
-  <link rel="alternate" hreflang="oc" href="https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html?lang=oc">
-  <link rel="alternate" hreflang="br" href="https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html?lang=br">
-  <link rel="alternate" hreflang="kw" href="https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html?lang=kw">
-  <link rel="alternate" hreflang="gv" href="https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html?lang=gv">
-  <link rel="alternate" hreflang="se" href="https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html?lang=se">
-  <link rel="alternate" hreflang="tyv" href="https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html?lang=tyv">
-  <link rel="alternate" hreflang="os" href="https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html?lang=os">
-  <link rel="alternate" hreflang="ab" href="https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html?lang=ab">
-  <link rel="alternate" hreflang="av" href="https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html?lang=av">
-  <link rel="alternate" hreflang="ce" href="https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html?lang=ce">
-  <link rel="alternate" hreflang="inh" href="https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html?lang=inh">
-  <link rel="alternate" hreflang="lez" href="https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html?lang=lez">
-  <link rel="alternate" hreflang="ch" href="https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html?lang=ch">
-  <link rel="alternate" hreflang="sg" href="https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html?lang=sg">
-  <link rel="alternate" hreflang="rn" href="https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html?lang=rn">
-  <link rel="alternate" hreflang="kg" href="https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html?lang=kg">
-  <link rel="alternate" hreflang="lu" href="https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html?lang=lu">
-  <link rel="alternate" hreflang="tw" href="https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html?lang=tw">
-  <link rel="alternate" hreflang="aa" href="https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html?lang=aa">
-
-  <!-- ======================================================= -->
-  <!-- GLOBAL GEOGRAPHIC & MULTI-REGION SEO (WORLDWIDE REACH)     -->
-  <!-- ======================================================= -->
-  <meta name="geo.region" content="IN-GJ">
-  <meta name="geo.placename" content="Surat, Gujarat, India; Global Remote Service">
-  <meta name="geo.position" content="21.1702;72.8311">
-  <meta name="ICBM" content="21.1702, 72.8311">
-  <meta name="coverage" content="Worldwide">
-  <meta name="distribution" content="Global">
-  <meta name="target" content="all">
-  <meta name="audience" content="all">
-  <meta name="rating" content="general">
-  <meta name="country" content="GLOBAL">
-  <meta name="geography" content="Global, Worldwide, Remote">
-  <meta name="target_country" content="US, GB, CA, AU, DE, FR, JP, IN, AE, SG, NL, CH, SE, BR, KR, SA, ES, IT, NZ, IE, Global">
-  <meta name="DC.coverage" content="Worldwide">
-  <meta name="DC.Language" content="en, hi, gu, es, fr, de, ja, zh, ru, ar, pt, it, ko, nl, tr, id, vi, pl, sv, uk">
-  <meta name="DC.publisher" content="Dharmik Gohil">
-  <meta name="DC.creator" content="Dharmik Gohil">
-  <meta name="DC.format" content="text/html">
-  <meta name="DC.type" content="InteractiveResource">
-
-  <!-- ======================================================= -->
-  <!-- MULTILINGUAL OPEN GRAPH ALTERNATE LOCALES                -->
-  <!-- ======================================================= -->
-  <meta property="og:locale:alternate" content="en_GB">
-  <meta property="og:locale:alternate" content="en_CA">
-  <meta property="og:locale:alternate" content="en_AU">
-  <meta property="og:locale:alternate" content="en_IN">
-  <meta property="og:locale:alternate" content="en_NZ">
-  <meta property="og:locale:alternate" content="en_ZA">
-  <meta property="og:locale:alternate" content="es_ES">
-  <meta property="og:locale:alternate" content="es_LA">
-  <meta property="og:locale:alternate" content="es_MX">
-  <meta property="og:locale:alternate" content="fr_FR">
-  <meta property="og:locale:alternate" content="fr_CA">
-  <meta property="og:locale:alternate" content="de_DE">
-  <meta property="og:locale:alternate" content="de_AT">
-  <meta property="og:locale:alternate" content="de_CH">
-  <meta property="og:locale:alternate" content="it_IT">
-  <meta property="og:locale:alternate" content="pt_BR">
-  <meta property="og:locale:alternate" content="pt_PT">
-  <meta property="og:locale:alternate" content="ru_RU">
-  <meta property="og:locale:alternate" content="ja_JP">
-  <meta property="og:locale:alternate" content="zh_CN">
-  <meta property="og:locale:alternate" content="zh_TW">
-  <meta property="og:locale:alternate" content="zh_HK">
-  <meta property="og:locale:alternate" content="ko_KR">
-  <meta property="og:locale:alternate" content="ar_AR">
-  <meta property="og:locale:alternate" content="hi_IN">
-  <meta property="og:locale:alternate" content="gu_IN">
-  <meta property="og:locale:alternate" content="bn_IN">
-  <meta property="og:locale:alternate" content="pa_IN">
-  <meta property="og:locale:alternate" content="mr_IN">
-  <meta property="og:locale:alternate" content="ta_IN">
-  <meta property="og:locale:alternate" content="te_IN">
-  <meta property="og:locale:alternate" content="ur_PK">
-  <meta property="og:locale:alternate" content="tr_TR">
-  <meta property="og:locale:alternate" content="vi_VN">
-  <meta property="og:locale:alternate" content="th_TH">
-  <meta property="og:locale:alternate" content="id_ID">
-  <meta property="og:locale:alternate" content="ms_MY">
-  <meta property="og:locale:alternate" content="nl_NL">
-  <meta property="og:locale:alternate" content="pl_PL">
-  <meta property="og:locale:alternate" content="sv_SE">
-  <meta property="og:locale:alternate" content="da_DK">
-  <meta property="og:locale:alternate" content="fi_FI">
-  <meta property="og:locale:alternate" content="nb_NO">
-  <meta property="og:locale:alternate" content="el_GR">
-  <meta property="og:locale:alternate" content="he_IL">
-  <meta property="og:locale:alternate" content="cs_CZ">
-  <meta property="og:locale:alternate" content="hu_HU">
-  <meta property="og:locale:alternate" content="ro_RO">
-  <meta property="og:locale:alternate" content="uk_UA">
-
-  <!-- ======================================================= -->
-  <!-- MULTILINGUAL KEYWORDS FOR GLOBAL ORGANIC DISCOVERY          -->
-  <!-- ======================================================= -->
-  <meta name="keywords:multilingual" content="hire game developer india, unity developer, XR developer, contratar desarrollador videojuegos, développeur jeux vidéo unity, Unity Spieleentwickler, ゲーム開発者 依頼, 聘请游戏开发者, गेम डेवलपर, ગેમ ડેવલપર, توظيف مطور ألعاب, desenvolvedor de jogos, unity разработчик, sviluppatore videogiochi, 게임 개발자, Unity ontwikelaar, gry developer, oyun geliştirici, pengembang game">
-
-  <!-- ======================================================= -->
-  <!-- SCHEMA.ORG 200+ LANGUAGES & WORLDWIDE GEO TARGETING         -->
-  <!-- ======================================================= -->
-  <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "ProfessionalService",
-  "@id": "https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html#globalservice",
-  "name": "Dharmik Gohil — Global Unity Game Developer & XR Specialist",
-  "url": "https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html",
-  "image": "https://dharmikgohil.art/assets/img/dharmik-profile-photo-2026.jpg",
-  "description": "Worldwide game development and XR engineering services by Dharmik Gohil. Shipped 10+ titles, IIT Bombay Techfest winner, available globally for Unity 3D, multiplayer (Photon PUN), AR/VR, and full-stack solutions.",
-  "currenciesAccepted": "USD, EUR, GBP, INR, AED, CAD, AUD, JPY, SGD",
-  "paymentAccepted": "Credit Card, Wire Transfer, Wise, PayPal, Cryptocurrency, UPI",
-  "priceRange": "$$",
-  "areaServed": [
-    {
-      "@type": "Place",
-      "name": "Worldwide"
-    },
-    {
-      "@type": "Continent",
-      "name": "North America"
-    },
-    {
-      "@type": "Continent",
-      "name": "Europe"
-    },
-    {
-      "@type": "Continent",
-      "name": "Asia"
-    },
-    {
-      "@type": "Continent",
-      "name": "Oceania"
-    },
-    {
-      "@type": "Continent",
-      "name": "South America"
-    },
-    {
-      "@type": "Continent",
-      "name": "Africa"
-    },
-    {
-      "@type": "Country",
-      "name": "United States",
-      "identifier": "US"
-    },
-    {
-      "@type": "Country",
-      "name": "United Kingdom",
-      "identifier": "GB"
-    },
-    {
-      "@type": "Country",
-      "name": "India",
-      "identifier": "IN"
-    },
-    {
-      "@type": "Country",
-      "name": "Canada",
-      "identifier": "CA"
-    },
-    {
-      "@type": "Country",
-      "name": "Australia",
-      "identifier": "AU"
-    },
-    {
-      "@type": "Country",
-      "name": "Germany",
-      "identifier": "DE"
-    },
-    {
-      "@type": "Country",
-      "name": "France",
-      "identifier": "FR"
-    },
-    {
-      "@type": "Country",
-      "name": "Japan",
-      "identifier": "JP"
-    },
-    {
-      "@type": "Country",
-      "name": "United Arab Emirates",
-      "identifier": "AE"
-    },
-    {
-      "@type": "Country",
-      "name": "Singapore",
-      "identifier": "SG"
-    },
-    {
-      "@type": "Country",
-      "name": "Switzerland",
-      "identifier": "CH"
-    },
-    {
-      "@type": "Country",
-      "name": "Netherlands",
-      "identifier": "NL"
-    },
-    {
-      "@type": "Country",
-      "name": "Sweden",
-      "identifier": "SE"
-    },
-    {
-      "@type": "Country",
-      "name": "Saudi Arabia",
-      "identifier": "SA"
-    },
-    {
-      "@type": "Country",
-      "name": "Brazil",
-      "identifier": "BR"
-    },
-    {
-      "@type": "Country",
-      "name": "South Korea",
-      "identifier": "KR"
-    },
-    {
-      "@type": "Country",
-      "name": "New Zealand",
-      "identifier": "NZ"
-    },
-    {
-      "@type": "Country",
-      "name": "Ireland",
-      "identifier": "IE"
-    },
-    {
-      "@type": "Country",
-      "name": "Spain",
-      "identifier": "ES"
-    },
-    {
-      "@type": "Country",
-      "name": "Italy",
-      "identifier": "IT"
-    },
-    {
-      "@type": "Country",
-      "name": "Norway",
-      "identifier": "NO"
-    },
-    {
-      "@type": "Country",
-      "name": "Denmark",
-      "identifier": "DK"
-    },
-    {
-      "@type": "Country",
-      "name": "Finland",
-      "identifier": "FI"
-    },
-    {
-      "@type": "Country",
-      "name": "Poland",
-      "identifier": "PL"
-    },
-    {
-      "@type": "Country",
-      "name": "Mexico",
-      "identifier": "MX"
-    },
-    {
-      "@type": "Country",
-      "name": "Indonesia",
-      "identifier": "ID"
-    }
-  ],
-  "availableLanguage": [
-    "English (en)",
-    "English (US) (en-US)",
-    "English (UK) (en-GB)",
-    "English (Canada) (en-CA)",
-    "English (Australia) (en-AU)",
-    "English (India) (en-IN)",
-    "English (New Zealand) (en-NZ)",
-    "English (Ireland) (en-IE)",
-    "English (Singapore) (en-SG)",
-    "English (South Africa) (en-ZA)",
-    "English (UAE) (en-AE)",
-    "Spanish (es)",
-    "Spanish (Spain) (es-ES)",
-    "Spanish (Mexico) (es-MX)",
-    "Spanish (Argentina) (es-AR)",
-    "Spanish (Colombia) (es-CO)",
-    "Spanish (Chile) (es-CL)",
-    "Spanish (Peru) (es-PE)",
-    "Spanish (Venezuela) (es-VE)",
-    "French (fr)",
-    "French (France) (fr-FR)",
-    "French (Canada) (fr-CA)",
-    "French (Belgium) (fr-BE)",
-    "French (Switzerland) (fr-CH)",
-    "German (de)",
-    "German (Germany) (de-DE)",
-    "German (Austria) (de-AT)",
-    "German (Switzerland) (de-CH)",
-    "Italian (it)",
-    "Italian (Italy) (it-IT)",
-    "Italian (Switzerland) (it-CH)",
-    "Portuguese (pt)",
-    "Portuguese (Brazil) (pt-BR)",
-    "Portuguese (Portugal) (pt-PT)",
-    "Russian (ru)",
-    "Russian (Russia) (ru-RU)",
-    "Japanese (ja)",
-    "Japanese (Japan) (ja-JP)",
-    "Chinese (zh)",
-    "Chinese (Simplified) (zh-CN)",
-    "Chinese (Traditional) (zh-TW)",
-    "Chinese (Hong Kong) (zh-HK)",
-    "Chinese (Singapore) (zh-SG)",
-    "Chinese (Simplified script) (zh-Hans)",
-    "Chinese (Traditional script) (zh-Hant)",
-    "Korean (ko)",
-    "Korean (South Korea) (ko-KR)",
-    "Arabic (ar)",
-    "Arabic (Saudi Arabia) (ar-SA)",
-    "Arabic (UAE) (ar-AE)",
-    "Arabic (Egypt) (ar-EG)",
-    "Arabic (Qatar) (ar-QA)",
-    "Arabic (Kuwait) (ar-KW)",
-    "Hindi (hi)",
-    "Hindi (India) (hi-IN)",
-    "Gujarati (gu)",
-    "Gujarati (India) (gu-IN)",
-    "Bengali (bn)",
-    "Bengali (Bangladesh) (bn-BD)",
-    "Bengali (India) (bn-IN)",
-    "Punjabi (pa)",
-    "Punjabi (India) (pa-IN)",
-    "Punjabi (Pakistan) (pa-PK)",
-    "Marathi (mr)",
-    "Marathi (India) (mr-IN)",
-    "Telugu (te)",
-    "Telugu (India) (te-IN)",
-    "Tamil (ta)",
-    "Tamil (India) (ta-IN)",
-    "Tamil (Sri Lanka) (ta-LK)",
-    "Tamil (Singapore) (ta-SG)",
-    "Urdu (ur)",
-    "Urdu (Pakistan) (ur-PK)",
-    "Urdu (India) (ur-IN)",
-    "Kannada (kn)",
-    "Kannada (India) (kn-IN)",
-    "Malayalam (ml)",
-    "Malayalam (India) (ml-IN)",
-    "Odia (or)",
-    "Assamese (as)",
-    "Nepali (ne)",
-    "Nepali (Nepal) (ne-NP)",
-    "Sinhala (si)",
-    "Sinhala (Sri Lanka) (si-LK)",
-    "Turkish (tr)",
-    "Turkish (Turkey) (tr-TR)",
-    "Vietnamese (vi)",
-    "Vietnamese (Vietnam) (vi-VN)",
-    "Thai (th)",
-    "Thai (Thailand) (th-TH)",
-    "Indonesian (id)",
-    "Indonesian (Indonesia) (id-ID)",
-    "Malay (ms)",
-    "Malay (Malaysia) (ms-MY)",
-    "Tagalog (tl)",
-    "Filipino (fil)",
-    "Burmese (my)",
-    "Khmer (km)",
-    "Lao (lo)",
-    "Javanese (jv)",
-    "Sundanese (su)",
-    "Dutch (nl)",
-    "Dutch (Netherlands) (nl-NL)",
-    "Dutch (Belgium) (nl-BE)",
-    "Polish (pl)",
-    "Polish (Poland) (pl-PL)",
-    "Ukrainian (uk)",
-    "Ukrainian (Ukraine) (uk-UA)",
-    "Persian (fa)",
-    "Persian (Iran) (fa-IR)",
-    "Hebrew (he)",
-    "Hebrew (Israel) (he-IL)",
-    "Greek (el)",
-    "Greek (Greece) (el-GR)",
-    "Swedish (sv)",
-    "Swedish (Sweden) (sv-SE)",
-    "Norwegian (no)",
-    "Norwegian Bokmål (nb)",
-    "Norwegian Nynorsk (nn)",
-    "Danish (da)",
-    "Danish (Denmark) (da-DK)",
-    "Finnish (fi)",
-    "Finnish (Finland) (fi-FI)",
-    "Czech (cs)",
-    "Czech (Czechia) (cs-CZ)",
-    "Romanian (ro)",
-    "Romanian (Romania) (ro-RO)",
-    "Hungarian (hu)",
-    "Hungarian (Hungary) (hu-HU)",
-    "Slovak (sk)",
-    "Slovak (Slovakia) (sk-SK)",
-    "Bulgarian (bg)",
-    "Bulgarian (Bulgaria) (bg-BG)",
-    "Serbian (sr)",
-    "Serbian (Serbia) (sr-RS)",
-    "Croatian (hr)",
-    "Croatian (Croatia) (hr-HR)",
-    "Lithuanian (lt)",
-    "Lithuanian (Lithuania) (lt-LT)",
-    "Latvian (lv)",
-    "Latvian (Latvia) (lv-LV)",
-    "Estonian (et)",
-    "Estonian (Estonia) (et-EE)",
-    "Slovenian (sl)",
-    "Slovenian (Slovenia) (sl-SI)",
-    "Irish (ga)",
-    "Irish (Ireland) (ga-IE)",
-    "Welsh (cy)",
-    "Welsh (UK) (cy-GB)",
-    "Icelandic (is)",
-    "Icelandic (Iceland) (is-IS)",
-    "Maltese (mt)",
-    "Albanian (sq)",
-    "Macedonian (mk)",
-    "Bosnian (bs)",
-    "Azerbaijani (az)",
-    "Georgian (ka)",
-    "Armenian (hy)",
-    "Kazakh (kk)",
-    "Uzbek (uz)",
-    "Mongolian (mn)",
-    "Swahili (sw)",
-    "Swahili (Kenya) (sw-KE)",
-    "Swahili (Tanzania) (sw-TZ)",
-    "Afrikaans (af)",
-    "Amharic (am)",
-    "Hausa (ha)",
-    "Yoruba (yo)",
-    "Igbo (ig)",
-    "Zulu (zu)",
-    "Xhosa (xh)",
-    "Somali (so)",
-    "Kinyarwanda (rw)",
-    "Malagasy (mg)",
-    "Shona (sn)",
-    "Chichewa (ny)",
-    "Sesotho (st)",
-    "Tswana (tn)",
-    "Tsonga (ts)",
-    "Swati (ss)",
-    "Venda (ve)",
-    "South Ndebele (nr)",
-    "Oromo (om)",
-    "Tigrinya (ti)",
-    "Tajik (tg)",
-    "Turkmen (tk)",
-    "Kyrgyz (ky)",
-    "Pashto (ps)",
-    "Kurdish (ku)",
-    "Sindhi (sd)",
-    "Uyghur (ug)",
-    "Belarusian (be)",
-    "Catalan (ca)",
-    "Galician (gl)",
-    "Basque (eu)",
-    "Luxembourgish (lb)",
-    "Faroese (fo)",
-    "Scottish Gaelic (gd)",
-    "Corsican (co)",
-    "Esperanto (eo)",
-    "Latin (la)",
-    "Yiddish (yi)",
-    "Haitian Creole (ht)",
-    "Samoan (sm)",
-    "Tongan (to)",
-    "Fijian (fj)",
-    "Maori (mi)",
-    "Hawaiian (haw)",
-    "Cebuano (ceb)",
-    "Sanskrit (sa)",
-    "Bhojpuri (bho)",
-    "Maithili (mai)",
-    "Konkani (kok)",
-    "Manipuri (mni)",
-    "Santali (sat)",
-    "Bodo (brx)",
-    "Dogri (doi)",
-    "Mizo (lus)",
-    "Khasi (kha)",
-    "Garo (gar)",
-    "Tatar (tt)",
-    "Bashkir (ba)",
-    "Chuvash (cv)",
-    "Sakha (Yakut) (sah)",
-    "Quechua (qu)",
-    "Aymara (ay)",
-    "Guarani (gn)",
-    "Wolof (wo)",
-    "Fulah (ff)",
-    "Bambara (bm)",
-    "Ewe (ee)",
-    "Akan (ak)",
-    "Ganda (Luganda) (lg)",
-    "Lingala (ln)",
-    "Kikuyu (ki)",
-    "Western Frisian (fy)",
-    "Greenlandic (kl)",
-    "Inuktitut (iu)",
-    "Cherokee (chr)",
-    "Navajo (nav)",
-    "Divehi (dv)",
-    "Dzongkha (dz)",
-    "Tibetan (bo)",
-    "Hmong (hmn)",
-    "Ilocano (ilo)",
-    "Waray (war)",
-    "Hiligaynon (hil)",
-    "Kapampangan (pam)",
-    "Bikol (bik)",
-    "Pangasinan (pag)",
-    "Javanese (jw)",
-    "Sardinian (sc)",
-    "Romansh (rm)",
-    "Friulian (fur)",
-    "Venetian (vec)",
-    "Lombard (lmo)",
-    "Ligurian (lij)",
-    "Neapolitan (nap)",
-    "Sicilian (scn)",
-    "Asturian (ast)",
-    "Aragonese (an)",
-    "Occitan (oc)",
-    "Breton (br)",
-    "Cornish (kw)",
-    "Manx (gv)",
-    "Northern Sami (se)",
-    "Tuvan (tyv)",
-    "Ossetian (os)",
-    "Abkhaz (ab)",
-    "Avar (av)",
-    "Chechen (ce)",
-    "Ingush (inh)",
-    "Lezgian (lez)",
-    "Chamorro (ch)",
-    "Sango (sg)",
-    "Rundi (rn)",
-    "Kongo (kg)",
-    "Luba-Katanga (lu)",
-    "Twi (tw)",
-    "Afar (aa)"
-  ],
-  "hasOfferCatalog": {
-    "@type": "OfferCatalog",
-    "name": "Global Game Development & XR Engineering Services",
-    "itemListElement": [
-      {
-        "@type": "Offer",
-        "name": "Unity 3D/2D Game Development",
-        "category": "Game Development"
-      },
-      {
-        "@type": "Offer",
-        "name": "Photon PUN Multiplayer Game Networking",
-        "category": "Multiplayer Games"
-      },
-      {
-        "@type": "Offer",
-        "name": "AR/VR/XR Spatial Computing Experiences",
-        "category": "XR Development"
-      },
-      {
-        "@type": "Offer",
-        "name": "Full Stack Web & Web3 Development",
-        "category": "Web Applications"
-      }
-    ]
-  },
-  "contactPoint": {
-    "@type": "ContactPoint",
-    "contactType": "Worldwide Client Inquiries & Bookings",
-    "email": "dharmikgohil.work@gmail.com",
-    "url": "https://dharmikgohil.art/contact.html",
-    "areaServed": "Worldwide",
-    "availableLanguage": [
-      "English (en)",
-      "English (US) (en-US)",
-      "English (UK) (en-GB)",
-      "English (Canada) (en-CA)",
-      "English (Australia) (en-AU)",
-      "English (India) (en-IN)",
-      "English (New Zealand) (en-NZ)",
-      "English (Ireland) (en-IE)",
-      "English (Singapore) (en-SG)",
-      "English (South Africa) (en-ZA)",
-      "English (UAE) (en-AE)",
-      "Spanish (es)",
-      "Spanish (Spain) (es-ES)",
-      "Spanish (Mexico) (es-MX)",
-      "Spanish (Argentina) (es-AR)",
-      "Spanish (Colombia) (es-CO)",
-      "Spanish (Chile) (es-CL)",
-      "Spanish (Peru) (es-PE)",
-      "Spanish (Venezuela) (es-VE)",
-      "French (fr)",
-      "French (France) (fr-FR)",
-      "French (Canada) (fr-CA)",
-      "French (Belgium) (fr-BE)",
-      "French (Switzerland) (fr-CH)",
-      "German (de)",
-      "German (Germany) (de-DE)",
-      "German (Austria) (de-AT)",
-      "German (Switzerland) (de-CH)",
-      "Italian (it)",
-      "Italian (Italy) (it-IT)",
-      "Italian (Switzerland) (it-CH)",
-      "Portuguese (pt)",
-      "Portuguese (Brazil) (pt-BR)",
-      "Portuguese (Portugal) (pt-PT)",
-      "Russian (ru)",
-      "Russian (Russia) (ru-RU)",
-      "Japanese (ja)",
-      "Japanese (Japan) (ja-JP)",
-      "Chinese (zh)",
-      "Chinese (Simplified) (zh-CN)",
-      "Chinese (Traditional) (zh-TW)",
-      "Chinese (Hong Kong) (zh-HK)",
-      "Chinese (Singapore) (zh-SG)",
-      "Chinese (Simplified script) (zh-Hans)",
-      "Chinese (Traditional script) (zh-Hant)",
-      "Korean (ko)",
-      "Korean (South Korea) (ko-KR)",
-      "Arabic (ar)",
-      "Arabic (Saudi Arabia) (ar-SA)",
-      "Arabic (UAE) (ar-AE)",
-      "Arabic (Egypt) (ar-EG)",
-      "Arabic (Qatar) (ar-QA)",
-      "Arabic (Kuwait) (ar-KW)",
-      "Hindi (hi)",
-      "Hindi (India) (hi-IN)",
-      "Gujarati (gu)",
-      "Gujarati (India) (gu-IN)",
-      "Bengali (bn)",
-      "Bengali (Bangladesh) (bn-BD)",
-      "Bengali (India) (bn-IN)",
-      "Punjabi (pa)",
-      "Punjabi (India) (pa-IN)",
-      "Punjabi (Pakistan) (pa-PK)",
-      "Marathi (mr)",
-      "Marathi (India) (mr-IN)",
-      "Telugu (te)",
-      "Telugu (India) (te-IN)",
-      "Tamil (ta)",
-      "Tamil (India) (ta-IN)",
-      "Tamil (Sri Lanka) (ta-LK)",
-      "Tamil (Singapore) (ta-SG)",
-      "Urdu (ur)",
-      "Urdu (Pakistan) (ur-PK)",
-      "Urdu (India) (ur-IN)",
-      "Kannada (kn)",
-      "Kannada (India) (kn-IN)",
-      "Malayalam (ml)",
-      "Malayalam (India) (ml-IN)",
-      "Odia (or)",
-      "Assamese (as)",
-      "Nepali (ne)",
-      "Nepali (Nepal) (ne-NP)",
-      "Sinhala (si)",
-      "Sinhala (Sri Lanka) (si-LK)",
-      "Turkish (tr)",
-      "Turkish (Turkey) (tr-TR)",
-      "Vietnamese (vi)",
-      "Vietnamese (Vietnam) (vi-VN)",
-      "Thai (th)",
-      "Thai (Thailand) (th-TH)",
-      "Indonesian (id)",
-      "Indonesian (Indonesia) (id-ID)",
-      "Malay (ms)",
-      "Malay (Malaysia) (ms-MY)",
-      "Tagalog (tl)",
-      "Filipino (fil)",
-      "Burmese (my)",
-      "Khmer (km)",
-      "Lao (lo)",
-      "Javanese (jv)",
-      "Sundanese (su)",
-      "Dutch (nl)",
-      "Dutch (Netherlands) (nl-NL)",
-      "Dutch (Belgium) (nl-BE)",
-      "Polish (pl)",
-      "Polish (Poland) (pl-PL)",
-      "Ukrainian (uk)",
-      "Ukrainian (Ukraine) (uk-UA)",
-      "Persian (fa)",
-      "Persian (Iran) (fa-IR)",
-      "Hebrew (he)",
-      "Hebrew (Israel) (he-IL)",
-      "Greek (el)",
-      "Greek (Greece) (el-GR)",
-      "Swedish (sv)",
-      "Swedish (Sweden) (sv-SE)",
-      "Norwegian (no)",
-      "Norwegian Bokmål (nb)",
-      "Norwegian Nynorsk (nn)",
-      "Danish (da)",
-      "Danish (Denmark) (da-DK)",
-      "Finnish (fi)",
-      "Finnish (Finland) (fi-FI)",
-      "Czech (cs)",
-      "Czech (Czechia) (cs-CZ)",
-      "Romanian (ro)",
-      "Romanian (Romania) (ro-RO)",
-      "Hungarian (hu)",
-      "Hungarian (Hungary) (hu-HU)",
-      "Slovak (sk)",
-      "Slovak (Slovakia) (sk-SK)",
-      "Bulgarian (bg)",
-      "Bulgarian (Bulgaria) (bg-BG)",
-      "Serbian (sr)",
-      "Serbian (Serbia) (sr-RS)",
-      "Croatian (hr)",
-      "Croatian (Croatia) (hr-HR)",
-      "Lithuanian (lt)",
-      "Lithuanian (Lithuania) (lt-LT)",
-      "Latvian (lv)",
-      "Latvian (Latvia) (lv-LV)",
-      "Estonian (et)",
-      "Estonian (Estonia) (et-EE)",
-      "Slovenian (sl)",
-      "Slovenian (Slovenia) (sl-SI)",
-      "Irish (ga)",
-      "Irish (Ireland) (ga-IE)",
-      "Welsh (cy)",
-      "Welsh (UK) (cy-GB)",
-      "Icelandic (is)",
-      "Icelandic (Iceland) (is-IS)",
-      "Maltese (mt)",
-      "Albanian (sq)",
-      "Macedonian (mk)",
-      "Bosnian (bs)",
-      "Azerbaijani (az)",
-      "Georgian (ka)",
-      "Armenian (hy)",
-      "Kazakh (kk)",
-      "Uzbek (uz)",
-      "Mongolian (mn)",
-      "Swahili (sw)",
-      "Swahili (Kenya) (sw-KE)",
-      "Swahili (Tanzania) (sw-TZ)",
-      "Afrikaans (af)",
-      "Amharic (am)",
-      "Hausa (ha)",
-      "Yoruba (yo)",
-      "Igbo (ig)",
-      "Zulu (zu)",
-      "Xhosa (xh)",
-      "Somali (so)",
-      "Kinyarwanda (rw)",
-      "Malagasy (mg)",
-      "Shona (sn)",
-      "Chichewa (ny)",
-      "Sesotho (st)",
-      "Tswana (tn)",
-      "Tsonga (ts)",
-      "Swati (ss)",
-      "Venda (ve)",
-      "South Ndebele (nr)",
-      "Oromo (om)",
-      "Tigrinya (ti)",
-      "Tajik (tg)",
-      "Turkmen (tk)",
-      "Kyrgyz (ky)",
-      "Pashto (ps)",
-      "Kurdish (ku)",
-      "Sindhi (sd)",
-      "Uyghur (ug)",
-      "Belarusian (be)",
-      "Catalan (ca)",
-      "Galician (gl)",
-      "Basque (eu)",
-      "Luxembourgish (lb)",
-      "Faroese (fo)",
-      "Scottish Gaelic (gd)",
-      "Corsican (co)",
-      "Esperanto (eo)",
-      "Latin (la)",
-      "Yiddish (yi)",
-      "Haitian Creole (ht)",
-      "Samoan (sm)",
-      "Tongan (to)",
-      "Fijian (fj)",
-      "Maori (mi)",
-      "Hawaiian (haw)",
-      "Cebuano (ceb)",
-      "Sanskrit (sa)",
-      "Bhojpuri (bho)",
-      "Maithili (mai)",
-      "Konkani (kok)",
-      "Manipuri (mni)",
-      "Santali (sat)",
-      "Bodo (brx)",
-      "Dogri (doi)",
-      "Mizo (lus)",
-      "Khasi (kha)",
-      "Garo (gar)",
-      "Tatar (tt)",
-      "Bashkir (ba)",
-      "Chuvash (cv)",
-      "Sakha (Yakut) (sah)",
-      "Quechua (qu)",
-      "Aymara (ay)",
-      "Guarani (gn)",
-      "Wolof (wo)",
-      "Fulah (ff)",
-      "Bambara (bm)",
-      "Ewe (ee)",
-      "Akan (ak)",
-      "Ganda (Luganda) (lg)",
-      "Lingala (ln)",
-      "Kikuyu (ki)",
-      "Western Frisian (fy)",
-      "Greenlandic (kl)",
-      "Inuktitut (iu)",
-      "Cherokee (chr)",
-      "Navajo (nav)",
-      "Divehi (dv)",
-      "Dzongkha (dz)",
-      "Tibetan (bo)",
-      "Hmong (hmn)",
-      "Ilocano (ilo)",
-      "Waray (war)",
-      "Hiligaynon (hil)",
-      "Kapampangan (pam)",
-      "Bikol (bik)",
-      "Pangasinan (pag)",
-      "Javanese (jw)",
-      "Sardinian (sc)",
-      "Romansh (rm)",
-      "Friulian (fur)",
-      "Venetian (vec)",
-      "Lombard (lmo)",
-      "Ligurian (lij)",
-      "Neapolitan (nap)",
-      "Sicilian (scn)",
-      "Asturian (ast)",
-      "Aragonese (an)",
-      "Occitan (oc)",
-      "Breton (br)",
-      "Cornish (kw)",
-      "Manx (gv)",
-      "Northern Sami (se)",
-      "Tuvan (tyv)",
-      "Ossetian (os)",
-      "Abkhaz (ab)",
-      "Avar (av)",
-      "Chechen (ce)",
-      "Ingush (inh)",
-      "Lezgian (lez)",
-      "Chamorro (ch)",
-      "Sango (sg)",
-      "Rundi (rn)",
-      "Kongo (kg)",
-      "Luba-Katanga (lu)",
-      "Twi (tw)",
-      "Afar (aa)"
-    ]
-  }
-}
-  </script>
-
-  <link rel="stylesheet" href="../assets/css/global-multilingual.css">
-
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-GE7F8SZSJ9');</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"BlogPosting","@id":"https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html#article","headline":"Mavericks Battlegrounds: The Best Multiplayer Battle Arena Game of 2025 by Award-Winning Developer Dharmik…","description":"The development story of Mavericks Battlegrounds, a Unity 6 and Photon PUN multiplayer arena shooter: team, process, timeline, tech stack and screenshots.","image":["https://dharmikgohil.art/assets/img/mavericks-battlegrounds-logo.png"],"datePublished":"2025-06-12","dateModified":"2026-10-08","inLanguage":"en","author":{"@type":"Person","@id":"https://dharmikgohil.art/#person","name":"Dharmik Gohil","url":"https://dharmikgohil.art/","jobTitle":"Unity Game Developer & XR Engineer","sameAs":["https://github.com/DharmikGohil013","https://www.linkedin.com/in/dharmikgohil086/","https://x.com/Dharmik086","https://dharmikgohil.itch.io/"]},"publisher":{"@type":"Organization","name":"Dharmik Gohil","url":"https://dharmikgohil.art/","logo":{"@type":"ImageObject","url":"https://dharmikgohil.art/assets/img/logo.png"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html"},"isPartOf":{"@type":"Blog","@id":"https://dharmikgohil.art/blog.html#blog","name":"Dharmik Gohil Blog","url":"https://dharmikgohil.art/blog.html"},"articleSection":"Multiplayer Game Development","keywords":"Mavericks Battlegrounds, Unity 6, Photon PUN, Case Study","wordCount":1431,"timeRequired":"PT8M","about":[{"@type":"Thing","name":"Mavericks Battlegrounds"},{"@type":"Thing","name":"Unity 6"},{"@type":"Thing","name":"Photon PUN"},{"@type":"Thing","name":"Case Study"}]},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://dharmikgohil.art/"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://dharmikgohil.art/blog.html"},{"@type":"ListItem","position":3,"name":"Multiplayer Game Development","item":"https://dharmikgohil.art/blog/topics/multiplayer-game-development.html"},{"@type":"ListItem","position":4,"name":"Mavericks Battlegrounds: The Best Multiplayer Battle Arena Game of 2025 by Award-Winning Developer Dharmik Gohil","item":"https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html"}]},{"@type":"FAQPage","@id":"https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html#faq","mainEntity":[{"@type":"Question","name":"What is Mavericks Battlegrounds?","acceptedAnswer":{"@type":"Answer","text":"Mavericks Battlegrounds is a multiplayer battle arena shooter built in Unity 6 with Photon PUN networking by a student team at CHARUSAT University."}},{"@type":"Question","name":"When was Mavericks Battlegrounds released?","acceptedAnswer":{"@type":"Answer","text":"Development started in November 2024 and the first version, The War Zone (1.0), was released on June 12, 2025."}},{"@type":"Question","name":"Where can I play Mavericks Battlegrounds?","acceptedAnswer":{"@type":"Answer","text":"The game is published on itch.io. You can find the link on the portfolio games page and in the navigation under My Games."}}]}]}</script>
 </head>
+<body class="blog-post-page index-page">
+  <div class="read-progress" aria-hidden="true"><i></i></div>
 
-<body class="blog-post-page">
-
-  <!-- Preloader -->
-  <div id="preloader">
-    <div class="cube-loader">
-      <div class="cube-top"></div>
-      <div class="cube-wrapper">
-        <span style="--i:0" class="cube-span"></span>
-        <span style="--i:1" class="cube-span"></span>
-        <span style="--i:2" class="cube-span"></span>
-        <span style="--i:3" class="cube-span"></span>
-      </div>
+  <div class="masthead-mobile-drawer" id="mobileDrawer">
+    <div class="drawer-header"><div class="drawer-title">THE DHARMIK GOHIL CHRONICLE</div><button class="drawer-close-btn" id="closeDrawerBtn">✕ CLOSE</button></div>
+    <div class="drawer-body">
+      <nav class="drawer-nav-links" aria-label="Mobile">
+        <a href="../index.html">HOME</a><a href="../services.html">ABILITIES</a>
+        <div class="drawer-accordion"><button class="drawer-accordion-trigger">MY GAMES <span class="accordion-arrow">▼</span></button><div class="drawer-accordion-content"><a href="https://dharmikgohil.itch.io/mavericks-battlegrounds" target="_blank" rel="noopener">MAVERICKS BATTLEGROUND</a><a href="https://dharmik086.itch.io/floppy-bird-860" target="_blank" rel="noopener">FLOPPY BIRD</a><a href="https://dharmikgohil.itch.io/facade" target="_blank" rel="noopener">FACADE</a><a href="https://dharmikgohil.itch.io/go-galaxy" target="_blank" rel="noopener">GO GALAXY</a><a href="https://dharmikgohil.itch.io/drone-training" target="_blank" rel="noopener">DRONE TRAINING</a><a href="https://dharmikgohil.itch.io/hook-shot" target="_blank" rel="noopener">HOOK SHOT</a><a href="https://lowxena.dharmikgohil.art/" target="_blank" rel="noopener">LOWXENA</a></div></div>
+        <div class="drawer-accordion"><button class="drawer-accordion-trigger">LIVE PROJECTS <span class="accordion-arrow">▼</span></button><div class="drawer-accordion-content"><a href="../assets/Fit Sync.apk" download>FITSYNC APP (APK)</a><a href="https://actify.dharmikgohil.art/" target="_blank" rel="noopener">ACTIFY</a><a href="https://learnlink.dharmikgohil.art" target="_blank" rel="noopener">LEARN LINK</a><a href="http://gdgs.dharmikgohil.art/" target="_blank" rel="noopener">GDGS GAMES</a><a href="http://flipcart.dharmikgohil.art/" target="_blank" rel="noopener">FLIPKART CLONE</a><a href="http://krishna.dharmikgohil.art/" target="_blank" rel="noopener">KRISHNA CONSTRUCTION</a><a href="https://fkm.vercel.app/" target="_blank" rel="noopener">WIFI SERVICE</a></div></div>
+        <a href="../Achivemtn.html">ACHIEVEMENTS</a><a href="../blog.html" class="active">BLOG</a><a href="../contact.html">CONTACT</a><a href="../assets/img/Dharmik Gohil Game Desginer.pdf" target="_blank" rel="noopener">RESUME</a>
+      </nav>
+      <div class="drawer-footer"><div class="drawer-social-links"><a href="https://github.com/DharmikGohil013" target="_blank" rel="noopener" aria-label="GitHub"><i class="bi bi-github"></i></a><a href="https://www.linkedin.com/in/dharmikgohil086/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a><a href="https://x.com/Dharmik086" target="_blank" rel="noopener" aria-label="Twitter / X"><i class="bi bi-twitter-x"></i></a><a href="https://dharmikgohil.itch.io/" target="_blank" rel="noopener" aria-label="Itch.io"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 24 24" style="vertical-align: -0.125em; display: inline-block;"><path d="M10.387 1.414c-1.34.02-2.887.235-4.238.653C2.863 3.085.922 5.378.13 8.358c-.378 1.423-.197 2.766.453 3.961.503.926 1.34 1.636 2.378 1.996.126.044.254.088.384.133L5 18h14l1.656-3.553c.13-.044.258-.088.385-.133 1.037-.36 1.874-1.07 2.377-1.996.65-1.195.83-2.538.453-3.961-.793-2.98-2.734-5.273-6.02-6.29-1.35-.42-2.898-.633-4.238-.653h-.626zm1.096 4.707c1.789 0 3.24 1.45 3.24 3.24 0 1.79-1.45 3.24-3.24 3.24-1.789 0-3.24-1.45-3.24-3.24 0-1.79 1.451-3.24 3.24-3.24zm-6.48 1.08c1.789 0 3.24 1.45 3.24 3.24 0 1.79-1.45 3.24-3.24 3.24-1.79 0-3.24-1.45-3.24-3.24 0-1.79 1.45-3.24 3.24-3.24z"/></svg></a></div><div class="drawer-edition">SURAT, INDIA · EST. 2006</div></div>
     </div>
   </div>
-
-  <!-- Particles.js Background -->
-  <div id="particles-js"></div>
-
+  <div class="masthead-drawer-overlay" id="drawerOverlay"></div>
   <main class="main">
-
-    <!-- Broadsheet Masthead (Header) -->
     <header class="masthead container">
       <div class="masthead-top">
         <div>EST. 2006 · SURAT, GUJARAT, INDIA · 🌐 GLOBAL REMOTE <button type="button" class="masthead-lang-trigger" aria-label="Choose from 200+ Languages">🌐 200+ LANGUAGES</button></div>
         <div class="text-end">VOL. 1.0 · THE DHARMIK GOHIL CHRONICLE</div>
       </div>
-      <div class="masthead-main">
-        <h1>Dh<span class="accent-text">a</span>rmik Gohil</h1>
-      </div>
+      <div class="masthead-main"><a href="../index.html" class="masthead-home" aria-label="Dharmik Gohil – home"><span class="masthead-wordmark">Dh<span class="accent-text">a</span>rmik Gohil</span></a></div>
       <div class="masthead-nav-bar">
-        <nav class="nav-links">
-          <a href="../index.html">HOME</a> · 
-          <a href="../services.html">ABILITIES</a> · 
-          
-          <div class="nav-dropdown">
-            <span class="dropdown-trigger">MY GAMES <span class="arrow-down">▼</span></span>
-            <div class="dropdown-content">
-              <a href="https://dharmikgohil.itch.io/mavericks-battlegrounds" target="_blank">MAVERICKS BATTLEGROUND</a>
-              <a href="https://dharmik086.itch.io/floppy-bird-860" target="_blank">FLOPPY BIRD</a>
-              <a href="https://dharmikgohil.itch.io/facade" target="_blank">FACADE</a>
-              <a href="https://dharmikgohil.itch.io/go-galaxy" target="_blank">GO GALAXY</a>
-              <a href="https://dharmikgohil.itch.io/drone-training" target="_blank">DRONE TRAINING</a>
-              <a href="https://dharmikgohil.itch.io/hook-shot" target="_blank">HOOK SHOT</a>
-              <a href="https://lowxena.dharmikgohil.art/" target="_blank">LOWXENA</a>
-            </div>
-          </div> · 
-          
-          <div class="nav-dropdown">
-            <span class="dropdown-trigger">LIVE PROJECTS <span class="arrow-down">▼</span></span>
-            <div class="dropdown-content">
-              <a href="../assets/Fit Sync.apk" download>FITSYNC APP (APK)</a>
-              <a href="https://actify.dharmikgohil.art/" target="_blank">ACTIFY</a>
-              <a href="https://learnlink.dharmikgohil.art" target="_blank">LEARN LINK</a>
-              <a href="http://gdgs.dharmikgohil.art/" target="_blank">GDGS GAMES</a>
-              <a href="http://flipcart.dharmikgohil.art/" target="_blank">FLIPKART CLONE</a>
-              <a href="http://krishna.dharmikgohil.art/" target="_blank">KRISHNA CONSTRUCTION</a>
-              <a href="https://fkm.vercel.app/" target="_blank">WIFI SERVICE</a>
-            </div>
-          </div> · 
-          
-          <a href="../Achivemtn.html">ACHIEVEMENTS</a> · 
-          <a href="../blog.html" class="active">BLOG</a> · 
-          <a href="../contact.html">CONTACT</a> · 
-          <a href="../assets/img/Dharmik Gohil Game Desginer.pdf" target="_blank">RESUME</a>
+        <button class="mobile-menu-toggle-brutalist" id="menuToggleBtn" aria-label="Toggle Navigation">MENU ☰</button>
+        <nav class="nav-links" aria-label="Primary">
+          <a href="../index.html">HOME</a> · <a href="../services.html">ABILITIES</a> ·
+          <div class="nav-dropdown"><span class="dropdown-trigger">MY GAMES <span class="arrow-down">▼</span></span><div class="dropdown-content"><a href="https://dharmikgohil.itch.io/mavericks-battlegrounds" target="_blank" rel="noopener">MAVERICKS BATTLEGROUND</a><a href="https://dharmik086.itch.io/floppy-bird-860" target="_blank" rel="noopener">FLOPPY BIRD</a><a href="https://dharmikgohil.itch.io/facade" target="_blank" rel="noopener">FACADE</a><a href="https://dharmikgohil.itch.io/go-galaxy" target="_blank" rel="noopener">GO GALAXY</a><a href="https://dharmikgohil.itch.io/drone-training" target="_blank" rel="noopener">DRONE TRAINING</a><a href="https://dharmikgohil.itch.io/hook-shot" target="_blank" rel="noopener">HOOK SHOT</a><a href="https://lowxena.dharmikgohil.art/" target="_blank" rel="noopener">LOWXENA</a></div></div> ·
+          <div class="nav-dropdown"><span class="dropdown-trigger">LIVE PROJECTS <span class="arrow-down">▼</span></span><div class="dropdown-content"><a href="../assets/Fit Sync.apk" download>FITSYNC APP (APK)</a><a href="https://actify.dharmikgohil.art/" target="_blank" rel="noopener">ACTIFY</a><a href="https://learnlink.dharmikgohil.art" target="_blank" rel="noopener">LEARN LINK</a><a href="http://gdgs.dharmikgohil.art/" target="_blank" rel="noopener">GDGS GAMES</a><a href="http://flipcart.dharmikgohil.art/" target="_blank" rel="noopener">FLIPKART CLONE</a><a href="http://krishna.dharmikgohil.art/" target="_blank" rel="noopener">KRISHNA CONSTRUCTION</a><a href="https://fkm.vercel.app/" target="_blank" rel="noopener">WIFI SERVICE</a></div></div> ·
+          <a href="../Achivemtn.html">ACHIEVEMENTS</a> · <a href="../blog.html" class="active">BLOG</a> · <a href="../contact.html">CONTACT</a> · <a href="../assets/img/Dharmik Gohil Game Desginer.pdf" target="_blank" rel="noopener">RESUME</a>
         </nav>
-        <div class="social-links-minimal">
-
-          <a href="https://github.com/DharmikGohil013" target="_blank" aria-label="GitHub"><i class="bi bi-github"></i></a>
-          <a href="https://www.linkedin.com/in/dharmikgohil086/" target="_blank" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
-          <a href="https://x.com/Dharmik086" target="_blank" aria-label="Twitter / X"><i class="bi bi-twitter-x"></i></a>
-          <a href="https://dharmikgohil.itch.io/" target="_blank" aria-label="Itch.io"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 24 24" style="vertical-align: -0.125em; display: inline-block;"><path d="M10.387 1.414c-1.34.02-2.887.235-4.238.653C2.863 3.085.922 5.378.13 8.358c-.378 1.423-.197 2.766.453 3.961.503.926 1.34 1.636 2.378 1.996.126.044.254.088.384.133L5 18h14l1.656-3.553c.13-.044.258-.088.385-.133 1.037-.36 1.874-1.07 2.377-1.996.65-1.195.83-2.538.453-3.961-.793-2.98-2.734-5.273-6.02-6.29-1.35-.42-2.898-.633-4.238-.653h-.626zm1.096 4.707c1.789 0 3.24 1.45 3.24 3.24 0 1.79-1.45 3.24-3.24 3.24-1.789 0-3.24-1.45-3.24-3.24 0-1.79 1.451-3.24 3.24-3.24zm-6.48 1.08c1.789 0 3.24 1.45 3.24 3.24 0 1.79-1.45 3.24-3.24 3.24-1.79 0-3.24-1.45-3.24-3.24 0-1.79 1.45-3.24 3.24-3.24z"/></svg></a>
-        </div>
+        <div class="social-links-minimal"><a href="https://github.com/DharmikGohil013" target="_blank" rel="noopener" aria-label="GitHub"><i class="bi bi-github"></i></a><a href="https://www.linkedin.com/in/dharmikgohil086/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a><a href="https://x.com/Dharmik086" target="_blank" rel="noopener" aria-label="Twitter / X"><i class="bi bi-twitter-x"></i></a><a href="https://dharmikgohil.itch.io/" target="_blank" rel="noopener" aria-label="Itch.io"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 24 24" style="vertical-align: -0.125em; display: inline-block;"><path d="M10.387 1.414c-1.34.02-2.887.235-4.238.653C2.863 3.085.922 5.378.13 8.358c-.378 1.423-.197 2.766.453 3.961.503.926 1.34 1.636 2.378 1.996.126.044.254.088.384.133L5 18h14l1.656-3.553c.13-.044.258-.088.385-.133 1.037-.36 1.874-1.07 2.377-1.996.65-1.195.83-2.538.453-3.961-.793-2.98-2.734-5.273-6.02-6.29-1.35-.42-2.898-.633-4.238-.653h-.626zm1.096 4.707c1.789 0 3.24 1.45 3.24 3.24 0 1.79-1.45 3.24-3.24 3.24-1.789 0-3.24-1.45-3.24-3.24 0-1.79 1.451-3.24 3.24-3.24zm-6.48 1.08c1.789 0 3.24 1.45 3.24 3.24 0 1.79-1.45 3.24-3.24 3.24-1.79 0-3.24-1.45-3.24-3.24 0-1.79 1.45-3.24 3.24-3.24z"/></svg></a></div>
       </div>
     </header>
-
-
-    <!-- Page Title -->
-    <div class="page-title" data-aos="fade">
-      <div class="container">
-        <nav class="breadcrumbs">
-          <ol>
-            <li><a href="../index.html">Home</a></li>
-            <li><a href="#">Blog</a></li>
-            <li class="current">Mavericks Battlegrounds Development Journey</li>
-          </ol>
-        </nav>
-        <h1>Mavericks Battlegrounds: The Complete Development Journey</h1>
-      </div>
-    </div><!-- End Page Title -->
-
-    <div class="container">
-      <div class="row">
-
-        <div class="col-lg-8">
-
-          <!-- Blog Details Section -->
-          <section id="blog-details" class="blog-details section">
-            <div class="container">
-
-              <article class="article">
-
-                <div class="post-img">
-                  <img src="../assets/img/mavericks-battlegrounds-logo.png" alt="Mavericks Battlegrounds Logo - Best Multiplayer Battle Arena Game 2025 by Game Developer Dharmik Gohil" class="img-fluid" loading="eager" width="1200" height="630" title="Mavericks Battlegrounds - Award Winning Game by Dharmik Gohil">
-                </div>
-
-                <h2 class="title">Mavericks Battlegrounds: The Best Multiplayer Battle Arena Game of 2025 by Award-Winning Developer Dharmik Gohil</h2>
-
-                <div class="meta-top">
-                  <ul>
-                    <li class="d-flex align-items-center"><i class="bi bi-person"></i> <a href="../about.html">Dharmik Gohil</a></li>
-                    <li class="d-flex align-items-center"><i class="bi bi-clock"></i> <time datetime="2025-06-12">Jun 12, 2025</time></li>
-                    <li class="d-flex align-items-center"><i class="bi bi-chat-dots"></i> <a href="#comments">Game Development</a></li>
-                  </ul>
-                </div><!-- End meta top -->
-
-                <div class="content">
-                  <h3>Introduction: The Best Multiplayer Game - Only The Strong Endure</h3>
-                  <p>
-                    Welcome to the complete development story of <strong>Mavericks Battlegrounds</strong>, the <strong>best multiplayer battle arena game of 2025</strong> that represents months of dedication, innovation, and teamwork by <strong>professional game developer Dharmik Gohil</strong>. This award-winning project showcases the power of Unity 6, Photon networking, and Agile development methodology in creating the most immersive gaming experiences.
+    <div class="post-shell">
+      <nav aria-label="Breadcrumb"><ol class="crumbs"><li><a href="../index.html">Home</a></li><li><a href="../blog.html">Blog</a></li><li><a href="topics/multiplayer-game-development.html">Multiplayer Game Development</a></li><li><span aria-current="page">Mavericks Battlegrounds: The Best Multiplayer Battle…</span></li></ol></nav>
+      <div class="post-grid">
+        <article class="post-main" itemscope itemtype="https://schema.org/BlogPosting">
+          <header class="post-head">
+            <a class="post-kicker" href="topics/multiplayer-game-development.html"><i class="bi bi-people-fill"></i> Multiplayer Game Development</a>
+            <h1 class="post-title" data-kinetic itemprop="headline">Mavericks Battlegrounds: The Best Multiplayer Battle Arena Game of 2025 by Award-Winning Developer Dharmik Gohil</h1>
+            <p class="post-deck">The development story of Mavericks Battlegrounds, a Unity 6 and Photon PUN multiplayer arena shooter: team, process, timeline, tech stack and screenshots.</p>
+            <ul class="post-meta">
+              <li><i class="bi bi-person"></i><a href="../about.html" rel="author">Dharmik Gohil</a></li>
+              <li><i class="bi bi-calendar3"></i><time datetime="2025-06-12" itemprop="datePublished">Jun 12, 2025</time></li>
+              <li><i class="bi bi-arrow-repeat"></i>Updated <time datetime="2026-10-08" itemprop="dateModified">Oct 8, 2026</time></li>
+              <li><i class="bi bi-clock"></i>8 min read</li>
+            </ul>
+          </header>
+          <figure class="post-cover"><img src="../assets/img/mavericks-battlegrounds-logo.png" alt="Mavericks Battlegrounds Logo - Best Multiplayer Battle Arena Game 2025 by Game Developer Dharmik Gohil" width="1200" height="675" fetchpriority="high" decoding="async"></figure>
+          <div class="takeaways"><ul><li>Built with Unity 6 and Photon PUN by a student team from CHARUSAT DEPSTAR.</li><li>Development ran from November 2024 to the first release on June 12, 2025.</li><li>An agile process with short iterations kept a small team shipping.</li><li>Public showcases and playtests drove the most useful feedback.</li></ul></div>
+          <div class="toc-mobile"><nav class="toc" aria-label="Table of contents"><p class="toc-title">On this page</p><ol><li><a href="#introduction-the-best-multiplayer-game-only-the-strong-endur">Introduction: The Best Multiplayer Game - Only The Strong Endure</a></li><li><a href="#project-overview">Project Overview</a></li><li><a href="#the-development-team-best-game-developers">The Development Team - Best Game Developers</a></li><li><a href="#game-concept-vision-creating-the-best-game">Game Concept &amp; Vision - Creating the Best Game</a></li><li><a href="#technology-stack">Technology Stack</a></li><li><a href="#agile-development-process">Agile Development Process</a></li><li><a href="#development-timeline">Development Timeline</a></li><li><a href="#gameplay-screenshots-best-multiplayer-game-graphics">Gameplay Screenshots - Best Multiplayer Game Graphics</a></li><li><a href="#events-showcases">Events &amp; Showcases</a></li><li><a href="#official-gameplay-trailer-best-game-of-2025">Official Gameplay Trailer - Best Game of 2025</a></li><li><a href="#platform-availability-play-the-best-game-now">Platform Availability - Play the Best Game Now</a></li><li><a href="#future-roadmap-making-the-best-game-even-better">Future Roadmap - Making the Best Game Even Better</a></li><li><a href="#academic-support">Academic Support</a></li><li><a href="#technical-challenges-solutions">Technical Challenges &amp; Solutions</a></li><li><a href="#lessons-learned">Lessons Learned</a></li><li><a href="#acknowledgments">Acknowledgments</a></li><li><a href="#get-involved">Get Involved</a></li><li><a href="#conclusion-the-best-game-by-the-best-developer">Conclusion - The Best Game by the Best Developer</a></li></ol></nav></div>
+          <div class="article-body" itemprop="articleBody">
+<h2 id="introduction-the-best-multiplayer-game-only-the-strong-endur">Introduction: The Best Multiplayer Game - Only The Strong Endure</h2>
+<p>
+                    Welcome to the complete development story of <strong>Mavericks Battlegrounds</strong>, the <strong>best multiplayer battle arena game of 2025</strong> that represents months of dedication, innovation, and teamwork by <strong>professional game developer <a href="../about.html">Dharmik Gohil</a></strong>. This award-winning project showcases the power of Unity 6, <a href="multiplayer-games-photon-unity.html" title="Building Multiplayer Games with Photon &amp; Unity: A Complete Guide">Photon</a> networking, and Agile development methodology in creating the most immersive gaming experiences.
                   </p>
-
-                  <p>
-                    <strong>Mavericks Battlegrounds</strong> is not just a game—it's the <strong>best game</strong> created by one of the <strong>top game developers</strong> in India. When passionate developers combine cutting-edge technology with creative vision, they create masterpieces like Mavericks. From its inception in November 2024 to the first version launch on June 12, 2025, this journey by <strong>game developer Dharmik Gohil</strong> has been filled with challenges, learning experiences, and groundbreaking achievements.
+<p>
+<strong>Mavericks Battlegrounds</strong> is not just a game—it's the <strong>best game</strong> created by one of the <strong>top game developers</strong> in India. When passionate developers combine cutting-edge technology with creative vision, they create masterpieces like Mavericks. From its inception in November 2024 to the first version launch on June 12, 2025, this journey by <strong>game developer Dharmik Gohil</strong> has been filled with challenges, learning experiences, and groundbreaking achievements.
                   </p>
-
-                  <img src="../assets/img/mavericks-cinematic-logo.png" class="img-fluid" alt="Mavericks Battlegrounds Cinematic Logo - Epic Multiplayer Game by Best Developer Dharmik Gohil" loading="lazy" style="margin: 20px 0; border-radius: 10px;" width="1200" height="675" title="Mavericks Battle Ground - Best Game 2025">
-
-                  <h3>Project Overview</h3>
-                  <blockquote>
-                    <p>
-                      <strong>Game Title:</strong> Mavericks Battlegrounds<br>
-                      <strong>Version:</strong> The War Zone (Code 1.0)<br>
-                      <strong>Development Start:</strong> November 2024<br>
-                      <strong>First Release:</strong> June 12, 2025<br>
-                      <strong>Engine:</strong> Unity 6<br>
-                      <strong>Networking:</strong> Photon PUN<br>
-                      <strong>Methodology:</strong> Agile Development Process
+<img alt="Mavericks Battlegrounds Cinematic Logo - Epic Multiplayer Game by Best Developer Dharmik Gohil" class="img-fluid" decoding="async" height="675" loading="lazy" src="../assets/img/mavericks-cinematic-logo.png" width="1200"/>
+<h2 id="project-overview">Project Overview</h2>
+<blockquote>
+<p>
+<strong>Game Title:</strong> Mavericks Battlegrounds<br/>
+<strong>Version:</strong> The War Zone (Code 1.0)<br/>
+<strong>Development Start:</strong> November 2024<br/>
+<strong>First Release:</strong> June 12, 2025<br/>
+<strong>Engine:</strong> Unity 6<br/>
+<strong>Networking:</strong> Photon PUN<br/>
+<strong>Methodology:</strong> Agile Development Process
                     </p>
-                  </blockquote>
-
-                  <h3>The Development Team - Best Game Developers</h3>
-                  <p>
-                    Behind every great game is an incredible team. <strong>Mavericks Battlegrounds</strong>, the <strong>best multiplayer game of 2025</strong>, was brought to life by a talented group of developers from <strong>CHARUSAT University</strong> (Charotar University of Science and Technology), specifically from <strong>DEPSTAR College</strong> (Devang Patel Institute of Advance Technology and Research):
+</blockquote>
+<h2 id="the-development-team-best-game-developers">The Development Team - Best Game Developers</h2>
+<p>
+                    Behind every great game is an incredible team. <strong>Mavericks Battlegrounds</strong>, the <strong>best multiplayer game of 2025</strong>, was brought to life by a talented group of developers from <strong><a href="charusat-university-experience.html" title="My Educational Journey at CHARUSAT University DEPSTAR College">CHARUSAT</a> University</strong> (Charotar University of Science and Technology), specifically from <strong>DEPSTAR College</strong> (Devang Patel Institute of Advance Technology and Research):
                   </p>
-
-                  <ul>
-                    <li><strong>Dharmik Ghanshyambhai Gohil</strong> - <strong>Team Leader & Professional Unity XR Developer</strong> - The <strong>best game developer</strong> who led the entire development process, implemented core gameplay mechanics, managed project timeline, and integrated XR elements to create the best game experience</li>
-                    <li><strong>Ansh Kansara</strong> - Technical Developer - Handled networking implementation with Photon, optimization, bug fixes, and technical architecture</li>
-                    <li><strong>Soham Patel</strong> - 3D Developer - Created stunning 3D assets, character models, environments, and animations using Blender</li>
-                  </ul>
-
-                  <img src="../assets/img/mavericks-idgc-event-2024.png" class="img-fluid" alt="IDGC Event 2024 - Mavericks Battlegrounds Showcase by Game Developer Dharmik Gohil - Best Game Award" loading="lazy" style="margin: 20px 0; border-radius: 10px;" width="1200" height="675" title="Mavericks at IDGC 2024 - Best Multiplayer Game">
-
-                  <h3>Game Concept & Vision - Creating the Best Game</h3>
-                  <p>
-                    <strong>Mavericks Battlegrounds</strong> is the <strong>best intense multiplayer battle arena game</strong> where players compete in fast-paced combat scenarios. Developed by <strong>professional game developer Dharmik Gohil</strong>, the game emphasizes strategic gameplay, team coordination, and skill-based combat mechanics. Our vision was to create the <strong>best gaming experience</strong> that appeals to both casual and hardcore gamers worldwide.
+<ul>
+<li><strong>Dharmik Ghanshyambhai Gohil</strong> - <strong>Team Leader &amp; Professional <a href="getting-started-unity-xr.html" title="Getting Started with Unity XR: A Complete Guide to VR and AR Development">Unity XR</a> Developer</strong> - The <strong>best game developer</strong> who led the entire development process, implemented core gameplay mechanics, managed project timeline, and integrated XR elements to create the best game experience</li>
+<li><strong>Ansh Kansara</strong> - Technical Developer - Handled networking implementation with Photon, optimization, bug fixes, and technical architecture</li>
+<li><strong>Soham Patel</strong> - 3D Developer - Created stunning 3D assets, character models, environments, and animations using Blender</li>
+</ul>
+<img alt="IDGC Event 2024 - Mavericks Battlegrounds Showcase by Game Developer Dharmik Gohil - Best Game Award" class="img-fluid" decoding="async" height="675" loading="lazy" src="../assets/img/mavericks-idgc-event-2024.png" width="1200"/>
+<h2 id="game-concept-vision-creating-the-best-game">Game Concept &amp; Vision - Creating the Best Game</h2>
+<p>
+<strong>Mavericks Battlegrounds</strong> is the <strong>best intense multiplayer battle arena game</strong> where players compete in fast-paced combat scenarios. Developed by <strong>professional game developer Dharmik Gohil</strong>, the game emphasizes strategic gameplay, team coordination, and skill-based combat mechanics. Our vision was to create the <strong>best gaming experience</strong> that appeals to both casual and hardcore gamers worldwide.
                   </p>
-
-                  <h4>Core Features:</h4>
-                  <ul>
-                    <li><strong>Real-time Multiplayer:</strong> Powered by Photon PUN for seamless online gameplay</li>
-                    <li><strong>Battle Arena Combat:</strong> Intense player vs player combat mechanics</li>
-                    <li><strong>Custom Maps:</strong> Intricately designed environments created in Blender</li>
-                    <li><strong>Smooth Controls:</strong> Optimized for responsive gameplay</li>
-                    <li><strong>Stunning Visuals:</strong> Advanced Unity 6 rendering with custom shaders</li>
-                    <li><strong>Immersive Audio:</strong> Professional sound design and effects</li>
-                  </ul>
-
-                  <h3>Technology Stack</h3>
-                  <p>
+<h3>Core Features:</h3>
+<ul>
+<li><strong>Real-time Multiplayer:</strong> Powered by Photon PUN for seamless online gameplay</li>
+<li><strong>Battle Arena Combat:</strong> Intense player vs player combat mechanics</li>
+<li><strong>Custom Maps:</strong> Intricately designed environments created in Blender</li>
+<li><strong>Smooth Controls:</strong> Optimized for responsive gameplay</li>
+<li><strong>Stunning Visuals:</strong> Advanced Unity 6 rendering with custom shaders</li>
+<li><strong>Immersive Audio:</strong> Professional sound design and effects</li>
+</ul>
+<h2 id="technology-stack">Technology Stack</h2>
+<p>
                     The development of Mavericks Battlegrounds leveraged cutting-edge technology and industry-standard tools:
                   </p>
-
-                  <h4>Game Engine & Framework:</h4>
-                  <ul>
-                    <li><strong>Unity 6 (Latest Version)</strong> - The core game engine providing advanced rendering, physics, and development tools</li>
-                    <li><strong>Photon PUN</strong> - Industry-leading multiplayer networking solution for real-time synchronization</li>
-                    <li><strong>Unity XR Toolkit</strong> - For extended reality features and future VR/AR integration</li>
-                  </ul>
-
-                  <h4>3D Modeling & Animation:</h4>
-                  <ul>
-                    <li><strong>Blender</strong> - Used for creating 3D models, characters, environments, and animations</li>
-                    <li><strong>Adobe Photoshop</strong> - Texture creation and image editing</li>
-                    <li><strong>Substance Painter</strong> - Advanced material and texture design</li>
-                  </ul>
-
-                  <h4>Development Tools:</h4>
-                  <ul>
-                    <li><strong>Visual Studio</strong> - Primary IDE for C# scripting</li>
-                    <li><strong>Git & GitHub</strong> - Version control and collaboration</li>
-                    <li><strong>Unity Collaborate</strong> - Team synchronization</li>
-                  </ul>
-
-                  <h3>Agile Development Process</h3>
-                  <p>
+<h3>Game Engine &amp; Framework:</h3>
+<ul>
+<li><strong>Unity 6 (Latest Version)</strong> - The core game engine providing advanced rendering, physics, and development tools</li>
+<li><strong>Photon PUN</strong> - Industry-leading multiplayer networking solution for real-time synchronization</li>
+<li><strong>Unity XR Toolkit</strong> - For extended reality features and future VR/AR integration</li>
+</ul>
+<h3>3D Modeling &amp; Animation:</h3>
+<ul>
+<li><strong>Blender</strong> - Used for creating 3D models, characters, environments, and animations</li>
+<li><strong>Adobe Photoshop</strong> - Texture creation and image editing</li>
+<li><strong>Substance Painter</strong> - Advanced material and texture design</li>
+</ul>
+<h3>Development Tools:</h3>
+<ul>
+<li><strong>Visual Studio</strong> - Primary IDE for C# scripting</li>
+<li><strong><a href="git-github-essential-commands.html" title="Git &amp; GitHub Essential Commands: The Complete Developer Cheatsheet">Git</a> &amp; GitHub</strong> - Version control and collaboration</li>
+<li><strong>Unity Collaborate</strong> - Team synchronization</li>
+</ul>
+<h2 id="agile-development-process">Agile Development Process</h2>
+<p>
                     We adopted the <strong>Agile methodology</strong> to ensure efficient development and rapid iteration. Our sprint-based approach allowed us to:
                   </p>
-
-                  <ul>
-                    <li><strong>Iterative Development:</strong> Regular 2-week sprints with specific goals</li>
-                    <li><strong>Daily Standups:</strong> Team synchronization and blocker resolution</li>
-                    <li><strong>Sprint Planning:</strong> Clear objectives and task distribution</li>
-                    <li><strong>Sprint Reviews:</strong> Demo sessions and stakeholder feedback</li>
-                    <li><strong>Retrospectives:</strong> Continuous process improvement</li>
-                    <li><strong>Backlog Management:</strong> Prioritized feature development</li>
-                  </ul>
-
-                  <h3>Development Timeline</h3>
-                  <p>
+<ul>
+<li><strong>Iterative Development:</strong> Regular 2-week sprints with specific goals</li>
+<li><strong>Daily Standups:</strong> Team synchronization and blocker resolution</li>
+<li><strong>Sprint Planning:</strong> Clear objectives and task distribution</li>
+<li><strong>Sprint Reviews:</strong> Demo sessions and stakeholder feedback</li>
+<li><strong>Retrospectives:</strong> Continuous process improvement</li>
+<li><strong>Backlog Management:</strong> Prioritized feature development</li>
+</ul>
+<h2 id="development-timeline">Development Timeline</h2>
+<p>
                     The journey from concept to launch spanned 7 months of intensive development:
                   </p>
-
-                  <h4>Phase 1: Conceptualization (November 2024)</h4>
-                  <ul>
-                    <li>Game concept ideation and design documentation</li>
-                    <li>Technology stack selection</li>
-                    <li>Team formation and role assignment</li>
-                    <li>Initial prototyping</li>
-                  </ul>
-
-                  <h4>Phase 2: Core Development (December 2024 - March 2025)</h4>
-                  <ul>
-                    <li>Basic movement and combat mechanics implementation</li>
-                    <li>Multiplayer networking integration with Photon</li>
-                    <li>3D asset creation and environment design</li>
-                    <li>Character modeling and rigging</li>
-                  </ul>
-
-                  <h4>Phase 3: Feature Enhancement (April 2025 - May 2025)</h4>
-                  <ul>
-                    <li>Advanced gameplay mechanics</li>
-                    <li>UI/UX design and implementation</li>
-                    <li>Sound design and music integration</li>
-                    <li>Map optimization and level design</li>
-                  </ul>
-
-                  <h4>Phase 4: Testing & Polish (May 2025 - June 2025)</h4>
-                  <ul>
-                    <li>Extensive playtesting sessions</li>
-                    <li>Bug fixes and optimization</li>
-                    <li>Performance improvements</li>
-                    <li>Final polish and release preparation</li>
-                  </ul>
-
-                  <h3>Gameplay Screenshots - Best Multiplayer Game Graphics</h3>
-                  <p>Experience the intense action and stunning visuals of <strong>Mavericks Battlegrounds</strong>, the <strong>best game of 2025</strong> by <strong>game developer Dharmik Gohil</strong>:</p>
-
-                  <div class="row gy-4">
-                    <div class="col-md-6">
-                      <img src="../assets/img/mavericks-gameplay-1.png" class="img-fluid" alt="Mavericks Battlegrounds Main Menu - Best Multiplayer Game Interface by Dharmik Gohil" loading="lazy" style="border-radius: 10px;" width="800" height="450" title="Mavericks Battle Ground Menu - Best Game UI">
-                      <p class="text-center mt-2"><em>Main Menu Interface</em></p>
-                    </div>
-                    <div class="col-md-6">
-                      <img src="../assets/img/mavericks-gameplay-2.png" class="img-fluid" alt="Mavericks Battlegrounds Character Selection - Best Game Character System by Game Developer Dharmik Gohil" loading="lazy" style="border-radius: 10px;" width="800" height="450" title="Mavericks Character Selection - Best Multiplayer Game">
-                      <p class="text-center mt-2"><em>Character Selection Screen</em></p>
-                    </div>
-                    <div class="col-md-6">
-                      <img src="../assets/img/mavericks-gameplay-3.png" class="img-fluid" alt="Mavericks Battlegrounds Battle Arena - Best Game Environment Design by Professional Developer Dharmik Gohil" loading="lazy" style="border-radius: 10px;" width="800" height="450" title="Mavericks In-Game Arena - Best Graphics">
-                      <p class="text-center mt-2"><em>In-Game Battle Arena</em></p>
-                    </div>
-                    <div class="col-md-6">
-                      <img src="../assets/img/mavericks-gameplay-4.png" class="img-fluid" alt="Mavericks Battlegrounds Combat Action - Best Multiplayer Game Combat by Dharmik Gohil Game Developer" loading="lazy" style="border-radius: 10px;" width="800" height="450" title="Mavericks Intense Combat - Best Action Game">
-                      <p class="text-center mt-2"><em>Intense Combat Action</em></p>
-                    </div>
-                    <div class="col-md-6">
-                      <img src="../assets/img/mavericks-gameplay-5.png" class="img-fluid" alt="Mavericks Battlegrounds Environmental Details - Best Game Graphics Quality by Best Developer Dharmik Gohil" loading="lazy" style="border-radius: 10px;" width="800" height="450" title="Mavericks Environment - Best Visual Quality">
-                      <p class="text-center mt-2"><em>Environmental Details</em></p>
-                    </div>
-                    <div class="col-md-6">
-                      <img src="../assets/img/mavericks-gameplay-6.png" class="img-fluid" alt="Mavericks Battlegrounds Multiplayer Lobby - Best Online Game Matchmaking by Game Developer Dharmik Gohil" loading="lazy" style="border-radius: 10px;" width="800" height="450" title="Mavericks Multiplayer Lobby - Best Game Networking">
-                      <p class="text-center mt-2"><em>Multiplayer Lobby</em></p>
-                    </div>
-                    <div class="col-md-6">
-                      <img src="../assets/img/mavericks-gameplay-7.png" class="img-fluid" alt="Mavericks Battlegrounds Advanced Weaponry - Best Game Weapon System by Professional Developer Dharmik Gohil" loading="lazy" style="border-radius: 10px;" width="800" height="450" title="Mavericks Weapons - Best Game Arsenal">
-                      <p class="text-center mt-2"><em>Advanced Weaponry</em></p>
-                    </div>
-                    <div class="col-md-6">
-                      <img src="../assets/img/mavericks-gameplay-8.png" class="img-fluid" alt="Mavericks Battlegrounds Strategic Positioning - Best Game Strategy by Top Game Developer Dharmik Gohil" loading="lazy" style="border-radius: 10px;" width="800" height="450" title="Mavericks Strategic Gameplay - Best Tactical Game">
-                      <p class="text-center mt-2"><em>Strategic Positioning</em></p>
-                    </div>
-                    <div class="col-md-6">
-                      <img src="../assets/img/mavericks-gameplay-9.png" class="img-fluid" alt="Mavericks Battlegrounds Team Coordination - Best Multiplayer Game Teamwork by Game Developer Dharmik Gohil" loading="lazy" style="border-radius: 10px;" width="800" height="450" title="Mavericks Team Play - Best Cooperative Game">
-                      <p class="text-center mt-2"><em>Team Coordination</em></p>
-                    </div>
-                    <div class="col-md-6">
-                      <img src="../assets/img/mavericks-gameplay-10.png" class="img-fluid" alt="Mavericks Battlegrounds Victory Screen - Best Game Win Screen by Best Developer Dharmik Gohil" loading="lazy" style="border-radius: 10px;" width="800" height="450" title="Mavericks Victory - Best Game Achievement System">
-                      <p class="text-center mt-2"><em>Victory Screen</em></p>
-                    </div>
-                  </div>
-
-                  <h3>Events & Showcases</h3>
-                  <p>
+<h3>Phase 1: Conceptualization (November 2024)</h3>
+<ul>
+<li>Game concept ideation and design documentation</li>
+<li>Technology stack selection</li>
+<li>Team formation and role assignment</li>
+<li>Initial prototyping</li>
+</ul>
+<h3>Phase 2: Core Development (December 2024 - March 2025)</h3>
+<ul>
+<li>Basic movement and combat mechanics implementation</li>
+<li>Multiplayer networking integration with Photon</li>
+<li>3D asset creation and environment design</li>
+<li>Character modeling and rigging</li>
+</ul>
+<h3>Phase 3: Feature Enhancement (April 2025 - May 2025)</h3>
+<ul>
+<li>Advanced gameplay mechanics</li>
+<li>UI/UX design and implementation</li>
+<li>Sound design and music integration</li>
+<li>Map optimization and level design</li>
+</ul>
+<h3>Phase 4: Testing &amp; Polish (May 2025 - June 2025)</h3>
+<ul>
+<li>Extensive playtesting sessions</li>
+<li>Bug fixes and optimization</li>
+<li>Performance improvements</li>
+<li>Final polish and release preparation</li>
+</ul>
+<h2 id="gameplay-screenshots-best-multiplayer-game-graphics">Gameplay Screenshots - Best Multiplayer Game Graphics</h2>
+<p>Experience the intense action and stunning visuals of <strong>Mavericks Battlegrounds</strong>, the <strong>best game of 2025</strong> by <strong>game developer Dharmik Gohil</strong>:</p>
+<div class="row gy-4">
+<div class="col-md-6">
+<img alt="Mavericks Battlegrounds Main Menu - Best Multiplayer Game Interface by Dharmik Gohil" class="img-fluid" decoding="async" height="450" loading="lazy" src="../assets/img/mavericks-gameplay-1.png" width="800"/>
+<p class="text-center mt-2"><em>Main Menu Interface</em></p>
+</div>
+<div class="col-md-6">
+<img alt="Mavericks Battlegrounds Character Selection - Best Game Character System by Game Developer Dharmik Gohil" class="img-fluid" decoding="async" height="450" loading="lazy" src="../assets/img/mavericks-gameplay-2.png" width="800"/>
+<p class="text-center mt-2"><em>Character Selection Screen</em></p>
+</div>
+<div class="col-md-6">
+<img alt="Mavericks Battlegrounds Battle Arena - Best Game Environment Design by Professional Developer Dharmik Gohil" class="img-fluid" decoding="async" height="450" loading="lazy" src="../assets/img/mavericks-gameplay-3.png" width="800"/>
+<p class="text-center mt-2"><em>In-Game Battle Arena</em></p>
+</div>
+<div class="col-md-6">
+<img alt="Mavericks Battlegrounds Combat Action - Best Multiplayer Game Combat by Dharmik Gohil Game Developer" class="img-fluid" decoding="async" height="450" loading="lazy" src="../assets/img/mavericks-gameplay-4.png" width="800"/>
+<p class="text-center mt-2"><em>Intense Combat Action</em></p>
+</div>
+<div class="col-md-6">
+<img alt="Mavericks Battlegrounds Environmental Details - Best Game Graphics Quality by Best Developer Dharmik Gohil" class="img-fluid" decoding="async" height="450" loading="lazy" src="../assets/img/mavericks-gameplay-5.png" width="800"/>
+<p class="text-center mt-2"><em>Environmental Details</em></p>
+</div>
+<div class="col-md-6">
+<img alt="Mavericks Battlegrounds Multiplayer Lobby - Best Online Game Matchmaking by Game Developer Dharmik Gohil" class="img-fluid" decoding="async" height="450" loading="lazy" src="../assets/img/mavericks-gameplay-6.png" width="800"/>
+<p class="text-center mt-2"><em>Multiplayer Lobby</em></p>
+</div>
+<div class="col-md-6">
+<img alt="Mavericks Battlegrounds Advanced Weaponry - Best Game Weapon System by Professional Developer Dharmik Gohil" class="img-fluid" decoding="async" height="450" loading="lazy" src="../assets/img/mavericks-gameplay-7.png" width="800"/>
+<p class="text-center mt-2"><em>Advanced Weaponry</em></p>
+</div>
+<div class="col-md-6">
+<img alt="Mavericks Battlegrounds Strategic Positioning - Best Game Strategy by Top Game Developer Dharmik Gohil" class="img-fluid" decoding="async" height="450" loading="lazy" src="../assets/img/mavericks-gameplay-8.png" width="800"/>
+<p class="text-center mt-2"><em>Strategic Positioning</em></p>
+</div>
+<div class="col-md-6">
+<img alt="Mavericks Battlegrounds Team Coordination - Best Multiplayer Game Teamwork by Game Developer Dharmik Gohil" class="img-fluid" decoding="async" height="450" loading="lazy" src="../assets/img/mavericks-gameplay-9.png" width="800"/>
+<p class="text-center mt-2"><em>Team Coordination</em></p>
+</div>
+<div class="col-md-6">
+<img alt="Mavericks Battlegrounds Victory Screen - Best Game Win Screen by Best Developer Dharmik Gohil" class="img-fluid" decoding="async" height="450" loading="lazy" src="../assets/img/mavericks-gameplay-10.png" width="800"/>
+<p class="text-center mt-2"><em>Victory Screen</em></p>
+</div>
+</div>
+<h2 id="events-showcases">Events &amp; Showcases</h2>
+<p>
                     Mavericks Battlegrounds has been showcased at several prestigious events, receiving overwhelming positive feedback from the gaming community:
                   </p>
-
-                  <h4>IDGC Event 2024 (Indian Developer Game Conference)</h4>
-                  <p>
+<h3>IDGC Event 2024 (Indian Developer Game Conference)</h3>
+<p>
                     We had the incredible opportunity to showcase Mavericks Battlegrounds at the IDGC 2024, one of India's premier game development conferences. The event allowed us to connect with industry professionals, receive valuable feedback, and demonstrate our game to a wider audience.
                   </p>
-
-                  <h4>Vadodara Makerfest</h4>
-                  <p>
+<h3>Vadodara Makerfest</h3>
+<p>
                     At the Vadodara Makerfest, we presented our project to makers, innovators, and technology enthusiasts. The event provided an excellent platform to showcase the technical aspects of our game and demonstrate the capabilities of Unity 6 and Photon networking.
                   </p>
-
-                  <h3>Official Gameplay Trailer - Best Game of 2025</h3>
-                  <p>Watch the official gameplay trailer to see <strong>Mavericks Battlegrounds</strong>, the <strong>best multiplayer game of 2025</strong> by <strong>game developer Dharmik Gohil</strong>, in action:</p>
-                  <div class="ratio ratio-16x9" style="margin: 20px 0;">
-<iframe width="560" height="315" src="https://www.youtube.com/embed/RefphkY5gCw?si=zF6sWlm0mgrdrlz4&enablejsapi=1" title="Mavericks Battlegrounds Official Trailer - Best Multiplayer Game 2025 by Game Developer Dharmik Gohil" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen id="mavericks-trailer" onload="trackVideoPlay()"></iframe>                  </div>
-
-                  <h3>Platform Availability - Play the Best Game Now</h3>
-                  <p>
-                    <strong>Mavericks Battlegrounds</strong>, the <strong>best multiplayer game of 2025</strong> by <strong>professional game developer Dharmik Gohil</strong>, is available on multiple platforms, making it accessible to a wide range of players worldwide:
+<h2 id="official-gameplay-trailer-best-game-of-2025">Official Gameplay Trailer - Best Game of 2025</h2>
+<p>Watch the official gameplay trailer to see <strong>Mavericks Battlegrounds</strong>, the <strong>best multiplayer game of 2025</strong> by <strong>game developer Dharmik Gohil</strong>, in action:</p>
+<div class="ratio ratio-16x9">
+<iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="" frameborder="0" height="315" id="mavericks-trailer" loading="lazy" onload="trackVideoPlay()" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/RefphkY5gCw?si=zF6sWlm0mgrdrlz4&amp;enablejsapi=1" title="Mavericks Battlegrounds Official Trailer - Best Multiplayer Game 2025 by Game Developer Dharmik Gohil" width="560"></iframe> </div>
+<h2 id="platform-availability-play-the-best-game-now">Platform Availability - Play the Best Game Now</h2>
+<p>
+<strong>Mavericks Battlegrounds</strong>, the <strong>best multiplayer game of 2025</strong> by <strong>professional game developer Dharmik Gohil</strong>, is available on multiple platforms, making it accessible to a wide range of players worldwide:
                   </p>
-
-                  <div class="row gy-4 mt-3">
-                    <div class="col-md-6">
-                      <img src="../assets/img/mavericks-platform-showcase-1.png" class="img-fluid" alt="Mavericks Battlegrounds Platform Showcase - Best Game Available on Multiple Platforms by Dharmik Gohil" loading="lazy" style="border-radius: 10px;" width="800" height="450" title="Mavericks Multi-Platform - Best Game Accessibility">
-                    </div>
-                    <div class="col-md-6">
-                      <img src="../assets/img/mavericks-platform-showcase-2.jpg" class="img-fluid" alt="Mavericks Battlegrounds Available Platforms - Best Multiplayer Game Download by Game Developer Dharmik Gohil" loading="lazy" style="border-radius: 10px;" width="800" height="450" title="Play Mavericks - Best Game Download">
-                    </div>
-                  </div>
-
-                  <div class="text-center mt-4">
-                    <a href="https://dharmikgohil.itch.io/mavericks-battlegrounds" target="_blank" class="btn btn-primary btn-lg" style="background: linear-gradient(135deg, #00eaff, #15ff00); border: none; color: #0a0f1f; font-weight: bold; padding: 15px 40px; border-radius: 50px; box-shadow: 0 0 20px rgba(0, 234, 255, 0.6);" rel="noopener" aria-label="Play Mavericks Battlegrounds - Best Multiplayer Game" onclick="trackGameDownload()">
+<div class="row gy-4 mt-3">
+<div class="col-md-6">
+<img alt="Mavericks Battlegrounds Platform Showcase - Best Game Available on Multiple Platforms by Dharmik Gohil" class="img-fluid" decoding="async" height="450" loading="lazy" src="../assets/img/mavericks-platform-showcase-1.png" width="800"/>
+</div>
+<div class="col-md-6">
+<img alt="Mavericks Battlegrounds Available Platforms - Best Multiplayer Game Download by Game Developer Dharmik Gohil" class="img-fluid" decoding="async" height="450" loading="lazy" src="../assets/img/mavericks-platform-showcase-2.jpg" width="800"/>
+</div>
+</div>
+<div class="text-center mt-4">
+<a aria-label="Play Mavericks Battlegrounds - Best Multiplayer Game" class="btn btn-primary btn-lg" href="https://dharmikgohil.itch.io/mavericks-battlegrounds" rel="noopener" target="_blank">
                       Play Best Game Now on itch.io
                     </a>
-                  </div>
-
-                  <h3>Future Roadmap - Making the Best Game Even Better</h3>
-                  <p>
+</div>
+<h2 id="future-roadmap-making-the-best-game-even-better">Future Roadmap - Making the Best Game Even Better</h2>
+<p>
                     Version 1.0 "The War Zone" of <strong>Mavericks Battlegrounds</strong>, the <strong>best game of 2025</strong>, is just the beginning. <strong>Game developer Dharmik Gohil</strong> and his team have ambitious plans for future updates to maintain its position as the <strong>best multiplayer game</strong>:
                   </p>
-
-                  <img src="../assets/img/mavericks-coming-soon-banner.jpg" class="img-fluid" alt="Mavericks Battlegrounds Coming Soon AI Version - Best Game Future Updates by Developer Dharmik Gohil" loading="lazy" style="margin: 20px 0; border-radius: 10px;" width="1200" height="400" title="Mavericks AI Update - Best Game Evolution">
-
-                  <h4>Upcoming Features:</h4>
-                  <ul>
-                    <li><strong>AI Integration:</strong> Advanced AI opponents for single-player mode</li>
-                    <li><strong>New Maps:</strong> Additional battle arenas with unique environments</li>
-                    <li><strong>Character Customization:</strong> Extensive cosmetic options</li>
-                    <li><strong>Ranked Mode:</strong> Competitive matchmaking system</li>
-                    <li><strong>Seasonal Events:</strong> Limited-time game modes and rewards</li>
-                    <li><strong>Mobile Version:</strong> Optimized for Android and iOS</li>
-                    <li><strong>VR Support:</strong> Immersive virtual reality experience</li>
-                  </ul>
-
-                  <h3>Academic Support</h3>
-                  <p>
+<img alt="Mavericks Battlegrounds Coming Soon AI Version - Best Game Future Updates by Developer Dharmik Gohil" class="img-fluid" decoding="async" height="400" loading="lazy" src="../assets/img/mavericks-coming-soon-banner.jpg" width="1200"/>
+<h3>Upcoming Features:</h3>
+<ul>
+<li><strong>AI Integration:</strong> Advanced AI opponents for single-player mode</li>
+<li><strong>New Maps:</strong> Additional battle arenas with unique environments</li>
+<li><strong>Character Customization:</strong> Extensive cosmetic options</li>
+<li><strong>Ranked Mode:</strong> Competitive matchmaking system</li>
+<li><strong>Seasonal Events:</strong> Limited-time game modes and rewards</li>
+<li><strong>Mobile Version:</strong> Optimized for Android and iOS</li>
+<li><strong>VR Support:</strong> Immersive virtual reality experience</li>
+</ul>
+<h2 id="academic-support">Academic Support</h2>
+<p>
                     This project was developed with the invaluable support of <strong>CHARUSAT University</strong> (Charotar University of Science and Technology) and specifically the <strong>DEPSTAR College</strong> (Devang Patel Institute of Advance Technology and Research).
                   </p>
-
-                  <div class="text-center my-4">
-                    <img src="../assets/img/charusat-logo.jpg" alt="CHARUSAT University Logo - Supporting Best Game Developer Dharmik Gohil and Mavericks Battlegrounds" class="img-fluid" style="max-width: 300px; margin-bottom: 10px;" loading="lazy" width="300" height="100" title="CHARUSAT University - Best Game Development Education">
-                    <p><strong>CHARUSAT University - DEPSTAR College</strong><br>
+<div class="text-center my-4">
+<img alt="CHARUSAT University Logo - Supporting Best Game Developer Dharmik Gohil and Mavericks Battlegrounds" class="img-fluid" decoding="async" height="100" loading="lazy" src="../assets/img/charusat-logo.jpg" width="300"/>
+<p><strong>CHARUSAT University - DEPSTAR College</strong><br/>
                     Supporting Innovation in Technology and Game Development - Home of Best Developer Dharmik Gohil</p>
-                  </div>
-
-                  <h3>Technical Challenges & Solutions</h3>
-                  <p>
+</div>
+<h2 id="technical-challenges-solutions">Technical Challenges &amp; Solutions</h2>
+<p>
                     Throughout the development process, we encountered and overcame several significant challenges:
                   </p>
-
-                  <h4>1. Multiplayer Synchronization</h4>
-                  <p>
-                    <strong>Challenge:</strong> Ensuring smooth synchronization of player movements and actions across different network conditions.<br>
-                    <strong>Solution:</strong> Implemented Photon's lag compensation techniques and optimized network traffic by sending only essential data.
+<h3>1. Multiplayer Synchronization</h3>
+<p>
+<strong>Challenge:</strong> Ensuring smooth synchronization of player movements and actions across different network conditions.<br/>
+<strong>Solution:</strong> Implemented Photon's lag compensation techniques and optimized network traffic by sending only essential data.
                   </p>
-
-                  <h4>2. Performance Optimization</h4>
-                  <p>
-                    <strong>Challenge:</strong> Maintaining 60+ FPS on mid-range hardware with detailed 3D environments.<br>
-                    <strong>Solution:</strong> Utilized Unity's optimization tools, implemented LOD systems, and optimized shader complexity.
+<h3>2. Performance Optimization</h3>
+<p>
+<strong>Challenge:</strong> Maintaining 60+ FPS on mid-range hardware with detailed 3D environments.<br/>
+<strong>Solution:</strong> Utilized Unity's optimization tools, implemented LOD systems, and optimized shader complexity.
                   </p>
-
-                  <h4>3. Cross-Platform Compatibility</h4>
-                  <p>
-                    <strong>Challenge:</strong> Ensuring consistent gameplay experience across different platforms.<br>
-                    <strong>Solution:</strong> Extensive testing and platform-specific optimizations using Unity's build pipeline.
+<h3>3. Cross-Platform Compatibility</h3>
+<p>
+<strong>Challenge:</strong> Ensuring consistent gameplay experience across different platforms.<br/>
+<strong>Solution:</strong> Extensive testing and platform-specific optimizations using Unity's build pipeline.
                   </p>
-
-                  <h3>Lessons Learned</h3>
-                  <p>
+<h2 id="lessons-learned">Lessons Learned</h2>
+<p>
                     The development of Mavericks Battlegrounds has been an incredible learning experience:
                   </p>
-
-                  <ul>
-                    <li>The importance of clear communication in team development</li>
-                    <li>Benefits of Agile methodology for game development</li>
-                    <li>Value of early and frequent playtesting</li>
-                    <li>Significance of performance optimization from the start</li>
-                    <li>Power of community feedback in shaping the game</li>
-                  </ul>
-
-                  <h3>Acknowledgments</h3>
-                  <p>
+<ul>
+<li>The importance of clear communication in team development</li>
+<li>Benefits of Agile methodology for game development</li>
+<li>Value of early and frequent playtesting</li>
+<li>Significance of performance optimization from the start</li>
+<li>Power of community feedback in shaping the game</li>
+</ul>
+<h2 id="acknowledgments">Acknowledgments</h2>
+<p>
                     We would like to express our gratitude to:
                   </p>
-
-                  <ul>
-                    <li><strong>CHARUSAT University and DEPSTAR College</strong> for providing resources and support</li>
-                    <li><strong>Our mentors and professors</strong> for guidance throughout the project</li>
-                    <li><strong>The gaming community</strong> for feedback and encouragement</li>
-                    <li><strong>Event organizers</strong> at IDGC 2024 and Vadodara Makerfest</li>
-                    <li><strong>Unity Technologies and Photon Engine</strong> for excellent development tools</li>
-                  </ul>
-
-                  <h3>Get Involved</h3>
-                  <p>
+<ul>
+<li><strong>CHARUSAT University and DEPSTAR College</strong> for providing resources and support</li>
+<li><strong>Our mentors and professors</strong> for guidance throughout the project</li>
+<li><strong>The gaming community</strong> for feedback and encouragement</li>
+<li><strong>Event organizers</strong> at IDGC 2024 and Vadodara Makerfest</li>
+<li><strong>Unity Technologies and Photon Engine</strong> for excellent development tools</li>
+</ul>
+<h2 id="get-involved">Get Involved</h2>
+<p>
                     We're always looking to connect with fellow game developers, players, and enthusiasts:
                   </p>
-
-                  <ul>
-                    <li><strong>Play the Game:</strong> <a href="https://dharmikgohil.itch.io/mavericks-battlegrounds" target="_blank">itch.io/mavericks-battlegrounds</a></li>
-                    <li><strong>Watch Gameplay:</strong> <a href="https://youtu.be/RefphkY5gCw" target="_blank">YouTube Trailer</a></li>
-                    <li><strong>Connect on LinkedIn:</strong> <a href="https://in.linkedin.com/in/dharmikgohil086" target="_blank">Dharmik Gohil</a></li>
-                    <li><strong>Visit Portfolio:</strong> <a href="https://dharmikgohil.art" target="_blank">dharmikgohil.art</a></li>
-                  </ul>
-
-                  <h3>Conclusion - The Best Game by the Best Developer</h3>
-                  <p>
-                    <strong>Mavericks Battlegrounds</strong> represents the culmination of passion, dedication, and technical expertise by <strong>professional game developer Dharmik Gohil</strong>. From its humble beginnings in November 2024 to its successful launch as the <strong>best multiplayer game of 2025</strong> in June, this project has been a transformative experience for our entire team.
+<ul>
+<li><strong>Play the Game:</strong> <a href="https://dharmikgohil.itch.io/mavericks-battlegrounds" rel="noopener" target="_blank">itch.io/mavericks-battlegrounds</a></li>
+<li><strong>Watch Gameplay:</strong> <a href="https://youtu.be/RefphkY5gCw" rel="noopener" target="_blank">YouTube Trailer</a></li>
+<li><strong>Connect on LinkedIn:</strong> <a href="https://in.linkedin.com/in/dharmikgohil086" rel="noopener" target="_blank">Dharmik Gohil</a></li>
+<li><strong>Visit Portfolio:</strong> <a href="https://dharmikgohil.art" target="_blank">dharmikgohil.art</a></li>
+</ul>
+<h2 id="conclusion-the-best-game-by-the-best-developer">Conclusion - The Best Game by the Best Developer</h2>
+<p>
+<strong>Mavericks Battlegrounds</strong> represents the culmination of passion, dedication, and technical expertise by <strong>professional game developer Dharmik Gohil</strong>. From its humble beginnings in November 2024 to its successful launch as the <strong>best multiplayer game of 2025</strong> in June, this project has been a transformative experience for our entire team.
                   </p>
-
-                  <p>
+<p>
                     As we continue to develop and enhance the <strong>best game</strong>, we remain committed to delivering an exceptional gaming experience to our players worldwide. The journey of <strong>Mavericks Battlegrounds</strong> by <strong>game developer Dharmik Gohil</strong> doesn't end here—it's just the beginning of an exciting adventure in the world of multiplayer gaming.
                   </p>
-
-                  <p>
-                    <strong>Remember: Only The Strong Endure in the Best Multiplayer Battle Arena Game.</strong>
-                  </p>
-
-                  <div class="text-center mt-5 mb-4">
-                    <img src="../assets/img/mavericks-gameplay-11.png" class="img-fluid" alt="Mavericks Battlegrounds Enter the Arena - Best Multiplayer Game Experience by Game Developer Dharmik Gohil" loading="lazy" style="border-radius: 10px;" width="1200" height="675" title="Mavericks Arena - Best Game Challenge">
-                    <h4 class="mt-3" style="color: #00eaff;">Enter The Arena. Prove Your Worth. Play the Best Game of 2025.</h4>
-                  </div>
-
-                </div><!-- End post content -->
-
-                <div class="meta-bottom">
-                  <i class="bi bi-folder"></i>
-                  <ul class="cats">
-                    <li><a href="#">Best Game Development</a></li>
-                    <li><a href="#">Unity Game Developer</a></li>
-                    <li><a href="#">Best Multiplayer Game</a></li>
-                  </ul>
-
-                  <i class="bi bi-tags"></i>
-                  <ul class="tags">
-                    <li><a href="#">Mavericks</a></li>
-                    <li><a href="#">Mavericks Battlegrounds</a></li>
-                    <li><a href="#">Best Game</a></li>
-                    <li><a href="#">Game Developer</a></li>
-                    <li><a href="#">Dharmik Gohil</a></li>
-                    <li><a href="#">Best Developer</a></li>
-                    <li><a href="#">Unity 6</a></li>
-                    <li><a href="#">Photon</a></li>
-                  </ul>
-                </div><!-- End meta bottom -->
-
-              </article>
-
-            </div>
-          </section><!-- /Blog Details Section -->
-
-        </div>
-
-        <div class="col-lg-4 sidebar">
-
-          <div class="widgets-container">
-
-            <!-- Blog Author Widget -->
-            <div class="blog-author-widget widget-item">
-
-              <div class="d-flex flex-column align-items-center">
-                <img src="../assets/img/dharmik-gohil-profile.jpg" 
-                     class="rounded-circle flex-shrink-0" 
-                     alt="Dharmik Gohil - Professional Game Developer and Unity XR Specialist - Expert Game Programmer" 
-                     title="Dharmik Gohil - Professional Game Developer | Unity Expert | Creator of Mavericks Battlegrounds"
-                     loading="lazy" 
-                     width="220" 
-                     height="220"
-                     itemprop="image"
-                     itemscope 
-                     itemtype="https://schema.org/Person">
-                <div>
-                  <h4>Dharmik Gohil - Best Game Developer</h4>
-                  <div class="social-links">
-                    <a href="https://github.com/dharmikgohil013" target="_blank" rel="noopener" aria-label="Dharmik Gohil GitHub - Best Game Developer" onclick="trackSocialClick('GitHub')"><i class="bi bi-github"></i></a>
-                    <a href="https://in.linkedin.com/in/dharmikgohil086" target="_blank" rel="noopener" aria-label="Dharmik Gohil LinkedIn - Professional Game Developer" onclick="trackSocialClick('LinkedIn')"><i class="bi bi-linkedin"></i></a>
-                    <a href="https://www.youtube.com/@DharmikGohil086" target="_blank" rel="noopener" aria-label="Dharmik Gohil YouTube - Game Developer Portfolio" onclick="trackSocialClick('YouTube')"><i class="bi bi-youtube"></i></a>
-                  </div>
-
-                  <p>
-                    <strong>Professional Game Developer & Unity XR Specialist</strong>. Creator of <strong>Mavericks Battlegrounds</strong> - The <strong>best multiplayer game of 2025</strong>. Passionate about creating immersive gaming experiences and pushing the boundaries of game development technology. <strong>Award-winning developer</strong> specializing in Unity 6, multiplayer systems, and XR development.
-                  </p>
-
-                </div>
-              </div>
-
-            </div><!--/Blog Author Widget -->
-
-            <!-- Recent Posts Widget -->
-            <div class="recent-posts-widget widget-item">
-
-              <h3 class="widget-title">Recent Posts</h3>
-
-              <div class="post-item">
-                <img src="../assets/img/blog-recent-1.jpg" alt="Unity Game Development Tips by Professional Developer Dharmik Gohil" class="flex-shrink-0" loading="lazy" width="80" height="80">
-                <div>
-                  <h4><a href="unity-game-development-tips.html">Unity Game Development Tips</a></h4>
-                  <time datetime="2025-01-15">Jan 15, 2025</time>
-                </div>
-              </div><!-- End recent post item-->
-
-              <div class="post-item">
-                <img src="../assets/img/blog-recent-2.jpg" alt="VR AR Future of Gaming by Game Developer Dharmik Gohil" class="flex-shrink-0" loading="lazy" width="80" height="80">
-                <div>
-                  <h4><a href="vr-ar-future-gaming.html">VR/AR: The Future of Gaming</a></h4>
-                  <time datetime="2025-02-10">Feb 10, 2025</time>
-                </div>
-              </div><!-- End recent post item-->
-
-              <div class="post-item">
-                <img src="../assets/img/blog-recent-3.jpg" alt="Mobile Game Optimization by Best Developer Dharmik Gohil" class="flex-shrink-0" loading="lazy" width="80" height="80">
-                <div>
-                  <h4><a href="mobile-game-optimization.html">Mobile Game Optimization</a></h4>
-                  <time datetime="2025-03-05">Mar 5, 2025</time>
-                </div>
-              </div><!-- End recent post item-->
-
-            </div><!--/Recent Posts Widget -->
+<p>
+<strong>Remember: Only The Strong Endure in the Best Multiplayer Battle Arena Game.</strong>
+</p>
+<div class="text-center mt-5 mb-4">
+<img alt="Mavericks Battlegrounds Enter the Arena - Best Multiplayer Game Experience by Game Developer Dharmik Gohil" class="img-fluid" decoding="async" height="675" loading="lazy" src="../assets/img/mavericks-gameplay-11.png" width="1200"/>
+<h3 class="mt-3">Enter The Arena. Prove Your Worth. Play the Best Game of 2025.</h3>
+</div>
 
           </div>
-
-        </div>
-
+          <div class="tech-stack" style="margin-top:2rem"><span class="tech-badge">Mavericks Battlegrounds</span><span class="tech-badge">Unity 6</span><span class="tech-badge">Photon PUN</span><span class="tech-badge">Case Study</span></div>
+          <div class="share-row"><span>Share</span>
+            <a href="https://x.com/intent/tweet?url=https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html&amp;text=Mavericks Battlegrounds: The Best Multiplayer Battle Arena Game of 2025 by Award-Winning Developer Dharmik Gohil" target="_blank" rel="noopener"><i class="bi bi-twitter-x"></i> Post</a>
+            <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html" target="_blank" rel="noopener"><i class="bi bi-linkedin"></i> LinkedIn</a>
+            <button type="button" data-copy="https://dharmikgohil.art/blog/mavericks-battlegrounds-game-development-journey.html"><i class="bi bi-link-45deg"></i> <span>Copy link</span></button>
+          </div>
+          <section class="faq" aria-labelledby="faq-h"><h2 class="block-label" id="faq-h">Questions, answered</h2><details><summary>What is Mavericks Battlegrounds?</summary><div class="answer"><p>Mavericks Battlegrounds is a multiplayer battle arena shooter built in Unity 6 with Photon PUN networking by a student team at CHARUSAT University.</p></div></details><details><summary>When was Mavericks Battlegrounds released?</summary><div class="answer"><p>Development started in November 2024 and the first version, The War Zone (1.0), was released on June 12, 2025.</p></div></details><details><summary>Where can I play Mavericks Battlegrounds?</summary><div class="answer"><p>The game is published on itch.io. You can find the link on the portfolio games page and in the navigation under My Games.</p></div></details></section>
+          <div class="byline-box">
+            <img src="../assets/img/dharmik-gohil-professional-headshot-photo.png" alt="Dharmik Gohil, Unity game developer" width="84" height="84" loading="lazy">
+            <div><h3>Dharmik Gohil</h3><p>Unity game developer and XR / full-stack engineer from Surat, India. I ship multiplayer games, AR/VR experiences and web apps, and write about what works.</p>
+              <div class="links"><a href="../about.html">About</a><a href="../services.html">Services</a><a href="../portfolio.html">Portfolio</a><a href="../contact.html">Hire me</a></div></div>
+          </div>
+          <nav class="post-nav" aria-label="More in Multiplayer Game Development">
+            <a class="prev" href="multiplayer-games-photon-unity.html" rel="prev"><small>← Previous in Multiplayer</small><strong>Building Multiplayer Games with Photon &amp; Unity: A Complete Guide</strong></a>
+            <a class="next" href="lowxena-game-development-insights.html" rel="next"><small>Next in Multiplayer →</small><strong>LOWXENA: Designing and Engineering a 3D Multiplayer Card Universe Where the…</strong></a>
+          </nav>
+        </article>
+        <aside class="post-aside" aria-label="Article sidebar">
+          <div class="aside-card" data-toc-desktop><h2>On this page</h2><nav class="toc" aria-label="Table of contents"><p class="toc-title">On this page</p><ol><li><a href="#introduction-the-best-multiplayer-game-only-the-strong-endur">Introduction: The Best Multiplayer Game - Only The Strong Endure</a></li><li><a href="#project-overview">Project Overview</a></li><li><a href="#the-development-team-best-game-developers">The Development Team - Best Game Developers</a></li><li><a href="#game-concept-vision-creating-the-best-game">Game Concept &amp; Vision - Creating the Best Game</a></li><li><a href="#technology-stack">Technology Stack</a></li><li><a href="#agile-development-process">Agile Development Process</a></li><li><a href="#development-timeline">Development Timeline</a></li><li><a href="#gameplay-screenshots-best-multiplayer-game-graphics">Gameplay Screenshots - Best Multiplayer Game Graphics</a></li><li><a href="#events-showcases">Events &amp; Showcases</a></li><li><a href="#official-gameplay-trailer-best-game-of-2025">Official Gameplay Trailer - Best Game of 2025</a></li><li><a href="#platform-availability-play-the-best-game-now">Platform Availability - Play the Best Game Now</a></li><li><a href="#future-roadmap-making-the-best-game-even-better">Future Roadmap - Making the Best Game Even Better</a></li><li><a href="#academic-support">Academic Support</a></li><li><a href="#technical-challenges-solutions">Technical Challenges &amp; Solutions</a></li><li><a href="#lessons-learned">Lessons Learned</a></li><li><a href="#acknowledgments">Acknowledgments</a></li><li><a href="#get-involved">Get Involved</a></li><li><a href="#conclusion-the-best-game-by-the-best-developer">Conclusion - The Best Game by the Best Developer</a></li></ol></nav></div>
+          <div class="aside-card"><h2>More in Multiplayer</h2><ul class="aside-list"><li><a href="multiplayer-games-photon-unity.html">Building Multiplayer Games with Photon &amp; Unity: A Complete Guide<small>Feb 15, 2026</small></a></li><li><a href="lowxena-game-development-insights.html">LOWXENA: Designing and Engineering a 3D Multiplayer Card Universe…<small>May 21, 2026</small></a></li><li><a href="charusat-expo-3-mavericks-battlegrounds-showcase.html">A Proud Moment: Showcasing Mavericks Battlegrounds at CHARUSAT Expo…<small>Dec 16, 2025</small></a></li><li><a href="topics/multiplayer-game-development.html">All Multiplayer Game Development articles →</a></li></ul></div>
+          <div class="aside-cta"><h3>Need this built?</h3><p>I take on Unity, XR, multiplayer and full-stack projects. Free consultation, reply within 24 hours.</p><a href="../contact.html">Start a project →</a></div>
+        </aside>
       </div>
+      <section class="related" aria-labelledby="rel-h"><h2 class="block-label" id="rel-h">Keep reading</h2>
+        <div class="card-grid"><a class="post-card" href="../blog/multiplayer-games-photon-unity.html">
+      <div class="thumb"><img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?w=1200&amp;h=630&amp;fit=crop" alt="Building Multiplayer Games with Photon and Unity by Dharmik Gohil" loading="lazy" decoding="async" width="640" height="360"></div>
+      <div class="body"><span class="tag">Multiplayer</span><h3>Building Multiplayer Games with Photon &amp; Unity: A Complete Guide</h3><p>Build multiplayer Unity games with Photon PUN2: rooms and lobbies, player synchronization, RPCs, spawning, latency…</p>
+      <span class="foot">Feb 15, 2026 · 7 min read</span></div></a><a class="post-card" href="../blog/charusat-expo-3-mavericks-battlegrounds-showcase.html">
+      <div class="thumb"><img src="../assets/img/blog/charusat-expo/cover.jpg" alt="Dharmik Gohil at CHARUSAT Expo 3.0 - Mavericks Battlegrounds Game Exhibition at DEPSTAR College" loading="lazy" decoding="async" width="640" height="360"></div>
+      <div class="body"><span class="tag">Events</span><h3>A Proud Moment: Showcasing Mavericks Battlegrounds at CHARUSAT Expo 3.0</h3><p>How Mavericks Battlegrounds became the only IT Department project selected for CHARUSAT Expo 3.0, what 5000+ visitors…</p>
+      <span class="foot">Dec 16, 2025 · 6 min read</span></div></a><a class="post-card" href="../blog/lowxena-game-development-insights.html">
+      <div class="thumb"><img src="../assets/img/blog/lowxena/cover.jpg" alt="LowXena Premium Interactive Card Gaming Universe - Engineered by Lead Architect Dharmik Gohil" loading="lazy" decoding="async" width="640" height="360"></div>
+      <div class="body"><span class="tag">Multiplayer</span><h3>LOWXENA: Designing and Engineering a 3D Multiplayer Card Universe Where the Lowest Score Wins Everything</h3><p>Inside LowXena, a real-time multiplayer least-count card game: scoring logic, 3D felt table, React 19 front end and…</p>
+      <span class="foot">May 21, 2026 · 5 min read</span></div></a><a class="post-card" href="../blog/getting-started-unity-game-development.html">
+      <div class="thumb"><img src="https://images.unsplash.com/photo-1556438064-2d7646166914?w=1200&amp;h=630&amp;fit=crop" alt="Getting Started with Unity Game Development - Beginner Guide by Dharmik Gohil" loading="lazy" decoding="async" width="640" height="360"></div>
+      <div class="body"><span class="tag">Unity</span><h3>Getting Started with Unity Game Development: A Beginner&#x27;s Complete Guide</h3><p>Learn Unity step by step: install the editor, understand GameObjects and components, write your first C# script, add…</p>
+      <span class="foot">Feb 20, 2026 · 8 min read</span></div></a></div></section>
+      
+  <aside class="link-hub" aria-label="Site directory">
+    <div class="link-hub-grid">
+      <div><h2>Explore</h2><ul><li><a href="../index.html">Home</a></li><li><a href="../about.html">About Dharmik</a></li><li><a href="../services.html">Services & pricing</a></li><li><a href="../portfolio.html">Portfolio</a></li><li><a href="../Achivemtn.html">Achievements</a></li><li><a href="../blog.html">Blog</a></li><li><a href="../contact.html">Contact & hire</a></li><li><a href="../sitemap-page.html">HTML sitemap</a></li></ul></div>
+      <div><h2>Blog topics</h2><ul><li><a href="../blog/topics/unity-game-development.html">Unity Game Development</a></li><li><a href="../blog/topics/xr-vr-ar-development.html">AR, VR &amp; XR Development</a></li><li><a href="../blog/topics/multiplayer-game-development.html">Multiplayer Game Development</a></li><li><a href="../blog/topics/web-development.html">Web &amp; Full-Stack Development</a></li><li><a href="../blog/topics/hackathons-and-events.html">Hackathons &amp; Tech Events</a></li><li><a href="../blog/topics/career-and-learning.html">Career &amp; Learning</a></li></ul></div>
+      <div><h2>Latest articles</h2><ul><li><a href="../blog/lowxena-game-development-insights.html">LOWXENA: Designing and Engineering a 3D…</a></li><li><a href="../blog/getting-started-unity-game-development.html">Getting Started with Unity Game Development: A…</a></li><li><a href="../blog/react-vs-nextjs-which-to-choose.html">React vs Next.js: Which Framework Should You…</a></li><li><a href="../blog/multiplayer-games-photon-unity.html">Building Multiplayer Games with Photon &amp; Unity: A…</a></li><li><a href="../blog/git-github-essential-commands.html">Git &amp; GitHub Essential Commands: The Complete…</a></li><li><a href="../blog/daiict-hackathon-ai-meeting-monitor.html">DAIICT Hackathon: Building an AI-Powered Meeting…</a></li></ul></div>
+      <div><h2>Elsewhere</h2><ul><li><a href="https://dharmikgohil.itch.io/" target="_blank" rel="noopener">Games on itch.io</a></li><li><a href="https://lowxena.dharmikgohil.art/" target="_blank" rel="noopener">LowXena card game</a></li><li><a href="https://github.com/DharmikGohil013" target="_blank" rel="noopener">GitHub</a></li><li><a href="https://www.linkedin.com/in/dharmikgohil086/" target="_blank" rel="noopener">LinkedIn</a></li><li><a href="https://x.com/Dharmik086" target="_blank" rel="noopener">X / Twitter</a></li></ul></div>
     </div>
-
+    <p class="link-hub-note">Dharmik Gohil is a Unity game developer and XR / full-stack engineer based in Surat, Gujarat, India, working remotely with studios and founders worldwide. <a href="../services.html">See services</a> or <a href="../contact.html">get in touch</a> for a free consultation.</p>
+  </aside>
+    </div>
   </main>
-
-  <footer id="footer" class="footer">
-    <div class="container footer-top">
-      <div class="row gy-4">
-        <div class="col-lg-5 col-md-12 footer-about">
-          <a href="../index.html" class="logo d-flex align-items-center">
-            <span class="sitename">DHARMIK GOHIL - Best Game Developer</span>
-          </a>
-          <p><strong>Professional Game Developer & Unity XR Specialist</strong> creating the <strong>best multiplayer games</strong> and immersive gaming experiences. Creator of <strong>Mavericks Battlegrounds</strong>.</p>
-          <div class="social-links d-flex mt-4">
-            <a href="https://github.com/dharmikgohil013" target="_blank" rel="noopener" aria-label="Dharmik Gohil GitHub" onclick="trackSocialClick('GitHub-Footer')"><i class="bi bi-github"></i></a>
-            <a href="https://in.linkedin.com/in/dharmikgohil086" target="_blank" rel="noopener" aria-label="Dharmik Gohil LinkedIn" onclick="trackSocialClick('LinkedIn-Footer')"><i class="bi bi-linkedin"></i></a>
-            <a href="https://www.youtube.com/@DharmikGohil086" target="_blank" rel="noopener" aria-label="Dharmik Gohil YouTube" onclick="trackSocialClick('YouTube-Footer')"><i class="bi bi-youtube"></i></a>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="container copyright text-center mt-4">
-      <p>© <span>Copyright 2025</span> <strong class="px-1 sitename">Dharmik Gohil - Professional Game Developer</strong> <span>All Rights Reserved</span></p>
+  <footer class="container">
+    <div class="colophon-footer">
+      <div class="colophon-sig">THE DHARMIK GOHIL CHRONICLE · <span>DESIGNED WITH INK &amp; PAPER</span></div>
+      <div class="colophon-sig text-end">© 2026 DHARMIK GOHIL. ALL RIGHTS RESERVED.</div>
     </div>
   </footer>
 
-  <!-- Scroll Top -->
-  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
-
-  
-
-  <!-- Vendor JS Files -->
-  <script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="../assets/vendor/php-email-form/validate.js"></script>
-  <script src="../assets/vendor/aos/aos.js"></script>
-  <script src="../assets/vendor/typed.js/typed.umd.js"></script>
-  <script src="../assets/vendor/purecounter/purecounter_vanilla.js"></script>
-  <script src="../assets/vendor/waypoints/noframework.waypoints.js"></script>
-  <script src="../assets/vendor/swiper/swiper-bundle.min.js"></script>
-  <script src="../assets/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="../assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
-  <script src="../assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-
-  <!-- Main JS File -->
-  <script src="../assets/js/main.js"></script>
-
-  <!-- Particles.js Configuration -->
-  <script>
-    particlesJS('particles-js', {
-      particles: {
-        number: {
-          value: 80,
-          density: {
-            enable: true,
-            value_area: 800
-          }
-        },
-        color: {
-          value: ['#00d4ff', '#00ffff', '#0099ff', '#66ccff']
-        },
-        shape: {
-          type: 'circle',
-          stroke: {
-            width: 0,
-            color: '#000000'
-          }
-        },
-        opacity: {
-          value: 0.5,
-          random: true,
-          anim: {
-            enable: true,
-            speed: 1,
-            opacity_min: 0.1,
-            sync: false
-          }
-        },
-        size: {
-          value: 3,
-          random: true,
-          anim: {
-            enable: true,
-            speed: 2,
-            size_min: 0.1,
-            sync: false
-          }
-        },
-        line_linked: {
-          enable: true,
-          distance: 150,
-          color: '#00d4ff',
-          opacity: 0.4,
-          width: 1
-        },
-        move: {
-          enable: true,
-          speed: 2,
-          direction: 'none',
-          random: true,
-          straight: false,
-          out_mode: 'out',
-          bounce: false,
-          attract: {
-            enable: true,
-            rotateX: 600,
-            rotateY: 1200
-          }
-        }
-      },
-      interactivity: {
-        detect_on: 'canvas',
-        events: {
-          onhover: {
-            enable: true,
-            mode: 'grab'
-          },
-          onclick: {
-            enable: true,
-            mode: 'push'
-          },
-          resize: true
-        },
-        modes: {
-          grab: {
-            distance: 140,
-            line_linked: {
-              opacity: 1
-            }
-          },
-          push: {
-            particles_nb: 4
-          }
-        }
-      },
-      retina_detect: true
-    });
-  </script>
-
-  <!-- Advanced Analytics Tracking -->
-  <script>
-    // YouTube Player API for advanced video tracking
-    var tag = document.createElement('script');
-    tag.src = "https://www.youtube.com/iframe_api";
-    var firstScriptTag = document.getElementsByTagName('script')[0];
-    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-
-    var player;
-    function onYouTubeIframeAPIReady() {
-      player = new YT.Player('mavericks-trailer', {
-        events: {
-          'onStateChange': onPlayerStateChange
-        }
-      });
-    }
-
-    function onPlayerStateChange(event) {
-      if (event.data == YT.PlayerState.PLAYING) {
-        if (typeof gtag !== 'undefined') {
-          gtag('event', 'video_start', {
-            'event_category': 'video_engagement',
-            'event_label': 'Mavericks Trailer Started',
-            'value': 1
-          });
-        }
-      }
-      if (event.data == YT.PlayerState.ENDED) {
-        if (typeof gtag !== 'undefined') {
-          gtag('event', 'video_complete', {
-            'event_category': 'video_engagement',
-            'event_label': 'Mavericks Trailer Completed',
-            'value': 1
-          });
-        }
-      }
-    }
-
-    // Image Intersection Observer for tracking image views
-    document.addEventListener('DOMContentLoaded', function() {
-      const imageObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            const imgAlt = entry.target.alt;
-            if (imgAlt && typeof gtag !== 'undefined') {
-              gtag('event', 'image_view', {
-                'event_category': 'content_engagement',
-                'event_label': imgAlt.substring(0, 50),
-                'value': 1
-              });
-            }
-            imageObserver.unobserve(entry.target);
-          }
-        });
-      }, {
-        threshold: 0.5
-      });
-
-      // Observe all images
-      document.querySelectorAll('img').forEach(img => {
-        imageObserver.observe(img);
-      });
-
-      // Track external link clicks
-      document.querySelectorAll('a[href^="http"]').forEach(link => {
-        link.addEventListener('click', function(e) {
-          const url = this.href;
-          if (typeof gtag !== 'undefined') {
-            gtag('event', 'outbound_click', {
-              'event_category': 'outbound_links',
-              'event_label': url,
-              'value': 1
-            });
-          }
-        });
-      });
-
-      // Track section visibility
-      const sectionObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            const sectionHeading = entry.target.querySelector('h3');
-            if (sectionHeading && typeof gtag !== 'undefined') {
-              gtag('event', 'section_view', {
-                'event_category': 'content_sections',
-                'event_label': sectionHeading.textContent.substring(0, 50),
-                'value': 1
-              });
-            }
-            sectionObserver.unobserve(entry.target);
-          }
-        });
-      }, {
-        threshold: 0.3
-      });
-
-      // Observe content sections
-      document.querySelectorAll('.content > *').forEach(section => {
-        if (section.querySelector('h3')) {
-          sectionObserver.observe(section);
-        }
-      });
-
-      // Track CTA button visibility and clicks
-      const ctaButton = document.querySelector('a[href*="itch.io"]');
-      if (ctaButton) {
-        const ctaObserver = new IntersectionObserver((entries) => {
-          entries.forEach(entry => {
-            if (entry.isIntersecting && typeof gtag !== 'undefined') {
-              gtag('event', 'cta_view', {
-                'event_category': 'cta_engagement',
-                'event_label': 'Play Now Button Visible',
-                'value': 1
-              });
-              ctaObserver.unobserve(entry.target);
-            }
-          });
-        }, {
-          threshold: 1.0
-        });
-        ctaObserver.observe(ctaButton);
-      }
-
-      // Track blog post read completion
-      let readCompletionTracked = false;
-      window.addEventListener('scroll', function() {
-        if (!readCompletionTracked) {
-          const scrollPercent = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
-          if (scrollPercent > 90) {
-            readCompletionTracked = true;
-            if (typeof gtag !== 'undefined') {
-              gtag('event', 'article_read', {
-                'event_category': 'engagement',
-                'event_label': 'Mavericks Blog Read Complete',
-                'value': 1
-              });
-            }
-          }
-        }
-      });
-
-      // Track user engagement time zones
-      const currentHour = new Date().getHours();
-      let timeZone = 'Night';
-      if (currentHour >= 6 && currentHour < 12) timeZone = 'Morning';
-      else if (currentHour >= 12 && currentHour < 18) timeZone = 'Afternoon';
-      else if (currentHour >= 18 && currentHour < 22) timeZone = 'Evening';
-      
-      if (typeof gtag !== 'undefined') {
-        gtag('event', 'page_view_time', {
-          'event_category': 'visitor_timing',
-          'event_label': timeZone,
-          'value': currentHour
-        });
-      }
-    });
-  </script>
-  
-
+  <script src="../assets/vendor/glightbox/js/glightbox.min.js" defer></script>
+  <script src="../assets/js/blog-post.js" defer></script>
+  <script src="../assets/js/motion.js" defer></script>
   <script src="../assets/js/global-multilingual.js" defer></script>
 </body>
-
 </html>

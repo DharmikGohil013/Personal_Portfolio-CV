@@ -1,0 +1,156 @@
+<p>Hey! I'm <strong>Dharmik Gohil</strong>, a full-stack developer and CS student at CHARUSAT University. I've built projects with both React and Next.js — from single-page applications to full SEO-optimized portfolio websites (including the one you're reading right now at <strong>dharmikgohil.art</strong>). In this post, I'll break down the key differences between React and Next.js so you can make an informed decision for your next project.</p>
+<blockquote>
+<p>"React is a library. Next.js is a framework built on top of React. Understanding this distinction is the key to choosing the right tool." — Dharmik Gohil</p>
+</blockquote>
+<h2>Understanding the Fundamentals</h2>
+<h3>React (by Meta)</h3>
+<p><strong>React</strong> is a JavaScript library for building user interfaces. It's primarily focused on the <strong>view layer</strong> — it gives you components, state management, and a virtual DOM. Everything else (routing, data fetching, server-side rendering) requires additional libraries or custom setup.</p>
+<h3>Next.js (by Vercel)</h3>
+<p><strong>Next.js</strong> is a full-stack React framework that provides file-based routing, server-side rendering (SSR), static site generation (SSG), API routes, middleware, image optimization, and much more — all out of the box. It's React with batteries included.</p>
+<h2>Head-to-Head Comparison</h2>
+<table class="comparison-table">
+<thead>
+<tr><th>Feature</th><th>React (CRA/Vite)</th><th>Next.js</th></tr>
+</thead>
+<tbody>
+<tr><td><strong>Rendering</strong></td><td>Client-Side (CSR)</td><td>SSR, SSG, ISR, CSR</td></tr>
+<tr><td><strong>Routing</strong></td><td>React Router (manual)</td><td>File-based (automatic)</td></tr>
+<tr><td><strong>SEO</strong></td><td>Poor (JS-rendered)</td><td>Excellent (pre-rendered)</td></tr>
+<tr><td><strong>API Routes</strong></td><td>Separate backend needed</td><td>Built-in API routes</td></tr>
+<tr><td><strong>Image Optimization</strong></td><td>Manual</td><td>Built-in next/image</td></tr>
+<tr><td><strong>Code Splitting</strong></td><td>Manual with React.lazy</td><td>Automatic per page</td></tr>
+<tr><td><strong>Deployment</strong></td><td>Any static host</td><td>Vercel, Node.js server</td></tr>
+<tr><td><strong>Learning Curve</strong></td><td>Lower</td><td>Slightly higher</td></tr>
+<tr><td><strong>Bundle Size</strong></td><td>Lighter</td><td>Slightly larger</td></tr>
+<tr><td><strong>Server Components</strong></td><td>Manual setup</td><td>First-class support</td></tr>
+</tbody>
+</table>
+<h2>Rendering Strategies Explained</h2>
+<h3>Client-Side Rendering (CSR) — React Default</h3>
+<p>The browser downloads a minimal HTML file, then JavaScript builds the entire page. This means:</p>
+<ul>
+<li>Slower initial page load (blank screen while JS loads)</li>
+<li>Search engines may struggle to index content</li>
+<li>Great for dashboards, admin panels, and apps behind authentication</li>
+</ul>
+<h3>Server-Side Rendering (SSR) — Next.js</h3>
+<p>The server generates full HTML for each request. The browser receives a fully rendered page, then React hydrates it for interactivity.</p>
+<div class="code-label">Next.js — SSR with getServerSideProps</div>
+<div class="code-block">export async function getServerSideProps(context) {
+  const res = await fetch('https://api.example.com/data');
+  const data = await res.json();
+  
+  return {
+    props: { data },
+  };
+}
+
+export default function Page({ data }) {
+  return &lt;div&gt;{data.title}&lt;/div&gt;;
+}</div>
+<h3>Static Site Generation (SSG) — Next.js</h3>
+<p>Pages are pre-built at build time. The fastest option for content that doesn't change frequently — blog posts, documentation, portfolio pages.</p>
+<h3>Incremental Static Regeneration (ISR) — Next.js</h3>
+<p>The best of both worlds — static pages that can be revalidated and regenerated at a configurable interval without a full rebuild.</p>
+<div class="code-label">Next.js — ISR with revalidate</div>
+<div class="code-block">export async function getStaticProps() {
+  const posts = await fetchBlogPosts();
+  
+  return {
+    props: { posts },
+    revalidate: 60, // Regenerate every 60 seconds
+  };
+}</div>
+<h2>Routing: Manual vs Automatic</h2>
+<h3>React Router (React)</h3>
+<p>In a standard React app, you install <code>react-router-dom</code> and manually define routes:</p>
+<div class="code-label">React — Manual Routing</div>
+<div class="code-block">import { BrowserRouter, Route, Routes } from 'react-router-dom';
+
+function App() {
+  return (
+    &lt;BrowserRouter&gt;
+      &lt;Routes&gt;
+        &lt;Route path="/" element={&lt;Home /&gt;} /&gt;
+        &lt;Route path="/about" element={&lt;About /&gt;} /&gt;
+        &lt;Route path="/blog/:id" element={&lt;BlogPost /&gt;} /&gt;
+      &lt;/Routes&gt;
+    &lt;/BrowserRouter&gt;
+  );
+}</div>
+<h3>File-Based Routing (Next.js)</h3>
+<p>In Next.js, your file structure IS your routing. Create a file, get a route:</p>
+<div class="code-block">pages/
+  index.js       → /
+  about.js       → /about
+  blog/
+    [id].js      → /blog/:id
+    index.js     → /blog
+
+// App Router (Next.js 13+)
+app/
+  page.tsx       → /
+  about/page.tsx → /about
+  blog/[id]/page.tsx → /blog/:id</div>
+<div class="tip-box">
+<strong>💡 Dharmik's Tip:</strong> I love Next.js file-based routing because it eliminates an entire class of routing bugs. The file structure becomes the single source of truth for your application's URL structure.
+                </div>
+<h2>SEO: The Deciding Factor for Me (Dharmik Gohil)</h2>
+<p>When I built <strong>dharmikgohil.art</strong>, SEO was a top priority. Client-side rendered React apps send an empty HTML shell to search engine crawlers. While Google can handle JavaScript rendering, it's slow and unreliable for SEO.</p>
+<p>Next.js solves this completely:</p>
+<ul>
+<li><strong>Pre-rendered HTML:</strong> Search engines get full content immediately</li>
+<li><strong>Built-in Head component:</strong> Easy meta tags, Open Graph, Twitter cards</li>
+<li><strong>Automatic sitemap generation</strong> with plugins</li>
+<li><strong>Image optimization:</strong> Proper alt tags, lazy loading, responsive images</li>
+<li><strong>Core Web Vitals:</strong> Better LCP, FID, and CLS scores out of the box</li>
+</ul>
+<h2>When to Choose React (Without Next.js)</h2>
+<ul>
+<li><strong>Single-page applications (SPAs)</strong> behind authentication — dashboards, admin panels, internal tools</li>
+<li><strong>Electron apps</strong> — desktop applications where SEO doesn't matter</li>
+<li><strong>Rapid prototyping</strong> — when you want minimal setup with Vite</li>
+<li><strong>Learning React</strong> — start with pure React to understand the fundamentals before adding framework complexity</li>
+<li><strong>Embedding React in existing apps</strong> — adding interactive widgets to non-React pages</li>
+</ul>
+<h2>When to Choose Next.js</h2>
+<ul>
+<li><strong>SEO-critical websites</strong> — blogs, e-commerce, marketing sites, portfolios</li>
+<li><strong>Full-stack applications</strong> — when you need API routes alongside your frontend</li>
+<li><strong>Performance-sensitive apps</strong> — automatic code splitting, image optimization</li>
+<li><strong>E-commerce</strong> — product pages need SSR/SSG for search indexing</li>
+<li><strong>Content-heavy sites</strong> — blogs, documentation, news sites with ISR</li>
+<li><strong>Enterprise applications</strong> — middleware, authentication, internationalization built-in</li>
+</ul>
+<h2>Next.js App Router: The Future</h2>
+<p>Next.js 13 introduced the <strong>App Router</strong> with React Server Components. This is a game-changer:</p>
+<ul>
+<li><strong>Server Components:</strong> Components that run only on the server — zero JavaScript sent to the client</li>
+<li><strong>Streaming:</strong> Progressive rendering — show content as it becomes available</li>
+<li><strong>Layouts:</strong> Shared layouts that persist across navigation</li>
+<li><strong>Loading states:</strong> Built-in loading UI with Suspense boundaries</li>
+<li><strong>Error boundaries:</strong> Automatic error handling per route segment</li>
+</ul>
+<div class="code-label">Next.js App Router — Server Component</div>
+<div class="code-block">// app/blog/page.tsx — Server Component (default)
+async function BlogPage() {
+  // This runs on the server — no client JS
+  const posts = await db.posts.findMany();
+  
+  return (
+    &lt;div&gt;
+      {posts.map(post =&gt; (
+        &lt;PostCard key={post.id} post={post} /&gt;
+      ))}
+    &lt;/div&gt;
+  );
+}
+
+export default BlogPage;</div>
+<h2>My Verdict: Dharmik Gohil's Recommendation</h2>
+<p>If you're building anything that faces the public internet — use <strong>Next.js</strong>. The SEO benefits alone make it worth it. If you're building internal tools, dashboards, or learning React fundamentals, plain <strong>React with Vite</strong> is perfectly fine.</p>
+<p>For my portfolio at dharmikgohil.art, I chose a multi-page approach with optimized HTML, but if I were to rebuild it as a React project, I'd absolutely use Next.js for the SSG and image optimization capabilities.</p>
+<blockquote>
+<p>"Don't debate frameworks forever. Pick one, build something, and ship it. You'll learn more from shipping one project than from comparing frameworks for a month." — Dharmik Gohil</p>
+</blockquote>
+

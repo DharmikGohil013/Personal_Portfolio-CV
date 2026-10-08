@@ -1,0 +1,135 @@
+<blockquote>
+<p>"Most card games reward greedy accumulators. LowXena does the opposite. It’s an exercise in ultimate restraint, risk calculation, and tactical psychological warfare where your highest cards are your worst enemies."</p>
+</blockquote>
+<h2>The Core Philosophy: Least-Count Reimagined</h2>
+<p>Welcome to the official breakdown of <a href="https://lowxena.dharmikgohil.art/" rel="noopener noreferrer" target="_blank">LowXena</a>, a brand-new multiplayer interactive card game universe built completely on my own custom logic. Inspired by traditional least-count mathematics, the core directive is simple but deep: purge high cards from your hand, strategize matching combinations, hold zero-value wildcards, and call a Showdown when you believe you are at the absolute bottom.</p>
+<p>While mainstream gaming platforms prioritize complex rules and resource accumulation, the <a href="https://lowxena.dharmikgohil.art/" rel="noopener noreferrer" target="_blank">Official LowXena Platform</a> rewards strategic subtraction and high-stakes patience. Every card in your hand carries a points weight, and your absolute target is to stay beneath your opponents' totals. If a player accumulates 200 points, they are knocked out. The last remaining player on the table claims ultimate victory.</p>
+<!-- Game Stats -->
+<div class="expo-stats">
+<div class="stat-box">
+<div class="number">200</div>
+<div class="label">Point Limit</div>
+</div>
+<div class="stat-box">
+<div class="number">0</div>
+<div class="label">Wild Value</div>
+</div>
+<div class="stat-box">
+<div class="number">7</div>
+<div class="label">Hand Cards</div>
+</div>
+<div class="stat-box">
+<div class="number">40</div>
+<div class="label">Bad Show Penalty</div>
+</div>
+</div>
+<h2>How to Play &amp; Custom Scoring Logic</h2>
+<p>LowXena features rapid turns containing high-impact decisions. The game consists of rounds where players continuously drop high cards and pick cards of lower value. When a player believes their hand value is lower than anyone else's at the table, they call a **Show**. The table is laid open, cards are compared, and points are computed.</p>
+<table class="rules-table">
+<thead>
+<tr>
+<th>Card Type</th>
+<th>Scoring Rule</th>
+<th>Strategic Importance</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Ace (A)</strong></td>
+<td>1 Point</td>
+<td>Excellent low card, crucial for lowering your overall hand value.</td>
+</tr>
+<tr>
+<td><strong>Cards 2 to 10</strong></td>
+<td>Face Value Points</td>
+<td>Drop the higher numbers (8, 9, 10) early to minimize points impact.</td>
+</tr>
+<tr>
+<td><strong>Jack, Queen, King</strong></td>
+<td>11, 12, 13 Points</td>
+<td>Dangerous heavyweights. Must be purged immediately in early turns.</td>
+</tr>
+<tr>
+<td><strong>Wild Card (★)</strong></td>
+<td>0 Points (Best!)</td>
+<td>The card positioned face-up under the closed deck becomes the Wild Card. Zero points!</td>
+</tr>
+</tbody>
+</table>
+<h2>Unique Gameplay Combos &amp; Tactics</h2>
+<ul>
+<li><strong>Matching Cards (Combo Drop):</strong> You can drop two or more cards of the exact same value in a single turn (e.g., dropping 6♠ and 6♥ together). This allows you to rapidly empty your hand and trigger quick score reductions.</li>
+<li><strong>Same Card Bonus (Skip Pick):</strong> If the previous player dropped a card and you drop a card of the exact same value on top of the open pile, you receive the **Same Card Bonus**, which skips your mandatory card pick for that turn!</li>
+<li><strong>Calling a "Showdown":</strong> When your total cards sum is low (often under 5 points), you can call "Show". If you have the absolute lowest hand, you score <strong>0 points</strong> for the round (Good Show). However, if even one opponent has a score less than or equal to yours, you suffer a massive <strong>+40 points penalty</strong> (Bad Show), while the actual lowest player gets 0!</li>
+</ul>
+<h2>The Technology Stack Behind LowXena</h2>
+<p>LowXena is designed to deliver a highly interactive, responsive experience across all screen sizes. To ensure zero lag, beautiful physics, and persistent state integrity, I designed a tailored multi-tiered platform architecture:</p>
+<div class="rules-table">
+<div>
+<strong><i class="bi bi-layers-half"></i> Platform Architecture Overview</strong>
+</div>
+<div>
+<p><strong>1. High-Performance React 19 Frontend:</strong> Utilizes Vite for instant hot-reloading and hardware-accelerated 3D fanning card animations. Supported by React Router 7 for secure, atomic state routing.</p>
+<p><strong>2. WebSockets &amp; Node.js Backend:</strong> A dedicated Node.js server powered by Express and real-time WebSockets to manage matching, turns, timer ticks, and live room states synchronously.</p>
+<p><strong>3. Supabase Database &amp; Security:</strong> Utilizes PostgreSQL triggers and real-time user syncing. Includes persistent profiles, automated match statistics, historical logs, and global leaderboard data.</p>
+</div>
+</div>
+<h2>Code Deep Dive: Evaluating Hand Scores</h2>
+<p>Below is a snippet of the custom core engine logic written to evaluate a player's card values dynamically. It computes card values, maps the Wild Card's face value to 0, and returns the aggregated score:</p>
+<pre><code>/**
+ * Evaluates the total hand points for a player
+ * @param {Array} hand - Array of card objects { value: string, suit: string }
+ * @param {Object} wildCard - The designated zero-value card under the closed deck
+ * @returns {number} The aggregated hand score
+ */
+function calculateHandScore(hand, wildCard) {
+  return hand.reduce((total, card) =&gt; {
+    // If the card matches the designated Wild Card's face value, it scores 0 points
+    if (card.value === wildCard.value) {
+      return total + 0;
+    }
+
+    // Map face cards and numeric values
+    switch (card.value) {
+      case 'A': return total + 1;
+      case 'J': return total + 11;
+      case 'Q': return total + 12;
+      case 'K': return total + 13;
+      default:
+        const numericVal = parseInt(card.value, 10);
+        return total + (isNaN(numericVal) ? 0 : numericVal);
+    }
+  }, 0);
+}
+
+// Example usage:
+const playerHand = [
+  { value: 'A', suit: 'spades' },
+  { value: '7', suit: 'hearts' },
+  { value: 'Q', suit: 'clubs' } // Wild Card is Q
+];
+const currentWild = { value: 'Q', suit: 'diamonds' };
+
+console.log(calculateHandScore(playerHand, currentWild)); // Output: 8 (Ace: 1 + 7: 7 + Q: 0)</code></pre>
+<h2>Sophisticated Platform Features</h2>
+<p>Building <a href="https://lowxena.dharmikgohil.art/" rel="noopener noreferrer" target="_blank">LowXena</a> required solving complex network and design hurdles to craft an elite browser application:</p>
+<ul>
+<li><strong>Self-Healing Authentication:</strong> Equipped with global response interceptors that track 401/403 session expirations, auto-evict stale tokens gracefully, and route players safely with timeout warning prompts to avoid infinite credential loops.</li>
+<li><strong>Live Seat Occupancy Visualizers:</strong> Lobby metrics show real-time player distributions, sort systems, and interactive vacancy lights before users launch private or public game spaces.</li>
+<li><strong>Immersive 3D Felt Table:</strong> Built with tilting perspective planes, walnut wood rims, golden lasers, leather card racks, and automatic padlock overlays on metallic steel buttons.</li>
+</ul>
+
+
+<!-- Call to Action -->
+<div class="cta-bar">
+<h3>The Table is Dealt. Your Opponents are Waiting.</h3>
+<p>Experience the ultimate battle of patience, strategic card discarding, and high-stakes showdown calculation.</p>
+<a class="cta-btn" href="https://lowxena.dharmikgohil.art/" rel="noopener noreferrer" target="_blank">
+<i class="bi bi-play-circle-fill"></i> Play LowXena Now
+                  </a>
+</div>
+<div>
+<p>
+                    LowXena is created and owned by <strong>Dharmik Gohil</strong>. For inquiries or collaborations, visit <a href="../about.html">dharmikgohil.art</a>.
+                  </p>
+</div>

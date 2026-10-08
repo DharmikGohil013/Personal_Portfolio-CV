@@ -1,1346 +1,106 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>(function(d){if(!matchMedia('(prefers-reduced-motion: reduce)').matches){d.classList.add('motion-ok');setTimeout(function(){if(!window.__motionReady)d.classList.remove('motion-ok')},4500)}})(document.documentElement)</script>
+  <noscript><style>[data-reveal],[data-kinetic]{opacity:1!important;transform:none!important;clip-path:none!important}.post-cover{clip-path:none!important;animation:none!important}</style></noscript>
+  <title>Git &amp; GitHub Commands Cheatsheet for Developers</title>
+  <meta name="description" content="The Git and GitHub commands developers use daily: setup, staging, branching, merging and rebasing, remotes, stashing, history and undoing mistakes.">
+  <link rel="canonical" href="https://dharmikgohil.art/blog/git-github-essential-commands.html">
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+  <meta name="author" content="Dharmik Gohil">
+  <meta name="theme-color" content="#f2f0eb">
+  <meta name="geo.region" content="IN-GJ"><meta name="geo.placename" content="Surat, Gujarat, India"><meta name="geo.position" content="21.1702;72.8311"><meta name="ICBM" content="21.1702, 72.8311">
+  <link rel="alternate" hreflang="en" href="https://dharmikgohil.art/blog/git-github-essential-commands.html"><link rel="alternate" hreflang="x-default" href="https://dharmikgohil.art/blog/git-github-essential-commands.html">
+  <link rel="author" href="https://www.linkedin.com/in/dharmikgohil086/">
+  <meta property="og:site_name" content="Dharmik Gohil – Unity Game Developer"><meta property="og:locale" content="en_US">
+  <meta property="og:type" content="article"><meta property="og:url" content="https://dharmikgohil.art/blog/git-github-essential-commands.html">
+  <meta property="og:title" content="Git &amp; GitHub Commands Cheatsheet for Developers"><meta property="og:description" content="The Git and GitHub commands developers use daily: setup, staging, branching, merging and rebasing, remotes, stashing, history and undoing mistakes.">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1618401471353-b98afee0b2eb?w=1200&h=630&fit=crop"><meta property="og:image:alt" content="Git &amp; GitHub Commands Cheatsheet for Developers">
+  <meta name="twitter:card" content="summary_large_image"><meta name="twitter:site" content="@Dharmik086"><meta name="twitter:creator" content="@Dharmik086">
+  <meta name="twitter:title" content="Git &amp; GitHub Commands Cheatsheet for Developers"><meta name="twitter:description" content="The Git and GitHub commands developers use daily: setup, staging, branching, merging and rebasing, remotes, stashing, history and undoing mistakes."><meta name="twitter:image" content="https://images.unsplash.com/photo-1618401471353-b98afee0b2eb?w=1200&h=630&fit=crop">
+  <meta property="article:published_time" content="2026-02-12T00:00:00+05:30"><meta property="article:modified_time" content="2026-10-08T00:00:00+05:30"><meta property="article:author" content="https://www.linkedin.com/in/dharmikgohil086/"><meta property="article:section" content="Web &amp; Full-Stack Development"><meta property="article:tag" content="Git"><meta property="article:tag" content="GitHub"><meta property="article:tag" content="Cheatsheet"><meta property="article:tag" content="Version Control"><meta name="keywords" content="Git, GitHub, Cheatsheet, Version Control, Web &amp; Full-Stack Development, Dharmik Gohil"><link rel="preload" as="image" href="https://images.unsplash.com/photo-1618401471353-b98afee0b2eb?w=1200&amp;h=630&amp;fit=crop" fetchpriority="high">
+  <link rel="icon" type="image/png" href="../assets/img/dlogo.png"><link rel="apple-touch-icon" href="../assets/img/dlogo.png">
+  <link rel="alternate" type="application/rss+xml" title="Dharmik Gohil – Blog" href="https://dharmikgohil.art/feed.xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=IBM+Plex+Mono:ital,wght@0,400;0,500;0,700;1,400&family=Lora:ital,wght@0,400;0,600;0,700;1,400&family=Playfair+Display:ital,wght@0,900;1,900&display=swap">
+  <link rel="stylesheet" href="../assets/vendor/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../assets/css/main.css">
+  <link rel="stylesheet" href="../index.css">
+  <link rel="stylesheet" href="../assets/css/responsive-global.css">
+  <link rel="stylesheet" href="../assets/vendor/bootstrap-icons/bootstrap-icons.css">
+  <link rel="stylesheet" href="../assets/vendor/glightbox/css/glightbox.min.css">
+  <link rel="stylesheet" href="../assets/css/global-multilingual.css">
+  <link rel="stylesheet" href="../assets/css/blog-post.css">
+  <link rel="stylesheet" href="../assets/css/motion.css">
   <meta name="google-adsense-account" content="ca-pub-4658801537271443">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4658801537271443" crossorigin="anonymous"></script>
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-GE7F8SZSJ9"></script>
   <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-GE7F8SZSJ9');</script>
-  <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>Git & GitHub Essential Commands: Complete Developer Cheatsheet | Dharmik Gohil</title>
-  <meta name="description" content="The ultimate Git and GitHub cheatsheet for developers by Dharmik Gohil. Master branching, merging, rebasing, stashing, pull requests, SSH keys, Git workflows, and advanced commands with real-world examples.">
-  <meta name="keywords" content="Git commands, GitHub tutorial, Git cheatsheet, version control, branching, merging, rebasing, pull request, Dharmik Gohil, developer tools, Git workflow, SSH GitHub">
-  <meta name="author" content="Dharmik Gohil">
-  <meta name="robots" content="index, follow, max-image-preview:large">
-  <link rel="canonical" href="https://dharmikgohil.art/blog/git-github-essential-commands.html">
-  <link rel="icon" type="image/png" href="../assets/img/dlogo.png">
-  <link rel="apple-touch-icon" href="../assets/img/dlogo.png">
-  <meta name="theme-color" content="#0A84FF">
-  <meta property="og:type" content="article">
-  <meta property="og:url" content="https://dharmikgohil.art/blog/git-github-essential-commands.html">
-  <meta property="og:title" content="Git & GitHub Essential Commands | Dharmik Gohil">
-  <meta property="og:description" content="The ultimate Git and GitHub cheatsheet with essential commands for every developer.">
-  <meta property="og:image" content="https://images.unsplash.com/photo-1618401471353-b98afee0b2eb?w=1200&h=630&fit=crop">
-  <meta property="article:author" content="Dharmik Gohil">
-  <meta property="article:published_time" content="2026-02-12">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:creator" content="@Dharmik086">
-  <meta name="twitter:title" content="Git & GitHub Essential Commands | Dharmik Gohil">
-  <meta name="twitter:description" content="Complete Git and GitHub cheatsheet for developers by Dharmik Gohil.">
-  <meta name="twitter:image" content="https://images.unsplash.com/photo-1618401471353-b98afee0b2eb?w=1200&h=630&fit=crop">
-  <script type="application/ld+json">
-  {"@context":"https://schema.org","@type":"BlogPosting","headline":"Git & GitHub Essential Commands: Complete Developer Cheatsheet","description":"Master Git and GitHub with this comprehensive cheatsheet covering branching, merging, rebasing, stashing, pull requests, and advanced commands.","author":{"@type":"Person","name":"Dharmik Gohil","url":"https://dharmikgohil.art"},"publisher":{"@type":"Person","name":"Dharmik Gohil"},"datePublished":"2026-02-12","dateModified":"2026-02-12","mainEntityOfPage":"https://dharmikgohil.art/blog/git-github-essential-commands.html","image":"https://images.unsplash.com/photo-1618401471353-b98afee0b2eb?w=1200&h=630&fit=crop","keywords":["Git","GitHub","Version Control","Developer Tools","Cheatsheet"],"articleSection":"Dev Tutorials","wordCount":3400}
-  </script>
-  <link href="https://fonts.googleapis.com" rel="preconnect">
-  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
-  <link href="../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="../assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="../assets/vendor/aos/aos.css" rel="stylesheet">
-  <link href="../assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-  <link href="../assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
-  <link href="../assets/css/main.css" rel="stylesheet">
-  <link href="../assets/css/navigation.css" rel="stylesheet">
-  <style>
-    body{background:#09090F;color:rgba(255,255,255,0.88);font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;overflow-x:hidden;position:relative}
-    body::before{content:'';position:fixed;inset:0;background:radial-gradient(ellipse 80% 50% at 15% 85%,rgba(245,180,97,0.06) 0%,transparent 55%),radial-gradient(ellipse 70% 60% at 85% 15%,rgba(10,132,255,0.06) 0%,transparent 55%),linear-gradient(160deg,#09090F 0%,#0e0e1a 40%,#111122 70%,#0d0d18 100%);z-index:-2;pointer-events:none}
-    body::after{content:'';position:fixed;inset:0;background-image:radial-gradient(1.5px 1.5px at 12% 18%,rgba(255,255,255,0.5) 0%,transparent 100%),radial-gradient(1px 1px at 38% 8%,rgba(255,255,255,0.35) 0%,transparent 100%),radial-gradient(1px 1px at 72% 30%,rgba(255,255,255,0.4) 0%,transparent 100%),radial-gradient(1.5px 1.5px at 88% 65%,rgba(255,255,255,0.3) 0%,transparent 100%),radial-gradient(1px 1px at 25% 72%,rgba(255,255,255,0.35) 0%,transparent 100%);pointer-events:none;z-index:-1;animation:starsTwinkle 6s ease-in-out infinite alternate}
-    @keyframes starsTwinkle{0%{opacity:.5}100%{opacity:1}}
-    .page-title{padding:100px 0 30px;background:transparent!important}
-    .page-title .breadcrumbs ol{display:flex;gap:8px;list-style:none;padding:0;margin:0 0 16px;font-size:13px}
-    .page-title .breadcrumbs ol li{color:rgba(255,255,255,0.4)}
-    .page-title .breadcrumbs ol li a{color:#F5B461;text-decoration:none}
-    .page-title .breadcrumbs ol li a:hover{color:#0A84FF}
-    .page-title .breadcrumbs ol li+li::before{content:'/';margin-right:8px;color:rgba(255,255,255,0.25)}
-    .page-title h1{font-size:2.4rem;font-weight:800;color:#fff;letter-spacing:-0.5px;line-height:1.2;background:linear-gradient(135deg,#fff 0%,rgba(245,180,97,0.9) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-    .blog-details{background:rgba(28,28,38,0.65);backdrop-filter:blur(40px) saturate(1.8);-webkit-backdrop-filter:blur(40px) saturate(1.8);border:1px solid rgba(255,255,255,0.08);border-radius:16px;padding:0;box-shadow:0 0 0 1px rgba(255,255,255,0.04),0 32px 80px rgba(0,0,0,0.5);overflow:hidden;margin-bottom:40px}
-    .window-bar{background:rgba(255,255,255,0.04);border-bottom:1px solid rgba(255,255,255,0.07);padding:13px 18px;display:flex;align-items:center;gap:14px}
-    .window-dots{display:flex;gap:8px}
-    .window-dots span{width:13px;height:13px;border-radius:50%;display:inline-block}
-    .dot-red{background:#FF5F56;box-shadow:0 0 8px rgba(255,95,86,0.5)}
-    .dot-yellow{background:#FFBD2E;box-shadow:0 0 8px rgba(255,189,46,0.5)}
-    .dot-green{background:#27C93F;box-shadow:0 0 8px rgba(39,201,63,0.5)}
-    .window-bar-title{flex:1;text-align:center;font-size:13px;font-weight:500;color:rgba(255,255,255,0.4)}
-    .article{padding:40px 48px;color:rgba(255,255,255,0.88)}
-    .article h2.title{font-size:2rem;font-weight:800;color:#fff;margin-bottom:24px;letter-spacing:-0.3px;line-height:1.3}
-    .article h3{font-size:1.5rem;font-weight:700;color:#F5B461;margin-top:48px;margin-bottom:18px}
-    .article h4{font-size:1.2rem;font-weight:600;color:#0A84FF;margin-top:32px;margin-bottom:14px}
-    .article p{color:rgba(255,255,255,0.72);line-height:1.85;font-size:1.02rem;margin-bottom:18px}
-    .article ul,.article ol{color:rgba(255,255,255,0.72);padding-left:20px}
-    .article ul li,.article ol li{margin-bottom:12px;line-height:1.7}
-    .article strong{color:rgba(255,255,255,0.95)}
-    .article a{color:#0A84FF;text-decoration:none}
-    .article a:hover{color:#F5B461}
-    blockquote{background:rgba(245,180,97,0.06);border-left:3px solid #F5B461;padding:24px 28px;margin:32px 0;border-radius:0 12px 12px 0}
-    blockquote p{color:rgba(255,255,255,0.82)!important;font-style:italic;font-size:1.08rem;margin:0!important}
-    .post-img{border-radius:14px;overflow:hidden;margin-bottom:32px;border:1px solid rgba(255,255,255,0.06)}
-    .post-img img{width:100%;height:auto;display:block}
-    .meta-top{display:flex;align-items:center;gap:8px;flex-wrap:wrap;padding:14px 20px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.06);border-radius:12px;margin-bottom:32px}
-    .meta-top ul{margin:0;padding:0;list-style:none;display:flex;flex-wrap:wrap;gap:24px}
-    .meta-top ul li{color:rgba(255,255,255,0.5);font-size:.88rem;display:flex;align-items:center;gap:6px}
-    .meta-top ul li i{color:#F5B461;font-size:14px}
-    .meta-top ul li a{color:#F5B461;text-decoration:none;font-weight:500}
-    .code-block{background:rgba(0,0,0,0.4);border:1px solid rgba(255,255,255,0.08);border-radius:12px;padding:24px;margin:24px 0;font-family:'JetBrains Mono',monospace;font-size:0.9rem;color:#e0e0e0;overflow-x:auto;white-space:pre;line-height:1.6}
-    .code-label{display:inline-block;background:rgba(10,132,255,0.15);color:#0A84FF;font-family:'JetBrains Mono',monospace;font-size:0.75rem;padding:4px 10px;border-radius:6px;margin-bottom:8px;font-weight:600}
-    .tip-box{background:rgba(39,201,63,0.06);border:1px solid rgba(39,201,63,0.2);border-radius:12px;padding:20px 24px;margin:24px 0}
-    .tip-box strong{color:#27C93F}
-    .warning-box{background:rgba(255,189,46,0.06);border:1px solid rgba(255,189,46,0.2);border-radius:12px;padding:20px 24px;margin:24px 0}
-    .warning-box strong{color:#FFBD2E}
-    .nav-links{display:flex;justify-content:space-between;gap:16px;margin:40px 0}
-    .nav-links a{display:flex;align-items:center;gap:8px;padding:14px 24px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:12px;color:#F5B461;text-decoration:none;font-weight:500;transition:all 0.3s}
-    .nav-links a:hover{background:rgba(10,132,255,0.1);border-color:rgba(10,132,255,0.3)}
-    .footer{background:rgba(0,0,0,0.6)!important;backdrop-filter:blur(20px);border-top:1px solid rgba(255,255,255,0.06)}
-    @media(max-width:768px){.article{padding:24px 20px}.page-title h1{font-size:1.6rem}.article h2.title{font-size:1.5rem}.article h3{font-size:1.2rem}}
-  </style>
-
-  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=IBM+Plex+Mono:ital,wght@0,400;0,500;0,700;1,400&family=Playfair+Display:ital,wght@0,900;1,900&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=IBM+Plex+Mono:ital,wght@0,400;0,500;0,700;1,400&family=Playfair+Display:ital,wght@0,900;1,900&display=swap" rel="stylesheet"></noscript>
-  <link rel="preload" href="../index.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link href="../index.css" rel="stylesheet"></noscript>
-
-  <!-- ======================================================= -->
-  <!-- 200+ INTERNATIONAL WORLD LANGUAGES HREFLANG ANNOTATIONS  -->
-  <!-- ======================================================= -->
-  <link rel="alternate" hreflang="x-default" href="https://dharmikgohil.art/blog/git-github-essential-commands.html">
-  <link rel="alternate" hreflang="en" href="https://dharmikgohil.art/blog/git-github-essential-commands.html">
-  <link rel="alternate" hreflang="en-US" href="https://dharmikgohil.art/blog/git-github-essential-commands.html?lang=en-US">
-  <link rel="alternate" hreflang="en-GB" href="https://dharmikgohil.art/blog/git-github-essential-commands.html?lang=en-GB">
-  <link rel="alternate" hreflang="en-CA" href="https://dharmikgohil.art/blog/git-github-essential-commands.html?lang=en-CA">
-  <link rel="alternate" hreflang="en-AU" href="https://dharmikgohil.art/blog/git-github-essential-commands.html?lang=en-AU">
-  <link rel="alternate" hreflang="en-IN" href="https://dharmikgohil.art/blog/git-github-essential-commands.html?lang=en-IN">
-  <link rel="alternate" hreflang="en-NZ" href="https://dharmikgohil.art/blog/git-github-essential-commands.html?lang=en-NZ">
-  <link rel="alternate" hreflang="en-IE" href="https://dharmikgohil.art/blog/git-github-essential-commands.html?lang=en-IE">
-  <link rel="alternate" hreflang="en-SG" href="https://dharmikgohil.art/blog/git-github-essential-commands.html?lang=en-SG">
-  <link rel="alternate" hreflang="en-ZA" href="https://dharmikgohil.art/blog/git-github-essential-commands.html?lang=en-ZA">
-  <link rel="alternate" hreflang="en-AE" href="https://dharmikgohil.art/blog/git-github-essential-commands.html?lang=en-AE">
-  <link rel="alternate" hreflang="es" href="https://dharmikgohil.art/blog/git-github-essential-commands.html?lang=es">
-  <link rel="alternate" hreflang="es-ES" href="https://dharmikgohil.art/blog/git-github-essential-commands.html?lang=es-ES">
-  <link rel="alternate" hreflang="es-MX" href="https://dharmikgohil.art/blog/git-github-essential-commands.html?lang=es-MX">
-  <link rel="alternate" hreflang="es-AR" href="https://dharmikgohil.art/blog/git-github-essential-commands.html?lang=es-AR">
-  <link rel="alternate" hreflang="es-CO" href="https://dharmikgohil.art/blog/git-github-essential-commands.html?lang=es-CO">
-  <link rel="alternate" hreflang="es-CL" href="https://dharmikgohil.art/blog/git-github-essential-commands.html?lang=es-CL">
-  <link rel="alternate" hreflang="es-PE" href="https://dharmikgohil.art/blog/git-github-essential-commands.html?lang=es-PE">
-  <link rel="alternate" hreflang="es-VE" href="https://dharmikgohil.art/blog/git-github-essential-commands.html?lang=es-VE">
-  <link rel="alternate" hreflang="fr" href="https://dharmikgohil.art/blog/git-github-essential-commands.html?lang=fr">
-  <link rel="alternate" hreflang="fr-FR" href="https://dharmikgohil.art/blog/git-github-essential-commands.html?lang=fr-FR">
-  <link rel="alternate" hreflang="fr-CA" href="https://dharmikgohil.art/blog/git-github-essential-commands.html?lang=fr-CA">
-  <link rel="alternate" hreflang="fr-BE" href="https://dharmikgohil.art/blog/git-github-essential-commands.html?lang=fr-BE">
-  <link rel="alternate" hreflang="fr-CH" href="https://dharmikgohil.art/blog/git-github-essential-commands.html?lang=fr-CH">
-  <link rel="alternate" hreflang="de" href="https://dharmikgohil.art/blog/git-github-essential-commands.html?lang=de">
-  <link rel="alternate" hreflang="de-DE" href="https://dharmikgohil.art/blog/git-github-essential-commands.html?lang=de-DE">
-  <link rel="alternate" hreflang="de-AT" href="https://dharmikgohil.art/blog/git-github-essential-commands.html?lang=de-AT">
-  <link rel="alternate" hreflang="de-CH" href="https://dharmikgohil.art/blog/git-github-essential-commands.html?lang=de-CH">
-  <link rel="alternate" hreflang="it" href="https://dharmikgohil.art/blog/git-github-essential-commands.html?lang=it">
-  <link rel="alternate" hreflang="it-IT" href="https://dharmikgohil.art/blog/git-github-essential-commands.html?lang=it-IT">
-  <link rel="alternate" hreflang="it-CH" href="https://dharmikgohil.art/blog/git-github-essential-commands.html?lang=it-CH">
-  <link rel="alternate" hreflang="pt" href="https://dharmikgohil.art/blog/git-github-essential-commands.html?lang=pt">
-  <link rel="alternate" hreflang="pt-BR" href="https://dharmikgohil.art/blog/git-github-essential-commands.html?lang=pt-BR">
-  <link rel="alternate" hreflang="pt-PT" href="https://dharmikgohil.art/blog/git-github-essential-commands.html?lang=pt-PT">
-  <link rel="alternate" hreflang="ru" href="https://dharmikgohil.art/blog/git-github-essential-commands.html?lang=ru">
-  <link rel="alternate" hreflang="ru-RU" href="https://dharmikgohil.art/blog/git-github-essential-commands.html?lang=ru-RU">
-  <link rel="alternate" hreflang="ja" href="https://dharmikgohil.art/blog/git-github-essential-commands.html?lang=ja">
-  <link rel="alternate" hreflang="ja-JP" href="https://dharmikgohil.art/blog/git-github-essential-commands.html?lang=ja-JP">
-  <link rel="alternate" hreflang="zh" href="https://dharmikgohil.art/blog/git-github-essential-commands.html?lang=zh">
-  <link rel="alternate" hreflang="zh-CN" href="https://dharmikgohil.art/blog/git-github-essential-commands.html?lang=zh-CN">
-  <link rel="alternate" hreflang="zh-TW" href="https://dharmikgohil.art/blog/git-github-essential-commands.html?lang=zh-TW">
-  <link rel="alternate" hreflang="zh-HK" href="https://dharmikgohil.art/blog/git-github-essential-commands.html?lang=zh-HK">
-  <link rel="alternate" hreflang="zh-SG" href="https://dharmikgohil.art/blog/git-github-essential-commands.html?lang=zh-SG">
-  <link rel="alternate" hreflang="zh-Hans" href="https://dharmikgohil.art/blog/git-github-essential-commands.html?lang=zh-Hans">
-  <link rel="alternate" hreflang="zh-Hant" href="https://dharmikgohil.art/blog/git-github-essential-commands.html?lang=zh-Hant">
-  <link rel="alternate" hreflang="ko" href="https://dharmikgohil.art/blog/git-github-essential-commands.html?lang=ko">
-  <link rel="alternate" hreflang="ko-KR" href="https://dharmikgohil.art/blog/git-github-essential-commands.html?lang=ko-KR">
-  <link rel="alternate" hreflang="ar" href="https://dharmikgohil.art/blog/git-github-essential-commands.html?lang=ar">
-  <link rel="alternate" hreflang="ar-SA" href="https://dharmikgohil.art/blog/git-github-essential-commands.html?lang=ar-SA">
-  <link rel="alternate" hreflang="ar-AE" href="https://dharmikgohil.art/blog/git-github-essential-commands.html?lang=ar-AE">
-  <link rel="alternate" hreflang="ar-EG" href="https://dharmikgohil.art/blog/git-github-essential-commands.html?lang=ar-EG">
-  <link rel="alternate" hreflang="ar-QA" href="https://dharmikgohil.art/blog/git-github-essential-commands.html?lang=ar-QA">
-  <link rel="alternate" hreflang="ar-KW" href="https://dharmikgohil.art/blog/git-github-essential-commands.html?lang=ar-KW">
-  <link rel="alternate" hreflang="hi" href="https://dharmikgohil.art/blog/git-github-essential-commands.html?lang=hi">
-  <link rel="alternate" hreflang="hi-IN" href="https://dharmikgohil.art/blog/git-github-essential-commands.html?lang=hi-IN">
-  <link rel="alternate" hreflang="gu" href="https://dharmikgohil.art/blog/git-github-essential-commands.html?lang=gu">
-  <link rel="alternate" hreflang="gu-IN" href="https://dharmikgohil.art/blog/git-github-essential-commands.html?lang=gu-IN">
-  <link rel="alternate" hreflang="bn" href="https://dharmikgohil.art/blog/git-github-essential-commands.html?lang=bn">
-  <link rel="alternate" hreflang="bn-BD" href="https://dharmikgohil.art/blog/git-github-essential-commands.html?lang=bn-BD">
-  <link rel="alternate" hreflang="bn-IN" href="https://dharmikgohil.art/blog/git-github-essential-commands.html?lang=bn-IN">
-  <link rel="alternate" hreflang="pa" href="https://dharmikgohil.art/blog/git-github-essential-commands.html?lang=pa">
-  <link rel="alternate" hreflang="pa-IN" href="https://dharmikgohil.art/blog/git-github-essential-commands.html?lang=pa-IN">
-  <link rel="alternate" hreflang="pa-PK" href="https://dharmikgohil.art/blog/git-github-essential-commands.html?lang=pa-PK">
-  <link rel="alternate" hreflang="mr" href="https://dharmikgohil.art/blog/git-github-essential-commands.html?lang=mr">
-  <link rel="alternate" hreflang="mr-IN" href="https://dharmikgohil.art/blog/git-github-essential-commands.html?lang=mr-IN">
-  <link rel="alternate" hreflang="te" href="https://dharmikgohil.art/blog/git-github-essential-commands.html?lang=te">
-  <link rel="alternate" hreflang="te-IN" href="https://dharmikgohil.art/blog/git-github-essential-commands.html?lang=te-IN">
-  <link rel="alternate" hreflang="ta" href="https://dharmikgohil.art/blog/git-github-essential-commands.html?lang=ta">
-  <link rel="alternate" hreflang="ta-IN" href="https://dharmikgohil.art/blog/git-github-essential-commands.html?lang=ta-IN">
-  <link rel="alternate" hreflang="ta-LK" href="https://dharmikgohil.art/blog/git-github-essential-commands.html?lang=ta-LK">
-  <link rel="alternate" hreflang="ta-SG" href="https://dharmikgohil.art/blog/git-github-essential-commands.html?lang=ta-SG">
-  <link rel="alternate" hreflang="ur" href="https://dharmikgohil.art/blog/git-github-essential-commands.html?lang=ur">
-  <link rel="alternate" hreflang="ur-PK" href="https://dharmikgohil.art/blog/git-github-essential-commands.html?lang=ur-PK">
-  <link rel="alternate" hreflang="ur-IN" href="https://dharmikgohil.art/blog/git-github-essential-commands.html?lang=ur-IN">
-  <link rel="alternate" hreflang="kn" href="https://dharmikgohil.art/blog/git-github-essential-commands.html?lang=kn">
-  <link rel="alternate" hreflang="kn-IN" href="https://dharmikgohil.art/blog/git-github-essential-commands.html?lang=kn-IN">
-  <link rel="alternate" hreflang="ml" href="https://dharmikgohil.art/blog/git-github-essential-commands.html?lang=ml">
-  <link rel="alternate" hreflang="ml-IN" href="https://dharmikgohil.art/blog/git-github-essential-commands.html?lang=ml-IN">
-  <link rel="alternate" hreflang="or" href="https://dharmikgohil.art/blog/git-github-essential-commands.html?lang=or">
-  <link rel="alternate" hreflang="as" href="https://dharmikgohil.art/blog/git-github-essential-commands.html?lang=as">
-  <link rel="alternate" hreflang="ne" href="https://dharmikgohil.art/blog/git-github-essential-commands.html?lang=ne">
-  <link rel="alternate" hreflang="ne-NP" href="https://dharmikgohil.art/blog/git-github-essential-commands.html?lang=ne-NP">
-  <link rel="alternate" hreflang="si" href="https://dharmikgohil.art/blog/git-github-essential-commands.html?lang=si">
-  <link rel="alternate" hreflang="si-LK" href="https://dharmikgohil.art/blog/git-github-essential-commands.html?lang=si-LK">
-  <link rel="alternate" hreflang="tr" href="https://dharmikgohil.art/blog/git-github-essential-commands.html?lang=tr">
-  <link rel="alternate" hreflang="tr-TR" href="https://dharmikgohil.art/blog/git-github-essential-commands.html?lang=tr-TR">
-  <link rel="alternate" hreflang="vi" href="https://dharmikgohil.art/blog/git-github-essential-commands.html?lang=vi">
-  <link rel="alternate" hreflang="vi-VN" href="https://dharmikgohil.art/blog/git-github-essential-commands.html?lang=vi-VN">
-  <link rel="alternate" hreflang="th" href="https://dharmikgohil.art/blog/git-github-essential-commands.html?lang=th">
-  <link rel="alternate" hreflang="th-TH" href="https://dharmikgohil.art/blog/git-github-essential-commands.html?lang=th-TH">
-  <link rel="alternate" hreflang="id" href="https://dharmikgohil.art/blog/git-github-essential-commands.html?lang=id">
-  <link rel="alternate" hreflang="id-ID" href="https://dharmikgohil.art/blog/git-github-essential-commands.html?lang=id-ID">
-  <link rel="alternate" hreflang="ms" href="https://dharmikgohil.art/blog/git-github-essential-commands.html?lang=ms">
-  <link rel="alternate" hreflang="ms-MY" href="https://dharmikgohil.art/blog/git-github-essential-commands.html?lang=ms-MY">
-  <link rel="alternate" hreflang="tl" href="https://dharmikgohil.art/blog/git-github-essential-commands.html?lang=tl">
-  <link rel="alternate" hreflang="fil" href="https://dharmikgohil.art/blog/git-github-essential-commands.html?lang=fil">
-  <link rel="alternate" hreflang="my" href="https://dharmikgohil.art/blog/git-github-essential-commands.html?lang=my">
-  <link rel="alternate" hreflang="km" href="https://dharmikgohil.art/blog/git-github-essential-commands.html?lang=km">
-  <link rel="alternate" hreflang="lo" href="https://dharmikgohil.art/blog/git-github-essential-commands.html?lang=lo">
-  <link rel="alternate" hreflang="jv" href="https://dharmikgohil.art/blog/git-github-essential-commands.html?lang=jv">
-  <link rel="alternate" hreflang="su" href="https://dharmikgohil.art/blog/git-github-essential-commands.html?lang=su">
-  <link rel="alternate" hreflang="nl" href="https://dharmikgohil.art/blog/git-github-essential-commands.html?lang=nl">
-  <link rel="alternate" hreflang="nl-NL" href="https://dharmikgohil.art/blog/git-github-essential-commands.html?lang=nl-NL">
-  <link rel="alternate" hreflang="nl-BE" href="https://dharmikgohil.art/blog/git-github-essential-commands.html?lang=nl-BE">
-  <link rel="alternate" hreflang="pl" href="https://dharmikgohil.art/blog/git-github-essential-commands.html?lang=pl">
-  <link rel="alternate" hreflang="pl-PL" href="https://dharmikgohil.art/blog/git-github-essential-commands.html?lang=pl-PL">
-  <link rel="alternate" hreflang="uk" href="https://dharmikgohil.art/blog/git-github-essential-commands.html?lang=uk">
-  <link rel="alternate" hreflang="uk-UA" href="https://dharmikgohil.art/blog/git-github-essential-commands.html?lang=uk-UA">
-  <link rel="alternate" hreflang="fa" href="https://dharmikgohil.art/blog/git-github-essential-commands.html?lang=fa">
-  <link rel="alternate" hreflang="fa-IR" href="https://dharmikgohil.art/blog/git-github-essential-commands.html?lang=fa-IR">
-  <link rel="alternate" hreflang="he" href="https://dharmikgohil.art/blog/git-github-essential-commands.html?lang=he">
-  <link rel="alternate" hreflang="he-IL" href="https://dharmikgohil.art/blog/git-github-essential-commands.html?lang=he-IL">
-  <link rel="alternate" hreflang="el" href="https://dharmikgohil.art/blog/git-github-essential-commands.html?lang=el">
-  <link rel="alternate" hreflang="el-GR" href="https://dharmikgohil.art/blog/git-github-essential-commands.html?lang=el-GR">
-  <link rel="alternate" hreflang="sv" href="https://dharmikgohil.art/blog/git-github-essential-commands.html?lang=sv">
-  <link rel="alternate" hreflang="sv-SE" href="https://dharmikgohil.art/blog/git-github-essential-commands.html?lang=sv-SE">
-  <link rel="alternate" hreflang="no" href="https://dharmikgohil.art/blog/git-github-essential-commands.html?lang=no">
-  <link rel="alternate" hreflang="nb" href="https://dharmikgohil.art/blog/git-github-essential-commands.html?lang=nb">
-  <link rel="alternate" hreflang="nn" href="https://dharmikgohil.art/blog/git-github-essential-commands.html?lang=nn">
-  <link rel="alternate" hreflang="da" href="https://dharmikgohil.art/blog/git-github-essential-commands.html?lang=da">
-  <link rel="alternate" hreflang="da-DK" href="https://dharmikgohil.art/blog/git-github-essential-commands.html?lang=da-DK">
-  <link rel="alternate" hreflang="fi" href="https://dharmikgohil.art/blog/git-github-essential-commands.html?lang=fi">
-  <link rel="alternate" hreflang="fi-FI" href="https://dharmikgohil.art/blog/git-github-essential-commands.html?lang=fi-FI">
-  <link rel="alternate" hreflang="cs" href="https://dharmikgohil.art/blog/git-github-essential-commands.html?lang=cs">
-  <link rel="alternate" hreflang="cs-CZ" href="https://dharmikgohil.art/blog/git-github-essential-commands.html?lang=cs-CZ">
-  <link rel="alternate" hreflang="ro" href="https://dharmikgohil.art/blog/git-github-essential-commands.html?lang=ro">
-  <link rel="alternate" hreflang="ro-RO" href="https://dharmikgohil.art/blog/git-github-essential-commands.html?lang=ro-RO">
-  <link rel="alternate" hreflang="hu" href="https://dharmikgohil.art/blog/git-github-essential-commands.html?lang=hu">
-  <link rel="alternate" hreflang="hu-HU" href="https://dharmikgohil.art/blog/git-github-essential-commands.html?lang=hu-HU">
-  <link rel="alternate" hreflang="sk" href="https://dharmikgohil.art/blog/git-github-essential-commands.html?lang=sk">
-  <link rel="alternate" hreflang="sk-SK" href="https://dharmikgohil.art/blog/git-github-essential-commands.html?lang=sk-SK">
-  <link rel="alternate" hreflang="bg" href="https://dharmikgohil.art/blog/git-github-essential-commands.html?lang=bg">
-  <link rel="alternate" hreflang="bg-BG" href="https://dharmikgohil.art/blog/git-github-essential-commands.html?lang=bg-BG">
-  <link rel="alternate" hreflang="sr" href="https://dharmikgohil.art/blog/git-github-essential-commands.html?lang=sr">
-  <link rel="alternate" hreflang="sr-RS" href="https://dharmikgohil.art/blog/git-github-essential-commands.html?lang=sr-RS">
-  <link rel="alternate" hreflang="hr" href="https://dharmikgohil.art/blog/git-github-essential-commands.html?lang=hr">
-  <link rel="alternate" hreflang="hr-HR" href="https://dharmikgohil.art/blog/git-github-essential-commands.html?lang=hr-HR">
-  <link rel="alternate" hreflang="lt" href="https://dharmikgohil.art/blog/git-github-essential-commands.html?lang=lt">
-  <link rel="alternate" hreflang="lt-LT" href="https://dharmikgohil.art/blog/git-github-essential-commands.html?lang=lt-LT">
-  <link rel="alternate" hreflang="lv" href="https://dharmikgohil.art/blog/git-github-essential-commands.html?lang=lv">
-  <link rel="alternate" hreflang="lv-LV" href="https://dharmikgohil.art/blog/git-github-essential-commands.html?lang=lv-LV">
-  <link rel="alternate" hreflang="et" href="https://dharmikgohil.art/blog/git-github-essential-commands.html?lang=et">
-  <link rel="alternate" hreflang="et-EE" href="https://dharmikgohil.art/blog/git-github-essential-commands.html?lang=et-EE">
-  <link rel="alternate" hreflang="sl" href="https://dharmikgohil.art/blog/git-github-essential-commands.html?lang=sl">
-  <link rel="alternate" hreflang="sl-SI" href="https://dharmikgohil.art/blog/git-github-essential-commands.html?lang=sl-SI">
-  <link rel="alternate" hreflang="ga" href="https://dharmikgohil.art/blog/git-github-essential-commands.html?lang=ga">
-  <link rel="alternate" hreflang="ga-IE" href="https://dharmikgohil.art/blog/git-github-essential-commands.html?lang=ga-IE">
-  <link rel="alternate" hreflang="cy" href="https://dharmikgohil.art/blog/git-github-essential-commands.html?lang=cy">
-  <link rel="alternate" hreflang="cy-GB" href="https://dharmikgohil.art/blog/git-github-essential-commands.html?lang=cy-GB">
-  <link rel="alternate" hreflang="is" href="https://dharmikgohil.art/blog/git-github-essential-commands.html?lang=is">
-  <link rel="alternate" hreflang="is-IS" href="https://dharmikgohil.art/blog/git-github-essential-commands.html?lang=is-IS">
-  <link rel="alternate" hreflang="mt" href="https://dharmikgohil.art/blog/git-github-essential-commands.html?lang=mt">
-  <link rel="alternate" hreflang="sq" href="https://dharmikgohil.art/blog/git-github-essential-commands.html?lang=sq">
-  <link rel="alternate" hreflang="mk" href="https://dharmikgohil.art/blog/git-github-essential-commands.html?lang=mk">
-  <link rel="alternate" hreflang="bs" href="https://dharmikgohil.art/blog/git-github-essential-commands.html?lang=bs">
-  <link rel="alternate" hreflang="az" href="https://dharmikgohil.art/blog/git-github-essential-commands.html?lang=az">
-  <link rel="alternate" hreflang="ka" href="https://dharmikgohil.art/blog/git-github-essential-commands.html?lang=ka">
-  <link rel="alternate" hreflang="hy" href="https://dharmikgohil.art/blog/git-github-essential-commands.html?lang=hy">
-  <link rel="alternate" hreflang="kk" href="https://dharmikgohil.art/blog/git-github-essential-commands.html?lang=kk">
-  <link rel="alternate" hreflang="uz" href="https://dharmikgohil.art/blog/git-github-essential-commands.html?lang=uz">
-  <link rel="alternate" hreflang="mn" href="https://dharmikgohil.art/blog/git-github-essential-commands.html?lang=mn">
-  <link rel="alternate" hreflang="sw" href="https://dharmikgohil.art/blog/git-github-essential-commands.html?lang=sw">
-  <link rel="alternate" hreflang="sw-KE" href="https://dharmikgohil.art/blog/git-github-essential-commands.html?lang=sw-KE">
-  <link rel="alternate" hreflang="sw-TZ" href="https://dharmikgohil.art/blog/git-github-essential-commands.html?lang=sw-TZ">
-  <link rel="alternate" hreflang="af" href="https://dharmikgohil.art/blog/git-github-essential-commands.html?lang=af">
-  <link rel="alternate" hreflang="am" href="https://dharmikgohil.art/blog/git-github-essential-commands.html?lang=am">
-  <link rel="alternate" hreflang="ha" href="https://dharmikgohil.art/blog/git-github-essential-commands.html?lang=ha">
-  <link rel="alternate" hreflang="yo" href="https://dharmikgohil.art/blog/git-github-essential-commands.html?lang=yo">
-  <link rel="alternate" hreflang="ig" href="https://dharmikgohil.art/blog/git-github-essential-commands.html?lang=ig">
-  <link rel="alternate" hreflang="zu" href="https://dharmikgohil.art/blog/git-github-essential-commands.html?lang=zu">
-  <link rel="alternate" hreflang="xh" href="https://dharmikgohil.art/blog/git-github-essential-commands.html?lang=xh">
-  <link rel="alternate" hreflang="so" href="https://dharmikgohil.art/blog/git-github-essential-commands.html?lang=so">
-  <link rel="alternate" hreflang="rw" href="https://dharmikgohil.art/blog/git-github-essential-commands.html?lang=rw">
-  <link rel="alternate" hreflang="mg" href="https://dharmikgohil.art/blog/git-github-essential-commands.html?lang=mg">
-  <link rel="alternate" hreflang="sn" href="https://dharmikgohil.art/blog/git-github-essential-commands.html?lang=sn">
-  <link rel="alternate" hreflang="ny" href="https://dharmikgohil.art/blog/git-github-essential-commands.html?lang=ny">
-  <link rel="alternate" hreflang="st" href="https://dharmikgohil.art/blog/git-github-essential-commands.html?lang=st">
-  <link rel="alternate" hreflang="tn" href="https://dharmikgohil.art/blog/git-github-essential-commands.html?lang=tn">
-  <link rel="alternate" hreflang="ts" href="https://dharmikgohil.art/blog/git-github-essential-commands.html?lang=ts">
-  <link rel="alternate" hreflang="ss" href="https://dharmikgohil.art/blog/git-github-essential-commands.html?lang=ss">
-  <link rel="alternate" hreflang="ve" href="https://dharmikgohil.art/blog/git-github-essential-commands.html?lang=ve">
-  <link rel="alternate" hreflang="nr" href="https://dharmikgohil.art/blog/git-github-essential-commands.html?lang=nr">
-  <link rel="alternate" hreflang="om" href="https://dharmikgohil.art/blog/git-github-essential-commands.html?lang=om">
-  <link rel="alternate" hreflang="ti" href="https://dharmikgohil.art/blog/git-github-essential-commands.html?lang=ti">
-  <link rel="alternate" hreflang="tg" href="https://dharmikgohil.art/blog/git-github-essential-commands.html?lang=tg">
-  <link rel="alternate" hreflang="tk" href="https://dharmikgohil.art/blog/git-github-essential-commands.html?lang=tk">
-  <link rel="alternate" hreflang="ky" href="https://dharmikgohil.art/blog/git-github-essential-commands.html?lang=ky">
-  <link rel="alternate" hreflang="ps" href="https://dharmikgohil.art/blog/git-github-essential-commands.html?lang=ps">
-  <link rel="alternate" hreflang="ku" href="https://dharmikgohil.art/blog/git-github-essential-commands.html?lang=ku">
-  <link rel="alternate" hreflang="sd" href="https://dharmikgohil.art/blog/git-github-essential-commands.html?lang=sd">
-  <link rel="alternate" hreflang="ug" href="https://dharmikgohil.art/blog/git-github-essential-commands.html?lang=ug">
-  <link rel="alternate" hreflang="be" href="https://dharmikgohil.art/blog/git-github-essential-commands.html?lang=be">
-  <link rel="alternate" hreflang="ca" href="https://dharmikgohil.art/blog/git-github-essential-commands.html?lang=ca">
-  <link rel="alternate" hreflang="gl" href="https://dharmikgohil.art/blog/git-github-essential-commands.html?lang=gl">
-  <link rel="alternate" hreflang="eu" href="https://dharmikgohil.art/blog/git-github-essential-commands.html?lang=eu">
-  <link rel="alternate" hreflang="lb" href="https://dharmikgohil.art/blog/git-github-essential-commands.html?lang=lb">
-  <link rel="alternate" hreflang="fo" href="https://dharmikgohil.art/blog/git-github-essential-commands.html?lang=fo">
-  <link rel="alternate" hreflang="gd" href="https://dharmikgohil.art/blog/git-github-essential-commands.html?lang=gd">
-  <link rel="alternate" hreflang="co" href="https://dharmikgohil.art/blog/git-github-essential-commands.html?lang=co">
-  <link rel="alternate" hreflang="eo" href="https://dharmikgohil.art/blog/git-github-essential-commands.html?lang=eo">
-  <link rel="alternate" hreflang="la" href="https://dharmikgohil.art/blog/git-github-essential-commands.html?lang=la">
-  <link rel="alternate" hreflang="yi" href="https://dharmikgohil.art/blog/git-github-essential-commands.html?lang=yi">
-  <link rel="alternate" hreflang="ht" href="https://dharmikgohil.art/blog/git-github-essential-commands.html?lang=ht">
-  <link rel="alternate" hreflang="sm" href="https://dharmikgohil.art/blog/git-github-essential-commands.html?lang=sm">
-  <link rel="alternate" hreflang="to" href="https://dharmikgohil.art/blog/git-github-essential-commands.html?lang=to">
-  <link rel="alternate" hreflang="fj" href="https://dharmikgohil.art/blog/git-github-essential-commands.html?lang=fj">
-  <link rel="alternate" hreflang="mi" href="https://dharmikgohil.art/blog/git-github-essential-commands.html?lang=mi">
-  <link rel="alternate" hreflang="haw" href="https://dharmikgohil.art/blog/git-github-essential-commands.html?lang=haw">
-  <link rel="alternate" hreflang="ceb" href="https://dharmikgohil.art/blog/git-github-essential-commands.html?lang=ceb">
-  <link rel="alternate" hreflang="sa" href="https://dharmikgohil.art/blog/git-github-essential-commands.html?lang=sa">
-  <link rel="alternate" hreflang="bho" href="https://dharmikgohil.art/blog/git-github-essential-commands.html?lang=bho">
-  <link rel="alternate" hreflang="mai" href="https://dharmikgohil.art/blog/git-github-essential-commands.html?lang=mai">
-  <link rel="alternate" hreflang="kok" href="https://dharmikgohil.art/blog/git-github-essential-commands.html?lang=kok">
-  <link rel="alternate" hreflang="mni" href="https://dharmikgohil.art/blog/git-github-essential-commands.html?lang=mni">
-  <link rel="alternate" hreflang="sat" href="https://dharmikgohil.art/blog/git-github-essential-commands.html?lang=sat">
-  <link rel="alternate" hreflang="brx" href="https://dharmikgohil.art/blog/git-github-essential-commands.html?lang=brx">
-  <link rel="alternate" hreflang="doi" href="https://dharmikgohil.art/blog/git-github-essential-commands.html?lang=doi">
-  <link rel="alternate" hreflang="lus" href="https://dharmikgohil.art/blog/git-github-essential-commands.html?lang=lus">
-  <link rel="alternate" hreflang="kha" href="https://dharmikgohil.art/blog/git-github-essential-commands.html?lang=kha">
-  <link rel="alternate" hreflang="gar" href="https://dharmikgohil.art/blog/git-github-essential-commands.html?lang=gar">
-  <link rel="alternate" hreflang="tt" href="https://dharmikgohil.art/blog/git-github-essential-commands.html?lang=tt">
-  <link rel="alternate" hreflang="ba" href="https://dharmikgohil.art/blog/git-github-essential-commands.html?lang=ba">
-  <link rel="alternate" hreflang="cv" href="https://dharmikgohil.art/blog/git-github-essential-commands.html?lang=cv">
-  <link rel="alternate" hreflang="sah" href="https://dharmikgohil.art/blog/git-github-essential-commands.html?lang=sah">
-  <link rel="alternate" hreflang="qu" href="https://dharmikgohil.art/blog/git-github-essential-commands.html?lang=qu">
-  <link rel="alternate" hreflang="ay" href="https://dharmikgohil.art/blog/git-github-essential-commands.html?lang=ay">
-  <link rel="alternate" hreflang="gn" href="https://dharmikgohil.art/blog/git-github-essential-commands.html?lang=gn">
-  <link rel="alternate" hreflang="wo" href="https://dharmikgohil.art/blog/git-github-essential-commands.html?lang=wo">
-  <link rel="alternate" hreflang="ff" href="https://dharmikgohil.art/blog/git-github-essential-commands.html?lang=ff">
-  <link rel="alternate" hreflang="bm" href="https://dharmikgohil.art/blog/git-github-essential-commands.html?lang=bm">
-  <link rel="alternate" hreflang="ee" href="https://dharmikgohil.art/blog/git-github-essential-commands.html?lang=ee">
-  <link rel="alternate" hreflang="ak" href="https://dharmikgohil.art/blog/git-github-essential-commands.html?lang=ak">
-  <link rel="alternate" hreflang="lg" href="https://dharmikgohil.art/blog/git-github-essential-commands.html?lang=lg">
-  <link rel="alternate" hreflang="ln" href="https://dharmikgohil.art/blog/git-github-essential-commands.html?lang=ln">
-  <link rel="alternate" hreflang="ki" href="https://dharmikgohil.art/blog/git-github-essential-commands.html?lang=ki">
-  <link rel="alternate" hreflang="fy" href="https://dharmikgohil.art/blog/git-github-essential-commands.html?lang=fy">
-  <link rel="alternate" hreflang="kl" href="https://dharmikgohil.art/blog/git-github-essential-commands.html?lang=kl">
-  <link rel="alternate" hreflang="iu" href="https://dharmikgohil.art/blog/git-github-essential-commands.html?lang=iu">
-  <link rel="alternate" hreflang="chr" href="https://dharmikgohil.art/blog/git-github-essential-commands.html?lang=chr">
-  <link rel="alternate" hreflang="nav" href="https://dharmikgohil.art/blog/git-github-essential-commands.html?lang=nav">
-  <link rel="alternate" hreflang="dv" href="https://dharmikgohil.art/blog/git-github-essential-commands.html?lang=dv">
-  <link rel="alternate" hreflang="dz" href="https://dharmikgohil.art/blog/git-github-essential-commands.html?lang=dz">
-  <link rel="alternate" hreflang="bo" href="https://dharmikgohil.art/blog/git-github-essential-commands.html?lang=bo">
-  <link rel="alternate" hreflang="hmn" href="https://dharmikgohil.art/blog/git-github-essential-commands.html?lang=hmn">
-  <link rel="alternate" hreflang="ilo" href="https://dharmikgohil.art/blog/git-github-essential-commands.html?lang=ilo">
-  <link rel="alternate" hreflang="war" href="https://dharmikgohil.art/blog/git-github-essential-commands.html?lang=war">
-  <link rel="alternate" hreflang="hil" href="https://dharmikgohil.art/blog/git-github-essential-commands.html?lang=hil">
-  <link rel="alternate" hreflang="pam" href="https://dharmikgohil.art/blog/git-github-essential-commands.html?lang=pam">
-  <link rel="alternate" hreflang="bik" href="https://dharmikgohil.art/blog/git-github-essential-commands.html?lang=bik">
-  <link rel="alternate" hreflang="pag" href="https://dharmikgohil.art/blog/git-github-essential-commands.html?lang=pag">
-  <link rel="alternate" hreflang="jw" href="https://dharmikgohil.art/blog/git-github-essential-commands.html?lang=jw">
-  <link rel="alternate" hreflang="sc" href="https://dharmikgohil.art/blog/git-github-essential-commands.html?lang=sc">
-  <link rel="alternate" hreflang="rm" href="https://dharmikgohil.art/blog/git-github-essential-commands.html?lang=rm">
-  <link rel="alternate" hreflang="fur" href="https://dharmikgohil.art/blog/git-github-essential-commands.html?lang=fur">
-  <link rel="alternate" hreflang="vec" href="https://dharmikgohil.art/blog/git-github-essential-commands.html?lang=vec">
-  <link rel="alternate" hreflang="lmo" href="https://dharmikgohil.art/blog/git-github-essential-commands.html?lang=lmo">
-  <link rel="alternate" hreflang="lij" href="https://dharmikgohil.art/blog/git-github-essential-commands.html?lang=lij">
-  <link rel="alternate" hreflang="nap" href="https://dharmikgohil.art/blog/git-github-essential-commands.html?lang=nap">
-  <link rel="alternate" hreflang="scn" href="https://dharmikgohil.art/blog/git-github-essential-commands.html?lang=scn">
-  <link rel="alternate" hreflang="ast" href="https://dharmikgohil.art/blog/git-github-essential-commands.html?lang=ast">
-  <link rel="alternate" hreflang="an" href="https://dharmikgohil.art/blog/git-github-essential-commands.html?lang=an">
-  <link rel="alternate" hreflang="oc" href="https://dharmikgohil.art/blog/git-github-essential-commands.html?lang=oc">
-  <link rel="alternate" hreflang="br" href="https://dharmikgohil.art/blog/git-github-essential-commands.html?lang=br">
-  <link rel="alternate" hreflang="kw" href="https://dharmikgohil.art/blog/git-github-essential-commands.html?lang=kw">
-  <link rel="alternate" hreflang="gv" href="https://dharmikgohil.art/blog/git-github-essential-commands.html?lang=gv">
-  <link rel="alternate" hreflang="se" href="https://dharmikgohil.art/blog/git-github-essential-commands.html?lang=se">
-  <link rel="alternate" hreflang="tyv" href="https://dharmikgohil.art/blog/git-github-essential-commands.html?lang=tyv">
-  <link rel="alternate" hreflang="os" href="https://dharmikgohil.art/blog/git-github-essential-commands.html?lang=os">
-  <link rel="alternate" hreflang="ab" href="https://dharmikgohil.art/blog/git-github-essential-commands.html?lang=ab">
-  <link rel="alternate" hreflang="av" href="https://dharmikgohil.art/blog/git-github-essential-commands.html?lang=av">
-  <link rel="alternate" hreflang="ce" href="https://dharmikgohil.art/blog/git-github-essential-commands.html?lang=ce">
-  <link rel="alternate" hreflang="inh" href="https://dharmikgohil.art/blog/git-github-essential-commands.html?lang=inh">
-  <link rel="alternate" hreflang="lez" href="https://dharmikgohil.art/blog/git-github-essential-commands.html?lang=lez">
-  <link rel="alternate" hreflang="ch" href="https://dharmikgohil.art/blog/git-github-essential-commands.html?lang=ch">
-  <link rel="alternate" hreflang="sg" href="https://dharmikgohil.art/blog/git-github-essential-commands.html?lang=sg">
-  <link rel="alternate" hreflang="rn" href="https://dharmikgohil.art/blog/git-github-essential-commands.html?lang=rn">
-  <link rel="alternate" hreflang="kg" href="https://dharmikgohil.art/blog/git-github-essential-commands.html?lang=kg">
-  <link rel="alternate" hreflang="lu" href="https://dharmikgohil.art/blog/git-github-essential-commands.html?lang=lu">
-  <link rel="alternate" hreflang="tw" href="https://dharmikgohil.art/blog/git-github-essential-commands.html?lang=tw">
-  <link rel="alternate" hreflang="aa" href="https://dharmikgohil.art/blog/git-github-essential-commands.html?lang=aa">
-
-  <!-- ======================================================= -->
-  <!-- GLOBAL GEOGRAPHIC & MULTI-REGION SEO (WORLDWIDE REACH)     -->
-  <!-- ======================================================= -->
-  <meta name="geo.region" content="IN-GJ">
-  <meta name="geo.placename" content="Surat, Gujarat, India; Global Remote Service">
-  <meta name="geo.position" content="21.1702;72.8311">
-  <meta name="ICBM" content="21.1702, 72.8311">
-  <meta name="coverage" content="Worldwide">
-  <meta name="distribution" content="Global">
-  <meta name="target" content="all">
-  <meta name="audience" content="all">
-  <meta name="rating" content="general">
-  <meta name="country" content="GLOBAL">
-  <meta name="geography" content="Global, Worldwide, Remote">
-  <meta name="target_country" content="US, GB, CA, AU, DE, FR, JP, IN, AE, SG, NL, CH, SE, BR, KR, SA, ES, IT, NZ, IE, Global">
-  <meta name="DC.coverage" content="Worldwide">
-  <meta name="DC.Language" content="en, hi, gu, es, fr, de, ja, zh, ru, ar, pt, it, ko, nl, tr, id, vi, pl, sv, uk">
-  <meta name="DC.publisher" content="Dharmik Gohil">
-  <meta name="DC.creator" content="Dharmik Gohil">
-  <meta name="DC.format" content="text/html">
-  <meta name="DC.type" content="InteractiveResource">
-
-  <!-- ======================================================= -->
-  <!-- MULTILINGUAL OPEN GRAPH ALTERNATE LOCALES                -->
-  <!-- ======================================================= -->
-  <meta property="og:locale:alternate" content="en_GB">
-  <meta property="og:locale:alternate" content="en_CA">
-  <meta property="og:locale:alternate" content="en_AU">
-  <meta property="og:locale:alternate" content="en_IN">
-  <meta property="og:locale:alternate" content="en_NZ">
-  <meta property="og:locale:alternate" content="en_ZA">
-  <meta property="og:locale:alternate" content="es_ES">
-  <meta property="og:locale:alternate" content="es_LA">
-  <meta property="og:locale:alternate" content="es_MX">
-  <meta property="og:locale:alternate" content="fr_FR">
-  <meta property="og:locale:alternate" content="fr_CA">
-  <meta property="og:locale:alternate" content="de_DE">
-  <meta property="og:locale:alternate" content="de_AT">
-  <meta property="og:locale:alternate" content="de_CH">
-  <meta property="og:locale:alternate" content="it_IT">
-  <meta property="og:locale:alternate" content="pt_BR">
-  <meta property="og:locale:alternate" content="pt_PT">
-  <meta property="og:locale:alternate" content="ru_RU">
-  <meta property="og:locale:alternate" content="ja_JP">
-  <meta property="og:locale:alternate" content="zh_CN">
-  <meta property="og:locale:alternate" content="zh_TW">
-  <meta property="og:locale:alternate" content="zh_HK">
-  <meta property="og:locale:alternate" content="ko_KR">
-  <meta property="og:locale:alternate" content="ar_AR">
-  <meta property="og:locale:alternate" content="hi_IN">
-  <meta property="og:locale:alternate" content="gu_IN">
-  <meta property="og:locale:alternate" content="bn_IN">
-  <meta property="og:locale:alternate" content="pa_IN">
-  <meta property="og:locale:alternate" content="mr_IN">
-  <meta property="og:locale:alternate" content="ta_IN">
-  <meta property="og:locale:alternate" content="te_IN">
-  <meta property="og:locale:alternate" content="ur_PK">
-  <meta property="og:locale:alternate" content="tr_TR">
-  <meta property="og:locale:alternate" content="vi_VN">
-  <meta property="og:locale:alternate" content="th_TH">
-  <meta property="og:locale:alternate" content="id_ID">
-  <meta property="og:locale:alternate" content="ms_MY">
-  <meta property="og:locale:alternate" content="nl_NL">
-  <meta property="og:locale:alternate" content="pl_PL">
-  <meta property="og:locale:alternate" content="sv_SE">
-  <meta property="og:locale:alternate" content="da_DK">
-  <meta property="og:locale:alternate" content="fi_FI">
-  <meta property="og:locale:alternate" content="nb_NO">
-  <meta property="og:locale:alternate" content="el_GR">
-  <meta property="og:locale:alternate" content="he_IL">
-  <meta property="og:locale:alternate" content="cs_CZ">
-  <meta property="og:locale:alternate" content="hu_HU">
-  <meta property="og:locale:alternate" content="ro_RO">
-  <meta property="og:locale:alternate" content="uk_UA">
-
-  <!-- ======================================================= -->
-  <!-- MULTILINGUAL KEYWORDS FOR GLOBAL ORGANIC DISCOVERY          -->
-  <!-- ======================================================= -->
-  <meta name="keywords:multilingual" content="hire game developer india, unity developer, XR developer, contratar desarrollador videojuegos, développeur jeux vidéo unity, Unity Spieleentwickler, ゲーム開発者 依頼, 聘请游戏开发者, गेम डेवलपर, ગેમ ડેવલપર, توظيف مطور ألعاب, desenvolvedor de jogos, unity разработчик, sviluppatore videogiochi, 게임 개발자, Unity ontwikelaar, gry developer, oyun geliştirici, pengembang game">
-
-  <!-- ======================================================= -->
-  <!-- SCHEMA.ORG 200+ LANGUAGES & WORLDWIDE GEO TARGETING         -->
-  <!-- ======================================================= -->
-  <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "ProfessionalService",
-  "@id": "https://dharmikgohil.art/blog/git-github-essential-commands.html#globalservice",
-  "name": "Dharmik Gohil — Global Unity Game Developer & XR Specialist",
-  "url": "https://dharmikgohil.art/blog/git-github-essential-commands.html",
-  "image": "https://dharmikgohil.art/assets/img/dharmik-profile-photo-2026.jpg",
-  "description": "Worldwide game development and XR engineering services by Dharmik Gohil. Shipped 10+ titles, IIT Bombay Techfest winner, available globally for Unity 3D, multiplayer (Photon PUN), AR/VR, and full-stack solutions.",
-  "currenciesAccepted": "USD, EUR, GBP, INR, AED, CAD, AUD, JPY, SGD",
-  "paymentAccepted": "Credit Card, Wire Transfer, Wise, PayPal, Cryptocurrency, UPI",
-  "priceRange": "$$",
-  "areaServed": [
-    {
-      "@type": "Place",
-      "name": "Worldwide"
-    },
-    {
-      "@type": "Continent",
-      "name": "North America"
-    },
-    {
-      "@type": "Continent",
-      "name": "Europe"
-    },
-    {
-      "@type": "Continent",
-      "name": "Asia"
-    },
-    {
-      "@type": "Continent",
-      "name": "Oceania"
-    },
-    {
-      "@type": "Continent",
-      "name": "South America"
-    },
-    {
-      "@type": "Continent",
-      "name": "Africa"
-    },
-    {
-      "@type": "Country",
-      "name": "United States",
-      "identifier": "US"
-    },
-    {
-      "@type": "Country",
-      "name": "United Kingdom",
-      "identifier": "GB"
-    },
-    {
-      "@type": "Country",
-      "name": "India",
-      "identifier": "IN"
-    },
-    {
-      "@type": "Country",
-      "name": "Canada",
-      "identifier": "CA"
-    },
-    {
-      "@type": "Country",
-      "name": "Australia",
-      "identifier": "AU"
-    },
-    {
-      "@type": "Country",
-      "name": "Germany",
-      "identifier": "DE"
-    },
-    {
-      "@type": "Country",
-      "name": "France",
-      "identifier": "FR"
-    },
-    {
-      "@type": "Country",
-      "name": "Japan",
-      "identifier": "JP"
-    },
-    {
-      "@type": "Country",
-      "name": "United Arab Emirates",
-      "identifier": "AE"
-    },
-    {
-      "@type": "Country",
-      "name": "Singapore",
-      "identifier": "SG"
-    },
-    {
-      "@type": "Country",
-      "name": "Switzerland",
-      "identifier": "CH"
-    },
-    {
-      "@type": "Country",
-      "name": "Netherlands",
-      "identifier": "NL"
-    },
-    {
-      "@type": "Country",
-      "name": "Sweden",
-      "identifier": "SE"
-    },
-    {
-      "@type": "Country",
-      "name": "Saudi Arabia",
-      "identifier": "SA"
-    },
-    {
-      "@type": "Country",
-      "name": "Brazil",
-      "identifier": "BR"
-    },
-    {
-      "@type": "Country",
-      "name": "South Korea",
-      "identifier": "KR"
-    },
-    {
-      "@type": "Country",
-      "name": "New Zealand",
-      "identifier": "NZ"
-    },
-    {
-      "@type": "Country",
-      "name": "Ireland",
-      "identifier": "IE"
-    },
-    {
-      "@type": "Country",
-      "name": "Spain",
-      "identifier": "ES"
-    },
-    {
-      "@type": "Country",
-      "name": "Italy",
-      "identifier": "IT"
-    },
-    {
-      "@type": "Country",
-      "name": "Norway",
-      "identifier": "NO"
-    },
-    {
-      "@type": "Country",
-      "name": "Denmark",
-      "identifier": "DK"
-    },
-    {
-      "@type": "Country",
-      "name": "Finland",
-      "identifier": "FI"
-    },
-    {
-      "@type": "Country",
-      "name": "Poland",
-      "identifier": "PL"
-    },
-    {
-      "@type": "Country",
-      "name": "Mexico",
-      "identifier": "MX"
-    },
-    {
-      "@type": "Country",
-      "name": "Indonesia",
-      "identifier": "ID"
-    }
-  ],
-  "availableLanguage": [
-    "English (en)",
-    "English (US) (en-US)",
-    "English (UK) (en-GB)",
-    "English (Canada) (en-CA)",
-    "English (Australia) (en-AU)",
-    "English (India) (en-IN)",
-    "English (New Zealand) (en-NZ)",
-    "English (Ireland) (en-IE)",
-    "English (Singapore) (en-SG)",
-    "English (South Africa) (en-ZA)",
-    "English (UAE) (en-AE)",
-    "Spanish (es)",
-    "Spanish (Spain) (es-ES)",
-    "Spanish (Mexico) (es-MX)",
-    "Spanish (Argentina) (es-AR)",
-    "Spanish (Colombia) (es-CO)",
-    "Spanish (Chile) (es-CL)",
-    "Spanish (Peru) (es-PE)",
-    "Spanish (Venezuela) (es-VE)",
-    "French (fr)",
-    "French (France) (fr-FR)",
-    "French (Canada) (fr-CA)",
-    "French (Belgium) (fr-BE)",
-    "French (Switzerland) (fr-CH)",
-    "German (de)",
-    "German (Germany) (de-DE)",
-    "German (Austria) (de-AT)",
-    "German (Switzerland) (de-CH)",
-    "Italian (it)",
-    "Italian (Italy) (it-IT)",
-    "Italian (Switzerland) (it-CH)",
-    "Portuguese (pt)",
-    "Portuguese (Brazil) (pt-BR)",
-    "Portuguese (Portugal) (pt-PT)",
-    "Russian (ru)",
-    "Russian (Russia) (ru-RU)",
-    "Japanese (ja)",
-    "Japanese (Japan) (ja-JP)",
-    "Chinese (zh)",
-    "Chinese (Simplified) (zh-CN)",
-    "Chinese (Traditional) (zh-TW)",
-    "Chinese (Hong Kong) (zh-HK)",
-    "Chinese (Singapore) (zh-SG)",
-    "Chinese (Simplified script) (zh-Hans)",
-    "Chinese (Traditional script) (zh-Hant)",
-    "Korean (ko)",
-    "Korean (South Korea) (ko-KR)",
-    "Arabic (ar)",
-    "Arabic (Saudi Arabia) (ar-SA)",
-    "Arabic (UAE) (ar-AE)",
-    "Arabic (Egypt) (ar-EG)",
-    "Arabic (Qatar) (ar-QA)",
-    "Arabic (Kuwait) (ar-KW)",
-    "Hindi (hi)",
-    "Hindi (India) (hi-IN)",
-    "Gujarati (gu)",
-    "Gujarati (India) (gu-IN)",
-    "Bengali (bn)",
-    "Bengali (Bangladesh) (bn-BD)",
-    "Bengali (India) (bn-IN)",
-    "Punjabi (pa)",
-    "Punjabi (India) (pa-IN)",
-    "Punjabi (Pakistan) (pa-PK)",
-    "Marathi (mr)",
-    "Marathi (India) (mr-IN)",
-    "Telugu (te)",
-    "Telugu (India) (te-IN)",
-    "Tamil (ta)",
-    "Tamil (India) (ta-IN)",
-    "Tamil (Sri Lanka) (ta-LK)",
-    "Tamil (Singapore) (ta-SG)",
-    "Urdu (ur)",
-    "Urdu (Pakistan) (ur-PK)",
-    "Urdu (India) (ur-IN)",
-    "Kannada (kn)",
-    "Kannada (India) (kn-IN)",
-    "Malayalam (ml)",
-    "Malayalam (India) (ml-IN)",
-    "Odia (or)",
-    "Assamese (as)",
-    "Nepali (ne)",
-    "Nepali (Nepal) (ne-NP)",
-    "Sinhala (si)",
-    "Sinhala (Sri Lanka) (si-LK)",
-    "Turkish (tr)",
-    "Turkish (Turkey) (tr-TR)",
-    "Vietnamese (vi)",
-    "Vietnamese (Vietnam) (vi-VN)",
-    "Thai (th)",
-    "Thai (Thailand) (th-TH)",
-    "Indonesian (id)",
-    "Indonesian (Indonesia) (id-ID)",
-    "Malay (ms)",
-    "Malay (Malaysia) (ms-MY)",
-    "Tagalog (tl)",
-    "Filipino (fil)",
-    "Burmese (my)",
-    "Khmer (km)",
-    "Lao (lo)",
-    "Javanese (jv)",
-    "Sundanese (su)",
-    "Dutch (nl)",
-    "Dutch (Netherlands) (nl-NL)",
-    "Dutch (Belgium) (nl-BE)",
-    "Polish (pl)",
-    "Polish (Poland) (pl-PL)",
-    "Ukrainian (uk)",
-    "Ukrainian (Ukraine) (uk-UA)",
-    "Persian (fa)",
-    "Persian (Iran) (fa-IR)",
-    "Hebrew (he)",
-    "Hebrew (Israel) (he-IL)",
-    "Greek (el)",
-    "Greek (Greece) (el-GR)",
-    "Swedish (sv)",
-    "Swedish (Sweden) (sv-SE)",
-    "Norwegian (no)",
-    "Norwegian Bokmål (nb)",
-    "Norwegian Nynorsk (nn)",
-    "Danish (da)",
-    "Danish (Denmark) (da-DK)",
-    "Finnish (fi)",
-    "Finnish (Finland) (fi-FI)",
-    "Czech (cs)",
-    "Czech (Czechia) (cs-CZ)",
-    "Romanian (ro)",
-    "Romanian (Romania) (ro-RO)",
-    "Hungarian (hu)",
-    "Hungarian (Hungary) (hu-HU)",
-    "Slovak (sk)",
-    "Slovak (Slovakia) (sk-SK)",
-    "Bulgarian (bg)",
-    "Bulgarian (Bulgaria) (bg-BG)",
-    "Serbian (sr)",
-    "Serbian (Serbia) (sr-RS)",
-    "Croatian (hr)",
-    "Croatian (Croatia) (hr-HR)",
-    "Lithuanian (lt)",
-    "Lithuanian (Lithuania) (lt-LT)",
-    "Latvian (lv)",
-    "Latvian (Latvia) (lv-LV)",
-    "Estonian (et)",
-    "Estonian (Estonia) (et-EE)",
-    "Slovenian (sl)",
-    "Slovenian (Slovenia) (sl-SI)",
-    "Irish (ga)",
-    "Irish (Ireland) (ga-IE)",
-    "Welsh (cy)",
-    "Welsh (UK) (cy-GB)",
-    "Icelandic (is)",
-    "Icelandic (Iceland) (is-IS)",
-    "Maltese (mt)",
-    "Albanian (sq)",
-    "Macedonian (mk)",
-    "Bosnian (bs)",
-    "Azerbaijani (az)",
-    "Georgian (ka)",
-    "Armenian (hy)",
-    "Kazakh (kk)",
-    "Uzbek (uz)",
-    "Mongolian (mn)",
-    "Swahili (sw)",
-    "Swahili (Kenya) (sw-KE)",
-    "Swahili (Tanzania) (sw-TZ)",
-    "Afrikaans (af)",
-    "Amharic (am)",
-    "Hausa (ha)",
-    "Yoruba (yo)",
-    "Igbo (ig)",
-    "Zulu (zu)",
-    "Xhosa (xh)",
-    "Somali (so)",
-    "Kinyarwanda (rw)",
-    "Malagasy (mg)",
-    "Shona (sn)",
-    "Chichewa (ny)",
-    "Sesotho (st)",
-    "Tswana (tn)",
-    "Tsonga (ts)",
-    "Swati (ss)",
-    "Venda (ve)",
-    "South Ndebele (nr)",
-    "Oromo (om)",
-    "Tigrinya (ti)",
-    "Tajik (tg)",
-    "Turkmen (tk)",
-    "Kyrgyz (ky)",
-    "Pashto (ps)",
-    "Kurdish (ku)",
-    "Sindhi (sd)",
-    "Uyghur (ug)",
-    "Belarusian (be)",
-    "Catalan (ca)",
-    "Galician (gl)",
-    "Basque (eu)",
-    "Luxembourgish (lb)",
-    "Faroese (fo)",
-    "Scottish Gaelic (gd)",
-    "Corsican (co)",
-    "Esperanto (eo)",
-    "Latin (la)",
-    "Yiddish (yi)",
-    "Haitian Creole (ht)",
-    "Samoan (sm)",
-    "Tongan (to)",
-    "Fijian (fj)",
-    "Maori (mi)",
-    "Hawaiian (haw)",
-    "Cebuano (ceb)",
-    "Sanskrit (sa)",
-    "Bhojpuri (bho)",
-    "Maithili (mai)",
-    "Konkani (kok)",
-    "Manipuri (mni)",
-    "Santali (sat)",
-    "Bodo (brx)",
-    "Dogri (doi)",
-    "Mizo (lus)",
-    "Khasi (kha)",
-    "Garo (gar)",
-    "Tatar (tt)",
-    "Bashkir (ba)",
-    "Chuvash (cv)",
-    "Sakha (Yakut) (sah)",
-    "Quechua (qu)",
-    "Aymara (ay)",
-    "Guarani (gn)",
-    "Wolof (wo)",
-    "Fulah (ff)",
-    "Bambara (bm)",
-    "Ewe (ee)",
-    "Akan (ak)",
-    "Ganda (Luganda) (lg)",
-    "Lingala (ln)",
-    "Kikuyu (ki)",
-    "Western Frisian (fy)",
-    "Greenlandic (kl)",
-    "Inuktitut (iu)",
-    "Cherokee (chr)",
-    "Navajo (nav)",
-    "Divehi (dv)",
-    "Dzongkha (dz)",
-    "Tibetan (bo)",
-    "Hmong (hmn)",
-    "Ilocano (ilo)",
-    "Waray (war)",
-    "Hiligaynon (hil)",
-    "Kapampangan (pam)",
-    "Bikol (bik)",
-    "Pangasinan (pag)",
-    "Javanese (jw)",
-    "Sardinian (sc)",
-    "Romansh (rm)",
-    "Friulian (fur)",
-    "Venetian (vec)",
-    "Lombard (lmo)",
-    "Ligurian (lij)",
-    "Neapolitan (nap)",
-    "Sicilian (scn)",
-    "Asturian (ast)",
-    "Aragonese (an)",
-    "Occitan (oc)",
-    "Breton (br)",
-    "Cornish (kw)",
-    "Manx (gv)",
-    "Northern Sami (se)",
-    "Tuvan (tyv)",
-    "Ossetian (os)",
-    "Abkhaz (ab)",
-    "Avar (av)",
-    "Chechen (ce)",
-    "Ingush (inh)",
-    "Lezgian (lez)",
-    "Chamorro (ch)",
-    "Sango (sg)",
-    "Rundi (rn)",
-    "Kongo (kg)",
-    "Luba-Katanga (lu)",
-    "Twi (tw)",
-    "Afar (aa)"
-  ],
-  "hasOfferCatalog": {
-    "@type": "OfferCatalog",
-    "name": "Global Game Development & XR Engineering Services",
-    "itemListElement": [
-      {
-        "@type": "Offer",
-        "name": "Unity 3D/2D Game Development",
-        "category": "Game Development"
-      },
-      {
-        "@type": "Offer",
-        "name": "Photon PUN Multiplayer Game Networking",
-        "category": "Multiplayer Games"
-      },
-      {
-        "@type": "Offer",
-        "name": "AR/VR/XR Spatial Computing Experiences",
-        "category": "XR Development"
-      },
-      {
-        "@type": "Offer",
-        "name": "Full Stack Web & Web3 Development",
-        "category": "Web Applications"
-      }
-    ]
-  },
-  "contactPoint": {
-    "@type": "ContactPoint",
-    "contactType": "Worldwide Client Inquiries & Bookings",
-    "email": "dharmikgohil.work@gmail.com",
-    "url": "https://dharmikgohil.art/contact.html",
-    "areaServed": "Worldwide",
-    "availableLanguage": [
-      "English (en)",
-      "English (US) (en-US)",
-      "English (UK) (en-GB)",
-      "English (Canada) (en-CA)",
-      "English (Australia) (en-AU)",
-      "English (India) (en-IN)",
-      "English (New Zealand) (en-NZ)",
-      "English (Ireland) (en-IE)",
-      "English (Singapore) (en-SG)",
-      "English (South Africa) (en-ZA)",
-      "English (UAE) (en-AE)",
-      "Spanish (es)",
-      "Spanish (Spain) (es-ES)",
-      "Spanish (Mexico) (es-MX)",
-      "Spanish (Argentina) (es-AR)",
-      "Spanish (Colombia) (es-CO)",
-      "Spanish (Chile) (es-CL)",
-      "Spanish (Peru) (es-PE)",
-      "Spanish (Venezuela) (es-VE)",
-      "French (fr)",
-      "French (France) (fr-FR)",
-      "French (Canada) (fr-CA)",
-      "French (Belgium) (fr-BE)",
-      "French (Switzerland) (fr-CH)",
-      "German (de)",
-      "German (Germany) (de-DE)",
-      "German (Austria) (de-AT)",
-      "German (Switzerland) (de-CH)",
-      "Italian (it)",
-      "Italian (Italy) (it-IT)",
-      "Italian (Switzerland) (it-CH)",
-      "Portuguese (pt)",
-      "Portuguese (Brazil) (pt-BR)",
-      "Portuguese (Portugal) (pt-PT)",
-      "Russian (ru)",
-      "Russian (Russia) (ru-RU)",
-      "Japanese (ja)",
-      "Japanese (Japan) (ja-JP)",
-      "Chinese (zh)",
-      "Chinese (Simplified) (zh-CN)",
-      "Chinese (Traditional) (zh-TW)",
-      "Chinese (Hong Kong) (zh-HK)",
-      "Chinese (Singapore) (zh-SG)",
-      "Chinese (Simplified script) (zh-Hans)",
-      "Chinese (Traditional script) (zh-Hant)",
-      "Korean (ko)",
-      "Korean (South Korea) (ko-KR)",
-      "Arabic (ar)",
-      "Arabic (Saudi Arabia) (ar-SA)",
-      "Arabic (UAE) (ar-AE)",
-      "Arabic (Egypt) (ar-EG)",
-      "Arabic (Qatar) (ar-QA)",
-      "Arabic (Kuwait) (ar-KW)",
-      "Hindi (hi)",
-      "Hindi (India) (hi-IN)",
-      "Gujarati (gu)",
-      "Gujarati (India) (gu-IN)",
-      "Bengali (bn)",
-      "Bengali (Bangladesh) (bn-BD)",
-      "Bengali (India) (bn-IN)",
-      "Punjabi (pa)",
-      "Punjabi (India) (pa-IN)",
-      "Punjabi (Pakistan) (pa-PK)",
-      "Marathi (mr)",
-      "Marathi (India) (mr-IN)",
-      "Telugu (te)",
-      "Telugu (India) (te-IN)",
-      "Tamil (ta)",
-      "Tamil (India) (ta-IN)",
-      "Tamil (Sri Lanka) (ta-LK)",
-      "Tamil (Singapore) (ta-SG)",
-      "Urdu (ur)",
-      "Urdu (Pakistan) (ur-PK)",
-      "Urdu (India) (ur-IN)",
-      "Kannada (kn)",
-      "Kannada (India) (kn-IN)",
-      "Malayalam (ml)",
-      "Malayalam (India) (ml-IN)",
-      "Odia (or)",
-      "Assamese (as)",
-      "Nepali (ne)",
-      "Nepali (Nepal) (ne-NP)",
-      "Sinhala (si)",
-      "Sinhala (Sri Lanka) (si-LK)",
-      "Turkish (tr)",
-      "Turkish (Turkey) (tr-TR)",
-      "Vietnamese (vi)",
-      "Vietnamese (Vietnam) (vi-VN)",
-      "Thai (th)",
-      "Thai (Thailand) (th-TH)",
-      "Indonesian (id)",
-      "Indonesian (Indonesia) (id-ID)",
-      "Malay (ms)",
-      "Malay (Malaysia) (ms-MY)",
-      "Tagalog (tl)",
-      "Filipino (fil)",
-      "Burmese (my)",
-      "Khmer (km)",
-      "Lao (lo)",
-      "Javanese (jv)",
-      "Sundanese (su)",
-      "Dutch (nl)",
-      "Dutch (Netherlands) (nl-NL)",
-      "Dutch (Belgium) (nl-BE)",
-      "Polish (pl)",
-      "Polish (Poland) (pl-PL)",
-      "Ukrainian (uk)",
-      "Ukrainian (Ukraine) (uk-UA)",
-      "Persian (fa)",
-      "Persian (Iran) (fa-IR)",
-      "Hebrew (he)",
-      "Hebrew (Israel) (he-IL)",
-      "Greek (el)",
-      "Greek (Greece) (el-GR)",
-      "Swedish (sv)",
-      "Swedish (Sweden) (sv-SE)",
-      "Norwegian (no)",
-      "Norwegian Bokmål (nb)",
-      "Norwegian Nynorsk (nn)",
-      "Danish (da)",
-      "Danish (Denmark) (da-DK)",
-      "Finnish (fi)",
-      "Finnish (Finland) (fi-FI)",
-      "Czech (cs)",
-      "Czech (Czechia) (cs-CZ)",
-      "Romanian (ro)",
-      "Romanian (Romania) (ro-RO)",
-      "Hungarian (hu)",
-      "Hungarian (Hungary) (hu-HU)",
-      "Slovak (sk)",
-      "Slovak (Slovakia) (sk-SK)",
-      "Bulgarian (bg)",
-      "Bulgarian (Bulgaria) (bg-BG)",
-      "Serbian (sr)",
-      "Serbian (Serbia) (sr-RS)",
-      "Croatian (hr)",
-      "Croatian (Croatia) (hr-HR)",
-      "Lithuanian (lt)",
-      "Lithuanian (Lithuania) (lt-LT)",
-      "Latvian (lv)",
-      "Latvian (Latvia) (lv-LV)",
-      "Estonian (et)",
-      "Estonian (Estonia) (et-EE)",
-      "Slovenian (sl)",
-      "Slovenian (Slovenia) (sl-SI)",
-      "Irish (ga)",
-      "Irish (Ireland) (ga-IE)",
-      "Welsh (cy)",
-      "Welsh (UK) (cy-GB)",
-      "Icelandic (is)",
-      "Icelandic (Iceland) (is-IS)",
-      "Maltese (mt)",
-      "Albanian (sq)",
-      "Macedonian (mk)",
-      "Bosnian (bs)",
-      "Azerbaijani (az)",
-      "Georgian (ka)",
-      "Armenian (hy)",
-      "Kazakh (kk)",
-      "Uzbek (uz)",
-      "Mongolian (mn)",
-      "Swahili (sw)",
-      "Swahili (Kenya) (sw-KE)",
-      "Swahili (Tanzania) (sw-TZ)",
-      "Afrikaans (af)",
-      "Amharic (am)",
-      "Hausa (ha)",
-      "Yoruba (yo)",
-      "Igbo (ig)",
-      "Zulu (zu)",
-      "Xhosa (xh)",
-      "Somali (so)",
-      "Kinyarwanda (rw)",
-      "Malagasy (mg)",
-      "Shona (sn)",
-      "Chichewa (ny)",
-      "Sesotho (st)",
-      "Tswana (tn)",
-      "Tsonga (ts)",
-      "Swati (ss)",
-      "Venda (ve)",
-      "South Ndebele (nr)",
-      "Oromo (om)",
-      "Tigrinya (ti)",
-      "Tajik (tg)",
-      "Turkmen (tk)",
-      "Kyrgyz (ky)",
-      "Pashto (ps)",
-      "Kurdish (ku)",
-      "Sindhi (sd)",
-      "Uyghur (ug)",
-      "Belarusian (be)",
-      "Catalan (ca)",
-      "Galician (gl)",
-      "Basque (eu)",
-      "Luxembourgish (lb)",
-      "Faroese (fo)",
-      "Scottish Gaelic (gd)",
-      "Corsican (co)",
-      "Esperanto (eo)",
-      "Latin (la)",
-      "Yiddish (yi)",
-      "Haitian Creole (ht)",
-      "Samoan (sm)",
-      "Tongan (to)",
-      "Fijian (fj)",
-      "Maori (mi)",
-      "Hawaiian (haw)",
-      "Cebuano (ceb)",
-      "Sanskrit (sa)",
-      "Bhojpuri (bho)",
-      "Maithili (mai)",
-      "Konkani (kok)",
-      "Manipuri (mni)",
-      "Santali (sat)",
-      "Bodo (brx)",
-      "Dogri (doi)",
-      "Mizo (lus)",
-      "Khasi (kha)",
-      "Garo (gar)",
-      "Tatar (tt)",
-      "Bashkir (ba)",
-      "Chuvash (cv)",
-      "Sakha (Yakut) (sah)",
-      "Quechua (qu)",
-      "Aymara (ay)",
-      "Guarani (gn)",
-      "Wolof (wo)",
-      "Fulah (ff)",
-      "Bambara (bm)",
-      "Ewe (ee)",
-      "Akan (ak)",
-      "Ganda (Luganda) (lg)",
-      "Lingala (ln)",
-      "Kikuyu (ki)",
-      "Western Frisian (fy)",
-      "Greenlandic (kl)",
-      "Inuktitut (iu)",
-      "Cherokee (chr)",
-      "Navajo (nav)",
-      "Divehi (dv)",
-      "Dzongkha (dz)",
-      "Tibetan (bo)",
-      "Hmong (hmn)",
-      "Ilocano (ilo)",
-      "Waray (war)",
-      "Hiligaynon (hil)",
-      "Kapampangan (pam)",
-      "Bikol (bik)",
-      "Pangasinan (pag)",
-      "Javanese (jw)",
-      "Sardinian (sc)",
-      "Romansh (rm)",
-      "Friulian (fur)",
-      "Venetian (vec)",
-      "Lombard (lmo)",
-      "Ligurian (lij)",
-      "Neapolitan (nap)",
-      "Sicilian (scn)",
-      "Asturian (ast)",
-      "Aragonese (an)",
-      "Occitan (oc)",
-      "Breton (br)",
-      "Cornish (kw)",
-      "Manx (gv)",
-      "Northern Sami (se)",
-      "Tuvan (tyv)",
-      "Ossetian (os)",
-      "Abkhaz (ab)",
-      "Avar (av)",
-      "Chechen (ce)",
-      "Ingush (inh)",
-      "Lezgian (lez)",
-      "Chamorro (ch)",
-      "Sango (sg)",
-      "Rundi (rn)",
-      "Kongo (kg)",
-      "Luba-Katanga (lu)",
-      "Twi (tw)",
-      "Afar (aa)"
-    ]
-  }
-}
-  </script>
-
-  <link rel="stylesheet" href="../assets/css/global-multilingual.css">
-
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"BlogPosting","@id":"https://dharmikgohil.art/blog/git-github-essential-commands.html#article","headline":"Git & GitHub Essential Commands: The Complete Developer Cheatsheet","description":"The Git and GitHub commands developers use daily: setup, staging, branching, merging and rebasing, remotes, stashing, history and undoing mistakes.","image":["https://images.unsplash.com/photo-1618401471353-b98afee0b2eb?w=1200&h=630&fit=crop"],"datePublished":"2026-02-12","dateModified":"2026-10-08","inLanguage":"en","author":{"@type":"Person","@id":"https://dharmikgohil.art/#person","name":"Dharmik Gohil","url":"https://dharmikgohil.art/","jobTitle":"Unity Game Developer & XR Engineer","sameAs":["https://github.com/DharmikGohil013","https://www.linkedin.com/in/dharmikgohil086/","https://x.com/Dharmik086","https://dharmikgohil.itch.io/"]},"publisher":{"@type":"Organization","name":"Dharmik Gohil","url":"https://dharmikgohil.art/","logo":{"@type":"ImageObject","url":"https://dharmikgohil.art/assets/img/logo.png"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://dharmikgohil.art/blog/git-github-essential-commands.html"},"isPartOf":{"@type":"Blog","@id":"https://dharmikgohil.art/blog.html#blog","name":"Dharmik Gohil Blog","url":"https://dharmikgohil.art/blog.html"},"articleSection":"Web & Full-Stack Development","keywords":"Git, GitHub, Cheatsheet, Version Control","wordCount":1249,"timeRequired":"PT7M","about":[{"@type":"Thing","name":"Git"},{"@type":"Thing","name":"GitHub"},{"@type":"Thing","name":"Cheatsheet"},{"@type":"Thing","name":"Version Control"}]},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://dharmikgohil.art/"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://dharmikgohil.art/blog.html"},{"@type":"ListItem","position":3,"name":"Web & Full-Stack Development","item":"https://dharmikgohil.art/blog/topics/web-development.html"},{"@type":"ListItem","position":4,"name":"Git & GitHub Essential Commands: The Complete Developer Cheatsheet","item":"https://dharmikgohil.art/blog/git-github-essential-commands.html"}]},{"@type":"FAQPage","@id":"https://dharmikgohil.art/blog/git-github-essential-commands.html#faq","mainEntity":[{"@type":"Question","name":"What Git commands should every developer know?","acceptedAnswer":{"@type":"Answer","text":"git init, clone, status, add, commit, branch, checkout or switch, merge, pull, push, stash and log cover the vast majority of daily work."}},{"@type":"Question","name":"What is the difference between git merge and git rebase?","acceptedAnswer":{"@type":"Answer","text":"Merge joins histories with a merge commit and preserves branch history. Rebase replays your commits on top of another branch for a linear history."}},{"@type":"Question","name":"How do I undo my last commit?","acceptedAnswer":{"@type":"Answer","text":"Use git reset --soft HEAD~1 to undo the commit but keep changes staged, or git revert to create a new commit that reverses it safely on shared branches."}}]}]}</script>
 </head>
-<body class="blog-post-page">
-  <main class="main">
+<body class="blog-post-page index-page">
+  <div class="read-progress" aria-hidden="true"><i></i></div>
 
-    <!-- Broadsheet Masthead (Header) -->
+  <div class="masthead-mobile-drawer" id="mobileDrawer">
+    <div class="drawer-header"><div class="drawer-title">THE DHARMIK GOHIL CHRONICLE</div><button class="drawer-close-btn" id="closeDrawerBtn">✕ CLOSE</button></div>
+    <div class="drawer-body">
+      <nav class="drawer-nav-links" aria-label="Mobile">
+        <a href="../index.html">HOME</a><a href="../services.html">ABILITIES</a>
+        <div class="drawer-accordion"><button class="drawer-accordion-trigger">MY GAMES <span class="accordion-arrow">▼</span></button><div class="drawer-accordion-content"><a href="https://dharmikgohil.itch.io/mavericks-battlegrounds" target="_blank" rel="noopener">MAVERICKS BATTLEGROUND</a><a href="https://dharmik086.itch.io/floppy-bird-860" target="_blank" rel="noopener">FLOPPY BIRD</a><a href="https://dharmikgohil.itch.io/facade" target="_blank" rel="noopener">FACADE</a><a href="https://dharmikgohil.itch.io/go-galaxy" target="_blank" rel="noopener">GO GALAXY</a><a href="https://dharmikgohil.itch.io/drone-training" target="_blank" rel="noopener">DRONE TRAINING</a><a href="https://dharmikgohil.itch.io/hook-shot" target="_blank" rel="noopener">HOOK SHOT</a><a href="https://lowxena.dharmikgohil.art/" target="_blank" rel="noopener">LOWXENA</a></div></div>
+        <div class="drawer-accordion"><button class="drawer-accordion-trigger">LIVE PROJECTS <span class="accordion-arrow">▼</span></button><div class="drawer-accordion-content"><a href="../assets/Fit Sync.apk" download>FITSYNC APP (APK)</a><a href="https://actify.dharmikgohil.art/" target="_blank" rel="noopener">ACTIFY</a><a href="https://learnlink.dharmikgohil.art" target="_blank" rel="noopener">LEARN LINK</a><a href="http://gdgs.dharmikgohil.art/" target="_blank" rel="noopener">GDGS GAMES</a><a href="http://flipcart.dharmikgohil.art/" target="_blank" rel="noopener">FLIPKART CLONE</a><a href="http://krishna.dharmikgohil.art/" target="_blank" rel="noopener">KRISHNA CONSTRUCTION</a><a href="https://fkm.vercel.app/" target="_blank" rel="noopener">WIFI SERVICE</a></div></div>
+        <a href="../Achivemtn.html">ACHIEVEMENTS</a><a href="../blog.html" class="active">BLOG</a><a href="../contact.html">CONTACT</a><a href="../assets/img/Dharmik Gohil Game Desginer.pdf" target="_blank" rel="noopener">RESUME</a>
+      </nav>
+      <div class="drawer-footer"><div class="drawer-social-links"><a href="https://github.com/DharmikGohil013" target="_blank" rel="noopener" aria-label="GitHub"><i class="bi bi-github"></i></a><a href="https://www.linkedin.com/in/dharmikgohil086/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a><a href="https://x.com/Dharmik086" target="_blank" rel="noopener" aria-label="Twitter / X"><i class="bi bi-twitter-x"></i></a><a href="https://dharmikgohil.itch.io/" target="_blank" rel="noopener" aria-label="Itch.io"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 24 24" style="vertical-align: -0.125em; display: inline-block;"><path d="M10.387 1.414c-1.34.02-2.887.235-4.238.653C2.863 3.085.922 5.378.13 8.358c-.378 1.423-.197 2.766.453 3.961.503.926 1.34 1.636 2.378 1.996.126.044.254.088.384.133L5 18h14l1.656-3.553c.13-.044.258-.088.385-.133 1.037-.36 1.874-1.07 2.377-1.996.65-1.195.83-2.538.453-3.961-.793-2.98-2.734-5.273-6.02-6.29-1.35-.42-2.898-.633-4.238-.653h-.626zm1.096 4.707c1.789 0 3.24 1.45 3.24 3.24 0 1.79-1.45 3.24-3.24 3.24-1.789 0-3.24-1.45-3.24-3.24 0-1.79 1.451-3.24 3.24-3.24zm-6.48 1.08c1.789 0 3.24 1.45 3.24 3.24 0 1.79-1.45 3.24-3.24 3.24-1.79 0-3.24-1.45-3.24-3.24 0-1.79 1.45-3.24 3.24-3.24z"/></svg></a></div><div class="drawer-edition">SURAT, INDIA · EST. 2006</div></div>
+    </div>
+  </div>
+  <div class="masthead-drawer-overlay" id="drawerOverlay"></div>
+  <main class="main">
     <header class="masthead container">
       <div class="masthead-top">
         <div>EST. 2006 · SURAT, GUJARAT, INDIA · 🌐 GLOBAL REMOTE <button type="button" class="masthead-lang-trigger" aria-label="Choose from 200+ Languages">🌐 200+ LANGUAGES</button></div>
         <div class="text-end">VOL. 1.0 · THE DHARMIK GOHIL CHRONICLE</div>
       </div>
-      <div class="masthead-main">
-        <h1>Dh<span class="accent-text">a</span>rmik Gohil</h1>
-      </div>
+      <div class="masthead-main"><a href="../index.html" class="masthead-home" aria-label="Dharmik Gohil – home"><span class="masthead-wordmark">Dh<span class="accent-text">a</span>rmik Gohil</span></a></div>
       <div class="masthead-nav-bar">
-        <nav class="nav-links">
-          <a href="../index.html">HOME</a> · 
-          <a href="../services.html">ABILITIES</a> · 
-          
-          <div class="nav-dropdown">
-            <span class="dropdown-trigger">MY GAMES <span class="arrow-down">▼</span></span>
-            <div class="dropdown-content">
-              <a href="https://dharmikgohil.itch.io/mavericks-battlegrounds" target="_blank">MAVERICKS BATTLEGROUND</a>
-              <a href="https://dharmik086.itch.io/floppy-bird-860" target="_blank">FLOPPY BIRD</a>
-              <a href="https://dharmikgohil.itch.io/facade" target="_blank">FACADE</a>
-              <a href="https://dharmikgohil.itch.io/go-galaxy" target="_blank">GO GALAXY</a>
-              <a href="https://dharmikgohil.itch.io/drone-training" target="_blank">DRONE TRAINING</a>
-              <a href="https://dharmikgohil.itch.io/hook-shot" target="_blank">HOOK SHOT</a>
-              <a href="https://lowxena.dharmikgohil.art/" target="_blank">LOWXENA</a>
-            </div>
-          </div> · 
-          
-          <div class="nav-dropdown">
-            <span class="dropdown-trigger">LIVE PROJECTS <span class="arrow-down">▼</span></span>
-            <div class="dropdown-content">
-              <a href="../assets/Fit Sync.apk" download>FITSYNC APP (APK)</a>
-              <a href="https://actify.dharmikgohil.art/" target="_blank">ACTIFY</a>
-              <a href="https://learnlink.dharmikgohil.art" target="_blank">LEARN LINK</a>
-              <a href="http://gdgs.dharmikgohil.art/" target="_blank">GDGS GAMES</a>
-              <a href="http://flipcart.dharmikgohil.art/" target="_blank">FLIPKART CLONE</a>
-              <a href="http://krishna.dharmikgohil.art/" target="_blank">KRISHNA CONSTRUCTION</a>
-              <a href="https://fkm.vercel.app/" target="_blank">WIFI SERVICE</a>
-            </div>
-          </div> · 
-          
-          <a href="../Achivemtn.html">ACHIEVEMENTS</a> · 
-          <a href="../blog.html" class="active">BLOG</a> · 
-          <a href="../contact.html">CONTACT</a> · 
-          <a href="../assets/img/Dharmik Gohil Game Desginer.pdf" target="_blank">RESUME</a>
+        <button class="mobile-menu-toggle-brutalist" id="menuToggleBtn" aria-label="Toggle Navigation">MENU ☰</button>
+        <nav class="nav-links" aria-label="Primary">
+          <a href="../index.html">HOME</a> · <a href="../services.html">ABILITIES</a> ·
+          <div class="nav-dropdown"><span class="dropdown-trigger">MY GAMES <span class="arrow-down">▼</span></span><div class="dropdown-content"><a href="https://dharmikgohil.itch.io/mavericks-battlegrounds" target="_blank" rel="noopener">MAVERICKS BATTLEGROUND</a><a href="https://dharmik086.itch.io/floppy-bird-860" target="_blank" rel="noopener">FLOPPY BIRD</a><a href="https://dharmikgohil.itch.io/facade" target="_blank" rel="noopener">FACADE</a><a href="https://dharmikgohil.itch.io/go-galaxy" target="_blank" rel="noopener">GO GALAXY</a><a href="https://dharmikgohil.itch.io/drone-training" target="_blank" rel="noopener">DRONE TRAINING</a><a href="https://dharmikgohil.itch.io/hook-shot" target="_blank" rel="noopener">HOOK SHOT</a><a href="https://lowxena.dharmikgohil.art/" target="_blank" rel="noopener">LOWXENA</a></div></div> ·
+          <div class="nav-dropdown"><span class="dropdown-trigger">LIVE PROJECTS <span class="arrow-down">▼</span></span><div class="dropdown-content"><a href="../assets/Fit Sync.apk" download>FITSYNC APP (APK)</a><a href="https://actify.dharmikgohil.art/" target="_blank" rel="noopener">ACTIFY</a><a href="https://learnlink.dharmikgohil.art" target="_blank" rel="noopener">LEARN LINK</a><a href="http://gdgs.dharmikgohil.art/" target="_blank" rel="noopener">GDGS GAMES</a><a href="http://flipcart.dharmikgohil.art/" target="_blank" rel="noopener">FLIPKART CLONE</a><a href="http://krishna.dharmikgohil.art/" target="_blank" rel="noopener">KRISHNA CONSTRUCTION</a><a href="https://fkm.vercel.app/" target="_blank" rel="noopener">WIFI SERVICE</a></div></div> ·
+          <a href="../Achivemtn.html">ACHIEVEMENTS</a> · <a href="../blog.html" class="active">BLOG</a> · <a href="../contact.html">CONTACT</a> · <a href="../assets/img/Dharmik Gohil Game Desginer.pdf" target="_blank" rel="noopener">RESUME</a>
         </nav>
-        <div class="social-links-minimal">
-
-          <a href="https://github.com/DharmikGohil013" target="_blank" aria-label="GitHub"><i class="bi bi-github"></i></a>
-          <a href="https://www.linkedin.com/in/dharmikgohil086/" target="_blank" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
-          <a href="https://x.com/Dharmik086" target="_blank" aria-label="Twitter / X"><i class="bi bi-twitter-x"></i></a>
-          <a href="https://dharmikgohil.itch.io/" target="_blank" aria-label="Itch.io"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 24 24" style="vertical-align: -0.125em; display: inline-block;"><path d="M10.387 1.414c-1.34.02-2.887.235-4.238.653C2.863 3.085.922 5.378.13 8.358c-.378 1.423-.197 2.766.453 3.961.503.926 1.34 1.636 2.378 1.996.126.044.254.088.384.133L5 18h14l1.656-3.553c.13-.044.258-.088.385-.133 1.037-.36 1.874-1.07 2.377-1.996.65-1.195.83-2.538.453-3.961-.793-2.98-2.734-5.273-6.02-6.29-1.35-.42-2.898-.633-4.238-.653h-.626zm1.096 4.707c1.789 0 3.24 1.45 3.24 3.24 0 1.79-1.45 3.24-3.24 3.24-1.789 0-3.24-1.45-3.24-3.24 0-1.79 1.451-3.24 3.24-3.24zm-6.48 1.08c1.789 0 3.24 1.45 3.24 3.24 0 1.79-1.45 3.24-3.24 3.24-1.79 0-3.24-1.45-3.24-3.24 0-1.79 1.45-3.24 3.24-3.24z"/></svg></a>
-        </div>
+        <div class="social-links-minimal"><a href="https://github.com/DharmikGohil013" target="_blank" rel="noopener" aria-label="GitHub"><i class="bi bi-github"></i></a><a href="https://www.linkedin.com/in/dharmikgohil086/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a><a href="https://x.com/Dharmik086" target="_blank" rel="noopener" aria-label="Twitter / X"><i class="bi bi-twitter-x"></i></a><a href="https://dharmikgohil.itch.io/" target="_blank" rel="noopener" aria-label="Itch.io"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 24 24" style="vertical-align: -0.125em; display: inline-block;"><path d="M10.387 1.414c-1.34.02-2.887.235-4.238.653C2.863 3.085.922 5.378.13 8.358c-.378 1.423-.197 2.766.453 3.961.503.926 1.34 1.636 2.378 1.996.126.044.254.088.384.133L5 18h14l1.656-3.553c.13-.044.258-.088.385-.133 1.037-.36 1.874-1.07 2.377-1.996.65-1.195.83-2.538.453-3.961-.793-2.98-2.734-5.273-6.02-6.29-1.35-.42-2.898-.633-4.238-.653h-.626zm1.096 4.707c1.789 0 3.24 1.45 3.24 3.24 0 1.79-1.45 3.24-3.24 3.24-1.789 0-3.24-1.45-3.24-3.24 0-1.79 1.451-3.24 3.24-3.24zm-6.48 1.08c1.789 0 3.24 1.45 3.24 3.24 0 1.79-1.45 3.24-3.24 3.24-1.79 0-3.24-1.45-3.24-3.24 0-1.79 1.45-3.24 3.24-3.24z"/></svg></a></div>
       </div>
     </header>
-
-    <div class="page-title" data-aos="fade">
-      <div class="container">
-        <nav class="breadcrumbs"><ol><li><a href="../index.html">Home</a></li><li><a href="../blog.html">Blog</a></li><li class="current">Git & GitHub Commands</li></ol></nav>
-        <h1>Git & GitHub Essential Commands</h1>
-      </div>
-    </div>
-
-    <div class="container">
-      <div class="row justify-content-center">
-        <div class="col-lg-10 col-xl-8">
-          <section id="blog-details" class="blog-details section">
-            <div class="window-bar">
-              <div class="window-dots"><span class="dot-red"></span><span class="dot-yellow"></span><span class="dot-green"></span></div>
-              <span class="window-bar-title">git-github-cheatsheet.md</span>
-            </div>
-            <article class="article">
-              <div class="post-img">
-                <img src="https://images.unsplash.com/photo-1618401471353-b98afee0b2eb?w=1200&h=630&fit=crop" alt="Git and GitHub Essential Commands Cheatsheet by Dharmik Gohil" class="img-fluid" loading="eager">
-              </div>
-
-              <h2 class="title">Git & GitHub Essential Commands: The Complete Developer Cheatsheet</h2>
-
-              <div class="meta-top">
-                <ul>
-                  <li class="d-flex align-items-center"><i class="bi bi-person"></i> <a href="../about.html">Dharmik Gohil</a></li>
-                  <li class="d-flex align-items-center"><i class="bi bi-clock"></i> <time datetime="2026-02-12">Feb 12, 2026</time></li>
-                  <li class="d-flex align-items-center"><i class="bi bi-journal-text"></i> 10 min read</li>
-                </ul>
-              </div>
-
-              <div class="content">
-                <p>Hi! I'm <strong>Dharmik Gohil</strong>, and Git is the backbone of every project I work on — from my game <strong>Mavericks Battlegrounds</strong> to my portfolio website <strong>dharmikgohil.art</strong>. After years of using Git daily, I've compiled this comprehensive cheatsheet with every command you'll ever need.</p>
-
-                <blockquote>
-                  <p>"If you're not using Git, you're living dangerously. Version control isn't optional — it's the foundation of professional software development." — Dharmik Gohil</p>
-                </blockquote>
-
-                <h3>Initial Setup</h3>
-                <p>Before your first commit, configure your identity:</p>
-
-                <div class="code-label">Terminal — Git Configuration</div>
-                <div class="code-block"># Set your name and email (used in commits)
+    <div class="post-shell">
+      <nav aria-label="Breadcrumb"><ol class="crumbs"><li><a href="../index.html">Home</a></li><li><a href="../blog.html">Blog</a></li><li><a href="topics/web-development.html">Web &amp; Full-Stack Development</a></li><li><span aria-current="page">Git &amp; GitHub Essential Commands: The Complete…</span></li></ol></nav>
+      <div class="post-grid">
+        <article class="post-main" itemscope itemtype="https://schema.org/BlogPosting">
+          <header class="post-head">
+            <a class="post-kicker" href="topics/web-development.html"><i class="bi bi-code-slash"></i> Web &amp; Full-Stack Development</a>
+            <h1 class="post-title" data-kinetic itemprop="headline">Git &amp; GitHub Essential Commands: The Complete Developer Cheatsheet</h1>
+            <p class="post-deck">The Git and GitHub commands developers use daily: setup, staging, branching, merging and rebasing, remotes, stashing, history and undoing mistakes.</p>
+            <ul class="post-meta">
+              <li><i class="bi bi-person"></i><a href="../about.html" rel="author">Dharmik Gohil</a></li>
+              <li><i class="bi bi-calendar3"></i><time datetime="2026-02-12" itemprop="datePublished">Feb 12, 2026</time></li>
+              <li><i class="bi bi-arrow-repeat"></i>Updated <time datetime="2026-10-08" itemprop="dateModified">Oct 8, 2026</time></li>
+              <li><i class="bi bi-clock"></i>7 min read</li>
+            </ul>
+          </header>
+          <figure class="post-cover"><img src="https://images.unsplash.com/photo-1618401471353-b98afee0b2eb?w=1200&amp;h=630&amp;fit=crop" alt="Git and GitHub Essential Commands Cheatsheet by Dharmik Gohil" width="1200" height="675" fetchpriority="high" decoding="async"></figure>
+          <div class="takeaways"><ul><li>Commit small and often with messages that explain why.</li><li>Branch for every feature; merge or rebase deliberately.</li><li>Stashing lets you switch context without losing work in progress.</li><li>A proper .gitignore keeps build output and secrets out of the repository.</li></ul></div>
+          <div class="toc-mobile"><nav class="toc" aria-label="Table of contents"><p class="toc-title">On this page</p><ol><li><a href="#initial-setup">Initial Setup</a></li><li><a href="#repository-basics">Repository Basics</a></li><li><a href="#staging-committing">Staging &amp; Committing</a></li><li><a href="#branching">Branching</a></li><li><a href="#merging-rebasing">Merging &amp; Rebasing</a></li><li><a href="#working-with-remotes">Working with Remotes</a></li><li><a href="#stashing">Stashing</a></li><li><a href="#viewing-history">Viewing History</a></li><li><a href="#undoing-changes">Undoing Changes</a></li><li><a href="#github-specific-workflows">GitHub-Specific Workflows</a></li><li><a href="#git-aliases-speed-up-your-workflow">Git Aliases (Speed Up Your Workflow)</a></li><li><a href="#gitignore-essentials">.gitignore Essentials</a></li></ol></nav></div>
+          <div class="article-body" itemprop="articleBody">
+<p>Hi! I'm <strong><a href="../about.html">Dharmik Gohil</a></strong>, and Git is the backbone of every project I work on — from my game <strong><a href="mavericks-battlegrounds-game-development-journey.html" title="Mavericks Battlegrounds: The Best Multiplayer Battle Arena Game of 2025 by Award-Winning Developer Dharmik Gohil">Mavericks Battlegrounds</a></strong> to my <a href="../portfolio.html">portfolio</a> website <strong>dharmikgohil.art</strong>. After years of using Git daily, I've compiled this comprehensive cheatsheet with every command you'll ever need.</p>
+<blockquote>
+<p>"If you're not using Git, you're living dangerously. Version control isn't optional — it's the foundation of professional software development." — Dharmik Gohil</p>
+</blockquote>
+<h2 id="initial-setup">Initial Setup</h2>
+<p>Before your first commit, configure your identity:</p>
+<div class="code-label">Terminal — Git Configuration</div>
+<div class="code-block"># Set your name and email (used in commits)
 git config --global user.name "Dharmik Gohil"
 git config --global user.email "dharmik@example.com"
 
@@ -1355,11 +115,9 @@ git config --global color.ui auto
 
 # View all configurations
 git config --list</div>
-
-                <h3>Repository Basics</h3>
-
-                <div class="code-label">Terminal — Creating & Cloning Repos</div>
-                <div class="code-block"># Initialize a new repository
+<h2 id="repository-basics">Repository Basics</h2>
+<div class="code-label">Terminal — Creating &amp; Cloning Repos</div>
+<div class="code-block"># Initialize a new repository
 git init
 
 # Clone an existing repository
@@ -1370,12 +128,10 @@ git clone -b develop https://github.com/username/repo.git
 
 # Clone with shallow history (faster)
 git clone --depth 1 https://github.com/username/repo.git</div>
-
-                <h3>Staging & Committing</h3>
-                <p>The fundamental Git workflow: modify → stage → commit.</p>
-
-                <div class="code-label">Terminal — Stage & Commit</div>
-                <div class="code-block"># Check status of working directory
+<h2 id="staging-committing">Staging &amp; Committing</h2>
+<p>The fundamental Git workflow: modify → stage → commit.</p>
+<div class="code-label">Terminal — Stage &amp; Commit</div>
+<div class="code-block"># Check status of working directory
 git status
 
 # Stage a specific file
@@ -1402,16 +158,13 @@ git commit --amend --no-edit
 
 # Amend commit message
 git commit --amend -m "Better commit message"</div>
-
-                <div class="tip-box">
-                  <strong>💡 Dharmik's Tip:</strong> Write meaningful commit messages! I follow the convention: type(scope): description. Example: "feat(player): add double jump mechanic" or "fix(ui): resolve health bar overflow on mobile". This makes your Git log readable and searchable.
+<div class="tip-box">
+<strong>💡 Dharmik's Tip:</strong> Write meaningful commit messages! I follow the convention: type(scope): description. Example: "feat(player): add double jump mechanic" or "fix(ui): resolve health bar overflow on mobile". This makes your Git log readable and searchable.
                 </div>
-
-                <h3>Branching</h3>
-                <p>Branches are Git's superpower. I create a new branch for every feature in my projects:</p>
-
-                <div class="code-label">Terminal — Branch Management</div>
-                <div class="code-block"># List all local branches
+<h2 id="branching">Branching</h2>
+<p>Branches are Git's superpower. I create a new branch for every feature in my projects:</p>
+<div class="code-label">Terminal — Branch Management</div>
+<div class="code-block"># List all local branches
 git branch
 
 # List all branches (local + remote)
@@ -1438,11 +191,9 @@ git branch -d feature/player-dash
 
 # Force delete an unmerged branch
 git branch -D experimental-feature</div>
-
-                <h3>Merging & Rebasing</h3>
-
-                <div class="code-label">Terminal — Merge & Rebase</div>
-                <div class="code-block"># Merge a branch into current branch
+<h2 id="merging-rebasing">Merging &amp; Rebasing</h2>
+<div class="code-label">Terminal — Merge &amp; Rebase</div>
+<div class="code-block"># Merge a branch into current branch
 git merge feature/player-dash
 
 # Merge with a commit message
@@ -1462,18 +213,15 @@ git rebase --abort
 
 # Continue rebase after resolving conflicts
 git rebase --continue</div>
-
-                <h4>Merge vs Rebase — When to Use Which</h4>
-                <ul>
-                  <li><strong>Merge:</strong> Use for combining feature branches into main. Creates a merge commit that preserves branch history</li>
-                  <li><strong>Rebase:</strong> Use for updating your feature branch with latest main changes. Creates linear history</li>
-                  <li><strong>Never rebase</strong> commits that have been pushed and shared with others!</li>
-                </ul>
-
-                <h3>Working with Remotes</h3>
-
-                <div class="code-label">Terminal — Remote Operations</div>
-                <div class="code-block"># Add a remote
+<h3>Merge vs Rebase — When to Use Which</h3>
+<ul>
+<li><strong>Merge:</strong> Use for combining feature branches into main. Creates a merge commit that preserves branch history</li>
+<li><strong>Rebase:</strong> Use for updating your feature branch with latest main changes. Creates linear history</li>
+<li><strong>Never rebase</strong> commits that have been pushed and shared with others!</li>
+</ul>
+<h2 id="working-with-remotes">Working with Remotes</h2>
+<div class="code-label">Terminal — Remote Operations</div>
+<div class="code-block"># Add a remote
 git remote add origin https://github.com/dharmik/repo.git
 
 # View remotes
@@ -1499,12 +247,10 @@ git push --all origin
 
 # Delete a remote branch
 git push origin --delete feature/old-branch</div>
-
-                <h3>Stashing</h3>
-                <p>Stashing saves your uncommitted changes temporarily — perfect for switching contexts:</p>
-
-                <div class="code-label">Terminal — Git Stash</div>
-                <div class="code-block"># Stash current changes
+<h2 id="stashing">Stashing</h2>
+<p>Stashing saves your uncommitted changes temporarily — perfect for switching contexts:</p>
+<div class="code-label">Terminal — Git Stash</div>
+<div class="code-block"># Stash current changes
 git stash
 
 # Stash with a description
@@ -1527,11 +273,9 @@ git stash drop stash@{0}
 
 # Clear all stashes
 git stash clear</div>
-
-                <h3>Viewing History</h3>
-
-                <div class="code-label">Terminal — Git Log & Diff</div>
-                <div class="code-block"># View commit history
+<h2 id="viewing-history">Viewing History</h2>
+<div class="code-label">Terminal — Git Log &amp; Diff</div>
+<div class="code-block"># View commit history
 git log
 
 # Compact one-line log
@@ -1560,11 +304,9 @@ git log --grep="player"
 
 # Find who changed a line (blame)
 git blame filename.js</div>
-
-                <h3>Undoing Changes</h3>
-
-                <div class="code-label">Terminal — Undo & Reset</div>
-                <div class="code-block"># Discard changes in working directory
+<h2 id="undoing-changes">Undoing Changes</h2>
+<div class="code-label">Terminal — Undo &amp; Reset</div>
+<div class="code-block"># Discard changes in working directory
 git checkout -- filename.txt
 # Or (modern):
 git restore filename.txt
@@ -1589,15 +331,12 @@ git revert abc1234
 # Reset to remote state
 git fetch origin
 git reset --hard origin/main</div>
-
-                <div class="warning-box">
-                  <strong>⚠️ Danger Zone:</strong> <code>git reset --hard</code> permanently destroys uncommitted changes. Always double-check with <code>git status</code> before running hard reset. I once lost 3 hours of work on Mavericks Battlegrounds because of a careless hard reset!
+<div class="warning-box">
+<strong>⚠️ Danger Zone:</strong> <code>git reset --hard</code> permanently destroys uncommitted changes. Always double-check with <code>git status</code> before running hard reset. I once lost 3 hours of work on Mavericks Battlegrounds because of a careless hard reset!
                 </div>
-
-                <h3>GitHub-Specific Workflows</h3>
-
-                <h4>Setting Up SSH Keys</h4>
-                <div class="code-block"># Generate SSH key
+<h2 id="github-specific-workflows">GitHub-Specific Workflows</h2>
+<h3>Setting Up SSH Keys</h3>
+<div class="code-block"># Generate SSH key
 ssh-keygen -t ed25519 -C "dharmik@example.com"
 
 # Start SSH agent
@@ -1611,20 +350,18 @@ cat ~/.ssh/id_ed25519.pub
 
 # Test connection
 ssh -T git@github.com</div>
-
-                <h4>Pull Request Workflow</h4>
-                <ol>
-                  <li>Create a feature branch: <code>git switch -c feature/awesome-thing</code></li>
-                  <li>Make your changes and commit</li>
-                  <li>Push: <code>git push -u origin feature/awesome-thing</code></li>
-                  <li>Open a Pull Request on GitHub</li>
-                  <li>Get code review, make changes if needed</li>
-                  <li>Merge the PR (squash and merge for clean history)</li>
-                  <li>Delete branch: <code>git branch -d feature/awesome-thing</code></li>
-                </ol>
-
-                <h4>Forking Workflow</h4>
-                <div class="code-block"># Fork the repo on GitHub, then clone YOUR fork
+<h3>Pull Request Workflow</h3>
+<ol>
+<li>Create a feature branch: <code>git switch -c feature/awesome-thing</code></li>
+<li>Make your changes and commit</li>
+<li>Push: <code>git push -u origin feature/awesome-thing</code></li>
+<li>Open a Pull Request on GitHub</li>
+<li>Get code review, make changes if needed</li>
+<li>Merge the PR (squash and merge for clean history)</li>
+<li>Delete branch: <code>git branch -d feature/awesome-thing</code></li>
+</ol>
+<h3>Forking Workflow</h3>
+<div class="code-block"># Fork the repo on GitHub, then clone YOUR fork
 git clone https://github.com/YOUR-USERNAME/repo.git
 
 # Add original repo as upstream
@@ -1635,11 +372,9 @@ git fetch upstream
 git checkout main
 git merge upstream/main
 git push origin main</div>
-
-                <h3>Git Aliases (Speed Up Your Workflow)</h3>
-                <p>These are the aliases I use daily:</p>
-
-                <div class="code-block"># Add these to your global git config
+<h2 id="git-aliases-speed-up-your-workflow">Git Aliases (Speed Up Your Workflow)</h2>
+<p>These are the aliases I use daily:</p>
+<div class="code-block"># Add these to your global git config
 git config --global alias.co checkout
 git config --global alias.br branch
 git config --global alias.ci commit
@@ -1647,11 +382,9 @@ git config --global alias.st status
 git config --global alias.lg "log --oneline --graph --all"
 git config --global alias.last "log -1 HEAD"
 git config --global alias.unstage "reset HEAD --"</div>
-
-                <h3>.gitignore Essentials</h3>
-                <p>A good <code>.gitignore</code> keeps your repo clean. Here's what I use for Unity projects:</p>
-
-                <div class="code-block"># Unity
+<h2 id="gitignore-essentials">.gitignore Essentials</h2>
+<p>A good <code>.gitignore</code> keeps your repo clean. Here's what I use for <a href="unity-game-development-tips.html" title="Essential Unity Game Development Tips for Aspiring Developers">Unity</a> projects:</p>
+<div class="code-block"># Unity
 [Ll]ibrary/
 [Tt]emp/
 [Oo]bj/
@@ -1674,37 +407,70 @@ Thumbs.db
 # Environment
 .env
 node_modules/</div>
+<blockquote>
+<p>"Git isn't just a tool — it's a safety net. Every command you learn makes you more confident to experiment, refactor, and take risks with your code. Master Git, and you'll never fear breaking things again." — Dharmik Gohil</p>
+</blockquote>
 
-                <blockquote>
-                  <p>"Git isn't just a tool — it's a safety net. Every command you learn makes you more confident to experiment, refactor, and take risks with your code. Master Git, and you'll never fear breaking things again." — Dharmik Gohil</p>
-                </blockquote>
-
-                <div class="nav-links">
-                  <a href="../blog.html"><i class="bi bi-arrow-left"></i> Back to Blog</a>
-                  <a href="build-developer-portfolio-guide.html">Build Your Portfolio <i class="bi bi-arrow-right"></i></a>
-                </div>
-              </div>
-            </article>
-          </section>
-        </div>
+          </div>
+          <div class="tech-stack" style="margin-top:2rem"><span class="tech-badge">Git</span><span class="tech-badge">GitHub</span><span class="tech-badge">Cheatsheet</span><span class="tech-badge">Version Control</span></div>
+          <div class="share-row"><span>Share</span>
+            <a href="https://x.com/intent/tweet?url=https://dharmikgohil.art/blog/git-github-essential-commands.html&amp;text=Git &amp; GitHub Essential Commands: The Complete Developer Cheatsheet" target="_blank" rel="noopener"><i class="bi bi-twitter-x"></i> Post</a>
+            <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://dharmikgohil.art/blog/git-github-essential-commands.html" target="_blank" rel="noopener"><i class="bi bi-linkedin"></i> LinkedIn</a>
+            <button type="button" data-copy="https://dharmikgohil.art/blog/git-github-essential-commands.html"><i class="bi bi-link-45deg"></i> <span>Copy link</span></button>
+          </div>
+          <section class="faq" aria-labelledby="faq-h"><h2 class="block-label" id="faq-h">Questions, answered</h2><details><summary>What Git commands should every developer know?</summary><div class="answer"><p>git init, clone, status, add, commit, branch, checkout or switch, merge, pull, push, stash and log cover the vast majority of daily work.</p></div></details><details><summary>What is the difference between git merge and git rebase?</summary><div class="answer"><p>Merge joins histories with a merge commit and preserves branch history. Rebase replays your commits on top of another branch for a linear history.</p></div></details><details><summary>How do I undo my last commit?</summary><div class="answer"><p>Use git reset --soft HEAD~1 to undo the commit but keep changes staged, or git revert to create a new commit that reverses it safely on shared branches.</p></div></details></section>
+          <div class="byline-box">
+            <img src="../assets/img/dharmik-gohil-professional-headshot-photo.png" alt="Dharmik Gohil, Unity game developer" width="84" height="84" loading="lazy">
+            <div><h3>Dharmik Gohil</h3><p>Unity game developer and XR / full-stack engineer from Surat, India. I ship multiplayer games, AR/VR experiences and web apps, and write about what works.</p>
+              <div class="links"><a href="../about.html">About</a><a href="../services.html">Services</a><a href="../portfolio.html">Portfolio</a><a href="../contact.html">Hire me</a></div></div>
+          </div>
+          <nav class="post-nav" aria-label="More in Web &amp; Full-Stack Development">
+            <a class="prev" href="react-vs-nextjs-which-to-choose.html" rel="prev"><small>← Previous in Web</small><strong>React vs Next.js: Which Framework Should You Choose in 2026?</strong></a>
+            <a class="next" href="lowxena-game-development-insights.html" rel="next"><small>Next in Web →</small><strong>LOWXENA: Designing and Engineering a 3D Multiplayer Card Universe Where the…</strong></a>
+          </nav>
+        </article>
+        <aside class="post-aside" aria-label="Article sidebar">
+          <div class="aside-card" data-toc-desktop><h2>On this page</h2><nav class="toc" aria-label="Table of contents"><p class="toc-title">On this page</p><ol><li><a href="#initial-setup">Initial Setup</a></li><li><a href="#repository-basics">Repository Basics</a></li><li><a href="#staging-committing">Staging &amp; Committing</a></li><li><a href="#branching">Branching</a></li><li><a href="#merging-rebasing">Merging &amp; Rebasing</a></li><li><a href="#working-with-remotes">Working with Remotes</a></li><li><a href="#stashing">Stashing</a></li><li><a href="#viewing-history">Viewing History</a></li><li><a href="#undoing-changes">Undoing Changes</a></li><li><a href="#github-specific-workflows">GitHub-Specific Workflows</a></li><li><a href="#git-aliases-speed-up-your-workflow">Git Aliases (Speed Up Your Workflow)</a></li><li><a href="#gitignore-essentials">.gitignore Essentials</a></li></ol></nav></div>
+          <div class="aside-card"><h2>More in Web</h2><ul class="aside-list"><li><a href="react-vs-nextjs-which-to-choose.html">React vs Next.js: Which Framework Should You Choose in 2026?<small>Feb 18, 2026</small></a></li><li><a href="lowxena-game-development-insights.html">LOWXENA: Designing and Engineering a 3D Multiplayer Card Universe…<small>May 21, 2026</small></a></li><li><a href="topics/web-development.html">All Web &amp; Full-Stack Development articles →</a></li></ul></div>
+          <div class="aside-cta"><h3>Need this built?</h3><p>I take on Unity, XR, multiplayer and full-stack projects. Free consultation, reply within 24 hours.</p><a href="../contact.html">Start a project →</a></div>
+        </aside>
       </div>
+      <section class="related" aria-labelledby="rel-h"><h2 class="block-label" id="rel-h">Keep reading</h2>
+        <div class="card-grid"><a class="post-card" href="../blog/react-vs-nextjs-which-to-choose.html">
+      <div class="thumb"><img src="https://images.unsplash.com/photo-1633356122544-f134324a6cee?w=1200&amp;h=630&amp;fit=crop" alt="React vs Next.js Framework Comparison by Dharmik Gohil" loading="lazy" decoding="async" width="640" height="360"></div>
+      <div class="body"><span class="tag">Web</span><h3>React vs Next.js: Which Framework Should You Choose in 2026?</h3><p>React or Next.js? Compare rendering strategies, routing, SEO and when each makes sense, with a clear recommendation…</p>
+      <span class="foot">Feb 18, 2026 · 6 min read</span></div></a><a class="post-card" href="../blog/unity-game-development-tips.html">
+      <div class="thumb"><img src="../assets/img/Unity.webp" alt="Unity Game Development Tips by Dharmik Gohil" loading="lazy" decoding="async" width="640" height="360"></div>
+      <div class="body"><span class="tag">Unity</span><h3>Essential Unity Game Development Tips for Aspiring Developers</h3><p>Five Unity habits that save projects: master the fundamentals, optimize early, organize assets, write clean C# and…</p>
+      <span class="foot">Aug 21, 2025 · 3 min read</span></div></a><a class="post-card" href="../blog/getting-started-unity-game-development.html">
+      <div class="thumb"><img src="https://images.unsplash.com/photo-1556438064-2d7646166914?w=1200&amp;h=630&amp;fit=crop" alt="Getting Started with Unity Game Development - Beginner Guide by Dharmik Gohil" loading="lazy" decoding="async" width="640" height="360"></div>
+      <div class="body"><span class="tag">Unity</span><h3>Getting Started with Unity Game Development: A Beginner&#x27;s Complete Guide</h3><p>Learn Unity step by step: install the editor, understand GameObjects and components, write your first C# script, add…</p>
+      <span class="foot">Feb 20, 2026 · 8 min read</span></div></a><a class="post-card" href="../blog/lowxena-game-development-insights.html">
+      <div class="thumb"><img src="../assets/img/blog/lowxena/cover.jpg" alt="LowXena Premium Interactive Card Gaming Universe - Engineered by Lead Architect Dharmik Gohil" loading="lazy" decoding="async" width="640" height="360"></div>
+      <div class="body"><span class="tag">Multiplayer</span><h3>LOWXENA: Designing and Engineering a 3D Multiplayer Card Universe Where the Lowest Score Wins Everything</h3><p>Inside LowXena, a real-time multiplayer least-count card game: scoring logic, 3D felt table, React 19 front end and…</p>
+      <span class="foot">May 21, 2026 · 5 min read</span></div></a></div></section>
+      
+  <aside class="link-hub" aria-label="Site directory">
+    <div class="link-hub-grid">
+      <div><h2>Explore</h2><ul><li><a href="../index.html">Home</a></li><li><a href="../about.html">About Dharmik</a></li><li><a href="../services.html">Services & pricing</a></li><li><a href="../portfolio.html">Portfolio</a></li><li><a href="../Achivemtn.html">Achievements</a></li><li><a href="../blog.html">Blog</a></li><li><a href="../contact.html">Contact & hire</a></li><li><a href="../sitemap-page.html">HTML sitemap</a></li></ul></div>
+      <div><h2>Blog topics</h2><ul><li><a href="../blog/topics/unity-game-development.html">Unity Game Development</a></li><li><a href="../blog/topics/xr-vr-ar-development.html">AR, VR &amp; XR Development</a></li><li><a href="../blog/topics/multiplayer-game-development.html">Multiplayer Game Development</a></li><li><a href="../blog/topics/web-development.html">Web &amp; Full-Stack Development</a></li><li><a href="../blog/topics/hackathons-and-events.html">Hackathons &amp; Tech Events</a></li><li><a href="../blog/topics/career-and-learning.html">Career &amp; Learning</a></li></ul></div>
+      <div><h2>Latest articles</h2><ul><li><a href="../blog/lowxena-game-development-insights.html">LOWXENA: Designing and Engineering a 3D…</a></li><li><a href="../blog/getting-started-unity-game-development.html">Getting Started with Unity Game Development: A…</a></li><li><a href="../blog/react-vs-nextjs-which-to-choose.html">React vs Next.js: Which Framework Should You…</a></li><li><a href="../blog/multiplayer-games-photon-unity.html">Building Multiplayer Games with Photon &amp; Unity: A…</a></li><li><a href="../blog/git-github-essential-commands.html">Git &amp; GitHub Essential Commands: The Complete…</a></li><li><a href="../blog/daiict-hackathon-ai-meeting-monitor.html">DAIICT Hackathon: Building an AI-Powered Meeting…</a></li></ul></div>
+      <div><h2>Elsewhere</h2><ul><li><a href="https://dharmikgohil.itch.io/" target="_blank" rel="noopener">Games on itch.io</a></li><li><a href="https://lowxena.dharmikgohil.art/" target="_blank" rel="noopener">LowXena card game</a></li><li><a href="https://github.com/DharmikGohil013" target="_blank" rel="noopener">GitHub</a></li><li><a href="https://www.linkedin.com/in/dharmikgohil086/" target="_blank" rel="noopener">LinkedIn</a></li><li><a href="https://x.com/Dharmik086" target="_blank" rel="noopener">X / Twitter</a></li></ul></div>
+    </div>
+    <p class="link-hub-note">Dharmik Gohil is a Unity game developer and XR / full-stack engineer based in Surat, Gujarat, India, working remotely with studios and founders worldwide. <a href="../services.html">See services</a> or <a href="../contact.html">get in touch</a> for a free consultation.</p>
+  </aside>
     </div>
   </main>
-
-  <footer id="footer" class="footer">
-    <div class="container">
-      <div class="copyright"><span>Copyright</span> <strong class="px-1 sitename">DHARMIK GOHIL</strong> <span>All Rights Reserved</span></div>
-      <div class="credits">Designed by <a href="https://dharmikgohil.art/">Dharmik Gohil</a></div>
+  <footer class="container">
+    <div class="colophon-footer">
+      <div class="colophon-sig">THE DHARMIK GOHIL CHRONICLE · <span>DESIGNED WITH INK &amp; PAPER</span></div>
+      <div class="colophon-sig text-end">© 2026 DHARMIK GOHIL. ALL RIGHTS RESERVED.</div>
     </div>
   </footer>
 
-  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
-
-  <script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="../assets/vendor/aos/aos.js"></script>
-  <script src="../assets/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="../assets/vendor/swiper/swiper-bundle.min.js"></script>
-  <script src="../assets/js/main.js"></script>
+  <script src="../assets/vendor/glightbox/js/glightbox.min.js" defer></script>
+  <script src="../assets/js/blog-post.js" defer></script>
+  <script src="../assets/js/motion.js" defer></script>
   <script src="../assets/js/global-multilingual.js" defer></script>
 </body>
 </html>

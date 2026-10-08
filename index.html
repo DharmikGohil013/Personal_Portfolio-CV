@@ -1913,7 +1913,14 @@
 
   <link rel="stylesheet" href="assets/css/global-multilingual.css">
 
-</head>
+<!-- motion:head -->
+<script>(function(d){if(!matchMedia('(prefers-reduced-motion: reduce)').matches){d.classList.add('motion-ok');setTimeout(function(){if(!window.__motionReady)d.classList.remove('motion-ok')},4500)}})(document.documentElement)</script>
+  <noscript><style>[data-reveal],[data-kinetic]{opacity:1!important;transform:none!important;clip-path:none!important}</style></noscript>
+  <link rel="stylesheet" href="assets/css/blog-post.css">
+  <link rel="stylesheet" href="assets/css/motion.css">
+  <link rel="alternate" type="application/rss+xml" title="Dharmik Gohil – Blog" href="https://dharmikgohil.art/feed.xml">
+<!-- /motion:head -->
+    </head>
 
 <body class="index-page">
   <div class="custom-cursor"></div>
@@ -2047,7 +2054,7 @@
 
     <!-- Front Page Hero Broadside -->
     <section id="hero" class="hero section" style="border-bottom: 2px solid var(--ink) !important; padding-top: 1rem !important; padding-bottom: 2.5rem !important;">
-      <h2 class="hero-editorial-headline">SHIPPING IMMERSIVE XR SYSTEMS & HIGH-OCTANE GAMES. LET'S MAKE SOMETHING THEY CAN'T IGNORE.</h2>
+      <h2 class="hero-editorial-headline" data-kinetic>SHIPPING IMMERSIVE XR SYSTEMS & HIGH-OCTANE GAMES. LET'S MAKE SOMETHING THEY CAN'T IGNORE.</h2>
       
       <div class="row gy-4 align-items-start">
         <div class="col-md-7">
@@ -2090,6 +2097,11 @@
         </div>
       </div>
     </section>
+    <!-- motion:ticker -->
+<div class="ticker" role="marquee" aria-label="Technologies I work with">
+      <div class="ticker-track"><ul><li>Unity 6</li><li>C#</li><li class=alt>Photon PUN</li><li>AR Foundation</li><li>XR Toolkit</li><li class=alt>Oculus SDK</li><li>React</li><li>Node.js</li><li class=alt>MongoDB</li><li>WebSockets</li><li>ERPNext</li><li class=alt>n8n</li><li>Web3</li></ul><ul aria-hidden="true"><li>Unity 6</li><li>C#</li><li class=alt>Photon PUN</li><li>AR Foundation</li><li>XR Toolkit</li><li class=alt>Oculus SDK</li><li>React</li><li>Node.js</li><li class=alt>MongoDB</li><li>WebSockets</li><li>ERPNext</li><li class=alt>n8n</li><li>Web3</li></ul></div>
+    </div>
+<!-- /motion:ticker -->
     <section id="portfolio" class="portfolio section scroll-reveal fade-up-element" style="animation-delay: 0.1s; border-bottom: 2px solid var(--ink) !important;">
       <div class="container section-title">
         <h2>Featured Work</h2>
@@ -2110,20 +2122,18 @@
 
         <div class="games-grid work-grid-container">
           <!-- Client Project: Gain Live (Bangladesh Client) -->
-          <div class="portfolio-item filter-client filter-product filter-app3d filter-appmobile filter-app work-card" style="cursor: default;">
-            <div class="work-card-image" style="background: radial-gradient(circle at center, rgba(16, 24, 45, 0.95) 0%, rgba(8, 12, 22, 1) 100%); display: flex; align-items: center; justify-content: center; padding: 30px; position: relative; border-bottom: 1px solid rgba(0, 234, 255, 0.2);">
-              <img src="assets/img/clients/gain-live-logo.png" alt="Gain Live Bangladesh Client Project Logo" loading="lazy" width="1024" height="1024" style="max-height: 125px; width: auto; object-fit: contain; filter: drop-shadow(0 0 10px rgba(0, 234, 255, 0.35)); transition: transform 0.3s ease;">
-              <span class="work-number" style="background: rgba(0, 234, 255, 0.15); color: #00eaff; border: 1px solid #00eaff; font-size: 0.65rem; padding: 3px 8px; border-radius: 4px;">CLIENT</span>
+          <!-- motion:gainlive -->
+<div class="portfolio-item filter-client filter-product filter-app3d filter-appmobile filter-app work-card work-card--client" style="cursor: default;">
+            <div class="work-card-image work-card-image--logo">
+              <img src="assets/img/clients/gain-live-logo.png" alt="Gain Live Bangladesh client project logo" loading="lazy" width="1024" height="1024">
+              <span class="work-number">CLIENT</span>
             </div>
-            <div class="work-card-content" style="padding: 1.25rem;">
-              <div class="work-card-header" style="margin-bottom: 6px;">
-                <h3 class="work-title" style="font-size: 1.15rem; color: #fff; text-transform: uppercase;">Gain Live</h3>
-                <span class="work-arrow" style="color: #00eaff; font-size: 0.75rem; font-weight: bold; letter-spacing: 1px;">🇧🇩 BANGLADESH</span>
+            <div class="work-card-content">
+              <div class="work-card-header">
+                <h3 class="work-title">Gain Live</h3>
+                <span class="work-arrow">🇧🇩 BANGLADESH</span>
               </div>
-              <div style="color: #00eaff; font-size: 0.78rem; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 8px;">"PLAY SMART. WIN BIG."</div>
-              <p style="font-size: 0.84rem; color: rgba(225, 230, 240, 0.85); margin: 0 0 14px 0; line-height: 1.5;">
-                Custom gaming platform engineered for our Bangladesh client. Includes custom UI/UX design, real-time gaming mechanics, player telemetry systems, and responsive cross-device optimization.
-              </p>
+              <p class="work-desc">Custom gaming platform engineered for our Bangladesh client: UI/UX, real-time gaming mechanics, player telemetry and cross-device optimization.</p>
               <div class="work-meta">
                 <span class="skill-tag solid">GAIN LIVE</span>
                 <span class="skill-tag hollow">BANGLADESH CLIENT</span>
@@ -2131,11 +2141,10 @@
               </div>
             </div>
           </div>
-
-          <!-- Row 01: Mavericks Battlegrounds -->
+<!-- /motion:gainlive --><!-- Row 01: Mavericks Battlegrounds -->
           <a href="https://dharmikgohil.itch.io/mavericks-battlegrounds-the-war-zone" target="_blank" rel="noopener noreferrer" class="portfolio-item filter-app3d filter-productpc filter-product work-card">
             <div class="work-card-image">
-              <video autoplay loop muted playsinline alt="Mavericks Battlegrounds - Unity 3D FPS">
+              <video autoplay loop muted playsinline preload="metadata" aria-label="Mavericks Battlegrounds - Unity 3D FPS" poster="assets/img/portfolio/mavericks-battleground-thumbnail.jpg">
                 <source src="assets/img/portfolio/mavericks-battleground.mp4" type="video/mp4">
                 Your browser does not support the video tag.
               </video>
@@ -2176,7 +2185,7 @@
           <!-- Row 03: VR Architectural Tour -->
           <div class="portfolio-item filter-arvr filter-app3d filter-productpc work-card" style="cursor: default;">
             <div class="work-card-image">
-              <video autoplay loop muted playsinline alt="VR Architectural Tour - Unity Oculus VR Experience">
+              <video autoplay loop muted playsinline preload="metadata" aria-label="VR Architectural Tour - Unity Oculus VR Experience">
                 <source src="assets/img/portfolio/vr-architectural-tour.mp4" type="video/mp4">
                 Your browser does not support the video tag.
               </video>
@@ -2197,7 +2206,7 @@
           <!-- Row 04: AR Spatial Explorer -->
           <div class="portfolio-item filter-arvr filter-app3d filter-appmobile work-card" style="cursor: default;">
             <div class="work-card-image">
-              <video autoplay loop muted playsinline alt="AR Spatial Explorer - Unity AR Foundation Mobile">
+              <video autoplay loop muted playsinline preload="metadata" aria-label="AR Spatial Explorer - Unity AR Foundation Mobile">
                 <source src="assets/img/portfolio/ar-spatial-explorer.mp4" type="video/mp4">
                 Your browser does not support the video tag.
               </video>
@@ -2218,7 +2227,7 @@
           <!-- Row 05: Floppy Ball -->
           <a href="https://dharmikgohil.itch.io/floppy-bird" target="_blank" rel="noopener noreferrer" class="portfolio-item filter-app filter-appmobile filter-appsingleplayer work-card">
             <div class="work-card-image">
-              <video autoplay loop muted playsinline alt="Floppy Ball - Unity 2D Mobile Physics Game">
+              <video autoplay loop muted playsinline preload="metadata" aria-label="Floppy Ball - Unity 2D Mobile Physics Game">
                 <source src="assets/img/portfolio/floppy-ball.mp4" type="video/mp4">
                 Your browser does not support the video tag.
               </video>
@@ -2259,7 +2268,7 @@
           <!-- Row 07: Facade Simulator -->
           <a href="https://dharmikgohil.itch.io/facade" target="_blank" rel="noopener noreferrer" class="portfolio-item filter-app3d filter-appsingleplayer filter-productpc work-card">
             <div class="work-card-image">
-              <video autoplay loop muted playsinline alt="Facade Simulator - Unity 3D Simulation">
+              <video autoplay loop muted playsinline preload="metadata" aria-label="Facade Simulator - Unity 3D Simulation">
                 <source src="assets/img/facade/facade.mp4" type="video/mp4">
                 Your browser does not support the video tag.
               </video>
@@ -2281,7 +2290,7 @@
           <!-- Row 08: Hook Shot Physics -->
           <a href="https://dharmikgohil.itch.io/hook-shot" target="_blank" rel="noopener noreferrer" class="portfolio-item filter-app filter-appmobile filter-appsingleplayer work-card">
             <div class="work-card-image">
-              <video autoplay loop muted playsinline alt="Hook Shot Physics - Unity 2D Grappling Mechanic">
+              <video autoplay loop muted playsinline preload="metadata" aria-label="Hook Shot Physics - Unity 2D Grappling Mechanic" poster="assets/img/portfolio/hookshot-cover.webp">
                 <source src="assets/img/portfolio/hook-shot.mp4" type="video/mp4">
                 Your browser does not support the video tag.
               </video>
@@ -2303,7 +2312,7 @@
           <!-- Row 09: Just Divide -->
           <a href="https://dharmikgohil.itch.io/just-divide" target="_blank" rel="noopener noreferrer" class="portfolio-item filter-app filter-appmobile filter-appsingleplayer work-card">
             <div class="work-card-image">
-              <video autoplay loop muted playsinline alt="Just Divide - Unity 2D Math Puzzle Mobile">
+              <video autoplay loop muted playsinline preload="metadata" aria-label="Just Divide - Unity 2D Math Puzzle Mobile" poster="assets/img/portfolio/just-divide-cover.webp">
                 <source src="assets/img/portfolio/just-divide.mp4" type="video/mp4">
                 Your browser does not support the video tag.
               </video>
@@ -2326,55 +2335,29 @@
     </section>
 
     <!-- Global Client Showcase Section -->
-    <section id="clients" class="clients section scroll-reveal fade-up-element" style="animation-delay: 0.12s; border-bottom: 2px solid var(--ink) !important; background: linear-gradient(180deg, #070a14 0%, #0c101d 100%); padding: 80px 0;">
+    <!-- motion:clients -->
+<section id="clients" class="clients section" aria-labelledby="clients-h" style="border-bottom: 2px solid var(--ink) !important;">
       <div class="container section-title">
-        <h2 style="letter-spacing: 2px;">Global Client Showcase</h2>
-        <p>INTERNATIONAL CLIENT PROJECTS & ENTERPRISE PARTNERSHIPS</p>
+        <h2 id="clients-h">Global Client Showcase</h2>
+        <p>International client projects &amp; enterprise partnerships</p>
       </div>
-      <div class="container">
-        <div class="row align-items-center justify-content-center">
-          <div class="col-lg-10">
-            <div style="background: rgba(15, 21, 37, 0.75); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1px solid rgba(0, 234, 255, 0.3); border-radius: 18px; padding: 3rem 2.5rem; position: relative; overflow: hidden; box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4), inset 0 0 20px rgba(0, 234, 255, 0.05);">
-              
-              <!-- Subtle background glow -->
-              <div style="position: absolute; top: -50%; right: -20%; width: 350px; height: 350px; background: radial-gradient(circle, rgba(0, 234, 255, 0.12) 0%, transparent 70%); pointer-events: none; border-radius: 50%;"></div>
-              
-              <div class="row align-items-center">
-                <!-- Logo Box -->
-                <div class="col-md-5 text-center mb-4 mb-md-0" style="position: relative;">
-                  <div style="background: radial-gradient(circle, rgba(16, 24, 45, 0.95) 0%, rgba(9, 13, 24, 0.98) 100%); padding: 35px 25px; border-radius: 14px; border: 1px solid rgba(0, 234, 255, 0.25); display: inline-flex; align-items: center; justify-content: center; width: 100%; max-width: 320px; box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);">
-                    <img src="assets/img/clients/gain-live-logo.png" alt="Gain Live Bangladesh Client Logo" class="img-fluid" loading="lazy" width="1024" height="1024" style="max-height: 120px; width: auto; object-fit: contain; filter: drop-shadow(0 0 12px rgba(255, 255, 255, 0.3)); transition: transform 0.3s ease;">
-                  </div>
-                </div>
-                
-                <!-- Content Box -->
-                <div class="col-md-7 ps-md-4">
-                  <div style="display: inline-flex; align-items: center; gap: 8px; background: rgba(0, 234, 255, 0.1); border: 1px solid rgba(0, 234, 255, 0.3); color: #00eaff; font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; font-weight: 700; padding: 5px 12px; border-radius: 20px; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 14px;">
-                    <span style="font-size: 0.9rem;">🇧🇩</span> INTERNATIONAL CLIENT • BANGLADESH
-                  </div>
-                  
-                  <h3 style="font-family: var(--font-display); font-size: 2rem; color: #ffffff; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 4px; font-weight: 700;">Gain Live</h3>
-                  
-                  <div style="color: #00eaff; font-family: 'JetBrains Mono', monospace; font-weight: 700; font-size: 0.9rem; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 16px;">
-                    "PLAY SMART. WIN BIG."
-                  </div>
-                  
-                  <p style="color: rgba(230, 235, 245, 0.9); font-size: 0.92rem; line-height: 1.65; margin-bottom: 20px; font-weight: 400;">
-                    Custom gaming platform engineered for our Bangladesh client. Includes custom UI/UX design, real-time gaming mechanics, player telemetry systems, and responsive cross-device optimization.
-                  </p>
-                  
-                  <div class="d-flex flex-wrap gap-2">
-                    <span class="skill-tag solid" style="font-size: 0.72rem; padding: 4px 10px;">iGAMING PLATFORM</span>
-                    <span class="skill-tag hollow" style="font-size: 0.72rem; padding: 4px 10px;">REAL-TIME MECHANICS</span>
-                    <span class="skill-tag red-border" style="font-size: 0.72rem; padding: 4px 10px;">CROSS-DEVICE UI/UX</span>
-                  </div>
-                </div>
-              </div>
-            </div>
+      <article class="client-feature" data-reveal>
+        <div class="client-logo"><img src="assets/img/clients/gain-live-logo.png" alt="Gain Live Bangladesh client logo" width="1024" height="1024" loading="lazy"></div>
+        <div class="client-body">
+          <span class="client-badge">🇧🇩 International client &middot; Bangladesh</span>
+          <h3>Gain Live</h3>
+          <p class="client-tagline">&ldquo;Play smart. Win big.&rdquo;</p>
+          <p>Custom gaming platform engineered for our Bangladesh client. Includes custom UI/UX design, real-time gaming mechanics, player telemetry systems, and responsive cross-device optimization.</p>
+          <div class="d-flex flex-wrap gap-2">
+            <span class="skill-tag solid">iGAMING PLATFORM</span>
+            <span class="skill-tag hollow">REAL-TIME MECHANICS</span>
+            <span class="skill-tag red-border">CROSS-DEVICE UI/UX</span>
           </div>
+          <p class="client-cta"><a href="contact.html" class="cta-link">Start a similar project <span class="arrow">&rarr;</span></a></p>
         </div>
-      </div>
+      </article>
     </section>
+<!-- /motion:clients -->
 
     <!-- Explore Section - Technology Logo Loop -->
     <section id="explore" class="explore section scroll-reveal-scale">
@@ -2393,6 +2376,31 @@
         </div>
       </div>
     </section>
+    <!-- motion:orbit -->
+<section id="stack-orbit" class="orbit-section section" aria-labelledby="orbit-h" style="border-bottom: 2px solid var(--ink) !important;">
+      <div class="container section-title">
+        <h2 id="orbit-h">The Stack, In Orbit</h2>
+        <p>What I build with &middot; hover to pause &middot; tap a node to go deeper</p>
+      </div>
+      <div class="orbit-grid">
+        <div class="orbit-copy">
+          <p>Games and web products share a spine: real-time state, fast feedback and ruthless performance budgets. I work from the engine (Unity and C#) out to the network layer (Photon PUN, WebSockets) and up to the web stack (React, Node.js, MongoDB).</p>
+          <p>Each node on the diagram links to an article or topic hub where I explain how I use it on real projects.</p>
+          <ul>
+            <li><a href="blog/topics/unity-game-development.html"><i class="bi bi-controller"></i><span>Unity game development</span><i class="bi bi-arrow-right"></i></a></li>
+            <li><a href="blog/topics/xr-vr-ar-development.html"><i class="bi bi-badge-vr"></i><span>AR, VR &amp; XR development</span><i class="bi bi-arrow-right"></i></a></li>
+            <li><a href="blog/topics/multiplayer-game-development.html"><i class="bi bi-people-fill"></i><span>Multiplayer &amp; networking</span><i class="bi bi-arrow-right"></i></a></li>
+            <li><a href="services.html"><i class="bi bi-briefcase"></i><span>Services &amp; pricing</span><i class="bi bi-arrow-right"></i></a></li>
+          </ul>
+        </div>
+        <figure class="orbit" aria-label="Diagram of core technologies orbiting a core of XR, games and web">
+          <span class="orbit-pulse"></span><span class="orbit-pulse"></span><span class="orbit-pulse"></span>
+          <div class="orbit-ring r3"><div class="orbit-node" style="--a:20deg"><a class="orbit-chip" href="blog/react-vs-nextjs-which-to-choose.html"><i class="bi bi-code-slash"></i>React</a></div><div class="orbit-node" style="--a:92deg"><span class="orbit-chip">Node.js</span></div><div class="orbit-node" style="--a:164deg"><span class="orbit-chip">MongoDB</span></div><div class="orbit-node" style="--a:236deg"><a class="orbit-chip" href="blog/git-github-essential-commands.html">Git &amp; GitHub</a></div><div class="orbit-node" style="--a:308deg"><span class="orbit-chip">ERPNext</span></div></div><div class="orbit-ring r2"><div class="orbit-node" style="--a:45deg"><span class="orbit-chip"><i class="bi bi-braces"></i>C#</span></div><div class="orbit-node" style="--a:135deg"><a class="orbit-chip" href="blog/multiplayer-games-photon-unity.html">Photon PUN</a></div><div class="orbit-node" style="--a:225deg"><a class="orbit-chip" href="blog/getting-started-unity-xr.html">AR Foundation</a></div><div class="orbit-node" style="--a:315deg"><a class="orbit-chip" href="blog/lowxena-game-development-insights.html">WebSockets</a></div></div><div class="orbit-ring r1"><div class="orbit-node" style="--a:90deg"><a class="orbit-chip" href="blog/topics/unity-game-development.html"><i class="bi bi-controller"></i>Unity</a></div><div class="orbit-node" style="--a:210deg"><a class="orbit-chip" href="blog/topics/xr-vr-ar-development.html"><i class="bi bi-badge-vr"></i>XR</a></div><div class="orbit-node" style="--a:330deg"><a class="orbit-chip" href="blog/topics/multiplayer-game-development.html"><i class="bi bi-people-fill"></i>Multiplayer</a></div></div>
+          <div class="orbit-core"><span>XR<br>GAMES<br>WEB</span></div>
+        </figure>
+      </div>
+    </section>
+<!-- /motion:orbit -->
     <!-- /Explore Section -->
 
     <!-- About Section -->
@@ -2610,6 +2618,16 @@
         </div>
       </div>
     </section>
+    <!-- motion:process -->
+<section id="process" class="process section" aria-labelledby="process-h" style="border-bottom: 2px solid var(--ink) !important;">
+      <div class="container section-title">
+        <h2 id="process-h">How A Build Ships</h2>
+        <p>From brief to launch in four moves</p>
+      </div>
+      <ol class="pipeline"><li><h3>Discover</h3><p>Scope the platform, the audience and the single mechanic that has to feel great.</p><div class="tools"><span>Scope</span><span>Platform</span><span>Core loop</span></div></li><li><h3>Prototype</h3><p>A playable greybox early, so decisions are made on feel instead of slides.</p><div class="tools"><span>Greybox</span><span>Playtest</span><span>Iterate</span></div></li><li><h3>Build</h3><p>Unity and C# or the MERN stack, networked with Photon or WebSockets and profiled on real devices.</p><div class="tools"><span>Unity</span><span>MERN</span><span>Netcode</span></div></li><li><h3>Ship</h3><p>Store builds, WebGL or web deploys, then monitoring and post-launch fixes.</p><div class="tools"><span>Release</span><span>Monitor</span><span>Support</span></div></li></ol>
+      <p style="margin-top:2.2rem;font:700 11px/1.6 var(--font-mono);letter-spacing:.16em;text-transform:uppercase"><a href="contact.html" class="cta-link">Start a project <span class="arrow">&rarr;</span></a> &nbsp; <a href="services.html" class="cta-link">See services <span class="arrow">&rarr;</span></a> &nbsp; <a href="portfolio.html" class="cta-link">View portfolio <span class="arrow">&rarr;</span></a></p>
+    </section>
+<!-- /motion:process -->
 
     <section id="stats" class="stats section scroll-reveal-scale fade-up-element" style="animation-delay: 0.3s; border-bottom: 2px solid var(--ink) !important; padding: 1rem 0 !important;">
       <div class="container">
@@ -2695,6 +2713,33 @@
       </div>
     </section>
 
+    <!-- motion:journal -->
+<section id="journal" class="journal section" aria-labelledby="journal-h" style="border-bottom: 2px solid var(--ink) !important;">
+      <div class="container section-title">
+        <div class="journal-head"><div><h2 id="journal-h">Field Notes</h2><p>Latest articles on Unity, XR, multiplayer and full-stack</p></div><a class="journal-all" href="blog.html">All 16 articles &rarr;</a></div>
+      </div>
+      <ul class="topic-nav" aria-label="Blog topics" style="margin-top:1rem"><li><a href="blog/topics/unity-game-development.html"><i class="bi bi-controller"></i> Unity</a></li><li><a href="blog/topics/xr-vr-ar-development.html"><i class="bi bi-badge-vr"></i> XR</a></li><li><a href="blog/topics/multiplayer-game-development.html"><i class="bi bi-people-fill"></i> Multiplayer</a></li><li><a href="blog/topics/web-development.html"><i class="bi bi-code-slash"></i> Web</a></li><li><a href="blog/topics/hackathons-and-events.html"><i class="bi bi-trophy-fill"></i> Events</a></li><li><a href="blog/topics/career-and-learning.html"><i class="bi bi-mortarboard-fill"></i> Career</a></li></ul>
+      <div class="card-grid"><a class="post-card" href="blog/lowxena-game-development-insights.html">
+      <div class="thumb"><img src="assets/img/blog/lowxena/cover.jpg" alt="LowXena Premium Interactive Card Gaming Universe - Engineered by Lead Architect Dharmik Gohil" loading="lazy" decoding="async" width="640" height="360"></div>
+      <div class="body"><span class="tag">Multiplayer</span><h3>LOWXENA: Designing and Engineering a 3D Multiplayer Card Universe Where the Lowest Score Wins Everything</h3><p>Inside LowXena, a real-time multiplayer least-count card game: scoring logic, 3D felt table, React 19 front end and…</p>
+      <span class="foot">May 21, 2026 · 5 min read</span></div></a><a class="post-card" href="blog/getting-started-unity-game-development.html">
+      <div class="thumb"><img src="https://images.unsplash.com/photo-1556438064-2d7646166914?w=1200&amp;h=630&amp;fit=crop" alt="Getting Started with Unity Game Development - Beginner Guide by Dharmik Gohil" loading="lazy" decoding="async" width="640" height="360"></div>
+      <div class="body"><span class="tag">Unity</span><h3>Getting Started with Unity Game Development: A Beginner&#x27;s Complete Guide</h3><p>Learn Unity step by step: install the editor, understand GameObjects and components, write your first C# script, add…</p>
+      <span class="foot">Feb 20, 2026 · 8 min read</span></div></a><a class="post-card" href="blog/react-vs-nextjs-which-to-choose.html">
+      <div class="thumb"><img src="https://images.unsplash.com/photo-1633356122544-f134324a6cee?w=1200&amp;h=630&amp;fit=crop" alt="React vs Next.js Framework Comparison by Dharmik Gohil" loading="lazy" decoding="async" width="640" height="360"></div>
+      <div class="body"><span class="tag">Web</span><h3>React vs Next.js: Which Framework Should You Choose in 2026?</h3><p>React or Next.js? Compare rendering strategies, routing, SEO and when each makes sense, with a clear recommendation…</p>
+      <span class="foot">Feb 18, 2026 · 6 min read</span></div></a><a class="post-card" href="blog/multiplayer-games-photon-unity.html">
+      <div class="thumb"><img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?w=1200&amp;h=630&amp;fit=crop" alt="Building Multiplayer Games with Photon and Unity by Dharmik Gohil" loading="lazy" decoding="async" width="640" height="360"></div>
+      <div class="body"><span class="tag">Multiplayer</span><h3>Building Multiplayer Games with Photon &amp; Unity: A Complete Guide</h3><p>Build multiplayer Unity games with Photon PUN2: rooms and lobbies, player synchronization, RPCs, spawning, latency…</p>
+      <span class="foot">Feb 15, 2026 · 7 min read</span></div></a><a class="post-card" href="blog/git-github-essential-commands.html">
+      <div class="thumb"><img src="https://images.unsplash.com/photo-1618401471353-b98afee0b2eb?w=1200&amp;h=630&amp;fit=crop" alt="Git and GitHub Essential Commands Cheatsheet by Dharmik Gohil" loading="lazy" decoding="async" width="640" height="360"></div>
+      <div class="body"><span class="tag">Web</span><h3>Git &amp; GitHub Essential Commands: The Complete Developer Cheatsheet</h3><p>The Git and GitHub commands developers use daily: setup, staging, branching, merging and rebasing, remotes, stashing,…</p>
+      <span class="foot">Feb 12, 2026 · 7 min read</span></div></a><a class="post-card" href="blog/daiict-hackathon-ai-meeting-monitor.html">
+      <div class="thumb"><img src="assets/img/blog/daiict-hackathon/cover.jpg" alt="DAIICT Hackathon - AI Meeting Monitor App Cover" loading="lazy" decoding="async" width="640" height="360"></div>
+      <div class="body"><span class="tag">Events</span><h3>DAIICT Hackathon: Building an AI-Powered Meeting Monitor Application</h3><p>How our team built an AI meeting assistant at the DAIICT Hackathon in Gandhinagar: real-time transcription, summaries,…</p>
+      <span class="foot">Jan 23, 2026 · 5 min read</span></div></a></div>
+    </section>
+<!-- /motion:journal -->
     <section id="contact" class="contact section scroll-reveal fade-up-element" style="animation-delay: 0.4s; border-bottom: none !important;">
       <div class="container section-title">
         <h2>Initiate Dispatch</h2>
@@ -2749,7 +2794,19 @@
   </main>
 
   <!-- Newspaper Footline (Colophon) -->
-  <footer class="container">
+  <!-- motion:linkhub -->
+<div class="main">
+  <aside class="link-hub" aria-label="Site directory">
+    <div class="link-hub-grid">
+      <div><h2>Explore</h2><ul><li><a href="index.html">Home</a></li><li><a href="about.html">About Dharmik</a></li><li><a href="services.html">Services & pricing</a></li><li><a href="portfolio.html">Portfolio</a></li><li><a href="Achivemtn.html">Achievements</a></li><li><a href="blog.html">Blog</a></li><li><a href="contact.html">Contact & hire</a></li><li><a href="sitemap-page.html">HTML sitemap</a></li></ul></div>
+      <div><h2>Blog topics</h2><ul><li><a href="blog/topics/unity-game-development.html">Unity Game Development</a></li><li><a href="blog/topics/xr-vr-ar-development.html">AR, VR &amp; XR Development</a></li><li><a href="blog/topics/multiplayer-game-development.html">Multiplayer Game Development</a></li><li><a href="blog/topics/web-development.html">Web &amp; Full-Stack Development</a></li><li><a href="blog/topics/hackathons-and-events.html">Hackathons &amp; Tech Events</a></li><li><a href="blog/topics/career-and-learning.html">Career &amp; Learning</a></li></ul></div>
+      <div><h2>Latest articles</h2><ul><li><a href="blog/lowxena-game-development-insights.html">LOWXENA: Designing and Engineering a 3D…</a></li><li><a href="blog/getting-started-unity-game-development.html">Getting Started with Unity Game Development: A…</a></li><li><a href="blog/react-vs-nextjs-which-to-choose.html">React vs Next.js: Which Framework Should You…</a></li><li><a href="blog/multiplayer-games-photon-unity.html">Building Multiplayer Games with Photon &amp; Unity: A…</a></li><li><a href="blog/git-github-essential-commands.html">Git &amp; GitHub Essential Commands: The Complete…</a></li><li><a href="blog/daiict-hackathon-ai-meeting-monitor.html">DAIICT Hackathon: Building an AI-Powered Meeting…</a></li></ul></div>
+      <div><h2>Elsewhere</h2><ul><li><a href="https://dharmikgohil.itch.io/" target="_blank" rel="noopener">Games on itch.io</a></li><li><a href="https://lowxena.dharmikgohil.art/" target="_blank" rel="noopener">LowXena card game</a></li><li><a href="https://github.com/DharmikGohil013" target="_blank" rel="noopener">GitHub</a></li><li><a href="https://www.linkedin.com/in/dharmikgohil086/" target="_blank" rel="noopener">LinkedIn</a></li><li><a href="https://x.com/Dharmik086" target="_blank" rel="noopener">X / Twitter</a></li></ul></div>
+    </div>
+    <p class="link-hub-note">Dharmik Gohil is a Unity game developer and XR / full-stack engineer based in Surat, Gujarat, India, working remotely with studios and founders worldwide. <a href="services.html">See services</a> or <a href="contact.html">get in touch</a> for a free consultation.</p>
+  </aside></div>
+<!-- /motion:linkhub -->
+    <footer class="container">
     <div class="colophon-footer">
       <div class="colophon-sig">
         ESTABLISHED 2026 · THE DHARMIK GOHIL CHRONICLE · <span>DESIGNED WITH INK &amp; PAPER</span>
@@ -3953,7 +4010,10 @@
 
 
 
-  <script src="assets/js/global-multilingual.js" defer></script>
+  <!-- motion:script -->
+<script src="assets/js/motion.js" defer></script>
+<!-- /motion:script -->
+    <script src="assets/js/global-multilingual.js" defer></script>
 </body>
 
 </html>

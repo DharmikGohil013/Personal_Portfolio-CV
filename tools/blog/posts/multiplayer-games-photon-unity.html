@@ -1,0 +1,250 @@
+<p>Hey there! I'm <strong>Dharmik Gohil</strong>, and multiplayer game development is where I found my true passion. When I built <strong>Mavericks Battlegrounds</strong> — a multiplayer third-person shooter that was selected for CHARUSAT Expo 3.0 — I spent months learning Photon PUN2 networking from scratch. In this comprehensive guide, I'll share everything I learned about building real-time multiplayer games with Unity and Photon.</p>
+<blockquote>
+<p>"Multiplayer is the hardest thing you'll ever build in game development. But when you see two players interacting in real-time for the first time, the feeling is absolutely magical." — Dharmik Gohil</p>
+</blockquote>
+<h2>Why Photon PUN2?</h2>
+<p>There are several networking solutions for Unity — Netcode for GameObjects, Mirror, Fishnet, and Photon. Here's why I chose <strong>Photon PUN2</strong> (Photon Unity Networking 2):</p>
+<ul>
+<li><strong>Cloud-hosted servers:</strong> No need to manage your own game servers. Photon's cloud handles matchmaking, room management, and relay</li>
+<li><strong>Free tier:</strong> 20 CCU (Concurrent Users) for free — perfect for indie devs and prototypes</li>
+<li><strong>Cross-platform:</strong> Works on PC, mobile, console, and WebGL out of the box</li>
+<li><strong>Battle-tested:</strong> Used in commercial games with millions of players</li>
+<li><strong>Excellent documentation:</strong> Photon's docs and community forums are top-notch</li>
+</ul>
+<h2>Setting Up Photon PUN2</h2>
+<ol>
+<li><strong>Create a Photon account</strong> at <a href="https://www.photonengine.com/" rel="noopener" target="_blank">photonengine.com</a></li>
+<li><strong>Create a new Photon PUN application</strong> in the dashboard — you'll get an <strong>App ID</strong></li>
+<li><strong>Import PUN2 into Unity</strong> — search "PUN 2" in the Asset Store or via Package Manager</li>
+<li><strong>Enter your App ID</strong> in the PUN Wizard that appears after import</li>
+<li><strong>Configure server region</strong> — choose the closest to your target audience (I used Asia for Indian players)</li>
+</ol>
+<div class="code-label">C# — Connecting to Photon</div>
+<div class="code-block">using Photon.Pun;
+using Photon.Realtime;
+using UnityEngine;
+
+public class NetworkManager : MonoBehaviourPunCallbacks
+{
+    void Start()
+    {
+        // Connect to Photon cloud
+        PhotonNetwork.ConnectUsingSettings();
+        Debug.Log("Connecting to Photon...");
+    }
+
+    public override void OnConnectedToMaster()
+    {
+        Debug.Log("Connected to Master Server!");
+        // Now we can join or create rooms
+        PhotonNetwork.JoinLobby();
+    }
+
+    public override void OnJoinedLobby()
+    {
+        Debug.Log("Joined Lobby. Ready to " 
+                 + "create/join rooms.");
+    }
+}</div>
+<h2>Room Management: Creating and Joining Games</h2>
+<p>In Photon, a "Room" is a game session where players interact. Here is what I used in Mavericks Battlegrounds:</p>
+<div class="code-label">C# — Room Creation and Joining</div>
+<div class="code-block">public void CreateRoom(string roomName, int maxPlayers)
+{
+    RoomOptions options = new RoomOptions
+    {
+        MaxPlayers = (byte)maxPlayers,
+        IsVisible = true,
+        IsOpen = true,
+        // Custom properties for matchmaking
+        CustomRoomProperties = new ExitGames.Client
+            .Photon.Hashtable
+        {
+            { "map", "Dustbowl" },
+            { "mode", "TeamDeathmatch" }
+        },
+        CustomRoomPropertiesForLobby = 
+            new string[] { "map", "mode" }
+    };
+
+    PhotonNetwork.CreateRoom(roomName, options);
+}
+
+public void JoinRandomRoom()
+{
+    PhotonNetwork.JoinRandomRoom();
+}
+
+public override void OnJoinRandomFailed(
+    short returnCode, string message)
+{
+    // No room found — create a new one
+    CreateRoom("Room_" + Random.Range(1000, 9999), 8);
+}
+
+public override void OnJoinedRoom()
+{
+    Debug.Log("Joined room: " 
+             + PhotonNetwork.CurrentRoom.Name);
+    // Load the game scene for all players
+    if (PhotonNetwork.IsMasterClient)
+    {
+        PhotonNetwork.LoadLevel("GameScene");
+    }
+}</div>
+<h2>Player Synchronization</h2>
+<p>This is the core of multiplayer — keeping all players in sync. Photon offers two main approaches:</p>
+<h3>PhotonView &amp; PhotonTransformView</h3>
+<p>The simplest approach — add a <strong>PhotonView</strong> component to your player prefab, then add <strong>PhotonTransformView</strong> to sync position and rotation automatically.</p>
+<h3>IPunObservable (Custom Serialization)</h3>
+<p>For more control, implement the <strong>IPunObservable</strong> interface to send custom data:</p>
+<div class="code-label">C# — Custom Player Sync</div>
+<div class="code-block">public class PlayerSync : MonoBehaviourPun, 
+                           IPunObservable
+{
+    private Vector3 networkPosition;
+    private Quaternion networkRotation;
+    private float networkHealth;
+    public float lerpSpeed = 10f;
+
+    public void OnPhotonSerializeView(
+        PhotonStream stream, PhotonMessageInfo info)
+    {
+        if (stream.IsWriting)
+        {
+            // We own this player — send data
+            stream.SendNext(transform.position);
+            stream.SendNext(transform.rotation);
+            stream.SendNext(GetComponent&lt;PlayerHealth&gt;()
+                           .currentHealth);
+        }
+        else
+        {
+            // Network player — receive data
+            networkPosition = (Vector3)stream.ReceiveNext();
+            networkRotation = (Quaternion)stream
+                             .ReceiveNext();
+            networkHealth = (float)stream.ReceiveNext();
+        }
+    }
+
+    void Update()
+    {
+        if (!photonView.IsMine)
+        {
+            // Smoothly interpolate network player
+            transform.position = Vector3.Lerp(
+                transform.position, 
+                networkPosition, 
+                Time.deltaTime * lerpSpeed);
+            transform.rotation = Quaternion.Lerp(
+                transform.rotation, 
+                networkRotation, 
+                Time.deltaTime * lerpSpeed);
+        }
+    }
+}</div>
+<h2>Remote Procedure Calls (RPCs)</h2>
+<p>RPCs let you call functions on other players' machines. I used RPCs extensively in Mavericks Battlegrounds for shooting, damage, animations, and chat:</p>
+<div class="code-label">C# — RPC Examples</div>
+<div class="code-block">// Call this when a player shoots
+public void Shoot()
+{
+    // Execute locally first for responsiveness
+    SpawnBulletLocal();
+    
+    // Tell everyone else about the shot
+    photonView.RPC("RPC_Shoot", RpcTarget.Others, 
+        transform.position, transform.forward);
+}
+
+[PunRPC]
+void RPC_Shoot(Vector3 origin, Vector3 direction, 
+               PhotonMessageInfo info)
+{
+    // Calculate lag compensation
+    float lag = (float)(PhotonNetwork.Time 
+                       - info.SentServerTimestamp);
+    
+    // Spawn bullet with lag compensation
+    SpawnNetworkBullet(origin, direction, lag);
+}
+
+// Damage notification
+[PunRPC]
+void RPC_TakeDamage(float damage, string attackerName)
+{
+    currentHealth -= damage;
+    ShowDamageIndicator(attackerName);
+    
+    if (currentHealth &lt;= 0)
+    {
+        photonView.RPC("RPC_PlayerDied", 
+                       RpcTarget.All, attackerName);
+    }
+}</div>
+<div class="tip-box">
+<strong>💡 Dharmik's Tip:</strong> Always process actions locally first for instant feedback, then sync via RPCs. This is called "client-side prediction" and it makes your game feel responsive even with 100ms+ latency. I learned this after players complained about input lag in the first version of Mavericks Battlegrounds.
+                </div>
+<h2>Spawning Network Players</h2>
+<p>Use <strong>PhotonNetwork.Instantiate</strong> instead of regular <code>Instantiate</code> for network objects:</p>
+<div class="code-label">C# — Network Spawning</div>
+<div class="code-block">public void SpawnPlayer()
+{
+    // Prefab MUST be in a "Resources" folder
+    Vector3 spawnPoint = GetRandomSpawnPoint();
+    
+    GameObject player = PhotonNetwork.Instantiate(
+        "PlayerPrefab",    // Prefab name in Resources
+        spawnPoint,
+        Quaternion.identity
+    );
+    
+    // Set up local player camera
+    if (player.GetComponent&lt;PhotonView&gt;().IsMine)
+    {
+        player.GetComponent&lt;PlayerSetup&gt;()
+              .InitializeLocalPlayer();
+    }
+}</div>
+<h2>Handling Latency and Lag Compensation</h2>
+<p>This is the hardest part of multiplayer development. Here are the techniques I used in Mavericks Battlegrounds:</p>
+<ul>
+<li><strong>Client-Side Prediction:</strong> Process input immediately on the local client, then reconcile with server state</li>
+<li><strong>Interpolation:</strong> Smoothly move network players between received positions using <code>Vector3.Lerp</code></li>
+<li><strong>Lag Compensation:</strong> Use <code>PhotonMessageInfo.SentServerTimestamp</code> to account for network delay</li>
+<li><strong>Dead Reckoning:</strong> Predict where a player will be based on their last known velocity</li>
+<li><strong>Send Rate Optimization:</strong> Reduce serialization rate for distant objects (Photon default is 10 times/second)</li>
+</ul>
+<div class="warning-box">
+<strong>⚠️ Common Pitfall:</strong> Don't sync everything! Only sync what other players need to see. In Mavericks Battlegrounds, I initially synced every animation parameter and particle effect — the bandwidth usage was insane. Strip it down to position, rotation, and essential states only.
+                </div>
+<h2>Building a Lobby System</h2>
+<p>A good lobby system is crucial for player experience. Here's the architecture I built:</p>
+<ol>
+<li><strong>Main Menu:</strong> Connect to Photon on launch, show loading indicator</li>
+<li><strong>Lobby Screen:</strong> Display available rooms with player count, map, and game mode</li>
+<li><strong>Room Screen:</strong> Show connected players, ready status, team selection</li>
+<li><strong>Countdown:</strong> When all players are ready, Master Client starts the countdown</li>
+<li><strong>Game Load:</strong> Master Client calls <code>PhotonNetwork.LoadLevel()</code> to synchronize scene loading</li>
+</ol>
+<h2>Lessons from Mavericks Battlegrounds</h2>
+<p>Building <strong>Mavericks Battlegrounds</strong> — a multiplayer third-person shooter with team deathmatch — taught me invaluable lessons about netcode. Here are my biggest takeaways as <strong>Dharmik Gohil</strong>:</p>
+<ul>
+<li><strong>Test with real latency:</strong> Use Photon's built-in network simulation to add artificial lag during development</li>
+<li><strong>Master Client authority:</strong> Let the Master Client handle game state decisions (score, round end, spawns) to prevent cheating</li>
+<li><strong>Graceful disconnection:</strong> Handle players leaving mid-game gracefully — clean up their objects, redistribute roles</li>
+<li><strong>Optimize bandwidth:</strong> Compress data, reduce send rates, use delta compression for state</li>
+<li><strong>Playtest early:</strong> Network bugs only appear with real players. I organized LAN testing sessions at CHARUSAT with my classmates</li>
+</ul>
+<blockquote>
+<p>"The first time I saw four players running around my game world simultaneously, I literally jumped out of my chair. Multiplayer is hard, but the payoff is incredible. Start simple — make a multiplayer chat, then pong, then work your way up." — Dharmik Gohil</p>
+</blockquote>
+<h2>Next Steps</h2>
+<ul>
+<li>Explore <strong>Photon Fusion</strong> for tick-based networking (better for competitive games)</li>
+<li>Learn about <strong>dedicated servers</strong> vs relay servers for anti-cheat</li>
+<li>Implement <strong>matchmaking</strong> with Photon's custom properties and SQL filters</li>
+<li>Study <strong>Valve's networking model</strong> (Source Engine) for advanced lag compensation</li>
+</ul>
+

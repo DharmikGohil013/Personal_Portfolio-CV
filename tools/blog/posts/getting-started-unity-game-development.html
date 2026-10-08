@@ -1,0 +1,174 @@
+<p>Hey there! I'm <strong>Dharmik Gohil</strong>, a game developer and computer science student at CHARUSAT University. Unity has been my go-to engine for creating games — from <strong>Mavericks Battlegrounds</strong> (a multiplayer shooter) to smaller indie projects like <strong>Floppy Bird</strong> and <strong>Go Galaxy</strong>. In this guide, I'll walk you through everything you need to start your Unity game development journey from absolute zero.</p>
+<blockquote>
+<p>"Unity is the most versatile game engine out there. Whether you're making a 2D mobile game or a 3D multiplayer shooter, Unity has you covered. I started with zero knowledge, and now I've published multiple games — you can too!"</p>
+</blockquote>
+<h2>What is Unity and Why Choose It?</h2>
+<p>Unity is a cross-platform game engine developed by Unity Technologies. It supports over <strong>25+ platforms</strong> including Windows, macOS, Linux, Android, iOS, PlayStation, Xbox, Nintendo Switch, and WebGL. Here's why I (Dharmik Gohil) recommend Unity for beginners:</p>
+<ul>
+<li><strong>Free for students and indie devs:</strong> Unity Personal is completely free if you earn less than $100K/year in revenue</li>
+<li><strong>Massive community:</strong> Over 1.5 million monthly active creators. You'll find tutorials for literally everything</li>
+<li><strong>C# programming:</strong> Clean, beginner-friendly language compared to C++ (used in Unreal Engine)</li>
+<li><strong>Asset Store:</strong> Thousands of free and paid assets — 3D models, scripts, shaders, sound effects</li>
+<li><strong>2D and 3D:</strong> Unity handles both beautifully with dedicated toolsets for each</li>
+</ul>
+<h2>Step 1: Installing Unity</h2>
+<p>Let's get started with the installation process:</p>
+<ol>
+<li><strong>Download Unity Hub</strong> from <a href="https://unity.com/download" rel="noopener" target="_blank">unity.com/download</a> — Unity Hub is a management tool that lets you install different Unity versions and manage projects</li>
+<li><strong>Create a Unity ID</strong> — Sign up for free at id.unity.com</li>
+<li><strong>Install the latest LTS version</strong> — LTS (Long Term Support) versions are the most stable. As of 2026, I recommend <strong>Unity 6 LTS</strong></li>
+<li><strong>Add modules:</strong> During installation, add the modules for your target platforms (Android Build Support, iOS Build Support, WebGL, etc.)</li>
+<li><strong>Install Visual Studio</strong> or VS Code for C# code editing — Unity Hub can install Visual Studio Community automatically</li>
+</ol>
+<div class="tip-box">
+<strong>💡 Dharmik's Tip:</strong> Always use the LTS version for serious projects. I learned this the hard way when a beta update broke my Mavericks Battlegrounds project mid-development!
+                </div>
+<h2>Step 2: Understanding the Unity Editor Interface</h2>
+<p>When you first open Unity, the editor can feel overwhelming. Let me break down the key panels that I use every day:</p>
+<h3>Scene View</h3>
+<p>This is your visual workspace — a 3D/2D viewport where you place and arrange game objects. You can navigate using:</p>
+<ul>
+<li><strong>Right-click + WASD:</strong> Fly around the scene (FPS-style navigation)</li>
+<li><strong>Alt + Left-click:</strong> Orbit around a selected object</li>
+<li><strong>Scroll wheel:</strong> Zoom in and out</li>
+<li><strong>F key:</strong> Focus on a selected object</li>
+</ul>
+<h3>Game View</h3>
+<p>This shows what your camera sees — the actual player's perspective. Press <strong>Play</strong> to test your game directly in this view.</p>
+<h3>Hierarchy</h3>
+<p>A tree-structured list of every GameObject in your scene. Parent-child relationships make it easy to organize complex objects.</p>
+<h3>Inspector</h3>
+<p>When you select any GameObject, the Inspector shows all its components — Transform (position/rotation/scale), Renderer, Collider, Scripts, etc. This is where you tweak everything.</p>
+<h3>Project Window</h3>
+<p>Your file browser for all assets — scripts, textures, models, audio files. Keep it organized with folders!</p>
+<h2>Step 3: Core Concepts Every Beginner Must Know</h2>
+<h3>GameObjects &amp; Components</h3>
+<p>Everything in Unity is a <strong>GameObject</strong>. A player, an enemy, a light, a camera — all GameObjects. What makes them special are their <strong>Components</strong>:</p>
+<ul>
+<li><strong>Transform:</strong> Every GameObject has this — position, rotation, and scale</li>
+<li><strong>Renderer:</strong> Makes the object visible (MeshRenderer for 3D, SpriteRenderer for 2D)</li>
+<li><strong>Collider:</strong> Defines the physical shape for collision detection</li>
+<li><strong>Rigidbody:</strong> Adds physics — gravity, forces, velocity</li>
+<li><strong>Scripts:</strong> Your custom C# code that controls behavior</li>
+</ul>
+<h3>Prefabs</h3>
+<p>Prefabs are reusable templates. Create a bullet once, save it as a prefab, and instantiate hundreds of copies at runtime. When you update the prefab, all instances update. I used prefabs extensively in Mavericks Battlegrounds for network-spawned players and projectiles.</p>
+<h2>Step 4: Writing Your First C# Script</h2>
+<p>Right-click in the Project window → Create → C# Script. Name it "PlayerMovement". Here's a basic movement script:</p>
+<div class="code-label">C# — PlayerMovement.cs</div>
+<div class="code-block">using UnityEngine;
+
+public class PlayerMovement : MonoBehaviour
+{
+    public float moveSpeed = 5f;
+    public float jumpForce = 10f;
+    private Rigidbody rb;
+    private bool isGrounded;
+
+    void Start()
+    {
+        rb = GetComponent&lt;Rigidbody&gt;();
+    }
+
+    void Update()
+    {
+        // Horizontal movement
+        float moveX = Input.GetAxis("Horizontal");
+        float moveZ = Input.GetAxis("Vertical");
+        
+        Vector3 movement = transform.right * moveX 
+                         + transform.forward * moveZ;
+        transform.position += movement * moveSpeed 
+                           * Time.deltaTime;
+
+        // Jump
+        if (Input.GetKeyDown(KeyCode.Space) &amp;&amp; isGrounded)
+        {
+            rb.AddForce(Vector3.up * jumpForce, 
+                       ForceMode.Impulse);
+        }
+    }
+
+    void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Ground"))
+            isGrounded = true;
+    }
+
+    void OnCollisionExit(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Ground"))
+            isGrounded = false;
+    }
+}</div>
+<p>Let me explain the key Unity lifecycle methods I used above:</p>
+<ul>
+<li><strong>Start():</strong> Called once when the script first loads — perfect for initialization</li>
+<li><strong>Update():</strong> Called every frame — input handling, movement, game logic goes here</li>
+<li><strong>OnCollisionEnter/Exit:</strong> Called when physics collisions happen</li>
+</ul>
+<div class="warning-box">
+<strong>⚠️ Common Mistake:</strong> Don't forget to attach your script to a GameObject! The script won't run just by existing in your project folder. Drag it onto the GameObject in the Inspector, or use Add Component.
+                </div>
+<h2>Step 5: Working with Physics</h2>
+<p>Unity's physics engine (PhysX for 3D, Box2D for 2D) handles gravity, collisions, and forces automatically. Here's what you need:</p>
+<ol>
+<li><strong>Add a Rigidbody</strong> component to any object that should be affected by physics</li>
+<li><strong>Add a Collider</strong> (BoxCollider, SphereCollider, CapsuleCollider, or MeshCollider) to define the shape</li>
+<li><strong>Set mass, drag, and angular drag</strong> for realistic behavior</li>
+<li><strong>Use layers and collision matrix</strong> to control what collides with what</li>
+</ol>
+<div class="tip-box">
+<strong>💡 Dharmik's Tip:</strong> For performance, always use primitive colliders (Box, Sphere, Capsule) instead of MeshColliders. In my game Mavericks Battlegrounds, switching from MeshColliders to compound primitive colliders gave me a 30% FPS boost on mobile.
+                </div>
+<h2>Step 6: Creating a Simple 2D Game</h2>
+<p>Let's build a quick 2D platformer. Here are the steps I follow:</p>
+<ol>
+<li>Create a new 2D project from Unity Hub</li>
+<li>Import sprite assets (or use Unity's free 2D sprites)</li>
+<li>Create a Tilemap for your level (GameObject → 2D Object → Tilemap)</li>
+<li>Add a Player sprite with Rigidbody2D and BoxCollider2D</li>
+<li>Write a 2D movement script using <code>Input.GetAxis</code> and <code>Rigidbody2D.velocity</code></li>
+<li>Add platforms with TilemapCollider2D</li>
+<li>Create a simple camera follow script</li>
+<li>Add collectibles, enemies, and a win condition</li>
+</ol>
+<h2>Step 7: Building and Exporting Your Game</h2>
+<p>Once your game is ready, it's time to build! Go to <strong>File → Build Settings</strong>:</p>
+<ul>
+<li><strong>PC (Windows/Mac/Linux):</strong> The easiest — just select your platform and click Build</li>
+<li><strong>Android:</strong> Install Android SDK/NDK via Unity Hub, set up player settings (package name, minimum API level, keystore for signing)</li>
+<li><strong>WebGL:</strong> Great for browser games — builds to HTML5/JavaScript. I publish many prototypes as WebGL on itch.io</li>
+<li><strong>iOS:</strong> Requires a Mac with Xcode for the final build</li>
+</ul>
+<h2>Step 8: Essential Unity Packages and Tools</h2>
+<p>These are the packages I use in almost every project:</p>
+<ul>
+<li><strong>Cinemachine:</strong> Smart camera system — saves hours of camera scripting</li>
+<li><strong>Input System (New):</strong> Modern input handling for keyboard, gamepad, and touch</li>
+<li><strong>TextMeshPro:</strong> Superior text rendering — always use this instead of legacy UI Text</li>
+<li><strong>ProBuilder:</strong> Level design and prototyping directly inside Unity</li>
+<li><strong>Photon PUN2:</strong> For multiplayer networking (I covered this in detail in my Photon tutorial)</li>
+<li><strong>DOTween:</strong> Powerful tweening library for animations</li>
+</ul>
+<h2>My Personal Game Development Journey</h2>
+<p>I'm <strong>Dharmik Gohil</strong>, and I started learning Unity during my second year of B.Tech at <strong>CHARUSAT University</strong>. My first game was a simple Flappy Bird clone ("Floppy Bird") — it was terrible, but it taught me the fundamentals. From there, I progressed to:</p>
+<ul>
+<li><strong>Facade:</strong> A 3D puzzle game exploring Unity's lighting and post-processing</li>
+<li><strong>Go Galaxy:</strong> A space shooter that taught me object pooling and particle systems</li>
+<li><strong>Drone Training:</strong> A VR training simulator using Unity XR Toolkit</li>
+<li><strong>Mavericks Battlegrounds:</strong> A full multiplayer shooter with Photon PUN2, which was selected for CHARUSAT Expo 3.0</li>
+</ul>
+<p>Each project taught me something new. The best way to learn Unity is to <strong>build projects</strong> — not just watch tutorials.</p>
+<h2>Recommended Learning Resources</h2>
+<ul>
+<li><strong>Unity Learn:</strong> Free official tutorials at learn.unity.com</li>
+<li><strong>Brackeys (YouTube):</strong> The most popular Unity tutorial channel (retired but playlist is gold)</li>
+<li><strong>Code Monkey (YouTube):</strong> Advanced Unity tutorials with real projects</li>
+<li><strong>Unity Documentation:</strong> Always keep it open — docs.unity3d.com</li>
+<li><strong>Game Jams:</strong> Join Ludum Dare or GMTK Game Jam to learn under pressure</li>
+</ul>
+<blockquote>
+<p>"The best game engine is the one you ship a game with. Don't get stuck in tutorial hell — start building, make mistakes, ship something. That's how I went from a complete beginner to having my game showcased at a university expo." — Dharmik Gohil</p>
+</blockquote>
+
