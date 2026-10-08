@@ -8,6 +8,7 @@ User-agent: *
 Allow: /
 Disallow: /assets/vendor/
 Disallow: /forms/
+Disallow: /tools/
 Disallow: *.py
 Disallow: *.md
 Disallow: /loader-test.html

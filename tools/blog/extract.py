@@ -2,17 +2,18 @@
 
 Output: tools/blog/posts/<slug>.html (clean body fragment, headings promoted one
 level so the page <h1> is the only h1) and tools/blog/extracted.json (title/cover).
-Run from the repository root. Reads the legacy pages from git HEAD so it is
-idempotent even after build.py has regenerated blog/*.html.
+Run from the repository root. Reads the legacy pages from the pre-migration commit
+(LEGACY_REV) so it still works after build.py has regenerated blog/*.html.
 """
 import json, os, re, subprocess, sys
 from bs4 import BeautifulSoup, NavigableString
 
+LEGACY_REV = 'e4b4507'
 ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..'))
 OUT = os.path.join(ROOT, 'tools', 'blog', 'posts')
 os.makedirs(OUT, exist_ok=True)
 
-slugs = subprocess.check_output(['git', 'ls-tree', '--name-only', 'HEAD', 'blog/'], cwd=ROOT, text=True).split()
+slugs = subprocess.check_output(['git', 'ls-tree', '--name-only', LEGACY_REV, 'blog/'], cwd=ROOT, text=True).split()
 meta = {}
 PROMOTE = {'h3': 'h2', 'h4': 'h3', 'h5': 'h4', 'h6': 'h5'}
 
@@ -20,7 +21,7 @@ for path in slugs:
     if not path.endswith('.html'):
         continue
     slug = os.path.basename(path)[:-5]
-    raw = subprocess.check_output(['git', 'show', 'HEAD:' + path], cwd=ROOT).decode('utf-8', 'replace')
+    raw = subprocess.check_output(['git', 'show', LEGACY_REV + ':' + path], cwd=ROOT).decode('utf-8', 'replace')
     soup = BeautifulSoup(raw, 'html.parser')
     art = soup.select_one('article.article')
     title = art.select_one('h2.title').get_text(' ', strip=True)
