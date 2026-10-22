@@ -147,6 +147,7 @@ h1, h2, h3, h4, h5, h6 {
   text-align: left !important;
 }
 
+.section-title h1,
 .section-title h2 {
   font-family: var(--font-display) !important;
   font-size: clamp(3rem, 6vw, 4.5rem) !important;
@@ -195,7 +196,8 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 700;
 }
 
-.masthead-main h1 {
+.masthead-main h1,
+.masthead-main .masthead-brand {
   font-family: var(--font-display) !important;
   font-size: clamp(4.5rem, 12vw, 9.5rem) !important;
   text-align: center;
@@ -1595,7 +1597,8 @@ h1, h2, h3, h4, h5, h6 {
     border: 2px solid var(--ink) !important;
   }
   
-  .masthead-main h1 {
+  .masthead-main h1,
+  .masthead-main .masthead-brand {
     font-size: 3.2rem !important; /* Cap h1 font size strictly to prevent breaking */
   }
   
@@ -1822,6 +1825,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* --- 8. Section Title Depth Parallax smoothing --- */
+.section-title h1,
 .section-title h2 {
   will-change: transform;
   transition: transform 0.05s linear;
@@ -1863,6 +1867,7 @@ h1, h2, h3, h4, h5, h6 {
   }
 
   .parallax-layer,
+  .section-title h1,
   .section-title h2 {
     transform: none !important;
   }
