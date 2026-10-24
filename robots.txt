@@ -1,27 +1,9 @@
-# =====================================================================
-# ROBOTS.TXT — DHARMIK GOHIL | FREELANCE GAME DEVELOPER & UNITY EXPERT
-# WEBSITE: https://dharmikgohil.art
-# OPTIMISED: April 2026
-# =====================================================================
-
+# Allow search engines to render public pages and assets.
 User-agent: *
 Allow: /
-Disallow: /assets/vendor/
 Disallow: /forms/
 Disallow: /tools/
-Disallow: *.py
-Disallow: *.md
-Disallow: /loader-test.html
-Disallow: /premium-loader-template.html
-Disallow: /dome-gallery-demo.html
-Disallow: /dome-gallery-diagnostic.html
-Disallow: /sitemap-backup.xml
+Disallow: /*.py$
+Disallow: /*.md$
 
-# Allow important assets
-Allow: /assets/img/
-Allow: /assets/css/
-Allow: /assets/js/
-
-# Sitemaps
 Sitemap: https://dharmikgohil.art/sitemap.xml
-Sitemap: https://dharmikgohil.art/image-sitemap.xml

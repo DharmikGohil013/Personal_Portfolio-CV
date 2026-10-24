@@ -1,0 +1,5 @@
+.profile-answers { margin-block: 3rem; padding-block: 2rem; border-block: 1px solid currentColor; }
+.profile-answers h2 { font-size: clamp(1.5rem, 4vw, 2.3rem); }
+.profile-answers h3 { font-size: 1.15rem; margin-top: 1.5rem; }
+.profile-answers p { max-width: 75ch; line-height: 1.75; }
+.profile-answers a { text-decoration: underline; text-underline-offset: .2em; }
