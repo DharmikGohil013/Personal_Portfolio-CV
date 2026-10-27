@@ -7,6 +7,9 @@ To add a post: drop <slug>.html into tools/blog/posts/, add an entry to POSTS
 
 SITE = 'https://dharmikgohil.art'
 TODAY = '2026-10-08'
+# Editorial revision date of the current articles. Change a post's own `modified`
+# field when its content changes; running the builder alone is not a revision.
+LAST_EDITORIAL_UPDATE = '2026-10-08'
 
 TOPICS = {
     'unity-game-development': {

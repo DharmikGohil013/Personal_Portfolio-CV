@@ -16,7 +16,7 @@ from bs4 import BeautifulSoup, NavigableString
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.abspath(os.path.join(HERE, '..', '..'))
 sys.path.insert(0, HERE)
-from content import SITE, TODAY, TOPICS, POSTS  # noqa: E402
+from content import SITE, TODAY, LAST_EDITORIAL_UPDATE, TOPICS, POSTS  # noqa: E402
 
 EXTRACTED = json.load(open(os.path.join(HERE, 'extracted.json'), encoding='utf-8'))
 esc = html.escape
@@ -364,7 +364,7 @@ def render_post(slug, bodies):
     trail = [('Home', SITE + '/'), ('Blog', SITE + '/blog.html'), (topic['name'], topic_url(p['topic'])), (title, url)]
     ld = {'@context': 'https://schema.org', '@graph': [
         {'@type': 'BlogPosting', '@id': url + '#article', 'headline': trunc(title, 110), 'description': p['description'],
-         'image': [cover_abs], 'datePublished': p['date'], 'dateModified': TODAY, 'inLanguage': 'en',
+         'image': [cover_abs], 'datePublished': p['date'], 'dateModified': p.get('modified', max(p['date'], LAST_EDITORIAL_UPDATE)), 'inLanguage': 'en',
          'author': {k: v for k, v in PERSON.items()}, 'publisher': PUBLISHER,
          'mainEntityOfPage': {'@type': 'WebPage', '@id': url}, 'isPartOf': {'@type': 'Blog', '@id': SITE + '/blog.html#blog', 'name': 'Dharmik Gohil Blog', 'url': SITE + '/blog.html'},
          'articleSection': topic['name'], 'keywords': ', '.join(p['tags']), 'wordCount': p['words'], 'timeRequired': f'PT{p["minutes"]}M',
@@ -373,7 +373,7 @@ def render_post(slug, bodies):
         {'@type': 'FAQPage', '@id': url + '#faq', 'mainEntity': [
             {'@type': 'Question', 'name': q, 'acceptedAnswer': {'@type': 'Answer', 'text': a}} for q, a in p['faqs']]},
     ]}
-    extra = (f'<meta property="article:published_time" content="{p["date"]}T00:00:00+05:30"><meta property="article:modified_time" content="{TODAY}T00:00:00+05:30">'
+    extra = (f'<meta property="article:published_time" content="{p["date"]}T00:00:00+05:30"><meta property="article:modified_time" content="{p.get("modified", max(p["date"], LAST_EDITORIAL_UPDATE))}T00:00:00+05:30">'
              f'<meta property="article:author" content="https://www.linkedin.com/in/dharmikgohil086/"><meta property="article:section" content="{esc(topic["name"])}">'
              + ''.join(f'<meta property="article:tag" content="{esc(t)}">' for t in p['tags'])
              + f'<meta name="keywords" content="{esc(", ".join(p["tags"] + [topic["name"], "Dharmik Gohil"]))}">'
@@ -404,7 +404,7 @@ def render_post(slug, bodies):
             <ul class="post-meta">
               <li><i class="bi bi-person"></i><a href="{prefix}about.html" rel="author">Dharmik Gohil</a></li>
               <li><i class="bi bi-calendar3"></i><time datetime="{p['date']}" itemprop="datePublished">{fmt_date(p['date'])}</time></li>
-              <li><i class="bi bi-arrow-repeat"></i>Updated <time datetime="{TODAY}" itemprop="dateModified">{fmt_date(TODAY)}</time></li>
+              <li><i class="bi bi-arrow-repeat"></i>Updated <time datetime="{p.get('modified', max(p['date'], LAST_EDITORIAL_UPDATE))}" itemprop="dateModified">{fmt_date(p.get('modified', max(p['date'], LAST_EDITORIAL_UPDATE)))}</time></li>
               <li><i class="bi bi-clock"></i>{p['minutes']} min read</li>
             </ul>
           </header>
@@ -516,7 +516,7 @@ def render_index(prefix=''):
         <span class="post-kicker"><i class="bi bi-rss-fill"></i> Field notes</span>
         <h1 class="post-title" data-kinetic>Game Dev Blog &amp; Insights</h1>
         <p class="post-deck">Unity, multiplayer, XR and full-stack lessons from shipped projects, plus honest write-ups from hackathons and tech festivals.</p>
-        <span class="hub-count">{len(allp)} articles · {len(TOPICS)} topics · updated {fmt_date(TODAY)}</span>
+        <span class="hub-count">{len(allp)} articles · {len(TOPICS)} topics · updated {fmt_date(max(POSTS[s].get('modified', max(POSTS[s]['date'], LAST_EDITORIAL_UPDATE)) for s in allp))}</span>
       </header>
       <ul class="topic-nav" aria-label="Blog topics">{nav}</ul>
       <a class="post-card" href="blog/{feat}.html" style="margin-bottom:1.6rem;flex-direction:row;flex-wrap:wrap">
@@ -533,8 +533,7 @@ def render_index(prefix=''):
 
 # ----------------------------------------------------------------- sitemap / llms.txt / feed
 def update_sitemap():
-    """Rewrite sitemap.xml as ONE valid document: keep the page entries, regenerate blog entries,
-    drop URLs whose files do not exist, and refresh lastmod for pages touched by this build."""
+    """Keep canonical page entries and regenerate blog URLs with editorial dates."""
     path = os.path.join(ROOT, 'sitemap.xml')
     xml = open(path, encoding='utf-8').read()
     xml = xml[:xml.index('</urlset>')]          # the legacy file had a second document appended
@@ -543,7 +542,6 @@ def update_sitemap():
     body = re.sub(r'<!--.*?-->', '', body, flags=re.S)
     entries = re.findall(r'<url>.*?</url>', body, flags=re.S)
     keep, dropped = [], []
-    touched = {'', '/', '/index.html', '/blog.html', '/about.html', '/services.html', '/portfolio.html', '/Achivemtn.html', '/contact.html'}
     seen = set()
     for e in entries:
         loc = re.search(r'<loc>([^<]*)</loc>', e).group(1)
@@ -554,16 +552,16 @@ def update_sitemap():
         if rel not in ('', '/') and rel.endswith('.html') and not os.path.exists(os.path.join(ROOT, rel.lstrip('/'))):
             dropped.append(rel)
             continue
-        if rel in touched:
-            e = re.sub(r'(<lastmod>)[^<]*', r'\g<1>' + TODAY, e, count=1)
+        e = re.sub(r'\s*<(lastmod|priority|changefreq)>[^<]*</\1>', '', e)
         keep.append('  ' + e)
     gen = []
     nl = '\n'
     for t in TOPICS:
-        gen.append(f'  <url>{nl}    <loc>{topic_url(t)}</loc>{nl}    <lastmod>{TODAY}</lastmod>{nl}    <changefreq>weekly</changefreq>{nl}    <priority>0.8</priority>{nl}  </url>')
+        updated = max(POSTS[s].get('modified', max(POSTS[s]['date'], LAST_EDITORIAL_UPDATE)) for s in TOPICS[t]['posts'])
+        gen.append(f'  <url>{nl}    <loc>{topic_url(t)}</loc>{nl}    <lastmod>{updated}</lastmod>{nl}  </url>')
     for s in sorted(POSTS, key=lambda s: POSTS[s]['date'], reverse=True):
         img = abs_url(EXTRACTED[s]['cover'])
-        gen.append(f'  <url>{nl}    <loc>{post_url(s)}</loc>{nl}    <lastmod>{TODAY}</lastmod>{nl}    <changefreq>monthly</changefreq>{nl}    <priority>0.7</priority>{nl}'
+        gen.append(f'  <url>{nl}    <loc>{post_url(s)}</loc>{nl}    <lastmod>{POSTS[s].get("modified", max(POSTS[s]["date"], LAST_EDITORIAL_UPDATE))}</lastmod>{nl}'
                    f'    <image:image><image:loc>{esc(img)}</image:loc><image:title>{esc(EXTRACTED[s]["title"])}</image:title></image:image>{nl}  </url>')
     out = (head.rstrip() + nl + nl + (nl + nl).join(keep) + nl + nl + '  <!-- BLOG: topic hubs + articles (generated by tools/blog/build.py) -->' + nl
            + nl.join(gen) + nl + '</urlset>' + nl)
