@@ -42,6 +42,7 @@
   // Set Google Translate Cookie and trigger translation
   function setLanguage(langCode) {
     if (!langCode) return;
+    if (langCode !== 'en') loadGoogleTranslateScript();
     var gtCode = langCode;
     if (gtCode === 'en' || gtCode === 'en-US' || gtCode === 'en-GB' || gtCode === 'en-CA' || gtCode === 'en-AU' || gtCode === 'en-IN') {
       gtCode = 'en';
@@ -105,6 +106,8 @@
     var found = ALL_LANGUAGES.find(function (l) { return l.code === langCode; });
     var label = (found ? found.code : langCode).toUpperCase();
     document.querySelectorAll('.lang-current').forEach(function (el) { el.textContent = label; });
+    var floatBtn = document.getElementById('globalLangFloatingBtn');
+    if (floatBtn) floatBtn.setAttribute('aria-label', label + ': Change language');
     document.querySelectorAll('.global-lang-item').forEach(function (item) {
       var on = item.getAttribute('data-code') === langCode;
       item.classList.toggle('active', on);
@@ -149,7 +152,7 @@
       floatBtn.id = 'globalLangFloatingBtn';
       floatBtn.type = 'button';
       floatBtn.className = 'global-lang-floating-btn';
-      floatBtn.setAttribute('aria-label', 'Change language');
+      floatBtn.setAttribute('aria-label', 'EN: Change language');
       floatBtn.setAttribute('aria-haspopup', 'dialog');
       floatBtn.innerHTML = GLOBE_SVG + '<span class="lang-current">EN</span>';
       floatBtn.onclick = openLanguageModal;
@@ -230,6 +233,7 @@
 
   var lastFocus = null;
   function openLanguageModal() {
+    loadGoogleTranslateScript();
     var overlay = document.getElementById('globalLangModalOverlay');
     if (!overlay) return;
     lastFocus = document.activeElement;
@@ -256,11 +260,11 @@
 
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', function() {
-      loadGoogleTranslateScript();
+      if (currentLangCode() !== 'en') loadGoogleTranslateScript();
       initLanguageUI();
     });
   } else {
-    loadGoogleTranslateScript();
+    if (currentLangCode() !== 'en') loadGoogleTranslateScript();
     initLanguageUI();
   }
 

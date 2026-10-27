@@ -3,7 +3,7 @@
 
 <head>
   <meta name="google-adsense-account" content="ca-pub-4658801537271443">
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4658801537271443" crossorigin="anonymous"></script>
+  <!-- Auto ads are loaded after the initial page is usable. -->
   <!-- Google Analytics DISABLED for performance -->
   <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-GE7F8SZSJ9"></script> -->
   <script>
@@ -61,7 +61,7 @@
   <meta itemprop="image" content="https://dharmikgohil.art/assets/img/dharmik-profile-photo-2026.jpg">
   <meta itemprop="thumbnailUrl" content="https://dharmikgohil.art/assets/img/dharmik-profile-photo-2026.jpg">
   <link rel="image_src" href="https://dharmikgohil.art/assets/img/dharmik-profile-photo-2026.jpg">
-  <link rel="preload" as="image" href="assets/img/dharmik-profile-photo-2026.jpg" fetchpriority="high">
+  <link rel="preload" as="image" href="assets/img/dharmik-profile-photo-2026-480.webp" fetchpriority="high">
 
   <meta name="topic" content="Dharmik Gohil Game Developer Full Stack Developer Photo">
   
@@ -116,8 +116,6 @@
   <!-- AOS CSS DISABLED for performance -->
   <!-- <link rel="preload" href="assets/vendor/aos/aos.css" as="style" onload="this.onload=null;this.rel='stylesheet'"> -->
   <!-- <noscript><link href="assets/vendor/aos/aos.css" rel="stylesheet"></noscript> -->
-  <link rel="preload" href="assets/vendor/swiper/swiper-bundle.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet"></noscript>
   <link rel="preload" href="assets/vendor/glightbox/css/glightbox.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet"></noscript>
   <link rel="preload" href="assets/css/dome-gallery.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
@@ -263,8 +261,8 @@
       </div>
       <div class="masthead-nav-bar">
         <!-- Brutalist Hamburger Menu Button -->
-        <button class="mobile-menu-toggle-brutalist" id="menuToggleBtn" aria-label="Toggle Navigation">
-          MENU ☰
+        <button class="mobile-menu-toggle-brutalist" id="menuToggleBtn" aria-label="Menu">
+          MENU <span aria-hidden="true">☰</span>
         </button>
         <nav class="nav-links">
           <a href="index.html" class="active">HOME</a> · 
@@ -337,7 +335,7 @@
         
         <div class="col-md-5">
           <div class="hero-photo-container parallax-layer" data-speed="0.06">
-            <img src="assets/img/dharmik-profile-photo-2026.jpg" alt="Dharmik Gohil - Game Developer and Unity XR Expert" width="1200" height="1200">
+            <img src="assets/img/dharmik-profile-photo-2026-480.webp" alt="Dharmik Gohil - Game Developer and Unity XR Expert" width="480" height="480" fetchpriority="high" decoding="async">
           </div>
           <p class="hero-photo-caption">
             FIG 01. DHARMIK GOHIL, XR ARCHITECT & BUILDER. SHOT IN GUJARAT, INDIA. EST. 2026 EDITION.
@@ -373,7 +371,7 @@
           <!-- motion:gainlive -->
 <div class="portfolio-item filter-client filter-product filter-app3d filter-appmobile filter-app work-card work-card--client" style="cursor: default;">
             <div class="work-card-image work-card-image--logo">
-              <img src="assets/img/clients/gain-live-logo.png" alt="Gain Live Bangladesh client project logo" loading="lazy" width="1024" height="1024">
+              <img src="assets/img/clients/gain-live-logo-160.webp" alt="Gain Live Bangladesh client project logo" loading="lazy" width="1024" height="1024">
               <span class="work-number">CLIENT</span>
             </div>
             <div class="work-card-content">
@@ -394,7 +392,7 @@
           <!-- motion:ludoui -->
           <a href="ludo-game-ui.html" class="portfolio-item filter-client filter-app filter-appmobile filter-product work-card work-card--client">
             <div class="work-card-image" style="background: #0f172a; overflow: hidden; position: relative;">
-              <img src="assets/img/portfolio/ludo-game-ui-thumbnail.webp" alt="Ludo Game UI Design - Freelance Work in Figma by Dharmik Gohil" loading="lazy" width="800" height="450" style="width: 100%; height: 100%; object-fit: cover;">
+              <img src="assets/img/portfolio/ludo-game-ui-thumbnail-720.webp" alt="Ludo Game UI Design - Freelance Work in Figma by Dharmik Gohil" loading="lazy" width="800" height="450" style="width: 100%; height: 100%; object-fit: cover;">
               <span class="work-number">CLIENT</span>
             </div>
             <div class="work-card-content">
@@ -413,8 +411,8 @@
           <!-- /motion:ludoui --><!-- Row 01: Mavericks Battlegrounds -->
           <a href="game4.html" class="portfolio-item filter-app3d filter-productpc filter-product work-card">
             <div class="work-card-image">
-              <video autoplay loop muted playsinline preload="metadata" aria-label="Mavericks Battlegrounds - Unity 3D FPS" poster="assets/img/portfolio/mavericks-battleground-thumbnail.jpg">
-                <source src="assets/img/portfolio/mavericks-battleground.mp4" type="video/mp4">
+              <video class="lazy-preview-video" loop muted playsinline preload="none" aria-label="Mavericks Battlegrounds - Unity 3D FPS" poster="assets/img/portfolio/mavericks-battleground-thumbnail-720.webp">
+                <source data-src="assets/img/portfolio/mavericks-battleground.mp4" type="video/mp4">
                 Your browser does not support the video tag.
               </video>
               <span class="work-number">01</span>
@@ -435,7 +433,7 @@
           <!-- Row 02: LowXena Premium Arena -->
           <a href="https://lowxena.dharmikgohil.art/" target="_blank" rel="noopener noreferrer" class="portfolio-item filter-app filter-product filter-appmobile filter-appsingleplayer filter-productpc work-card">
             <div class="work-card-image">
-              <img src="assets/img/blog/lowxena/cover.jpg" alt="LowXena Premium Arena - Multiplayer Web Card Game" loading="lazy" width="1024" height="571">
+              <img src="assets/img/blog/lowxena/cover-720.webp" alt="LowXena Premium Arena - Multiplayer Web Card Game" loading="lazy" width="1024" height="571">
               <span class="work-number">02</span>
             </div>
             <div class="work-card-content">
@@ -454,8 +452,8 @@
           <!-- Row 03: VR Architectural Tour -->
           <div class="portfolio-item filter-arvr filter-app3d filter-productpc work-card" style="cursor: default;">
             <div class="work-card-image">
-              <video autoplay loop muted playsinline preload="metadata" aria-label="VR Architectural Tour - Unity Oculus VR Experience">
-                <source src="assets/img/portfolio/vr-architectural-tour.mp4" type="video/mp4">
+              <video class="lazy-preview-video" loop muted playsinline preload="none" aria-label="VR Architectural Tour - Unity Oculus VR Experience" poster="assets/img/portfolio/vr-architectural-tour-poster.webp">
+                <source data-src="assets/img/portfolio/vr-architectural-tour.mp4" type="video/mp4">
                 Your browser does not support the video tag.
               </video>
               <span class="work-number">03</span>
@@ -475,8 +473,8 @@
           <!-- Row 04: AR Spatial Explorer -->
           <div class="portfolio-item filter-arvr filter-app3d filter-appmobile work-card" style="cursor: default;">
             <div class="work-card-image">
-              <video autoplay loop muted playsinline preload="metadata" aria-label="AR Spatial Explorer - Unity AR Foundation Mobile">
-                <source src="assets/img/portfolio/ar-spatial-explorer.mp4" type="video/mp4">
+              <video class="lazy-preview-video" loop muted playsinline preload="none" aria-label="AR Spatial Explorer - Unity AR Foundation Mobile" poster="assets/img/portfolio/ar-spatial-explorer-poster.webp">
+                <source data-src="assets/img/portfolio/ar-spatial-explorer.mp4" type="video/mp4">
                 Your browser does not support the video tag.
               </video>
               <span class="work-number">04</span>
@@ -496,8 +494,8 @@
           <!-- Row 05: Floppy Ball -->
           <a href="game1.html" class="portfolio-item filter-app filter-appmobile filter-appsingleplayer work-card">
             <div class="work-card-image">
-              <video autoplay loop muted playsinline preload="metadata" aria-label="Floppy Ball - Unity 2D Mobile Physics Game">
-                <source src="assets/img/portfolio/floppy-ball.mp4" type="video/mp4">
+              <video class="lazy-preview-video" loop muted playsinline preload="none" aria-label="Floppy Ball - Unity 2D Mobile Physics Game" poster="assets/img/portfolio/floppy-ball-poster.webp">
+                <source data-src="assets/img/portfolio/floppy-ball.mp4" type="video/mp4">
                 Your browser does not support the video tag.
               </video>
               <span class="work-number">05</span>
@@ -537,8 +535,8 @@
           <!-- Row 07: Facade Simulator -->
           <a href="https://dharmikgohil.itch.io/facade" target="_blank" rel="noopener noreferrer" class="portfolio-item filter-app3d filter-appsingleplayer filter-productpc work-card">
             <div class="work-card-image">
-              <video autoplay loop muted playsinline preload="metadata" aria-label="Facade Simulator - Unity 3D Simulation">
-                <source src="assets/img/facade/facade.mp4" type="video/mp4">
+              <video class="lazy-preview-video" loop muted playsinline preload="none" aria-label="Facade Simulator - Unity 3D Simulation" poster="assets/img/facade/facade-poster.webp">
+                <source data-src="assets/img/facade/facade.mp4" type="video/mp4">
                 Your browser does not support the video tag.
               </video>
               <span class="work-number">07</span>
@@ -559,8 +557,8 @@
           <!-- Row 08: Hook Shot Physics -->
           <a href="game6.html" class="portfolio-item filter-app filter-appmobile filter-appsingleplayer work-card">
             <div class="work-card-image">
-              <video autoplay loop muted playsinline preload="metadata" aria-label="Hook Shot Physics - Unity 2D Grappling Mechanic" poster="assets/img/portfolio/hookshot-cover.webp">
-                <source src="assets/img/portfolio/hook-shot.mp4" type="video/mp4">
+              <video class="lazy-preview-video" loop muted playsinline preload="none" aria-label="Hook Shot Physics - Unity 2D Grappling Mechanic" poster="assets/img/portfolio/hookshot-cover-720.webp">
+                <source data-src="assets/img/portfolio/hook-shot.mp4" type="video/mp4">
                 Your browser does not support the video tag.
               </video>
               <span class="work-number">08</span>
@@ -581,8 +579,8 @@
           <!-- Row 09: Just Divide -->
           <a href="https://dharmikgohil.itch.io/just-divide" target="_blank" rel="noopener noreferrer" class="portfolio-item filter-app filter-appmobile filter-appsingleplayer work-card">
             <div class="work-card-image">
-              <video autoplay loop muted playsinline preload="metadata" aria-label="Just Divide - Unity 2D Math Puzzle Mobile" poster="assets/img/portfolio/just-divide-cover.webp">
-                <source src="assets/img/portfolio/just-divide.mp4" type="video/mp4">
+              <video class="lazy-preview-video" loop muted playsinline preload="none" aria-label="Just Divide - Unity 2D Math Puzzle Mobile" poster="assets/img/portfolio/just-divide-cover-720.webp">
+                <source data-src="assets/img/portfolio/just-divide.mp4" type="video/mp4">
                 Your browser does not support the video tag.
               </video>
               <span class="work-number">09</span>
@@ -611,7 +609,7 @@
         <p>International client projects &amp; enterprise partnerships</p>
       </div>
       <article class="client-feature" data-reveal>
-        <div class="client-logo"><img src="assets/img/clients/gain-live-logo.png" alt="Gain Live Bangladesh client logo" width="1024" height="1024" loading="lazy"></div>
+        <div class="client-logo"><img src="assets/img/clients/gain-live-logo-160.webp" alt="Gain Live Bangladesh client logo" width="1024" height="1024" loading="lazy"></div>
         <div class="client-body">
           <span class="client-badge">🇧🇩 International client &middot; Bangladesh</span>
           <h3>Client Spotlight: Gain Live</h3>
@@ -996,7 +994,7 @@
             <div class="review-author">
               <img src="assets/img/testimonials/vaibhav-chavan.png" class="review-img" alt="Vaibhav Chavan, Indian game developer and creator of Mukti" loading="lazy" width="160" height="160">
               <div>
-                <h4 class="review-name">Vaibhav Chavan</h4>
+                <h3 class="review-name">Vaibhav Chavan</h3>
                 <p class="review-title-lbl">Indian Game Developer &amp; Mukti Creator</p>
               </div>
             </div>
@@ -1013,7 +1011,7 @@
             <div class="review-author">
               <img src="assets/img/testimonials/Miyazaki-Hayao-2008.webp" class="review-img" alt="Hayao Miyazaki, acclaimed animation director" loading="lazy" width="1600" height="1531">
               <div>
-                <h4 class="review-name">Hayao Miyazaki</h4>
+                <h3 class="review-name">Hayao Miyazaki</h3>
                 <p class="review-title-lbl">Animation Designer</p>
               </div>
             </div>
@@ -1030,7 +1028,7 @@
             <div class="review-author">
               <img src="assets/img/testimonials/channels4_profile.jpg" class="review-img" alt="Nintendo official channel logo" loading="lazy" width="900" height="900">
               <div>
-                <h4 class="review-name">Nintendo</h4>
+                <h3 class="review-name">Nintendo</h3>
                 <p class="review-title-lbl">Game Syndicate</p>
               </div>
             </div>
@@ -1046,7 +1044,7 @@
       </div>
       <ul class="topic-nav" aria-label="Blog topics" style="margin-top:1rem"><li><a href="blog/topics/unity-game-development.html"><i class="bi bi-controller"></i> Unity</a></li><li><a href="blog/topics/xr-vr-ar-development.html"><i class="bi bi-badge-vr"></i> XR</a></li><li><a href="blog/topics/multiplayer-game-development.html"><i class="bi bi-people-fill"></i> Multiplayer</a></li><li><a href="blog/topics/web-development.html"><i class="bi bi-code-slash"></i> Web</a></li><li><a href="blog/topics/hackathons-and-events.html"><i class="bi bi-trophy-fill"></i> Events</a></li><li><a href="blog/topics/career-and-learning.html"><i class="bi bi-mortarboard-fill"></i> Career</a></li></ul>
       <div class="card-grid"><a class="post-card" href="blog/lowxena-game-development-insights.html">
-      <div class="thumb"><img src="assets/img/blog/lowxena/cover.jpg" alt="LowXena Premium Interactive Card Gaming Universe - Engineered by Lead Architect Dharmik Gohil" loading="lazy" decoding="async" width="640" height="360"></div>
+      <div class="thumb"><img src="assets/img/blog/lowxena/cover-720.webp" alt="LowXena Premium Interactive Card Gaming Universe - Engineered by Lead Architect Dharmik Gohil" loading="lazy" decoding="async" width="640" height="360"></div>
       <div class="body"><span class="tag">Multiplayer</span><h3>LOWXENA: Designing and Engineering a 3D Multiplayer Card Universe Where the Lowest Score Wins Everything</h3><p>Inside LowXena, a real-time multiplayer least-count card game: scoring logic, 3D felt table, React 19 front end and…</p>
       <span class="foot">May 21, 2026 · 5 min read</span></div></a><a class="post-card" href="blog/getting-started-unity-game-development.html">
       <div class="thumb"><img src="https://images.unsplash.com/photo-1556438064-2d7646166914?w=1200&amp;h=630&amp;fit=crop" alt="Getting Started with Unity Game Development - Beginner Guide by Dharmik Gohil" loading="lazy" decoding="async" width="640" height="360"></div>
@@ -1160,7 +1158,6 @@
   <script src="assets/vendor/aos/aos.js" defer></script>
   <script src="assets/vendor/waypoints/noframework.waypoints.js" defer></script>
   <script src="assets/vendor/purecounter/purecounter_vanilla.js" defer></script>
-  <script src="assets/vendor/swiper/swiper-bundle.min.js" defer></script>
   <script src="assets/vendor/glightbox/js/glightbox.min.js" defer></script>
   <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js" defer></script>
   <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js" defer></script>
@@ -1554,9 +1551,7 @@
     });
   </script>
 
-  <!-- Add Devicon Library for Technology Icons -->
-  <link rel="preload" href="assets/vendor/devicon/devicon.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="assets/vendor/devicon/devicon.min.css"></noscript>
+  <!-- Technology icons are loaded when their showcase approaches the viewport. -->
 
   <!-- Dome Gallery JavaScript -->
   <script src="assets/js/dome-gallery.js" defer></script>
@@ -2348,6 +2343,8 @@
   <!-- motion:script -->
 <script src="assets/js/motion.js" defer></script>
 <!-- /motion:script -->
+    <script src="assets/js/lazy-media.js" defer></script>
+    <script src="assets/js/deferred-ads.js" defer></script>
     <script src="assets/js/global-multilingual.js" defer></script>
 </body>
 

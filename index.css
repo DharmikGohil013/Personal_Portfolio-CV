@@ -640,7 +640,7 @@ h1, h2, h3, h4, h5, h6 {
 .portfolio-filters .filter-btn {
   font-family: var(--font-mono) !important;
   background: transparent !important;
-  color: rgba(13, 13, 11, 0.5) !important;
+  color: #55544f !important;
   padding: 0.4rem 0.8rem !important;
   border: 1px solid var(--rule) !important;
   text-transform: uppercase;
@@ -990,7 +990,8 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 9px;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  opacity: 0.5;
+  color: #55544f !important;
+  opacity: 1;
   margin: 0;
 }
 
@@ -1166,11 +1167,12 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 10px;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  opacity: 0.6;
+  color: #55544f;
+  opacity: 1;
 }
 
 .colophon-sig span {
-  color: var(--crimson);
+  color: var(--crimson-dim) !important;
   font-weight: 700;
 }
 
